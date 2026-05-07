@@ -41,6 +41,17 @@
         "Terminate_Main_Path_Succeeded now runs only after the final confirmation email succeeds.",
         "Catch_Final_Confirmation_Email remains responsible for final email Failed/TimedOut outcomes."
       ]
+    },
+    {
+      "type": "case-insensitive-unique-action-name-fix",
+      "changes": [
+        "Renamed Update_Status_Comments_after_Bogdan_Level_Approval to Update_Status_Comments_after_Bogdan_Level_Approval_Target_List.",
+        "Updated runAfter and expression references through the workflow definition.",
+        "Added tooling validation so action names must be globally unique case-insensitively before import."
+      ],
+      "mapping": {
+        "Update_Status_Comments_after_Bogdan_Level_Approval": "Update_Status_Comments_after_Bogdan_Level_Approval_Target_List"
+      }
     }
   ]
 }

@@ -9,7 +9,15 @@ from .aliases import flow_alias_section, load_aliases
 from .index import build_index
 from .linting import validate_run_after
 from .package import discover_export
-from .utils import ACTION_REF_RE, slugify_name, transform_json, unique_name, walk_json, write_json
+from .utils import (
+    ACTION_REF_RE,
+    slugify_name,
+    transform_json,
+    unique_name,
+    unique_name_case_insensitive,
+    walk_json,
+    write_json,
+)
 
 
 EXCLUDED_CONSTANT_PATH_PARTS = {
@@ -108,8 +116,8 @@ def rewrite_export(
 
 def _action_rename_map(index: Any, flow_aliases: dict[str, Any]) -> dict[str, str]:
     action_aliases = flow_aliases.get("actions", {}) if isinstance(flow_aliases, dict) else {}
-    all_names = [node.name for node in index.actions]
-    taken = set(all_names)
+    all_names_lower = {node.name.lower() for node in index.actions}
+    taken_lower: set[str] = set()
     rename_map: dict[str, str] = {}
     for node in index.actions:
         action_info = action_aliases.get(node.name, {})
@@ -120,16 +128,16 @@ def _action_rename_map(index: Any, flow_aliases: dict[str, Any]) -> dict[str, st
             candidate = node.name
             rename_requested = True
         clean = slugify_name(str(candidate), "Action")
-        if clean == node.name or not rename_requested:
+        # Allow keeping the current name while still reserving it case-insensitively.
+        local_taken_lower = set(all_names_lower)
+        local_taken_lower.discard(node.name.lower())
+        local_taken_lower.update(taken_lower)
+        new_name = unique_name_case_insensitive(clean, local_taken_lower)
+        taken_lower.add(new_name.lower())
+        if clean == node.name and new_name == node.name and not rename_requested:
             continue
-        # Allow replacing the current name while still preventing collisions with every other action.
-        local_taken = set(taken)
-        local_taken.discard(node.name)
-        new_name = unique_name(clean, local_taken)
         if new_name != node.name:
             rename_map[node.name] = new_name
-            taken.discard(node.name)
-            taken.add(new_name)
     return rename_map
 
 
@@ -299,6 +307,9 @@ def _validate_rewritten_definition(flow: Any, wrapper: dict[str, Any]) -> list[s
     definition = wrapper.get("properties", {}).get("definition", {})
     errors = [f"{path}: missing {', '.join(missing)}" for path, missing in validate_run_after(definition)]
     action_names = _collect_action_names(definition)
+    duplicates = _case_insensitive_action_duplicates(definition)
+    for normalized, names in sorted(duplicates.items()):
+        errors.append(f"Duplicate action names after case-insensitive normalization ({normalized}): {', '.join(names)}")
     action_refs = {
         match.group(3)
         for _, value in walk_json(definition)
@@ -313,6 +324,13 @@ def _validate_rewritten_definition(flow: Any, wrapper: dict[str, Any]) -> list[s
         if connection_name not in connection_names:
             errors.append(f"Missing connector reference: {connection_name}")
     return errors
+
+
+def _case_insensitive_action_duplicates(definition: dict[str, Any]) -> dict[str, list[str]]:
+    grouped: dict[str, list[str]] = {}
+    for name in _collect_action_names(definition):
+        grouped.setdefault(name.lower(), []).append(name)
+    return {key: sorted(names) for key, names in grouped.items() if len(names) > 1}
 
 
 def _collect_action_names(definition: dict[str, Any]) -> set[str]:

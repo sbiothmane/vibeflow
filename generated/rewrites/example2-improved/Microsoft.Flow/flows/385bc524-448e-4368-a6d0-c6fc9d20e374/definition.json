@@ -718,7 +718,7 @@
                                 "table": "@variables('Config')?['target_list_creation_list_id']",
                                 "id": "@body('Create_item_in_target_list_creation_list')?['ID']",
                                 "item/Status/Value": "@{if(contains(body('Create_an_approval_Brand_Manager_Level_TargeList')?['outcome'],'Appro'),'Approval Sent - Kuo Level','Issue - BRM Level')}",
-                                "item/Comments": "@{concat(body('Update_Status_Comments_after_Bogdan_Level_Approval')?['Comments'],outputs('Compose_NewLine'),utcNow(),' - ',variables('BMcomments'))}"
+                                "item/Comments": "@{concat(body('Update_Status_Comments_after_Bogdan_Level_Approval_Target_List')?['Comments'],outputs('Compose_NewLine'),utcNow(),' - ',variables('BMcomments'))}"
                               },
                               "host": {
                                 "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
@@ -1065,7 +1065,7 @@
                           "authentication": "@parameters('$authentication')"
                         }
                       },
-                      "Update_Status_Comments_after_Bogdan_Level_Approval": {
+                      "Update_Status_Comments_after_Bogdan_Level_Approval_Target_List": {
                         "runAfter": {
                           "Get_item_1": [
                             "Succeeded"
@@ -1172,7 +1172,7 @@
                           }
                         },
                         "runAfter": {
-                          "Update_Status_Comments_after_Bogdan_Level_Approval": [
+                          "Update_Status_Comments_after_Bogdan_Level_Approval_Target_List": [
                             "Succeeded",
                             "Failed",
                             "Skipped"

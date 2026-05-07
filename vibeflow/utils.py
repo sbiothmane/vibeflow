@@ -94,6 +94,16 @@ def unique_name(base: str, taken: set[str]) -> str:
     return candidate
 
 
+def unique_name_case_insensitive(base: str, taken_lower: set[str]) -> str:
+    candidate = base
+    counter = 2
+    while candidate.lower() in taken_lower:
+        candidate = f"{base}_{counter}"
+        counter += 1
+    taken_lower.add(candidate.lower())
+    return candidate
+
+
 def path_string(path: Iterable[str]) -> str:
     return "/".join(path)
 

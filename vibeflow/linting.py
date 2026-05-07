@@ -66,6 +66,21 @@ def lint_index(index: WorkflowIndex) -> list[LintIssue]:
 
 def _lint_graph(index: WorkflowIndex) -> list[LintIssue]:
     issues: list[LintIssue] = []
+    normalized_names: dict[str, list[str]] = {}
+    for node in index.actions:
+        normalized_names.setdefault(node.name.lower(), []).append(node.name)
+    duplicates = {key: sorted(set(names)) for key, names in normalized_names.items() if len(set(names)) > 1}
+    for normalized, names in sorted(duplicates.items()):
+        issues.append(
+            LintIssue(
+                rule="PA002",
+                severity="error",
+                category="correctness",
+                message=f"Action names are duplicate after case-insensitive normalization: {', '.join(names)}",
+                path="properties/definition/actions",
+                suggestion=f"Rename one action so its normalized name is not `{normalized}`.",
+            )
+        )
     for path, missing in validate_run_after(index.definition):
         issues.append(
             LintIssue(

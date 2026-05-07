@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from .index import WorkflowIndex
-from .utils import load_json, slugify_name, unique_name
+from .utils import load_json, slugify_name, unique_name_case_insensitive
 
 
 def generate_aliases(indexes: list[WorkflowIndex]) -> dict[str, Any]:
@@ -33,18 +33,18 @@ def flow_alias_section(aliases: dict[str, Any], flow_id: str) -> dict[str, Any]:
 
 
 def _flow_aliases(index: WorkflowIndex) -> dict[str, Any]:
-    action_names = {node.name for node in index.actions}
-    taken_actions: set[str] = set()
+    action_names_lower = {node.name.lower() for node in index.actions}
+    taken_actions_lower: set[str] = set()
     actions = {}
     for node in index.actions:
-        alias = unique_name(slugify_name(node.name, "Action"), taken_actions)
+        alias = unique_name_case_insensitive(slugify_name(node.name, "Action"), taken_actions_lower)
         actions[node.name] = {
             "alias": alias,
             "type": node.type,
             "path": node.path_text,
             "parent": node.parent,
             "operationId": node.operation_id,
-            "renameOnRewrite": alias != node.name and alias not in action_names,
+            "renameOnRewrite": alias != node.name or alias.lower() != node.name.lower() or alias.lower() not in action_names_lower,
         }
 
     variables = {

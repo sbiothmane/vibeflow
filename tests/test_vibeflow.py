@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import subprocess
 import sys
+from collections import Counter
 from pathlib import Path
 
 from vibeflow.aliases import generate_aliases
@@ -97,6 +98,10 @@ def test_rewrite_copies_export_and_validates_without_touching_original(tmp_path:
     assert not any(flow["validationErrors"] for flow in report["flows"])
     assert (out_dir / "vibeflow-rewrite-report.json").exists()
     assert "operationMetadataId" not in rewritten_definition.read_text(encoding="utf-8")
+
+    rewritten_index = build_index(discover_export(out_dir).flows[0])
+    lower_counts = Counter(node.name.lower() for node in rewritten_index.actions)
+    assert not {name: count for name, count in lower_counts.items() if count > 1}
 
 
 def test_rewrite_is_stable_for_same_input_and_aliases(tmp_path: Path) -> None:
