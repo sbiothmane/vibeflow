@@ -67,6 +67,48 @@
         "target_list_creation_list_id",
         "schedule_deployment_list_id"
       ]
+    },
+    {
+      "type": "deep-expression-switch-json-refactor",
+      "changes": [
+        "Converted Config from InitializeVariable to Compose_Static_Config + Parse_Static_Config JSON pattern.",
+        "Replaced all Config variable references with body(Parse_Static_Config) references.",
+        "Inlined logo HTML with expressions and removed unused image-logo variable initializers.",
+        "Replaced VarApprover initializer + If + SetVariable branches with Compose_Country_Approver expression.",
+        "Converted the Test Email / Target List / Deployment nested If tree into Switch_Request_Type.",
+        "Added Compose_Request_Type to normalize request routing with if(), contains(), and equals()."
+      ],
+      "removedActions": [
+        "Initialize_Config",
+        "Initialize_variable_Picture",
+        "Initialize_variable_For_Logo_Reminder",
+        "Initialize_VarApprover",
+        "Compose_Country_Choice",
+        "Condition_Country_Approver",
+        "Condition_for_3_branches",
+        "Condition_Target_List_or_Deploy"
+      ],
+      "addedActions": [
+        "Compose_Static_Config",
+        "Parse_Static_Config",
+        "Compose_Country_Approver",
+        "Compose_Request_Type",
+        "Switch_Request_Type"
+      ],
+      "netActionReduction": 3
+    },
+    {
+      "type": "dead-state-and-empty-attachment-prune",
+      "changes": [
+        "Removed unused ApprovalStatusLevel1 initializer.",
+        "Removed never-mutated varAttachements initializer.",
+        "Replaced empty attachment variable references with json('[]') expression."
+      ],
+      "removedActions": [
+        "Initialize_Variable_for_Level_1_status",
+        "Initialize_variable_varAttachments"
+      ],
+      "netActionReduction": 2
     }
   ]
 }
