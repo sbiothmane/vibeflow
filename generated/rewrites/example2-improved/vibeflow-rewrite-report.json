@@ -1,0 +1,152 @@
+{
+  "source": "/Users/othmane/Code/vibeflow/examples/example2",
+  "output": "/Users/othmane/Code/vibeflow/generated/rewrites/example2-improved",
+  "flows": [
+    {
+      "flowId": "385bc524-448e-4368-a6d0-c6fc9d20e374",
+      "definitionPath": "/Users/othmane/Code/vibeflow/generated/rewrites/example2-improved/Microsoft.Flow/flows/385bc524-448e-4368-a6d0-c6fc9d20e374/definition.json",
+      "transformations": [
+        {
+          "type": "rename-actions",
+          "count": 71,
+          "mapping": {
+            "Initialize_variable_-_Picture": "Initialize_variable_Picture",
+            "Initialize_variable_-_varAttachements": "Initialize_variable_varAttachments",
+            "Scope_-_For_decision_Tree": "Scope_For_decision_Tree",
+            "Send_e-mail_for_Test_E-mail_": "Send_e_mail_for_Test_Email",
+            "Create_an_approval_-_Bogdan_Level_-_Test_E-_Mail": "Create_an_approval_Bogdan_Level_Test_E_Mail",
+            "Apply_to_each_-_Get_responses": "Apply_to_each_Get_responses",
+            "Create_an_approval_-_StakeHolders_Level_-_Test_E-_Mail_": "Create_an_approval_StakeHolders_Level_Test_E_Mail",
+            "Set_variable_-_level2_Comments": "Set_variable_level2_Comments",
+            "Set_variable_-_ApprovalStatusLevel2": "Set_variable_ApprovalStatusLevel2",
+            "Update_status_+_comments_after_Stakeholder_level_approval": "Update_status_comments_after_Stakeholder_level_approval",
+            "Condition_If_Approved_[Test_-Email]": "Condition_If_Approved_Test_Email",
+            "Set_variable_-_If_approved_2": "Set_variable_If_approved_2",
+            "Set_variable_-_If_refused_2": "Set_variable_If_refused_2",
+            "Apply_to_each_-_Send_E-mail": "Apply_to_each_Send_Email",
+            "Send_e-mail_for_Test_E-mail__2": "Send_e_mail_for_Test_Email_2",
+            "_SFMC_Content_Creation-_C3i": "SFMC_Content_Creation_C3i",
+            "Set_variable_-_SFMC-Comments_set_-_Test_email": "Set_variable_SFMC_Comments_set_Test_email",
+            "Update_status_+_comments_after_Bogdan_level_approval": "Update_status_comments_after_Bogdan_level_approval",
+            "Bogdan_Level_-_Send_Email_for_Refusal_-_Test_Email": "Bogdan_Level_Send_Email_for_Refusal_Test_Email",
+            "Condition_-_Target_List_or_Deploy": "Condition_Target_List_or_Deploy",
+            "Send_E-mail_for_Target_List_Creation": "Send_Email_for_Target_List_Creation",
+            "Create_an_approval_-_Bogdan_Level_-_TargeList": "Create_an_approval_Bogdan_Level_TargeList",
+            "Apply_to_each_-_Brand_Manager_Flow": "Apply_to_each_Brand_Manager_Flow",
+            "Create_an_approval_-_Brand_Manager_Level_-_TargeList_": "Create_an_approval_Brand_Manager_Level_TargeList",
+            "Set_variable_-_Brand_Manager_comments": "Set_variable_Brand_Manager_comments",
+            "Update_status_+_comments_after_BRM_Level_approval": "Update_status_comments_after_BRM_Level_approval",
+            "Condition_if_rejected_at_Brand_Manager_Level_-_List_Creation": "Condition_if_rejected_at_Brand_Manager_Level_List_Creation",
+            "Brand_Manager_Level_-_Send_Email_for_Refusal_-_Target_List_Creation": "Brand_Manager_Level_Send_Email_for_Refusal_Target_List_Creation",
+            "Apply_to_each_-_KUO_Approval_Flow": "Apply_to_each_KUO_Approval_Flow",
+            "Create_an_approval_-_KUO_level_-_TargeList_": "Create_an_approval_KUO_level_TargeList",
+            "Set_variable_-_ApprovalStatuslevel3": "Set_variable_ApprovalStatuslevel3",
+            "Apply_to_each_-_flow_for_KUO_comments": "Apply_to_each_flow_for_KUO_comments",
+            "Update_status_+_comments_after_Kuo_Level_approval": "Update_status_comments_after_Kuo_Level_approval",
+            "Set_variable_-_If_approved_3": "Set_variable_If_approved_3",
+            "Set_variable_-_If_refused_3": "Set_variable_If_refused_3",
+            "Apply_to_each_-_Get_comments_from_Bogdan": "Apply_to_each_Get_comments_from_Bogdan",
+            "Set_variable_-_SFMC-Comments_set": "Set_variable_SFMC_Comments_set",
+            "Update_Status+Comments_after_Bogdan_Level_Approval": "Update_Status_Comments_after_Bogdan_Level_Approval",
+            "BTS_Level_-_Send_Email_for_Refusal_-_Target_List_Creation": "BTS_Level_Send_Email_for_Refusal_Target_List_Creation",
+            "Condition_if_refusal_var_is_queal_to_false_(request_denied)": "Condition_if_refusal_var_is_queal_to_false_request_denied",
+            "Condition__-_country_": "Condition_country",
+            "_SFMC_Target_List_-__1_1": "SFMC_Target_List_1_1",
+            "_SFMC_Target_List_-__1": "SFMC_Target_List_1",
+            "_SFMC_Target_List_-__to_c3i": "SFMC_Target_List_to_c3i",
+            "Create_an_approval_-_Bogdan_Level_-_E-mail_Deployment": "Create_an_approval_Bogdan_Level_Email_Deployment",
+            "Set_variable_-_If_approved": "Set_variable_If_approved",
+            "Set_variable_-_If_refused": "Set_variable_If_refused",
+            "Send_E-mail_for_Schedule_Deployment_": "Send_Email_for_Schedule_Deployment",
+            "Send_E-mail_for_email_deployment": "Send_Email_for_email_deployment",
+            "Set_variable_-_SFMC-Comments_set_-_schedule_deployment": "Set_variable_SFMC_Comments_set_schedule_deployment",
+            "Update_status_+_comments_for_schedule_deployment": "Update_status_comments_for_schedule_deployment",
+            "Send_E-mail_for_sfmc_reports": "Send_Email_for_sfmc_reports",
+            "_SFMC_Send_E-mail_to_c3i": "SFMC_Send_Email_to_c3i",
+            "_SFMC_Send_Report": "SFMC_Send_Report",
+            "Intialize_Variable_for_Approval_Status": "Initialize_Variable_for_Approval_Status",
+            "Intialize_Variable_for_Level_1_status": "Initialize_Variable_for_Level_1_status",
+            "Intialize_Variable_for_Level_2_Comments": "Initialize_Variable_for_Level_2_Comments",
+            "Intialize_Variable_for_Level_2_status_": "Initialize_Variable_for_Level_2_status",
+            "Intialize_Variable_for_BM_Comments_": "Initialize_Variable_for_BM_Comments",
+            "Intialize_Variable_for_Level_3_status": "Initialize_Variable_for_Level_3_status",
+            "Intialize_Variable_for_DataStewardComments": "Initialize_Variable_for_DataStewardComments",
+            "Intialize_Variable_for_SFMC-Comments": "Initialize_Variable_for_SFMC_Comments",
+            "E-mail_for_test": "Email_for_test",
+            "Send_E-mail_if_error": "Send_Email_if_error",
+            "Initialize_variable_for_Reminder_Complete_": "Initialize_variable_for_Reminder_Complete",
+            "Condition_-_Checking_if_request_has_been_approved_-_Denied": "Condition_Checking_if_request_has_been_approved_Denied",
+            "E-mail_to_sfmc_dev": "Email_to_sfmc_dev",
+            "E-mail_to_sfmc_dev_2": "Email_to_sfmc_dev_2",
+            "Set_variable_2_-_End_of_flow_complete": "Set_variable_2_End_of_flow_complete",
+            "varApprover_-_Maria": "varApprover_Maria",
+            "VarApprover_-_Matias": "VarApprover_Matias"
+          }
+        },
+        {
+          "type": "remove-operation-metadata",
+          "count": 120
+        },
+        {
+          "type": "extract-config-constants",
+          "replacementCount": 70,
+          "configKeys": [
+            "email_003",
+            "email_004",
+            "email_006",
+            "email_007",
+            "email_011",
+            "email_012",
+            "email_013",
+            "guid_001",
+            "guid_002",
+            "guid_003",
+            "url_002"
+          ]
+        },
+        {
+          "type": "human-guided-best-practice-pass",
+          "changes": [
+            "Added Compose_Run_Context for reusable workflow/run diagnostics.",
+            "Renamed key top-level actions to Try/Catch/Send/Compose intent names.",
+            "Retargeted the main Catch scope to Try_Decision_Tree Failed/TimedOut.",
+            "Added diagnostic error bodies using workflow(), result(), actions(), and trigger output context.",
+            "Added failure Terminate actions after error notification paths.",
+            "Added a separate final-confirmation email failure catch scope.",
+            "Added explicit exponential retry policies to safe read/update connector calls.",
+            "Renamed generated Config keys to business-readable names."
+          ],
+          "retryPolicyActionsUpdated": 13,
+          "configKeyMapping": {
+            "email_003": "sfmc_support_email",
+            "email_004": "flow_owner_email",
+            "email_006": "brand_manager_refusal_cc",
+            "email_007": "bts_digital_sender_email",
+            "email_011": "kuo_approver_email",
+            "email_012": "country_approver_maria_email",
+            "email_013": "country_approver_matias_email",
+            "guid_001": "schedule_deployment_list_id",
+            "guid_002": "target_list_creation_list_id",
+            "guid_003": "email_test_list_id",
+            "url_002": "sfmc_sharepoint_site_url"
+          }
+        },
+        {
+          "type": "success-path-ordering-fix",
+          "changes": [
+            "Moved Send_Final_Confirmation_Email before Terminate_Main_Path_Succeeded.",
+            "Terminate_Main_Path_Succeeded now runs only after the final confirmation email succeeds.",
+            "Catch_Final_Confirmation_Email remains responsible for final email Failed/TimedOut outcomes."
+          ]
+        }
+      ],
+      "skipped": [
+        {
+          "type": "if-to-switch",
+          "reason": "Nested If tree detected, but V1 only reports this unless branch equivalence can be proven manually from aliases."
+        }
+      ],
+      "validationErrors": []
+    }
+  ]
+}

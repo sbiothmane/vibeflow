@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.ruff_cache/
+.mypy_cache/
+generated/*
+!generated/rewrites/
+generated/rewrites/*
+!generated/rewrites/example2-improved/
+!generated/rewrites/example2-improved/**
+!generated/rewrites/example2-improved.zip
+dist/
+build/
+*.egg-info/

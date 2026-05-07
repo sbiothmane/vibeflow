@@ -1,0 +1,46 @@
+{
+  "flow": "example2",
+  "outputDefinition": "generated/rewrites/example2-improved/Microsoft.Flow/flows/385bc524-448e-4368-a6d0-c6fc9d20e374/definition.json",
+  "improvements": {
+    "type": "human-guided-best-practice-pass",
+    "changes": [
+      "Added Compose_Run_Context for reusable workflow/run diagnostics.",
+      "Renamed key top-level actions to Try/Catch/Send/Compose intent names.",
+      "Retargeted the main Catch scope to Try_Decision_Tree Failed/TimedOut.",
+      "Added diagnostic error bodies using workflow(), result(), actions(), and trigger output context.",
+      "Added failure Terminate actions after error notification paths.",
+      "Added a separate final-confirmation email failure catch scope.",
+      "Added explicit exponential retry policies to safe read/update connector calls.",
+      "Renamed generated Config keys to business-readable names."
+    ],
+    "retryPolicyActionsUpdated": 13,
+    "configKeyMapping": {
+      "email_003": "sfmc_support_email",
+      "email_004": "flow_owner_email",
+      "email_006": "brand_manager_refusal_cc",
+      "email_007": "bts_digital_sender_email",
+      "email_011": "kuo_approver_email",
+      "email_012": "country_approver_maria_email",
+      "email_013": "country_approver_matias_email",
+      "guid_001": "schedule_deployment_list_id",
+      "guid_002": "target_list_creation_list_id",
+      "guid_003": "email_test_list_id",
+      "url_002": "sfmc_sharepoint_site_url"
+    }
+  },
+  "notes": [
+    "Original export was left unchanged.",
+    "Large branch refactors such as If-to-Switch remain intentionally skipped until branch equivalence is manually reviewed.",
+    "Final validation still needs Power Automate import/run-history testing."
+  ],
+  "additionalImprovements": [
+    {
+      "type": "success-path-ordering-fix",
+      "changes": [
+        "Moved Send_Final_Confirmation_Email before Terminate_Main_Path_Succeeded.",
+        "Terminate_Main_Path_Succeeded now runs only after the final confirmation email succeeds.",
+        "Catch_Final_Confirmation_Email remains responsible for final email Failed/TimedOut outcomes."
+      ]
+    }
+  ]
+}
