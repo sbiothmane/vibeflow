@@ -52,6 +52,21 @@
       "mapping": {
         "Update_Status_Comments_after_Bogdan_Level_Approval": "Update_Status_Comments_after_Bogdan_Level_Approval_Target_List"
       }
+    },
+    {
+      "type": "restore-static-sharepoint-schema-parameters",
+      "changes": [
+        "Restored SharePoint dataset and table parameters to literal values for connector schema validation.",
+        "Removed SharePoint site/list IDs from Config because Power Automate import validation needs static values for PostItem/PatchItem/GetItem item schemas.",
+        "Updated rewrite tooling to exclude dataset/table from future Config extraction."
+      ],
+      "parameterValuesRestored": 26,
+      "removedConfigKeys": [
+        "sfmc_sharepoint_site_url",
+        "email_test_list_id",
+        "target_list_creation_list_id",
+        "schedule_deployment_list_id"
+      ]
     }
   ]
 }

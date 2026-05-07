@@ -29,7 +29,9 @@ EXCLUDED_CONSTANT_PATH_PARTS = {
     "type",
     "apiId",
     "connectionName",
+    "dataset",
     "operationId",
+    "table",
 }
 
 

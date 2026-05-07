@@ -69,11 +69,7 @@
                   "bts_digital_sender_email": "bts.digital@abbviecare.ca",
                   "kuo_approver_email": "kuo.liao@abbvie.com;",
                   "country_approver_maria_email": "mariapaula.aguillon@abbvie.com",
-                  "country_approver_matias_email": "matias.lazo@abbvie.com",
-                  "schedule_deployment_list_id": "0fd7951d-a346-48c2-86ba-7390012e2b73",
-                  "target_list_creation_list_id": "8139e5bc-e87b-4029-bdd6-cef739baa00d",
-                  "email_test_list_id": "8de67489-8d52-4a8d-ac28-c1d7ef26f1a1",
-                  "sfmc_sharepoint_site_url": "https://abbvie.sharepoint.com/sites/msteams_c38c47"
+                  "country_approver_matias_email": "matias.lazo@abbvie.com"
                 }
               }
             ]
@@ -302,8 +298,8 @@
                       "type": "OpenApiConnection",
                       "inputs": {
                         "parameters": {
-                          "dataset": "@variables('Config')?['sfmc_sharepoint_site_url']",
-                          "table": "@variables('Config')?['email_test_list_id']",
+                          "dataset": "https://abbvie.sharepoint.com/sites/msteams_c38c47",
+                          "table": "8de67489-8d52-4a8d-ac28-c1d7ef26f1a1",
                           "id": "@body('Get_item')?['ID']",
                           "item/Status/Value": "@{if(contains(body('Create_an_approval_StakeHolders_Level_Test_E_Mail')?['outcome'],'Appro'),'Test Approved','Test Refused')}",
                           "item/Comments": "@{concat(body('Update_status_comments_after_Bogdan_level_approval')?['Comments'],variables('Level2Comments'))}"
@@ -430,8 +426,8 @@
                   "type": "OpenApiConnection",
                   "inputs": {
                     "parameters": {
-                      "dataset": "@variables('Config')?['sfmc_sharepoint_site_url']",
-                      "table": "@variables('Config')?['email_test_list_id']",
+                      "dataset": "https://abbvie.sharepoint.com/sites/msteams_c38c47",
+                      "table": "8de67489-8d52-4a8d-ac28-c1d7ef26f1a1",
                       "item/DateRequested": "@{utcNow()}",
                       "item/Status/Value": "Approval Sent - Bogdan Level",
                       "item/BusinessOwner/Claims": "@body('Get_response_details')?['r1449ddf4c0d348e3aad239ad7d1054b6']",
@@ -477,8 +473,8 @@
                   "type": "OpenApiConnection",
                   "inputs": {
                     "parameters": {
-                      "dataset": "@variables('Config')?['sfmc_sharepoint_site_url']",
-                      "table": "@variables('Config')?['email_test_list_id']",
+                      "dataset": "https://abbvie.sharepoint.com/sites/msteams_c38c47",
+                      "table": "8de67489-8d52-4a8d-ac28-c1d7ef26f1a1",
                       "id": "@body('Create_item_in_email_test_list')?['ID']"
                     },
                     "host": {
@@ -507,8 +503,8 @@
                   "type": "OpenApiConnection",
                   "inputs": {
                     "parameters": {
-                      "dataset": "@variables('Config')?['sfmc_sharepoint_site_url']",
-                      "table": "@variables('Config')?['email_test_list_id']",
+                      "dataset": "https://abbvie.sharepoint.com/sites/msteams_c38c47",
+                      "table": "8de67489-8d52-4a8d-ac28-c1d7ef26f1a1",
                       "id": "@body('Get_item')?['ID']",
                       "item/Status/Value": "@{if(contains(body('Create_an_approval_Bogdan_Level_Test_E_Mail')?['outcome'],'Appro'),'Approval Sent - Stakeholder Level','Issue - Bogdan Level')}",
                       "item/Comments": "@{concat(body('Get_item')?['Comments'], utcNow(),' - ','bogdan.baloiu@abbvie.com',outputs('Compose_NewLine'),variables('SFMC-Comments'),outputs('Compose_NewLine'))}"
@@ -714,8 +710,8 @@
                             "type": "OpenApiConnection",
                             "inputs": {
                               "parameters": {
-                                "dataset": "@variables('Config')?['sfmc_sharepoint_site_url']",
-                                "table": "@variables('Config')?['target_list_creation_list_id']",
+                                "dataset": "https://abbvie.sharepoint.com/sites/msteams_c38c47",
+                                "table": "8139e5bc-e87b-4029-bdd6-cef739baa00d",
                                 "id": "@body('Create_item_in_target_list_creation_list')?['ID']",
                                 "item/Status/Value": "@{if(contains(body('Create_an_approval_Brand_Manager_Level_TargeList')?['outcome'],'Appro'),'Approval Sent - Kuo Level','Issue - BRM Level')}",
                                 "item/Comments": "@{concat(body('Update_Status_Comments_after_Bogdan_Level_Approval_Target_List')?['Comments'],outputs('Compose_NewLine'),utcNow(),' - ',variables('BMcomments'))}"
@@ -874,8 +870,8 @@
                             "type": "OpenApiConnection",
                             "inputs": {
                               "parameters": {
-                                "dataset": "@variables('Config')?['sfmc_sharepoint_site_url']",
-                                "table": "@variables('Config')?['target_list_creation_list_id']",
+                                "dataset": "https://abbvie.sharepoint.com/sites/msteams_c38c47",
+                                "table": "8139e5bc-e87b-4029-bdd6-cef739baa00d",
                                 "id": "@body('Create_item_in_target_list_creation_list')?['ID']",
                                 "item/Status/Value": "@{if(contains(body('Create_an_approval_KUO_level_TargeList')?['outcome'],'Appro'),'Target List Approved','Target List Refused')}",
                                 "item/Comments": "@{concat(body('Get_item_2')?['Comments'],outputs('Compose_NewLine'),utcNow(),' - ',variables('DataStewardComments'))}"
@@ -906,8 +902,8 @@
                             "type": "OpenApiConnection",
                             "inputs": {
                               "parameters": {
-                                "dataset": "@variables('Config')?['sfmc_sharepoint_site_url']",
-                                "table": "@variables('Config')?['target_list_creation_list_id']",
+                                "dataset": "https://abbvie.sharepoint.com/sites/msteams_c38c47",
+                                "table": "8139e5bc-e87b-4029-bdd6-cef739baa00d",
                                 "id": "@body('Create_item_in_target_list_creation_list')?['ID']"
                               },
                               "host": {
@@ -1042,8 +1038,8 @@
                         "type": "OpenApiConnection",
                         "inputs": {
                           "parameters": {
-                            "dataset": "@variables('Config')?['sfmc_sharepoint_site_url']",
-                            "table": "@variables('Config')?['target_list_creation_list_id']",
+                            "dataset": "https://abbvie.sharepoint.com/sites/msteams_c38c47",
+                            "table": "8139e5bc-e87b-4029-bdd6-cef739baa00d",
                             "item/DateRequested": "@{utcNow()}",
                             "item/Status/Value": "Approval Sent - Bogdan Level",
                             "item/BusinessOwner/Claims": "@body('Get_response_details')?['r1449ddf4c0d348e3aad239ad7d1054b6']",
@@ -1074,8 +1070,8 @@
                         "type": "OpenApiConnection",
                         "inputs": {
                           "parameters": {
-                            "dataset": "@variables('Config')?['sfmc_sharepoint_site_url']",
-                            "table": "@variables('Config')?['target_list_creation_list_id']",
+                            "dataset": "https://abbvie.sharepoint.com/sites/msteams_c38c47",
+                            "table": "8139e5bc-e87b-4029-bdd6-cef739baa00d",
                             "id": "@body('Get_item_1')?['ID']",
                             "item/Status/Value": "@{if(contains(body('Create_an_approval_Bogdan_Level_TargeList')?['outcome'],'Appro'),'Approval Sent - BRM Level','Issue - Bogdan Level')}",
                             "item/Comments": "@{concat(body('Get_item_1')?['Comments'],outputs('Compose_NewLine'),utcNow(),' - ',variables('SFMC-Comments'))}"
@@ -1106,8 +1102,8 @@
                         "type": "OpenApiConnection",
                         "inputs": {
                           "parameters": {
-                            "dataset": "@variables('Config')?['sfmc_sharepoint_site_url']",
-                            "table": "@variables('Config')?['target_list_creation_list_id']",
+                            "dataset": "https://abbvie.sharepoint.com/sites/msteams_c38c47",
+                            "table": "8139e5bc-e87b-4029-bdd6-cef739baa00d",
                             "id": "@body('Create_item_in_target_list_creation_list')?['ID']"
                           },
                           "host": {
@@ -1481,8 +1477,8 @@
                           "type": "OpenApiConnection",
                           "inputs": {
                             "parameters": {
-                              "dataset": "@variables('Config')?['sfmc_sharepoint_site_url']",
-                              "table": "@variables('Config')?['schedule_deployment_list_id']",
+                              "dataset": "https://abbvie.sharepoint.com/sites/msteams_c38c47",
+                              "table": "0fd7951d-a346-48c2-86ba-7390012e2b73",
                               "item/DateRequested": "@{utcNow()}",
                               "item/Status/Value": "Approval Sent",
                               "item/BusinessOwner/Claims": "@body('Get_response_details')?['r1449ddf4c0d348e3aad239ad7d1054b6']",
@@ -1555,8 +1551,8 @@
                           "type": "OpenApiConnection",
                           "inputs": {
                             "parameters": {
-                              "dataset": "@variables('Config')?['sfmc_sharepoint_site_url']",
-                              "table": "@variables('Config')?['schedule_deployment_list_id']",
+                              "dataset": "https://abbvie.sharepoint.com/sites/msteams_c38c47",
+                              "table": "0fd7951d-a346-48c2-86ba-7390012e2b73",
                               "id": "@body('Create_item_in_schedule_deployment_list')?['ID']",
                               "item/Status/Value": "@{if(contains(body('Create_an_approval_Bogdan_Level_Email_Deployment')?['outcome'],'Appro'),'Email Scheduled','Issue')}",
                               "item/Comments": "@{concat(body('Get_item_3')?['Comments'],outputs('Compose_NewLine'),variables('SFMC-Comments'))}"
@@ -1587,8 +1583,8 @@
                           "type": "OpenApiConnection",
                           "inputs": {
                             "parameters": {
-                              "dataset": "@variables('Config')?['sfmc_sharepoint_site_url']",
-                              "table": "@variables('Config')?['schedule_deployment_list_id']",
+                              "dataset": "https://abbvie.sharepoint.com/sites/msteams_c38c47",
+                              "table": "0fd7951d-a346-48c2-86ba-7390012e2b73",
                               "id": "@body('Create_item_in_schedule_deployment_list')?['ID']"
                             },
                             "host": {

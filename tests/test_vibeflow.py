@@ -98,6 +98,7 @@ def test_rewrite_copies_export_and_validates_without_touching_original(tmp_path:
     assert not any(flow["validationErrors"] for flow in report["flows"])
     assert (out_dir / "vibeflow-rewrite-report.json").exists()
     assert "operationMetadataId" not in rewritten_definition.read_text(encoding="utf-8")
+    assert _sharepoint_schema_parameters_are_static(data)
 
     rewritten_index = build_index(discover_export(out_dir).flows[0])
     lower_counts = Counter(node.name.lower() for node in rewritten_index.actions)
@@ -166,3 +167,23 @@ def test_cli_smoke_commands(tmp_path: Path) -> None:
         check=True,
     )
     assert (rewrite_dir / "vibeflow-rewrite-report.json").exists()
+
+
+def _sharepoint_schema_parameters_are_static(value: object) -> bool:
+    if isinstance(value, dict):
+        inputs = value.get("inputs")
+        if isinstance(inputs, dict):
+            host = inputs.get("host")
+            params = inputs.get("parameters")
+            if (
+                isinstance(host, dict)
+                and host.get("apiId") == "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                and isinstance(params, dict)
+            ):
+                for key in ("dataset", "table"):
+                    if isinstance(params.get(key), str) and params[key].startswith("@"):
+                        return False
+        return all(_sharepoint_schema_parameters_are_static(child) for child in value.values())
+    if isinstance(value, list):
+        return all(_sharepoint_schema_parameters_are_static(child) for child in value)
+    return True
