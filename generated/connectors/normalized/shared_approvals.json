@@ -1,0 +1,277 @@
+{
+  "connectorId": "shared_approvals",
+  "displayName": "Standard approvals",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/approvals/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-08-25T19:00:00.0000000Z",
+  "sourceGitCommit": "d2b71000103744b7892d08f9dca3f867605788ac",
+  "sourcePath": "docs/Approvals/index.yml",
+  "operations": {
+    "CreateAnApproval": {
+      "operationId": "CreateAnApproval",
+      "kind": "action",
+      "displayName": "Create an approval",
+      "deprecated": false,
+      "description": "- CreateAnApproval",
+      "parameters": [
+        {
+          "name": "Approval type",
+          "key": "approvalType",
+          "required": true,
+          "type": "string",
+          "description": "Select an approval type."
+        },
+        {
+          "name": "ApprovalCreationInput",
+          "key": "ApprovalCreationInput",
+          "required": true,
+          "type": "dynamic",
+          "description": "The dynamic input for creating an approval of the specified type."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "StartAndWaitForATextSuggestionApproval": {
+      "operationId": "StartAndWaitForATextSuggestionApproval",
+      "kind": "action",
+      "displayName": "Start and wait for an approval of text",
+      "deprecated": false,
+      "description": "- StartAndWaitForATextSuggestionApproval",
+      "parameters": [
+        {
+          "name": "Title",
+          "key": "title",
+          "required": true,
+          "type": "string",
+          "description": "Create a title of the approval"
+        },
+        {
+          "name": "Suggested text",
+          "key": "suggestedText",
+          "required": true,
+          "type": "string",
+          "description": "Specify suggested text to approve or modify"
+        },
+        {
+          "name": "Details",
+          "key": "details",
+          "required": false,
+          "type": "string",
+          "description": "Markdown syntax is supported (see https://aka.ms/approvaldetails)"
+        },
+        {
+          "name": "Item Link",
+          "key": "itemLink",
+          "required": false,
+          "type": "string",
+          "description": "Add a link to the item to approve."
+        },
+        {
+          "name": "Item Link Description",
+          "key": "itemLinkDescription",
+          "required": false,
+          "type": "string",
+          "description": "Describe the link to the item"
+        },
+        {
+          "name": "Assigned To",
+          "key": "assignedTo",
+          "required": true,
+          "type": "email",
+          "description": "Email addresses, separated by a semicolon (;)"
+        },
+        {
+          "name": "Requestor",
+          "key": "requestor",
+          "required": false,
+          "type": "email",
+          "description": "Add the email of the person generating this request"
+        },
+        {
+          "name": "Enable notifications",
+          "key": "enableNotifications",
+          "required": false,
+          "type": "boolean",
+          "description": "Enable email, push, and Teams notifications"
+        },
+        {
+          "name": "Enable reassignment",
+          "key": "enableReassignment",
+          "required": false,
+          "type": "boolean",
+          "description": "Enable reassignment of approval requests"
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "Attachment name"
+        },
+        {
+          "name": "Content",
+          "key": "content",
+          "required": false,
+          "type": "string",
+          "description": "Attachment content"
+        },
+        {
+          "name": "PartnerMetadata",
+          "key": "partnerMetadata",
+          "required": false,
+          "type": "string",
+          "description": "The metadata required for the partner integration through which the approval was created."
+        },
+        {
+          "name": "Partner ID",
+          "key": "partnerId",
+          "required": false,
+          "type": "string",
+          "description": "The Id required for partner integration through which the approval was created."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- TextSuggestionApprovalCreationOutput"
+      }
+    },
+    "StartAndWaitForAnApproval": {
+      "operationId": "StartAndWaitForAnApproval",
+      "kind": "action",
+      "displayName": "Start and wait for an approval",
+      "deprecated": false,
+      "description": "- StartAndWaitForAnApproval",
+      "parameters": [
+        {
+          "name": "Approval type",
+          "key": "approvalType",
+          "required": true,
+          "type": "string",
+          "description": "Select an approval type."
+        },
+        {
+          "name": "WebhookApprovalCreationInput",
+          "key": "WebhookApprovalCreationInput",
+          "required": true,
+          "type": "dynamic",
+          "description": "The dynamic webhook input for creating an approval of the specified type."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      },
+      "usedInExamples": 13,
+      "observedParametersInExamples": {
+        "WebhookApprovalCreationInput/assignedTo": 13,
+        "WebhookApprovalCreationInput/attachments": 6,
+        "WebhookApprovalCreationInput/details": 13,
+        "WebhookApprovalCreationInput/enableNotifications": 13,
+        "WebhookApprovalCreationInput/enableReassignment": 13,
+        "WebhookApprovalCreationInput/itemLinkDescription": 12,
+        "WebhookApprovalCreationInput/responseOptions": 7,
+        "WebhookApprovalCreationInput/title": 13,
+        "approvalType": 13
+      }
+    },
+    "WaitForAnApproval": {
+      "operationId": "WaitForAnApproval",
+      "kind": "action",
+      "displayName": "Wait for an approval",
+      "deprecated": false,
+      "description": "- WaitForAnApproval",
+      "parameters": [
+        {
+          "name": "Approval ID",
+          "key": "approvalName",
+          "required": true,
+          "type": "string",
+          "description": "The ID of the approval."
+        },
+        {
+          "name": "ApprovalSubscriptionInput",
+          "key": "ApprovalSubscriptionInput",
+          "required": true,
+          "type": "dynamic",
+          "description": "The dynamic input for subscribing to an approval."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "approvalSubscribe": {
+      "operationId": "approvalSubscribe",
+      "kind": "action",
+      "displayName": "Start and wait for an Approve or Reject - First to respond approval [DEPRECATED]",
+      "deprecated": true,
+      "description": "- approvalSubscribe",
+      "parameters": [
+        {
+          "name": "Title",
+          "key": "title",
+          "required": true,
+          "type": "string",
+          "description": "Specify the title of the approval."
+        },
+        {
+          "name": "Details",
+          "key": "details",
+          "required": false,
+          "type": "string",
+          "description": "Specify the details of the approval request. Markdown syntax is supported, see https://aka.ms/approvaldetails for more information."
+        },
+        {
+          "name": "Item Link",
+          "key": "itemLink",
+          "required": false,
+          "type": "string",
+          "description": "Specify a link to the item to approve."
+        },
+        {
+          "name": "Item Link Description",
+          "key": "itemLinkDescription",
+          "required": false,
+          "type": "string",
+          "description": "Specify a description for the item to approve."
+        },
+        {
+          "name": "Assigned To",
+          "key": "assignedTo",
+          "required": true,
+          "type": "email",
+          "description": "Specify to whom the approval should be assigned. This should be a semi-colon (;) delimited collection of either email addresses, UPNs, or Microsoft Entra ID user ids."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ApprovalCreationOutputV0"
+      }
+    },
+    "approvalSubscribeV2": {
+      "operationId": "approvalSubscribeV2",
+      "kind": "action",
+      "displayName": "Start and wait for an approval [DEPRECATED]",
+      "deprecated": true,
+      "description": "- approvalSubscribeV2",
+      "parameters": [
+        {
+          "name": "Approval type",
+          "key": "approvalType",
+          "required": true,
+          "type": "string",
+          "description": "Select an approval type."
+        },
+        {
+          "name": "ApprovalCreationInput",
+          "key": "ApprovalCreationInput",
+          "required": true,
+          "type": "dynamic",
+          "description": "The dynamic input for creating an approval of the specified type."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

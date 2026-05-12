@@ -1,0 +1,263 @@
+{
+  "connectorId": "shared_microsoftflowforadmins",
+  "displayName": "Power Automate for Admins",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/microsoftflowforadmins/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-10-29T01:00:00.0000000Z",
+  "sourceGitCommit": "d459c69c9065cf5e5fd6ab20606ad73c60f8e4b0",
+  "sourcePath": "docs/microsoftflowforadmins/index.yml",
+  "operations": {
+    "Disable-AdminFlow": {
+      "operationId": "Disable-AdminFlow",
+      "kind": "action",
+      "displayName": "Disable Flow as Admin",
+      "deprecated": false,
+      "description": "- Disable-AdminFlow",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "Flow Name",
+          "key": "flow",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Flow."
+        },
+        {
+          "name": "Field API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Edit-AdminFlowOwnerRole": {
+      "operationId": "Edit-AdminFlowOwnerRole",
+      "kind": "action",
+      "displayName": "Edit Flow Owner Role as Admin",
+      "deprecated": false,
+      "description": "- Edit-AdminFlowOwnerRole",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "Flow Name",
+          "key": "flow",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the flow."
+        },
+        {
+          "name": "Field API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Field Content-Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "Name Field of the Content-Type."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Flow permission ID."
+        },
+        {
+          "name": "email",
+          "key": "email",
+          "required": false,
+          "type": "string",
+          "description": "Flow permission principal email."
+        },
+        {
+          "name": "displayName",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": "Flow permission principal displayName."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Flow permission principal object ID."
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "Flow permission principal type."
+        },
+        {
+          "name": "roleName",
+          "key": "roleName",
+          "required": false,
+          "type": "string",
+          "description": "Flow permission property roleName."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Enable-AdminFlow": {
+      "operationId": "Enable-AdminFlow",
+      "kind": "action",
+      "displayName": "Enable Flow as Admin",
+      "deprecated": false,
+      "description": "- Enable-AdminFlow",
+      "parameters": [
+        {
+          "name": "Name field of the Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Environment Name."
+        },
+        {
+          "name": "Flow Name",
+          "key": "flow",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the flow."
+        },
+        {
+          "name": "Field API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Get-AdminFlowOwnerRole": {
+      "operationId": "Get-AdminFlowOwnerRole",
+      "kind": "action",
+      "displayName": "Get Flow Owner Role as Admin",
+      "deprecated": false,
+      "description": "- Get-AdminFlowOwnerRole",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "Flow Name",
+          "key": "flow",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the flow."
+        },
+        {
+          "name": "Field API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object | Flow permission value object array. |\n| name | value.name | string | Flow permission name field. |\n| id | value.id | string | Flow permission ID field. |\n| type | value.type | string | Flow permission type field. |\n| roleName | value.properties.roleName | string | Flow permission property roleName. |\n| permissionType | value.properties.permissionType | string | Flow permission property permission type. |\n| id | value.properties.principal.id | string | Flow permission principal object ID. |\n| type | value.properties.principal.type | string | Flow permission principal type. |"
+      }
+    },
+    "Get-AdminFlowUserDetails": {
+      "operationId": "Get-AdminFlowUserDetails",
+      "kind": "action",
+      "displayName": "Get Flow User Details",
+      "deprecated": false,
+      "description": "- Get-AdminFlowUserDetails",
+      "parameters": [
+        {
+          "name": "Field userId",
+          "key": "userId",
+          "required": true,
+          "type": "string",
+          "description": "Flow user principal object ID."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Tenant ID | tenantId | string | Flow user tenantId. |\n| PUID | puid | string | Flow user puid. |\n| Object ID | objectId | string | Flow user principal object ID. |\n| Is Disallowed for Internal Plans | isDisallowedForInternalPlans | boolean | Flow user isDisallowedForInternalPlans. |\n| Consent Time | consentTime | date-time | Flow user consentTime. |\n| Service Settings Selection Time | serviceSettingsSelectionTime | date-time | Flow user serviceSettingsSelectionTime. |\n| Consent Business App Platform Time | consentBusinessAppPlatformTime | date-time | The Flow user's consentBusinessAppPlatformTime. |"
+      }
+    },
+    "Remove-AdminFlow": {
+      "operationId": "Remove-AdminFlow",
+      "kind": "action",
+      "displayName": "Remove Flow as Admin",
+      "deprecated": false,
+      "description": "- Remove-AdminFlow",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "Flow Name",
+          "key": "flow",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the flow."
+        },
+        {
+          "name": "Field API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Remove-AdminFlowUserDetails": {
+      "operationId": "Remove-AdminFlowUserDetails",
+      "kind": "action",
+      "displayName": "Remove Flow User Details",
+      "deprecated": false,
+      "description": "- Remove-AdminFlowUserDetails",
+      "parameters": [
+        {
+          "name": "Field UserId",
+          "key": "userId",
+          "required": true,
+          "type": "string",
+          "description": "Flow user principal object ID."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

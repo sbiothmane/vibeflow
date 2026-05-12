@@ -1,0 +1,522 @@
+{
+  "connectorId": "shared_bingmaps",
+  "displayName": "Bing Maps",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/bingmaps/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-11-25T19:00:00.0000000Z",
+  "sourceGitCommit": "1c76f0da18c92ed9c3f2ce0dafe5bca077e0fd61",
+  "sourcePath": "docs/BingMaps/index.yml",
+  "operations": {
+    "GetLocationByAddress": {
+      "operationId": "GetLocationByAddress",
+      "kind": "action",
+      "displayName": "Get location by address",
+      "deprecated": false,
+      "description": "- GetLocationByAddress",
+      "parameters": [
+        {
+          "name": "Address line",
+          "key": "addressLine",
+          "required": false,
+          "type": "string",
+          "description": "A string specifying the street line of an address (not including city, country region, etc)."
+        },
+        {
+          "name": "Locality (City)",
+          "key": "locality",
+          "required": false,
+          "type": "string",
+          "description": "A string that contains the locality, such as a US city."
+        },
+        {
+          "name": "Admin district (State)",
+          "key": "adminDistrict",
+          "required": false,
+          "type": "string",
+          "description": "A string that contains a subdivision, such as the abbreviation of a US state."
+        },
+        {
+          "name": "Postal code",
+          "key": "postalCode",
+          "required": false,
+          "type": "string",
+          "description": "A string that contains the postal code, such as a US ZIP Code."
+        },
+        {
+          "name": "Country region",
+          "key": "countryRegion",
+          "required": false,
+          "type": "string",
+          "description": "A string specifying the ISO country code."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetLocation_Response"
+      }
+    },
+    "GetLocationByPoint": {
+      "operationId": "GetLocationByPoint",
+      "kind": "action",
+      "displayName": "Get location by point",
+      "deprecated": false,
+      "description": "- GetLocationByPoint",
+      "parameters": [
+        {
+          "name": "Point Latitude",
+          "key": "latitude",
+          "required": true,
+          "type": "double",
+          "description": "The latitude coordinate you want to reverse geocode. Example: 47.64054"
+        },
+        {
+          "name": "Point Longitude",
+          "key": "longitude",
+          "required": true,
+          "type": "double",
+          "description": "The longitude coordinate you want to reverse geocode. Example: -122.12934"
+        },
+        {
+          "name": "Include Entity Types",
+          "key": "includeEntityTypes",
+          "required": false,
+          "type": "string",
+          "description": "The entity types that you want to return in the response."
+        },
+        {
+          "name": "Include Neighborhood",
+          "key": "includeNeighborhood",
+          "required": false,
+          "type": "boolean",
+          "description": "A value determining whether or not to include the neighborhood in the response when it is available. 0 or 1"
+        },
+        {
+          "name": "Include Country Code",
+          "key": "include",
+          "required": false,
+          "type": "boolean",
+          "description": "A value determining whether or not to include the two-letter ISO country code. ciso2"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetLocation_Response"
+      }
+    },
+    "GetMap": {
+      "operationId": "GetMap",
+      "kind": "action",
+      "displayName": "Get static map [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetMap",
+      "parameters": [
+        {
+          "name": "Point latitude",
+          "key": "latitude",
+          "required": true,
+          "type": "string",
+          "description": "The latitude coordinate you want to reverse geocode. Example: 47.64054"
+        },
+        {
+          "name": "Point longitude",
+          "key": "longitude",
+          "required": true,
+          "type": "string",
+          "description": "The longitude coordinate you want to reverse geocode. Example: -122.12934"
+        },
+        {
+          "name": "Imagery set",
+          "key": "imagerySet",
+          "required": true,
+          "type": "string",
+          "description": "The type of imagery."
+        },
+        {
+          "name": "Zoom level",
+          "key": "zoomLevel",
+          "required": true,
+          "type": "string",
+          "description": "The level of zoom to display between 0 and 21. Default 10"
+        },
+        {
+          "name": "Image format",
+          "key": "format",
+          "required": false,
+          "type": "string",
+          "description": "The image format to use for the static map."
+        },
+        {
+          "name": "Map size",
+          "key": "mapSize",
+          "required": false,
+          "type": "string",
+          "description": "The width and height in pixels of the static map output. Example: 1000,600."
+        },
+        {
+          "name": "Pushpin",
+          "key": "pushpin",
+          "required": false,
+          "type": "string",
+          "description": "Point value (latitude and longitude) with options to add a label of up to three (3) characters and to specify an icon style. Example: 47.610,-122.107;5;P10 (more information https://aka.ms/u8b8aq)."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- GetMap_Response"
+      }
+    },
+    "GetMapV2": {
+      "operationId": "GetMapV2",
+      "kind": "action",
+      "displayName": "Get static map",
+      "deprecated": false,
+      "description": "- GetMapV2",
+      "parameters": [
+        {
+          "name": "Point latitude",
+          "key": "latitude",
+          "required": true,
+          "type": "double",
+          "description": "The latitude coordinate you want to reverse geocode. Example: 47.64054"
+        },
+        {
+          "name": "Point longitude",
+          "key": "longitude",
+          "required": true,
+          "type": "double",
+          "description": "The longitude coordinate you want to reverse geocode. Example: -122.12934"
+        },
+        {
+          "name": "Imagery set",
+          "key": "imagerySet",
+          "required": true,
+          "type": "string",
+          "description": "The type of imagery."
+        },
+        {
+          "name": "Zoom level",
+          "key": "zoomLevel",
+          "required": true,
+          "type": "string",
+          "description": "The level of zoom to display between 0 and 21. Default 10"
+        },
+        {
+          "name": "Image format",
+          "key": "format",
+          "required": false,
+          "type": "string",
+          "description": "The image format to use for the static map."
+        },
+        {
+          "name": "Map size",
+          "key": "mapSize",
+          "required": false,
+          "type": "string",
+          "description": "The width and height in pixels of the static map output. Example: 1000,600."
+        },
+        {
+          "name": "Pushpin latitude",
+          "key": "pushpinLatitude",
+          "required": false,
+          "type": "double",
+          "description": "Specify pushpin latitude (more information https://aka.ms/u8b8aq)."
+        },
+        {
+          "name": "Pushpin longitude",
+          "key": "pushpinLongitude",
+          "required": false,
+          "type": "double",
+          "description": "Specify pushpin longitude (more information https://aka.ms/u8b8aq)."
+        },
+        {
+          "name": "Pushpin icon style",
+          "key": "pushpinIconStyle",
+          "required": false,
+          "type": "integer",
+          "description": "Specify pushpin icon style (more information https://aka.ms/u8b8aq)."
+        },
+        {
+          "name": "Pushpin label",
+          "key": "pushpinLabel",
+          "required": false,
+          "type": "string",
+          "description": "Specify a label of up to three (3) characters (more information https://aka.ms/u8b8aq)."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- GetMap_Response"
+      }
+    },
+    "GetRoute": {
+      "operationId": "GetRoute",
+      "kind": "action",
+      "displayName": "Get route [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetRoute",
+      "parameters": [
+        {
+          "name": "Waypoint 1",
+          "key": "wp.0",
+          "required": true,
+          "type": "string",
+          "description": "Specified as a point, landmark, or address. (47.610,-122.107 or Seattle, WA)"
+        },
+        {
+          "name": "Waypoint 2",
+          "key": "wp.1",
+          "required": true,
+          "type": "string",
+          "description": "Specified as a point, landmark, or address. (47.610,-122.107 or Seattle, WA)"
+        },
+        {
+          "name": "Avoid",
+          "key": "avoid",
+          "required": false,
+          "type": "string",
+          "description": "A comma-separated list of values from the following list (highways, tolls, minimizeHighways, minimizeTolls)."
+        },
+        {
+          "name": "Optimize",
+          "key": "optimize",
+          "required": false,
+          "type": "string",
+          "description": "Specifies what parameters to use to optimize the route."
+        },
+        {
+          "name": "Distance unit",
+          "key": "distanceUnit",
+          "required": false,
+          "type": "string",
+          "description": "The units to use for distance in the response. Default: Kilometer"
+        },
+        {
+          "name": "Travel mode",
+          "key": "travelMode",
+          "required": false,
+          "type": "string",
+          "description": "The mode of travel for the route. Default: Driving"
+        },
+        {
+          "name": "Transit Date-Time",
+          "key": "dateTime",
+          "required": false,
+          "type": "string",
+          "description": "Required when the travel mode is transit. Identifies the desired transit time, such as arrival time or departure time."
+        },
+        {
+          "name": "Transit Date-Time Type",
+          "key": "timeType",
+          "required": false,
+          "type": "string",
+          "description": "Required when the travel mode is transit. Specifies how to interpret the transit date-time value."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetRoute_Response"
+      }
+    },
+    "GetRouteV2": {
+      "operationId": "GetRouteV2",
+      "kind": "action",
+      "displayName": "Get route [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetRouteV2",
+      "parameters": [
+        {
+          "name": "Waypoint 1",
+          "key": "wp.0",
+          "required": true,
+          "type": "string",
+          "description": "Specified as a point, landmark, or address. (47.610,-122.107 or Seattle, WA)"
+        },
+        {
+          "name": "Waypoint 2",
+          "key": "wp.1",
+          "required": true,
+          "type": "string",
+          "description": "Specified as a point, landmark, or address. (47.610,-122.107 or Seattle, WA)"
+        },
+        {
+          "name": "Avoid highways",
+          "key": "avoid_highways",
+          "required": false,
+          "type": "boolean",
+          "description": "Avoids the use of highways in the route."
+        },
+        {
+          "name": "Avoid tolls",
+          "key": "avoid_tolls",
+          "required": false,
+          "type": "boolean",
+          "description": "Avoids the use of toll roads in the route."
+        },
+        {
+          "name": "Avoid ferries",
+          "key": "avoid_ferry",
+          "required": false,
+          "type": "boolean",
+          "description": "Avoids the use of ferries in the route."
+        },
+        {
+          "name": "Minimize the use of highways",
+          "key": "avoid_minimizeHighways",
+          "required": false,
+          "type": "boolean",
+          "description": "Minimizes (tries to avoid) the use of highways in the route."
+        },
+        {
+          "name": "Minimize the use of toll roads",
+          "key": "avoid_minimizeTolls",
+          "required": false,
+          "type": "boolean",
+          "description": "Minimizes (tries to avoid) the use of toll roads in the route."
+        },
+        {
+          "name": "Avoid crossing country borders",
+          "key": "avoid_borderCrossing",
+          "required": false,
+          "type": "boolean",
+          "description": "Avoids crossing country borders in the route."
+        },
+        {
+          "name": "Optimize",
+          "key": "optimize",
+          "required": false,
+          "type": "string",
+          "description": "Specifies what parameters to use to optimize the route."
+        },
+        {
+          "name": "Distance unit",
+          "key": "distanceUnit",
+          "required": false,
+          "type": "string",
+          "description": "The units to use for distance in the response. Default: Kilometer"
+        },
+        {
+          "name": "Travel mode",
+          "key": "travelMode",
+          "required": false,
+          "type": "string",
+          "description": "The mode of travel for the route. Default: Driving"
+        },
+        {
+          "name": "Transit Date-Time",
+          "key": "dateTime",
+          "required": false,
+          "type": "string",
+          "description": "Required when the travel mode is transit. Identifies the desired transit time, such as arrival time or departure time."
+        },
+        {
+          "name": "Transit Date-Time Type",
+          "key": "timeType",
+          "required": false,
+          "type": "string",
+          "description": "Required when the travel mode is transit. Specifies how to interpret the transit date-time value."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetRoute_Response"
+      }
+    },
+    "GetRouteV3": {
+      "operationId": "GetRouteV3",
+      "kind": "action",
+      "displayName": "Get route",
+      "deprecated": false,
+      "description": "- GetRouteV3",
+      "parameters": [
+        {
+          "name": "Waypoint 1",
+          "key": "wp.0",
+          "required": true,
+          "type": "string",
+          "description": "Specified as a point, landmark, or address. (47.610,-122.107 or Seattle, WA)"
+        },
+        {
+          "name": "Waypoint 2",
+          "key": "wp.1",
+          "required": true,
+          "type": "string",
+          "description": "Specified as a point, landmark, or address. (47.610,-122.107 or Seattle, WA)"
+        },
+        {
+          "name": "Avoid highways",
+          "key": "avoid_highways",
+          "required": false,
+          "type": "boolean",
+          "description": "Avoids the use of highways in the route."
+        },
+        {
+          "name": "Avoid tolls",
+          "key": "avoid_tolls",
+          "required": false,
+          "type": "boolean",
+          "description": "Avoids the use of toll roads in the route."
+        },
+        {
+          "name": "Avoid ferries",
+          "key": "avoid_ferry",
+          "required": false,
+          "type": "boolean",
+          "description": "Avoids the use of ferries in the route."
+        },
+        {
+          "name": "Minimize the use of highways",
+          "key": "avoid_minimizeHighways",
+          "required": false,
+          "type": "boolean",
+          "description": "Minimizes (tries to avoid) the use of highways in the route."
+        },
+        {
+          "name": "Minimize the use of toll roads",
+          "key": "avoid_minimizeTolls",
+          "required": false,
+          "type": "boolean",
+          "description": "Minimizes (tries to avoid) the use of toll roads in the route."
+        },
+        {
+          "name": "Avoid crossing country borders",
+          "key": "avoid_borderCrossing",
+          "required": false,
+          "type": "boolean",
+          "description": "Avoids crossing country borders in the route."
+        },
+        {
+          "name": "Optimize",
+          "key": "optimize",
+          "required": false,
+          "type": "string",
+          "description": "Specifies what parameters to use to optimize the route."
+        },
+        {
+          "name": "Distance unit",
+          "key": "distanceUnit",
+          "required": false,
+          "type": "string",
+          "description": "The units to use for distance in the response. Default: Kilometer"
+        },
+        {
+          "name": "Travel mode",
+          "key": "travelMode",
+          "required": true,
+          "type": "string",
+          "description": "The mode of travel for the route. Default: Driving"
+        },
+        {
+          "name": "Transit Date-Time",
+          "key": "dateTime",
+          "required": false,
+          "type": "string",
+          "description": "Required when the travel mode is transit. Identifies the desired transit time, such as arrival time or departure time."
+        },
+        {
+          "name": "Transit Date-Time Type",
+          "key": "timeType",
+          "required": false,
+          "type": "string",
+          "description": "Required when the travel mode is transit. Specifies how to interpret the transit date-time value."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetRoute_Response"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

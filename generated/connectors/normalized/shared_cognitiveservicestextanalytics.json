@@ -1,0 +1,2329 @@
+{
+  "connectorId": "shared_cognitiveservicestextanalytics",
+  "displayName": "Azure Cognitive Service for Language",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/cognitiveservicestextanalytics/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-04-09T19:04:00.0000000Z",
+  "sourceGitCommit": "f7be96830f27ff20c9beaa60e4be74378750ef16",
+  "sourcePath": "docs/CognitiveServicesTextAnalytics/index.yml",
+  "operations": {
+    "AnalyzeConversationSummarization_SubmitJob": {
+      "operationId": "AnalyzeConversationSummarization_SubmitJob",
+      "kind": "action",
+      "displayName": "Async Conversation Summarization (2022-05-15-preview)",
+      "deprecated": false,
+      "description": "- AnalyzeConversationSummarization_SubmitJob",
+      "parameters": [
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The ID of a conversation item."
+        },
+        {
+          "name": "participantId",
+          "key": "participantId",
+          "required": true,
+          "type": "string",
+          "description": "The participant ID of a conversation item."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "The override language of a conversation item in BCP 47 language representation."
+        },
+        {
+          "name": "role",
+          "key": "role",
+          "required": false,
+          "type": "string",
+          "description": "The role of the participant."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The text input"
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": true,
+          "type": "string",
+          "description": "The language of the conversation item in BCP-47 format."
+        },
+        {
+          "name": "domain",
+          "key": "domain",
+          "required": false,
+          "type": "string",
+          "description": "Enumeration of supported conversational domains."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "summaryAspects",
+          "key": "summaryAspects",
+          "required": true,
+          "type": "array of string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "Contains the status of the analyze conversations job submitted along with related statistics.\n- Body\n- AnalyzeConversationSummarizationJobState"
+      }
+    },
+    "AnalyzeConversationText_SubmitJob": {
+      "operationId": "AnalyzeConversationText_SubmitJob",
+      "kind": "action",
+      "displayName": "Async Conversation PII (text) (2022-05-15-preview)",
+      "deprecated": false,
+      "description": "- AnalyzeConversationText_SubmitJob",
+      "parameters": [
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The ID of a conversation item."
+        },
+        {
+          "name": "participantId",
+          "key": "participantId",
+          "required": true,
+          "type": "string",
+          "description": "The participant ID of a conversation item."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "The override language of a conversation item in BCP 47 language representation."
+        },
+        {
+          "name": "role",
+          "key": "role",
+          "required": false,
+          "type": "string",
+          "description": "The role of the participant."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The text input"
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": true,
+          "type": "string",
+          "description": "The language of the conversation item in BCP-47 format."
+        },
+        {
+          "name": "domain",
+          "key": "domain",
+          "required": false,
+          "type": "string",
+          "description": "Enumeration of supported conversational domains."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "piiCategories",
+          "key": "piiCategories",
+          "required": false,
+          "type": "array of string",
+          "description": "Describes the PII categories to return for detection. If not provided, 'default' categories will be returned which will vary with the language."
+        }
+      ],
+      "returns": {
+        "raw": "Contains the status of the analyze conversations job submitted along with related statistics.\n- Body\n- ConversationalPIITextJobState"
+      }
+    },
+    "AnalyzeConversationTranscript_SubmitJob": {
+      "operationId": "AnalyzeConversationTranscript_SubmitJob",
+      "kind": "action",
+      "displayName": "Async Conversation PII (transcript) (2022-05-15-preview)",
+      "deprecated": false,
+      "description": "- AnalyzeConversationTranscript_SubmitJob",
+      "parameters": [
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The ID of a conversation item."
+        },
+        {
+          "name": "participantId",
+          "key": "participantId",
+          "required": true,
+          "type": "string",
+          "description": "The participant ID of a conversation item."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "The override language of a conversation item in BCP 47 language representation."
+        },
+        {
+          "name": "role",
+          "key": "role",
+          "required": false,
+          "type": "string",
+          "description": "The role of the participant."
+        },
+        {
+          "name": "itn",
+          "key": "itn",
+          "required": false,
+          "type": "string",
+          "description": "Inverse Text Normalization representation of input. The inverse-text-normalized form is the recognized text from Microsoft’s Speech to Text API, with phone numbers, numbers, abbreviations, and other transformations applied."
+        },
+        {
+          "name": "maskedItn",
+          "key": "maskedItn",
+          "required": false,
+          "type": "string",
+          "description": "The Inverse Text Normalized format with profanity masking applied."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": false,
+          "type": "string",
+          "description": "The display form of the recognized text from speech to text API, with punctuation and capitalization added."
+        },
+        {
+          "name": "lexical",
+          "key": "lexical",
+          "required": false,
+          "type": "string",
+          "description": "The lexical form of the recognized text from speech to text API with the actual words recognized."
+        },
+        {
+          "name": "word",
+          "key": "word",
+          "required": false,
+          "type": "string",
+          "description": "The word recognized."
+        },
+        {
+          "name": "offset",
+          "key": "offset",
+          "required": false,
+          "type": "integer",
+          "description": "Offset from start of speech audio, in ticks. 1 tick = 100 ns."
+        },
+        {
+          "name": "duration",
+          "key": "duration",
+          "required": false,
+          "type": "integer",
+          "description": "Duration of word articulation, in ticks. 1 tick = 100 ns."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": true,
+          "type": "string",
+          "description": "The language of the conversation item in BCP-47 format."
+        },
+        {
+          "name": "domain",
+          "key": "domain",
+          "required": false,
+          "type": "string",
+          "description": "Enumeration of supported conversational domains."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "piiCategories",
+          "key": "piiCategories",
+          "required": false,
+          "type": "array of string",
+          "description": "Describes the PII categories to return for detection. If not provided, 'default' categories will be returned which will vary with the language."
+        },
+        {
+          "name": "includeAudioRedaction",
+          "key": "includeAudioRedaction",
+          "required": false,
+          "type": "boolean",
+          "description": "Flag to indicate if audio redaction is requested. By default audio redaction will not be performed."
+        },
+        {
+          "name": "redactionSource",
+          "key": "redactionSource",
+          "required": false,
+          "type": "string",
+          "description": "Enumeration of supported transcript content types."
+        }
+      ],
+      "returns": {
+        "raw": "Contains the status of the analyze conversations job submitted along with related statistics.\n- Body\n- ConversationalPIITranscriptJobState"
+      }
+    },
+    "AnalyzeText_SubmitJob_AbstractiveSummarization": {
+      "operationId": "AnalyzeText_SubmitJob_AbstractiveSummarization",
+      "kind": "action",
+      "displayName": "Async AbstractiveSummarization (2022-10-01-preview)",
+      "deprecated": false,
+      "description": "- AnalyzeText_SubmitJob_AbstractiveSummarization",
+      "parameters": [
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        },
+        {
+          "name": "sentenceCount",
+          "key": "sentenceCount",
+          "required": false,
+          "type": "integer",
+          "description": "It controls the approximate number of sentences in the output summaries."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageAnalyzeTextJobState_AbstractiveSummarization"
+      }
+    },
+    "AnalyzeText_SubmitJob_CustomEntityRecognition": {
+      "operationId": "AnalyzeText_SubmitJob_CustomEntityRecognition",
+      "kind": "action",
+      "displayName": "Async CustomEntityRecognition (2022-05-01)",
+      "deprecated": false,
+      "description": "- AnalyzeText_SubmitJob_CustomEntityRecognition",
+      "parameters": [
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        },
+        {
+          "name": "projectName",
+          "key": "projectName",
+          "required": true,
+          "type": "string",
+          "description": "This field indicates the project name for the model."
+        },
+        {
+          "name": "deploymentName",
+          "key": "deploymentName",
+          "required": true,
+          "type": "string",
+          "description": "This field indicates the deployment name for the model."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageAnalyzeTextJobState_CNER"
+      }
+    },
+    "AnalyzeText_SubmitJob_CustomMultiClassification": {
+      "operationId": "AnalyzeText_SubmitJob_CustomMultiClassification",
+      "kind": "action",
+      "displayName": "Async CustomMultiLabelClassification (2022-05-01)",
+      "deprecated": false,
+      "description": "- AnalyzeText_SubmitJob_CustomMultiClassification",
+      "parameters": [
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        },
+        {
+          "name": "projectName",
+          "key": "projectName",
+          "required": true,
+          "type": "string",
+          "description": "This field indicates the project name for the model."
+        },
+        {
+          "name": "deploymentName",
+          "key": "deploymentName",
+          "required": true,
+          "type": "string",
+          "description": "This field indicates the deployment name for the model."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageAnalyzeTextJobState_CMLC"
+      }
+    },
+    "AnalyzeText_SubmitJob_CustomSingleClassification": {
+      "operationId": "AnalyzeText_SubmitJob_CustomSingleClassification",
+      "kind": "action",
+      "displayName": "Async CustomSingleLabelClassification (2022-05-01)",
+      "deprecated": false,
+      "description": "- AnalyzeText_SubmitJob_CustomSingleClassification",
+      "parameters": [
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        },
+        {
+          "name": "projectName",
+          "key": "projectName",
+          "required": true,
+          "type": "string",
+          "description": "This field indicates the project name for the model."
+        },
+        {
+          "name": "deploymentName",
+          "key": "deploymentName",
+          "required": true,
+          "type": "string",
+          "description": "This field indicates the deployment name for the model."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageAnalyzeTextJobState_CSLC"
+      }
+    },
+    "AnalyzeText_SubmitJob_EntityLinking": {
+      "operationId": "AnalyzeText_SubmitJob_EntityLinking",
+      "kind": "action",
+      "displayName": "Async EntityLinking (2022-05-01)",
+      "deprecated": false,
+      "description": "- AnalyzeText_SubmitJob_EntityLinking",
+      "parameters": [
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageAnalyzeTextJobState_EntityLinking"
+      }
+    },
+    "AnalyzeText_SubmitJob_EntityRecognition": {
+      "operationId": "AnalyzeText_SubmitJob_EntityRecognition",
+      "kind": "action",
+      "displayName": "Async EntityRecognition (2022-05-01)",
+      "deprecated": false,
+      "description": "- AnalyzeText_SubmitJob_EntityRecognition",
+      "parameters": [
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageAnalyzeTextJobState_Entites"
+      }
+    },
+    "AnalyzeText_SubmitJob_ExtractiveSummarization": {
+      "operationId": "AnalyzeText_SubmitJob_ExtractiveSummarization",
+      "kind": "action",
+      "displayName": "Async ExtractiveSummarization (2022-10-01-preview)",
+      "deprecated": false,
+      "description": "- AnalyzeText_SubmitJob_ExtractiveSummarization",
+      "parameters": [
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        },
+        {
+          "name": "sentenceCount",
+          "key": "sentenceCount",
+          "required": false,
+          "type": "integer",
+          "description": ""
+        },
+        {
+          "name": "sortBy",
+          "key": "sortBy",
+          "required": false,
+          "type": "string",
+          "description": "The sorting criteria to use for the results of Extractive Summarization."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageAnalyzeTextJobState_ExtractiveSummarization"
+      }
+    },
+    "AnalyzeText_SubmitJob_HealthCare": {
+      "operationId": "AnalyzeText_SubmitJob_HealthCare",
+      "kind": "action",
+      "displayName": "Async Healthcare (2022-05-01)",
+      "deprecated": false,
+      "description": "- AnalyzeText_SubmitJob_HealthCare",
+      "parameters": [
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageAnalyzeTextJobState_HealthCare"
+      }
+    },
+    "AnalyzeText_SubmitJob_PersonalEntityRecognition": {
+      "operationId": "AnalyzeText_SubmitJob_PersonalEntityRecognition",
+      "kind": "action",
+      "displayName": "Async PiiEntityRecognition (2022-05-01)",
+      "deprecated": false,
+      "description": "- AnalyzeText_SubmitJob_PersonalEntityRecognition",
+      "parameters": [
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        },
+        {
+          "name": "domain",
+          "key": "domain",
+          "required": false,
+          "type": "string",
+          "description": "The PII domain used for PII Entity Recognition."
+        },
+        {
+          "name": "piiCategories",
+          "key": "piiCategories",
+          "required": false,
+          "type": "array of string",
+          "description": "(Optional) describes the PII categories to return"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageAnalyzeTextJobState_Pii"
+      }
+    },
+    "AnalyzeText_SubmitJob_SentimentAnalysis": {
+      "operationId": "AnalyzeText_SubmitJob_SentimentAnalysis",
+      "kind": "action",
+      "displayName": "Async SentimentAnalysis (2022-05-01)",
+      "deprecated": false,
+      "description": "- AnalyzeText_SubmitJob_SentimentAnalysis",
+      "parameters": [
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        },
+        {
+          "name": "opinionMining",
+          "key": "opinionMining",
+          "required": false,
+          "type": "boolean",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageAnalyzeTextJobState_Sentiment"
+      }
+    },
+    "AnalyzeText_SubmitJob_keyPhraseExtraction": {
+      "operationId": "AnalyzeText_SubmitJob_keyPhraseExtraction",
+      "kind": "action",
+      "displayName": "Async KeyPhrases (2022-05-01)",
+      "deprecated": false,
+      "description": "- AnalyzeText_SubmitJob_keyPhraseExtraction",
+      "parameters": [
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageAnalyzeTextJobState_KPE"
+      }
+    },
+    "ConversationAnalysis_AnalyzeConversation_Conversation": {
+      "operationId": "ConversationAnalysis_AnalyzeConversation_Conversation",
+      "kind": "action",
+      "displayName": "Conversations (CLU) (2022-05-01)",
+      "deprecated": false,
+      "description": "- ConversationAnalysis_AnalyzeConversation_Conversation",
+      "parameters": [
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "The override language of a conversation item in BCP 47 language representation."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The text input"
+        },
+        {
+          "name": "projectName",
+          "key": "projectName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project to use."
+        },
+        {
+          "name": "deploymentName",
+          "key": "deploymentName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the deployment to use."
+        },
+        {
+          "name": "verbose",
+          "key": "verbose",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, the service will return more detailed information in the response."
+        }
+      ],
+      "returns": {
+        "raw": "The results of a Conversation task.\n- Body\n- ConversationalTaskResult"
+      }
+    },
+    "ConversationAnalysis_AnalyzeConversation_Orchestration": {
+      "operationId": "ConversationAnalysis_AnalyzeConversation_Orchestration",
+      "kind": "action",
+      "displayName": "Conversations (Orchestration) (2022-05-01)",
+      "deprecated": false,
+      "description": "- ConversationAnalysis_AnalyzeConversation_Orchestration",
+      "parameters": [
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "The override language of a conversation item in BCP 47 language representation."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The text input"
+        },
+        {
+          "name": "projectName",
+          "key": "projectName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project to use."
+        },
+        {
+          "name": "deploymentName",
+          "key": "deploymentName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the deployment to use."
+        },
+        {
+          "name": "verbose",
+          "key": "verbose",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, the service will return more detailed information in the response."
+        },
+        {
+          "name": "directTarget",
+          "key": "directTarget",
+          "required": false,
+          "type": "string",
+          "description": "The name of a target project to forward the request to."
+        },
+        {
+          "name": "targetProjectParameters",
+          "key": "targetProjectParameters",
+          "required": false,
+          "type": "object",
+          "description": "A dictionary representing the parameters for each target project."
+        }
+      ],
+      "returns": {
+        "raw": "The results of a Conversation task.\n- Body\n- ConversationalTaskResult_Orchestration"
+      }
+    },
+    "DetectEntities": {
+      "operationId": "DetectEntities",
+      "kind": "action",
+      "displayName": "Entities [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DetectEntities",
+      "parameters": [
+        {
+          "name": "Text",
+          "key": "text",
+          "required": false,
+          "type": "string",
+          "description": "The text to analyze."
+        },
+        {
+          "name": "Language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc.,"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EntitiesResult"
+      }
+    },
+    "DetectEntitiesV2": {
+      "operationId": "DetectEntitiesV2",
+      "kind": "action",
+      "displayName": "Detect Entities (V2) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DetectEntitiesV2",
+      "parameters": [
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique, non-empty document identifier."
+        },
+        {
+          "name": "Text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The text to analyze."
+        },
+        {
+          "name": "Language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc.,"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EntitiesResults"
+      }
+    },
+    "DetectLanguage": {
+      "operationId": "DetectLanguage",
+      "kind": "action",
+      "displayName": "Detect Language [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DetectLanguage",
+      "parameters": [
+        {
+          "name": "Text",
+          "key": "text",
+          "required": false,
+          "type": "string",
+          "description": "The text to analyze."
+        },
+        {
+          "name": "Number of languages",
+          "key": "numberOfLanguagesToDetect",
+          "required": false,
+          "type": "integer",
+          "description": "The number of languages to detect. Set to 1 by default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageResult"
+      }
+    },
+    "DetectLanguageV2": {
+      "operationId": "DetectLanguageV2",
+      "kind": "action",
+      "displayName": "Detect Language [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DetectLanguageV2",
+      "parameters": [
+        {
+          "name": "Text",
+          "key": "text",
+          "required": false,
+          "type": "string",
+          "description": "The text to analyze."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageResult"
+      }
+    },
+    "DetectLanguageV3": {
+      "operationId": "DetectLanguageV3",
+      "kind": "action",
+      "displayName": "Detect Language (V2) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DetectLanguageV3",
+      "parameters": [
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique, non-empty document identifier."
+        },
+        {
+          "name": "Text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The text to analyze."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageResults"
+      }
+    },
+    "DetectSentiment": {
+      "operationId": "DetectSentiment",
+      "kind": "action",
+      "displayName": "Detect Sentiment [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DetectSentiment",
+      "parameters": [
+        {
+          "name": "Text",
+          "key": "text",
+          "required": false,
+          "type": "string",
+          "description": "The text to analyze."
+        },
+        {
+          "name": "Language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc.,"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- SentimentResult"
+      }
+    },
+    "DetectSentimentV2": {
+      "operationId": "DetectSentimentV2",
+      "kind": "action",
+      "displayName": "Detect Sentiment [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DetectSentimentV2",
+      "parameters": [
+        {
+          "name": "Text",
+          "key": "text",
+          "required": false,
+          "type": "string",
+          "description": "The text to analyze."
+        },
+        {
+          "name": "Language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc.,"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- SentimentResult"
+      }
+    },
+    "DetectSentimentV3": {
+      "operationId": "DetectSentimentV3",
+      "kind": "action",
+      "displayName": "Detect Sentiment (V2) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DetectSentimentV3",
+      "parameters": [
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique, non-empty document identifier."
+        },
+        {
+          "name": "Text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The text to analyze."
+        },
+        {
+          "name": "Language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc.,"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- SentimentResults"
+      }
+    },
+    "EntitiesLinkingV3": {
+      "operationId": "EntitiesLinkingV3",
+      "kind": "action",
+      "displayName": "Entity Linking (V3.0)",
+      "deprecated": false,
+      "description": "- EntitiesLinkingV3",
+      "parameters": [
+        {
+          "name": "Model Version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "Show Statistics",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain input and document level statistics."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EntityLinkingResult"
+      }
+    },
+    "EntitiesLinkingV3_1": {
+      "operationId": "EntitiesLinkingV3_1",
+      "kind": "action",
+      "displayName": "Entity Linking (V3.1) (Preview)",
+      "deprecated": false,
+      "description": "- EntitiesLinkingV3_1",
+      "parameters": [
+        {
+          "name": "model-version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "showStats",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain request and document level statistics."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) If set to true, you opt-out of having your text input logged for troubleshooting. By default, Azure Cognitive Service for Language logs your input text for 48 hours, solely to allow for troubleshooting issues in providing you with the Azure Cognitive Service for Language natural language processing functions. Setting this parameter to true, disables input logging and may limit our ability to remediate issues that occur. Please see Cognitive Services Compliance and Privacy notes at https://aka.ms/cs-compliance for additional details, and Microsoft Responsible AI principles at https://www.microsoft.com/en-us/ai/responsible-ai."
+        },
+        {
+          "name": "stringIndexType",
+          "key": "stringIndexType",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) Specifies the method used to interpret string offsets. Defaults to Text Elements (Graphemes) according to Unicode v8.0.0. For additional information see https://aka.ms/text-analytics-offsets"
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EntityLinkingResult"
+      }
+    },
+    "EntitiesLinkingV4": {
+      "operationId": "EntitiesLinkingV4",
+      "kind": "action",
+      "displayName": "Entity Linking (V4) (Preview)",
+      "deprecated": false,
+      "description": "- EntitiesLinkingV4",
+      "parameters": [
+        {
+          "name": "Resource Subdomain or Region",
+          "key": "subdomain",
+          "required": true,
+          "type": "string",
+          "description": "Azure subdomain or geographic region (e.g. westus)"
+        },
+        {
+          "name": "model-version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "showStats",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain request and document level statistics."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) If set to true, you opt-out of having your text input logged for troubleshooting. By default, Azure Cognitive Service for Language logs your input text for 48 hours, solely to allow for troubleshooting issues in providing you with the Azure Cognitive Service for Language natural language processing functions. Setting this parameter to true, disables input logging and may limit our ability to remediate issues that occur. Please see Cognitive Services Compliance and Privacy notes at https://aka.ms/cs-compliance for additional details, and Microsoft Responsible AI principles at https://www.microsoft.com/en-us/ai/responsible-ai."
+        },
+        {
+          "name": "stringIndexType",
+          "key": "stringIndexType",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) Specifies the method used to interpret string offsets. Defaults to Text Elements (Graphemes) according to Unicode v8.0.0. For additional information see https://aka.ms/text-analytics-offsets"
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EntityLinkingResult"
+      }
+    },
+    "EntitiesRecognitionGeneralV3": {
+      "operationId": "EntitiesRecognitionGeneralV3",
+      "kind": "action",
+      "displayName": "Named Entity Recognition (V3.0)",
+      "deprecated": false,
+      "description": "- EntitiesRecognitionGeneralV3",
+      "parameters": [
+        {
+          "name": "Model Version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "Show Statistics",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain input and document level statistics."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EntitiesResultV3"
+      }
+    },
+    "EntitiesRecognitionGeneralV3_1": {
+      "operationId": "EntitiesRecognitionGeneralV3_1",
+      "kind": "action",
+      "displayName": "Named Entity Recognition (V3.1) (Preview)",
+      "deprecated": false,
+      "description": "- EntitiesRecognitionGeneralV3_1",
+      "parameters": [
+        {
+          "name": "model-version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "showStats",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain request and document level statistics."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) If set to true, you opt-out of having your text input logged for troubleshooting. By default, Azure Cognitive Service for Language logs your input text for 48 hours, solely to allow for troubleshooting issues in providing you with the Azure Cognitive Service for Language natural language processing functions. Setting this parameter to true, disables input logging and may limit our ability to remediate issues that occur. Please see Cognitive Services Compliance and Privacy notes at https://aka.ms/cs-compliance for additional details, and Microsoft Responsible AI principles at https://www.microsoft.com/en-us/ai/responsible-ai."
+        },
+        {
+          "name": "stringIndexType",
+          "key": "stringIndexType",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) Specifies the method used to interpret string offsets. Defaults to Text Elements (Graphemes) according to Unicode v8.0.0. For additional information see https://aka.ms/text-analytics-offsets"
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EntitiesResult"
+      }
+    },
+    "EntitiesRecognitionGeneralV4": {
+      "operationId": "EntitiesRecognitionGeneralV4",
+      "kind": "action",
+      "displayName": "Named Entity Recognition (V4) (Preview)",
+      "deprecated": false,
+      "description": "- EntitiesRecognitionGeneralV4",
+      "parameters": [
+        {
+          "name": "Resource Subdomain or Region",
+          "key": "subdomain",
+          "required": true,
+          "type": "string",
+          "description": "Azure subdomain or geographic region (e.g. westus)"
+        },
+        {
+          "name": "model-version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "showStats",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain request and document level statistics."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) If set to true, you opt-out of having your text input logged for troubleshooting. By default, Azure Cognitive Service for Language logs your input text for 48 hours, solely to allow for troubleshooting issues in providing you with the Azure Cognitive Service for Language natural language processing functions. Setting this parameter to true, disables input logging and may limit our ability to remediate issues that occur. Please see Cognitive Services Compliance and Privacy notes at https://aka.ms/cs-compliance for additional details, and Microsoft Responsible AI principles at https://www.microsoft.com/en-us/ai/responsible-ai."
+        },
+        {
+          "name": "stringIndexType",
+          "key": "stringIndexType",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) Specifies the method used to interpret string offsets. Defaults to Text Elements (Graphemes) according to Unicode v8.0.0. For additional information see https://aka.ms/text-analytics-offsets"
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EntitiesResult"
+      }
+    },
+    "EntitiesRecognitionPIIV3_1": {
+      "operationId": "EntitiesRecognitionPIIV3_1",
+      "kind": "action",
+      "displayName": "Detect Personal Information (V3.1)",
+      "deprecated": false,
+      "description": "- EntitiesRecognitionPIIV3_1",
+      "parameters": [
+        {
+          "name": "model-version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "showStats",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain request and document level statistics."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) If set to true, you opt-out of having your text input logged for troubleshooting. By default, Azure Cognitive Service for Language logs your input text for 48 hours, solely to allow for troubleshooting issues in providing you with the Azure Cognitive Service for Language natural language processing functions. Setting this parameter to true, disables input logging and may limit our ability to remediate issues that occur. Please see Cognitive Services Compliance and Privacy notes at https://aka.ms/cs-compliance for additional details, and Microsoft Responsible AI principles at https://www.microsoft.com/en-us/ai/responsible-ai."
+        },
+        {
+          "name": "domain",
+          "key": "domain",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) if specified, will set the PII domain to include only a subset of the entity categories. Possible values include: 'PHI', 'none'."
+        },
+        {
+          "name": "stringIndexType",
+          "key": "stringIndexType",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) Specifies the method used to interpret string offsets. Defaults to Text Elements (Graphemes) according to Unicode v8.0.0. For additional information see https://aka.ms/text-analytics-offsets"
+        },
+        {
+          "name": "piiCategories",
+          "key": "piiCategories",
+          "required": false,
+          "type": "array",
+          "description": "(Optional) describes the PII categories to return"
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- PiiResult"
+      }
+    },
+    "EntitiesRecognitionPIIV4": {
+      "operationId": "EntitiesRecognitionPIIV4",
+      "kind": "action",
+      "displayName": "Detect Personal Information (V4) (Preview)",
+      "deprecated": false,
+      "description": "- EntitiesRecognitionPIIV4",
+      "parameters": [
+        {
+          "name": "Resource Subdomain or Region",
+          "key": "subdomain",
+          "required": true,
+          "type": "string",
+          "description": "Azure subdomain or geographic region (e.g. westus)"
+        },
+        {
+          "name": "model-version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "showStats",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain request and document level statistics."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) If set to true, you opt-out of having your text input logged for troubleshooting. By default, Azure Cognitive Service for Language logs your input text for 48 hours, solely to allow for troubleshooting issues in providing you with the Azure Cognitive Service for Language natural language processing functions. Setting this parameter to true, disables input logging and may limit our ability to remediate issues that occur. Please see Cognitive Services Compliance and Privacy notes at https://aka.ms/cs-compliance for additional details, and Microsoft Responsible AI principles at https://www.microsoft.com/en-us/ai/responsible-ai."
+        },
+        {
+          "name": "domain",
+          "key": "domain",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) if specified, will set the PII domain to include only a subset of the entity categories. Possible values include: 'PHI', 'none'."
+        },
+        {
+          "name": "stringIndexType",
+          "key": "stringIndexType",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) Specifies the method used to interpret string offsets. Defaults to Text Elements (Graphemes) according to Unicode v8.0.0. For additional information see https://aka.ms/text-analytics-offsets"
+        },
+        {
+          "name": "piiCategories",
+          "key": "piiCategories",
+          "required": false,
+          "type": "array",
+          "description": "(Optional) describes the PII categories to return"
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- PiiResult"
+      }
+    },
+    "GenerateAnswer": {
+      "operationId": "GenerateAnswer",
+      "kind": "action",
+      "displayName": "Generate answer from Project",
+      "deprecated": false,
+      "description": "- GenerateAnswer",
+      "parameters": [
+        {
+          "name": "Project Name",
+          "key": "projectName",
+          "required": true,
+          "type": "string",
+          "description": "This is the Project name you want to use."
+        },
+        {
+          "name": "Question",
+          "key": "question",
+          "required": false,
+          "type": "string",
+          "description": "User question to query against the project."
+        },
+        {
+          "name": "User ID",
+          "key": "userId",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for the user."
+        },
+        {
+          "name": "Top #",
+          "key": "top",
+          "required": false,
+          "type": "integer",
+          "description": "Maximum number of answers to be returned for the question."
+        },
+        {
+          "name": "Confidence Threshold",
+          "key": "confidenceScoreThreshold",
+          "required": false,
+          "type": "float",
+          "description": "Minimum threshold score for answers. Value ranges from 0 to 1."
+        },
+        {
+          "name": "Ranker type",
+          "key": "rankerType",
+          "required": false,
+          "type": "string",
+          "description": "Type of ranker to be used."
+        },
+        {
+          "name": "QnA ID",
+          "key": "qnaId",
+          "required": false,
+          "type": "string",
+          "description": "This is the exact QnA ID to fetch from project."
+        },
+        {
+          "name": "Previous QnA ID",
+          "key": "previousQnaId",
+          "required": false,
+          "type": "integer",
+          "description": "Previous turn top answer result QnA ID."
+        },
+        {
+          "name": "Previous User Query",
+          "key": "previousUserQuery",
+          "required": false,
+          "type": "string",
+          "description": "Previous user query."
+        },
+        {
+          "name": "key",
+          "key": "key",
+          "required": false,
+          "type": "string",
+          "description": "Metadata Key from Metadata dictionary used in the QnA."
+        },
+        {
+          "name": "value",
+          "key": "value",
+          "required": false,
+          "type": "string",
+          "description": "Metadata Value from Metadata dictionary used in the QnA."
+        },
+        {
+          "name": "Join Metadata with",
+          "key": "logicalOperation",
+          "required": false,
+          "type": "string",
+          "description": "Set 'OR' or 'AND' for corresponding logical operation for metadata filters."
+        },
+        {
+          "name": "Source Filter",
+          "key": "sourceFilter",
+          "required": false,
+          "type": "string",
+          "description": "Find QnAs that are associated with any of the given list of sources in project."
+        },
+        {
+          "name": "Join Filters with",
+          "key": "logicalOperation",
+          "required": false,
+          "type": "string",
+          "description": "Logical operation used to join metadata filter with source filter."
+        },
+        {
+          "name": "Enable precise answer",
+          "key": "enable",
+          "required": false,
+          "type": "boolean",
+          "description": "Enable or disable Answer Span prediction."
+        },
+        {
+          "name": "Confidence Threshold",
+          "key": "confidenceScoreThreshold",
+          "required": false,
+          "type": "float",
+          "description": "Minimum threshold score required to include a precise answer, value ranges from 0 to 1."
+        },
+        {
+          "name": "Top #",
+          "key": "topAnswersWithSpan",
+          "required": false,
+          "type": "integer",
+          "description": "Number of Top answers to be considered for precise answer prediction from 1 to 10."
+        },
+        {
+          "name": "Include Unstructured Sources",
+          "key": "includeUnstructuredSources",
+          "required": false,
+          "type": "boolean",
+          "description": "Flag to enable query over unstructured sources."
+        },
+        {
+          "name": "Deployment Name",
+          "key": "deploymentName",
+          "required": true,
+          "type": "string",
+          "description": "This is the specific deployment of the project you want to use."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "This is the Client API version."
+        }
+      ],
+      "returns": {
+        "raw": "Represents List of Question Answers.\n- Body\n- AnswersResult"
+      }
+    },
+    "KeyPhraseV3": {
+      "operationId": "KeyPhraseV3",
+      "kind": "action",
+      "displayName": "Key Phrases (V3.0)",
+      "deprecated": false,
+      "description": "- KeyPhraseV3",
+      "parameters": [
+        {
+          "name": "Model Version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "Show Statistics",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain input and document level statistics."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- KeyPhraseResultV3"
+      }
+    },
+    "KeyPhraseV3_1": {
+      "operationId": "KeyPhraseV3_1",
+      "kind": "action",
+      "displayName": "Key Phrases (V3.1) (Preview)",
+      "deprecated": false,
+      "description": "- KeyPhraseV3_1",
+      "parameters": [
+        {
+          "name": "model-version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "showStats",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain request and document level statistics."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) If set to true, you opt-out of having your text input logged for troubleshooting. By default, Azure Cognitive Service for Language logs your input text for 48 hours, solely to allow for troubleshooting issues in providing you with the Azure Cognitive Service for Language natural language processing functions. Setting this parameter to true, disables input logging and may limit our ability to remediate issues that occur. Please see Cognitive Services Compliance and Privacy notes at https://aka.ms/cs-compliance for additional details, and Microsoft Responsible AI principles at https://www.microsoft.com/en-us/ai/responsible-ai."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- KeyPhraseResult"
+      }
+    },
+    "KeyPhraseV4": {
+      "operationId": "KeyPhraseV4",
+      "kind": "action",
+      "displayName": "Key Phrases (V4) (Preview)",
+      "deprecated": false,
+      "description": "- KeyPhraseV4",
+      "parameters": [
+        {
+          "name": "Resource Subdomain or Region",
+          "key": "subdomain",
+          "required": true,
+          "type": "string",
+          "description": "Azure subdomain or geographic region (e.g. westus)"
+        },
+        {
+          "name": "model-version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "showStats",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain request and document level statistics."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) If set to true, you opt-out of having your text input logged for troubleshooting. By default, Azure Cognitive Service for Language logs your input text for 48 hours, solely to allow for troubleshooting issues in providing you with the Azure Cognitive Service for Language natural language processing functions. Setting this parameter to true, disables input logging and may limit our ability to remediate issues that occur. Please see Cognitive Services Compliance and Privacy notes at https://aka.ms/cs-compliance for additional details, and Microsoft Responsible AI principles at https://www.microsoft.com/en-us/ai/responsible-ai."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- KeyPhraseResult"
+      }
+    },
+    "KeyPhrases": {
+      "operationId": "KeyPhrases",
+      "kind": "action",
+      "displayName": "Key Phrases [DEPRECATED]",
+      "deprecated": true,
+      "description": "- KeyPhrases",
+      "parameters": [
+        {
+          "name": "Text",
+          "key": "text",
+          "required": false,
+          "type": "string",
+          "description": "The text to analyze."
+        },
+        {
+          "name": "Language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc.,"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- KeyPhraseResult"
+      }
+    },
+    "KeyPhrasesV2": {
+      "operationId": "KeyPhrasesV2",
+      "kind": "action",
+      "displayName": "Key Phrases [DEPRECATED]",
+      "deprecated": true,
+      "description": "- KeyPhrasesV2",
+      "parameters": [
+        {
+          "name": "Text",
+          "key": "text",
+          "required": false,
+          "type": "string",
+          "description": "The text to analyze."
+        },
+        {
+          "name": "Language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc.,"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- KeyPhraseResult"
+      }
+    },
+    "KeyPhrasesV3": {
+      "operationId": "KeyPhrasesV3",
+      "kind": "action",
+      "displayName": "Key Phrases (V2) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- KeyPhrasesV3",
+      "parameters": [
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique, non-empty document identifier."
+        },
+        {
+          "name": "Text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The text to analyze."
+        },
+        {
+          "name": "Language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc.,"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- KeyPhraseResults"
+      }
+    },
+    "LanguagesV3": {
+      "operationId": "LanguagesV3",
+      "kind": "action",
+      "displayName": "Detect Language (V3.0)",
+      "deprecated": false,
+      "description": "- LanguagesV3",
+      "parameters": [
+        {
+          "name": "Model Version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "Show Statistics",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain input and document level statistics."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "countryHint",
+          "key": "countryHint",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageResultV3"
+      }
+    },
+    "LanguagesV3_1": {
+      "operationId": "LanguagesV3_1",
+      "kind": "action",
+      "displayName": "Detect Language (V3.1) (Preview)",
+      "deprecated": false,
+      "description": "- LanguagesV3_1",
+      "parameters": [
+        {
+          "name": "model-version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "showStats",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain request and document level statistics."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) If set to true, you opt-out of having your text input logged for troubleshooting. By default, Azure Cognitive Service for Language logs your input text for 48 hours, solely to allow for troubleshooting issues in providing you with the Azure Cognitive Service for Language natural language processing functions. Setting this parameter to true, disables input logging and may limit our ability to remediate issues that occur. Please see Cognitive Services Compliance and Privacy notes at https://aka.ms/cs-compliance for additional details, and Microsoft Responsible AI principles at https://www.microsoft.com/en-us/ai/responsible-ai."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "countryHint",
+          "key": "countryHint",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageResult"
+      }
+    },
+    "LanguagesV4": {
+      "operationId": "LanguagesV4",
+      "kind": "action",
+      "displayName": "Detect Language (V4) (Preview)",
+      "deprecated": false,
+      "description": "- LanguagesV4",
+      "parameters": [
+        {
+          "name": "Resource Subdomain or Region",
+          "key": "subdomain",
+          "required": true,
+          "type": "string",
+          "description": "Azure subdomain or geographic region (e.g. westus)"
+        },
+        {
+          "name": "model-version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "showStats",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain request and document level statistics."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) If set to true, you opt-out of having your text input logged for troubleshooting. By default, Azure Cognitive Service for Language logs your input text for 48 hours, solely to allow for troubleshooting issues in providing you with the Azure Cognitive Service for Language natural language processing functions. Setting this parameter to true, disables input logging and may limit our ability to remediate issues that occur. Please see Cognitive Services Compliance and Privacy notes at https://aka.ms/cs-compliance for additional details, and Microsoft Responsible AI principles at https://www.microsoft.com/en-us/ai/responsible-ai."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "countryHint",
+          "key": "countryHint",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- LanguageResult"
+      }
+    },
+    "SentimentV3": {
+      "operationId": "SentimentV3",
+      "kind": "action",
+      "displayName": "Sentiment (V3.0)",
+      "deprecated": false,
+      "description": "- SentimentV3",
+      "parameters": [
+        {
+          "name": "Model Version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "Show Statistics",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain input and document level statistics."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- SentimentResponse"
+      }
+    },
+    "SentimentV3_1": {
+      "operationId": "SentimentV3_1",
+      "kind": "action",
+      "displayName": "Sentiment (V3.1) (Preview)",
+      "deprecated": false,
+      "description": "- SentimentV3_1",
+      "parameters": [
+        {
+          "name": "model-version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "showStats",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain request and document level statistics."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) If set to true, you opt-out of having your text input logged for troubleshooting. By default, Azure Cognitive Service for Language logs your input text for 48 hours, solely to allow for troubleshooting issues in providing you with the Azure Cognitive Service for Language natural language processing functions. Setting this parameter to true, disables input logging and may limit our ability to remediate issues that occur. Please see Cognitive Services Compliance and Privacy notes at https://aka.ms/cs-compliance for additional details, and Microsoft Responsible AI principles at https://www.microsoft.com/en-us/ai/responsible-ai."
+        },
+        {
+          "name": "opinionMining",
+          "key": "opinionMining",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain not only sentiment prediction but also opinion mining (aspect-based sentiment analysis) results."
+        },
+        {
+          "name": "stringIndexType",
+          "key": "stringIndexType",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) Specifies the method used to interpret string offsets. Defaults to Text Elements (Graphemes) according to Unicode v8.0.0. For additional information see https://aka.ms/text-analytics-offsets"
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- SentimentResponse"
+      }
+    },
+    "SentimentV4": {
+      "operationId": "SentimentV4",
+      "kind": "action",
+      "displayName": "Sentiment (V4) (Preview)",
+      "deprecated": false,
+      "description": "- SentimentV4",
+      "parameters": [
+        {
+          "name": "Resource Subdomain or Region",
+          "key": "subdomain",
+          "required": true,
+          "type": "string",
+          "description": "Azure subdomain or geographic region (e.g. westus)"
+        },
+        {
+          "name": "model-version",
+          "key": "model-version",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This value indicates which model will be used for scoring. If a model-version is not specified, the API should default to the latest, non-preview version."
+        },
+        {
+          "name": "showStats",
+          "key": "showStats",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain request and document level statistics."
+        },
+        {
+          "name": "loggingOptOut",
+          "key": "loggingOptOut",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) If set to true, you opt-out of having your text input logged for troubleshooting. By default, Azure Cognitive Service for Language logs your input text for 48 hours, solely to allow for troubleshooting issues in providing you with the Azure Cognitive Service for Language natural language processing functions. Setting this parameter to true, disables input logging and may limit our ability to remediate issues that occur. Please see Cognitive Services Compliance and Privacy notes at https://aka.ms/cs-compliance for additional details, and Microsoft Responsible AI principles at https://www.microsoft.com/en-us/ai/responsible-ai."
+        },
+        {
+          "name": "opinionMining",
+          "key": "opinionMining",
+          "required": false,
+          "type": "boolean",
+          "description": "(Optional) if set to true, response will contain not only sentiment prediction but also opinion mining (aspect-based sentiment analysis) results."
+        },
+        {
+          "name": "stringIndexType",
+          "key": "stringIndexType",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) Specifies the method used to interpret string offsets. Defaults to Text Elements (Graphemes) according to Unicode v8.0.0. For additional information see https://aka.ms/text-analytics-offsets"
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A unique, non-empty document identifier."
+        },
+        {
+          "name": "text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The input text to process."
+        },
+        {
+          "name": "language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- SentimentResponse"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

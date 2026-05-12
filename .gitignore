@@ -1,15 +1,22 @@
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.venv/
-.ruff_cache/
-.mypy_cache/
-generated/*
-!generated/rewrites/
-generated/rewrites/*
-!generated/rewrites/example2-improved/
-!generated/rewrites/example2-improved/**
-!generated/rewrites/example2-improved.zip
+# Node / Bun
+node_modules/
+.bun/
+*.tsbuildinfo
 dist/
 build/
-*.egg-info/
+
+# Python (tools/)
+__pycache__/
+*.py[cod]
+
+# Generated artifacts (catalog JSON is checked in, sessions and rewrites are not)
+generated/*
+!generated/connectors/
+!generated/connectors/**
+
+# OS
+.DS_Store
+
+# Local session work
+.vibeflow/
+sessions/

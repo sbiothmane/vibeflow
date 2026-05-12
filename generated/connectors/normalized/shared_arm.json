@@ -1,0 +1,1529 @@
+{
+  "connectorId": "shared_arm",
+  "displayName": "Azure Resource Manager",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/arm/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-06-04T19:00:00.0000000Z",
+  "sourceGitCommit": "27fe194a230990f85821e4a5f2335e427558aed0",
+  "sourcePath": "docs/ARM/index.yml",
+  "operations": {
+    "DeploymentOperations_Get": {
+      "operationId": "DeploymentOperations_Get",
+      "kind": "action",
+      "displayName": "Read a template deployment operation",
+      "deprecated": false,
+      "description": "- DeploymentOperations_Get",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Deployment Name",
+          "key": "deploymentName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the resource group template deployment."
+        },
+        {
+          "name": "Operation Id",
+          "key": "operationId",
+          "required": true,
+          "type": "string",
+          "description": "Operation Id."
+        }
+      ],
+      "returns": {
+        "raw": "Deployment operation information.\n- Body\n- DeploymentOperation"
+      }
+    },
+    "DeploymentOperations_List": {
+      "operationId": "DeploymentOperations_List",
+      "kind": "action",
+      "displayName": "Lists template deployment operations",
+      "deprecated": false,
+      "description": "- DeploymentOperations_List",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Deployment Name",
+          "key": "deploymentName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the resource group template deployment."
+        },
+        {
+          "name": "Top",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Query parameters. If nothing is passed returns all values."
+        }
+      ],
+      "returns": {
+        "raw": "List of deployment operations.\n- Body\n- DeploymentOperationsListResult"
+      }
+    },
+    "Deployments_Cancel": {
+      "operationId": "Deployments_Cancel",
+      "kind": "action",
+      "displayName": "Cancel a template deployment",
+      "deprecated": false,
+      "description": "- Deployments_Cancel",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Deployment Name",
+          "key": "deploymentName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the resource group template deployment."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Deployments_CreateOrUpdate": {
+      "operationId": "Deployments_CreateOrUpdate",
+      "kind": "action",
+      "displayName": "Create or update a template deployment",
+      "deprecated": false,
+      "description": "- Deployments_CreateOrUpdate",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Deployment Name",
+          "key": "deploymentName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the deployment."
+        },
+        {
+          "name": "Template Content",
+          "key": "template",
+          "required": false,
+          "type": "object",
+          "description": "The template content. It can be a JObject or a well formed JSON string. Use only one of Template or TemplateLink."
+        },
+        {
+          "name": "Template URI",
+          "key": "uri",
+          "required": true,
+          "type": "string",
+          "description": "URI referencing the template."
+        },
+        {
+          "name": "Template Content Version",
+          "key": "contentVersion",
+          "required": false,
+          "type": "string",
+          "description": "If included it must match the ContentVersion in the template."
+        },
+        {
+          "name": "Parameters",
+          "key": "parameters",
+          "required": false,
+          "type": "object",
+          "description": "Deployment parameters. It can be a JObject or a well formed JSON string. Use only one of Parameters or ParametersLink."
+        },
+        {
+          "name": "Parameters URI",
+          "key": "uri",
+          "required": true,
+          "type": "string",
+          "description": "URI referencing the template."
+        },
+        {
+          "name": "Parameters Content Version",
+          "key": "contentVersion",
+          "required": false,
+          "type": "string",
+          "description": "If included it must match the ContentVersion in the template."
+        },
+        {
+          "name": "Deployment Mode",
+          "key": "mode",
+          "required": true,
+          "type": "string",
+          "description": "The deployment mode."
+        },
+        {
+          "name": "Detail Level",
+          "key": "detailLevel",
+          "required": false,
+          "type": "string",
+          "description": "The debug detail level."
+        },
+        {
+          "name": "Wait for Deployment",
+          "key": "wait",
+          "required": false,
+          "type": "boolean",
+          "description": "If the action should wait until deployment is completed"
+        }
+      ],
+      "returns": {
+        "raw": "Deployment information.\n- Body\n- DeploymentExtended"
+      }
+    },
+    "Deployments_Delete": {
+      "operationId": "Deployments_Delete",
+      "kind": "action",
+      "displayName": "Delete template deployment",
+      "deprecated": false,
+      "description": "- Deployments_Delete",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Deployment Name",
+          "key": "deploymentName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the resource group template deployment."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Deployments_ExportTemplate": {
+      "operationId": "Deployments_ExportTemplate",
+      "kind": "action",
+      "displayName": "Export deployment template",
+      "deprecated": false,
+      "description": "- Deployments_ExportTemplate",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Deployment Name",
+          "key": "deploymentName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the resource group template deployment."
+        }
+      ],
+      "returns": {
+        "raw": "The deployment export result.\n- Body\n- DeploymentExportResult"
+      }
+    },
+    "Deployments_Get": {
+      "operationId": "Deployments_Get",
+      "kind": "action",
+      "displayName": "Read a template deployment",
+      "deprecated": false,
+      "description": "- Deployments_Get",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Deployment Name",
+          "key": "deploymentName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the resource group template deployment."
+        },
+        {
+          "name": "Wait for Deployment",
+          "key": "wait",
+          "required": false,
+          "type": "boolean",
+          "description": "If the action should wait until deployment is completed"
+        }
+      ],
+      "returns": {
+        "raw": "Deployment information.\n- Body\n- DeploymentExtended"
+      }
+    },
+    "Deployments_List": {
+      "operationId": "Deployments_List",
+      "kind": "action",
+      "displayName": "List template deployments",
+      "deprecated": false,
+      "description": "- Deployments_List",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Filter",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "The filter to apply on the operation."
+        },
+        {
+          "name": "Top",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Query parameters. If nothing is passed returns all values."
+        }
+      ],
+      "returns": {
+        "raw": "List of deployments.\n- Body\n- DeploymentListResult"
+      }
+    },
+    "Deployments_Validate": {
+      "operationId": "Deployments_Validate",
+      "kind": "action",
+      "displayName": "Validate a template deployment",
+      "deprecated": false,
+      "description": "- Deployments_Validate",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Deployment Name",
+          "key": "deploymentName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the resource group template deployment."
+        },
+        {
+          "name": "Template Content",
+          "key": "template",
+          "required": false,
+          "type": "object",
+          "description": "The template content. It can be a JObject or a well formed JSON string. Use only one of Template or TemplateLink."
+        },
+        {
+          "name": "Template URI",
+          "key": "uri",
+          "required": true,
+          "type": "string",
+          "description": "URI referencing the template."
+        },
+        {
+          "name": "Template Content Version",
+          "key": "contentVersion",
+          "required": false,
+          "type": "string",
+          "description": "If included it must match the ContentVersion in the template."
+        },
+        {
+          "name": "Parameters",
+          "key": "parameters",
+          "required": false,
+          "type": "object",
+          "description": "Deployment parameters. It can be a JObject or a well formed JSON string. Use only one of Parameters or ParametersLink."
+        },
+        {
+          "name": "Parameters URI",
+          "key": "uri",
+          "required": true,
+          "type": "string",
+          "description": "URI referencing the template."
+        },
+        {
+          "name": "Parameters Content Version",
+          "key": "contentVersion",
+          "required": false,
+          "type": "string",
+          "description": "If included it must match the ContentVersion in the template."
+        },
+        {
+          "name": "Deployment Mode",
+          "key": "mode",
+          "required": true,
+          "type": "string",
+          "description": "The deployment mode."
+        },
+        {
+          "name": "Detail Level",
+          "key": "detailLevel",
+          "required": false,
+          "type": "string",
+          "description": "The debug detail level."
+        }
+      ],
+      "returns": {
+        "raw": "Information from validate template deployment response.\n- Body\n- DeploymentValidateResult"
+      }
+    },
+    "Provider_Resources_GetById": {
+      "operationId": "Provider_Resources_GetById",
+      "kind": "action",
+      "displayName": "Read a resource in provider",
+      "deprecated": false,
+      "description": "- Provider_Resources_GetById",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Provider",
+          "key": "resourceProviderNamespace",
+          "required": true,
+          "type": "string",
+          "description": "Namespace of the resource provider."
+        },
+        {
+          "name": "Short Resource Id",
+          "key": "shortResourceId",
+          "required": true,
+          "type": "string",
+          "description": "The short Id of the resource, including the resource name and resource type. For example, sites/mySite"
+        },
+        {
+          "name": "Client Api Version",
+          "key": "x-ms-api-version",
+          "required": true,
+          "type": "string",
+          "description": "Api Version to be used."
+        }
+      ],
+      "returns": {
+        "raw": "Resource information.\n- Body\n- GenericResource"
+      }
+    },
+    "Provider_Resources_Invoke": {
+      "operationId": "Provider_Resources_Invoke",
+      "kind": "action",
+      "displayName": "Invoke resource operation in provider",
+      "deprecated": false,
+      "description": "- Provider_Resources_Invoke",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Provider",
+          "key": "resourceProviderNamespace",
+          "required": true,
+          "type": "string",
+          "description": "Namespace of the resource provider."
+        },
+        {
+          "name": "Short Resource Id",
+          "key": "shortResourceId",
+          "required": true,
+          "type": "string",
+          "description": "The short Id of the resource, including the resource name and resource type. For example, sites/mySite"
+        },
+        {
+          "name": "Client Api Version",
+          "key": "x-ms-api-version",
+          "required": true,
+          "type": "string",
+          "description": "Api Version to be used."
+        }
+      ],
+      "returns": {
+        "raw": "The response from the operation.\n- Response\n- object"
+      }
+    },
+    "Providers_Get": {
+      "operationId": "Providers_Get",
+      "kind": "action",
+      "displayName": "Read resource provider",
+      "deprecated": false,
+      "description": "- Providers_Get",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Provider",
+          "key": "resourceProviderNamespace",
+          "required": true,
+          "type": "string",
+          "description": "Namespace of the resource provider."
+        },
+        {
+          "name": "Expand",
+          "key": "$expand",
+          "required": false,
+          "type": "string",
+          "description": "The $expand query parameter."
+        }
+      ],
+      "returns": {
+        "raw": "Resource provider information.\n- Body\n- Provider"
+      }
+    },
+    "Providers_List": {
+      "operationId": "Providers_List",
+      "kind": "action",
+      "displayName": "List resource providers",
+      "deprecated": false,
+      "description": "- Providers_List",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Top",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Query parameters. If nothing is passed returns all values."
+        },
+        {
+          "name": "Expand",
+          "key": "$expand",
+          "required": false,
+          "type": "string",
+          "description": "The $expand query parameter."
+        }
+      ],
+      "returns": {
+        "raw": "List of resource providers.\n- Body\n- ProviderListResult"
+      }
+    },
+    "Providers_Register": {
+      "operationId": "Providers_Register",
+      "kind": "action",
+      "displayName": "Register resource provider",
+      "deprecated": false,
+      "description": "- Providers_Register",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Provider",
+          "key": "resourceProviderNamespace",
+          "required": true,
+          "type": "string",
+          "description": "Namespace of the resource provider."
+        }
+      ],
+      "returns": {
+        "raw": "Resource provider information.\n- Body\n- Provider"
+      }
+    },
+    "Providers_Unregister": {
+      "operationId": "Providers_Unregister",
+      "kind": "action",
+      "displayName": "Unregister resource provider",
+      "deprecated": false,
+      "description": "- Providers_Unregister",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Provider",
+          "key": "resourceProviderNamespace",
+          "required": true,
+          "type": "string",
+          "description": "Namespace of the resource provider."
+        }
+      ],
+      "returns": {
+        "raw": "Resource provider information.\n- Body\n- Provider"
+      }
+    },
+    "ResourceGroups_CreateOrUpdate": {
+      "operationId": "ResourceGroups_CreateOrUpdate",
+      "kind": "action",
+      "displayName": "Create or update a resource group",
+      "deprecated": false,
+      "description": "- ResourceGroups_CreateOrUpdate",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group Name",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the resource group to be created or updated."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The ID of the resource group (e.g. /subscriptions/XXX/resourceGroups/YYY)."
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "The Name of the resource group."
+        },
+        {
+          "name": "Location",
+          "key": "location",
+          "required": true,
+          "type": "string",
+          "description": "The location of the resource group. It cannot be changed after the resource group has been created. Has to be one of the supported Azure Locations, such as West US, East US, West Europe, East Asia, etc."
+        },
+        {
+          "name": "Managed By",
+          "key": "managedBy",
+          "required": false,
+          "type": "string",
+          "description": "Id of the resource that manages this resource group."
+        },
+        {
+          "name": "Tags",
+          "key": "tags",
+          "required": false,
+          "type": "object",
+          "description": "The tags attached to the resource group."
+        },
+        {
+          "name": "Provisioning State",
+          "key": "provisioningState",
+          "required": false,
+          "type": "string",
+          "description": "The provisioning state."
+        }
+      ],
+      "returns": {
+        "raw": "Resource group information.\n- Body\n- ResourceGroup"
+      }
+    },
+    "ResourceGroups_Delete": {
+      "operationId": "ResourceGroups_Delete",
+      "kind": "action",
+      "displayName": "Delete a resource group",
+      "deprecated": false,
+      "description": "- ResourceGroups_Delete",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ResourceGroups_ExportTemplate": {
+      "operationId": "ResourceGroups_ExportTemplate",
+      "kind": "action",
+      "displayName": "Export a resource group template",
+      "deprecated": false,
+      "description": "- ResourceGroups_ExportTemplate",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "resources",
+          "key": "resources",
+          "required": false,
+          "type": "array of string",
+          "description": "The ids of the resources. The only supported string currently is '\\*' (all resources). Future api updates will support exporting specific resources."
+        },
+        {
+          "name": "options",
+          "key": "options",
+          "required": false,
+          "type": "string",
+          "description": "The export template options. Supported values include 'IncludeParameterDefaultValue', 'IncludeComments' or 'IncludeParameterDefaultValue, IncludeComments"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceGroupExportResult"
+      }
+    },
+    "ResourceGroups_Get": {
+      "operationId": "ResourceGroups_Get",
+      "kind": "action",
+      "displayName": "Read a resource group",
+      "deprecated": false,
+      "description": "- ResourceGroups_Get",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        }
+      ],
+      "returns": {
+        "raw": "Resource group information.\n- Body\n- ResourceGroup"
+      }
+    },
+    "ResourceGroups_List": {
+      "operationId": "ResourceGroups_List",
+      "kind": "action",
+      "displayName": "List resource groups",
+      "deprecated": false,
+      "description": "- ResourceGroups_List",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Filter",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "The filter to apply on the operation."
+        },
+        {
+          "name": "Top",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Query parameters. If nothing is passed returns all values."
+        }
+      ],
+      "returns": {
+        "raw": "List of resource groups.\n- Body\n- ResourceGroupListResult"
+      }
+    },
+    "ResourceGroups_ListResources": {
+      "operationId": "ResourceGroups_ListResources",
+      "kind": "action",
+      "displayName": "List resources by resource group",
+      "deprecated": false,
+      "description": "- ResourceGroups_ListResources",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Filter",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "The filter to apply on the operation."
+        },
+        {
+          "name": "Expand",
+          "key": "$expand",
+          "required": false,
+          "type": "string",
+          "description": "The $expand query parameter."
+        },
+        {
+          "name": "Top",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Query parameters. If nothing is passed returns all values."
+        }
+      ],
+      "returns": {
+        "raw": "List of resources.\n- Body\n- ResourceListResult"
+      }
+    },
+    "ResourceGroups_Patch": {
+      "operationId": "ResourceGroups_Patch",
+      "kind": "action",
+      "displayName": "Update an existing resource group",
+      "deprecated": false,
+      "description": "- ResourceGroups_Patch",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The ID of the resource group (e.g. /subscriptions/XXX/resourceGroups/YYY)."
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "The Name of the resource group."
+        },
+        {
+          "name": "Location",
+          "key": "location",
+          "required": true,
+          "type": "string",
+          "description": "The location of the resource group. It cannot be changed after the resource group has been created. Has to be one of the supported Azure Locations, such as West US, East US, West Europe, East Asia, etc."
+        },
+        {
+          "name": "Managed By",
+          "key": "managedBy",
+          "required": false,
+          "type": "string",
+          "description": "Id of the resource that manages this resource group."
+        },
+        {
+          "name": "Tags",
+          "key": "tags",
+          "required": false,
+          "type": "object",
+          "description": "The tags attached to the resource group."
+        },
+        {
+          "name": "Provisioning State",
+          "key": "provisioningState",
+          "required": false,
+          "type": "string",
+          "description": "The provisioning state."
+        }
+      ],
+      "returns": {
+        "raw": "Resource group information.\n- Body\n- ResourceGroup"
+      }
+    },
+    "Resources_CreateOrUpdateById": {
+      "operationId": "Resources_CreateOrUpdateById",
+      "kind": "action",
+      "displayName": "Create or update a resource",
+      "deprecated": false,
+      "description": "- Resources_CreateOrUpdateById",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Resource Provider",
+          "key": "resourceProviderNamespace",
+          "required": true,
+          "type": "string",
+          "description": "Namespace of the resource provider."
+        },
+        {
+          "name": "Short Resource Id",
+          "key": "shortResourceId",
+          "required": true,
+          "type": "string",
+          "description": "The short Id of the resource, including the resource name and resource type. For example, sites/mySite"
+        },
+        {
+          "name": "Client Api Version",
+          "key": "x-ms-api-version",
+          "required": true,
+          "type": "string",
+          "description": "Api Version to be used."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Resource Id"
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "Resource name"
+        },
+        {
+          "name": "Type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "Resource type"
+        },
+        {
+          "name": "Location",
+          "key": "location",
+          "required": false,
+          "type": "string",
+          "description": "Resource location"
+        },
+        {
+          "name": "Tags",
+          "key": "tags",
+          "required": false,
+          "type": "object",
+          "description": "Resource tags"
+        },
+        {
+          "name": "Id",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "The plan ID."
+        },
+        {
+          "name": "Publisher",
+          "key": "publisher",
+          "required": false,
+          "type": "string",
+          "description": "The publisher ID."
+        },
+        {
+          "name": "Product",
+          "key": "product",
+          "required": false,
+          "type": "string",
+          "description": "The offer ID."
+        },
+        {
+          "name": "Promotion Code",
+          "key": "promotionCode",
+          "required": false,
+          "type": "string",
+          "description": "The promotion code."
+        },
+        {
+          "name": "Kind",
+          "key": "kind",
+          "required": false,
+          "type": "string",
+          "description": "The kind of the resource."
+        },
+        {
+          "name": "Managed By",
+          "key": "managedBy",
+          "required": false,
+          "type": "string",
+          "description": "Id of the resource that manages this resource."
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "The sku name."
+        },
+        {
+          "name": "Tier",
+          "key": "tier",
+          "required": false,
+          "type": "string",
+          "description": "The sku tier."
+        },
+        {
+          "name": "Size",
+          "key": "size",
+          "required": false,
+          "type": "string",
+          "description": "The sku size."
+        },
+        {
+          "name": "Family",
+          "key": "family",
+          "required": false,
+          "type": "string",
+          "description": "The sku family."
+        },
+        {
+          "name": "Model",
+          "key": "model",
+          "required": false,
+          "type": "string",
+          "description": "The sku model."
+        },
+        {
+          "name": "Capacity",
+          "key": "capacity",
+          "required": false,
+          "type": "integer",
+          "description": "The sku capacity."
+        },
+        {
+          "name": "Principal Id",
+          "key": "principalId",
+          "required": false,
+          "type": "string",
+          "description": "The principal id of resource identity."
+        },
+        {
+          "name": "Tenant Id",
+          "key": "tenantId",
+          "required": false,
+          "type": "string",
+          "description": "The tenant id of resource."
+        },
+        {
+          "name": "Type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "The identity type."
+        },
+        {
+          "name": "Properties",
+          "key": "properties",
+          "required": false,
+          "type": "object",
+          "description": "The resource properties."
+        }
+      ],
+      "returns": {
+        "raw": "Resource information.\n- Body\n- GenericResource"
+      }
+    },
+    "Resources_DeleteById": {
+      "operationId": "Resources_DeleteById",
+      "kind": "action",
+      "displayName": "Delete a resource",
+      "deprecated": false,
+      "description": "- Resources_DeleteById",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Resource Provider",
+          "key": "resourceProviderNamespace",
+          "required": true,
+          "type": "string",
+          "description": "Namespace of the resource provider."
+        },
+        {
+          "name": "Short Resource Id",
+          "key": "shortResourceId",
+          "required": true,
+          "type": "string",
+          "description": "The short Id of the resource, including the resource name and resource type. For example, sites/mySite"
+        },
+        {
+          "name": "Client Api Version",
+          "key": "x-ms-api-version",
+          "required": true,
+          "type": "string",
+          "description": "Api Version to be used."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Resources_GetById": {
+      "operationId": "Resources_GetById",
+      "kind": "action",
+      "displayName": "Read a resource",
+      "deprecated": false,
+      "description": "- Resources_GetById",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Resource Provider",
+          "key": "resourceProviderNamespace",
+          "required": true,
+          "type": "string",
+          "description": "Namespace of the resource provider."
+        },
+        {
+          "name": "Short Resource Id",
+          "key": "shortResourceId",
+          "required": true,
+          "type": "string",
+          "description": "The short Id of the resource, including the resource name and resource type. For example, sites/mySite"
+        },
+        {
+          "name": "Client Api Version",
+          "key": "x-ms-api-version",
+          "required": true,
+          "type": "string",
+          "description": "Api Version to be used."
+        }
+      ],
+      "returns": {
+        "raw": "Resource information.\n- Body\n- GenericResource"
+      }
+    },
+    "Resources_Invoke": {
+      "operationId": "Resources_Invoke",
+      "kind": "action",
+      "displayName": "Invoke resource operation",
+      "deprecated": false,
+      "description": "- Resources_Invoke",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "Resource group name."
+        },
+        {
+          "name": "Resource Provider",
+          "key": "resourceProviderNamespace",
+          "required": true,
+          "type": "string",
+          "description": "Namespace of the resource provider."
+        },
+        {
+          "name": "Short Resource Id",
+          "key": "shortResourceId",
+          "required": true,
+          "type": "string",
+          "description": "The short Id of the resource, including the resource name and resource type. For example, sites/mySite"
+        },
+        {
+          "name": "Client Api Version",
+          "key": "x-ms-api-version",
+          "required": true,
+          "type": "string",
+          "description": "Api Version to be used."
+        },
+        {
+          "name": "Action name",
+          "key": "actionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the resource action to invoke"
+        }
+      ],
+      "returns": {
+        "raw": "The response from the action operation.\n- Action response\n- object"
+      }
+    },
+    "Resources_List": {
+      "operationId": "Resources_List",
+      "kind": "action",
+      "displayName": "List resources by subscription",
+      "deprecated": false,
+      "description": "- Resources_List",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Filter",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "The filter to apply on the operation."
+        },
+        {
+          "name": "Expand",
+          "key": "$expand",
+          "required": false,
+          "type": "string",
+          "description": "The $expand query parameter."
+        },
+        {
+          "name": "Top",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Query parameters. If nothing is passed returns all values."
+        }
+      ],
+      "returns": {
+        "raw": "List of resources.\n- Body\n- ResourceListResult"
+      }
+    },
+    "Subscriptions_Get": {
+      "operationId": "Subscriptions_Get",
+      "kind": "action",
+      "displayName": "Read a subscription",
+      "deprecated": false,
+      "description": "- Subscriptions_Get",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        }
+      ],
+      "returns": {
+        "raw": "Subscription information.\n- Body\n- Subscription"
+      }
+    },
+    "Subscriptions_List": {
+      "operationId": "Subscriptions_List",
+      "kind": "action",
+      "displayName": "List subscriptions",
+      "deprecated": false,
+      "description": "- Subscriptions_List",
+      "parameters": [],
+      "returns": {
+        "raw": "Subscription list operation response.\n- Body\n- SubscriptionListResult"
+      }
+    },
+    "Subscriptions_ListLocations": {
+      "operationId": "Subscriptions_ListLocations",
+      "kind": "action",
+      "displayName": "Lists the subscription locations",
+      "deprecated": false,
+      "description": "- Subscriptions_ListLocations",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        }
+      ],
+      "returns": {
+        "raw": "Location list operation response.\n- Body\n- LocationListResult"
+      }
+    },
+    "Tags_CreateOrUpdate": {
+      "operationId": "Tags_CreateOrUpdate",
+      "kind": "action",
+      "displayName": "Create or update a subscription resource tag name",
+      "deprecated": false,
+      "description": "- Tags_CreateOrUpdate",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Tag Name",
+          "key": "tagName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the tag."
+        }
+      ],
+      "returns": {
+        "raw": "Tag details.\n- Body\n- TagDetails"
+      }
+    },
+    "Tags_CreateOrUpdateValue": {
+      "operationId": "Tags_CreateOrUpdateValue",
+      "kind": "action",
+      "displayName": "Create or update a subscription resource tag value",
+      "deprecated": false,
+      "description": "- Tags_CreateOrUpdateValue",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Tag Name",
+          "key": "tagName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the tag."
+        },
+        {
+          "name": "Tag Value",
+          "key": "tagValue",
+          "required": true,
+          "type": "string",
+          "description": "The value of the tag."
+        }
+      ],
+      "returns": {
+        "raw": "Tag information.\n- Body\n- TagValue"
+      }
+    },
+    "Tags_Delete": {
+      "operationId": "Tags_Delete",
+      "kind": "action",
+      "displayName": "Delete a subscription resource tag name",
+      "deprecated": false,
+      "description": "- Tags_Delete",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Tag Name",
+          "key": "tagName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the tag."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Tags_DeleteValue": {
+      "operationId": "Tags_DeleteValue",
+      "kind": "action",
+      "displayName": "Delete a subscription resource tag value",
+      "deprecated": false,
+      "description": "- Tags_DeleteValue",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Tag Name",
+          "key": "tagName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the tag."
+        },
+        {
+          "name": "Tag Value",
+          "key": "tagValue",
+          "required": true,
+          "type": "string",
+          "description": "The value of the tag."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Tags_List": {
+      "operationId": "Tags_List",
+      "kind": "action",
+      "displayName": "List subscription resource tags",
+      "deprecated": false,
+      "description": "- Tags_List",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        }
+      ],
+      "returns": {
+        "raw": "List of subscription tags.\n- Body\n- TagsListResult"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

@@ -1,0 +1,1015 @@
+{
+  "connectorId": "shared_onedriveforbusiness",
+  "displayName": "OneDrive for Business",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/onedriveforbusiness/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-04-09T19:04:00.0000000Z",
+  "sourceGitCommit": "f7be96830f27ff20c9beaa60e4be74378750ef16",
+  "sourcePath": "docs/onedriveforbusiness/index.yml",
+  "operations": {
+    "ConvertFile": {
+      "operationId": "ConvertFile",
+      "kind": "action",
+      "displayName": "Convert file",
+      "deprecated": false,
+      "description": "- ConvertFile",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the file."
+        },
+        {
+          "name": "Target type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "The target file type"
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File content\n- binary"
+      }
+    },
+    "ConvertFileByPath": {
+      "operationId": "ConvertFileByPath",
+      "kind": "action",
+      "displayName": "Convert file using path",
+      "deprecated": false,
+      "description": "- ConvertFileByPath",
+      "parameters": [
+        {
+          "name": "File Path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the file."
+        },
+        {
+          "name": "Target type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "The target file type"
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File content\n- binary"
+      }
+    },
+    "CopyDriveFile": {
+      "operationId": "CopyDriveFile",
+      "kind": "action",
+      "displayName": "Copy file",
+      "deprecated": false,
+      "description": "- CopyDriveFile",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the file."
+        },
+        {
+          "name": "Destination File Path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "The destination file path, including target filename."
+        },
+        {
+          "name": "Overwrite",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Overwrites the destination file if set to 'true'."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "CopyDriveFileByPath": {
+      "operationId": "CopyDriveFileByPath",
+      "kind": "action",
+      "displayName": "Copy file using path",
+      "deprecated": false,
+      "description": "- CopyDriveFileByPath",
+      "parameters": [
+        {
+          "name": "File Path",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the file."
+        },
+        {
+          "name": "Destination File Path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "The destination file path, including target filename."
+        },
+        {
+          "name": "Overwrite",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Overwrites the destination file if set to 'true'."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "CopyFile": {
+      "operationId": "CopyFile",
+      "kind": "action",
+      "displayName": "Upload file from URL",
+      "deprecated": false,
+      "description": "- CopyFile",
+      "parameters": [
+        {
+          "name": "Source URL",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "The url to the source file."
+        },
+        {
+          "name": "Destination File Path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "The destination file path, including target filename."
+        },
+        {
+          "name": "Overwrite",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Overwrites the destination file if set to 'true'."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "CreateFile": {
+      "operationId": "CreateFile",
+      "kind": "action",
+      "displayName": "Create file",
+      "deprecated": false,
+      "description": "- CreateFile",
+      "parameters": [
+        {
+          "name": "Folder Path",
+          "key": "folderPath",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the folder."
+        },
+        {
+          "name": "File Name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "The name of the file. Certain characters are disallowed by OneDrive and will be replaced by underscores."
+        },
+        {
+          "name": "File Content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "The content of the file."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "CreateShareLink": {
+      "operationId": "CreateShareLink",
+      "kind": "action",
+      "displayName": "Create share link [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateShareLink",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the file."
+        },
+        {
+          "name": "Link type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "The type of link"
+        },
+        {
+          "name": "Link scope",
+          "key": "scope",
+          "required": false,
+          "type": "string",
+          "description": "The scope of the link"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- SharingLink"
+      }
+    },
+    "CreateShareLinkByPath": {
+      "operationId": "CreateShareLinkByPath",
+      "kind": "action",
+      "displayName": "Create share link by path [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateShareLinkByPath",
+      "parameters": [
+        {
+          "name": "File Path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the file."
+        },
+        {
+          "name": "Link type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "The type of link"
+        },
+        {
+          "name": "Link scope",
+          "key": "scope",
+          "required": false,
+          "type": "string",
+          "description": "The scope of the link"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- SharingLink"
+      }
+    },
+    "CreateShareLinkByPathV2": {
+      "operationId": "CreateShareLinkByPathV2",
+      "kind": "action",
+      "displayName": "Create share link by path",
+      "deprecated": false,
+      "description": "- CreateShareLinkByPathV2",
+      "parameters": [
+        {
+          "name": "File Path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the file."
+        },
+        {
+          "name": "Link type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "The type of link"
+        },
+        {
+          "name": "Link scope",
+          "key": "scope",
+          "required": false,
+          "type": "string",
+          "description": "The scope of the link"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- SharingLink"
+      }
+    },
+    "CreateShareLinkV2": {
+      "operationId": "CreateShareLinkV2",
+      "kind": "action",
+      "displayName": "Create share link",
+      "deprecated": false,
+      "description": "- CreateShareLinkV2",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the file."
+        },
+        {
+          "name": "Link type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "The type of link"
+        },
+        {
+          "name": "Link scope",
+          "key": "scope",
+          "required": false,
+          "type": "string",
+          "description": "The scope of the link"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- SharingLink"
+      },
+      "usedInExamples": 2,
+      "observedParametersInExamples": {
+        "id": 2,
+        "scope": 2,
+        "type": 2
+      }
+    },
+    "DeleteFile": {
+      "operationId": "DeleteFile",
+      "kind": "action",
+      "displayName": "Delete file",
+      "deprecated": false,
+      "description": "- DeleteFile",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the file."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ExtractFolderV2": {
+      "operationId": "ExtractFolderV2",
+      "kind": "action",
+      "displayName": "Extract archive to folder",
+      "deprecated": false,
+      "description": "- ExtractFolderV2",
+      "parameters": [
+        {
+          "name": "Source Archive File Path",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "The path to the archive file."
+        },
+        {
+          "name": "Destination Folder Path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "The path to extract the archive contents."
+        },
+        {
+          "name": "Overwrite",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Overwrites the destination files if set to 'true'."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "FindFiles": {
+      "operationId": "FindFiles",
+      "kind": "action",
+      "displayName": "Find files in folder",
+      "deprecated": false,
+      "description": "- FindFiles",
+      "parameters": [
+        {
+          "name": "Search Query",
+          "key": "query",
+          "required": true,
+          "type": "string",
+          "description": "The search query to use"
+        },
+        {
+          "name": "Folder",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the folder."
+        },
+        {
+          "name": "File Search Mode",
+          "key": "findMode",
+          "required": true,
+          "type": "string",
+          "description": "The search method to use. \"Search\" mode searches your OneDrive using the search query (similar a normal search engine). When \"Regular Expression Pattern Match\" mode is selected, the search query will be treated as a regex pattern, and it will return files with names that match the query"
+        },
+        {
+          "name": "Number of files to return",
+          "key": "maxFileCount",
+          "required": false,
+          "type": "integer",
+          "description": "Maximum number of files to return (1-100)"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "FindFilesByPath": {
+      "operationId": "FindFilesByPath",
+      "kind": "action",
+      "displayName": "Find files in folder by path",
+      "deprecated": false,
+      "description": "- FindFilesByPath",
+      "parameters": [
+        {
+          "name": "Search Query",
+          "key": "query",
+          "required": true,
+          "type": "string",
+          "description": "The search query to use"
+        },
+        {
+          "name": "Folder Path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the folder."
+        },
+        {
+          "name": "File Search Mode",
+          "key": "findMode",
+          "required": true,
+          "type": "string",
+          "description": "The search method to use. \"Search\" mode searches your OneDrive using the search query (similar a normal search engine). When \"Regular Expression Pattern Match\" mode is selected, the search query will be treated as a regex pattern, and it will return files with names that match the query"
+        },
+        {
+          "name": "Number of files to return",
+          "key": "maxFileCount",
+          "required": false,
+          "type": "integer",
+          "description": "Maximum number of files to return (1-100)"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "GetFileContent": {
+      "operationId": "GetFileContent",
+      "kind": "action",
+      "displayName": "Get file content",
+      "deprecated": false,
+      "description": "- GetFileContent",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the file."
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean value (true, false) to infer content-type based on extension."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File content\n- binary"
+      },
+      "usedInExamples": 2,
+      "observedParametersInExamples": {
+        "id": 2,
+        "inferContentType": 2
+      }
+    },
+    "GetFileContentByPath": {
+      "operationId": "GetFileContentByPath",
+      "kind": "action",
+      "displayName": "Get file content using path",
+      "deprecated": false,
+      "description": "- GetFileContentByPath",
+      "parameters": [
+        {
+          "name": "File Path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the file."
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean value (true, false) to infer content-type based on extension."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File content\n- binary"
+      },
+      "usedInExamples": 4,
+      "observedParametersInExamples": {
+        "inferContentType": 4,
+        "path": 4
+      }
+    },
+    "GetFileMetadata": {
+      "operationId": "GetFileMetadata",
+      "kind": "action",
+      "displayName": "Get file metadata",
+      "deprecated": false,
+      "description": "- GetFileMetadata",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the file."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "GetFileMetadataByPath": {
+      "operationId": "GetFileMetadataByPath",
+      "kind": "action",
+      "displayName": "Get file metadata using path",
+      "deprecated": false,
+      "description": "- GetFileMetadataByPath",
+      "parameters": [
+        {
+          "name": "File Path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the file."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "GetFileThumbnail": {
+      "operationId": "GetFileThumbnail",
+      "kind": "action",
+      "displayName": "Get file thumbnail",
+      "deprecated": false,
+      "description": "- GetFileThumbnail",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the file."
+        },
+        {
+          "name": "Thumbnail Size",
+          "key": "size",
+          "required": true,
+          "type": "string",
+          "description": "The size of the thumbnail to retrieve."
+        }
+      ],
+      "returns": {
+        "raw": "Thumbnail response data\n- Body\n- Thumbnail"
+      }
+    },
+    "ListFolder": {
+      "operationId": "ListFolder",
+      "kind": "action",
+      "displayName": "List files in folder [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListFolder",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the folder."
+        },
+        {
+          "name": "Include subfolders",
+          "key": "includeSubfolders",
+          "required": false,
+          "type": "boolean",
+          "description": "Include items in subfolders"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "ListFolderV2": {
+      "operationId": "ListFolderV2",
+      "kind": "action",
+      "displayName": "List files in folder",
+      "deprecated": false,
+      "description": "- ListFolderV2",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the folder."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a page of blob metadata.\n- Body\n- BlobMetadataPage"
+      }
+    },
+    "ListRootFolder": {
+      "operationId": "ListRootFolder",
+      "kind": "action",
+      "displayName": "List files in root folder",
+      "deprecated": false,
+      "description": "- ListRootFolder",
+      "parameters": [],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "MoveFile": {
+      "operationId": "MoveFile",
+      "kind": "action",
+      "displayName": "Move or rename a file",
+      "deprecated": false,
+      "description": "- MoveFile",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the file."
+        },
+        {
+          "name": "Destination File Path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "The destination file path, including target filename."
+        },
+        {
+          "name": "Overwrite",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Overwrites the destination file if set to 'true'."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "MoveFileByPath": {
+      "operationId": "MoveFileByPath",
+      "kind": "action",
+      "displayName": "Move or rename a file using path",
+      "deprecated": false,
+      "description": "- MoveFileByPath",
+      "parameters": [
+        {
+          "name": "File Path",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the file."
+        },
+        {
+          "name": "Destination File Path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "The destination file path, including target filename."
+        },
+        {
+          "name": "Overwrite",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Overwrites the destination file if set to 'true'."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "OnFileSelected": {
+      "operationId": "OnFileSelected",
+      "kind": "trigger",
+      "displayName": "For a selected file",
+      "deprecated": false,
+      "description": "- OnFileSelected",
+      "parameters": [
+        {
+          "name": "operationId",
+          "key": "operationId",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "host",
+          "key": "host",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "schema",
+          "key": "schema",
+          "required": true,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "headersSchema",
+          "key": "headersSchema",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| rows | body.rows | array of object |  |\n| filePath | body.rows.filePath | string | The unique path of the file. |\n| fileUrl | body.rows.fileUrl | string | The URL to the source file. |\n| User id | headers.x-ms-user-id-encoded | guid | The unique identifier of the user who triggered the flow in AAD. |\n| User email | headers.x-ms-user-email-encoded | byte | The email address of the user who triggered the flow. |\n| User name | headers.x-ms-user-name-encoded | byte | The display name of the user who triggered the flow. |\n| Timestamp | headers.x-ms-user-timestamp | string | The time the flow was triggered. |"
+      }
+    },
+    "OnNewFile": {
+      "operationId": "OnNewFile",
+      "kind": "trigger",
+      "displayName": "When a file is created [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnNewFile",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the folder."
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean value (true, false) to infer content-type based on extension."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File content\n- binary"
+      }
+    },
+    "OnNewFileV2": {
+      "operationId": "OnNewFileV2",
+      "kind": "trigger",
+      "displayName": "When a file is created",
+      "deprecated": false,
+      "description": "- OnNewFileV2",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the folder."
+        },
+        {
+          "name": "Include subfolders",
+          "key": "includeSubfolders",
+          "required": false,
+          "type": "boolean",
+          "description": "Include items in subfolders"
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean value (true, false) to infer content-type based on extension."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File content\n- binary"
+      }
+    },
+    "OnNewFiles": {
+      "operationId": "OnNewFiles",
+      "kind": "trigger",
+      "displayName": "When a file is created (properties only) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnNewFiles",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the folder."
+        },
+        {
+          "name": "Number of files to return",
+          "key": "maxFileCount",
+          "required": false,
+          "type": "integer",
+          "description": "Maximum number of files to return by single trigger run (1-100). Note that 'Split On' setting can force trigger to process each item individually."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- List of Files\n- BlobMetadata"
+      }
+    },
+    "OnNewFilesV2": {
+      "operationId": "OnNewFilesV2",
+      "kind": "trigger",
+      "displayName": "When a file is created (properties only)",
+      "deprecated": false,
+      "description": "- OnNewFilesV2",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the folder."
+        },
+        {
+          "name": "Include subfolders",
+          "key": "includeSubfolders",
+          "required": false,
+          "type": "boolean",
+          "description": "Include items in subfolders"
+        },
+        {
+          "name": "Number of files to return",
+          "key": "maxFileCount",
+          "required": false,
+          "type": "integer",
+          "description": "Maximum number of files to return by single trigger run (1-100). Note that 'Split On' setting can force trigger to process each item individually."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- List of Files\n- BlobMetadata"
+      }
+    },
+    "OnUpdatedFile": {
+      "operationId": "OnUpdatedFile",
+      "kind": "trigger",
+      "displayName": "When a file is modified [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnUpdatedFile",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the folder."
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean value (true, false) to infer content-type based on extension."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File content\n- binary"
+      }
+    },
+    "OnUpdatedFileV2": {
+      "operationId": "OnUpdatedFileV2",
+      "kind": "trigger",
+      "displayName": "When a file is modified",
+      "deprecated": false,
+      "description": "- OnUpdatedFileV2",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the folder."
+        },
+        {
+          "name": "Include subfolders",
+          "key": "includeSubfolders",
+          "required": false,
+          "type": "boolean",
+          "description": "Include items in subfolders"
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean value (true, false) to infer content-type based on extension."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File content\n- binary"
+      }
+    },
+    "OnUpdatedFiles": {
+      "operationId": "OnUpdatedFiles",
+      "kind": "trigger",
+      "displayName": "When a file is modified (properties only) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnUpdatedFiles",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the folder."
+        },
+        {
+          "name": "Number of files to return",
+          "key": "maxFileCount",
+          "required": false,
+          "type": "integer",
+          "description": "Maximum number of files to return by single trigger run (1-100). Note that 'Split On' setting can force trigger to process each item individually."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- List of Files\n- BlobMetadata"
+      }
+    },
+    "OnUpdatedFilesV2": {
+      "operationId": "OnUpdatedFilesV2",
+      "kind": "trigger",
+      "displayName": "When a file is modified (properties only)",
+      "deprecated": false,
+      "description": "- OnUpdatedFilesV2",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the folder."
+        },
+        {
+          "name": "Include subfolders",
+          "key": "includeSubfolders",
+          "required": false,
+          "type": "boolean",
+          "description": "Include items in subfolders"
+        },
+        {
+          "name": "Number of files to return",
+          "key": "maxFileCount",
+          "required": false,
+          "type": "integer",
+          "description": "Maximum number of files to return by single trigger run (1-100). Note that 'Split On' setting can force trigger to process each item individually."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- List of Files\n- BlobMetadata"
+      }
+    },
+    "UpdateFile": {
+      "operationId": "UpdateFile",
+      "kind": "action",
+      "displayName": "Update file",
+      "deprecated": false,
+      "description": "- UpdateFile",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the file."
+        },
+        {
+          "name": "File Content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "The content of the file."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

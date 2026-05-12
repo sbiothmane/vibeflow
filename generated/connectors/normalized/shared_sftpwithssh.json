@@ -1,0 +1,421 @@
+{
+  "connectorId": "shared_sftpwithssh",
+  "displayName": "SFTP - SSH",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/sftpwithssh/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-04-28T01:06:00.0000000Z",
+  "sourceGitCommit": "38b2850b21859cf1397a730fa15d49904b4a64ed",
+  "sourcePath": "docs/sftpwithssh/index.yml",
+  "operations": {
+    "CopyFile": {
+      "operationId": "CopyFile",
+      "kind": "action",
+      "displayName": "Copy file",
+      "deprecated": false,
+      "description": "- CopyFile",
+      "parameters": [
+        {
+          "name": "Source file path",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Path to the source file"
+        },
+        {
+          "name": "Destination file path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "Path to the destination file, including file name"
+        },
+        {
+          "name": "Overwrite?",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Overwrites the destination file if set to 'true'"
+        },
+        {
+          "name": "Get all file metadata",
+          "key": "ReadFileMetadataFromServer",
+          "required": false,
+          "type": "boolean",
+          "description": "Get all file metadata from the SFTP server after file creation is complete. If this is false, some metadata properties may not be returned such as last modified time, etc."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "CreateFile": {
+      "operationId": "CreateFile",
+      "kind": "action",
+      "displayName": "Create file",
+      "deprecated": false,
+      "description": "- CreateFile",
+      "parameters": [
+        {
+          "name": "Folder path",
+          "key": "folderPath",
+          "required": true,
+          "type": "string",
+          "description": "Unique path of the folder"
+        },
+        {
+          "name": "File name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Name of the file"
+        },
+        {
+          "name": "File content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "Content of the file to create"
+        },
+        {
+          "name": "Get all file metadata",
+          "key": "ReadFileMetadataFromServer",
+          "required": false,
+          "type": "boolean",
+          "description": "Get all file metadata from the SFTP server after file creation is complete. If this is false, some metadata properties may not be returned such as last modified time, etc."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "CreateFolder": {
+      "operationId": "CreateFolder",
+      "kind": "action",
+      "displayName": "Create folder",
+      "deprecated": false,
+      "description": "- CreateFolder",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": true,
+          "type": "string",
+          "description": "Select a folder"
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Name of the folder"
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "DeleteFile": {
+      "operationId": "DeleteFile",
+      "kind": "action",
+      "displayName": "Delete file",
+      "deprecated": false,
+      "description": "- DeleteFile",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the file"
+        },
+        {
+          "name": "Skip delete if file not found",
+          "key": "SkipDeleteIfFileNotFoundOnServer",
+          "required": false,
+          "type": "boolean",
+          "description": "Skips deletion if a file is not found without failing action."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ExtractFolderV2": {
+      "operationId": "ExtractFolderV2",
+      "kind": "action",
+      "displayName": "Extract archive to folder",
+      "deprecated": false,
+      "description": "- ExtractFolderV2",
+      "parameters": [
+        {
+          "name": "Source archive file path",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Path to the archive file"
+        },
+        {
+          "name": "Destination folder path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "Path to the destination folder"
+        },
+        {
+          "name": "Overwrite?",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Overwrites the destination files if set to 'true'"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "GetFileContent": {
+      "operationId": "GetFileContent",
+      "kind": "action",
+      "displayName": "Get file content",
+      "deprecated": false,
+      "description": "- GetFileContent",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the file id"
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "Infer content-type based on extension"
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "GetFileContentByPath": {
+      "operationId": "GetFileContentByPath",
+      "kind": "action",
+      "displayName": "Get file content using path",
+      "deprecated": false,
+      "description": "- GetFileContentByPath",
+      "parameters": [
+        {
+          "name": "File path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "Unique path of the file"
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "Infer content-type based on extension"
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "GetFileMetadata": {
+      "operationId": "GetFileMetadata",
+      "kind": "action",
+      "displayName": "Get file metadata",
+      "deprecated": false,
+      "description": "- GetFileMetadata",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the file id"
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "GetFileMetadataByPath": {
+      "operationId": "GetFileMetadataByPath",
+      "kind": "action",
+      "displayName": "Get file metadata using path",
+      "deprecated": false,
+      "description": "- GetFileMetadataByPath",
+      "parameters": [
+        {
+          "name": "File path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "Unique path of the file"
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "ListFolder": {
+      "operationId": "ListFolder",
+      "kind": "action",
+      "displayName": "List files in folder",
+      "deprecated": false,
+      "description": "- ListFolder",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the folder"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "ListRootFolder": {
+      "operationId": "ListRootFolder",
+      "kind": "action",
+      "displayName": "List files in root folder",
+      "deprecated": false,
+      "description": "- ListRootFolder",
+      "parameters": [],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "OnUpdatedFile": {
+      "operationId": "OnUpdatedFile",
+      "kind": "trigger",
+      "displayName": "When a file is added or modified",
+      "deprecated": false,
+      "description": "- OnUpdatedFile",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "Specify a folder"
+        },
+        {
+          "name": "Include file content",
+          "key": "includeFileContent",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to true, file content will also be retrieved along with the trigger response"
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "Infer content-type based on extension"
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "OnUpdatedFiles": {
+      "operationId": "OnUpdatedFiles",
+      "kind": "trigger",
+      "displayName": "When files are added or modified (properties only)",
+      "deprecated": false,
+      "description": "- OnUpdatedFiles",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "Select a folder"
+        },
+        {
+          "name": "Number of files to return",
+          "key": "maxFileCount",
+          "required": false,
+          "type": "integer",
+          "description": "Number of files returned from the trigger (1-100)"
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- List of Files\n- BlobMetadata"
+      }
+    },
+    "RenameFile": {
+      "operationId": "RenameFile",
+      "kind": "action",
+      "displayName": "Rename File",
+      "deprecated": false,
+      "description": "- RenameFile",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select a file"
+        },
+        {
+          "name": "New name",
+          "key": "newName",
+          "required": true,
+          "type": "string",
+          "description": "New name for the file"
+        },
+        {
+          "name": "Get all file metadata",
+          "key": "ReadFileMetadataFromServer",
+          "required": false,
+          "type": "boolean",
+          "description": "Get all file metadata from the SFTP server after file creation is complete. If this is false, some metadata properties may not be returned such as last modified time, etc."
+        }
+      ],
+      "returns": {
+        "raw": "Represents blob datasets metadata response\n- Body\n- BlobMetadataResponse"
+      }
+    },
+    "UpdateFile": {
+      "operationId": "UpdateFile",
+      "kind": "action",
+      "displayName": "Update file",
+      "deprecated": false,
+      "description": "- UpdateFile",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the file"
+        },
+        {
+          "name": "File content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "Content of the file to update"
+        },
+        {
+          "name": "Get all file metadata",
+          "key": "ReadFileMetadataFromServer",
+          "required": false,
+          "type": "boolean",
+          "description": "Get all file metadata from the SFTP server after file creation is complete. If this is false, some metadata properties may not be returned such as last modified time, etc."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

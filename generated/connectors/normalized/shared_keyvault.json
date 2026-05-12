@@ -1,0 +1,352 @@
+{
+  "connectorId": "shared_keyvault",
+  "displayName": "Azure Key Vault",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/keyvault/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-07-02T01:01:00.0000000Z",
+  "sourceGitCommit": "70b4ce8e0e173553e34b919ec1525f9f4460f1b2",
+  "sourcePath": "docs/keyvault/index.yml",
+  "operations": {
+    "DecryptData": {
+      "operationId": "DecryptData",
+      "kind": "action",
+      "displayName": "Decrypt data with key",
+      "deprecated": false,
+      "description": "- DecryptData",
+      "parameters": [
+        {
+          "name": "Name of the key",
+          "key": "keyName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the key."
+        },
+        {
+          "name": "Algorithm",
+          "key": "algorithm",
+          "required": true,
+          "type": "string",
+          "description": "Algorithm to use for decrypting the data"
+        },
+        {
+          "name": "Encrypted data",
+          "key": "encryptedData",
+          "required": true,
+          "type": "string",
+          "description": "Data to decrypt"
+        }
+      ],
+      "returns": {
+        "raw": "Result of decryption operation\n- Body\n- KeyDecryptOutput"
+      }
+    },
+    "DecryptDataWithVersion": {
+      "operationId": "DecryptDataWithVersion",
+      "kind": "action",
+      "displayName": "Decrypt data with key version",
+      "deprecated": false,
+      "description": "- DecryptDataWithVersion",
+      "parameters": [
+        {
+          "name": "Name of the key",
+          "key": "keyName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the key."
+        },
+        {
+          "name": "Version of the key",
+          "key": "keyVersion",
+          "required": true,
+          "type": "string",
+          "description": "Version of the key."
+        },
+        {
+          "name": "Algorithm",
+          "key": "algorithm",
+          "required": true,
+          "type": "string",
+          "description": "Algorithm to use for decrypting the data"
+        },
+        {
+          "name": "Encrypted data",
+          "key": "encryptedData",
+          "required": true,
+          "type": "string",
+          "description": "Data to decrypt"
+        }
+      ],
+      "returns": {
+        "raw": "Result of decryption operation\n- Body\n- KeyDecryptOutput"
+      }
+    },
+    "EncryptData": {
+      "operationId": "EncryptData",
+      "kind": "action",
+      "displayName": "Encrypt data with key",
+      "deprecated": false,
+      "description": "- EncryptData",
+      "parameters": [
+        {
+          "name": "Name of the key",
+          "key": "keyName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the key."
+        },
+        {
+          "name": "Algorithm",
+          "key": "algorithm",
+          "required": true,
+          "type": "string",
+          "description": "Algorithm to use for encrypting the data"
+        },
+        {
+          "name": "Raw data",
+          "key": "rawData",
+          "required": true,
+          "type": "string",
+          "description": "Data to encrypt"
+        }
+      ],
+      "returns": {
+        "raw": "Result of encryption operation\n- Body\n- KeyEncryptOutput"
+      }
+    },
+    "EncryptDataWithVersion": {
+      "operationId": "EncryptDataWithVersion",
+      "kind": "action",
+      "displayName": "Encrypt data with key version",
+      "deprecated": false,
+      "description": "- EncryptDataWithVersion",
+      "parameters": [
+        {
+          "name": "Name of the key",
+          "key": "keyName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the key."
+        },
+        {
+          "name": "Version of the key",
+          "key": "keyVersion",
+          "required": true,
+          "type": "string",
+          "description": "Version of the key."
+        },
+        {
+          "name": "Algorithm",
+          "key": "algorithm",
+          "required": true,
+          "type": "string",
+          "description": "Algorithm to use for encrypting the data"
+        },
+        {
+          "name": "Raw data",
+          "key": "rawData",
+          "required": true,
+          "type": "string",
+          "description": "Data to encrypt"
+        }
+      ],
+      "returns": {
+        "raw": "Result of encryption operation\n- Body\n- KeyEncryptOutput"
+      }
+    },
+    "GetKeyMetadata": {
+      "operationId": "GetKeyMetadata",
+      "kind": "action",
+      "displayName": "Get key metadata",
+      "deprecated": false,
+      "description": "- GetKeyMetadata",
+      "parameters": [
+        {
+          "name": "Name of the key",
+          "key": "keyName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the key."
+        }
+      ],
+      "returns": {
+        "raw": "Metadata of a key\n- Body\n- KeyMetadata"
+      }
+    },
+    "GetKeyVersionMetadata": {
+      "operationId": "GetKeyVersionMetadata",
+      "kind": "action",
+      "displayName": "Get key version metadata",
+      "deprecated": false,
+      "description": "- GetKeyVersionMetadata",
+      "parameters": [
+        {
+          "name": "Name of the key",
+          "key": "keyName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the key."
+        },
+        {
+          "name": "Version of the key",
+          "key": "keyVersion",
+          "required": true,
+          "type": "string",
+          "description": "Version of the key."
+        }
+      ],
+      "returns": {
+        "raw": "Metadata of a key\n- Body\n- KeyMetadata"
+      }
+    },
+    "GetSecret": {
+      "operationId": "GetSecret",
+      "kind": "action",
+      "displayName": "Get secret",
+      "deprecated": false,
+      "description": "- GetSecret",
+      "parameters": [
+        {
+          "name": "Name of the secret",
+          "key": "secretName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the secret."
+        }
+      ],
+      "returns": {
+        "raw": "The secret\n- Body\n- Secret"
+      }
+    },
+    "GetSecretMetadata": {
+      "operationId": "GetSecretMetadata",
+      "kind": "action",
+      "displayName": "Get secret metadata",
+      "deprecated": false,
+      "description": "- GetSecretMetadata",
+      "parameters": [
+        {
+          "name": "Name of the secret",
+          "key": "secretName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the secret."
+        }
+      ],
+      "returns": {
+        "raw": "Metadata of a secret\n- Body\n- SecretMetadata"
+      }
+    },
+    "GetSecretVersion": {
+      "operationId": "GetSecretVersion",
+      "kind": "action",
+      "displayName": "Get secret version",
+      "deprecated": false,
+      "description": "- GetSecretVersion",
+      "parameters": [
+        {
+          "name": "Name of the secret",
+          "key": "secretName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the secret."
+        },
+        {
+          "name": "Version of the secret",
+          "key": "secretVersion",
+          "required": true,
+          "type": "string",
+          "description": "Version of the secret."
+        }
+      ],
+      "returns": {
+        "raw": "The secret\n- Body\n- Secret"
+      }
+    },
+    "GetSecretVersionMetadata": {
+      "operationId": "GetSecretVersionMetadata",
+      "kind": "action",
+      "displayName": "Get secret version metadata",
+      "deprecated": false,
+      "description": "- GetSecretVersionMetadata",
+      "parameters": [
+        {
+          "name": "Name of the secret",
+          "key": "secretName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the secret."
+        },
+        {
+          "name": "Version of the secret",
+          "key": "secretVersion",
+          "required": true,
+          "type": "string",
+          "description": "Version of the secret."
+        }
+      ],
+      "returns": {
+        "raw": "Metadata of a secret\n- Body\n- SecretMetadata"
+      }
+    },
+    "ListKeyVersions": {
+      "operationId": "ListKeyVersions",
+      "kind": "action",
+      "displayName": "List key versions",
+      "deprecated": false,
+      "description": "- ListKeyVersions",
+      "parameters": [
+        {
+          "name": "Name of the key",
+          "key": "keyName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the key."
+        }
+      ],
+      "returns": {
+        "raw": "Collection of keys\n- Body\n- KeyMetadataCollection"
+      }
+    },
+    "ListKeys": {
+      "operationId": "ListKeys",
+      "kind": "action",
+      "displayName": "List keys",
+      "deprecated": false,
+      "description": "- ListKeys",
+      "parameters": [],
+      "returns": {
+        "raw": "Collection of keys\n- Body\n- KeyMetadataCollection"
+      }
+    },
+    "ListSecretVersions": {
+      "operationId": "ListSecretVersions",
+      "kind": "action",
+      "displayName": "List secret versions",
+      "deprecated": false,
+      "description": "- ListSecretVersions",
+      "parameters": [
+        {
+          "name": "Name of the secret",
+          "key": "secretName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the secret."
+        }
+      ],
+      "returns": {
+        "raw": "Collection of secrets\n- Body\n- SecretMetadataCollection"
+      }
+    },
+    "ListSecrets": {
+      "operationId": "ListSecrets",
+      "kind": "action",
+      "displayName": "List secrets",
+      "deprecated": false,
+      "description": "- ListSecrets",
+      "parameters": [],
+      "returns": {
+        "raw": "Collection of secrets\n- Body\n- SecretMetadataCollection"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

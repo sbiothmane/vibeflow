@@ -1,0 +1,439 @@
+{
+  "flows": [
+    {
+      "flow": "Testing - [Compassion Project - Oncology Program]",
+      "definitionPath": "/Users/othmane/Code/vibeflow/examples/example1/Microsoft.Flow/flows/fb36e059-b3eb-4443-aa1c-d998ee1c2af2/definition.json",
+      "operations": {
+        "shared_approvals::StartAndWaitForAnApproval": 6,
+        "shared_microsoftforms::CreateFormWebhook": 1,
+        "shared_microsoftforms::GetFormResponseById": 1,
+        "shared_office365::SendEmailV2": 15,
+        "shared_onedriveforbusiness::CreateShareLinkV2": 2,
+        "shared_onedriveforbusiness::GetFileContent": 2,
+        "shared_onedriveforbusiness::GetFileContentByPath": 2,
+        "shared_sharepointonline::PatchItem": 9,
+        "shared_sharepointonline::PostItem": 2
+      },
+      "parameters": {
+        "shared_approvals::StartAndWaitForAnApproval": {
+          "WebhookApprovalCreationInput/assignedTo": 6,
+          "WebhookApprovalCreationInput/attachments": 6,
+          "WebhookApprovalCreationInput/details": 6,
+          "WebhookApprovalCreationInput/enableNotifications": 6,
+          "WebhookApprovalCreationInput/enableReassignment": 6,
+          "WebhookApprovalCreationInput/itemLinkDescription": 6,
+          "WebhookApprovalCreationInput/responseOptions": 6,
+          "WebhookApprovalCreationInput/title": 6,
+          "approvalType": 6
+        },
+        "shared_microsoftforms::CreateFormWebhook": {
+          "form_id": 1
+        },
+        "shared_microsoftforms::GetFormResponseById": {
+          "form_id": 1,
+          "response_id": 1
+        },
+        "shared_office365::SendEmailV2": {
+          "emailMessage/Attachments": 14,
+          "emailMessage/Bcc": 12,
+          "emailMessage/Body": 15,
+          "emailMessage/Cc": 14,
+          "emailMessage/Importance": 15,
+          "emailMessage/Subject": 15,
+          "emailMessage/To": 15
+        },
+        "shared_onedriveforbusiness::CreateShareLinkV2": {
+          "id": 2,
+          "scope": 2,
+          "type": 2
+        },
+        "shared_onedriveforbusiness::GetFileContent": {
+          "id": 2,
+          "inferContentType": 2
+        },
+        "shared_onedriveforbusiness::GetFileContentByPath": {
+          "inferContentType": 2,
+          "path": 2
+        },
+        "shared_sharepointonline::PatchItem": {
+          "dataset": 9,
+          "id": 9,
+          "item/ApprovalDate": 2,
+          "item/Approver": 1,
+          "item/DateCompleted": 7,
+          "item/DrugType": 1,
+          "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie": 1,
+          "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie0": 1,
+          "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie1": 1,
+          "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie2": 1,
+          "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie3": 1,
+          "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie4": 1,
+          "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie5": 1,
+          "item/OData__x005b_GeneralInformation_x002d_": 2,
+          "item/OData__x005b_GeneralInformation_x002d_0": 2,
+          "item/OData__x005b_GeneralInformation_x005d_21": 1,
+          "item/Status": 7,
+          "table": 9
+        },
+        "shared_sharepointonline::PostItem": {
+          "dataset": 2,
+          "item/Approver": 1,
+          "item/DateCreated": 1,
+          "item/DrugType": 1,
+          "item/IDNumber": 1,
+          "item/OData__x005b_AdvanceProgram_x005d__x00": 1,
+          "item/OData__x005b_AdvanceProgram_x005d__x000": 1,
+          "item/OData__x005b_AdvanceProgram_x005d__x001": 1,
+          "item/OData__x005b_AdvanceProgram_x005d__x002": 1,
+          "item/OData__x005b_AdvanceProgram_x005d__x003": 1,
+          "item/OData__x005b_AdvanceProgram_x005d__x004": 1,
+          "item/OData__x005b_AdvanceProgram_x005d__x005": 1,
+          "item/OData__x005b_BridgingProgram_x005d__x0": 1,
+          "item/OData__x005b_BridgingProgram_x005d__x00": 1,
+          "item/OData__x005b_BridgingProgram_x005d__x01": 1,
+          "item/OData__x005b_BridgingProgram_x005d__x02": 1,
+          "item/OData__x005b_BridgingProgram_x005d__x03": 1,
+          "item/OData__x005b_BridgingProgram_x005d__x04": 1,
+          "item/OData__x005b_CopayProgramEscalationReq": 1,
+          "item/OData__x005b_CopayProgramEscalationReq0": 1,
+          "item/OData__x005b_CopayProgramEscalationReq1": 1,
+          "item/OData__x005b_CopayProgramEscalationReq2": 1,
+          "item/OData__x005b_CopayProgramEscalationReq3": 1,
+          "item/OData__x005b_CopayProgramEscalationReq4": 1,
+          "item/OData__x005b_CopayProgramEscalationReq5": 1,
+          "item/OData__x005b_CopayProgramEscalationReq6": 1,
+          "item/OData__x005b_GeneralInformation_x005d_": 1,
+          "item/OData__x005b_GeneralInformation_x005d_0": 1,
+          "item/OData__x005b_GeneralInformation_x005d_1": 1,
+          "item/OData__x005b_GeneralInformation_x005d_10": 1,
+          "item/OData__x005b_GeneralInformation_x005d_11": 1,
+          "item/OData__x005b_GeneralInformation_x005d_12": 1,
+          "item/OData__x005b_GeneralInformation_x005d_13": 1,
+          "item/OData__x005b_GeneralInformation_x005d_14": 1,
+          "item/OData__x005b_GeneralInformation_x005d_15": 1,
+          "item/OData__x005b_GeneralInformation_x005d_16": 1,
+          "item/OData__x005b_GeneralInformation_x005d_17": 1,
+          "item/OData__x005b_GeneralInformation_x005d_18": 1,
+          "item/OData__x005b_GeneralInformation_x005d_19": 1,
+          "item/OData__x005b_GeneralInformation_x005d_2": 1,
+          "item/OData__x005b_GeneralInformation_x005d_20": 1,
+          "item/OData__x005b_GeneralInformation_x005d_21": 1,
+          "item/OData__x005b_GeneralInformation_x005d_22": 1,
+          "item/OData__x005b_GeneralInformation_x005d_3": 1,
+          "item/OData__x005b_GeneralInformation_x005d_4": 1,
+          "item/OData__x005b_GeneralInformation_x005d_5": 1,
+          "item/OData__x005b_GeneralInformation_x005d_6": 1,
+          "item/OData__x005b_GeneralInformation_x005d_7": 1,
+          "item/OData__x005b_GeneralInformation_x005d_8": 1,
+          "item/OData__x005b_GeneralInformation_x005d_9": 1,
+          "item/OData__x005b_OFF_x002d_LabelCompassion2": 1,
+          "item/OData__x005b_Off_x002d_LabelCompassion": 1,
+          "item/OData__x005b_Off_x002d_LabelCompassion0": 1,
+          "item/OData__x005b_Off_x002d_LabelCompassion1": 1,
+          "item/OData__x005b_Off_x002d_LabelCompassion3": 1,
+          "item/OData__x005b_On_x002d_LabelCompassiona": 1,
+          "item/OData__x005b_On_x002d_LabelCompassiona0": 1,
+          "item/OData__x005b_On_x002d_LabelCompassiona1": 1,
+          "item/OData__x005b_On_x002d_LabelCompassiona2": 1,
+          "item/PatientID": 1,
+          "item/Requestor": 1,
+          "item/Status": 1,
+          "item/SubmissionDate": 1,
+          "item/SubmissionID": 1,
+          "item/TicketID": 1,
+          "item/Title": 1,
+          "table": 2
+        }
+      }
+    },
+    {
+      "flow": "Live - [SFMC] - Mass e-mail BTS Intake ",
+      "definitionPath": "/Users/othmane/Code/vibeflow/examples/example2/Microsoft.Flow/flows/385bc524-448e-4368-a6d0-c6fc9d20e374/definition.json",
+      "operations": {
+        "shared_approvals::StartAndWaitForAnApproval": 7,
+        "shared_microsoftforms::CreateFormWebhook": 1,
+        "shared_microsoftforms::GetFormResponseById": 1,
+        "shared_office365::SendEmailV2": 25,
+        "shared_onedriveforbusiness::GetFileContentByPath": 2,
+        "shared_sharepointonline::GetItem": 4,
+        "shared_sharepointonline::PatchItem": 6,
+        "shared_sharepointonline::PostItem": 3
+      },
+      "parameters": {
+        "shared_approvals::StartAndWaitForAnApproval": {
+          "WebhookApprovalCreationInput/assignedTo": 7,
+          "WebhookApprovalCreationInput/details": 7,
+          "WebhookApprovalCreationInput/enableNotifications": 7,
+          "WebhookApprovalCreationInput/enableReassignment": 7,
+          "WebhookApprovalCreationInput/itemLinkDescription": 6,
+          "WebhookApprovalCreationInput/responseOptions": 1,
+          "WebhookApprovalCreationInput/title": 7,
+          "approvalType": 7
+        },
+        "shared_microsoftforms::CreateFormWebhook": {
+          "form_id": 1
+        },
+        "shared_microsoftforms::GetFormResponseById": {
+          "form_id": 1,
+          "response_id": 1
+        },
+        "shared_office365::SendEmailV2": {
+          "emailMessage/Attachments": 6,
+          "emailMessage/Bcc": 3,
+          "emailMessage/Body": 25,
+          "emailMessage/Cc": 21,
+          "emailMessage/From": 16,
+          "emailMessage/Importance": 25,
+          "emailMessage/Subject": 25,
+          "emailMessage/To": 25
+        },
+        "shared_onedriveforbusiness::GetFileContentByPath": {
+          "inferContentType": 2,
+          "path": 2
+        },
+        "shared_sharepointonline::GetItem": {
+          "dataset": 4,
+          "id": 4,
+          "table": 4
+        },
+        "shared_sharepointonline::PatchItem": {
+          "dataset": 6,
+          "id": 6,
+          "item/Comments": 6,
+          "item/Status/Value": 6,
+          "table": 6
+        },
+        "shared_sharepointonline::PostItem": {
+          "dataset": 3,
+          "item/AdoptionLadder": 1,
+          "item/BTSPartner/Claims": 3,
+          "item/BusinessOwner/Claims": 3,
+          "item/Comments": 2,
+          "item/CustomerSegmentation": 1,
+          "item/DEName": 1,
+          "item/DateRequested": 3,
+          "item/DateScheduled": 1,
+          "item/Product": 2,
+          "item/ProjectName": 3,
+          "item/ProjectPurpose": 3,
+          "item/Specialities": 2,
+          "item/Status/Value": 3,
+          "item/TherapeuticArea": 1,
+          "item/TimeScheduled": 1,
+          "item/country": 1,
+          "table": 3
+        }
+      }
+    }
+  ],
+  "connectors": {
+    "shared_approvals": {
+      "apiId": "/providers/Microsoft.PowerApps/apis/shared_approvals",
+      "operations": {
+        "StartAndWaitForAnApproval": {
+          "count": 13,
+          "observedParameters": {
+            "WebhookApprovalCreationInput/assignedTo": 13,
+            "WebhookApprovalCreationInput/attachments": 6,
+            "WebhookApprovalCreationInput/details": 13,
+            "WebhookApprovalCreationInput/enableNotifications": 13,
+            "WebhookApprovalCreationInput/enableReassignment": 13,
+            "WebhookApprovalCreationInput/itemLinkDescription": 12,
+            "WebhookApprovalCreationInput/responseOptions": 7,
+            "WebhookApprovalCreationInput/title": 13,
+            "approvalType": 13
+          }
+        }
+      }
+    },
+    "shared_microsoftforms": {
+      "apiId": "/providers/Microsoft.PowerApps/apis/shared_microsoftforms",
+      "operations": {
+        "CreateFormWebhook": {
+          "count": 2,
+          "observedParameters": {
+            "form_id": 2
+          }
+        },
+        "GetFormResponseById": {
+          "count": 2,
+          "observedParameters": {
+            "form_id": 2,
+            "response_id": 2
+          }
+        }
+      }
+    },
+    "shared_office365": {
+      "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+      "operations": {
+        "SendEmailV2": {
+          "count": 40,
+          "observedParameters": {
+            "emailMessage/Attachments": 20,
+            "emailMessage/Bcc": 15,
+            "emailMessage/Body": 40,
+            "emailMessage/Cc": 35,
+            "emailMessage/From": 16,
+            "emailMessage/Importance": 40,
+            "emailMessage/Subject": 40,
+            "emailMessage/To": 40
+          }
+        }
+      }
+    },
+    "shared_onedriveforbusiness": {
+      "apiId": "/providers/Microsoft.PowerApps/apis/shared_onedriveforbusiness",
+      "operations": {
+        "CreateShareLinkV2": {
+          "count": 2,
+          "observedParameters": {
+            "id": 2,
+            "scope": 2,
+            "type": 2
+          }
+        },
+        "GetFileContent": {
+          "count": 2,
+          "observedParameters": {
+            "id": 2,
+            "inferContentType": 2
+          }
+        },
+        "GetFileContentByPath": {
+          "count": 4,
+          "observedParameters": {
+            "inferContentType": 4,
+            "path": 4
+          }
+        }
+      }
+    },
+    "shared_sharepointonline": {
+      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+      "operations": {
+        "GetItem": {
+          "count": 4,
+          "observedParameters": {
+            "dataset": 4,
+            "id": 4,
+            "table": 4
+          }
+        },
+        "PatchItem": {
+          "count": 15,
+          "observedParameters": {
+            "dataset": 15,
+            "id": 15,
+            "item/ApprovalDate": 2,
+            "item/Approver": 1,
+            "item/Comments": 6,
+            "item/DateCompleted": 7,
+            "item/DrugType": 1,
+            "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie": 1,
+            "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie0": 1,
+            "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie1": 1,
+            "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie2": 1,
+            "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie3": 1,
+            "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie4": 1,
+            "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie5": 1,
+            "item/OData__x005b_GeneralInformation_x002d_": 2,
+            "item/OData__x005b_GeneralInformation_x002d_0": 2,
+            "item/OData__x005b_GeneralInformation_x005d_21": 1,
+            "item/Status": 7,
+            "item/Status/Value": 6,
+            "table": 15
+          }
+        },
+        "PostItem": {
+          "count": 5,
+          "observedParameters": {
+            "dataset": 5,
+            "item/AdoptionLadder": 1,
+            "item/Approver": 1,
+            "item/BTSPartner/Claims": 3,
+            "item/BusinessOwner/Claims": 3,
+            "item/Comments": 2,
+            "item/CustomerSegmentation": 1,
+            "item/DEName": 1,
+            "item/DateCreated": 1,
+            "item/DateRequested": 3,
+            "item/DateScheduled": 1,
+            "item/DrugType": 1,
+            "item/IDNumber": 1,
+            "item/OData__x005b_AdvanceProgram_x005d__x00": 1,
+            "item/OData__x005b_AdvanceProgram_x005d__x000": 1,
+            "item/OData__x005b_AdvanceProgram_x005d__x001": 1,
+            "item/OData__x005b_AdvanceProgram_x005d__x002": 1,
+            "item/OData__x005b_AdvanceProgram_x005d__x003": 1,
+            "item/OData__x005b_AdvanceProgram_x005d__x004": 1,
+            "item/OData__x005b_AdvanceProgram_x005d__x005": 1,
+            "item/OData__x005b_BridgingProgram_x005d__x0": 1,
+            "item/OData__x005b_BridgingProgram_x005d__x00": 1,
+            "item/OData__x005b_BridgingProgram_x005d__x01": 1,
+            "item/OData__x005b_BridgingProgram_x005d__x02": 1,
+            "item/OData__x005b_BridgingProgram_x005d__x03": 1,
+            "item/OData__x005b_BridgingProgram_x005d__x04": 1,
+            "item/OData__x005b_CopayProgramEscalationReq": 1,
+            "item/OData__x005b_CopayProgramEscalationReq0": 1,
+            "item/OData__x005b_CopayProgramEscalationReq1": 1,
+            "item/OData__x005b_CopayProgramEscalationReq2": 1,
+            "item/OData__x005b_CopayProgramEscalationReq3": 1,
+            "item/OData__x005b_CopayProgramEscalationReq4": 1,
+            "item/OData__x005b_CopayProgramEscalationReq5": 1,
+            "item/OData__x005b_CopayProgramEscalationReq6": 1,
+            "item/OData__x005b_GeneralInformation_x005d_": 1,
+            "item/OData__x005b_GeneralInformation_x005d_0": 1,
+            "item/OData__x005b_GeneralInformation_x005d_1": 1,
+            "item/OData__x005b_GeneralInformation_x005d_10": 1,
+            "item/OData__x005b_GeneralInformation_x005d_11": 1,
+            "item/OData__x005b_GeneralInformation_x005d_12": 1,
+            "item/OData__x005b_GeneralInformation_x005d_13": 1,
+            "item/OData__x005b_GeneralInformation_x005d_14": 1,
+            "item/OData__x005b_GeneralInformation_x005d_15": 1,
+            "item/OData__x005b_GeneralInformation_x005d_16": 1,
+            "item/OData__x005b_GeneralInformation_x005d_17": 1,
+            "item/OData__x005b_GeneralInformation_x005d_18": 1,
+            "item/OData__x005b_GeneralInformation_x005d_19": 1,
+            "item/OData__x005b_GeneralInformation_x005d_2": 1,
+            "item/OData__x005b_GeneralInformation_x005d_20": 1,
+            "item/OData__x005b_GeneralInformation_x005d_21": 1,
+            "item/OData__x005b_GeneralInformation_x005d_22": 1,
+            "item/OData__x005b_GeneralInformation_x005d_3": 1,
+            "item/OData__x005b_GeneralInformation_x005d_4": 1,
+            "item/OData__x005b_GeneralInformation_x005d_5": 1,
+            "item/OData__x005b_GeneralInformation_x005d_6": 1,
+            "item/OData__x005b_GeneralInformation_x005d_7": 1,
+            "item/OData__x005b_GeneralInformation_x005d_8": 1,
+            "item/OData__x005b_GeneralInformation_x005d_9": 1,
+            "item/OData__x005b_OFF_x002d_LabelCompassion2": 1,
+            "item/OData__x005b_Off_x002d_LabelCompassion": 1,
+            "item/OData__x005b_Off_x002d_LabelCompassion0": 1,
+            "item/OData__x005b_Off_x002d_LabelCompassion1": 1,
+            "item/OData__x005b_Off_x002d_LabelCompassion3": 1,
+            "item/OData__x005b_On_x002d_LabelCompassiona": 1,
+            "item/OData__x005b_On_x002d_LabelCompassiona0": 1,
+            "item/OData__x005b_On_x002d_LabelCompassiona1": 1,
+            "item/OData__x005b_On_x002d_LabelCompassiona2": 1,
+            "item/PatientID": 1,
+            "item/Product": 2,
+            "item/ProjectName": 3,
+            "item/ProjectPurpose": 3,
+            "item/Requestor": 1,
+            "item/Specialities": 2,
+            "item/Status": 1,
+            "item/Status/Value": 3,
+            "item/SubmissionDate": 1,
+            "item/SubmissionID": 1,
+            "item/TherapeuticArea": 1,
+            "item/TicketID": 1,
+            "item/TimeScheduled": 1,
+            "item/Title": 1,
+            "item/country": 1,
+            "table": 5
+          }
+        }
+      }
+    }
+  }
+}

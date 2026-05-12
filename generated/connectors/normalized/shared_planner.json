@@ -1,0 +1,1644 @@
+{
+  "connectorId": "shared_planner",
+  "displayName": "Planner",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/planner/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-05-05T19:06:00.0000000Z",
+  "sourceGitCommit": "181182d93e37b1e3c2f362a907d452853c68778a",
+  "sourcePath": "docs/Planner/index.yml",
+  "operations": {
+    "AssignUsers": {
+      "operationId": "AssignUsers",
+      "kind": "action",
+      "displayName": "Add assignees to a task",
+      "deprecated": false,
+      "description": "- AssignUsers",
+      "parameters": [
+        {
+          "name": "Task Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the task to update."
+        },
+        {
+          "name": "Assigned User Ids",
+          "key": "assignments",
+          "required": true,
+          "type": "string",
+          "description": "Semi-colon seperated ids or email addresses of users who should be assigned to this task."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTask_Response_V2"
+      }
+    },
+    "CreateBucket": {
+      "operationId": "CreateBucket",
+      "kind": "action",
+      "displayName": "Create a bucket [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateBucket",
+      "parameters": [
+        {
+          "name": "Name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Name of the bucket"
+        },
+        {
+          "name": "Plan Id",
+          "key": "planId",
+          "required": true,
+          "type": "string",
+          "description": "The plan for the new bucket"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CreateBucket_Response"
+      }
+    },
+    "CreateBucket_V2": {
+      "operationId": "CreateBucket_V2",
+      "kind": "action",
+      "displayName": "Create a bucket",
+      "deprecated": false,
+      "description": "- CreateBucket_V2",
+      "parameters": [
+        {
+          "name": "Name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Name of the bucket"
+        },
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "The group to retrieve the plan."
+        },
+        {
+          "name": "Plan Id",
+          "key": "planId",
+          "required": true,
+          "type": "string",
+          "description": "The plan for the new bucket."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CreateBucket_Response"
+      }
+    },
+    "CreateTask": {
+      "operationId": "CreateTask",
+      "kind": "action",
+      "displayName": "Create a task [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateTask",
+      "parameters": [
+        {
+          "name": "Plan Id",
+          "key": "planId",
+          "required": true,
+          "type": "string",
+          "description": "The plan for the new task."
+        },
+        {
+          "name": "Title",
+          "key": "title",
+          "required": true,
+          "type": "string",
+          "description": "The title of the new task."
+        },
+        {
+          "name": "Bucket Id",
+          "key": "bucketId",
+          "required": false,
+          "type": "string",
+          "description": "The bucket to place this task in."
+        },
+        {
+          "name": "Start Date Time",
+          "key": "startDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The datetime the task starts (Ex. '2018-04-13T00:42:19.284Z')."
+        },
+        {
+          "name": "Due Date Time",
+          "key": "dueDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The datetime the task is due (Ex. '2018-04-13T00:42:19.284Z')."
+        },
+        {
+          "name": "Assigned User Id",
+          "key": "assignments",
+          "required": false,
+          "type": "string",
+          "description": "The id or email address of the user to assign this task to."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTask_Response"
+      }
+    },
+    "CreateTask_V2": {
+      "operationId": "CreateTask_V2",
+      "kind": "action",
+      "displayName": "Create a task [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateTask_V2",
+      "parameters": [
+        {
+          "name": "Plan Id",
+          "key": "planId",
+          "required": true,
+          "type": "string",
+          "description": "The plan for the new task."
+        },
+        {
+          "name": "Title",
+          "key": "title",
+          "required": true,
+          "type": "string",
+          "description": "The title of the new task."
+        },
+        {
+          "name": "Bucket Id",
+          "key": "bucketId",
+          "required": false,
+          "type": "string",
+          "description": "The bucket to place this task in."
+        },
+        {
+          "name": "Start Date Time",
+          "key": "startDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The datetime the task starts (Ex. '2018-04-13T00:42:19.284Z')."
+        },
+        {
+          "name": "Due Date Time",
+          "key": "dueDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The datetime the task is due (Ex. '2018-04-13T00:42:19.284Z')."
+        },
+        {
+          "name": "Assigned User Ids",
+          "key": "assignments",
+          "required": false,
+          "type": "string",
+          "description": "Semi-colon seperated ids or email addresses of users to assign this task to."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTask_Response_V2"
+      }
+    },
+    "CreateTask_V3": {
+      "operationId": "CreateTask_V3",
+      "kind": "action",
+      "displayName": "Create a task",
+      "deprecated": false,
+      "description": "- CreateTask_V3",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "The group to retrieve the plan."
+        },
+        {
+          "name": "Plan Id",
+          "key": "planId",
+          "required": true,
+          "type": "string",
+          "description": "The plan for the new task."
+        },
+        {
+          "name": "Title",
+          "key": "title",
+          "required": true,
+          "type": "string",
+          "description": "The title of the new task (maximum of 255 chars)."
+        },
+        {
+          "name": "Bucket Id",
+          "key": "bucketId",
+          "required": false,
+          "type": "string",
+          "description": "The bucket to place this task in."
+        },
+        {
+          "name": "Start Date Time",
+          "key": "startDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The datetime the task starts (Ex. '2018-04-13T00:42:19.284Z')."
+        },
+        {
+          "name": "Due Date Time",
+          "key": "dueDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The datetime the task is due (Ex. '2018-04-13T00:42:19.284Z')."
+        },
+        {
+          "name": "Assigned User Ids",
+          "key": "assignments",
+          "required": false,
+          "type": "string",
+          "description": "Semi-colon separated ids or email addresses of users to assign this task to."
+        },
+        {
+          "name": "Pink",
+          "key": "category1",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Pink category."
+        },
+        {
+          "name": "Red",
+          "key": "category2",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Red category."
+        },
+        {
+          "name": "Yellow",
+          "key": "category3",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Yellow category."
+        },
+        {
+          "name": "Green",
+          "key": "category4",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Green category."
+        },
+        {
+          "name": "Blue",
+          "key": "category5",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Blue category."
+        },
+        {
+          "name": "Purple",
+          "key": "category6",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Purple category."
+        },
+        {
+          "name": "Bronze",
+          "key": "category7",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Bronze category."
+        },
+        {
+          "name": "Lime",
+          "key": "category8",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Lime category."
+        },
+        {
+          "name": "Aqua",
+          "key": "category9",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Aqua category."
+        },
+        {
+          "name": "Gray",
+          "key": "category10",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Gray category."
+        },
+        {
+          "name": "Silver",
+          "key": "category11",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Silver category."
+        },
+        {
+          "name": "Brown",
+          "key": "category12",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Brown category."
+        },
+        {
+          "name": "Cranberry",
+          "key": "category13",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Cranberry category."
+        },
+        {
+          "name": "Orange",
+          "key": "category14",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Orange category."
+        },
+        {
+          "name": "Peach",
+          "key": "category15",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Peach category."
+        },
+        {
+          "name": "Marigold",
+          "key": "category16",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Marigold category."
+        },
+        {
+          "name": "Light green",
+          "key": "category17",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Light green category."
+        },
+        {
+          "name": "Dark green",
+          "key": "category18",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Dark green category."
+        },
+        {
+          "name": "Teal",
+          "key": "category19",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Teal category."
+        },
+        {
+          "name": "Light blue",
+          "key": "category20",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Light blue category."
+        },
+        {
+          "name": "Dark blue",
+          "key": "category21",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Dark blue category."
+        },
+        {
+          "name": "Lavender",
+          "key": "category22",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Lavender category."
+        },
+        {
+          "name": "Plum",
+          "key": "category23",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Plum category."
+        },
+        {
+          "name": "Light gray",
+          "key": "category24",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Light gray category."
+        },
+        {
+          "name": "Dark gray",
+          "key": "category25",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Dark gray category."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTask_Response_V2"
+      }
+    },
+    "CreateTask_V4": {
+      "operationId": "CreateTask_V4",
+      "kind": "action",
+      "displayName": "Create a task (Preview)",
+      "deprecated": false,
+      "description": "- CreateTask_V4",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "The group to retrieve the plan."
+        },
+        {
+          "name": "Plan Id",
+          "key": "planId",
+          "required": true,
+          "type": "string",
+          "description": "The plan for the new task."
+        },
+        {
+          "name": "Title",
+          "key": "title",
+          "required": true,
+          "type": "string",
+          "description": "The title of the new task (maximum of 255 chars)."
+        },
+        {
+          "name": "Bucket Id",
+          "key": "bucketId",
+          "required": false,
+          "type": "string",
+          "description": "The bucket to place this task in."
+        },
+        {
+          "name": "Start Date Time",
+          "key": "startDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The datetime the task starts (Ex. '2018-04-13T00:42:19.284Z')."
+        },
+        {
+          "name": "Due Date Time",
+          "key": "dueDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The datetime the task is due (Ex. '2018-04-13T00:42:19.284Z')."
+        },
+        {
+          "name": "Assigned User Ids",
+          "key": "assignments",
+          "required": false,
+          "type": "string",
+          "description": "Semi-colon separated ids or email addresses of users to assign this task to."
+        },
+        {
+          "name": "Pink",
+          "key": "category1",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Pink category."
+        },
+        {
+          "name": "Red",
+          "key": "category2",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Red category."
+        },
+        {
+          "name": "Yellow",
+          "key": "category3",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Yellow category."
+        },
+        {
+          "name": "Green",
+          "key": "category4",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Green category."
+        },
+        {
+          "name": "Blue",
+          "key": "category5",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Blue category."
+        },
+        {
+          "name": "Purple",
+          "key": "category6",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Purple category."
+        },
+        {
+          "name": "Bronze",
+          "key": "category7",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Bronze category."
+        },
+        {
+          "name": "Lime",
+          "key": "category8",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Lime category."
+        },
+        {
+          "name": "Aqua",
+          "key": "category9",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Aqua category."
+        },
+        {
+          "name": "Gray",
+          "key": "category10",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Gray category."
+        },
+        {
+          "name": "Silver",
+          "key": "category11",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Silver category."
+        },
+        {
+          "name": "Brown",
+          "key": "category12",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Brown category."
+        },
+        {
+          "name": "Cranberry",
+          "key": "category13",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Cranberry category."
+        },
+        {
+          "name": "Orange",
+          "key": "category14",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Orange category."
+        },
+        {
+          "name": "Peach",
+          "key": "category15",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Peach category."
+        },
+        {
+          "name": "Marigold",
+          "key": "category16",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Marigold category."
+        },
+        {
+          "name": "Light green",
+          "key": "category17",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Light green category."
+        },
+        {
+          "name": "Dark green",
+          "key": "category18",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Dark green category."
+        },
+        {
+          "name": "Teal",
+          "key": "category19",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Teal category."
+        },
+        {
+          "name": "Light blue",
+          "key": "category20",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Light blue category."
+        },
+        {
+          "name": "Dark blue",
+          "key": "category21",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Dark blue category."
+        },
+        {
+          "name": "Lavender",
+          "key": "category22",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Lavender category."
+        },
+        {
+          "name": "Plum",
+          "key": "category23",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Plum category."
+        },
+        {
+          "name": "Light gray",
+          "key": "category24",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Light gray category."
+        },
+        {
+          "name": "Dark gray",
+          "key": "category25",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Dark gray category."
+        },
+        {
+          "name": "Priority",
+          "key": "priority",
+          "required": false,
+          "type": "integer",
+          "description": "Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority). Currently, Planner interprets values 0 and 1 as \"urgent\", 2 and 3 and 4 as \"important\", 5, 6, and 7 as \"medium\", and 8, 9, and 10 as \"low\". Currently, Planner sets the value 1 for \"urgent\", 3 for \"important\", 5 for \"medium\", and 9 for \"low\"."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTask_Response_V3"
+      }
+    },
+    "DeleteTask": {
+      "operationId": "DeleteTask",
+      "kind": "action",
+      "displayName": "Delete a task (Preview)",
+      "deprecated": false,
+      "description": "- DeleteTask",
+      "parameters": [
+        {
+          "name": "Task Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the task to delete."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetPlanDetails": {
+      "operationId": "GetPlanDetails",
+      "kind": "action",
+      "displayName": "Get plan details (Preview)",
+      "deprecated": false,
+      "description": "- GetPlanDetails",
+      "parameters": [
+        {
+          "name": "Plan Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique plan id."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetPlanDetails_Response"
+      }
+    },
+    "GetTask": {
+      "operationId": "GetTask",
+      "kind": "action",
+      "displayName": "Get a task [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetTask",
+      "parameters": [
+        {
+          "name": "Task Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifer of the task."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTask_Response"
+      }
+    },
+    "GetTaskDetails": {
+      "operationId": "GetTaskDetails",
+      "kind": "action",
+      "displayName": "Get task details [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetTaskDetails",
+      "parameters": [
+        {
+          "name": "Task Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifer of the task."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTaskDetails_Response"
+      }
+    },
+    "GetTaskDetails_V2": {
+      "operationId": "GetTaskDetails_V2",
+      "kind": "action",
+      "displayName": "Get task details",
+      "deprecated": false,
+      "description": "- GetTaskDetails_V2",
+      "parameters": [
+        {
+          "name": "Task Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the task to update."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTaskDetails_Response"
+      }
+    },
+    "GetTask_V2": {
+      "operationId": "GetTask_V2",
+      "kind": "action",
+      "displayName": "Get a task",
+      "deprecated": false,
+      "description": "- GetTask_V2",
+      "parameters": [
+        {
+          "name": "Task Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the task to update."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTask_Response_V2"
+      }
+    },
+    "ListBuckets": {
+      "operationId": "ListBuckets",
+      "kind": "action",
+      "displayName": "List buckets [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListBuckets",
+      "parameters": [
+        {
+          "name": "Plan Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the plan."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListBuckets_Response"
+      }
+    },
+    "ListBuckets_V2": {
+      "operationId": "ListBuckets_V2",
+      "kind": "action",
+      "displayName": "List buckets [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListBuckets_V2",
+      "parameters": [
+        {
+          "name": "Plan Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the plan."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListBuckets_Response"
+      }
+    },
+    "ListBuckets_V3": {
+      "operationId": "ListBuckets_V3",
+      "kind": "action",
+      "displayName": "List buckets",
+      "deprecated": false,
+      "description": "- ListBuckets_V3",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "The group to retrieve the plan."
+        },
+        {
+          "name": "Plan Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the plan."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListBuckets_Response"
+      }
+    },
+    "ListGroupPlans": {
+      "operationId": "ListGroupPlans",
+      "kind": "action",
+      "displayName": "List plans for a group",
+      "deprecated": false,
+      "description": "- ListGroupPlans",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Id of the group."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListMyPlans_Response"
+      }
+    },
+    "ListMyPlans": {
+      "operationId": "ListMyPlans",
+      "kind": "action",
+      "displayName": "List my plans [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListMyPlans",
+      "parameters": [],
+      "returns": {
+        "raw": "- Body\n- ListMyPlans_Response"
+      }
+    },
+    "ListMyPlans_V2": {
+      "operationId": "ListMyPlans_V2",
+      "kind": "action",
+      "displayName": "List my plans [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListMyPlans_V2",
+      "parameters": [],
+      "returns": {
+        "raw": "- Body\n- ListMyPlans_Response"
+      }
+    },
+    "ListMyTasks": {
+      "operationId": "ListMyTasks",
+      "kind": "action",
+      "displayName": "List my tasks [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListMyTasks",
+      "parameters": [],
+      "returns": {
+        "raw": "- Body\n- ListTasks_Response"
+      }
+    },
+    "ListMyTasks_V2": {
+      "operationId": "ListMyTasks_V2",
+      "kind": "action",
+      "displayName": "List my tasks",
+      "deprecated": false,
+      "description": "- ListMyTasks_V2",
+      "parameters": [],
+      "returns": {
+        "raw": "- Body\n- ListTasks_Response_V2"
+      }
+    },
+    "ListTasks": {
+      "operationId": "ListTasks",
+      "kind": "action",
+      "displayName": "List tasks [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListTasks",
+      "parameters": [
+        {
+          "name": "Plan Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the plan."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListTasks_Response"
+      }
+    },
+    "ListTasks_V2": {
+      "operationId": "ListTasks_V2",
+      "kind": "action",
+      "displayName": "List tasks [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListTasks_V2",
+      "parameters": [
+        {
+          "name": "Plan Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the plan."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListTasks_Response_V2"
+      }
+    },
+    "ListTasks_V3": {
+      "operationId": "ListTasks_V3",
+      "kind": "action",
+      "displayName": "List tasks",
+      "deprecated": false,
+      "description": "- ListTasks_V3",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "The group to retrieve the plan."
+        },
+        {
+          "name": "Plan Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the plan."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListTasks_Response_V2"
+      }
+    },
+    "OnCompleteTask": {
+      "operationId": "OnCompleteTask",
+      "kind": "trigger",
+      "displayName": "When a task is completed [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnCompleteTask",
+      "parameters": [
+        {
+          "name": "Plan Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the plan."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListTasks_Response"
+      }
+    },
+    "OnCompleteTask_V2": {
+      "operationId": "OnCompleteTask_V2",
+      "kind": "trigger",
+      "displayName": "When a task is completed [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnCompleteTask_V2",
+      "parameters": [
+        {
+          "name": "Plan Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the plan."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListTasks_Response_V2"
+      }
+    },
+    "OnCompleteTask_V3": {
+      "operationId": "OnCompleteTask_V3",
+      "kind": "trigger",
+      "displayName": "When a task is completed",
+      "deprecated": false,
+      "description": "- OnCompleteTask_V3",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "The group to retrieve the plan."
+        },
+        {
+          "name": "Plan Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the plan."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListTasks_Response_V2"
+      }
+    },
+    "OnNewTask": {
+      "operationId": "OnNewTask",
+      "kind": "trigger",
+      "displayName": "When a new task is created [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnNewTask",
+      "parameters": [
+        {
+          "name": "Plan Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the plan."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListTasks_Response"
+      }
+    },
+    "OnNewTask_V2": {
+      "operationId": "OnNewTask_V2",
+      "kind": "trigger",
+      "displayName": "When a new task is created [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnNewTask_V2",
+      "parameters": [
+        {
+          "name": "Plan Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the plan."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListTasks_Response_V2"
+      }
+    },
+    "OnNewTask_V3": {
+      "operationId": "OnNewTask_V3",
+      "kind": "trigger",
+      "displayName": "When a new task is created",
+      "deprecated": false,
+      "description": "- OnNewTask_V3",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "The group to retrieve the plan."
+        },
+        {
+          "name": "Plan Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the plan."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListTasks_Response_V2"
+      }
+    },
+    "OnTaskAssignedToMe": {
+      "operationId": "OnTaskAssignedToMe",
+      "kind": "trigger",
+      "displayName": "When a task is assigned to me [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnTaskAssignedToMe",
+      "parameters": [],
+      "returns": {
+        "raw": "- Body\n- ListTasks_Response"
+      }
+    },
+    "OnTaskAssignedToMe_V2": {
+      "operationId": "OnTaskAssignedToMe_V2",
+      "kind": "trigger",
+      "displayName": "When a task is assigned to me",
+      "deprecated": false,
+      "description": "- OnTaskAssignedToMe_V2",
+      "parameters": [],
+      "returns": {
+        "raw": "- Body\n- ListTasks_Response_V2"
+      }
+    },
+    "UnassignUsers": {
+      "operationId": "UnassignUsers",
+      "kind": "action",
+      "displayName": "Remove assignees from a task",
+      "deprecated": false,
+      "description": "- UnassignUsers",
+      "parameters": [
+        {
+          "name": "Task Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the task to update."
+        },
+        {
+          "name": "Remove assigned users",
+          "key": "assignments",
+          "required": true,
+          "type": "string",
+          "description": "Semi-colon seperated ids or email addresses of users who should be unassigned to this task."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTask_Response_V2"
+      }
+    },
+    "UpdateTask": {
+      "operationId": "UpdateTask",
+      "kind": "action",
+      "displayName": "Update a task [DEPRECATED]",
+      "deprecated": true,
+      "description": "- UpdateTask",
+      "parameters": [
+        {
+          "name": "Task Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the tast to update."
+        },
+        {
+          "name": "Title",
+          "key": "title",
+          "required": false,
+          "type": "string",
+          "description": "The title of the plan."
+        },
+        {
+          "name": "Due Date-Time",
+          "key": "dueDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The datetime the task is due (Ex. '2018-04-13T00:42:19.284Z')."
+        },
+        {
+          "name": "Start Date-Time",
+          "key": "startDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The datetime the task starts (Ex. '2018-04-13T00:42:19.284Z')."
+        },
+        {
+          "name": "Progress",
+          "key": "percentComplete",
+          "required": false,
+          "type": "string",
+          "description": "The progress of the task."
+        },
+        {
+          "name": "Assisgned User Id",
+          "key": "assignments",
+          "required": false,
+          "type": "string",
+          "description": "The id or email address of the user to assign this task to."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTask_Response"
+      }
+    },
+    "UpdateTaskDetails": {
+      "operationId": "UpdateTaskDetails",
+      "kind": "action",
+      "displayName": "Update task details [DEPRECATED]",
+      "deprecated": true,
+      "description": "- UpdateTaskDetails",
+      "parameters": [
+        {
+          "name": "Task Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifer of the task."
+        },
+        {
+          "name": "Description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": "The description of the task."
+        },
+        {
+          "name": "Alias",
+          "key": "alias",
+          "required": false,
+          "type": "string",
+          "description": "A name alias to describe the reference."
+        },
+        {
+          "name": "Resource link",
+          "key": "resourceLink",
+          "required": true,
+          "type": "uri",
+          "description": "A valid URL based on the HTTP/HTTPS protocols."
+        },
+        {
+          "name": "Type of the reference",
+          "key": "type",
+          "required": false,
+          "type": "",
+          "description": "Used to describe the type of the reference."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A number representing the checklist item."
+        },
+        {
+          "name": "Title",
+          "key": "title",
+          "required": true,
+          "type": "string",
+          "description": "The name of the checklist item."
+        },
+        {
+          "name": "Is Checked",
+          "key": "isChecked",
+          "required": true,
+          "type": "boolean",
+          "description": "Whether or not the item is checked."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTaskDetails_Response"
+      }
+    },
+    "UpdateTaskDetails_V2": {
+      "operationId": "UpdateTaskDetails_V2",
+      "kind": "action",
+      "displayName": "Update task details",
+      "deprecated": false,
+      "description": "- UpdateTaskDetails_V2",
+      "parameters": [
+        {
+          "name": "Task Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the task to update."
+        },
+        {
+          "name": "Description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": "The description of the task."
+        },
+        {
+          "name": "Alias",
+          "key": "alias",
+          "required": false,
+          "type": "string",
+          "description": "A name alias to describe the reference."
+        },
+        {
+          "name": "Resource link",
+          "key": "resourceLink",
+          "required": true,
+          "type": "uri",
+          "description": "A valid URL based on the HTTP/HTTPS protocols."
+        },
+        {
+          "name": "Type of the reference",
+          "key": "type",
+          "required": false,
+          "type": "",
+          "description": "Used to describe the type of the reference."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "A number representing the checklist item."
+        },
+        {
+          "name": "Title",
+          "key": "title",
+          "required": true,
+          "type": "string",
+          "description": "The name of the checklist item."
+        },
+        {
+          "name": "Is Checked",
+          "key": "isChecked",
+          "required": true,
+          "type": "boolean",
+          "description": "Whether or not the item is checked."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTaskDetails_Response"
+      }
+    },
+    "UpdateTask_V2": {
+      "operationId": "UpdateTask_V2",
+      "kind": "action",
+      "displayName": "Update a task",
+      "deprecated": false,
+      "description": "- UpdateTask_V2",
+      "parameters": [
+        {
+          "name": "Task Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the task to update."
+        },
+        {
+          "name": "Title",
+          "key": "title",
+          "required": false,
+          "type": "string",
+          "description": "The title of the plan."
+        },
+        {
+          "name": "Due Date-Time",
+          "key": "dueDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The datetime the task is due (Ex. '2018-04-13T00:42:19.284Z')."
+        },
+        {
+          "name": "Start Date-Time",
+          "key": "startDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The datetime the task starts (Ex. '2018-04-13T00:42:19.284Z')."
+        },
+        {
+          "name": "Progress",
+          "key": "percentComplete",
+          "required": false,
+          "type": "string",
+          "description": "The progress of the task."
+        },
+        {
+          "name": "Add assigned users",
+          "key": "assignments",
+          "required": false,
+          "type": "string",
+          "description": "Semi-colon seperated ids or email addresses of users who should be assigned to this task."
+        },
+        {
+          "name": "Remove assigned users",
+          "key": "unassignedUsers",
+          "required": false,
+          "type": "string",
+          "description": "Semi-colon seperated ids or email addresses of users who should be unassigned from this task."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTask_Response_V2"
+      }
+    },
+    "UpdateTask_V3": {
+      "operationId": "UpdateTask_V3",
+      "kind": "action",
+      "displayName": "Update a task (V2) (Preview)",
+      "deprecated": false,
+      "description": "- UpdateTask_V3",
+      "parameters": [
+        {
+          "name": "Task Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the task to update."
+        },
+        {
+          "name": "Title",
+          "key": "title",
+          "required": false,
+          "type": "string",
+          "description": "The title of the plan (maximum of 255 chars)."
+        },
+        {
+          "name": "Due Date-Time",
+          "key": "dueDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The datetime the task is due (Ex. '2018-04-13T00:42:19.284Z')."
+        },
+        {
+          "name": "Start Date-Time",
+          "key": "startDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The datetime the task starts (Ex. '2018-04-13T00:42:19.284Z')."
+        },
+        {
+          "name": "Percent Complete",
+          "key": "percentComplete",
+          "required": false,
+          "type": "integer",
+          "description": "The completion percentage of the task."
+        },
+        {
+          "name": "Bucket Id",
+          "key": "bucketId",
+          "required": false,
+          "type": "string",
+          "description": "The bucket to place this task in."
+        },
+        {
+          "name": "Pink",
+          "key": "category1",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Pink category."
+        },
+        {
+          "name": "Red",
+          "key": "category2",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Red category."
+        },
+        {
+          "name": "Yellow",
+          "key": "category3",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Yellow category."
+        },
+        {
+          "name": "Green",
+          "key": "category4",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Green category."
+        },
+        {
+          "name": "Blue",
+          "key": "category5",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Blue category."
+        },
+        {
+          "name": "Purple",
+          "key": "category6",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Purple category."
+        },
+        {
+          "name": "Bronze",
+          "key": "category7",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Bronze category."
+        },
+        {
+          "name": "Lime",
+          "key": "category8",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Lime category."
+        },
+        {
+          "name": "Aqua",
+          "key": "category9",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Aqua category."
+        },
+        {
+          "name": "Gray",
+          "key": "category10",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Gray category."
+        },
+        {
+          "name": "Silver",
+          "key": "category11",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Silver category."
+        },
+        {
+          "name": "Brown",
+          "key": "category12",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Brown category."
+        },
+        {
+          "name": "Cranberry",
+          "key": "category13",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Cranberry category."
+        },
+        {
+          "name": "Orange",
+          "key": "category14",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Orange category."
+        },
+        {
+          "name": "Peach",
+          "key": "category15",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Peach category."
+        },
+        {
+          "name": "Marigold",
+          "key": "category16",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Marigold category."
+        },
+        {
+          "name": "Light green",
+          "key": "category17",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Light green category."
+        },
+        {
+          "name": "Dark green",
+          "key": "category18",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Dark green category."
+        },
+        {
+          "name": "Teal",
+          "key": "category19",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Teal category."
+        },
+        {
+          "name": "Light blue",
+          "key": "category20",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Light blue category."
+        },
+        {
+          "name": "Dark blue",
+          "key": "category21",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Dark blue category."
+        },
+        {
+          "name": "Lavender",
+          "key": "category22",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Lavender category."
+        },
+        {
+          "name": "Plum",
+          "key": "category23",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Plum category."
+        },
+        {
+          "name": "Light gray",
+          "key": "category24",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Light gray category."
+        },
+        {
+          "name": "Dark gray",
+          "key": "category25",
+          "required": false,
+          "type": "boolean",
+          "description": "True if the task has the Dark gray category."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTask_Response_V2"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

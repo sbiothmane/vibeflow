@@ -1,0 +1,227 @@
+{
+  "connectorId": "shared_azuremonitorlogs",
+  "displayName": "Azure Monitor Logs",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azuremonitorlogs/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-03-26T01:07:00.0000000Z",
+  "sourceGitCommit": "ddd50f862a19e850e063936ce2b61ad4eec06165",
+  "sourcePath": "docs/azuremonitorlogs/index.yml",
+  "operations": {
+    "QueryData": {
+      "operationId": "QueryData",
+      "kind": "action",
+      "displayName": "Run query and list results",
+      "deprecated": false,
+      "description": "- QueryData",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptions",
+          "required": true,
+          "type": "string",
+          "description": "Select subscription"
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourcegroups",
+          "required": true,
+          "type": "string",
+          "description": "Select resource group"
+        },
+        {
+          "name": "Resource Type",
+          "key": "resourcetype",
+          "required": true,
+          "type": "string",
+          "description": "Select Resource Type"
+        },
+        {
+          "name": "Resource Name",
+          "key": "resourcename",
+          "required": true,
+          "type": "string",
+          "description": "Select Resource"
+        },
+        {
+          "name": "Query",
+          "key": "query",
+          "required": true,
+          "type": "string",
+          "description": "Specify the query you would like to run"
+        },
+        {
+          "name": "Time Range",
+          "key": "timerange",
+          "required": true,
+          "type": "string",
+          "description": "Select Time Range"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "QueryDataV2": {
+      "operationId": "QueryDataV2",
+      "kind": "action",
+      "displayName": "Run query and list results V2 (Preview)",
+      "deprecated": false,
+      "description": "- QueryDataV2",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptions",
+          "required": true,
+          "type": "string",
+          "description": "Select subscription"
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourcegroups",
+          "required": true,
+          "type": "string",
+          "description": "Select resource group"
+        },
+        {
+          "name": "Resource Type",
+          "key": "resourcetype",
+          "required": true,
+          "type": "string",
+          "description": "Select Resource Type"
+        },
+        {
+          "name": "Resource Name",
+          "key": "resourcename",
+          "required": true,
+          "type": "string",
+          "description": "Select Resource"
+        },
+        {
+          "name": "body",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "VisualizeQuery": {
+      "operationId": "VisualizeQuery",
+      "kind": "action",
+      "displayName": "Run query and visualize results",
+      "deprecated": false,
+      "description": "- VisualizeQuery",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptions",
+          "required": true,
+          "type": "string",
+          "description": "Select subscription"
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourcegroups",
+          "required": true,
+          "type": "string",
+          "description": "Select resource group"
+        },
+        {
+          "name": "Resource Type",
+          "key": "resourcetype",
+          "required": true,
+          "type": "string",
+          "description": "Select Resource Type"
+        },
+        {
+          "name": "Resource Name",
+          "key": "resourcename",
+          "required": true,
+          "type": "string",
+          "description": "Select Resource"
+        },
+        {
+          "name": "Query",
+          "key": "query",
+          "required": true,
+          "type": "string",
+          "description": "Specify the query you would like to run"
+        },
+        {
+          "name": "Time Range",
+          "key": "timerange",
+          "required": true,
+          "type": "string",
+          "description": "Select Time Range"
+        },
+        {
+          "name": "Chart Type",
+          "key": "visType",
+          "required": true,
+          "type": "string",
+          "description": "Specify the resulting chart type"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- VisualizeResults"
+      }
+    },
+    "VisualizeQueryV2": {
+      "operationId": "VisualizeQueryV2",
+      "kind": "action",
+      "displayName": "Run query and visualize results V2 (Preview)",
+      "deprecated": false,
+      "description": "- VisualizeQueryV2",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptions",
+          "required": true,
+          "type": "string",
+          "description": "Select subscription"
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourcegroups",
+          "required": true,
+          "type": "string",
+          "description": "Select resource group"
+        },
+        {
+          "name": "Resource Type",
+          "key": "resourcetype",
+          "required": true,
+          "type": "string",
+          "description": "Select Resource Type"
+        },
+        {
+          "name": "Resource Name",
+          "key": "resourcename",
+          "required": true,
+          "type": "string",
+          "description": "Select Resource"
+        },
+        {
+          "name": "body",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": ""
+        },
+        {
+          "name": "Chart Type",
+          "key": "visType",
+          "required": true,
+          "type": "string",
+          "description": "Specify the resulting chart type."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- VisualizeResults"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

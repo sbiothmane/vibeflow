@@ -1,0 +1,24 @@
+{
+  "name": "vibeflow",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local TypeScript toolkit for programmatically building and editing Power Automate flows via an AI agent.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "bun --filter '*' run typecheck",
+    "generate:connectors": "bun packages/connectors/scripts/generate.ts",
+    "generate:examples": "bun tools/generate-example-zips.ts",
+    "provision:sharepoint-list": "bun tools/provision-sharepoint-list.ts"
+  },
+  "dependencies": {
+    "@vibeflow/connectors": "workspace:*",
+    "@vibeflow/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.6.0"
+  }
+}

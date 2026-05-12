@@ -1,0 +1,558 @@
+{
+  "connectorId": "shared_formrecognizer",
+  "displayName": "Azure AI Document Intelligence (form recognizer)",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/formrecognizer/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-11-21T19:01:00.0000000Z",
+  "sourceGitCommit": "baf25e0901100c7342cfea45f436ac3453f89e71",
+  "sourcePath": "docs/formrecognizer/index.yml",
+  "operations": {
+    "AnalyzeBusinessCardAsync": {
+      "operationId": "AnalyzeBusinessCardAsync",
+      "kind": "action",
+      "displayName": "Analyze Business Card (deprecated) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- AnalyzeBusinessCardAsync",
+      "parameters": [
+        {
+          "name": "Include Text Details",
+          "key": "includeTextDetails",
+          "required": false,
+          "type": "boolean",
+          "description": "Include text lines and element references in the result. Default: True (just for FR Connector)."
+        },
+        {
+          "name": "Pages",
+          "key": "pages",
+          "required": false,
+          "type": "string",
+          "description": "The page selection for multi-page PDF and TIFF documents, to extract Invoice information from individual pages and a range of pages (like page 2, and pages 5-7) by entering the page numbers and ranges separated by commas (e.g. '2, 5-7'). If not set, all pages will be processed."
+        },
+        {
+          "name": "Locale",
+          "key": "locale",
+          "required": false,
+          "type": "string",
+          "description": "Locale of the invoice. Supported locale includes: en-US."
+        },
+        {
+          "name": "Document/Image File Content",
+          "key": "inputFileContent",
+          "required": false,
+          "type": "binary",
+          "description": "A PDF document or image (JPG or PNG) file to analyze."
+        },
+        {
+          "name": "Document/Image URL",
+          "key": "inputFileUrl",
+          "required": false,
+          "type": "string",
+          "description": "Url path for input file. Alternative to Document/Image File Content."
+        }
+      ],
+      "returns": {
+        "raw": "Status and result of the queued analyze operation.\n- Body\n- BusinessCardAnalyzeOperationResult"
+      }
+    },
+    "AnalyzeDocumentV30": {
+      "operationId": "AnalyzeDocumentV30",
+      "kind": "action",
+      "displayName": "Analyze Document for Prebuilt or Custom models (v3.x API)",
+      "deprecated": false,
+      "description": "- AnalyzeDocumentV30",
+      "parameters": [
+        {
+          "name": "Document Intelligence API version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "Document Intelligence API version."
+        },
+        {
+          "name": "Model Identifier",
+          "key": "modelId",
+          "required": true,
+          "type": "string",
+          "description": "Prebuilt modelIds: prebuilt-read, prebuilt-layout, prebuilt-document, prebuilt-businessCard, prebuilt-idDocument, prebuilt-invoice, prebuilt-receipt, prebuilt-tax.us.w2, prebuilt-vaccinationCard, prebuilt-healthInsuranceCard.us. Custom modelId format - [a-zA-Z0-9][a-zA-Z0-9._~-]{1,63}. Unique model name."
+        },
+        {
+          "name": "Pages",
+          "key": "pages",
+          "required": false,
+          "type": "string",
+          "description": "The page selection for multi-page PDF and TIFF documents, to extract Invoice information from individual pages and a range of pages (like page 2, and pages 5-7) by entering the page numbers and ranges separated by commas (e.g. '2, 5-7'). If not set, all pages will be processed."
+        },
+        {
+          "name": "Locale",
+          "key": "locale",
+          "required": false,
+          "type": "string",
+          "description": "Locale hint for text recognition and document analysis. Value may contain only the language code (ex. \"en\", \"fr\") or BCP 47 language tag (ex. \"en-US\")."
+        },
+        {
+          "name": "String Index Type",
+          "key": "stringIndexType",
+          "required": false,
+          "type": "string",
+          "description": "Method used to compute string offset and length. Supported options: textElements, unicodeCodePoint, utf16CodeUnit."
+        },
+        {
+          "name": "Optional and Premium features",
+          "key": "features",
+          "required": false,
+          "type": "array",
+          "description": "List of optional analysis features ( such as ocrHighResolution, languages, barcodes, formulas, keyValuePairs and styleFont)."
+        },
+        {
+          "name": "Document/Image File Content",
+          "key": "inputFileContent",
+          "required": false,
+          "type": "binary",
+          "description": "A PDF document or image (JPG, PNG, BMP, TIFF) file to analyze."
+        },
+        {
+          "name": "Document/Image URL",
+          "key": "inputFileUrl",
+          "required": false,
+          "type": "string",
+          "description": "Url path for input file. Alternative to Document/Image File Content."
+        }
+      ],
+      "returns": {
+        "raw": "Status and result of the analyze operation.\n- Body\n- AnalyzeResultOperation_V30"
+      }
+    },
+    "AnalyzeDocumentV40": {
+      "operationId": "AnalyzeDocumentV40",
+      "kind": "action",
+      "displayName": "Analyze Document for Prebuilt or Custom models (v4.x API)",
+      "deprecated": false,
+      "description": "- AnalyzeDocumentV40",
+      "parameters": [
+        {
+          "name": "Document Intelligence API version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "Document Intelligence API version."
+        },
+        {
+          "name": "Model Identifier",
+          "key": "modelId",
+          "required": true,
+          "type": "string",
+          "description": "Prebuilt modelIds: prebuilt-read, prebuilt-layout, prebuilt-businessCard, prebuilt-idDocument, prebuilt-invoice, prebuilt-receipt, prebuilt-tax.us.w2, prebuilt-vaccinationCard, prebuilt-healthInsuranceCard.us, prebuilt-tax.us.1098, prebuilt-tax.us.1098E, prebuilt-tax.us.1098T, prebuilt-contract, etc. Custom modelId format - [a-zA-Z0-9][a-zA-Z0-9._~-]{1,63}. Unique model name."
+        },
+        {
+          "name": "Document/Image File Content",
+          "key": "inputFileContent",
+          "required": false,
+          "type": "binary",
+          "description": "A PDF document or image (JPG, PNG, BMP, TIFF) file to analyze."
+        },
+        {
+          "name": "Document/Image URL",
+          "key": "inputFileUrl",
+          "required": false,
+          "type": "string",
+          "description": "Url path for input file. Alternative to Document/Image File Content."
+        },
+        {
+          "name": "Pages",
+          "key": "pages",
+          "required": false,
+          "type": "string",
+          "description": "The page selection for multi-page PDF and TIFF documents, to extract Invoice information from individual pages and a range of pages (like page 2, and pages 5-7) by entering the page numbers and ranges separated by commas (e.g. '2, 5-7'). If not set, all pages will be processed."
+        },
+        {
+          "name": "Locale",
+          "key": "locale",
+          "required": false,
+          "type": "string",
+          "description": "Locale hint for text recognition and document analysis. Value may contain only the language code (ex. \"en\", \"fr\") or BCP 47 language tag (ex. \"en-US\")."
+        },
+        {
+          "name": "String Index Type",
+          "key": "stringIndexType",
+          "required": false,
+          "type": "string",
+          "description": "Method used to compute string offset and length. Supported options: textElements, unicodeCodePoint, utf16CodeUnit."
+        },
+        {
+          "name": "Optional and Premium features",
+          "key": "features",
+          "required": false,
+          "type": "array",
+          "description": "List of optional analysis features ( such as ocrHighResolution, languages, barcodes, formulas, keyValuePairs, styleFont and queryFields)."
+        },
+        {
+          "name": "Query Fields",
+          "key": "queryFields",
+          "required": false,
+          "type": "array",
+          "description": "List of additional fields to extract. Ex. \"NumberOfGuests,StoreNumber\""
+        },
+        {
+          "name": "Output Content Format",
+          "key": "outputContentFormat",
+          "required": false,
+          "type": "string",
+          "description": "Format of the analyze result top-level content."
+        }
+      ],
+      "returns": {
+        "raw": "Status and result of the analyze operation.\n- Body\n- AnalyzeResultOperation_V30"
+      }
+    },
+    "AnalyzeIdDocumentAsync": {
+      "operationId": "AnalyzeIdDocumentAsync",
+      "kind": "action",
+      "displayName": "Analyze ID Document (deprecated) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- AnalyzeIdDocumentAsync",
+      "parameters": [
+        {
+          "name": "Include Text Details",
+          "key": "includeTextDetails",
+          "required": false,
+          "type": "boolean",
+          "description": "Include text lines and element references in the result. Default: True (just for FR Connector)."
+        },
+        {
+          "name": "Pages",
+          "key": "pages",
+          "required": false,
+          "type": "string",
+          "description": "The page selection for multi-page PDF and TIFF documents, to extract Invoice information from individual pages and a range of pages (like page 2, and pages 5-7) by entering the page numbers and ranges separated by commas (e.g. '2, 5-7'). If not set, all pages will be processed."
+        },
+        {
+          "name": "Document/Image File Content",
+          "key": "inputFileContent",
+          "required": false,
+          "type": "binary",
+          "description": "A PDF document or image (JPG or PNG) file to analyze."
+        },
+        {
+          "name": "Document/Image URL",
+          "key": "inputFileUrl",
+          "required": false,
+          "type": "string",
+          "description": "Url path for input file. Alternative to Document/Image File Content."
+        }
+      ],
+      "returns": {
+        "raw": "Status and result of the queued analyze operation.\n- Body\n- IdAnalyzeOperationResult"
+      }
+    },
+    "AnalyzeInvoice": {
+      "operationId": "AnalyzeInvoice",
+      "kind": "action",
+      "displayName": "Analyze Invoice (deprecated) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- AnalyzeInvoice",
+      "parameters": [
+        {
+          "name": "Include Text Details",
+          "key": "includeTextDetails",
+          "required": false,
+          "type": "boolean",
+          "description": "Include text lines and element references in the result. Default: True (just for FR Connector)."
+        },
+        {
+          "name": "Pages",
+          "key": "pages",
+          "required": false,
+          "type": "string",
+          "description": "The page selection for multi-page PDF and TIFF documents, to extract Invoice information from individual pages and a range of pages (like page 2, and pages 5-7) by entering the page numbers and ranges separated by commas (e.g. '2, 5-7'). If not set, all pages will be processed."
+        },
+        {
+          "name": "Locale",
+          "key": "locale",
+          "required": false,
+          "type": "string",
+          "description": "Locale of the invoice. Supported locale includes: en-US."
+        },
+        {
+          "name": "Document/Image File Content",
+          "key": "inputFileContent",
+          "required": false,
+          "type": "binary",
+          "description": "A PDF document or image (JPG or PNG) file to analyze."
+        },
+        {
+          "name": "Document/Image URL",
+          "key": "inputFileUrl",
+          "required": false,
+          "type": "string",
+          "description": "Url path for input file. Alternative to Document/Image File Content."
+        }
+      ],
+      "returns": {
+        "raw": "Status and result of the queued analyze operation.\n- Body\n- InvoiceAnalyzeOperationResult"
+      }
+    },
+    "AnalyzeLayoutAsync": {
+      "operationId": "AnalyzeLayoutAsync",
+      "kind": "action",
+      "displayName": "Analyze Layout (deprecated) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- AnalyzeLayoutAsync",
+      "parameters": [
+        {
+          "name": "Pages",
+          "key": "pages",
+          "required": false,
+          "type": "string",
+          "description": "The page selection for multi-page PDF and TIFF documents, to extract Invoice information from individual pages and a range of pages (like page 2, and pages 5-7) by entering the page numbers and ranges separated by commas (e.g. '2, 5-7'). If not set, all pages will be processed."
+        },
+        {
+          "name": "Language",
+          "key": "language",
+          "required": false,
+          "type": "string",
+          "description": "The BCP-47 language code of the text in the document."
+        },
+        {
+          "name": "Reading Order",
+          "key": "readingOrder",
+          "required": false,
+          "type": "string",
+          "description": "Optional parameter to specify which reading order algorithm should be applied when ordering the extract text elements. Can be either 'basic' or 'natural'. Will default to basic if not specified."
+        },
+        {
+          "name": "Document/Image File Content",
+          "key": "inputFileContent",
+          "required": false,
+          "type": "binary",
+          "description": "A PDF document or image (JPG or PNG) file to analyze."
+        },
+        {
+          "name": "Document/Image URL",
+          "key": "inputFileUrl",
+          "required": false,
+          "type": "string",
+          "description": "Url path for input file. Alternative to Document/Image File Content."
+        }
+      ],
+      "returns": {
+        "raw": "Status and result of the queued analyze operation.\n- Body\n- LayoutAnalyzeOperationResult"
+      }
+    },
+    "AnalyzeReceiptAsync": {
+      "operationId": "AnalyzeReceiptAsync",
+      "kind": "action",
+      "displayName": "Analyze Receipt (deprecated) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- AnalyzeReceiptAsync",
+      "parameters": [
+        {
+          "name": "Include Text Details",
+          "key": "includeTextDetails",
+          "required": false,
+          "type": "boolean",
+          "description": "Include text lines and element references in the result. Default: True (just for FR Connector)."
+        },
+        {
+          "name": "Pages",
+          "key": "pages",
+          "required": false,
+          "type": "string",
+          "description": "The page selection for multi-page PDF and TIFF documents, to extract Invoice information from individual pages and a range of pages (like page 2, and pages 5-7) by entering the page numbers and ranges separated by commas (e.g. '2, 5-7'). If not set, all pages will be processed."
+        },
+        {
+          "name": "Locale",
+          "key": "locale",
+          "required": false,
+          "type": "string",
+          "description": "Locale of the invoice. Supported locale includes: en-US."
+        },
+        {
+          "name": "Document/Image File Content",
+          "key": "inputFileContent",
+          "required": false,
+          "type": "binary",
+          "description": "A PDF document or image (JPG or PNG) file to analyze."
+        },
+        {
+          "name": "Document/Image URL",
+          "key": "inputFileUrl",
+          "required": false,
+          "type": "string",
+          "description": "Url path for input file. Alternative to Document/Image File Content."
+        }
+      ],
+      "returns": {
+        "raw": "Status and result of the queued analyze operation.\n- Body\n- ReceiptAnalyzeOperationResult"
+      }
+    },
+    "AnalyzeWithCustomForm": {
+      "operationId": "AnalyzeWithCustomForm",
+      "kind": "action",
+      "displayName": "Analyze Custom Form (deprecated) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- AnalyzeWithCustomForm",
+      "parameters": [
+        {
+          "name": "Model Identifier",
+          "key": "modelId",
+          "required": true,
+          "type": "string",
+          "description": "Format - uuid. Model identifier."
+        },
+        {
+          "name": "Include Text Details",
+          "key": "includeTextDetails",
+          "required": false,
+          "type": "boolean",
+          "description": "Include text lines and element references in the result. Default: True (just for FR Connector)."
+        },
+        {
+          "name": "Pages",
+          "key": "pages",
+          "required": false,
+          "type": "string",
+          "description": "The page selection for multi-page PDF and TIFF documents, to extract Invoice information from individual pages and a range of pages (like page 2, and pages 5-7) by entering the page numbers and ranges separated by commas (e.g. '2, 5-7'). If not set, all pages will be processed."
+        },
+        {
+          "name": "Document/Image File Content",
+          "key": "inputFileContent",
+          "required": false,
+          "type": "binary",
+          "description": "A PDF document or image (JPG or PNG) file to analyze."
+        },
+        {
+          "name": "Document/Image URL",
+          "key": "inputFileUrl",
+          "required": false,
+          "type": "string",
+          "description": "Url path for input file. Alternative to Document/Image File Content."
+        }
+      ],
+      "returns": {
+        "raw": "Status and result of the queued analyze operation.\n- Body\n- CustomFormsAnalyzeOperationResult"
+      }
+    },
+    "ClassifyDocumentV31": {
+      "operationId": "ClassifyDocumentV31",
+      "kind": "action",
+      "displayName": "Classify document with document classifier (v3.1 API)",
+      "deprecated": false,
+      "description": "- ClassifyDocumentV31",
+      "parameters": [
+        {
+          "name": "Classifier Identifier",
+          "key": "classifierId",
+          "required": true,
+          "type": "string",
+          "description": "Format - [a-zA-Z0-9][a-zA-Z0-9._~-]{1,63}. Unique classifier name."
+        },
+        {
+          "name": "Pages",
+          "key": "pages",
+          "required": false,
+          "type": "string",
+          "description": "The page selection for multi-page PDF and TIFF documents, to extract information from individual pages and a range of pages (like page 2, and pages 5-7) by entering the page numbers and ranges separated by commas (e.g. '2, 5-7'). If not set, all pages will be processed."
+        },
+        {
+          "name": "Locale",
+          "key": "locale",
+          "required": false,
+          "type": "string",
+          "description": "Locale hint for text recognition and document analysis. Value may contain only the language code (ex. \"en\", \"fr\") or BCP 47 language tag (ex. \"en-US\")."
+        },
+        {
+          "name": "String Index Type",
+          "key": "stringIndexType",
+          "required": false,
+          "type": "string",
+          "description": "Method used to compute string offset and length. Supported options: textElements, unicodeCodePoint, utf16CodeUnit."
+        },
+        {
+          "name": "Document/Image File Content",
+          "key": "inputFileContent",
+          "required": false,
+          "type": "binary",
+          "description": "A PDF document or image (JPG, PNG, BMP, TIFF) file to analyze."
+        },
+        {
+          "name": "Document/Image URL",
+          "key": "inputFileUrl",
+          "required": false,
+          "type": "string",
+          "description": "Url path for input file. Alternative to Document/Image File Content."
+        }
+      ],
+      "returns": {
+        "raw": "Status and result of the analyze operation.\n- Body\n- AnalyzeResultOperation_V30"
+      }
+    },
+    "ClassifyDocumentV40": {
+      "operationId": "ClassifyDocumentV40",
+      "kind": "action",
+      "displayName": "Classify document with document classifier (v4.x API)",
+      "deprecated": false,
+      "description": "- ClassifyDocumentV40",
+      "parameters": [
+        {
+          "name": "Document Intelligence API version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "Document Intelligence API version."
+        },
+        {
+          "name": "Classifier Identifier",
+          "key": "classifierId",
+          "required": true,
+          "type": "string",
+          "description": "Format - [a-zA-Z0-9][a-zA-Z0-9._~-]{1,63}. Unique classifier name."
+        },
+        {
+          "name": "Document/Image File Content",
+          "key": "inputFileContent",
+          "required": false,
+          "type": "binary",
+          "description": "A PDF document or image (JPG, PNG, BMP, TIFF) file to analyze."
+        },
+        {
+          "name": "Document/Image URL",
+          "key": "inputFileUrl",
+          "required": false,
+          "type": "string",
+          "description": "Url path for input file. Alternative to Document/Image File Content."
+        },
+        {
+          "name": "Split Mode",
+          "key": "split",
+          "required": false,
+          "type": "string",
+          "description": "File splitting behavior."
+        },
+        {
+          "name": "Pages",
+          "key": "pages",
+          "required": false,
+          "type": "string",
+          "description": "The page selection for multi-page PDF and TIFF documents, to extract information from individual pages and a range of pages (like page 2, and pages 5-7) by entering the page numbers and ranges separated by commas (e.g. '2, 5-7'). If not set, all pages will be processed."
+        },
+        {
+          "name": "Locale",
+          "key": "locale",
+          "required": false,
+          "type": "string",
+          "description": "Locale hint for text recognition and document analysis. Value may contain only the language code (ex. \"en\", \"fr\") or BCP 47 language tag (ex. \"en-US\")."
+        },
+        {
+          "name": "String Index Type",
+          "key": "stringIndexType",
+          "required": false,
+          "type": "string",
+          "description": "Method used to compute string offset and length. Supported options: textElements, unicodeCodePoint, utf16CodeUnit."
+        }
+      ],
+      "returns": {
+        "raw": "Status and result of the analyze operation.\n- Body\n- AnalyzeResultOperation_V30"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

@@ -1,0 +1,1344 @@
+{
+  "connectorId": "shared_servicebus",
+  "displayName": "Service Bus",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/servicebus/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-04-15T01:07:00.0000000Z",
+  "sourceGitCommit": "f8b9e8e2ebe4156cb27b41d78e4a22a2bcf2991e",
+  "sourcePath": "docs/ServiceBus/index.yml",
+  "operations": {
+    "AbandonMessageInQueue": {
+      "operationId": "AbandonMessageInQueue",
+      "kind": "action",
+      "displayName": "Abandon the message in a queue",
+      "deprecated": false,
+      "description": "- AbandonMessageInQueue",
+      "parameters": [
+        {
+          "name": "Queue name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the queue"
+        },
+        {
+          "name": "Lock token of the message",
+          "key": "lockToken",
+          "required": true,
+          "type": "string",
+          "description": "Lock token of the message to abandon"
+        },
+        {
+          "name": "Queue type",
+          "key": "queueType",
+          "required": false,
+          "type": "string",
+          "description": "Queue type - Main or DeadLetter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "AbandonMessageInTopic": {
+      "operationId": "AbandonMessageInTopic",
+      "kind": "action",
+      "displayName": "Abandon the message in a topic subscription",
+      "deprecated": false,
+      "description": "- AbandonMessageInTopic",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        },
+        {
+          "name": "Lock token of the message",
+          "key": "lockToken",
+          "required": true,
+          "type": "string",
+          "description": "Lock token of the message to abandon"
+        },
+        {
+          "name": "Subscription type",
+          "key": "subscriptionType",
+          "required": false,
+          "type": "string",
+          "description": "Subscription type - Main or DeadLetter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CloseSessionInQueue": {
+      "operationId": "CloseSessionInQueue",
+      "kind": "action",
+      "displayName": "Close a session in a queue",
+      "deprecated": false,
+      "description": "- CloseSessionInQueue",
+      "parameters": [
+        {
+          "name": "Queue name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "Name of a queue"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": true,
+          "type": "string",
+          "description": "Session id"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CloseSessionInTopic": {
+      "operationId": "CloseSessionInTopic",
+      "kind": "action",
+      "displayName": "Close a session in the topic",
+      "deprecated": false,
+      "description": "- CloseSessionInTopic",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": true,
+          "type": "string",
+          "description": "Session id"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CompleteMessageInQueue": {
+      "operationId": "CompleteMessageInQueue",
+      "kind": "action",
+      "displayName": "Complete the message in a queue",
+      "deprecated": false,
+      "description": "- CompleteMessageInQueue",
+      "parameters": [
+        {
+          "name": "Queue name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the queue"
+        },
+        {
+          "name": "Lock token of the message",
+          "key": "lockToken",
+          "required": true,
+          "type": "string",
+          "description": "Lock token of the message to complete"
+        },
+        {
+          "name": "Queue type",
+          "key": "queueType",
+          "required": false,
+          "type": "string",
+          "description": "Queue type - Main or DeadLetter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CompleteMessageInTopic": {
+      "operationId": "CompleteMessageInTopic",
+      "kind": "action",
+      "displayName": "Complete the message in a topic subscription",
+      "deprecated": false,
+      "description": "- CompleteMessageInTopic",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        },
+        {
+          "name": "Lock token of the message",
+          "key": "lockToken",
+          "required": true,
+          "type": "string",
+          "description": "Lock token of the message to complete"
+        },
+        {
+          "name": "Subscription type",
+          "key": "subscriptionType",
+          "required": false,
+          "type": "string",
+          "description": "Subscription type - Main or DeadLetter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CreateTopicSubscription": {
+      "operationId": "CreateTopicSubscription",
+      "kind": "action",
+      "displayName": "Create a topic subscription",
+      "deprecated": false,
+      "description": "- CreateTopicSubscription",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        },
+        {
+          "name": "Filter",
+          "key": "subscriptionFilter",
+          "required": true,
+          "type": "dynamic",
+          "description": "Subscription filter"
+        },
+        {
+          "name": "Filter type",
+          "key": "subscriptionFilterType",
+          "required": false,
+          "type": "string",
+          "description": "Filter type"
+        }
+      ],
+      "returns": {
+        "raw": "The topic subscription.\n- Body\n- Subscription"
+      }
+    },
+    "DeadLetterMessageInQueue": {
+      "operationId": "DeadLetterMessageInQueue",
+      "kind": "action",
+      "displayName": "Dead-letter the message in a queue",
+      "deprecated": false,
+      "description": "- DeadLetterMessageInQueue",
+      "parameters": [
+        {
+          "name": "Queue name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the queue"
+        },
+        {
+          "name": "Lock token of the message",
+          "key": "lockToken",
+          "required": true,
+          "type": "string",
+          "description": "Lock token of the message to dead-letter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id"
+        },
+        {
+          "name": "Dead letter reason",
+          "key": "deadLetterReason",
+          "required": false,
+          "type": "string",
+          "description": "Dead letter reason"
+        },
+        {
+          "name": "Dead letter error description",
+          "key": "deadLetterErrorDescription",
+          "required": false,
+          "type": "string",
+          "description": "Dead letter error description"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeadLetterMessageInTopic": {
+      "operationId": "DeadLetterMessageInTopic",
+      "kind": "action",
+      "displayName": "Dead-letter the message in a topic subscription",
+      "deprecated": false,
+      "description": "- DeadLetterMessageInTopic",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        },
+        {
+          "name": "Lock token of the message",
+          "key": "lockToken",
+          "required": true,
+          "type": "string",
+          "description": "Lock token of the message to dead-letter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id"
+        },
+        {
+          "name": "Dead letter reason",
+          "key": "deadLetterReason",
+          "required": false,
+          "type": "string",
+          "description": "Dead letter reason"
+        },
+        {
+          "name": "Dead letter error description",
+          "key": "deadLetterErrorDescription",
+          "required": false,
+          "type": "string",
+          "description": "Dead letter error description"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeferMessageInQueue": {
+      "operationId": "DeferMessageInQueue",
+      "kind": "action",
+      "displayName": "Defer the message in a queue",
+      "deprecated": false,
+      "description": "- DeferMessageInQueue",
+      "parameters": [
+        {
+          "name": "Queue name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the queue"
+        },
+        {
+          "name": "Lock token of the message",
+          "key": "lockToken",
+          "required": true,
+          "type": "string",
+          "description": "Lock token of the message to defer"
+        },
+        {
+          "name": "Queue type",
+          "key": "queueType",
+          "required": false,
+          "type": "string",
+          "description": "Queue type - Main or DeadLetter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeferMessageInTopic": {
+      "operationId": "DeferMessageInTopic",
+      "kind": "action",
+      "displayName": "Defer the message in a topic subscription",
+      "deprecated": false,
+      "description": "- DeferMessageInTopic",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        },
+        {
+          "name": "Lock token of the message",
+          "key": "lockToken",
+          "required": true,
+          "type": "string",
+          "description": "Lock token of the message to defer"
+        },
+        {
+          "name": "Subscription type",
+          "key": "subscriptionType",
+          "required": false,
+          "type": "string",
+          "description": "Subscription type - Main or DeadLetter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteTopicSubscription": {
+      "operationId": "DeleteTopicSubscription",
+      "kind": "action",
+      "displayName": "Delete a topic subscription",
+      "deprecated": false,
+      "description": "- DeleteTopicSubscription",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetDeferredMessageFromQueue": {
+      "operationId": "GetDeferredMessageFromQueue",
+      "kind": "action",
+      "displayName": "Get deferred message from a queue",
+      "deprecated": false,
+      "description": "- GetDeferredMessageFromQueue",
+      "parameters": [
+        {
+          "name": "Queue name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the queue"
+        },
+        {
+          "name": "Sequence number of message",
+          "key": "sequenceNumber",
+          "required": true,
+          "type": "integer",
+          "description": "Sequence number of message"
+        },
+        {
+          "name": "Queue type",
+          "key": "queueType",
+          "required": false,
+          "type": "string",
+          "description": "Queue type - Main or DeadLetter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id"
+        }
+      ],
+      "returns": {
+        "raw": "Service Bus Message\n- Body\n- ServiceBusMessage"
+      }
+    },
+    "GetDeferredMessageFromTopic": {
+      "operationId": "GetDeferredMessageFromTopic",
+      "kind": "action",
+      "displayName": "Get deferred message from a topic subscription",
+      "deprecated": false,
+      "description": "- GetDeferredMessageFromTopic",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        },
+        {
+          "name": "Sequence number of message",
+          "key": "sequenceNumber",
+          "required": true,
+          "type": "integer",
+          "description": "Sequence number of message"
+        },
+        {
+          "name": "Subscription type",
+          "key": "subscriptionType",
+          "required": false,
+          "type": "string",
+          "description": "Queue type - Main or DeadLetter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id"
+        }
+      ],
+      "returns": {
+        "raw": "Service Bus Message\n- Body\n- ServiceBusMessage"
+      }
+    },
+    "GetMessageFromQueue": {
+      "operationId": "GetMessageFromQueue",
+      "kind": "trigger",
+      "displayName": "When a message is received in a queue (auto-complete)",
+      "deprecated": false,
+      "description": "- GetMessageFromQueue",
+      "parameters": [
+        {
+          "name": "Queue name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the queue"
+        },
+        {
+          "name": "Queue type",
+          "key": "queueType",
+          "required": false,
+          "type": "string",
+          "description": "Queue type - Main or DeadLetter"
+        }
+      ],
+      "returns": {
+        "raw": "Service Bus Message\n- Body\n- ServiceBusMessage"
+      }
+    },
+    "GetMessageFromTopic": {
+      "operationId": "GetMessageFromTopic",
+      "kind": "trigger",
+      "displayName": "When a message is received in a topic subscription (auto-complete)",
+      "deprecated": false,
+      "description": "- GetMessageFromTopic",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        },
+        {
+          "name": "Subscription type",
+          "key": "subscriptionType",
+          "required": false,
+          "type": "string",
+          "description": "Subscription type - Main or DeadLetter"
+        }
+      ],
+      "returns": {
+        "raw": "Service Bus Message\n- Body\n- ServiceBusMessage"
+      }
+    },
+    "GetMessagesFromQueue": {
+      "operationId": "GetMessagesFromQueue",
+      "kind": "trigger",
+      "displayName": "When one or more messages arrive in a queue (auto-complete)",
+      "deprecated": false,
+      "description": "- GetMessagesFromQueue",
+      "parameters": [
+        {
+          "name": "Queue name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the queue"
+        },
+        {
+          "name": "Maximum message count",
+          "key": "maxMessageCount",
+          "required": false,
+          "type": "integer",
+          "description": "The maximum number of messages to return in the batch"
+        },
+        {
+          "name": "Queue type",
+          "key": "queueType",
+          "required": false,
+          "type": "string",
+          "description": "Queue type - Main or DeadLetter"
+        }
+      ],
+      "returns": {
+        "raw": "Service Bus Message\n- Body\n- ServiceBusMessage"
+      }
+    },
+    "GetMessagesFromQueueWithPeekLock": {
+      "operationId": "GetMessagesFromQueueWithPeekLock",
+      "kind": "action",
+      "displayName": "Get messages from a queue (peek-lock)",
+      "deprecated": false,
+      "description": "- GetMessagesFromQueueWithPeekLock",
+      "parameters": [
+        {
+          "name": "Queue name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the queue"
+        },
+        {
+          "name": "Maximum message count",
+          "key": "maxMessageCount",
+          "required": false,
+          "type": "integer",
+          "description": "The maximum number of messages to return in the batch"
+        },
+        {
+          "name": "Queue type",
+          "key": "queueType",
+          "required": false,
+          "type": "string",
+          "description": "Queue type - Main or DeadLetter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of ServiceBusMessage"
+      }
+    },
+    "GetMessagesFromTopic": {
+      "operationId": "GetMessagesFromTopic",
+      "kind": "trigger",
+      "displayName": "When one or more messages arrive in a topic (auto-complete)",
+      "deprecated": false,
+      "description": "- GetMessagesFromTopic",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        },
+        {
+          "name": "Maximum message count",
+          "key": "maxMessageCount",
+          "required": false,
+          "type": "integer",
+          "description": "The maximum number of messages to return in the batch"
+        },
+        {
+          "name": "Subscription type",
+          "key": "subscriptionType",
+          "required": false,
+          "type": "string",
+          "description": "Subscription type - Main or DeadLetter"
+        }
+      ],
+      "returns": {
+        "raw": "Service Bus Message\n- Body\n- ServiceBusMessage"
+      }
+    },
+    "GetMessagesFromTopicWithPeekLock": {
+      "operationId": "GetMessagesFromTopicWithPeekLock",
+      "kind": "action",
+      "displayName": "Get messages from a topic subscription (peek-lock)",
+      "deprecated": false,
+      "description": "- GetMessagesFromTopicWithPeekLock",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        },
+        {
+          "name": "Maximum message count",
+          "key": "maxMessageCount",
+          "required": false,
+          "type": "integer",
+          "description": "The maximum number of messages to return in the batch"
+        },
+        {
+          "name": "Subscription type",
+          "key": "subscriptionType",
+          "required": false,
+          "type": "string",
+          "description": "Subscription type - Main or DeadLetter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of ServiceBusMessage"
+      }
+    },
+    "GetNewMessageFromQueueWithPeekLock": {
+      "operationId": "GetNewMessageFromQueueWithPeekLock",
+      "kind": "trigger",
+      "displayName": "When a message is received in a queue (peek-lock)",
+      "deprecated": false,
+      "description": "- GetNewMessageFromQueueWithPeekLock",
+      "parameters": [
+        {
+          "name": "Queue name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the queue"
+        },
+        {
+          "name": "Queue type",
+          "key": "queueType",
+          "required": false,
+          "type": "string",
+          "description": "Queue type - Main or DeadLetter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id - None or Next Available or provide session id"
+        }
+      ],
+      "returns": {
+        "raw": "Service Bus Message\n- Body\n- ServiceBusMessage"
+      }
+    },
+    "GetNewMessageFromTopicWithPeekLock": {
+      "operationId": "GetNewMessageFromTopicWithPeekLock",
+      "kind": "trigger",
+      "displayName": "When a message is received in a topic subscription (peek-lock)",
+      "deprecated": false,
+      "description": "- GetNewMessageFromTopicWithPeekLock",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        },
+        {
+          "name": "Subscription type",
+          "key": "subscriptionType",
+          "required": false,
+          "type": "string",
+          "description": "Subscription type - Main or DeadLetter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id - None or Next Available or provide session id"
+        }
+      ],
+      "returns": {
+        "raw": "Service Bus Message\n- Body\n- ServiceBusMessage"
+      }
+    },
+    "GetNewMessagesFromQueueWithPeekLock": {
+      "operationId": "GetNewMessagesFromQueueWithPeekLock",
+      "kind": "trigger",
+      "displayName": "When one or more messages arrive in a queue (peek-lock)",
+      "deprecated": false,
+      "description": "- GetNewMessagesFromQueueWithPeekLock",
+      "parameters": [
+        {
+          "name": "Queue name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the queue"
+        },
+        {
+          "name": "Maximum message count",
+          "key": "maxMessageCount",
+          "required": false,
+          "type": "integer",
+          "description": "The maximum number of messages to return in the batch"
+        },
+        {
+          "name": "Queue type",
+          "key": "queueType",
+          "required": false,
+          "type": "string",
+          "description": "Queue type - Main or DeadLetter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id - None or Next Available or provide session id"
+        }
+      ],
+      "returns": {
+        "raw": "Service Bus Message\n- Body\n- ServiceBusMessage"
+      }
+    },
+    "GetNewMessagesFromTopicWithPeekLock": {
+      "operationId": "GetNewMessagesFromTopicWithPeekLock",
+      "kind": "trigger",
+      "displayName": "When one or more messages arrive in a topic (peek-lock)",
+      "deprecated": false,
+      "description": "- GetNewMessagesFromTopicWithPeekLock",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        },
+        {
+          "name": "Maximum message count",
+          "key": "maxMessageCount",
+          "required": false,
+          "type": "integer",
+          "description": "The maximum number of messages to return in the batch"
+        },
+        {
+          "name": "Subscription type",
+          "key": "subscriptionType",
+          "required": false,
+          "type": "string",
+          "description": "Subscription type - Main or DeadLetter"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": "Session id - None or Next Available or provide session id"
+        }
+      ],
+      "returns": {
+        "raw": "Service Bus Message\n- Body\n- ServiceBusMessage"
+      }
+    },
+    "RenewLockOnMessageInQueue": {
+      "operationId": "RenewLockOnMessageInQueue",
+      "kind": "action",
+      "displayName": "Renew lock on the message in a queue",
+      "deprecated": false,
+      "description": "- RenewLockOnMessageInQueue",
+      "parameters": [
+        {
+          "name": "Queue name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the queue"
+        },
+        {
+          "name": "Lock token of the message",
+          "key": "lockToken",
+          "required": true,
+          "type": "string",
+          "description": "Lock token of the message to renew lock"
+        },
+        {
+          "name": "Queue type",
+          "key": "queueType",
+          "required": false,
+          "type": "string",
+          "description": "Queue type - Main or DeadLetter"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "RenewLockOnMessageInTopic": {
+      "operationId": "RenewLockOnMessageInTopic",
+      "kind": "action",
+      "displayName": "Renew lock on the message in a topic subscription",
+      "deprecated": false,
+      "description": "- RenewLockOnMessageInTopic",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        },
+        {
+          "name": "Lock token of the message",
+          "key": "lockToken",
+          "required": true,
+          "type": "string",
+          "description": "Lock token of the message to renew lock"
+        },
+        {
+          "name": "Subscription type",
+          "key": "subscriptionType",
+          "required": false,
+          "type": "string",
+          "description": "Subscription type - Main or DeadLetter"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "RenewLockOnSessionInQueue": {
+      "operationId": "RenewLockOnSessionInQueue",
+      "kind": "action",
+      "displayName": "Renew lock on the session in a queue",
+      "deprecated": false,
+      "description": "- RenewLockOnSessionInQueue",
+      "parameters": [
+        {
+          "name": "Queue name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the queue"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": true,
+          "type": "string",
+          "description": "Session id"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "RenewLockOnSessionInTopic": {
+      "operationId": "RenewLockOnSessionInTopic",
+      "kind": "action",
+      "displayName": "Renew lock on the session in a topic subscription",
+      "deprecated": false,
+      "description": "- RenewLockOnSessionInTopic",
+      "parameters": [
+        {
+          "name": "Topic name",
+          "key": "topicName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic"
+        },
+        {
+          "name": "Topic subscription name",
+          "key": "subscriptionName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the topic subscription"
+        },
+        {
+          "name": "Session id",
+          "key": "sessionId",
+          "required": true,
+          "type": "string",
+          "description": "Session id"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "SendMessage": {
+      "operationId": "SendMessage",
+      "kind": "action",
+      "displayName": "Send message",
+      "deprecated": false,
+      "description": "- SendMessage",
+      "parameters": [
+        {
+          "name": "Queue/Topic name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the queue or topic"
+        },
+        {
+          "name": "Content",
+          "key": "ContentData",
+          "required": false,
+          "type": "byte",
+          "description": "Content of the message"
+        },
+        {
+          "name": "Content Type",
+          "key": "ContentType",
+          "required": false,
+          "type": "string",
+          "description": "Content type of the message content"
+        },
+        {
+          "name": "Properties",
+          "key": "Properties",
+          "required": false,
+          "type": "object",
+          "description": "Key-value pairs for each brokered property"
+        },
+        {
+          "name": "Message Id",
+          "key": "MessageId",
+          "required": false,
+          "type": "string",
+          "description": "This is a user-defined value that Service Bus can use to identify duplicate messages, if enabled."
+        },
+        {
+          "name": "To",
+          "key": "To",
+          "required": false,
+          "type": "string",
+          "description": "Send to address"
+        },
+        {
+          "name": "Reply To",
+          "key": "ReplyTo",
+          "required": false,
+          "type": "string",
+          "description": "Address of the queue to reply to"
+        },
+        {
+          "name": "Reply To Session Id",
+          "key": "ReplyToSessionId",
+          "required": false,
+          "type": "string",
+          "description": "Identifier of the session to reply to"
+        },
+        {
+          "name": "Label",
+          "key": "Label",
+          "required": false,
+          "type": "string",
+          "description": "Application specific label"
+        },
+        {
+          "name": "ScheduledEnqueueTimeUtc",
+          "key": "ScheduledEnqueueTimeUtc",
+          "required": false,
+          "type": "date-time",
+          "description": "Date and time, in UTC, when the message will be added to the queue"
+        },
+        {
+          "name": "Session Id",
+          "key": "SessionId",
+          "required": false,
+          "type": "string",
+          "description": "Identifier of the session"
+        },
+        {
+          "name": "Correlation Id",
+          "key": "CorrelationId",
+          "required": false,
+          "type": "string",
+          "description": "Identifier of the correlation"
+        },
+        {
+          "name": "Sequence Number",
+          "key": "SequenceNumber",
+          "required": false,
+          "type": "integer",
+          "description": "Identifier of the sequence number"
+        },
+        {
+          "name": "Lock Token",
+          "key": "LockToken",
+          "required": false,
+          "type": "string",
+          "description": "The lock token of the message as a string."
+        },
+        {
+          "name": "Time To Live",
+          "key": "TimeToLive",
+          "required": false,
+          "type": "integer",
+          "description": "This is the duration, in ticks, that a message is valid. The duration starts from when the message is sent to the Service Bus."
+        },
+        {
+          "name": "System properties",
+          "key": "systemProperties",
+          "required": false,
+          "type": "string",
+          "description": "System properties - None or Run Details. Run Details will add run metadata property details as custom properties in the message."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "SendMessages": {
+      "operationId": "SendMessages",
+      "kind": "action",
+      "displayName": "Send one or more messages",
+      "deprecated": false,
+      "description": "- SendMessages",
+      "parameters": [
+        {
+          "name": "Queue/Topic name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the queue or topic"
+        },
+        {
+          "name": "Content",
+          "key": "ContentData",
+          "required": false,
+          "type": "byte",
+          "description": "Content of the message"
+        },
+        {
+          "name": "Content Type",
+          "key": "ContentType",
+          "required": false,
+          "type": "string",
+          "description": "Content type of the message content"
+        },
+        {
+          "name": "Properties",
+          "key": "Properties",
+          "required": false,
+          "type": "object",
+          "description": "Key-value pairs for each brokered property"
+        },
+        {
+          "name": "Message Id",
+          "key": "MessageId",
+          "required": false,
+          "type": "string",
+          "description": "This is a user-defined value that Service Bus can use to identify duplicate messages, if enabled."
+        },
+        {
+          "name": "To",
+          "key": "To",
+          "required": false,
+          "type": "string",
+          "description": "Send to address"
+        },
+        {
+          "name": "Reply To",
+          "key": "ReplyTo",
+          "required": false,
+          "type": "string",
+          "description": "Address of the queue to reply to"
+        },
+        {
+          "name": "Reply To Session Id",
+          "key": "ReplyToSessionId",
+          "required": false,
+          "type": "string",
+          "description": "Identifier of the session to reply to"
+        },
+        {
+          "name": "Label",
+          "key": "Label",
+          "required": false,
+          "type": "string",
+          "description": "Application specific label"
+        },
+        {
+          "name": "ScheduledEnqueueTimeUtc",
+          "key": "ScheduledEnqueueTimeUtc",
+          "required": false,
+          "type": "date-time",
+          "description": "Date and time, in UTC, when the message will be added to the queue"
+        },
+        {
+          "name": "Session Id",
+          "key": "SessionId",
+          "required": false,
+          "type": "string",
+          "description": "Identifier of the session"
+        },
+        {
+          "name": "Correlation Id",
+          "key": "CorrelationId",
+          "required": false,
+          "type": "string",
+          "description": "Identifier of the correlation"
+        },
+        {
+          "name": "Sequence Number",
+          "key": "SequenceNumber",
+          "required": false,
+          "type": "integer",
+          "description": "Identifier of the sequence number"
+        },
+        {
+          "name": "Lock Token",
+          "key": "LockToken",
+          "required": false,
+          "type": "string",
+          "description": "The lock token of the message as a string."
+        },
+        {
+          "name": "Time To Live",
+          "key": "TimeToLive",
+          "required": false,
+          "type": "integer",
+          "description": "This is the duration, in ticks, that a message is valid. The duration starts from when the message is sent to the Service Bus."
+        },
+        {
+          "name": "System properties",
+          "key": "systemProperties",
+          "required": false,
+          "type": "string",
+          "description": "System properties - None or Run Details. Run Details will add run metadata property details as custom properties in the message."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

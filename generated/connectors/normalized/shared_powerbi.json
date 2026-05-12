@@ -1,0 +1,1221 @@
+{
+  "connectorId": "shared_powerbi",
+  "displayName": "Power BI",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/powerbi/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-03-10T01:07:00.0000000Z",
+  "sourceGitCommit": "5c5799b61d661d98e1115eac606ed4ed2f3cc6d7",
+  "sourcePath": "docs/PowerBI/index.yml",
+  "operations": {
+    "AddRows": {
+      "operationId": "AddRows",
+      "kind": "action",
+      "displayName": "Add rows to a dataset",
+      "deprecated": false,
+      "description": "- AddRows",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Dataset",
+          "key": "datasetid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the dataset."
+        },
+        {
+          "name": "Table",
+          "key": "tablename",
+          "required": true,
+          "type": "string",
+          "description": "The name of the table."
+        },
+        {
+          "name": "Payload to send",
+          "key": "Payload",
+          "required": false,
+          "type": "dynamic",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CheckAlertStatus": {
+      "operationId": "CheckAlertStatus",
+      "kind": "trigger",
+      "displayName": "When a data driven alert is triggered",
+      "deprecated": false,
+      "description": "- CheckAlertStatus",
+      "parameters": [
+        {
+          "name": "Alert Id",
+          "key": "alertId",
+          "required": true,
+          "type": "string",
+          "description": "The alert id to track."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EvaluatedAlert"
+      }
+    },
+    "CreateGoal": {
+      "operationId": "CreateGoal",
+      "kind": "action",
+      "displayName": "Create a goal (Preview)",
+      "deprecated": false,
+      "description": "- CreateGoal",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "The name of the goal."
+        },
+        {
+          "name": "Owner",
+          "key": "owner",
+          "required": false,
+          "type": "email",
+          "description": "The email address of the goal's owner. Example: foo@bar.com"
+        },
+        {
+          "name": "Current value",
+          "key": "value",
+          "required": false,
+          "type": "string",
+          "description": "The current value of the goal being tracked."
+        },
+        {
+          "name": "Target value",
+          "key": "target",
+          "required": false,
+          "type": "string",
+          "description": "The target value of the goal."
+        },
+        {
+          "name": "Status",
+          "key": "status",
+          "required": false,
+          "type": "string",
+          "description": "The current status the goal."
+        },
+        {
+          "name": "Start date",
+          "key": "startDate",
+          "required": false,
+          "type": "date",
+          "description": "The start date for the goal. Example: 2021-07-15."
+        },
+        {
+          "name": "Completion date",
+          "key": "completionDate",
+          "required": false,
+          "type": "date",
+          "description": "The date for the goal to be completed by. Example: 2021-07-29."
+        },
+        {
+          "name": "Note",
+          "key": "note",
+          "required": false,
+          "type": "string",
+          "description": "Note to attach to the initial check-in on goal creation. Can be multiline text"
+        },
+        {
+          "name": "Parent goal id",
+          "key": "parentId",
+          "required": false,
+          "type": "string",
+          "description": "If this goal is a subgoal, the unique id of its parent goal."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Id | id | string | The unique identifier of the goal. |"
+      }
+    },
+    "CreateScorecard": {
+      "operationId": "CreateScorecard",
+      "kind": "action",
+      "displayName": "Create a scorecard (Preview)",
+      "deprecated": false,
+      "description": "- CreateScorecard",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Scorecard name"
+        },
+        {
+          "name": "Description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": "Scorecard description"
+        }
+      ],
+      "returns": {
+        "raw": "Created scorecard.\n- Created scorecard\n- CreatedScorecard"
+      }
+    },
+    "ExecuteDatasetQueriesJson": {
+      "operationId": "ExecuteDatasetQueriesJson",
+      "kind": "action",
+      "displayName": "Run a json query against a dataset",
+      "deprecated": false,
+      "description": "- ExecuteDatasetQueriesJson",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Dataset",
+          "key": "datasetid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the dataset."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "ExecuteDatasetQuery": {
+      "operationId": "ExecuteDatasetQuery",
+      "kind": "action",
+      "displayName": "Run a query against a dataset",
+      "deprecated": false,
+      "description": "- ExecuteDatasetQuery",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Dataset",
+          "key": "datasetid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the dataset."
+        },
+        {
+          "name": "Query text",
+          "key": "query",
+          "required": true,
+          "type": "string",
+          "description": "The text of the query. Can be multiline text."
+        },
+        {
+          "name": "Nulls included",
+          "key": "includeNulls",
+          "required": false,
+          "type": "boolean",
+          "description": "Should null values be included in the results. Default is No."
+        },
+        {
+          "name": "Impersonate user",
+          "key": "impersonatedUserName",
+          "required": false,
+          "type": "string",
+          "description": "A user identity in UPN format to run the query as another user."
+        }
+      ],
+      "returns": {
+        "raw": "Results of query execution.\n- Body\n- QueryExecutionResults"
+      }
+    },
+    "GetGoal": {
+      "operationId": "GetGoal",
+      "kind": "action",
+      "displayName": "Get a goal (Preview)",
+      "deprecated": false,
+      "description": "- GetGoal",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        },
+        {
+          "name": "Goal id",
+          "key": "goalId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the goal."
+        }
+      ],
+      "returns": {
+        "raw": "Goal information.\n- Goal\n- FetchedGoal"
+      }
+    },
+    "GetGoalCheckin": {
+      "operationId": "GetGoalCheckin",
+      "kind": "action",
+      "displayName": "Get a goal check-in (Preview)",
+      "deprecated": false,
+      "description": "- GetGoalCheckin",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        },
+        {
+          "name": "Goal id",
+          "key": "goalId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the goal."
+        },
+        {
+          "name": "Check-in date",
+          "key": "goalCheckin",
+          "required": true,
+          "type": "date",
+          "description": "Example: 2021-07-21"
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Date | timestamp | date | The date that the check-in was made. |\n| Value | value | number | The value at the time of check in, if set. |\n| Status | status | string | The goal status at the time of check in. |\n| Notes | notes | GoalNotes | The list of notes. |"
+      }
+    },
+    "GetGoalCheckins": {
+      "operationId": "GetGoalCheckins",
+      "kind": "action",
+      "displayName": "Get goal check-ins (Preview)",
+      "deprecated": false,
+      "description": "- GetGoalCheckins",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        },
+        {
+          "name": "Goal id",
+          "key": "goalId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the goal."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Check-ins | value | array of object | List of check-ins. |\n| Date | value.timestamp | datetime | The date that the check-in was made. |\n| Value | value.value | number | The value at the time of check in. |\n| Status | value.status | string | The goal status at the time of check in. |\n| Notes | value.notes | GoalNotes | The list of notes. |"
+      }
+    },
+    "GetMultipleGoals": {
+      "operationId": "GetMultipleGoals",
+      "kind": "action",
+      "displayName": "Get multiple goals (Preview)",
+      "deprecated": false,
+      "description": "- GetMultipleGoals",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        }
+      ],
+      "returns": {
+        "raw": "Entire response body.\n- Retrieved\n- FetchedGoals"
+      }
+    },
+    "GetScorecards": {
+      "operationId": "GetScorecards",
+      "kind": "action",
+      "displayName": "Get scorecards (Preview)",
+      "deprecated": false,
+      "description": "- GetScorecards",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        }
+      ],
+      "returns": {
+        "raw": "Entire response body.\n- Retrieved\n- ListedScorecards"
+      }
+    },
+    "GoalChangeTrigger": {
+      "operationId": "GoalChangeTrigger",
+      "kind": "trigger",
+      "displayName": "When a goal changes (Preview)",
+      "deprecated": false,
+      "description": "- GoalChangeTrigger",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        },
+        {
+          "name": "Goal id",
+          "key": "goalId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the goal."
+        },
+        {
+          "name": "Polling interval (sec)",
+          "key": "pollingInterval",
+          "required": true,
+          "type": "number",
+          "description": "Number of seconds between checks for new data. Minimum is 300."
+        }
+      ],
+      "returns": {
+        "raw": "Changed goal properties.\n- Changed goal\n- GoalChanged"
+      }
+    },
+    "GoalRefreshFailedTrigger": {
+      "operationId": "GoalRefreshFailedTrigger",
+      "kind": "trigger",
+      "displayName": "When a data refresh for a goal fails (Preview)",
+      "deprecated": false,
+      "description": "- GoalRefreshFailedTrigger",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        },
+        {
+          "name": "Goal id",
+          "key": "goalId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the goal."
+        },
+        {
+          "name": "Track target source",
+          "key": "trackTargetSource",
+          "required": true,
+          "type": "string",
+          "description": "Will track the link for the goal's target."
+        },
+        {
+          "name": "Track value source",
+          "key": "trackValueSource",
+          "required": true,
+          "type": "string",
+          "description": "Will track the link for the goal's value."
+        },
+        {
+          "name": "Polling interval (sec)",
+          "key": "pollingInterval",
+          "required": true,
+          "type": "number",
+          "description": "Number of seconds between checks for new data. Minimum is 300."
+        }
+      ],
+      "returns": {
+        "raw": "Goal refresh failure issues.\n- Refresh failure\n- GoalRefreshIssues"
+      }
+    },
+    "GoalStatusChangeTrigger": {
+      "operationId": "GoalStatusChangeTrigger",
+      "kind": "trigger",
+      "displayName": "When status of a goal changes (Preview)",
+      "deprecated": false,
+      "description": "- GoalStatusChangeTrigger",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        },
+        {
+          "name": "Goal id",
+          "key": "goalId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the goal."
+        },
+        {
+          "name": "Polling interval (sec)",
+          "key": "pollingInterval",
+          "required": true,
+          "type": "number",
+          "description": "Number of seconds between checks for new data. Minimum is 300."
+        }
+      ],
+      "returns": {
+        "raw": "Changed goal properties.\n- Changed goal\n- GoalStatusChanged"
+      }
+    },
+    "GoalValueChangeTrigger": {
+      "operationId": "GoalValueChangeTrigger",
+      "kind": "trigger",
+      "displayName": "When current value of a goal changes (Preview)",
+      "deprecated": false,
+      "description": "- GoalValueChangeTrigger",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        },
+        {
+          "name": "Goal id",
+          "key": "goalId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the goal."
+        },
+        {
+          "name": "Polling interval (sec)",
+          "key": "pollingInterval",
+          "required": true,
+          "type": "number",
+          "description": "Number of seconds between checks for new data. Minimum is 300."
+        }
+      ],
+      "returns": {
+        "raw": "Changed goal properties.\n- Changed goal\n- GoalValueChanged"
+      }
+    },
+    "GoalValueCheckin": {
+      "operationId": "GoalValueCheckin",
+      "kind": "action",
+      "displayName": "Create a check-in (Preview)",
+      "deprecated": false,
+      "description": "- GoalValueCheckin",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        },
+        {
+          "name": "Goal id",
+          "key": "goalId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the goal."
+        },
+        {
+          "name": "Date",
+          "key": "timestamp",
+          "required": true,
+          "type": "date",
+          "description": "Check-in date. Example: 2021-07-21"
+        },
+        {
+          "name": "Value",
+          "key": "value",
+          "required": false,
+          "type": "number",
+          "description": ""
+        },
+        {
+          "name": "Status",
+          "key": "status",
+          "required": false,
+          "type": "string",
+          "description": "Status of the goal."
+        },
+        {
+          "name": "Note",
+          "key": "note",
+          "required": false,
+          "type": "string",
+          "description": "Can be multiline text"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GoalValueCheckinNote": {
+      "operationId": "GoalValueCheckinNote",
+      "kind": "action",
+      "displayName": "Add a note to a check-in (Preview)",
+      "deprecated": false,
+      "description": "- GoalValueCheckinNote",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        },
+        {
+          "name": "Goal id",
+          "key": "goalId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the goal."
+        },
+        {
+          "name": "Check-in date",
+          "key": "goalCheckin",
+          "required": true,
+          "type": "date",
+          "description": "Example: 2021-07-21"
+        },
+        {
+          "name": "Note",
+          "key": "note",
+          "required": true,
+          "type": "string",
+          "description": "Can be multiline text"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GoalValueOrNoteUpsertTrigger": {
+      "operationId": "GoalValueOrNoteUpsertTrigger",
+      "kind": "trigger",
+      "displayName": "When someone adds or edits a goal check-in (Preview)",
+      "deprecated": false,
+      "description": "- GoalValueOrNoteUpsertTrigger",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        },
+        {
+          "name": "Goal id",
+          "key": "goalId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the goal."
+        },
+        {
+          "name": "Polling interval (sec)",
+          "key": "pollingInterval",
+          "required": true,
+          "type": "number",
+          "description": "Number of seconds between checks for new data. Minimum is 300."
+        }
+      ],
+      "returns": {
+        "raw": "Added or changed goal check-ins or notes.\n- Updated goal\n- GoalValueOrNoteUpserted"
+      }
+    },
+    "GoalsAssignedTrigger": {
+      "operationId": "GoalsAssignedTrigger",
+      "kind": "trigger",
+      "displayName": "When someone assigns a new owner to a goal (Preview)",
+      "deprecated": false,
+      "description": "- GoalsAssignedTrigger",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        },
+        {
+          "name": "Owner",
+          "key": "owner",
+          "required": false,
+          "type": "email",
+          "description": "E-mail of an owner. Can be yours. Can be empty when tracking any owner."
+        },
+        {
+          "name": "Polling interval (sec)",
+          "key": "pollingInterval",
+          "required": true,
+          "type": "number",
+          "description": "Number of seconds between checks for new data. Minimum is 300."
+        }
+      ],
+      "returns": {
+        "raw": "Assigned goals info.\n- Assigned\n- GoalsAssigned"
+      }
+    },
+    "InitiateExportToFileForPaginatedReports": {
+      "operationId": "InitiateExportToFileForPaginatedReports",
+      "kind": "action",
+      "displayName": "Export To File for Paginated Reports",
+      "deprecated": false,
+      "description": "- InitiateExportToFileForPaginatedReports",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Report",
+          "key": "reportid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of a paginated report."
+        },
+        {
+          "name": "Export Format",
+          "key": "format",
+          "required": true,
+          "type": "string",
+          "description": "The export format for the paginated report. The supported formats are: PPTX (PowerPoint), PDF, ACCESSIBLEPDF (Accessible PDF), XLSX (Excel), DOCX (Word), CSV, XML, MHTML, and Image (BMP, EMF, GIF, JPEG, PNG, or TIFF)."
+        },
+        {
+          "name": "Username",
+          "key": "username",
+          "required": true,
+          "type": "string",
+          "description": "The effective username reflected by a token for applying RLS rules (For OnPrem model, username can be composed of alpha-numerical characters or any of the following characters '.', '-', '_', '!', '#', '^', '~', '\\', '@', also username cannot contain spaces. For Cloud model, username can be composed of all ASCII characters. username must be up to 256 characters)"
+        },
+        {
+          "name": "Datasets",
+          "key": "datasets",
+          "required": false,
+          "type": "array of string",
+          "description": "An array of datasets for which this identity applies"
+        },
+        {
+          "name": "Roles",
+          "key": "roles",
+          "required": false,
+          "type": "array of string",
+          "description": "An array of RLS roles reflected by a token when applying RLS rules (identity can contain up to 50 roles, role can be composed of any character besides ',' and must be up to 50 characters)"
+        },
+        {
+          "name": "CustomData",
+          "key": "customData",
+          "required": false,
+          "type": "string",
+          "description": "The value of customdata to be used for applying RLS rules. Only supported for live connections to Azure Analysis Services."
+        },
+        {
+          "name": "Blob Value",
+          "key": "value",
+          "required": true,
+          "type": "string",
+          "description": "OAuth2 access token for SQL Azure"
+        },
+        {
+          "name": "Reports",
+          "key": "reports",
+          "required": false,
+          "type": "array of string",
+          "description": "An array of reports for which this identity applies, Only supported for paginated reports"
+        },
+        {
+          "name": "FormatSettings",
+          "key": "formatSettings",
+          "required": false,
+          "type": "object",
+          "description": "Dictionary of format settings. The keys are the device info property names for the requested file format."
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "The report parameter name"
+        },
+        {
+          "name": "value",
+          "key": "value",
+          "required": false,
+          "type": "string",
+          "description": "The report parameter value"
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "InitiateExportToFileForPbiReports": {
+      "operationId": "InitiateExportToFileForPbiReports",
+      "kind": "action",
+      "displayName": "Export To File for Power BI Reports",
+      "deprecated": false,
+      "description": "- InitiateExportToFileForPbiReports",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Report",
+          "key": "reportid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of a pbi report."
+        },
+        {
+          "name": "Export Format",
+          "key": "format",
+          "required": true,
+          "type": "string",
+          "description": "The export format for the Power BI report. The supported formats are: PPTX (PowerPoint), PDF, and PNG"
+        },
+        {
+          "name": "Locale",
+          "key": "locale",
+          "required": false,
+          "type": "string",
+          "description": "The locale to apply"
+        },
+        {
+          "name": "Include Hidden Pages",
+          "key": "includeHiddenPages",
+          "required": false,
+          "type": "boolean",
+          "description": "A flag indicating whether to include hidden pages when exporting the entire report (when passing specific pages this property will be ignored). If not provided, the default behavior is to exclude hidden pages"
+        },
+        {
+          "name": "Bookmark Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "The bookmark name"
+        },
+        {
+          "name": "Bookmark State",
+          "key": "state",
+          "required": false,
+          "type": "string",
+          "description": "The bookmark state"
+        },
+        {
+          "name": "Filter",
+          "key": "filter",
+          "required": false,
+          "type": "string",
+          "description": "The filter to apply"
+        },
+        {
+          "name": "pageName",
+          "key": "pageName",
+          "required": false,
+          "type": "string",
+          "description": "The page name"
+        },
+        {
+          "name": "visualName",
+          "key": "visualName",
+          "required": false,
+          "type": "string",
+          "description": "(Optional) Visual name to be exported"
+        },
+        {
+          "name": "Bookmark Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "The bookmark name"
+        },
+        {
+          "name": "Bookmark State",
+          "key": "state",
+          "required": false,
+          "type": "string",
+          "description": "The bookmark state"
+        },
+        {
+          "name": "Username",
+          "key": "username",
+          "required": true,
+          "type": "string",
+          "description": "The effective username reflected by a token for applying RLS rules (For OnPrem model, username can be composed of alpha-numerical characters or any of the following characters '.', '-', '_', '!', '#', '^', '~', '\\', '@', also username cannot contain spaces. For Cloud model, username can be composed of all ASCII characters. username must be up to 256 characters)"
+        },
+        {
+          "name": "Datasets",
+          "key": "datasets",
+          "required": false,
+          "type": "array of string",
+          "description": "An array of datasets for which this identity applies"
+        },
+        {
+          "name": "Roles",
+          "key": "roles",
+          "required": false,
+          "type": "array of string",
+          "description": "An array of RLS roles reflected by a token when applying RLS rules (identity can contain up to 50 roles, role can be composed of any character besides ',' and must be up to 50 characters)"
+        },
+        {
+          "name": "CustomData",
+          "key": "customData",
+          "required": false,
+          "type": "string",
+          "description": "The value of customdata to be used for applying RLS rules. Only supported for live connections to Azure Analysis Services."
+        },
+        {
+          "name": "Blob Value",
+          "key": "value",
+          "required": true,
+          "type": "string",
+          "description": "OAuth2 access token for SQL Azure"
+        },
+        {
+          "name": "Reports",
+          "key": "reports",
+          "required": false,
+          "type": "array of string",
+          "description": "An array of reports for which this identity applies, Only supported for paginated reports"
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "PowerBiButtonClicked": {
+      "operationId": "PowerBiButtonClicked",
+      "kind": "trigger",
+      "displayName": "Power BI button clicked",
+      "deprecated": false,
+      "description": "- PowerBiButtonClicked",
+      "parameters": [
+        {
+          "name": "operationId",
+          "key": "operationId",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "host",
+          "key": "host",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "parameters",
+          "key": "parameters",
+          "required": true,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "headersSchema",
+          "key": "headersSchema",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "schema",
+          "key": "schema",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| rows | body.rows | array of object |  |\n| items | body.rows | object |  |\n| User email | headers.x-ms-user-email-encoded | byte | The email address of the user who triggered the flow. |\n| User name | headers.x-ms-user-name-encoded | byte | The display name of the user who triggered the flow. |\n| Timestamp | headers.x-ms-user-timestamp | string | The time the flow was triggered. |\n| User id | headers.x-ms-user-id | guid | The unique identifier of the user who triggered the flow in AAD. |"
+      }
+    },
+    "RefreshDataset": {
+      "operationId": "RefreshDataset",
+      "kind": "action",
+      "displayName": "Refresh a dataset",
+      "deprecated": false,
+      "description": "- RefreshDataset",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Dataset",
+          "key": "datasetid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the dataset."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "UpdateGoal": {
+      "operationId": "UpdateGoal",
+      "kind": "action",
+      "displayName": "Update a goal (Preview)",
+      "deprecated": false,
+      "description": "- UpdateGoal",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        },
+        {
+          "name": "Goal id",
+          "key": "goalId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the goal."
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "If provided, the new name of the goal."
+        },
+        {
+          "name": "Owner",
+          "key": "owner",
+          "required": false,
+          "type": "email",
+          "description": "If provided, the email address of the new goal owner."
+        },
+        {
+          "name": "Current value",
+          "key": "value",
+          "required": false,
+          "type": "number",
+          "description": "If provided, sets the new value of the goal."
+        },
+        {
+          "name": "Target value",
+          "key": "target",
+          "required": false,
+          "type": "number",
+          "description": "If provided, sets the new goal target."
+        },
+        {
+          "name": "Status",
+          "key": "status",
+          "required": false,
+          "type": "string",
+          "description": "If provided, sets the new status of the goal."
+        },
+        {
+          "name": "Start date",
+          "key": "startDate",
+          "required": false,
+          "type": "date",
+          "description": "If provided, the new start date for the goal. Example: 2021-07-15."
+        },
+        {
+          "name": "Completion date",
+          "key": "completionDate",
+          "required": false,
+          "type": "date",
+          "description": "If provided, the new date for the goal to be completed by. Example: 2021-07-29."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "UpdateGoalCheckin": {
+      "operationId": "UpdateGoalCheckin",
+      "kind": "action",
+      "displayName": "Update a check-in (Preview)",
+      "deprecated": false,
+      "description": "- UpdateGoalCheckin",
+      "parameters": [
+        {
+          "name": "Workspace",
+          "key": "groupid",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace."
+        },
+        {
+          "name": "Scorecard id",
+          "key": "scorecardId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the scorecard."
+        },
+        {
+          "name": "Goal id",
+          "key": "goalId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the goal."
+        },
+        {
+          "name": "Check-in date",
+          "key": "goalCheckin",
+          "required": true,
+          "type": "date",
+          "description": "Example: 2021-07-21"
+        },
+        {
+          "name": "Value",
+          "key": "value",
+          "required": false,
+          "type": "number",
+          "description": ""
+        },
+        {
+          "name": "Status",
+          "key": "status",
+          "required": false,
+          "type": "string",
+          "description": "Status of the goal."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

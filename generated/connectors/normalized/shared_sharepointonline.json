@@ -1,0 +1,2851 @@
+{
+  "connectorId": "shared_sharepointonline",
+  "displayName": "SharePoint",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/sharepointonline/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-05-07T19:05:00.0000000Z",
+  "sourceGitCommit": "17b4f7c8286f2a336a10075fbd867b4459099c39",
+  "sourcePath": "docs/sharepointonline/index.yml",
+  "operations": {
+    "ApproveHubSiteJoin": {
+      "operationId": "ApproveHubSiteJoin",
+      "kind": "action",
+      "displayName": "Approve hub site join request",
+      "deprecated": false,
+      "description": "- ApproveHubSiteJoin",
+      "parameters": [
+        {
+          "name": "Hub Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Requesting Site Id",
+          "key": "joiningSiteId",
+          "required": true,
+          "type": "string",
+          "description": "Id of the requesting site."
+        }
+      ],
+      "returns": {
+        "raw": "Result object of ApproveHubSiteJoin action\n- Body\n- ApproveHubSiteJoinResponse"
+      }
+    },
+    "CancelHubSiteJoinApproval": {
+      "operationId": "CancelHubSiteJoinApproval",
+      "kind": "action",
+      "displayName": "Cancel hub site join request",
+      "deprecated": false,
+      "description": "- CancelHubSiteJoinApproval",
+      "parameters": [
+        {
+          "name": "Requesting Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Approval Correlation Id",
+          "key": "approvalCorrelationId",
+          "required": false,
+          "type": "string",
+          "description": "Approval correlation identifier for this request."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CheckIfFileIsPublished": {
+      "operationId": "CheckIfFileIsPublished",
+      "kind": "action",
+      "displayName": "Check if the scheduled version of the item is published [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CheckIfFileIsPublished",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint library name."
+        },
+        {
+          "name": "Item ID",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Unique identifier of the file."
+        },
+        {
+          "name": "Scheduled Version",
+          "key": "scheduledVersion",
+          "required": true,
+          "type": "string",
+          "description": "Version of file that was scheduled for publish."
+        }
+      ],
+      "returns": {
+        "raw": "Output object of the CheckIfFileIsPublished endpoint on the SPO Connector shim\n- Body\n- PublishedResult"
+      }
+    },
+    "CheckInFile": {
+      "operationId": "CheckInFile",
+      "kind": "action",
+      "displayName": "Check in file",
+      "deprecated": false,
+      "description": "- CheckInFile",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint library name."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Id of the list item the file is attached to."
+        },
+        {
+          "name": "Comments",
+          "key": "comment",
+          "required": true,
+          "type": "string",
+          "description": "Type comments describing what has changed in this version"
+        },
+        {
+          "name": "Check in type",
+          "key": "checkinType",
+          "required": true,
+          "type": "integer",
+          "description": "Select the type of version you would like to check in"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CheckOutFile": {
+      "operationId": "CheckOutFile",
+      "kind": "action",
+      "displayName": "Check out file",
+      "deprecated": false,
+      "description": "- CheckOutFile",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint library name."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Id of the list item the file is attached to."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CopyFile": {
+      "operationId": "CopyFile",
+      "kind": "action",
+      "displayName": "Copy file (deprecated)",
+      "deprecated": false,
+      "description": "- CopyFile",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Source File Path",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Path to the source file."
+        },
+        {
+          "name": "Destination File Path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "Path to the destination file."
+        },
+        {
+          "name": "Overwrite Flag",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether or not to overwrite the destination file if it exists."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "CopyFileAsync": {
+      "operationId": "CopyFileAsync",
+      "kind": "action",
+      "displayName": "Copy file",
+      "deprecated": false,
+      "description": "- CopyFileAsync",
+      "parameters": [
+        {
+          "name": "Current Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "File to Copy",
+          "key": "sourceFileId",
+          "required": true,
+          "type": "string",
+          "description": "File Identifier"
+        },
+        {
+          "name": "Destination Site Address",
+          "key": "destinationDataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "Destination Folder",
+          "key": "destinationFolderPath",
+          "required": true,
+          "type": "string",
+          "description": "Destination Folder"
+        },
+        {
+          "name": "If another file is already there",
+          "key": "nameConflictBehavior",
+          "required": true,
+          "type": "integer",
+          "description": "Pick one of the options available"
+        }
+      ],
+      "returns": {
+        "raw": "The SharePoint version of the BlobMetadataResponse extends the object by adding some additional fields that we want serialized\n- Body\n- SPBlobMetadataResponse"
+      }
+    },
+    "CopyFolderAsync": {
+      "operationId": "CopyFolderAsync",
+      "kind": "action",
+      "displayName": "Copy folder",
+      "deprecated": false,
+      "description": "- CopyFolderAsync",
+      "parameters": [
+        {
+          "name": "Current Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Folder to Copy",
+          "key": "sourceFolderId",
+          "required": true,
+          "type": "string",
+          "description": "File Identifier"
+        },
+        {
+          "name": "Destination Site Address",
+          "key": "destinationDataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "Destination Folder",
+          "key": "destinationFolderPath",
+          "required": true,
+          "type": "string",
+          "description": "Destination Folder"
+        },
+        {
+          "name": "If another folder is already there",
+          "key": "nameConflictBehavior",
+          "required": true,
+          "type": "integer",
+          "description": "Pick one of the options available"
+        }
+      ],
+      "returns": {
+        "raw": "The SharePoint version of the BlobMetadataResponse extends the object by adding some additional fields that we want serialized\n- Body\n- SPBlobMetadataResponse"
+      }
+    },
+    "CreateAgreementsSolutionDocument": {
+      "operationId": "CreateAgreementsSolutionDocument",
+      "kind": "action",
+      "displayName": "Agreements Solution - Generate document within Agreements Solution workspace",
+      "deprecated": false,
+      "description": "- CreateAgreementsSolutionDocument",
+      "parameters": [
+        {
+          "name": "Agreements Solution Workspace",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Agreements Solution Template",
+          "key": "template",
+          "required": true,
+          "type": "string",
+          "description": "Agreements Solution template."
+        },
+        {
+          "name": "Fields",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Document placeholder values."
+        },
+        {
+          "name": "File Name",
+          "key": "documentName",
+          "required": false,
+          "type": "string",
+          "description": "Document file name."
+        },
+        {
+          "name": "Table (no effect)",
+          "key": "table",
+          "required": false,
+          "type": "string",
+          "description": "This parameter does nothing. Please do not use."
+        },
+        {
+          "name": "View (no effect)",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "This parameter does nothing. Please do not use."
+        }
+      ],
+      "returns": {
+        "raw": "The SharePoint version of the BlobMetadataResponse extends the object by adding some additional fields that we want serialized\n- Body\n- SPBlobMetadataResponse"
+      }
+    },
+    "CreateApprovalRequest": {
+      "operationId": "CreateApprovalRequest",
+      "kind": "action",
+      "displayName": "Create an approval request for an item or file",
+      "deprecated": false,
+      "description": "- CreateApprovalRequest",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "List or Library",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list or library name."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Id of the item the approval request is being created for."
+        },
+        {
+          "name": "Approval Type",
+          "key": "approvalType",
+          "required": true,
+          "type": "integer",
+          "description": "Select an approval type."
+        },
+        {
+          "name": "Approval Schema",
+          "key": "approvalSchema",
+          "required": true,
+          "type": "dynamic",
+          "description": "Schema for the selected approval type."
+        }
+      ],
+      "returns": {
+        "raw": "Output object of the new approval request\n- Body\n- ApprovalData"
+      }
+    },
+    "CreateAttachment": {
+      "operationId": "CreateAttachment",
+      "kind": "action",
+      "displayName": "Add attachment",
+      "deprecated": false,
+      "description": "- CreateAttachment",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "List Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name."
+        },
+        {
+          "name": "Id",
+          "key": "itemId",
+          "required": true,
+          "type": "integer",
+          "description": "Id of the list item to attach the file to."
+        },
+        {
+          "name": "File Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": "File name."
+        },
+        {
+          "name": "File Content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "Content of the file."
+        }
+      ],
+      "returns": {
+        "raw": "SharePoint list item attachment\n- Body\n- SPListItemAttachment"
+      }
+    },
+    "CreateContentAssemblyDocument": {
+      "operationId": "CreateContentAssemblyDocument",
+      "kind": "action",
+      "displayName": "Generate document using Microsoft Syntex (preview)",
+      "deprecated": false,
+      "description": "- CreateContentAssemblyDocument",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Document Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint document library name."
+        },
+        {
+          "name": "Document Template",
+          "key": "template",
+          "required": true,
+          "type": "string",
+          "description": "Document template."
+        },
+        {
+          "name": "Placeholders",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Document placeholder values."
+        },
+        {
+          "name": "Folder Path",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Must start with an existing library."
+        },
+        {
+          "name": "File Name",
+          "key": "fileName",
+          "required": false,
+          "type": "string",
+          "description": "Document file name."
+        },
+        {
+          "name": "View (no effect)",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "This parameter does nothing. Please do not use."
+        }
+      ],
+      "returns": {
+        "raw": "The SharePoint version of the BlobMetadataResponse extends the object by adding some additional fields that we want serialized\n- Body\n- SPBlobMetadataResponse"
+      }
+    },
+    "CreateFile": {
+      "operationId": "CreateFile",
+      "kind": "action",
+      "displayName": "Create file",
+      "deprecated": false,
+      "description": "- CreateFile",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Folder Path",
+          "key": "folderPath",
+          "required": true,
+          "type": "string",
+          "description": "Must start with an existing library. Add folders if needed."
+        },
+        {
+          "name": "File Name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Name of the file."
+        },
+        {
+          "name": "File Content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "Content of the file."
+        }
+      ],
+      "returns": {
+        "raw": "The SharePoint version of the BlobMetadataResponse extends the object by adding some additional fields that we want serialized\n- Body\n- SPBlobMetadataResponse"
+      }
+    },
+    "CreateNewDocumentSet": {
+      "operationId": "CreateNewDocumentSet",
+      "kind": "action",
+      "displayName": "Create new document set",
+      "deprecated": false,
+      "description": "- CreateNewDocumentSet",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Library",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint library name."
+        },
+        {
+          "name": "Document Set Path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "Example: folder1/folder2/dsName"
+        },
+        {
+          "name": "Content Type Id",
+          "key": "contentTypeId",
+          "required": true,
+          "type": "string",
+          "description": "Example: 0x0120D520"
+        },
+        {
+          "name": "DynamicProperties",
+          "key": "DynamicProperties",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "CreateNewFolder": {
+      "operationId": "CreateNewFolder",
+      "kind": "action",
+      "displayName": "Create new folder",
+      "deprecated": false,
+      "description": "- CreateNewFolder",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "List or Library",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list or library name."
+        },
+        {
+          "name": "Folder Path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "Example: folder1/folder2/folder3"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "CreateSharingLink": {
+      "operationId": "CreateSharingLink",
+      "kind": "action",
+      "displayName": "Create sharing link for a file or folder",
+      "deprecated": false,
+      "description": "- CreateSharingLink",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint library name."
+        },
+        {
+          "name": "Item Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Id of the file or folder item."
+        },
+        {
+          "name": "Link Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "The type of sharing link to create"
+        },
+        {
+          "name": "Link Scope",
+          "key": "scope",
+          "required": true,
+          "type": "string",
+          "description": "Choose who your sharing link gives access to. \"Anyone\" option will only work if your administrator has enabled it."
+        },
+        {
+          "name": "Link Expiration",
+          "key": "expirationDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The date after which the link will expire in yyyy-MM-dd format. Only applicable for anonymous links."
+        }
+      ],
+      "returns": {
+        "raw": "Internal structure for sharing links\n- Body\n- SharingLinkPermission"
+      }
+    },
+    "DeleteAttachment": {
+      "operationId": "DeleteAttachment",
+      "kind": "action",
+      "displayName": "Delete attachment",
+      "deprecated": false,
+      "description": "- DeleteAttachment",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "List Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name."
+        },
+        {
+          "name": "Id",
+          "key": "itemId",
+          "required": true,
+          "type": "integer",
+          "description": "Id of the list item the file is attached to."
+        },
+        {
+          "name": "File Identifier",
+          "key": "attachmentId",
+          "required": true,
+          "type": "string",
+          "description": "File identifier for the attachment."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteFile": {
+      "operationId": "DeleteFile",
+      "kind": "action",
+      "displayName": "Delete file",
+      "deprecated": false,
+      "description": "- DeleteFile",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "File Identifier",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select a file."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteItem": {
+      "operationId": "DeleteItem",
+      "kind": "action",
+      "displayName": "Delete item",
+      "deprecated": false,
+      "description": "- DeleteItem",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "List Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name"
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Unique identifier of item to be deleted"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DiscardFileCheckOut": {
+      "operationId": "DiscardFileCheckOut",
+      "kind": "action",
+      "displayName": "Discard check out",
+      "deprecated": false,
+      "description": "- DiscardFileCheckOut",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint library name."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Id of the list item the file is attached to."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ExtractFolderV2": {
+      "operationId": "ExtractFolderV2",
+      "kind": "action",
+      "displayName": "Extract folder",
+      "deprecated": false,
+      "description": "- ExtractFolderV2",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Source File Path",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Path to the source file."
+        },
+        {
+          "name": "Destination Folder Path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "Path to the destination folder."
+        },
+        {
+          "name": "Overwrite Flag",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether or not to overwrite the destination file if it exists."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "GetAllTables": {
+      "operationId": "GetAllTables",
+      "kind": "action",
+      "displayName": "Get all lists and libraries",
+      "deprecated": false,
+      "description": "- GetAllTables",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a list of tables.\n- Body\n- TablesList"
+      }
+    },
+    "GetAttachmentContent": {
+      "operationId": "GetAttachmentContent",
+      "kind": "action",
+      "displayName": "Get attachment content",
+      "deprecated": false,
+      "description": "- GetAttachmentContent",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "List Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name."
+        },
+        {
+          "name": "Id",
+          "key": "itemId",
+          "required": true,
+          "type": "integer",
+          "description": "Id of the list item the file is attached to."
+        },
+        {
+          "name": "File Identifier",
+          "key": "attachmentId",
+          "required": true,
+          "type": "string",
+          "description": "File identifier for the attachment."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the attachment.\n- Attachment Content\n- binary"
+      }
+    },
+    "GetFileContent": {
+      "operationId": "GetFileContent",
+      "kind": "action",
+      "displayName": "Get file content",
+      "deprecated": false,
+      "description": "- GetFileContent",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "File Identifier",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select a file."
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "Infer content-type based on extension."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "GetFileContentByPath": {
+      "operationId": "GetFileContentByPath",
+      "kind": "action",
+      "displayName": "Get file content using path",
+      "deprecated": false,
+      "description": "- GetFileContentByPath",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "File Path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "Select a file."
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "Infer content-type based on extension."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "GetFileItem": {
+      "operationId": "GetFileItem",
+      "kind": "action",
+      "displayName": "Get file properties",
+      "deprecated": false,
+      "description": "- GetFileItem",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint library name"
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Unique identifier of item to be retrieved"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetFileItems": {
+      "operationId": "GetFileItems",
+      "kind": "action",
+      "displayName": "Get files (properties only)",
+      "deprecated": false,
+      "description": "- GetFileItems",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint library name"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA filter query to restrict the entries returned (e.g. stringColumn eq 'string' OR numberColumn lt 123)."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Limit Entries to Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Select a folder, or leave blank for the whole library"
+        },
+        {
+          "name": "Include Nested Items",
+          "key": "viewScopeOption",
+          "required": false,
+          "type": "string",
+          "description": "Return entries contained in sub-folders (default = true)"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetFileMetadata": {
+      "operationId": "GetFileMetadata",
+      "kind": "action",
+      "displayName": "Get file metadata",
+      "deprecated": false,
+      "description": "- GetFileMetadata",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "File Identifier",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select a file."
+        }
+      ],
+      "returns": {
+        "raw": "The SharePoint version of the BlobMetadataResponse extends the object by adding some additional fields that we want serialized\n- Body\n- SPBlobMetadataResponse"
+      }
+    },
+    "GetFileMetadataByPath": {
+      "operationId": "GetFileMetadataByPath",
+      "kind": "action",
+      "displayName": "Get file metadata using path",
+      "deprecated": false,
+      "description": "- GetFileMetadataByPath",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "File Path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "Select a file."
+        }
+      ],
+      "returns": {
+        "raw": "The SharePoint version of the BlobMetadataResponse extends the object by adding some additional fields that we want serialized\n- Body\n- SPBlobMetadataResponse"
+      }
+    },
+    "GetFolderMetadata": {
+      "operationId": "GetFolderMetadata",
+      "kind": "action",
+      "displayName": "Get folder metadata",
+      "deprecated": false,
+      "description": "- GetFolderMetadata",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "File Identifier",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select a folder."
+        }
+      ],
+      "returns": {
+        "raw": "The SharePoint version of the BlobMetadataResponse extends the object by adding some additional fields that we want serialized\n- Body\n- SPBlobMetadataResponse"
+      }
+    },
+    "GetFolderMetadataByPath": {
+      "operationId": "GetFolderMetadataByPath",
+      "kind": "action",
+      "displayName": "Get folder metadata using path",
+      "deprecated": false,
+      "description": "- GetFolderMetadataByPath",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Folder Path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "Select a folder."
+        }
+      ],
+      "returns": {
+        "raw": "The SharePoint version of the BlobMetadataResponse extends the object by adding some additional fields that we want serialized\n- Body\n- SPBlobMetadataResponse"
+      }
+    },
+    "GetItem": {
+      "operationId": "GetItem",
+      "kind": "action",
+      "displayName": "Get item",
+      "deprecated": false,
+      "description": "- GetItem",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "List Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name"
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Unique identifier of item to be retrieved"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      },
+      "usedInExamples": 4,
+      "observedParametersInExamples": {
+        "dataset": 4,
+        "id": 4,
+        "table": 4
+      }
+    },
+    "GetItemAttachments": {
+      "operationId": "GetItemAttachments",
+      "kind": "action",
+      "displayName": "Get attachments",
+      "deprecated": false,
+      "description": "- GetItemAttachments",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "List Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name."
+        },
+        {
+          "name": "Id",
+          "key": "itemId",
+          "required": true,
+          "type": "string",
+          "description": "Id of the list item to get attachments from."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of SPListItemAttachment"
+      }
+    },
+    "GetItemChanges": {
+      "operationId": "GetItemChanges",
+      "kind": "action",
+      "displayName": "Get changes for an item or a file (properties only)",
+      "deprecated": false,
+      "description": "- GetItemChanges",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "List or Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list or library name."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Id of the item you want to fetch changes for."
+        },
+        {
+          "name": "Since",
+          "key": "since",
+          "required": true,
+          "type": "string",
+          "description": "Trigger Window Start token or an item version label (ex: 3.0) or an ISO 8601 date (YYYY-MM-DDThh:mmZ)."
+        },
+        {
+          "name": "Until",
+          "key": "until",
+          "required": false,
+          "type": "string",
+          "description": "Trigger Window End token or an item version label (ex: 3.0) or an ISO 8601 date (YYYY-MM-DDThh:mmZ). If blank, defaults to latest version."
+        },
+        {
+          "name": "Include Minor Versions",
+          "key": "includeDrafts",
+          "required": false,
+          "type": "boolean",
+          "description": "Boolean for whether to consider changes from minor (draft) versions."
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Returns only columns defined in a view."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetItems": {
+      "operationId": "GetItems",
+      "kind": "action",
+      "displayName": "Get items",
+      "deprecated": false,
+      "description": "- GetItems",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "List Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA filter query to restrict the entries returned (e.g. stringColumn eq 'string' OR numberColumn lt 123)."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Limit Entries to Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Select a folder, or leave blank for the whole list"
+        },
+        {
+          "name": "Include Nested Items",
+          "key": "viewScopeOption",
+          "required": false,
+          "type": "string",
+          "description": "Return entries contained in sub-folders (default = true)"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetOnChangedItems": {
+      "operationId": "GetOnChangedItems",
+      "kind": "trigger",
+      "displayName": "When an item or a file is modified",
+      "deprecated": false,
+      "description": "- GetOnChangedItems",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "List or Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name"
+        },
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Select a folder, or leave blank for the whole library"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetOnDeletedFileItems": {
+      "operationId": "GetOnDeletedFileItems",
+      "kind": "trigger",
+      "displayName": "When a file is deleted",
+      "deprecated": false,
+      "description": "- GetOnDeletedFileItems",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint library name"
+        },
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Select a folder, or leave blank for the whole library"
+        }
+      ],
+      "returns": {
+        "raw": "List of Deleted items\n- Body\n- DeletedItemList"
+      }
+    },
+    "GetOnDeletedItems": {
+      "operationId": "GetOnDeletedItems",
+      "kind": "trigger",
+      "displayName": "When an item is deleted",
+      "deprecated": false,
+      "description": "- GetOnDeletedItems",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "List Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name"
+        }
+      ],
+      "returns": {
+        "raw": "List of Deleted items\n- Body\n- DeletedItemList"
+      }
+    },
+    "GetOnNewFileItems": {
+      "operationId": "GetOnNewFileItems",
+      "kind": "trigger",
+      "displayName": "When a file is created (properties only)",
+      "deprecated": false,
+      "description": "- GetOnNewFileItems",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint library name"
+        },
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Select a folder, or leave blank for the whole library"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetOnNewItems": {
+      "operationId": "GetOnNewItems",
+      "kind": "trigger",
+      "displayName": "When an item is created",
+      "deprecated": false,
+      "description": "- GetOnNewItems",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "List Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetOnNewItemsFromForm": {
+      "operationId": "GetOnNewItemsFromForm",
+      "kind": "trigger",
+      "displayName": "When a form is submitted (preview)",
+      "deprecated": false,
+      "description": "- GetOnNewItemsFromForm",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "List or Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list or library name"
+        },
+        {
+          "name": "Form Name",
+          "key": "form",
+          "required": true,
+          "type": "string",
+          "description": "Form identifier"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetOnUpdatedFileClassifiedTimes": {
+      "operationId": "GetOnUpdatedFileClassifiedTimes",
+      "kind": "trigger",
+      "displayName": "When a file is classified by a Microsoft Syntex model",
+      "deprecated": false,
+      "description": "- GetOnUpdatedFileClassifiedTimes",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint library name"
+        },
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Select a folder, or leave blank for the whole library"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetOnUpdatedFileItems": {
+      "operationId": "GetOnUpdatedFileItems",
+      "kind": "trigger",
+      "displayName": "When a file is created or modified (properties only)",
+      "deprecated": false,
+      "description": "- GetOnUpdatedFileItems",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint library name"
+        },
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Select a folder, or leave blank for the whole library"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetOnUpdatedItems": {
+      "operationId": "GetOnUpdatedItems",
+      "kind": "trigger",
+      "displayName": "When an item is created or modified",
+      "deprecated": false,
+      "description": "- GetOnUpdatedItems",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "List Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetTableForm": {
+      "operationId": "GetTableForm",
+      "kind": "action",
+      "displayName": "Get form metadata (preview)",
+      "deprecated": false,
+      "description": "- GetTableForm",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "List or Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name."
+        },
+        {
+          "name": "Form Name",
+          "key": "form",
+          "required": true,
+          "type": "string",
+          "description": "Form identifier."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a table form with its metadata\n- Body\n- TableForm"
+      }
+    },
+    "GetTableViews": {
+      "operationId": "GetTableViews",
+      "kind": "action",
+      "displayName": "Get list views",
+      "deprecated": false,
+      "description": "- GetTableViews",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "List Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name."
+        }
+      ],
+      "returns": {
+        "raw": "- List of Tables\n- array of Table"
+      }
+    },
+    "GetTables": {
+      "operationId": "GetTables",
+      "kind": "action",
+      "displayName": "Get lists",
+      "deprecated": false,
+      "description": "- GetTables",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        }
+      ],
+      "returns": {
+        "raw": "Represents a list of tables.\n- Body\n- TablesList"
+      }
+    },
+    "GrantAccess": {
+      "operationId": "GrantAccess",
+      "kind": "action",
+      "displayName": "Grant access to an item or a folder",
+      "deprecated": false,
+      "description": "- GrantAccess",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "List or Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list or library name."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Unique identifier of the item or folder you want to grant access to."
+        },
+        {
+          "name": "Recipients",
+          "key": "recipients",
+          "required": true,
+          "type": "email",
+          "description": "A collection of recipients who will receive the sharing invitation"
+        },
+        {
+          "name": "Roles",
+          "key": "roleValue",
+          "required": true,
+          "type": "string",
+          "description": "Specify a role that is to be granted to the recipients"
+        },
+        {
+          "name": "Message",
+          "key": "emailBody",
+          "required": false,
+          "type": "string",
+          "description": "A plain text formatted message that is included in the sharing invitation"
+        },
+        {
+          "name": "Notify Recipients",
+          "key": "sendEmail",
+          "required": false,
+          "type": "boolean",
+          "description": "Specify whether recipients should receive an email notification message"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "HttpRequest": {
+      "operationId": "HttpRequest",
+      "kind": "action",
+      "displayName": "Send an HTTP request to SharePoint",
+      "deprecated": false,
+      "description": "- HttpRequest",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Method",
+          "key": "method",
+          "required": true,
+          "type": "string",
+          "description": "Http Method"
+        },
+        {
+          "name": "Uri",
+          "key": "uri",
+          "required": true,
+          "type": "string",
+          "description": "Example: _api/web/lists/getbytitle('Documents')"
+        },
+        {
+          "name": "Headers",
+          "key": "headers",
+          "required": false,
+          "type": "object",
+          "description": "Enter JSON object of request headers"
+        },
+        {
+          "name": "Body",
+          "key": "body",
+          "required": false,
+          "type": "string",
+          "description": "Enter request content in JSON"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "JoinHubSite": {
+      "operationId": "JoinHubSite",
+      "kind": "action",
+      "displayName": "Join hub site",
+      "deprecated": false,
+      "description": "- JoinHubSite",
+      "parameters": [
+        {
+          "name": "Requesting Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Hub Site Id",
+          "key": "hubSiteId",
+          "required": true,
+          "type": "string",
+          "description": "Id of the hub site."
+        },
+        {
+          "name": "Approval Token",
+          "key": "approvalToken",
+          "required": false,
+          "type": "string",
+          "description": "Approval token for this request."
+        },
+        {
+          "name": "Approval Correlation Id",
+          "key": "approvalCorrelationId",
+          "required": false,
+          "type": "string",
+          "description": "Approval correlation identifier for this request."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ListFolder": {
+      "operationId": "ListFolder",
+      "kind": "action",
+      "displayName": "List folder",
+      "deprecated": false,
+      "description": "- ListFolder",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "File Identifier",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of the folder."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "ListRootFolder": {
+      "operationId": "ListRootFolder",
+      "kind": "action",
+      "displayName": "List root folder",
+      "deprecated": false,
+      "description": "- ListRootFolder",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "MoveFileAsync": {
+      "operationId": "MoveFileAsync",
+      "kind": "action",
+      "displayName": "Move file",
+      "deprecated": false,
+      "description": "- MoveFileAsync",
+      "parameters": [
+        {
+          "name": "Current Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "File to Move",
+          "key": "sourceFileId",
+          "required": true,
+          "type": "string",
+          "description": "File Identifier"
+        },
+        {
+          "name": "Destination Site Address",
+          "key": "destinationDataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "Destination Folder",
+          "key": "destinationFolderPath",
+          "required": true,
+          "type": "string",
+          "description": "Destination Folder"
+        },
+        {
+          "name": "If another file is already there",
+          "key": "nameConflictBehavior",
+          "required": true,
+          "type": "integer",
+          "description": "Pick one of the options available"
+        }
+      ],
+      "returns": {
+        "raw": "The SharePoint version of the BlobMetadataResponse extends the object by adding some additional fields that we want serialized\n- Body\n- SPBlobMetadataResponse"
+      }
+    },
+    "MoveFolderAsync": {
+      "operationId": "MoveFolderAsync",
+      "kind": "action",
+      "displayName": "Move folder",
+      "deprecated": false,
+      "description": "- MoveFolderAsync",
+      "parameters": [
+        {
+          "name": "Current Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Folder to Move",
+          "key": "sourceFolderId",
+          "required": true,
+          "type": "string",
+          "description": "File Identifier"
+        },
+        {
+          "name": "Destination Site Address",
+          "key": "destinationDataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "Destination Folder",
+          "key": "destinationFolderPath",
+          "required": true,
+          "type": "string",
+          "description": "Destination Folder"
+        },
+        {
+          "name": "If another folder is already there",
+          "key": "nameConflictBehavior",
+          "required": true,
+          "type": "integer",
+          "description": "Pick one of the options available"
+        }
+      ],
+      "returns": {
+        "raw": "The SharePoint version of the BlobMetadataResponse extends the object by adding some additional fields that we want serialized\n- Body\n- SPBlobMetadataResponse"
+      }
+    },
+    "NotifyHubSiteJoinApprovalStarted": {
+      "operationId": "NotifyHubSiteJoinApprovalStarted",
+      "kind": "action",
+      "displayName": "Set hub site join status to pending",
+      "deprecated": false,
+      "description": "- NotifyHubSiteJoinApprovalStarted",
+      "parameters": [
+        {
+          "name": "Requesting Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Approval Correlation Id",
+          "key": "approvalCorrelationId",
+          "required": false,
+          "type": "string",
+          "description": "Approval correlation identifier for this request."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "OnFileSelected": {
+      "operationId": "OnFileSelected",
+      "kind": "trigger",
+      "displayName": "For a selected file",
+      "deprecated": false,
+      "description": "- OnFileSelected",
+      "parameters": [
+        {
+          "name": "operationId",
+          "key": "operationId",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "host",
+          "key": "host",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "parameters",
+          "key": "parameters",
+          "required": true,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "schema",
+          "key": "schema",
+          "required": true,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "headersSchema",
+          "key": "headersSchema",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| rows | body.rows | array of object |  |\n| ID | body.rows.ID | integer | File Identifier |\n| itemUrl | body.rows.itemUrl | string | File Url |\n| fileName | body.rows.fileName | string | File Name |\n| User id | headers.x-ms-user-id-encoded | guid | The unique identifier of the user who triggered the flow in AAD. |\n| User email | headers.x-ms-user-email-encoded | byte | The email address of the user who triggered the flow. |\n| User name | headers.x-ms-user-name-encoded | byte | The display name of the user who triggered the flow. |\n| Timestamp | headers.x-ms-user-timestamp | string | The time the flow was triggered. |"
+      }
+    },
+    "OnHubSiteJoinApproval": {
+      "operationId": "OnHubSiteJoinApproval",
+      "kind": "trigger",
+      "displayName": "When a site has requested to join a hub site",
+      "deprecated": false,
+      "description": "- OnHubSiteJoinApproval",
+      "parameters": [
+        {
+          "name": "operationId",
+          "key": "operationId",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "host",
+          "key": "host",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "parameters",
+          "key": "parameters",
+          "required": true,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "schema",
+          "key": "schema",
+          "required": true,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "headersSchema",
+          "key": "headersSchema",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| rows | body.rows | array of object |  |\n| RequestingSiteUrl | body.rows.RequestingSiteUrl | string | Requesting Site Url |\n| RequestingSiteId | body.rows.RequestingSiteId | string | Requesting Site Id |\n| RequestingSiteTitle | body.rows.RequestingSiteTitle | string | Requesting Site Title |\n| ApprovalCorrelationId | body.rows.ApprovalCorrelationId | string | Approval Correlation Id |\n| User id | headers.x-ms-user-id-encoded | guid | The unique identifier of the user who triggered the flow in AAD. |\n| User email | headers.x-ms-user-email-encoded | byte | The email address of the user who triggered the flow. |\n| User name | headers.x-ms-user-name-encoded | byte | The display name of the user who triggered the flow. |\n| Timestamp | headers.x-ms-user-timestamp | string | The time the flow was triggered. |"
+      }
+    },
+    "OnItemSelected": {
+      "operationId": "OnItemSelected",
+      "kind": "trigger",
+      "displayName": "For a selected item",
+      "deprecated": false,
+      "description": "- OnItemSelected",
+      "parameters": [
+        {
+          "name": "operationId",
+          "key": "operationId",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "host",
+          "key": "host",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "parameters",
+          "key": "parameters",
+          "required": true,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "schema",
+          "key": "schema",
+          "required": true,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "headersSchema",
+          "key": "headersSchema",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| rows | body.rows | array of object |  |\n| ID | body.rows.ID | integer | File Identifier |\n| itemUrl | body.rows.itemUrl | string | File Url |\n| fileName | body.rows.fileName | string | File Name |\n| User id | headers.x-ms-user-id-encoded | guid | The unique identifier of the user who triggered the flow in AAD. |\n| User email | headers.x-ms-user-email-encoded | byte | The email address of the user who triggered the flow. |\n| User name | headers.x-ms-user-name-encoded | byte | The display name of the user who triggered the flow. |\n| Timestamp | headers.x-ms-user-timestamp | string | The time the flow was triggered. |"
+      }
+    },
+    "OnNewFile": {
+      "operationId": "OnNewFile",
+      "kind": "trigger",
+      "displayName": "When a file is created in a folder (deprecated)",
+      "deprecated": false,
+      "description": "- OnNewFile",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Folder Id",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "Select a folder."
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "Infer content-type based on extension."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "OnUpdatedFile": {
+      "operationId": "OnUpdatedFile",
+      "kind": "trigger",
+      "displayName": "When a file is created or modified in a folder (deprecated)",
+      "deprecated": false,
+      "description": "- OnUpdatedFile",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Folder Id",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "Select a folder."
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "Infer content-type based on extension."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "PatchFileItem": {
+      "operationId": "PatchFileItem",
+      "kind": "action",
+      "displayName": "Update file properties",
+      "deprecated": false,
+      "description": "- PatchFileItem",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint library name"
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Unique identifier of item to be updated"
+        },
+        {
+          "name": "Item",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Item with changed properties"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "PatchFileItemWithPredictedValues": {
+      "operationId": "PatchFileItemWithPredictedValues",
+      "kind": "action",
+      "displayName": "Update file properties using AI Builder model results",
+      "deprecated": false,
+      "description": "- PatchFileItemWithPredictedValues",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Library Name."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Unique identifier of item to be updated."
+        },
+        {
+          "name": "ModelId",
+          "key": "modelId",
+          "required": false,
+          "type": "string",
+          "description": "Enter modelId of the Model which is used for prediction"
+        },
+        {
+          "name": "PredictResult",
+          "key": "predictResult",
+          "required": false,
+          "type": "string",
+          "description": "Enter request content in JSON"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "PatchItem": {
+      "operationId": "PatchItem",
+      "kind": "action",
+      "displayName": "Update item",
+      "deprecated": false,
+      "description": "- PatchItem",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "List Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name"
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Unique identifier of item to be updated"
+        },
+        {
+          "name": "Item",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Item with changed properties"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      },
+      "usedInExamples": 15,
+      "observedParametersInExamples": {
+        "dataset": 15,
+        "id": 15,
+        "item/ApprovalDate": 2,
+        "item/Approver": 1,
+        "item/Comments": 6,
+        "item/DateCompleted": 7,
+        "item/DrugType": 1,
+        "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie": 1,
+        "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie0": 1,
+        "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie1": 1,
+        "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie2": 1,
+        "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie3": 1,
+        "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie4": 1,
+        "item/OData__x005b_ELAHEREPAA_x002f_SAPPatie5": 1,
+        "item/OData__x005b_GeneralInformation_x002d_": 2,
+        "item/OData__x005b_GeneralInformation_x002d_0": 2,
+        "item/OData__x005b_GeneralInformation_x005d_21": 1,
+        "item/Status": 7,
+        "item/Status/Value": 6,
+        "table": 15
+      }
+    },
+    "PostItem": {
+      "operationId": "PostItem",
+      "kind": "action",
+      "displayName": "Create item",
+      "deprecated": false,
+      "description": "- PostItem",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`"
+        },
+        {
+          "name": "List Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list name"
+        },
+        {
+          "name": "Item",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Item to create"
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      },
+      "usedInExamples": 5,
+      "observedParametersInExamples": {
+        "dataset": 5,
+        "item/AdoptionLadder": 1,
+        "item/Approver": 1,
+        "item/BTSPartner/Claims": 3,
+        "item/BusinessOwner/Claims": 3,
+        "item/Comments": 2,
+        "item/CustomerSegmentation": 1,
+        "item/DEName": 1,
+        "item/DateCreated": 1,
+        "item/DateRequested": 3,
+        "item/DateScheduled": 1,
+        "item/DrugType": 1,
+        "item/IDNumber": 1,
+        "item/OData__x005b_AdvanceProgram_x005d__x00": 1,
+        "item/OData__x005b_AdvanceProgram_x005d__x000": 1,
+        "item/OData__x005b_AdvanceProgram_x005d__x001": 1,
+        "item/OData__x005b_AdvanceProgram_x005d__x002": 1,
+        "item/OData__x005b_AdvanceProgram_x005d__x003": 1,
+        "item/OData__x005b_AdvanceProgram_x005d__x004": 1,
+        "item/OData__x005b_AdvanceProgram_x005d__x005": 1,
+        "item/OData__x005b_BridgingProgram_x005d__x0": 1,
+        "item/OData__x005b_BridgingProgram_x005d__x00": 1,
+        "item/OData__x005b_BridgingProgram_x005d__x01": 1,
+        "item/OData__x005b_BridgingProgram_x005d__x02": 1,
+        "item/OData__x005b_BridgingProgram_x005d__x03": 1,
+        "item/OData__x005b_BridgingProgram_x005d__x04": 1,
+        "item/OData__x005b_CopayProgramEscalationReq": 1,
+        "item/OData__x005b_CopayProgramEscalationReq0": 1,
+        "item/OData__x005b_CopayProgramEscalationReq1": 1,
+        "item/OData__x005b_CopayProgramEscalationReq2": 1,
+        "item/OData__x005b_CopayProgramEscalationReq3": 1,
+        "item/OData__x005b_CopayProgramEscalationReq4": 1,
+        "item/OData__x005b_CopayProgramEscalationReq5": 1,
+        "item/OData__x005b_CopayProgramEscalationReq6": 1,
+        "item/OData__x005b_GeneralInformation_x005d_": 1,
+        "item/OData__x005b_GeneralInformation_x005d_0": 1,
+        "item/OData__x005b_GeneralInformation_x005d_1": 1,
+        "item/OData__x005b_GeneralInformation_x005d_10": 1,
+        "item/OData__x005b_GeneralInformation_x005d_11": 1,
+        "item/OData__x005b_GeneralInformation_x005d_12": 1,
+        "item/OData__x005b_GeneralInformation_x005d_13": 1,
+        "item/OData__x005b_GeneralInformation_x005d_14": 1,
+        "item/OData__x005b_GeneralInformation_x005d_15": 1,
+        "item/OData__x005b_GeneralInformation_x005d_16": 1,
+        "item/OData__x005b_GeneralInformation_x005d_17": 1,
+        "item/OData__x005b_GeneralInformation_x005d_18": 1,
+        "item/OData__x005b_GeneralInformation_x005d_19": 1,
+        "item/OData__x005b_GeneralInformation_x005d_2": 1,
+        "item/OData__x005b_GeneralInformation_x005d_20": 1,
+        "item/OData__x005b_GeneralInformation_x005d_21": 1,
+        "item/OData__x005b_GeneralInformation_x005d_22": 1,
+        "item/OData__x005b_GeneralInformation_x005d_3": 1,
+        "item/OData__x005b_GeneralInformation_x005d_4": 1,
+        "item/OData__x005b_GeneralInformation_x005d_5": 1,
+        "item/OData__x005b_GeneralInformation_x005d_6": 1,
+        "item/OData__x005b_GeneralInformation_x005d_7": 1,
+        "item/OData__x005b_GeneralInformation_x005d_8": 1,
+        "item/OData__x005b_GeneralInformation_x005d_9": 1,
+        "item/OData__x005b_OFF_x002d_LabelCompassion2": 1,
+        "item/OData__x005b_Off_x002d_LabelCompassion": 1,
+        "item/OData__x005b_Off_x002d_LabelCompassion0": 1,
+        "item/OData__x005b_Off_x002d_LabelCompassion1": 1,
+        "item/OData__x005b_Off_x002d_LabelCompassion3": 1,
+        "item/OData__x005b_On_x002d_LabelCompassiona": 1,
+        "item/OData__x005b_On_x002d_LabelCompassiona0": 1,
+        "item/OData__x005b_On_x002d_LabelCompassiona1": 1,
+        "item/OData__x005b_On_x002d_LabelCompassiona2": 1,
+        "item/PatientID": 1,
+        "item/Product": 2,
+        "item/ProjectName": 3,
+        "item/ProjectPurpose": 3,
+        "item/Requestor": 1,
+        "item/Specialities": 2,
+        "item/Status": 1,
+        "item/Status/Value": 3,
+        "item/SubmissionDate": 1,
+        "item/SubmissionID": 1,
+        "item/TherapeuticArea": 1,
+        "item/TicketID": 1,
+        "item/TimeScheduled": 1,
+        "item/Title": 1,
+        "item/country": 1,
+        "table": 5
+      }
+    },
+    "SearchForUser": {
+      "operationId": "SearchForUser",
+      "kind": "action",
+      "displayName": "Resolve person",
+      "deprecated": false,
+      "description": "- SearchForUser",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "List or Library",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Pick the list or library that the column is in."
+        },
+        {
+          "name": "Column",
+          "key": "entityId",
+          "required": true,
+          "type": "string",
+          "description": "Pick the column you want to assign the value to."
+        },
+        {
+          "name": "Email or name",
+          "key": "searchValue",
+          "required": true,
+          "type": "string",
+          "description": "Use the email address, or the full name of the user."
+        },
+        {
+          "name": "Limit Columns by View",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "Avoid column threshold issues by only using columns defined in a view."
+        }
+      ],
+      "returns": {
+        "raw": "SharePoint expanded user field\n- Body\n- SPListExpandedUser"
+      }
+    },
+    "SetApprovalStatus": {
+      "operationId": "SetApprovalStatus",
+      "kind": "action",
+      "displayName": "Set content approval status",
+      "deprecated": false,
+      "description": "- SetApprovalStatus",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint library name."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Id of the item you are setting the status of."
+        },
+        {
+          "name": "Action",
+          "key": "approvalAction",
+          "required": true,
+          "type": "string",
+          "description": "Pick the approval action."
+        },
+        {
+          "name": "Comments",
+          "key": "comments",
+          "required": false,
+          "type": "string",
+          "description": "Add the comments from the approver."
+        },
+        {
+          "name": "ETag",
+          "key": "entityTag",
+          "required": false,
+          "type": "string",
+          "description": "Add an ETag (required for files and pages)."
+        }
+      ],
+      "returns": {
+        "raw": "SetApprovalStatus output\n- Body\n- SetApprovalStatusOutput"
+      }
+    },
+    "SubmitDocGenForm": {
+      "operationId": "SubmitDocGenForm",
+      "kind": "action",
+      "displayName": "Generate a document from a form (preview)",
+      "deprecated": false,
+      "description": "- SubmitDocGenForm",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "Document Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint document library name."
+        },
+        {
+          "name": "Form Name",
+          "key": "form",
+          "required": true,
+          "type": "string",
+          "description": "Form identifier."
+        },
+        {
+          "name": "Fields",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Form field values."
+        },
+        {
+          "name": "View (no effect)",
+          "key": "view",
+          "required": false,
+          "type": "string",
+          "description": "This parameter does nothing. Please do not use."
+        }
+      ],
+      "returns": {
+        "raw": "The SharePoint version of the BlobMetadataResponse extends the object by adding some additional fields that we want serialized\n- Body\n- SPBlobMetadataResponse"
+      }
+    },
+    "UnshareItem": {
+      "operationId": "UnshareItem",
+      "kind": "action",
+      "displayName": "Stop sharing an item or a file",
+      "deprecated": false,
+      "description": "- UnshareItem",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "List or Library Name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "SharePoint list or library name."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "integer",
+          "description": "Unique identifier of the item or file you want to stop sharing."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "UpdateFile": {
+      "operationId": "UpdateFile",
+      "kind": "action",
+      "displayName": "Update file",
+      "deprecated": false,
+      "description": "- UpdateFile",
+      "parameters": [
+        {
+          "name": "Site Address",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Example: `https://contoso.sharepoint.com/sites/sitename`."
+        },
+        {
+          "name": "File Identifier",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select a file."
+        },
+        {
+          "name": "File Content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "Content of the file."
+        }
+      ],
+      "returns": {
+        "raw": "Represents blob datasets metadata response\n- Body\n- BlobMetadataResponse"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

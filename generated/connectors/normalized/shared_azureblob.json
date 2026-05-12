@@ -1,0 +1,1067 @@
+{
+  "connectorId": "shared_azureblob",
+  "displayName": "Azure Blob Storage",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azureblob/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-07-02T01:01:00.0000000Z",
+  "sourceGitCommit": "70b4ce8e0e173553e34b919ec1525f9f4460f1b2",
+  "sourcePath": "docs/azureblob/index.yml",
+  "operations": {
+    "CopyFile": {
+      "operationId": "CopyFile",
+      "kind": "action",
+      "displayName": "Copy blob [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CopyFile",
+      "parameters": [
+        {
+          "name": "Source url",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Specify the url to source blob."
+        },
+        {
+          "name": "Destination blob path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "Specify the destination blob path, including the target blob name."
+        },
+        {
+          "name": "Overwrite?",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Should the destination blob be overwritten (true/false)?."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "CopyFile_V2": {
+      "operationId": "CopyFile_V2",
+      "kind": "action",
+      "displayName": "Copy blob (V2)",
+      "deprecated": false,
+      "description": "- CopyFile_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Source url",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Specify the url to source blob."
+        },
+        {
+          "name": "Destination blob path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "Specify the destination blob path, including the target blob name."
+        },
+        {
+          "name": "Overwrite?",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Should the destination blob be overwritten (true/false)?."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "CreateBlockBlob": {
+      "operationId": "CreateBlockBlob",
+      "kind": "action",
+      "displayName": "Create block blob [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateBlockBlob",
+      "parameters": [
+        {
+          "name": "Specify folder path to upload",
+          "key": "folderPath",
+          "required": true,
+          "type": "string",
+          "description": "Specify folder path to upload."
+        },
+        {
+          "name": "Specify name of the blob to create",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Specify name of the blob to create."
+        },
+        {
+          "name": "Blob content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "Specify content of the blob to upload."
+        },
+        {
+          "name": "Content-Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "Specify content-type of the blob to upload."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CreateBlockBlob_V2": {
+      "operationId": "CreateBlockBlob_V2",
+      "kind": "action",
+      "displayName": "Create block blob (V2)",
+      "deprecated": false,
+      "description": "- CreateBlockBlob_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "The storage account name."
+        },
+        {
+          "name": "Specify folder path to upload",
+          "key": "folderPath",
+          "required": true,
+          "type": "string",
+          "description": "Specify folder path to upload."
+        },
+        {
+          "name": "Specify name of the blob to create",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Specify name of the blob to create."
+        },
+        {
+          "name": "Blob content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "Specify content of the blob to upload."
+        },
+        {
+          "name": "Content-Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "Specify content-type of the blob to upload."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CreateFile": {
+      "operationId": "CreateFile",
+      "kind": "action",
+      "displayName": "Create blob [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateFile",
+      "parameters": [
+        {
+          "name": "Folder path",
+          "key": "folderPath",
+          "required": true,
+          "type": "string",
+          "description": "Specify folder path to upload."
+        },
+        {
+          "name": "Blob name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Specify name of the blob to create."
+        },
+        {
+          "name": "Blob content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "Specify the content of the blob to upload."
+        },
+        {
+          "name": "Content-Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "Specify content-type of the blob to upload."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "CreateFile_V2": {
+      "operationId": "CreateFile_V2",
+      "kind": "action",
+      "displayName": "Create blob (V2)",
+      "deprecated": false,
+      "description": "- CreateFile_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Folder path",
+          "key": "folderPath",
+          "required": true,
+          "type": "string",
+          "description": "Specify folder path to upload."
+        },
+        {
+          "name": "Blob name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Specify name of the blob to create."
+        },
+        {
+          "name": "Blob content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "Specify the content of the blob to upload."
+        },
+        {
+          "name": "Content-Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "Specify content-type of the blob to upload."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "CreateShareLinkByPath": {
+      "operationId": "CreateShareLinkByPath",
+      "kind": "action",
+      "displayName": "Create SAS URI by path [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateShareLinkByPath",
+      "parameters": [
+        {
+          "name": "Blob path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the blob."
+        },
+        {
+          "name": "Group Policy Identifier",
+          "key": "GroupPolicyIdentifier",
+          "required": false,
+          "type": "string",
+          "description": "The string identifying a stored access policy. The Group policy parameters (e.g. Start time and End time) have precedence over input parameters mentioned in actions."
+        },
+        {
+          "name": "Permissions",
+          "key": "Permissions",
+          "required": false,
+          "type": "string",
+          "description": "The permissions specified on the SAS (Values separated by comma)."
+        },
+        {
+          "name": "Start Time",
+          "key": "StartTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The date and time at which the SAS becomes valid (example: '2017-11-01T15:30:00+00:00'). Default = now()."
+        },
+        {
+          "name": "Expiry Time",
+          "key": "ExpiryTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The date and time after which the SAS is no longer valid (example: '2017-12-01T15:30:00+00:00'). Default = now() + 24h."
+        },
+        {
+          "name": "Shared Access Protocol",
+          "key": "AccessProtocol",
+          "required": false,
+          "type": "string",
+          "description": "The allowed protocols (https only, or http and https). Null if you don't want to restrict protocol."
+        },
+        {
+          "name": "IP address or IP address range",
+          "key": "IpAddressOrRange",
+          "required": false,
+          "type": "string",
+          "description": "The allowed IP address or IP address range. Null if you don't want to restrict based on IP address."
+        }
+      ],
+      "returns": {
+        "raw": "Shared access signature\n- Body\n- SharedAccessSignature"
+      }
+    },
+    "CreateShareLinkByPath_V2": {
+      "operationId": "CreateShareLinkByPath_V2",
+      "kind": "action",
+      "displayName": "Create SAS URI by path (V2)",
+      "deprecated": false,
+      "description": "- CreateShareLinkByPath_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Blob path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the blob."
+        },
+        {
+          "name": "Group Policy Identifier",
+          "key": "GroupPolicyIdentifier",
+          "required": false,
+          "type": "string",
+          "description": "The string identifying a stored access policy. The Group policy parameters (e.g. Start time and End time) have precedence over input parameters mentioned in actions."
+        },
+        {
+          "name": "Permissions",
+          "key": "Permissions",
+          "required": false,
+          "type": "string",
+          "description": "The permissions specified on the SAS (Values separated by comma)."
+        },
+        {
+          "name": "Start Time",
+          "key": "StartTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The date and time at which the SAS becomes valid (example: '2017-11-01T15:30:00+00:00'). Default = now()."
+        },
+        {
+          "name": "Expiry Time",
+          "key": "ExpiryTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The date and time after which the SAS is no longer valid (example: '2017-12-01T15:30:00+00:00'). Default = now() + 24h."
+        },
+        {
+          "name": "Shared Access Protocol",
+          "key": "AccessProtocol",
+          "required": false,
+          "type": "string",
+          "description": "The allowed protocols (https only, or http and https). Null if you don't want to restrict protocol."
+        },
+        {
+          "name": "IP address or IP address range",
+          "key": "IpAddressOrRange",
+          "required": false,
+          "type": "string",
+          "description": "The allowed IP address or IP address range. Null if you don't want to restrict based on IP address."
+        }
+      ],
+      "returns": {
+        "raw": "Shared access signature\n- Body\n- SharedAccessSignature"
+      }
+    },
+    "DeleteFile": {
+      "operationId": "DeleteFile",
+      "kind": "action",
+      "displayName": "Delete blob [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DeleteFile",
+      "parameters": [
+        {
+          "name": "Blob",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the blob to delete."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteFile_V2": {
+      "operationId": "DeleteFile_V2",
+      "kind": "action",
+      "displayName": "Delete blob (V2)",
+      "deprecated": false,
+      "description": "- DeleteFile_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Blob",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the blob to delete."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ExtractFolderV2": {
+      "operationId": "ExtractFolderV2",
+      "kind": "action",
+      "displayName": "Extract archive to folder [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ExtractFolderV2",
+      "parameters": [
+        {
+          "name": "Source archive blob path",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Specify the path to the archive blob."
+        },
+        {
+          "name": "Destination folder path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "Specify the path in Azure Blob Storage to extract the archive contents."
+        },
+        {
+          "name": "Overwrite?",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Should destination blob be overwritten (true/false)?."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "ExtractFolder_V3": {
+      "operationId": "ExtractFolder_V3",
+      "kind": "action",
+      "displayName": "Extract archive to folder (V2)",
+      "deprecated": false,
+      "description": "- ExtractFolder_V3",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Source archive blob path",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Specify the path to the archive blob."
+        },
+        {
+          "name": "Destination folder path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "Specify the path in Azure Blob Storage to extract the archive contents."
+        },
+        {
+          "name": "Overwrite?",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Should destination blob be overwritten (true/false)?."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "GetAccessPolicies": {
+      "operationId": "GetAccessPolicies",
+      "kind": "action",
+      "displayName": "Get available access policies [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetAccessPolicies",
+      "parameters": [
+        {
+          "name": "Blob path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the blob."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of SharedAccessSignatureBlobPolicy"
+      }
+    },
+    "GetAccessPolicies_V2": {
+      "operationId": "GetAccessPolicies_V2",
+      "kind": "action",
+      "displayName": "Get available access policies (V2)",
+      "deprecated": false,
+      "description": "- GetAccessPolicies_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Blob path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the blob."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of SharedAccessSignatureBlobPolicy"
+      }
+    },
+    "GetFileContent": {
+      "operationId": "GetFileContent",
+      "kind": "action",
+      "displayName": "Get blob content [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetFileContent",
+      "parameters": [
+        {
+          "name": "Blob",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the blob."
+        },
+        {
+          "name": "Infer content type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "Infer content-type based on extension."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "GetFileContentByPath": {
+      "operationId": "GetFileContentByPath",
+      "kind": "action",
+      "displayName": "Get blob content using path [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetFileContentByPath",
+      "parameters": [
+        {
+          "name": "Blob path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "Specify unique path to the blob."
+        },
+        {
+          "name": "Infer content type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "Infer content-type based on extension."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "GetFileContentByPath_V2": {
+      "operationId": "GetFileContentByPath_V2",
+      "kind": "action",
+      "displayName": "Get blob content using path (V2)",
+      "deprecated": false,
+      "description": "- GetFileContentByPath_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Blob path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "Specify unique path to the blob."
+        },
+        {
+          "name": "Infer content type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "Infer content-type based on extension."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "GetFileContent_V2": {
+      "operationId": "GetFileContent_V2",
+      "kind": "action",
+      "displayName": "Get blob content (V2)",
+      "deprecated": false,
+      "description": "- GetFileContent_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Blob",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the blob."
+        },
+        {
+          "name": "Infer content type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "Infer content-type based on extension."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "GetFileMetadata": {
+      "operationId": "GetFileMetadata",
+      "kind": "action",
+      "displayName": "Get Blob Metadata [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetFileMetadata",
+      "parameters": [
+        {
+          "name": "Blob",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the blob."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "GetFileMetadataByPath": {
+      "operationId": "GetFileMetadataByPath",
+      "kind": "action",
+      "displayName": "Get Blob Metadata using path [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetFileMetadataByPath",
+      "parameters": [
+        {
+          "name": "Blob path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "Specify unique path to the blob."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "GetFileMetadataByPath_V2": {
+      "operationId": "GetFileMetadataByPath_V2",
+      "kind": "action",
+      "displayName": "Get Blob Metadata using path (V2)",
+      "deprecated": false,
+      "description": "- GetFileMetadataByPath_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Blob path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "Specify unique path to the blob."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "GetFileMetadata_V2": {
+      "operationId": "GetFileMetadata_V2",
+      "kind": "action",
+      "displayName": "Get Blob Metadata (V2)",
+      "deprecated": false,
+      "description": "- GetFileMetadata_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Blob",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the blob."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "ListFolderV2": {
+      "operationId": "ListFolderV2",
+      "kind": "action",
+      "displayName": "Lists blobs [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListFolderV2",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the folder."
+        },
+        {
+          "name": "Paging Marker",
+          "key": "nextPageMarker",
+          "required": false,
+          "type": "string",
+          "description": "A marker that identifies the portion of the list to be returned with the list operation\"."
+        },
+        {
+          "name": "Flat Listing",
+          "key": "useFlatListing",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether or not to list blobs in flat listing\"."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a page of blob metadata.\n- Body\n- BlobMetadataPage"
+      }
+    },
+    "ListFolder_V4": {
+      "operationId": "ListFolder_V4",
+      "kind": "action",
+      "displayName": "Lists blobs (V2)",
+      "deprecated": false,
+      "description": "- ListFolder_V4",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Folder",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the folder."
+        },
+        {
+          "name": "Paging Marker",
+          "key": "nextPageMarker",
+          "required": false,
+          "type": "string",
+          "description": "A marker that identifies the portion of the list to be returned with the list operation\"."
+        },
+        {
+          "name": "Flat Listing",
+          "key": "useFlatListing",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether or not to list blobs in flat listing\"."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a page of blob metadata.\n- Body\n- BlobMetadataPage"
+      }
+    },
+    "ListRootFolderV2": {
+      "operationId": "ListRootFolderV2",
+      "kind": "action",
+      "displayName": "Lists blobs in the root folder [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListRootFolderV2",
+      "parameters": [
+        {
+          "name": "Paging Marker",
+          "key": "nextPageMarker",
+          "required": false,
+          "type": "string",
+          "description": "A marker that identifies the portion of the list to be returned with the list operation."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a page of blob metadata.\n- Body\n- BlobMetadataPage"
+      }
+    },
+    "ListRootFolder_V4": {
+      "operationId": "ListRootFolder_V4",
+      "kind": "action",
+      "displayName": "Lists blobs in the root folder (V2)",
+      "deprecated": false,
+      "description": "- ListRootFolder_V4",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Paging Marker",
+          "key": "nextPageMarker",
+          "required": false,
+          "type": "string",
+          "description": "A marker that identifies the portion of the list to be returned with the list operation."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a page of blob metadata.\n- Body\n- BlobMetadataPage"
+      }
+    },
+    "OnUpdatedFiles": {
+      "operationId": "OnUpdatedFiles",
+      "kind": "trigger",
+      "displayName": "When a blob is added or modified (properties only) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnUpdatedFiles",
+      "parameters": [
+        {
+          "name": "Container",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "Select a container."
+        },
+        {
+          "name": "Number of blobs to return",
+          "key": "maxFileCount",
+          "required": false,
+          "type": "integer",
+          "description": "Maximum number of blobs to return from the trigger (1-100)."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- List of Files\n- BlobMetadata"
+      }
+    },
+    "OnUpdatedFiles_V2": {
+      "operationId": "OnUpdatedFiles_V2",
+      "kind": "trigger",
+      "displayName": "When a blob is added or modified (properties only) (V2)",
+      "deprecated": false,
+      "description": "- OnUpdatedFiles_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Container",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "Select a container."
+        },
+        {
+          "name": "Number of blobs to return",
+          "key": "maxFileCount",
+          "required": false,
+          "type": "integer",
+          "description": "Maximum number of blobs to return from the trigger (1-100)."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- List of Files\n- BlobMetadata"
+      }
+    },
+    "SetBlobTierByPath": {
+      "operationId": "SetBlobTierByPath",
+      "kind": "action",
+      "displayName": "Set blob tier by path [DEPRECATED]",
+      "deprecated": true,
+      "description": "- SetBlobTierByPath",
+      "parameters": [
+        {
+          "name": "Blob path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the blob."
+        },
+        {
+          "name": "Blob Tier",
+          "key": "newTier",
+          "required": true,
+          "type": "string",
+          "description": "The new tier for the blob."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "SetBlobTierByPath_V2": {
+      "operationId": "SetBlobTierByPath_V2",
+      "kind": "action",
+      "displayName": "Set blob tier by path (V2)",
+      "deprecated": false,
+      "description": "- SetBlobTierByPath_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Blob path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "The unique path of the blob."
+        },
+        {
+          "name": "Blob Tier",
+          "key": "newTier",
+          "required": true,
+          "type": "string",
+          "description": "The new tier for the blob."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "UpdateFile": {
+      "operationId": "UpdateFile",
+      "kind": "action",
+      "displayName": "Update blob [DEPRECATED]",
+      "deprecated": true,
+      "description": "- UpdateFile",
+      "parameters": [
+        {
+          "name": "Blob",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the blob to update."
+        },
+        {
+          "name": "Blob content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "Specify the content of the blob to update."
+        },
+        {
+          "name": "Content-Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "Specify content-type of the blob to upload."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "UpdateFile_V2": {
+      "operationId": "UpdateFile_V2",
+      "kind": "action",
+      "displayName": "Update blob (V2)",
+      "deprecated": false,
+      "description": "- UpdateFile_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or blob endpoint",
+          "key": "dataset",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or blob endpoint."
+        },
+        {
+          "name": "Blob",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Specify the blob to update."
+        },
+        {
+          "name": "Blob content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "Specify the content of the blob to update."
+        },
+        {
+          "name": "Content-Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "Specify content-type of the blob to upload."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

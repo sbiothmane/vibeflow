@@ -1,0 +1,105 @@
+{
+  "connectorId": "shared_bingsearch",
+  "displayName": "Bing Search",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/bingsearch/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-10-16T01:01:00.0000000Z",
+  "sourceGitCommit": "f398b8f5a0d8b77a6cb967dd994f0f7a11ba5dfc",
+  "sourcePath": "docs/BingSearch/index.yml",
+  "operations": {
+    "GetNews": {
+      "operationId": "GetNews",
+      "kind": "action",
+      "displayName": "List news by query",
+      "deprecated": false,
+      "description": "- GetNews",
+      "parameters": [
+        {
+          "name": "Search Query",
+          "key": "q",
+          "required": true,
+          "type": "string",
+          "description": "The search query string."
+        },
+        {
+          "name": "Market",
+          "key": "mkt",
+          "required": false,
+          "type": "string",
+          "description": "The market where the results come from. Typically, this is the country where the user is making the request from; however, it could be a different country if the user is not located in a country where Bing delivers results. The market must be in the form -. For example, en-US."
+        },
+        {
+          "name": "Safe Search",
+          "key": "safeSearch",
+          "required": false,
+          "type": "string",
+          "description": "A filter used to filter results for adult content."
+        },
+        {
+          "name": "Count",
+          "key": "count",
+          "required": false,
+          "type": "string",
+          "description": "The number of search results to return in the response. The actual number delivered may be less than requested."
+        },
+        {
+          "name": "Offset",
+          "key": "offset",
+          "required": false,
+          "type": "string",
+          "description": "The zero-based offset that indicates the number of search results to skip before returning results."
+        }
+      ],
+      "returns": {
+        "raw": "- Items\n- BingNewsBatch"
+      }
+    },
+    "TrigNewNews": {
+      "operationId": "TrigNewNews",
+      "kind": "trigger",
+      "displayName": "On new news article",
+      "deprecated": false,
+      "description": "- TrigNewNews",
+      "parameters": [
+        {
+          "name": "Search Query",
+          "key": "q",
+          "required": true,
+          "type": "string",
+          "description": "The search query string."
+        },
+        {
+          "name": "Market",
+          "key": "mkt",
+          "required": false,
+          "type": "string",
+          "description": "The market where the results come from. Typically, this is the country where the user is making the request from; however, it could be a different country if the user is not located in a country where Bing delivers results. The market must be in the form -. For example, en-US."
+        },
+        {
+          "name": "Safe Search",
+          "key": "safeSearch",
+          "required": false,
+          "type": "string",
+          "description": "A filter used to filter results for adult content."
+        },
+        {
+          "name": "Count",
+          "key": "count",
+          "required": false,
+          "type": "string",
+          "description": "The number of search results to return in the response. The actual number delivered may be less than requested."
+        },
+        {
+          "name": "Offset",
+          "key": "offset",
+          "required": false,
+          "type": "string",
+          "description": "The zero-based offset that indicates the number of search results to skip before returning results."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- NewsArticle"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

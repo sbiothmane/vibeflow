@@ -1,0 +1,756 @@
+{
+  "connectorId": "shared_powerappsforadmins",
+  "displayName": "Power Apps for Admins",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/powerappsforadmins/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-04-28T01:06:00.0000000Z",
+  "sourceGitCommit": "38b2850b21859cf1397a730fa15d49904b4a64ed",
+  "sourcePath": "docs/powerappsforadmins/index.yml",
+  "operations": {
+    "Edit-AdminAppRoleAssignment": {
+      "operationId": "Edit-AdminAppRoleAssignment",
+      "kind": "action",
+      "displayName": "Edit App Role Assignment as Admin",
+      "deprecated": false,
+      "description": "- Edit-AdminAppRoleAssignment",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "A filter query parameter."
+        },
+        {
+          "name": "Role Name",
+          "key": "roleName",
+          "required": false,
+          "type": "string",
+          "description": "The name of the permission role. Choose from CanView, CanViewWithShare, and CanEdit."
+        },
+        {
+          "name": "capabilities",
+          "key": "capabilities",
+          "required": false,
+          "type": "array of string",
+          "description": "capabilities"
+        },
+        {
+          "name": "Notify Share Target Option",
+          "key": "NotifyShareTargetOption",
+          "required": false,
+          "type": "string",
+          "description": "Notifies the new user if provided the string value 'Notify'."
+        },
+        {
+          "name": "Principal Email",
+          "key": "email",
+          "required": false,
+          "type": "string",
+          "description": "The principal email of the user."
+        },
+        {
+          "name": "Principal Object ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The principal object ID of the user."
+        },
+        {
+          "name": "Principal Type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "The principal type of the user."
+        },
+        {
+          "name": "Tenant ID",
+          "key": "tenantId",
+          "required": false,
+          "type": "string",
+          "description": "The principal tenant ID of the user."
+        },
+        {
+          "name": "Role ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The ID field of the Role Assignment."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| put | put | array of object | App Role Assignment put object. |\n| id | put.id | string | App Role Assignment ID field. |\n| roleName | put.properties.roleName | string | App Role Assignment property roleName. |\n| scope | put.properties.scope | string | App Role Assignment property scope. |\n| id | put.properties.principal.id | string | App Role Assignment principal object ID. |\n| email | put.properties.principal.email | string | App Role Assignment principal email. |\n| type | put.properties.principal.type | string | App Role Assignment principal type. |\n| resourceResponses | put.properties.resourceResponses | array of object | App Role Assignment resourceResponse object. |\n| id | put.properties.resourceResponses.id | string | App Role Assignment resourceResponse ID. |\n| statusCode | put.properties.resourceResponses.statusCode | string | App Role Assignment resourceResponse statusCode. |\n| responseCode | put.properties.resourceResponses.responseCode | string | App Role Assignment resourceResponse responseCode. |\n| message | put.properties.resourceResponses.message | string | App Role Assignment resourceResponse message. |\n| type | put.properties.resourceResponses.type | string | App Role Assignment resourceResponse type. |"
+      }
+    },
+    "Edit-AdminConnectionRoleAssignment": {
+      "operationId": "Edit-AdminConnectionRoleAssignment",
+      "kind": "action",
+      "displayName": "Edit Connection Role Assignment as Admin",
+      "deprecated": false,
+      "description": "- Edit-AdminConnectionRoleAssignment",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "Connector Name",
+          "key": "connector",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connector."
+        },
+        {
+          "name": "Connection Name",
+          "key": "connection",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connection."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Field Content Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "The content type of the API request."
+        },
+        {
+          "name": "Role ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The ID field of the Role Assignment."
+        },
+        {
+          "name": "Role Name",
+          "key": "roleName",
+          "required": false,
+          "type": "string",
+          "description": "The name of the permission role."
+        },
+        {
+          "name": "Principal ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The principal ID of the user."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Edit-AdminConnectorRoleAssignment": {
+      "operationId": "Edit-AdminConnectorRoleAssignment",
+      "kind": "action",
+      "displayName": "Edit Connector Role Assignment as Admin",
+      "deprecated": false,
+      "description": "- Edit-AdminConnectorRoleAssignment",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "Connector Name",
+          "key": "connectorName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connector."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Field Content Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "The content type of the API request."
+        },
+        {
+          "name": "Role ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The ID field of the Role Assignment."
+        },
+        {
+          "name": "Role Name",
+          "key": "roleName",
+          "required": false,
+          "type": "string",
+          "description": "The name of the role."
+        },
+        {
+          "name": "Principal Object ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The principal object ID of the user."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Get-AdminApp": {
+      "operationId": "Get-AdminApp",
+      "kind": "action",
+      "displayName": "Get App as Admin",
+      "deprecated": false,
+      "description": "- Get-AdminApp",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- PowerApp"
+      }
+    },
+    "Get-AdminAppRoleAssignment": {
+      "operationId": "Get-AdminAppRoleAssignment",
+      "kind": "action",
+      "displayName": "Get App Role Assignments as Admin",
+      "deprecated": false,
+      "description": "- Get-AdminAppRoleAssignment",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of App Role Assignments in the response."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object | PowerApp Role Assignment value array. |\n| Name | value.name | string | PowerApp Role Assignment name field. |\n| id | value.id | string | PowerApp Role Assignment ID field. |\n| type | value.type | string | PowerApp Role Assignment type field. |\n| roleName | value.properties.roleName | string | PowerApp Role Assignment roleName. |\n| id | value.properties.principal.id | string | PowerApp Role Assignment principal object ID. |\n| displayName | value.properties.principal.displayName | string | PowerApp Role Assignment principal displayName. |\n| email | value.properties.principal.email | string | PowerApp Role Assignment principal email. |\n| type | value.properties.principal.type | string | PowerApp Role Assignment principal type. |\n| scope | value.properties.scope | string | PowerApp Role Assignment scope. |\n| Notify Share Target Option | value.properties.notifyShareTargetOption | string | PowerApp Role Assignment notifyShareTargetOption. |"
+      }
+    },
+    "Get-AdminApps": {
+      "operationId": "Get-AdminApps",
+      "kind": "action",
+      "displayName": "Get Apps as Admin",
+      "deprecated": false,
+      "description": "- Get-AdminApps",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of Apps in the response."
+        },
+        {
+          "name": "Skip token",
+          "key": "$skiptoken",
+          "required": false,
+          "type": "string",
+          "description": "Used to get next page of responses."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceArray[PowerApp]"
+      }
+    },
+    "Get-AdminConnectionRoleAssignment": {
+      "operationId": "Get-AdminConnectionRoleAssignment",
+      "kind": "action",
+      "displayName": "Get Connection Role Assignments as Admin",
+      "deprecated": false,
+      "description": "- Get-AdminConnectionRoleAssignment",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "Connector Name",
+          "key": "connectorName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connector."
+        },
+        {
+          "name": "Connection Name",
+          "key": "connectionName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connection."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of Connection Role Assignments in the response."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object | Connection Role Assignment value array. |\n| name | value.name | string | Connection Role Assignment name field. |\n| id | value.id | string | Connection Role Assignment ID field. |\n| type | value.type | string | Connection Role Assignment type field. |\n| roleName | value.properties.roleName | string | Connection Role Assignment role name. |\n| id | value.properties.principal.id | string | Connection Role Assignment principal object ID. |\n| displayName | value.properties.principal.displayName | string | Connection Role Assignment principal displayName. |\n| email | value.properties.principal.email | string | Connection Role Assignment principal email. |\n| type | value.properties.principal.type | string | Connection Role Assignment principal type. |\n| notifyShareTargetOption | value.properties.notifyShareTargetOption | string | Connection Role Assignment notify share target option. |"
+      }
+    },
+    "Get-AdminConnections": {
+      "operationId": "Get-AdminConnections",
+      "kind": "action",
+      "displayName": "Get Connections as Admin",
+      "deprecated": false,
+      "description": "- Get-AdminConnections",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of Connections in the response."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object | Connection value array. |\n| name | value.name | string | Connection name field. |\n| id | value.id | string | Connection ID field. |\n| type | value.type | string | Connection type field. |\n| apiId | value.properties.apiId | string | Connection property apiId. |\n| displayName | value.properties.displayName | string | Connection property displayName. |\n| iconUri | value.properties.iconUri | string | Connection icon URI. |\n| statuses | value.properties.statuses | array of object | Connection statuses. |\n| status | value.properties.statuses.status | string | Connection status. |\n| target | value.properties.statuses.target | string | Connection status target. |\n| code | value.properties.statuses.error.code | string | Connection status error code. |\n| message | value.properties.statuses.error.message | string | Connection status error message. |\n| sku | value.properties.connectionParameters.sku | string | Connection parameter sku. |\n| workflowName | value.properties.connectionParameters.workflowName | string | Connection parameter workflow name. |\n| workflowPath | value.properties.connectionParameters.workflowPath | string | Connection parameter workflow path. |\n| workflowEndpoint | value.properties.connectionParameters.workflowEndpoint | string | Connection parameter workflow endpoint. |\n| workFlowCallbackUri | value.properties.connectionParameters.workFlowCallbackUri | string | Connection parameter workFlow Callback URI. |\n| server | value.properties.connectionParameters.server | string | Connection parameter server. |\n| database | value.properties.connectionParameters.database | string | Connection parameter database. |\n| keywordsRemaining | value.properties.keywordsRemaining | integer | Connection property keywordsRemaining. |\n| id | value.properties.createdBy.id | string | Connection creator principal object ID. |\n| displayName | value.properties.createdBy.displayName | string | Connection creator principal display name. |\n| email | value.properties.createdBy.email | string | Connection creator principal email. |\n| type | value.properties.createdBy.type | string | Connection creator principal type. |\n| tenantId | value.properties.createdBy.tenantId | string | Connection creator principal tenantId. |\n| userPrincipalName | value.properties.createdBy.userPrincipalName | string | Connection creator user principal name. |\n| createdTime | value.properties.createdTime | date-time | Connection created time. |\n| lastModifiedTime | value.properties.lastModifiedTime | date-time | Connection last modified time. |\n| id | value.properties.environment.id | string | Connection Environment ID. |\n| name | value.properties.environment.name | string | Connection Environment name. |\n| expirationTime | value.properties.expirationTime | date-time | Connection property expirationTime. |\n| testLinks | value.properties.testLinks | array of object | Connection property testLinks. |\n| requestUri | value.properties.testLinks.requestUri | string | Connection property testLink requestUri. |\n| method | value.properties.testLinks.method | string | Connection property testLink method |"
+      }
+    },
+    "Get-AdminConnectorRoleAssignment": {
+      "operationId": "Get-AdminConnectorRoleAssignment",
+      "kind": "action",
+      "displayName": "Get Connector Role Assignments as Admin",
+      "deprecated": false,
+      "description": "- Get-AdminConnectorRoleAssignment",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "Connector Name",
+          "key": "connectorName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connector."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of Connector Role Assignments in the response."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object | value |\n| name | value.name | string | Connector Role Assignment name field. |\n| id | value.id | string | Connector Role Assignment ID field. |\n| type | value.type | string | Connector Role Assignment type field. |\n| roleName | value.properties.roleName | string | Connector Role Assignment role name. |\n| id | value.properties.principal.id | string | Connector Role Assignment principal object ID. |\n| displayName | value.properties.principal.displayName | string | Connector Role Assignment principal displayName. |\n| email | value.properties.principal.email | string | Connector Role Assignment principal email. |\n| type | value.properties.principal.type | string | Connector Role Assignment principal type. |\n| notifyShareTargetOption | value.properties.notifyShareTargetOption | string | The Name field of the notifyShareTargetOption. |"
+      }
+    },
+    "Get-AdminConnectors": {
+      "operationId": "Get-AdminConnectors",
+      "kind": "action",
+      "displayName": "Get Custom Connectors as Admin",
+      "deprecated": false,
+      "description": "- Get-AdminConnectors",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of Custom Connectors in the response."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object | value |\n| name | value.name | string | Connector name field. |\n| id | value.id | string | Connector id field. |\n| type | value.type | string | Connector type field. |\n| displayName | value.properties.displayName | string | Connector property displayName. |\n| iconUri | value.properties.iconUri | string | Connector icon Uri. |\n| iconBrandColor | value.properties.iconBrandColor | string | Connector icon brand color. |\n| apiEnvironment | value.properties.apiEnvironment | string | Connector api Environment. |\n| isCustomApi | value.properties.isCustomApi | boolean | True if the Connector is a Custom Api. |\n| runtimeUrls | value.properties.runtimeUrls | array of string | runtimeUrls |\n| primaryRuntimeUrl | value.properties.primaryRuntimeUrl | string | Connector primary Runtime Url. |\n| source | value.properties.metadata.source | string | Connector source metadata. |\n| brandColor | value.properties.metadata.brandColor | string | Connector brand Color metadata. |\n| publisherUrl | value.properties.metadata.publisherUrl | string | Connector publisher URL metadata. |\n| serviceUrl | value.properties.metadata.serviceUrl | string | Connector service URL metadata. |\n| documentationUrl | value.properties.metadata.documentationUrl | string | Connector documentation URL. |\n| environment | value.properties.metadata.environment | string | Connector environment metadata. |\n| allowSharing | value.properties.metadata.allowSharing | boolean | Connector allow Sharing field. |\n| capabilities | value.properties.capabilities | array of string | Connector capabilities. |\n| description | value.properties.description | string | Connector description. |\n| originalSwaggerUrl | value.properties.apiDefinitions.originalSwaggerUrl | string | Connector original swagger URL. |\n| modifiedSwaggerUrl | value.properties.apiDefinitions.modifiedSwaggerUrl | string | Connector modified swagger URL. |\n| id | value.properties.createdBy.id | string | Connector creator's principal object ID. |\n| displayName | value.properties.createdBy.displayName | string | Connector creator's principal displayName. |\n| email | value.properties.createdBy.email | string | Connector creator's principal email. |\n| type | value.properties.createdBy.type | string | Connector creator's principal type. |\n| tenantId | value.properties.createdBy.tenantId | string | Connector creator's principal tenantId. |\n| userPrincipalName | value.properties.createdBy.userPrincipalName | string | Connector creator's user principal name. |\n| id | value.properties.modifiedBy.id | string | Connector last modified by principal object ID. |\n| displayName | value.properties.modifiedBy.displayName | string | Connector last modified by principal displayName. |\n| email | value.properties.modifiedBy.email | string | Connector last modified by principal email. |\n| type | value.properties.modifiedBy.type | string | Connector last modified by principal type. |\n| tenantId | value.properties.modifiedBy.tenantId | string | Connector last modified by principal tenantId. |\n| userPrincipalName | value.properties.modifiedBy.userPrincipalName | string | Connector last modified by user principal name. |\n| createdTime | value.properties.createdTime | date-time | Connector created time. |\n| changedTime | value.properties.changedTime | date-time | Connector changed time. |\n| id | value.properties.environment.id | string | Connector Environment ID. |\n| name | value.properties.environment.name | string | Connector Environment name. |\n| tier | value.properties.tier | string | Connector tier. |\n| publisher | value.properties.publisher | string | Connector publisher's principal display name. |"
+      }
+    },
+    "Get-PowerAppConditionalAccess": {
+      "operationId": "Get-PowerAppConditionalAccess",
+      "kind": "action",
+      "displayName": "Get PowerApp Conditional Access",
+      "deprecated": false,
+      "description": "- Get-PowerAppConditionalAccess",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n|  |  | array of string | Conditional Access Properties. |"
+      }
+    },
+    "Remove-AdminApp": {
+      "operationId": "Remove-AdminApp",
+      "kind": "action",
+      "displayName": "Remove App as Admin",
+      "deprecated": false,
+      "description": "- Remove-AdminApp",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Remove-AdminConnection": {
+      "operationId": "Remove-AdminConnection",
+      "kind": "action",
+      "displayName": "Remove Connection as Admin",
+      "deprecated": false,
+      "description": "- Remove-AdminConnection",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "Connector Name",
+          "key": "connectorName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connector."
+        },
+        {
+          "name": "Connection Name",
+          "key": "connectionName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connection."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Set-AdminAppOwner": {
+      "operationId": "Set-AdminAppOwner",
+      "kind": "action",
+      "displayName": "Set App Owner",
+      "deprecated": false,
+      "description": "- Set-AdminAppOwner",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Content Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "The content type of the API request."
+        },
+        {
+          "name": "Role For Old App Owner",
+          "key": "roleForOldAppOwner",
+          "required": false,
+          "type": "string",
+          "description": "The role name for the old app owner. Choose from CanView, CanViewWithShare, or CanEdit."
+        },
+        {
+          "name": "New PowerApp Owner",
+          "key": "newAppOwner",
+          "required": false,
+          "type": "string",
+          "description": "The principal object ID of the new owner."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Set-AppQuarantineState": {
+      "operationId": "Set-AppQuarantineState",
+      "kind": "action",
+      "displayName": "Set App Quarantine State",
+      "deprecated": false,
+      "description": "- Set-AppQuarantineState",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Content Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "The content type of the API request."
+        },
+        {
+          "name": "Quarantine Status",
+          "key": "quarantineStatus",
+          "required": false,
+          "type": "string",
+          "description": "The quarantine status of the app. Choose from NotSpecified, Quarantined, or Unquarantined."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Set-PowerAppConditionalAccess": {
+      "operationId": "Set-PowerAppConditionalAccess",
+      "kind": "action",
+      "displayName": "Set PowerApp Conditional Access",
+      "deprecated": false,
+      "description": "- Set-PowerAppConditionalAccess",
+      "parameters": [
+        {
+          "name": "Environment Name",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Environment."
+        },
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Content Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "The content type of the API request."
+        },
+        {
+          "name": "Auth Context Ids",
+          "key": "authContextIds",
+          "required": false,
+          "type": "array of string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

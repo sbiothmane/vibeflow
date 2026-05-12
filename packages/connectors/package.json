@@ -1,0 +1,25 @@
+{
+  "name": "@vibeflow/connectors",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Typed Power Automate connector shims generated from the Vibeflow catalog.",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./examples": "./src/examples/index.ts"
+  },
+  "scripts": {
+    "generate": "bun scripts/generate.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@vibeflow/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.6.0"
+  }
+}

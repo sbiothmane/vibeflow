@@ -1,0 +1,827 @@
+{
+  "connectorId": "shared_powerappsforappmakers",
+  "displayName": "Power Apps for Makers",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/powerappsforappmakers/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-10-07T19:01:00.0000000Z",
+  "sourceGitCommit": "37cc84992792cea5a3d0a3fc022dca1f19f25071",
+  "sourcePath": "docs/powerappsforappmakers/index.yml",
+  "operations": {
+    "Edit-AppRoleAssignment": {
+      "operationId": "Edit-AppRoleAssignment",
+      "kind": "action",
+      "displayName": "Edit App Role Assignment",
+      "deprecated": false,
+      "description": "- Edit-AppRoleAssignment",
+      "parameters": [
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "A filter query parameter."
+        },
+        {
+          "name": "Content Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "The content type of the API request."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Role Id of User."
+        },
+        {
+          "name": "email",
+          "key": "email",
+          "required": false,
+          "type": "string",
+          "description": "Email of the User."
+        },
+        {
+          "name": "tenantId",
+          "key": "tenantId",
+          "required": false,
+          "type": "string",
+          "description": "Tenant Id of the User."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "ID of the user."
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "Type of User."
+        },
+        {
+          "name": "NotifyShareTargetOption",
+          "key": "NotifyShareTargetOption",
+          "required": false,
+          "type": "string",
+          "description": "Notify ShareTarget Option."
+        },
+        {
+          "name": "roleName",
+          "key": "roleName",
+          "required": false,
+          "type": "string",
+          "description": "Role Name of User."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| put | put | array of object | The field put. |\n| id | put.id | string | The field id. |\n| roleName | put.properties.roleName | string | The field roleName. |\n| scope | put.properties.scope | string | The field scope. |\n| id | put.properties.principal.id | string | The field id. |\n| email | put.properties.principal.email | string | The field email. |\n| type | put.properties.principal.type | string | The field type. |\n| resourceResponses | put.properties.resourceResponses | array of object | The field resourceResponses. |\n| id | put.properties.resourceResponses.id | string | The field id. |\n| statusCode | put.properties.resourceResponses.statusCode | string | The field statusCode. |\n| responseCode | put.properties.resourceResponses.responseCode | string | The field responseCode. |\n| message | put.properties.resourceResponses.message | string | The field message. |\n| type | put.properties.resourceResponses.type | string | The field type. |"
+      }
+    },
+    "Edit-ConnectionRoleAssignment": {
+      "operationId": "Edit-ConnectionRoleAssignment",
+      "kind": "action",
+      "displayName": "Edit Connection Role Assignment",
+      "deprecated": false,
+      "description": "- Edit-ConnectionRoleAssignment",
+      "parameters": [
+        {
+          "name": "Connector Name",
+          "key": "connectorName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connector."
+        },
+        {
+          "name": "Connection Name",
+          "key": "connectionName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connection."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "A filter query parameter."
+        },
+        {
+          "name": "Content Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "The content type of the API request."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Role Id of User."
+        },
+        {
+          "name": "email",
+          "key": "email",
+          "required": false,
+          "type": "string",
+          "description": "Email of User."
+        },
+        {
+          "name": "tenantId",
+          "key": "tenantId",
+          "required": false,
+          "type": "string",
+          "description": "TenantId of User."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Id of User."
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "Type of User."
+        },
+        {
+          "name": "NotifyShareTargetOption",
+          "key": "NotifyShareTargetOption",
+          "required": false,
+          "type": "string",
+          "description": "NotifyShareTargetOption of User."
+        },
+        {
+          "name": "roleName",
+          "key": "roleName",
+          "required": false,
+          "type": "string",
+          "description": "RoleName of User."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Edit-ConnectorRoleAssignment": {
+      "operationId": "Edit-ConnectorRoleAssignment",
+      "kind": "action",
+      "displayName": "Edit Connector Role Assignment",
+      "deprecated": false,
+      "description": "- Edit-ConnectorRoleAssignment",
+      "parameters": [
+        {
+          "name": "Connector Name",
+          "key": "connectorName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connector."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "A filter query parameter."
+        },
+        {
+          "name": "Content Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "The content type of the API request."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Role id of User."
+        },
+        {
+          "name": "email",
+          "key": "email",
+          "required": false,
+          "type": "string",
+          "description": "Email of User."
+        },
+        {
+          "name": "tenantId",
+          "key": "tenantId",
+          "required": false,
+          "type": "string",
+          "description": "TenantId of User."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Id of User."
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "Type of User."
+        },
+        {
+          "name": "NotifyShareTargetOption",
+          "key": "NotifyShareTargetOption",
+          "required": false,
+          "type": "string",
+          "description": "NotifyShareTargetOption of User."
+        },
+        {
+          "name": "roleName",
+          "key": "roleName",
+          "required": false,
+          "type": "string",
+          "description": "RoleName of User."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Get-App": {
+      "operationId": "Get-App",
+      "kind": "action",
+      "displayName": "Get App",
+      "deprecated": false,
+      "description": "- Get-App",
+      "parameters": [
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- PowerApp"
+      }
+    },
+    "Get-AppRoleAssignment": {
+      "operationId": "Get-AppRoleAssignment",
+      "kind": "action",
+      "displayName": "Get App Role Assignments",
+      "deprecated": false,
+      "description": "- Get-AppRoleAssignment",
+      "parameters": [
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of App Role Assignments."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object | The field value. |\n| name | value.name | string | The field name. |\n| id | value.id | string | The field id. |\n| type | value.type | string | The field type. |\n| roleName | value.properties.roleName | string | The field roleName. |\n| id | value.properties.principal.id | string | The field id. |\n| displayName | value.properties.principal.displayName | string | The field displayName. |\n| email | value.properties.principal.email | string | The field email. |\n| type | value.properties.principal.type | string | The field type. |\n| scope | value.properties.scope | string | The field scope. |\n| notifyShareTargetOption | value.properties.notifyShareTargetOption | string | The field notifyShareTargetOption. |"
+      }
+    },
+    "Get-AppVersions": {
+      "operationId": "Get-AppVersions",
+      "kind": "action",
+      "displayName": "Get App Versions",
+      "deprecated": false,
+      "description": "- Get-AppVersions",
+      "parameters": [
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of Apps versions to return."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object | The field value. |\n| name | value.name | string | The field name. |\n| id | value.id | string | The field id. |\n| type | value.type | string | The field type. |\n| primaryDeviceWidth | value.tags.primaryDeviceWidth | string | The field primaryDeviceWidth. |\n| primaryDeviceHeight | value.tags.primaryDeviceHeight | string | The field primaryDeviceHeight. |\n| sienaVersion | value.tags.sienaVersion | string | The field sienaVersion. |\n| deviceCapabilities | value.tags.deviceCapabilities | string | The field deviceCapabilities. |\n| supportsPortrait | value.tags.supportsPortrait | string | The field supportsPortrait. |\n| supportsLandscape | value.tags.supportsLandscape | string | The field supportsLandscape. |\n| primaryFormFactor | value.tags.primaryFormFactor | string | The field primaryFormFactor. |\n| publisherVersion | value.tags.publisherVersion | string | The field publisherVersion. |\n| minimumRequiredApiVersion | value.tags.minimumRequiredApiVersion | string | The field minimumRequiredApiVersion. |\n| ownerTenantId | value.properties.ownerTenantId | string | The field ownerTenantId. |\n| app | value.properties.app | string | The field app. |\n| appVersion | value.properties.appVersion | date-time | The field appVersion. |\n| lifeCycleId | value.properties.lifeCycleId | string | The field lifeCycleId. |\n| major | value.properties.createdByClientVersion.major | integer | The field major. |\n| minor | value.properties.createdByClientVersion.minor | integer | The field minor. |\n| build | value.properties.createdByClientVersion.build | integer | The field build. |\n| revision | value.properties.createdByClientVersion.revision | integer | The field revision. |\n| majorRevision | value.properties.createdByClientVersion.majorRevision | integer | The field majorRevision. |\n| minorRevision | value.properties.createdByClientVersion.minorRevision | integer | The field minorRevision. |\n| major | value.properties.minClientVersion.major | integer | The field major. |\n| minor | value.properties.minClientVersion.minor | integer | The field minor. |\n| build | value.properties.minClientVersion.build | integer | The field build. |\n| revision | value.properties.minClientVersion.revision | integer | The field revision. |\n| majorRevision | value.properties.minClientVersion.majorRevision | integer | The field majorRevision. |\n| minorRevision | value.properties.minClientVersion.minorRevision | integer | The field minorRevision. |\n| name | value.properties.appDefinition.name | string | The field name. |\n| id | value.properties.appDefinition.id | string | The field id. |\n| type | value.properties.appDefinition.type | string | The field type. |\n| primaryDeviceWidth | value.properties.appDefinition.tags.primaryDeviceWidth | string | The field primaryDeviceWidth. |\n| primaryDeviceHeight | value.properties.appDefinition.tags.primaryDeviceHeight | string | The field primaryDeviceHeight. |\n| sienaVersion | value.properties.appDefinition.tags.sienaVersion | string | The field sienaVersion. |\n| deviceCapabilities | value.properties.appDefinition.tags.deviceCapabilities | string | The field deviceCapabilities. |\n| supportsPortrait | value.properties.appDefinition.tags.supportsPortrait | string | The field supportsPortrait. |\n| supportsLandscape | value.properties.appDefinition.tags.supportsLandscape | string | The field supportsLandscape. |\n| primaryFormFactor | value.properties.appDefinition.tags.primaryFormFactor | string | The field primaryFormFactor. |\n| publisherVersion | value.properties.appDefinition.tags.publisherVersion | string | The field publisherVersion. |\n| minimumRequiredApiVersion | value.properties.appDefinition.tags.minimumRequiredApiVersion | string | The field minimumRequiredApiVersion. |\n| appVersion | value.properties.appDefinition.properties.appVersion | date-time | The field appVersion. |\n| lastDraftVersion | value.properties.appDefinition.properties.lastDraftVersion | date-time | The field lastDraftVersion. |\n| lifeCycleId | value.properties.appDefinition.properties.lifeCycleId | string | The field lifeCycleId. |\n| status | value.properties.appDefinition.properties.status | string | The field status. |\n| major | value.properties.appDefinition.properties.createdByClientVersion.major | integer | The field major. |\n| minor | value.properties.appDefinition.properties.createdByClientVersion.minor | integer | The field minor. |\n| build | value.properties.appDefinition.properties.createdByClientVersion.build | integer | The field build. |\n| revision | value.properties.appDefinition.properties.createdByClientVersion.revision | integer | The field revision. |\n| majorRevision | value.properties.appDefinition.properties.createdByClientVersion.majorRevision | integer | The field majorRevision. |\n| minorRevision | value.properties.appDefinition.properties.createdByClientVersion.minorRevision | integer | The field minorRevision. |\n| major | value.properties.appDefinition.properties.minClientVersion.major | integer | The field major. |\n| minor | value.properties.appDefinition.properties.minClientVersion.minor | integer | The field minor. |\n| build | value.properties.appDefinition.properties.minClientVersion.build | integer | The field build. |\n| revision | value.properties.appDefinition.properties.minClientVersion.revision | integer | The field revision. |\n| majorRevision | value.properties.appDefinition.properties.minClientVersion.majorRevision | integer | The field majorRevision. |\n| minorRevision | value.properties.appDefinition.properties.minClientVersion.minorRevision | integer | The field minorRevision. |\n| id | value.properties.appDefinition.properties.owner.id | string | The field id. |\n| displayName | value.properties.appDefinition.properties.owner.displayName | string | The field displayName. |\n| email | value.properties.appDefinition.properties.owner.email | string | The field email. |\n| type | value.properties.appDefinition.properties.owner.type | string | The field type. |\n| tenantId | value.properties.appDefinition.properties.owner.tenantId | string | The field tenantId. |\n| userPrincipalName | value.properties.appDefinition.properties.owner.userPrincipalName | string | The field userPrincipalName. |\n| id | value.properties.appDefinition.properties.createdBy.id | string | The field id. |\n| displayName | value.properties.appDefinition.properties.createdBy.displayName | string | The field displayName. |\n| email | value.properties.appDefinition.properties.createdBy.email | string | The field email. |\n| type | value.properties.appDefinition.properties.createdBy.type | string | The field type. |\n| tenantId | value.properties.appDefinition.properties.createdBy.tenantId | string | The field tenantId. |\n| userPrincipalName | value.properties.appDefinition.properties.createdBy.userPrincipalName | string | The field userPrincipalName. |\n| id | value.properties.appDefinition.properties.lastModifiedBy.id | string | The field id. |\n| displayName | value.properties.appDefinition.properties.lastModifiedBy.displayName | string | The field displayName. |\n| email | value.properties.appDefinition.properties.lastModifiedBy.email | string | The field email. |\n| type | value.properties.appDefinition.properties.lastModifiedBy.type | string | The field type. |\n| tenantId | value.properties.appDefinition.properties.lastModifiedBy.tenantId | string | The field tenantId. |\n| userPrincipalName | value.properties.appDefinition.properties.lastModifiedBy.userPrincipalName | string | The field userPrincipalName. |\n| id | value.properties.appDefinition.properties.lastPublishedBy.id | string | The field id. |\n| displayName | value.properties.appDefinition.properties.lastPublishedBy.displayName | string | The field displayName. |\n| email | value.properties.appDefinition.properties.lastPublishedBy.email | string | The field email. |\n| type | value.properties.appDefinition.properties.lastPublishedBy.type | string | The field type. |\n| tenantId | value.properties.appDefinition.properties.lastPublishedBy.tenantId | string | The field tenantId. |\n| userPrincipalName | value.properties.appDefinition.properties.lastPublishedBy.userPrincipalName | string | The field userPrincipalName. |\n| backgroundColor | value.properties.appDefinition.properties.backgroundColor | string | The field backgroundColor. |\n| backgroundImageUri | value.properties.appDefinition.properties.backgroundImageUri | string | The field backgroundImageUri. |\n| displayName | value.properties.appDefinition.properties.displayName | string | The field displayName. |\n| description | value.properties.appDefinition.properties.description | string | The field description. |\n| value | value.properties.appDefinition.properties.appUris.documentUri.value | string | The field value. |\n| readonlyValue | value.properties.appDefinition.properties.appUris.documentUri.readonlyValue | string | The field readonlyValue. |\n| imageUris | value.properties.appDefinition.properties.appUris.imageUris | array of string | The field imageUris. |\n| createdTime | value.properties.appDefinition.properties.createdTime | date-time | The field createdTime. |\n| lastModifiedTime | value.properties.appDefinition.properties.lastModifiedTime | date-time | The field lastModifiedTime. |\n| lastPublishTime | value.properties.appDefinition.properties.lastPublishTime | date-time | The field lastPublishTime. |\n| sharedGroupsCount | value.properties.appDefinition.properties.sharedGroupsCount | integer | The field sharedGroupsCount. |\n| sharedUsersCount | value.properties.appDefinition.properties.sharedUsersCount | integer | The field sharedUsersCount. |\n| appOpenProtocolUri | value.properties.appDefinition.properties.appOpenProtocolUri | string | The field appOpenProtocolUri. |\n| appOpenUri | value.properties.appDefinition.properties.appOpenUri | string | The field appOpenUri. |\n| favorite | value.properties.appDefinition.properties.userAppMetadata.favorite | string | The field favorite. |\n| includeInAppsList | value.properties.appDefinition.properties.userAppMetadata.includeInAppsList | boolean | The field includeInAppsList. |\n| isFeaturedApp | value.properties.appDefinition.properties.isFeaturedApp | boolean | The field isFeaturedApp. |\n| bypassConsent | value.properties.appDefinition.properties.bypassConsent | boolean | The field bypassConsent. |\n| isHeroApp | value.properties.appDefinition.properties.isHeroApp | boolean | The field isHeroApp. |\n| id | value.properties.appDefinition.properties.environment.id | string | The field id. |\n| name | value.properties.appDefinition.properties.environment.name | string | The field name. |"
+      }
+    },
+    "Get-Apps": {
+      "operationId": "Get-Apps",
+      "kind": "action",
+      "displayName": "Get Apps",
+      "deprecated": false,
+      "description": "- Get-Apps",
+      "parameters": [
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "A filter query parameter."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of Apps to return."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceArray[PowerApp]"
+      }
+    },
+    "Get-ConnectionRoleAssignment": {
+      "operationId": "Get-ConnectionRoleAssignment",
+      "kind": "action",
+      "displayName": "Get Connection Role Assignment",
+      "deprecated": false,
+      "description": "- Get-ConnectionRoleAssignment",
+      "parameters": [
+        {
+          "name": "Connector Name",
+          "key": "connectorName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connector."
+        },
+        {
+          "name": "Connection Name",
+          "key": "connectionName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connection."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "A filter query parameter."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of Connection Role Assignments."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object | The field value. |\n| name | value.name | string | The field name. |\n| id | value.id | string | The field id. |\n| type | value.type | string | The field type. |\n| roleName | value.properties.roleName | string | The field roleName. |\n| id | value.properties.principal.id | string | The field id. |\n| displayName | value.properties.principal.displayName | string | The field displayName. |\n| email | value.properties.principal.email | string | The field email. |\n| type | value.properties.principal.type | string | The field type. |\n| notifyShareTargetOption | value.properties.notifyShareTargetOption | string | The field notifyShareTargetOption. |"
+      }
+    },
+    "Get-Connections": {
+      "operationId": "Get-Connections",
+      "kind": "action",
+      "displayName": "Get Connections",
+      "deprecated": false,
+      "description": "- Get-Connections",
+      "parameters": [
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "A filter query parameter."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of Connections."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object | The field value. |\n| name | value.name | string | The field name. |\n| id | value.id | string | The field id. |\n| type | value.type | string | The field type. |\n| apiId | value.properties.apiId | string | The field apiId. |\n| displayName | value.properties.displayName | string | The field displayName. |\n| iconUri | value.properties.iconUri | string | The field iconUri. |\n| statuses | value.properties.statuses | array of object | The field statuses. |\n| status | value.properties.statuses.status | string | The field status. |\n| target | value.properties.statuses.target | string | The field target. |\n| code | value.properties.statuses.error.code | string | The field code. |\n| message | value.properties.statuses.error.message | string | The field message. |\n| sku | value.properties.connectionParameters.sku | string | The field sku. |\n| workflowName | value.properties.connectionParameters.workflowName | string | The field workflowName. |\n| workflowPath | value.properties.connectionParameters.workflowPath | string | The field workflowPath. |\n| workflowEndpoint | value.properties.connectionParameters.workflowEndpoint | string | The field workflowEndpoint. |\n| workFlowCallbackUri | value.properties.connectionParameters.workFlowCallbackUri | string | The field workFlowCallbackUri. |\n| apiId | value.properties.connectionParameters.$connections.shared_msnweather.apiId | string | The field apiId. |\n| connectionId | value.properties.connectionParameters.$connections.shared_msnweather.connectionId | string | The field connectionId. |\n| source | value.properties.connectionParameters.$connections.shared_msnweather.source | string | The field source. |\n| apiId | value.properties.connectionParameters.$connections.shared_flowpush.apiId | string | The field apiId. |\n| connectionId | value.properties.connectionParameters.$connections.shared_flowpush.connectionId | string | The field connectionId. |\n| source | value.properties.connectionParameters.$connections.shared_flowpush.source | string | The field source. |\n| server | value.properties.connectionParameters.server | string | The field server. |\n| database | value.properties.connectionParameters.database | string | The field database. |\n| keywordsRemaining | value.properties.keywordsRemaining | integer | The field keywordsRemaining. |\n| id | value.properties.createdBy.id | string | The field id. |\n| displayName | value.properties.createdBy.displayName | string | The field displayName. |\n| email | value.properties.createdBy.email | string | The field email. |\n| type | value.properties.createdBy.type | string | The field type. |\n| tenantId | value.properties.createdBy.tenantId | string | The field tenantId. |\n| userPrincipalName | value.properties.createdBy.userPrincipalName | string | The field userPrincipalName. |\n| createdTime | value.properties.createdTime | date-time | The field createdTime. |\n| lastModifiedTime | value.properties.lastModifiedTime | date-time | The field lastModifiedTime. |\n| id | value.properties.environment.id | string | The field id. |\n| name | value.properties.environment.name | string | The field name. |\n| shared_msnweather | value.properties.metadata.shared_msnweather | string | The field shared_msnweather. |\n| shared_flowpush | value.properties.metadata.shared_flowpush | string | The field shared_flowpush. |\n| expirationTime | value.properties.expirationTime | date-time | The field expirationTime. |\n| testLinks | value.properties.testLinks | array of object | The field testLinks. |\n| requestUri | value.properties.testLinks.requestUri | string | The field requestUri. |\n| method | value.properties.testLinks.method | string | The field method. |"
+      }
+    },
+    "Get-Connector": {
+      "operationId": "Get-Connector",
+      "kind": "action",
+      "displayName": "Get Connector",
+      "deprecated": false,
+      "description": "- Get-Connector",
+      "parameters": [
+        {
+          "name": "Connector Name",
+          "key": "connectorName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connector."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "A filter query parameter."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| name | name | string | The field name. |\n| id | id | string | The field id. |\n| type | type | string | The field type. |\n| displayName | properties.displayName | string | The field displayName. |\n| iconUri | properties.iconUri | string | The field iconUri. |\n| iconBrandColor | properties.iconBrandColor | string | The field iconBrandColor. |\n| apiEnvironment | properties.apiEnvironment | string | The field apiEnvironment. |\n| isCustomApi | properties.isCustomApi | boolean | The field isCustomApi. |\n| type | properties.connectionParameters.token.type | string | The field type. |\n| identityProvider | properties.connectionParameters.token.oAuthSettings.identityProvider | string | The field identityProvider. |\n| clientId | properties.connectionParameters.token.oAuthSettings.clientId | string | The field clientId. |\n| scopes | properties.connectionParameters.token.oAuthSettings.scopes | array of string | The field scopes. |\n| redirectUrl | properties.connectionParameters.token.oAuthSettings.redirectUrl | string | The field redirectUrl. |\n| IsFirstParty | properties.connectionParameters.token.oAuthSettings.properties.IsFirstParty | string | The field IsFirstParty. |\n| value | properties.connectionParameters.token.oAuthSettings.customParameters.capability.value | string | The field value. |\n| displayName | properties.connectionParameters.token.uiDefinition.displayName | string | The field displayName. |\n| description | properties.connectionParameters.token.uiDefinition.description | string | The field description. |\n| tooltip | properties.connectionParameters.token.uiDefinition.tooltip | string | The field tooltip. |\n| required | properties.connectionParameters.token.uiDefinition.constraints.required | string | The field required. |\n| runtimeUrls | properties.runtimeUrls | array of string | The field runtimeUrls. |\n| primaryRuntimeUrl | properties.primaryRuntimeUrl | string | The field primaryRuntimeUrl. |\n| source | properties.metadata.source | string | The field source. |\n| brandColor | properties.metadata.brandColor | string | The field brandColor. |\n| capabilities | properties.capabilities | array of string | The field capabilities. |\n| baseUrl | properties.interfaces.CDPBlob0.revisions.1.baseUrl | string | The field baseUrl. |\n| status | properties.interfaces.CDPBlob0.revisions.1.status | string | The field status. |\n| deprecated | properties.interfaces.CDPBlob0.revisions.1.deprecated | boolean | The field deprecated. |\n| baseUrl | properties.interfaces.CDPBlob1.revisions.1.baseUrl | string | The field baseUrl. |\n| status | properties.interfaces.CDPBlob1.revisions.1.status | string | The field status. |\n| description | properties.description | string | The field description. |\n| createdTime | properties.createdTime | date-time | The field createdTime. |\n| changedTime | properties.changedTime | date-time | The field changedTime. |\n| releaseTag | properties.releaseTag | string | The field releaseTag. |\n| tier | properties.tier | string | The field tier. |\n| publisher | properties.publisher | string | The field publisher. |\n| will | properties.scopes.will | array of string | The field will. |\n| wont | properties.scopes.wont | array of string | The field wont. |"
+      }
+    },
+    "Get-ConnectorRoleAssignment": {
+      "operationId": "Get-ConnectorRoleAssignment",
+      "kind": "action",
+      "displayName": "Get Connector Role Assignment",
+      "deprecated": false,
+      "description": "- Get-ConnectorRoleAssignment",
+      "parameters": [
+        {
+          "name": "Connector Name",
+          "key": "connectorName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connector."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "A filter query parameter."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of Connector Role Assignments."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object | The field value. |\n| name | value.name | string | The field name. |\n| id | value.id | string | The field id. |\n| type | value.type | string | The field type. |\n| roleName | value.properties.roleName | string | The field roleName. |\n| id | value.properties.principal.id | string | The field id. |\n| displayName | value.properties.principal.displayName | string | The field displayName. |\n| email | value.properties.principal.email | string | The field email. |\n| type | value.properties.principal.type | string | The field type. |\n| notifyShareTargetOption | value.properties.notifyShareTargetOption | string | The field notifyShareTargetOption. |"
+      }
+    },
+    "Get-Connectors": {
+      "operationId": "Get-Connectors",
+      "kind": "action",
+      "displayName": "Get Connectors",
+      "deprecated": false,
+      "description": "- Get-Connectors",
+      "parameters": [
+        {
+          "name": "ShowAllApis",
+          "key": "showApisWithToS",
+          "required": false,
+          "type": "string",
+          "description": "Show all the Apis."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "A filter query parameter."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of Connectors."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object | The field value. |\n| name | value.name | string | The field name. |\n| id | value.id | string | The field id. |\n| type | value.type | string | The field type. |\n| displayName | value.properties.displayName | string | The field displayName. |\n| iconUri | value.properties.iconUri | string | The field iconUri. |\n| iconBrandColor | value.properties.iconBrandColor | string | The field iconBrandColor. |\n| apiEnvironment | value.properties.apiEnvironment | string | The field apiEnvironment. |\n| isCustomApi | value.properties.isCustomApi | boolean | The field isCustomApi. |\n| type | value.properties.connectionParameters.token.type | string | The field type. |\n| identityProvider | value.properties.connectionParameters.token.oAuthSettings.identityProvider | string | The field identityProvider. |\n| clientId | value.properties.connectionParameters.token.oAuthSettings.clientId | string | The field clientId. |\n| scopes | value.properties.connectionParameters.token.oAuthSettings.scopes | array of string | The field scopes. |\n| redirectUrl | value.properties.connectionParameters.token.oAuthSettings.redirectUrl | string | The field redirectUrl. |\n| IsFirstParty | value.properties.connectionParameters.token.oAuthSettings.properties.IsFirstParty | string | The field IsFirstParty. |\n| value | value.properties.connectionParameters.token.oAuthSettings.customParameters.capability.value | string | The field value. |\n| displayName | value.properties.connectionParameters.token.uiDefinition.displayName | string | The field displayName. |\n| description | value.properties.connectionParameters.token.uiDefinition.description | string | The field description. |\n| tooltip | value.properties.connectionParameters.token.uiDefinition.tooltip | string | The field tooltip. |\n| required | value.properties.connectionParameters.token.uiDefinition.constraints.required | string | The field required. |\n| capability | value.properties.connectionParameters.token.uiDefinition.constraints.capability | array of string | The field capability. |\n| type | value.properties.connectionParameters.gateway.type | string | The field type. |\n| dataSourceType | value.properties.connectionParameters.gateway.gatewaySettings.dataSourceType | string | The field dataSourceType. |\n| connectionDetails | value.properties.connectionParameters.gateway.gatewaySettings.connectionDetails | array of string | The field connectionDetails. |\n| tabIndex | value.properties.connectionParameters.gateway.uiDefinition.tabIndex | integer | The field tabIndex. |\n| hidden | value.properties.connectionParameters.gateway.uiDefinition.constraints.hidden | string | The field hidden. |\n| capability | value.properties.connectionParameters.gateway.uiDefinition.constraints.capability | array of string | The field capability. |\n| type | value.properties.connectionParameters.authType.type | string | The field type. |\n| allowedValues | value.properties.connectionParameters.authType.allowedValues | array of object | The field allowedValues. |\n| value | value.properties.connectionParameters.authType.allowedValues.value | string | The field value. |\n| displayName | value.properties.connectionParameters.authType.uiDefinition.displayName | string | The field displayName. |\n| description | value.properties.connectionParameters.authType.uiDefinition.description | string | The field description. |\n| tooltip | value.properties.connectionParameters.authType.uiDefinition.tooltip | string | The field tooltip. |\n| tabIndex | value.properties.connectionParameters.authType.uiDefinition.constraints.tabIndex | integer | The field tabIndex. |\n| required | value.properties.connectionParameters.authType.uiDefinition.constraints.required | string | The field required. |\n| allowedValues | value.properties.connectionParameters.authType.uiDefinition.constraints.allowedValues | array of object | The field allowedValues. |\n| text | value.properties.connectionParameters.authType.uiDefinition.constraints.allowedValues.text | string | The field text. |\n| value | value.properties.connectionParameters.authType.uiDefinition.constraints.allowedValues.value | string | The field value. |\n| capability | value.properties.connectionParameters.authType.uiDefinition.constraints.capability | array of string | The field capability. |\n| type | value.properties.connectionParameters.username.type | string | The field type. |\n| displayName | value.properties.connectionParameters.username.uiDefinition.displayName | string | The field displayName. |\n| description | value.properties.connectionParameters.username.uiDefinition.description | string | The field description. |\n| tooltip | value.properties.connectionParameters.username.uiDefinition.tooltip | string | The field tooltip. |\n| tabIndex | value.properties.connectionParameters.username.uiDefinition.constraints.tabIndex | integer | The field tabIndex. |\n| clearText | value.properties.connectionParameters.username.uiDefinition.constraints.clearText | boolean | The field clearText. |\n| required | value.properties.connectionParameters.username.uiDefinition.constraints.required | string | The field required. |\n| capability | value.properties.connectionParameters.username.uiDefinition.constraints.capability | array of string | The field capability. |\n| type | value.properties.connectionParameters.password.type | string | The field type. |\n| displayName | value.properties.connectionParameters.password.uiDefinition.displayName | string | The field displayName. |\n| description | value.properties.connectionParameters.password.uiDefinition.description | string | The field description. |\n| tooltip | value.properties.connectionParameters.password.uiDefinition.tooltip | string | The field tooltip. |\n| tabIndex | value.properties.connectionParameters.password.uiDefinition.constraints.tabIndex | integer | The field tabIndex. |\n| required | value.properties.connectionParameters.password.uiDefinition.constraints.required | string | The field required. |\n| capability | value.properties.connectionParameters.password.uiDefinition.constraints.capability | array of string | The field capability. |\n| runtimeUrls | value.properties.runtimeUrls | array of string | The field runtimeUrls. |\n| primaryRuntimeUrl | value.properties.primaryRuntimeUrl | string | The field primaryRuntimeUrl. |\n| source | value.properties.metadata.source | string | The field source. |\n| brandColor | value.properties.metadata.brandColor | string | The field brandColor. |\n| capabilities | value.properties.capabilities | array of string | The field capabilities. |\n| baseUrl | value.properties.interfaces.CDPTabular1.revisions.1.baseUrl | string | The field baseUrl. |\n| status | value.properties.interfaces.CDPTabular1.revisions.1.status | string | The field status. |\n| baseUrl | value.properties.interfaces.CDPBlob0.revisions.1.baseUrl | string | The field baseUrl. |\n| status | value.properties.interfaces.CDPBlob0.revisions.1.status | string | The field status. |\n| deprecated | value.properties.interfaces.CDPBlob0.revisions.1.deprecated | boolean | The field deprecated. |\n| baseUrl | value.properties.interfaces.CDPBlob1.revisions.1.baseUrl | string | The field baseUrl. |\n| status | value.properties.interfaces.CDPBlob1.revisions.1.status | string | The field status. |\n| description | value.properties.description | string | The field description. |\n| createdTime | value.properties.createdTime | date-time | The field createdTime. |\n| changedTime | value.properties.changedTime | date-time | The field changedTime. |\n| releaseTag | value.properties.releaseTag | string | The field releaseTag. |\n| tier | value.properties.tier | string | The field tier. |\n| publisher | value.properties.publisher | string | The field publisher. |\n| will | value.properties.scopes.will | array of string | The field will. |\n| wont | value.properties.scopes.wont | array of string | The field wont. |"
+      }
+    },
+    "Get-Environments": {
+      "operationId": "Get-Environments",
+      "kind": "action",
+      "displayName": "Get Environments",
+      "deprecated": false,
+      "description": "- Get-Environments",
+      "parameters": [
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of Environments."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object | The field value. |\n| id | value.id | string | The field id. |\n| name | value.name | string | The field name. |\n| location | value.location | string | The field location. |\n| type | value.type | string | The field type. |\n| azureRegionHint | value.properties.azureRegionHint | string | The field azureRegionHint. |\n| displayName | value.properties.displayName | string | The field displayName. |\n| createdTime | value.properties.createdTime | date-time | The field createdTime. |\n| admin | value.properties.clientUris.admin | string | Admin portal Uri for the environment. |\n| maker | value.properties.clientUris.maker | string | Maker portal Uri for the environment. |\n| id | value.properties.createdBy.id | string | The field id. |\n| displayName | value.properties.createdBy.displayName | string | The field displayName. |\n| type | value.properties.createdBy.type | string | The field type. |\n| email | value.properties.createdBy.email | string | The field email. |\n| tenantId | value.properties.createdBy.tenantId | string | The field tenantId. |\n| userPrincipalName | value.properties.createdBy.userPrincipalName | string | The field userPrincipalName. |\n| provisioningState | value.properties.provisioningState | string | The field provisioningState. |\n| creationType | value.properties.creationType | string | The field creationType. |\n| environmentSku | value.properties.environmentSku | string | The field environmentSku. |\n| environmentType | value.properties.environmentType | string | The field environmentType. |\n| isDefault | value.properties.isDefault | boolean | The field isDefault. |\n| displayName | value.properties.permissions.CreatePowerApp.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.ReadEnvironment.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.GenerateResourceStorage.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.CreateGateway.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.CreateFlow.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.CreateCustomApi.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.ExportEnvironmentPackage.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.ImportEnvironmentPackage.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.CreateFunction.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.AdminReadEnvironment.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.UpdateEnvironment.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.DeleteEnvironment.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.SetDLPPolicy.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.ListAnyPowerApp.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.ListAnyFlow.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.DeleteAnyPowerApp.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.DeleteAnyFlow.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.AddEnvironmentRoleAssignment.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.ReadEnvironmentRoleInformation.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.RemoveEnvironmentRoleAssignment.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.ModifyDatabaseRoleAssignments.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.CreateDatabase.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.ManageAnyPowerApp.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.ManageAnyConnection.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.ManageCDSMigration.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.ManageTalentEnvironmentSettings.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.ManageAnyCustomApi.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.ListAnyFunction.displayName | string | The field displayName. |\n| displayName | value.properties.permissions.DeleteAnyFunction.displayName | string | The field displayName. |\n| microsoft.BusinessAppPlatform | value.properties.runtimeEndpoints.microsoft.BusinessAppPlatform | string | The field microsoft BusinessAppPlatform. |\n| microsoft.CommonDataModel | value.properties.runtimeEndpoints.microsoft.CommonDataModel | string | The field microsoft CommonDataModel. |\n| microsoft.PowerApps | value.properties.runtimeEndpoints.microsoft.PowerApps | string | The field microsoft Power Apps. |\n| microsoft.Flow | value.properties.runtimeEndpoints.microsoft.Flow | string | The field microsoft Flow. |\n| lastModifiedTime | value.properties.lastModifiedTime | date-time | The field lastModifiedTime. |\n| id | value.properties.lastModifiedBy.id | string | The field id. |\n| displayName | value.properties.lastModifiedBy.displayName | string | The field displayName. |\n| email | value.properties.lastModifiedBy.email | string | The field email. |\n| type | value.properties.lastModifiedBy.type | string | The field type. |\n| tenantId | value.properties.lastModifiedBy.tenantId | string | The field tenantId. |\n| userPrincipalName | value.properties.lastModifiedBy.userPrincipalName | string | The field userPrincipalName. |\n| type | value.properties.linkedEnvironmentMetadata.type | string | The field type. |\n| resourceId | value.properties.linkedEnvironmentMetadata.resourceId | string | The field resourceId. |\n| friendlyName | value.properties.linkedEnvironmentMetadata.friendlyName | string | The field friendlyName. |\n| uniqueName | value.properties.linkedEnvironmentMetadata.uniqueName | string | The field uniqueName. |\n| domainName | value.properties.linkedEnvironmentMetadata.domainName | string | The field domainName. |\n| version | value.properties.linkedEnvironmentMetadata.version | string | The field version. |\n| instanceUrl | value.properties.linkedEnvironmentMetadata.instanceUrl | string | The field instanceUrl. |\n| instanceApiUrl | value.properties.linkedEnvironmentMetadata.instanceApiUrl | string | The field instanceApiUrl. |\n| baseLanguage | value.properties.linkedEnvironmentMetadata.baseLanguage | integer | The field baseLanguage. |\n| instanceState | value.properties.linkedEnvironmentMetadata.instanceState | string | The field instanceState. |\n| createdTime | value.properties.linkedEnvironmentMetadata.createdTime | date-time | The field createdTime. |\n| modifiedTime | value.properties.linkedEnvironmentMetadata.modifiedTime | date-time | The field modifiedTime. |\n| hostNameSuffix | value.properties.linkedEnvironmentMetadata.hostNameSuffix | string | The field hostNameSuffix. |\n| bapSolutionId | value.properties.linkedEnvironmentMetadata.bapSolutionId | string | The field bapSolutionId. |\n| creationTemplates | value.properties.linkedEnvironmentMetadata.creationTemplates | array of string | The field creationTemplates. |\n| managementPackageVersion | value.properties.linkedEnvironmentMetadata.managementPackageVersion | string | The field managementPackageVersion. |\n| softDeletedTime | value.properties.softDeletedTime | date-time | The field softDeletedTime. |\n| message | value.properties.provisioningDetails.message | string | The field message. |\n| operations | value.properties.provisioningDetails.operations | array of object | The field operations. |\n| httpStatus | value.properties.provisioningDetails.operations.httpStatus | string | The field httpStatus. |\n| code | value.properties.provisioningDetails.operations.code | string | The field code. |"
+      }
+    },
+    "Publish-App": {
+      "operationId": "Publish-App",
+      "kind": "action",
+      "displayName": "Publish App",
+      "deprecated": false,
+      "description": "- Publish-App",
+      "parameters": [
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Remove-App": {
+      "operationId": "Remove-App",
+      "kind": "action",
+      "displayName": "Remove App",
+      "deprecated": false,
+      "description": "- Remove-App",
+      "parameters": [
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Remove-Connection": {
+      "operationId": "Remove-Connection",
+      "kind": "action",
+      "displayName": "Remove Connection",
+      "deprecated": false,
+      "description": "- Remove-Connection",
+      "parameters": [
+        {
+          "name": "Connector Name",
+          "key": "connectorName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connector."
+        },
+        {
+          "name": "Connection Name",
+          "key": "connectionName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connection."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "A filter query parameter."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Remove-Connector": {
+      "operationId": "Remove-Connector",
+      "kind": "action",
+      "displayName": "Remove Connector",
+      "deprecated": false,
+      "description": "- Remove-Connector",
+      "parameters": [
+        {
+          "name": "Connector Name",
+          "key": "connectorName",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the Connector."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "A filter query parameter."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Restore-AppVersion": {
+      "operationId": "Restore-AppVersion",
+      "kind": "action",
+      "displayName": "Restore App Version",
+      "deprecated": false,
+      "description": "- Restore-AppVersion",
+      "parameters": [
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "PowerApp Version",
+          "key": "appVersionName",
+          "required": true,
+          "type": "string",
+          "description": "Version field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| name | name | string | The field name. |\n| id | id | string | The field id. |\n| type | type | string | The field type. |\n| primaryDeviceWidth | tags.primaryDeviceWidth | string | The field primaryDeviceWidth. |\n| primaryDeviceHeight | tags.primaryDeviceHeight | string | The field primaryDeviceHeight. |\n| sienaVersion | tags.sienaVersion | string | The field sienaVersion. |\n| deviceCapabilities | tags.deviceCapabilities | string | The field deviceCapabilities. |\n| supportsPortrait | tags.supportsPortrait | string | The field supportsPortrait. |\n| supportsLandscape | tags.supportsLandscape | string | The field supportsLandscape. |\n| primaryFormFactor | tags.primaryFormFactor | string | The field primaryFormFactor. |\n| publisherVersion | tags.publisherVersion | string | The field publisherVersion. |\n| minimumRequiredApiVersion | tags.minimumRequiredApiVersion | string | The field minimumRequiredApiVersion. |\n| appVersion | properties.appVersion | date-time | The field appVersion. |\n| lastDraftVersion | properties.lastDraftVersion | date-time | The field lastDraftVersion. |\n| lifeCycleId | properties.lifeCycleId | string | The field lifeCycleId. |\n| status | properties.status | string | The field status. |\n| major | properties.createdByClientVersion.major | integer | The field major. |\n| minor | properties.createdByClientVersion.minor | integer | The field minor. |\n| build | properties.createdByClientVersion.build | integer | The field build. |\n| revision | properties.createdByClientVersion.revision | integer | The field revision. |\n| majorRevision | properties.createdByClientVersion.majorRevision | integer | The field majorRevision. |\n| minorRevision | properties.createdByClientVersion.minorRevision | integer | The field minorRevision. |\n| major | properties.minClientVersion.major | integer | The field major. |\n| minor | properties.minClientVersion.minor | integer | The field minor. |\n| build | properties.minClientVersion.build | integer | The field build. |\n| revision | properties.minClientVersion.revision | integer | The field revision. |\n| majorRevision | properties.minClientVersion.majorRevision | integer | The field majorRevision. |\n| minorRevision | properties.minClientVersion.minorRevision | integer | The field minorRevision. |\n| id | properties.owner.id | string | The field id. |\n| displayName | properties.owner.displayName | string | The field displayName. |\n| email | properties.owner.email | string | The field email. |\n| type | properties.owner.type | string | The field type. |\n| tenantId | properties.owner.tenantId | string | The field tenantId. |\n| userPrincipalName | properties.owner.userPrincipalName | string | The field userPrincipalName. |\n| id | properties.createdBy.id | string | The field id. |\n| displayName | properties.createdBy.displayName | string | The field displayName. |\n| email | properties.createdBy.email | string | The field email. |\n| type | properties.createdBy.type | string | The field type. |\n| tenantId | properties.createdBy.tenantId | string | The field tenantId. |\n| userPrincipalName | properties.createdBy.userPrincipalName | string | The field userPrincipalName. |\n| id | properties.lastModifiedBy.id | string | The field id. |\n| displayName | properties.lastModifiedBy.displayName | string | The field displayName. |\n| email | properties.lastModifiedBy.email | string | The field email. |\n| type | properties.lastModifiedBy.type | string | The field type. |\n| tenantId | properties.lastModifiedBy.tenantId | string | The field tenantId. |\n| userPrincipalName | properties.lastModifiedBy.userPrincipalName | string | The field userPrincipalName. |\n| id | properties.lastPublishedBy.id | string | The field id. |\n| displayName | properties.lastPublishedBy.displayName | string | The field displayName. |\n| email | properties.lastPublishedBy.email | string | The field email. |\n| type | properties.lastPublishedBy.type | string | The field type. |\n| tenantId | properties.lastPublishedBy.tenantId | string | The field tenantId. |\n| userPrincipalName | properties.lastPublishedBy.userPrincipalName | string | The field userPrincipalName. |\n| backgroundColor | properties.backgroundColor | string | The field backgroundColor. |\n| backgroundImageUri | properties.backgroundImageUri | string | The field backgroundImageUri. |\n| displayName | properties.displayName | string | The field displayName. |\n| description | properties.description | string | The field description. |\n| value | properties.appUris.documentUri.value | string | The field value. |\n| readonlyValue | properties.appUris.documentUri.readonlyValue | string | The field readonlyValue. |\n| imageUris | properties.appUris.imageUris | array of string | The field imageUris. |\n| createdTime | properties.createdTime | date-time | The field createdTime. |\n| lastModifiedTime | properties.lastModifiedTime | date-time | The field lastModifiedTime. |\n| lastPublishTime | properties.lastPublishTime | date-time | The field lastPublishTime. |\n| sharedGroupsCount | properties.sharedGroupsCount | integer | The field sharedGroupsCount. |\n| sharedUsersCount | properties.sharedUsersCount | integer | The field sharedUsersCount. |\n| appOpenProtocolUri | properties.appOpenProtocolUri | string | The field appOpenProtocolUri. |\n| appOpenUri | properties.appOpenUri | string | The field appOpenUri. |\n| favorite | properties.userAppMetadata.favorite | string | The field favorite. |\n| includeInAppsList | properties.userAppMetadata.includeInAppsList | boolean | The field includeInAppsList. |\n| isFeaturedApp | properties.isFeaturedApp | boolean | The field isFeaturedApp. |\n| bypassConsent | properties.bypassConsent | boolean | The field bypassConsent. |\n| isHeroApp | properties.isHeroApp | boolean | The field isHeroApp. |\n| id | properties.environment.id | string | The field id. |\n| name | properties.environment.name | string | The field name. |"
+      }
+    },
+    "Set-AppDisplayName": {
+      "operationId": "Set-AppDisplayName",
+      "kind": "action",
+      "displayName": "Set App Display Name",
+      "deprecated": false,
+      "description": "- Set-AppDisplayName",
+      "parameters": [
+        {
+          "name": "PowerApp Name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API version."
+        },
+        {
+          "name": "Content Type",
+          "key": "Content-Type",
+          "required": false,
+          "type": "string",
+          "description": "The content type of the API request."
+        },
+        {
+          "name": "displayName",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": "Display Name of App."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

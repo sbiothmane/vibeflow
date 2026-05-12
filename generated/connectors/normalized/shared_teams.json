@@ -1,0 +1,3839 @@
+{
+  "connectorId": "shared_teams",
+  "displayName": "Microsoft Teams",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/teams/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-05-09T01:06:00.0000000Z",
+  "sourceGitCommit": "3bea2815dc4643546385b089e5f26faefe6bb453",
+  "sourcePath": "docs/Teams/index.yml",
+  "operations": {
+    "AddMemberToChannel": {
+      "operationId": "AddMemberToChannel",
+      "kind": "action",
+      "displayName": "Add a member to a channel",
+      "deprecated": false,
+      "description": "- AddMemberToChannel",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Channel",
+          "key": "channelId",
+          "required": true,
+          "type": "string",
+          "description": "Channel ID"
+        },
+        {
+          "name": "User",
+          "key": "userId",
+          "required": true,
+          "type": "string",
+          "description": "User principal name or Microsoft Entra ID to add"
+        },
+        {
+          "name": "Set user as channel owner",
+          "key": "owner",
+          "required": false,
+          "type": "boolean",
+          "description": "True, if the user should be a channel owner"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "AddMemberToChat": {
+      "operationId": "AddMemberToChat",
+      "kind": "action",
+      "displayName": "Add a user to a chat",
+      "deprecated": false,
+      "description": "- AddMemberToChat",
+      "parameters": [
+        {
+          "name": "Conversation ID",
+          "key": "chatId",
+          "required": true,
+          "type": "string",
+          "description": "The chat's unique identifier"
+        },
+        {
+          "name": "User",
+          "key": "userId",
+          "required": true,
+          "type": "string",
+          "description": "User principal name or Microsoft Entra ID to add"
+        },
+        {
+          "name": "Set user as chat owner",
+          "key": "owner",
+          "required": false,
+          "type": "boolean",
+          "description": "True, if the user should be a chat owner"
+        },
+        {
+          "name": "Visible history start date time",
+          "key": "visibleHistoryStartDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "Timestamp that represents how far back in the chat history the new member can see. If not specified, no history is shared."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "AddMemberToTag": {
+      "operationId": "AddMemberToTag",
+      "kind": "action",
+      "displayName": "Add a member to a team tag",
+      "deprecated": false,
+      "description": "- AddMemberToTag",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Tag",
+          "key": "tagId",
+          "required": true,
+          "type": "string",
+          "description": "Select tag"
+        },
+        {
+          "name": "User's ID",
+          "key": "userId",
+          "required": true,
+          "type": "string",
+          "description": "The user's ID of the member to add to the tag, must be in a format like '550e8400-e29b-41d4-a716-446655440000'."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- AddMemberToTagResponseSchema"
+      }
+    },
+    "AddMemberToTeam": {
+      "operationId": "AddMemberToTeam",
+      "kind": "action",
+      "displayName": "Add a member to a team",
+      "deprecated": false,
+      "description": "- AddMemberToTeam",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "User",
+          "key": "userId",
+          "required": true,
+          "type": "string",
+          "description": "User principal name or Microsoft Entra ID to add"
+        },
+        {
+          "name": "Set user as team owner",
+          "key": "owner",
+          "required": false,
+          "type": "boolean",
+          "description": "True, if the user should be a team owner"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "AddSectionItem": {
+      "operationId": "AddSectionItem",
+      "kind": "action",
+      "displayName": "Add an item to a section",
+      "deprecated": false,
+      "description": "- AddSectionItem",
+      "parameters": [
+        {
+          "name": "Section ID",
+          "key": "sectionId",
+          "required": true,
+          "type": "string",
+          "description": "The section ID"
+        },
+        {
+          "name": "ETag",
+          "key": "If-Match",
+          "required": true,
+          "type": "string",
+          "description": "The value of the @microsoft.graph.sectionsVersion annotation returned when you list sections, or the @odata.etag value from any previously retrieved section. Required for optimistic concurrency control."
+        },
+        {
+          "name": "Item ID",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The conversation ID of the chat, channel, meeting, or community to add to the section. For community items, the service automatically normalizes the ID to the 19:{id}@EngageCommunity format."
+        }
+      ],
+      "returns": {
+        "raw": "An item (chat, channel, meeting, or community) within a teamwork section\n- Body\n- SectionItemResponse"
+      }
+    },
+    "AtMentionTag": {
+      "operationId": "AtMentionTag",
+      "kind": "action",
+      "displayName": "Get an @mention token for a team tag",
+      "deprecated": false,
+      "description": "- AtMentionTag",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Tag",
+          "key": "tagId",
+          "required": true,
+          "type": "string",
+          "description": "Select tag"
+        }
+      ],
+      "returns": {
+        "raw": "@mention token for a tag\n- Body\n- AtMentionTagResponse"
+      }
+    },
+    "AtMentionUser": {
+      "operationId": "AtMentionUser",
+      "kind": "action",
+      "displayName": "Get an @mention token for a user",
+      "deprecated": false,
+      "description": "- AtMentionUser",
+      "parameters": [
+        {
+          "name": "User",
+          "key": "userId",
+          "required": true,
+          "type": "string",
+          "description": "Specify a user principal or user ID to @mention"
+        }
+      ],
+      "returns": {
+        "raw": "@mention Token\n- Body\n- AtMentionUser_V1"
+      }
+    },
+    "CreateATeam": {
+      "operationId": "CreateATeam",
+      "kind": "action",
+      "displayName": "Create a team",
+      "deprecated": false,
+      "description": "- CreateATeam",
+      "parameters": [
+        {
+          "name": "Team Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the team"
+        },
+        {
+          "name": "Description",
+          "key": "description",
+          "required": true,
+          "type": "string",
+          "description": "An optional description for the team"
+        },
+        {
+          "name": "Visibility",
+          "key": "visibility",
+          "required": false,
+          "type": "string",
+          "description": "The visibility of the the team"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CreateATeamResponse"
+      }
+    },
+    "CreateChannel": {
+      "operationId": "CreateChannel",
+      "kind": "action",
+      "displayName": "Create a channel",
+      "deprecated": false,
+      "description": "- CreateChannel",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": "Optional textual description for the channel"
+        },
+        {
+          "name": "Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": "Channel name as it appears in Microsoft Teams"
+        },
+        {
+          "name": "Membership Type",
+          "key": "membershipType",
+          "required": false,
+          "type": "string",
+          "description": "The type of channel. Private channels are accessible only to specific members. Shared channels can be shared with users outside the team. Defaults to standard."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Description | description | string | Optional textual description for the channel |\n| Display Name | displayName | string | Channel name as it appears in Microsoft Teams |\n| ID | id | string | The channel's unique identifier |\n| Membership Type | membershipType | string | The type of channel membership |"
+      }
+    },
+    "CreateChat": {
+      "operationId": "CreateChat",
+      "kind": "action",
+      "displayName": "Create a chat",
+      "deprecated": false,
+      "description": "- CreateChat",
+      "parameters": [
+        {
+          "name": "Title",
+          "key": "topic",
+          "required": false,
+          "type": "string",
+          "description": "Title, displayed only in group chats"
+        },
+        {
+          "name": "Members to add",
+          "key": "members",
+          "required": true,
+          "type": "string",
+          "description": "User's IDs, separated by semicolons"
+        }
+      ],
+      "returns": {
+        "raw": "Response for new chat that was created\n- Body\n- NewChatResponse"
+      }
+    },
+    "CreateOpenShift": {
+      "operationId": "CreateOpenShift",
+      "kind": "action",
+      "displayName": "Shifts: Create a new Open Shift [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateOpenShift",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Scheduling Group ID",
+          "key": "schedulingGroupId",
+          "required": false,
+          "type": "string",
+          "description": "Scheduling Group ID"
+        },
+        {
+          "name": "Display Name",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": "Display Name"
+        },
+        {
+          "name": "Notes",
+          "key": "notes",
+          "required": false,
+          "type": "string",
+          "description": "Notes"
+        },
+        {
+          "name": "From Start Time",
+          "key": "startDateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "yyyy-MM-ddTHH:mm:ss.fffZ (UTC format)"
+        },
+        {
+          "name": "To End Time",
+          "key": "endDateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "yyyy-MM-ddTHH:mm:ss.fffZ (UTC format)"
+        },
+        {
+          "name": "Theme",
+          "key": "theme",
+          "required": false,
+          "type": "string",
+          "description": "Theme"
+        },
+        {
+          "name": "Open Slot Count",
+          "key": "openSlotCount",
+          "required": true,
+          "type": "integer",
+          "description": "Open Slot Count"
+        },
+        {
+          "name": "Is Paid",
+          "key": "isPaid",
+          "required": false,
+          "type": "boolean",
+          "description": "Is Paid"
+        },
+        {
+          "name": "From Start Time",
+          "key": "startDateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "yyyy-MM-ddTHH:mm:ss.fffZ (UTC format)"
+        },
+        {
+          "name": "To End Time",
+          "key": "endDateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "yyyy-MM-ddTHH:mm:ss.fffZ (UTC format)"
+        },
+        {
+          "name": "Code",
+          "key": "code",
+          "required": false,
+          "type": "string",
+          "description": "Code"
+        },
+        {
+          "name": "Display Name",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": "Display Name"
+        }
+      ],
+      "returns": {
+        "raw": "Open Shift Entity\n- Open Shift\n- OpenShiftResponse"
+      }
+    },
+    "CreateSection": {
+      "operationId": "CreateSection",
+      "kind": "action",
+      "displayName": "Create a section",
+      "deprecated": false,
+      "description": "- CreateSection",
+      "parameters": [
+        {
+          "name": "ETag",
+          "key": "If-Match",
+          "required": true,
+          "type": "string",
+          "description": "The value of the @microsoft.graph.sectionsVersion annotation returned when you list sections, or the @odata.etag value from any previously retrieved section. Required for optimistic concurrency control."
+        },
+        {
+          "name": "Display Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": "The display name of the section"
+        },
+        {
+          "name": "Icon Type",
+          "key": "iconType",
+          "required": false,
+          "type": "string",
+          "description": "Type of icon. Emoji Unicode character."
+        },
+        {
+          "name": "Is Expanded",
+          "key": "isExpanded",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether the section is expanded"
+        },
+        {
+          "name": "Sort Type",
+          "key": "sortType",
+          "required": false,
+          "type": "string",
+          "description": "The sort type for the section"
+        }
+      ],
+      "returns": {
+        "raw": "A teamwork section\n- Body\n- SectionResponse"
+      }
+    },
+    "CreateTag": {
+      "operationId": "CreateTag",
+      "kind": "action",
+      "displayName": "Create a tag for a team",
+      "deprecated": false,
+      "description": "- CreateTag",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Display Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the tag as it appears to the user in Microsoft Teams."
+        },
+        {
+          "name": "Members' IDs",
+          "key": "members",
+          "required": true,
+          "type": "string",
+          "description": "List of users' IDs separated by semi-colons, identifier must be in a format like '550e8400-e29b-41d4-a716-446655440000'."
+        }
+      ],
+      "returns": {
+        "raw": "The created tag for a team\n- Tag\n- CreateTagResponseSchema"
+      }
+    },
+    "CreateTeamsMeeting": {
+      "operationId": "CreateTeamsMeeting",
+      "kind": "action",
+      "displayName": "Create a Teams meeting",
+      "deprecated": false,
+      "description": "- CreateTeamsMeeting",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "calendarid",
+          "required": true,
+          "type": "string",
+          "description": "Select a value"
+        },
+        {
+          "name": "Subject",
+          "key": "subject",
+          "required": true,
+          "type": "string",
+          "description": "The text of the event's subject line"
+        },
+        {
+          "name": "Event message content",
+          "key": "content",
+          "required": true,
+          "type": "string",
+          "description": "The content of the event"
+        },
+        {
+          "name": "Time zone",
+          "key": "timeZone",
+          "required": true,
+          "type": "string",
+          "description": "Time zone of the event"
+        },
+        {
+          "name": "Start time",
+          "key": "dateTime",
+          "required": true,
+          "type": "date-no-tz",
+          "description": "Start time of the event (example: '2017-08-29T04:00:00')"
+        },
+        {
+          "name": "End time",
+          "key": "dateTime",
+          "required": true,
+          "type": "date-no-tz",
+          "description": "End time of the event (example: '2017-08-29T05:00:00')"
+        },
+        {
+          "name": "Required attendees",
+          "key": "requiredAttendees",
+          "required": false,
+          "type": "email",
+          "description": "Required attendees for the event separated by semicolons"
+        },
+        {
+          "name": "Optional attendees",
+          "key": "optionalAttendees",
+          "required": false,
+          "type": "email",
+          "description": "Optional attendees for the event separated by semicolons"
+        },
+        {
+          "name": "display name",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": "The name associated with the location"
+        },
+        {
+          "name": "Importance",
+          "key": "importance",
+          "required": false,
+          "type": "string",
+          "description": "The importance of the event: low, normal or high"
+        },
+        {
+          "name": "Recurrence pattern",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "Pattern for the recurrence. Required when meeting is a recurrence"
+        },
+        {
+          "name": "Recurrence interval",
+          "key": "interval",
+          "required": false,
+          "type": "integer",
+          "description": "The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required when meeting is a recurrence"
+        },
+        {
+          "name": "Days of week",
+          "key": "daysOfWeek",
+          "required": false,
+          "type": "array of string",
+          "description": "Comma separated days of weeks (example: 'Monday,Wednesday,Friday')"
+        },
+        {
+          "name": "Week Index",
+          "key": "index",
+          "required": false,
+          "type": "string",
+          "description": "Specifies on which day of the week the event occurs. Default is first"
+        },
+        {
+          "name": "Recurrence start date",
+          "key": "startDate",
+          "required": false,
+          "type": "date",
+          "description": "Start date of the recurrence, format YYYY-MM-DD. Required when meeting is a recurrence"
+        },
+        {
+          "name": "Recurrence end date",
+          "key": "endDate",
+          "required": false,
+          "type": "date",
+          "description": "End date of the recurrence, format YYYY-MM-DD"
+        },
+        {
+          "name": "All day event",
+          "key": "isAllDay",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event lasts all day"
+        },
+        {
+          "name": "Pre-event reminder time",
+          "key": "reminderMinutesBeforeStart",
+          "required": false,
+          "type": "integer",
+          "description": "The number of minutes before the event start time that the reminder alert occurs"
+        },
+        {
+          "name": "Enable reminders",
+          "key": "isReminderOn",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if an alert is set to remind the user of the event"
+        },
+        {
+          "name": "Status show as",
+          "key": "showAs",
+          "required": false,
+          "type": "string",
+          "description": "Status to show during the event"
+        },
+        {
+          "name": "Request response",
+          "key": "responseRequested",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the sender would like a response when the event is accepted"
+        }
+      ],
+      "returns": {
+        "raw": "Response for new meeting that was created\n- Body\n- NewMeetingRespone"
+      }
+    },
+    "DeleteOpenShift": {
+      "operationId": "DeleteOpenShift",
+      "kind": "action",
+      "displayName": "Shifts: Delete an open shift [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DeleteOpenShift",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Open Shift ID",
+          "key": "openShiftId",
+          "required": true,
+          "type": "string",
+          "description": "The unique ID of the open shift."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteSection": {
+      "operationId": "DeleteSection",
+      "kind": "action",
+      "displayName": "Delete a section",
+      "deprecated": false,
+      "description": "- DeleteSection",
+      "parameters": [
+        {
+          "name": "Section ID",
+          "key": "sectionId",
+          "required": true,
+          "type": "string",
+          "description": "The section ID"
+        },
+        {
+          "name": "ETag",
+          "key": "If-Match",
+          "required": true,
+          "type": "string",
+          "description": "The value of the @microsoft.graph.sectionsVersion annotation returned when you list sections, or the @odata.etag value from any previously retrieved section. Required for optimistic concurrency control."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteShift": {
+      "operationId": "DeleteShift",
+      "kind": "action",
+      "displayName": "Shifts: Delete a shift [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DeleteShift",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Shift ID",
+          "key": "shiftId",
+          "required": true,
+          "type": "string",
+          "description": "The unique ID of the shift."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteTag": {
+      "operationId": "DeleteTag",
+      "kind": "action",
+      "displayName": "Delete a team tag",
+      "deprecated": false,
+      "description": "- DeleteTag",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Tag",
+          "key": "tagId",
+          "required": true,
+          "type": "string",
+          "description": "Select tag"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteTagMember": {
+      "operationId": "DeleteTagMember",
+      "kind": "action",
+      "displayName": "Delete a member from a team tag",
+      "deprecated": false,
+      "description": "- DeleteTagMember",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Tag",
+          "key": "tagId",
+          "required": true,
+          "type": "string",
+          "description": "Select tag"
+        },
+        {
+          "name": "Tag Member ID",
+          "key": "tagMemberId",
+          "required": true,
+          "type": "string",
+          "description": "ID of the member to remove from the tag"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetAiInsight": {
+      "operationId": "GetAiInsight",
+      "kind": "action",
+      "displayName": "Get AI insight",
+      "deprecated": false,
+      "description": "- GetAiInsight",
+      "parameters": [
+        {
+          "name": "Meeting ID",
+          "key": "meetingId",
+          "required": true,
+          "type": "string",
+          "description": "The online meeting ID"
+        },
+        {
+          "name": "AI Insight ID",
+          "key": "aiInsightId",
+          "required": true,
+          "type": "string",
+          "description": "The AI insight ID"
+        }
+      ],
+      "returns": {
+        "raw": "An AI-generated insight for an online meeting\n- Body\n- AiInsightResponse"
+      }
+    },
+    "GetAllAdhocCallRecordings": {
+      "operationId": "GetAllAdhocCallRecordings",
+      "kind": "action",
+      "displayName": "Get all ad-hoc call recordings",
+      "deprecated": false,
+      "description": "- GetAllAdhocCallRecordings",
+      "parameters": [
+        {
+          "name": "Start Date Time",
+          "key": "startDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The start date and time to filter recordings"
+        },
+        {
+          "name": "End Date Time",
+          "key": "endDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The end date and time to filter recordings"
+        },
+        {
+          "name": "Top",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "The number of recordings to return"
+        },
+        {
+          "name": "Skip Token",
+          "key": "$skiptoken",
+          "required": false,
+          "type": "string",
+          "description": "The skip token for pagination"
+        },
+        {
+          "name": "Delta Token",
+          "key": "$deltatoken",
+          "required": false,
+          "type": "string",
+          "description": "The delta token for tracking changes"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CallRecordingCollectionResponse"
+      }
+    },
+    "GetAllAdhocCallTranscripts": {
+      "operationId": "GetAllAdhocCallTranscripts",
+      "kind": "action",
+      "displayName": "Get all ad-hoc call transcripts",
+      "deprecated": false,
+      "description": "- GetAllAdhocCallTranscripts",
+      "parameters": [
+        {
+          "name": "Start Date Time",
+          "key": "startDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The start date and time to filter transcripts"
+        },
+        {
+          "name": "End Date Time",
+          "key": "endDateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "The end date and time to filter transcripts"
+        },
+        {
+          "name": "Top",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "The number of transcripts to return"
+        },
+        {
+          "name": "Skip Token",
+          "key": "$skiptoken",
+          "required": false,
+          "type": "string",
+          "description": "The skip token for pagination"
+        },
+        {
+          "name": "Delta Token",
+          "key": "$deltatoken",
+          "required": false,
+          "type": "string",
+          "description": "The delta token for tracking changes"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CallTranscriptCollectionResponse"
+      }
+    },
+    "GetAllAssociatedTeams": {
+      "operationId": "GetAllAssociatedTeams",
+      "kind": "action",
+      "displayName": "List associated teams",
+      "deprecated": false,
+      "description": "- GetAllAssociatedTeams",
+      "parameters": [],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Teams List | value | array of AssociatedTeamInfo | List of the teams you are associated with |"
+      }
+    },
+    "GetAllChannelsForTeam": {
+      "operationId": "GetAllChannelsForTeam",
+      "kind": "action",
+      "displayName": "List all channels",
+      "deprecated": false,
+      "description": "- GetAllChannelsForTeam",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An OData filter query to restrict the entries returned (e.g. membershipType eq 'standard')."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An OData orderBy query option for specifying the order of entries (e.g., displayName asc)."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Channel List | value | array of ChannelWithOwnerTeamId | List of one or more channels for a specific team |"
+      }
+    },
+    "GetAllTeams": {
+      "operationId": "GetAllTeams",
+      "kind": "action",
+      "displayName": "List joined teams",
+      "deprecated": false,
+      "description": "- GetAllTeams",
+      "parameters": [],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Teams List | value | array of object | List of the teams you are a member of |\n| Description | value.description | string | An optional description for the team |\n| Name | value.displayName | string | The name of the team |\n| ID | value.id | string | The team's unique identifier, also called an Microsoft 365 Group ID |"
+      }
+    },
+    "GetCallRecording": {
+      "operationId": "GetCallRecording",
+      "kind": "action",
+      "displayName": "Get call recording",
+      "deprecated": false,
+      "description": "- GetCallRecording",
+      "parameters": [
+        {
+          "name": "Call ID",
+          "key": "callId",
+          "required": true,
+          "type": "string",
+          "description": "The call ID"
+        },
+        {
+          "name": "Recording ID",
+          "key": "recordingId",
+          "required": true,
+          "type": "string",
+          "description": "The recording ID"
+        }
+      ],
+      "returns": {
+        "raw": "A call recording\n- Body\n- CallRecordingResponse"
+      }
+    },
+    "GetCallRecordingContent": {
+      "operationId": "GetCallRecordingContent",
+      "kind": "action",
+      "displayName": "Get call recording content",
+      "deprecated": false,
+      "description": "- GetCallRecordingContent",
+      "parameters": [
+        {
+          "name": "Call ID",
+          "key": "callId",
+          "required": true,
+          "type": "string",
+          "description": "The call ID"
+        },
+        {
+          "name": "Recording ID",
+          "key": "recordingId",
+          "required": true,
+          "type": "string",
+          "description": "The recording ID"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- file"
+      }
+    },
+    "GetCallTranscript": {
+      "operationId": "GetCallTranscript",
+      "kind": "action",
+      "displayName": "Get call transcript",
+      "deprecated": false,
+      "description": "- GetCallTranscript",
+      "parameters": [
+        {
+          "name": "Call ID",
+          "key": "callId",
+          "required": true,
+          "type": "string",
+          "description": "The call ID"
+        },
+        {
+          "name": "Transcript ID",
+          "key": "transcriptId",
+          "required": true,
+          "type": "string",
+          "description": "The transcript ID"
+        }
+      ],
+      "returns": {
+        "raw": "A call transcript\n- Body\n- CallTranscriptResponse"
+      }
+    },
+    "GetCallTranscriptContent": {
+      "operationId": "GetCallTranscriptContent",
+      "kind": "action",
+      "displayName": "Get call transcript content",
+      "deprecated": false,
+      "description": "- GetCallTranscriptContent",
+      "parameters": [
+        {
+          "name": "Call ID",
+          "key": "callId",
+          "required": true,
+          "type": "string",
+          "description": "The call ID"
+        },
+        {
+          "name": "Transcript ID",
+          "key": "transcriptId",
+          "required": true,
+          "type": "string",
+          "description": "The transcript ID"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- string"
+      }
+    },
+    "GetChannel": {
+      "operationId": "GetChannel",
+      "kind": "action",
+      "displayName": "Get details for a specific channel in a team",
+      "deprecated": false,
+      "description": "- GetChannel",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Channel",
+          "key": "channelId",
+          "required": true,
+          "type": "string",
+          "description": "Channel ID"
+        }
+      ],
+      "returns": {
+        "raw": "Get team channel details response\n- Body\n- GetChannelResponse"
+      }
+    },
+    "GetChannelsForGroup": {
+      "operationId": "GetChannelsForGroup",
+      "kind": "action",
+      "displayName": "List channels",
+      "deprecated": false,
+      "description": "- GetChannelsForGroup",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An OData filter query to restrict the entries returned (e.g. membershipType eq 'standard')."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An OData orderBy query option for specifying the order of entries (e.g., displayName asc)."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Channel List | value | array of GetChannelResponse | List of one or more channels for a specific team |"
+      }
+    },
+    "GetChats": {
+      "operationId": "GetChats",
+      "kind": "action",
+      "displayName": "List chats",
+      "deprecated": false,
+      "description": "- GetChats",
+      "parameters": [
+        {
+          "name": "Chat Types",
+          "key": "chatType",
+          "required": true,
+          "type": "string",
+          "description": "Filter by type"
+        },
+        {
+          "name": "Topic",
+          "key": "topic",
+          "required": true,
+          "type": "string",
+          "description": "Filter by whether or not the topic name is defined"
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Chats List | value | array of object | List of one or more chats you are a part of |\n| Topic | value.topic | string | Subject or topic for the chat. Only available for group chats |\n| Created Date Time | value.createdDateTime | date-time | Date and time when the chat was created |\n| Last Updated Date Time | value.lastUpdatedDateTime | date-time | Date and time of when the chat was last renamed or its member list was last updated |\n| Conversation ID | value.id | string | The chat's unique identifier |"
+      }
+    },
+    "GetMeetingRecording": {
+      "operationId": "GetMeetingRecording",
+      "kind": "action",
+      "displayName": "Get meeting recording",
+      "deprecated": false,
+      "description": "- GetMeetingRecording",
+      "parameters": [
+        {
+          "name": "Meeting ID",
+          "key": "meetingId",
+          "required": true,
+          "type": "string",
+          "description": "The online meeting ID"
+        },
+        {
+          "name": "Recording ID",
+          "key": "recordingId",
+          "required": true,
+          "type": "string",
+          "description": "The recording ID"
+        }
+      ],
+      "returns": {
+        "raw": "A call recording\n- Body\n- CallRecordingResponse"
+      }
+    },
+    "GetMeetingRecordingContent": {
+      "operationId": "GetMeetingRecordingContent",
+      "kind": "action",
+      "displayName": "Get meeting recording content",
+      "deprecated": false,
+      "description": "- GetMeetingRecordingContent",
+      "parameters": [
+        {
+          "name": "Meeting ID",
+          "key": "meetingId",
+          "required": true,
+          "type": "string",
+          "description": "The online meeting ID"
+        },
+        {
+          "name": "Recording ID",
+          "key": "recordingId",
+          "required": true,
+          "type": "string",
+          "description": "The recording ID"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- file"
+      }
+    },
+    "GetMeetingTranscript": {
+      "operationId": "GetMeetingTranscript",
+      "kind": "action",
+      "displayName": "Get meeting transcript",
+      "deprecated": false,
+      "description": "- GetMeetingTranscript",
+      "parameters": [
+        {
+          "name": "Meeting ID",
+          "key": "meetingId",
+          "required": true,
+          "type": "string",
+          "description": "The online meeting ID"
+        },
+        {
+          "name": "Transcript ID",
+          "key": "transcriptId",
+          "required": true,
+          "type": "string",
+          "description": "The transcript ID"
+        }
+      ],
+      "returns": {
+        "raw": "A call transcript\n- Body\n- CallTranscriptResponse"
+      }
+    },
+    "GetMeetingTranscriptContent": {
+      "operationId": "GetMeetingTranscriptContent",
+      "kind": "action",
+      "displayName": "Get meeting transcript content",
+      "deprecated": false,
+      "description": "- GetMeetingTranscriptContent",
+      "parameters": [
+        {
+          "name": "Meeting ID",
+          "key": "meetingId",
+          "required": true,
+          "type": "string",
+          "description": "The online meeting ID"
+        },
+        {
+          "name": "Transcript ID",
+          "key": "transcriptId",
+          "required": true,
+          "type": "string",
+          "description": "The transcript ID"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- string"
+      }
+    },
+    "GetMessageDetails": {
+      "operationId": "GetMessageDetails",
+      "kind": "action",
+      "displayName": "Get message details",
+      "deprecated": false,
+      "description": "- GetMessageDetails",
+      "parameters": [
+        {
+          "name": "Message",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "Message ID"
+        },
+        {
+          "name": "Message type",
+          "key": "threadType",
+          "required": true,
+          "type": "string",
+          "description": "Choose message type"
+        },
+        {
+          "name": "Get message details request",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": "The get message details request"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetMessagesFromChannel": {
+      "operationId": "GetMessagesFromChannel",
+      "kind": "action",
+      "displayName": "Get messages in a channel",
+      "deprecated": false,
+      "description": "- GetMessagesFromChannel",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Channel",
+          "key": "channelId",
+          "required": true,
+          "type": "string",
+          "description": "Channel ID"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetMessagesFromConversation_Response"
+      }
+    },
+    "GetMessagesFromChat": {
+      "operationId": "GetMessagesFromChat",
+      "kind": "action",
+      "displayName": "Get messages in a chat",
+      "deprecated": false,
+      "description": "- GetMessagesFromChat",
+      "parameters": [
+        {
+          "name": "Conversation ID",
+          "key": "chatId",
+          "required": true,
+          "type": "string",
+          "description": "The chat's unique identifier"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An OData filter query to restrict the entries returned (e.g. membershipType eq 'standard')."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An OData orderBy query option for specifying the order of entries (e.g., displayName asc)."
+        },
+        {
+          "name": "Top",
+          "key": "$top",
+          "required": false,
+          "type": "string",
+          "description": "An OData top query option for specifying the maximum number of entries returned."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetMessagesFromConversation_Response"
+      }
+    },
+    "GetOnlineMeeting": {
+      "operationId": "GetOnlineMeeting",
+      "kind": "action",
+      "displayName": "Get an online meeting",
+      "deprecated": false,
+      "description": "- GetOnlineMeeting",
+      "parameters": [
+        {
+          "name": "Lookup by",
+          "key": "lookupType",
+          "required": true,
+          "type": "string",
+          "description": "Select how to identify the meeting"
+        },
+        {
+          "name": "Lookup value",
+          "key": "lookupValue",
+          "required": true,
+          "type": "string",
+          "description": "The value corresponding to the selected lookup type (meeting ID, join web URL, or join meeting ID)"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetOnlineMeeting_Response"
+      }
+    },
+    "GetOpenShift": {
+      "operationId": "GetOpenShift",
+      "kind": "action",
+      "displayName": "Shifts: Get an open shift [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetOpenShift",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Open Shift ID",
+          "key": "openShiftId",
+          "required": true,
+          "type": "string",
+          "description": "The unique ID of the open shift."
+        }
+      ],
+      "returns": {
+        "raw": "Open Shift Entity\n- Open Shift\n- OpenShiftResponse"
+      }
+    },
+    "GetSchedule": {
+      "operationId": "GetSchedule",
+      "kind": "action",
+      "displayName": "Shifts: Get a schedule's details [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetSchedule",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        }
+      ],
+      "returns": {
+        "raw": "Schedule Entity\n- Body\n- ScheduleResponse"
+      }
+    },
+    "GetSchedulingGroup": {
+      "operationId": "GetSchedulingGroup",
+      "kind": "action",
+      "displayName": "Shifts: Get a scheduling group [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetSchedulingGroup",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Scheduling Group ID",
+          "key": "schedulingGroupId",
+          "required": true,
+          "type": "string",
+          "description": "The unique ID of the Scheduling Group."
+        }
+      ],
+      "returns": {
+        "raw": "Scheduling Group Entity\n- Scheduling Group\n- SchedulingGroupResponse"
+      }
+    },
+    "GetSection": {
+      "operationId": "GetSection",
+      "kind": "action",
+      "displayName": "Get a section",
+      "deprecated": false,
+      "description": "- GetSection",
+      "parameters": [
+        {
+          "name": "Section ID",
+          "key": "sectionId",
+          "required": true,
+          "type": "string",
+          "description": "The section ID"
+        }
+      ],
+      "returns": {
+        "raw": "A teamwork section\n- Body\n- SectionResponse"
+      }
+    },
+    "GetShift": {
+      "operationId": "GetShift",
+      "kind": "action",
+      "displayName": "Shifts: Get a shift [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetShift",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Shift ID",
+          "key": "shiftId",
+          "required": true,
+          "type": "string",
+          "description": "The unique ID of the shift."
+        }
+      ],
+      "returns": {
+        "raw": "Shift Entity\n- Shift\n- ShiftResponse"
+      }
+    },
+    "GetTag": {
+      "operationId": "GetTag",
+      "kind": "action",
+      "displayName": "Get a team tag",
+      "deprecated": false,
+      "description": "- GetTag",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Tag",
+          "key": "tagId",
+          "required": true,
+          "type": "string",
+          "description": "Select tag"
+        }
+      ],
+      "returns": {
+        "raw": "The created tag for a team\n- Tag\n- CreateTagResponseSchema"
+      }
+    },
+    "GetTagMembers": {
+      "operationId": "GetTagMembers",
+      "kind": "action",
+      "displayName": "List the members of a team tag",
+      "deprecated": false,
+      "description": "- GetTagMembers",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Tag",
+          "key": "tagId",
+          "required": true,
+          "type": "string",
+          "description": "Select tag"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTagMembersResponseSchema"
+      }
+    },
+    "GetTags": {
+      "operationId": "GetTags",
+      "kind": "action",
+      "displayName": "List all tags for a team",
+      "deprecated": false,
+      "description": "- GetTags",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTagsResponseSchema"
+      }
+    },
+    "GetTeam": {
+      "operationId": "GetTeam",
+      "kind": "action",
+      "displayName": "Get a team",
+      "deprecated": false,
+      "description": "- GetTeam",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        }
+      ],
+      "returns": {
+        "raw": "Get team response\n- Body\n- GetTeamResponse"
+      }
+    },
+    "HttpRequest": {
+      "operationId": "HttpRequest",
+      "kind": "action",
+      "displayName": "Send a Microsoft Graph HTTP request",
+      "deprecated": false,
+      "description": "- HttpRequest",
+      "parameters": [
+        {
+          "name": "URI",
+          "key": "Uri",
+          "required": true,
+          "type": "string",
+          "description": "The full or relative URI. Example: `https://graph.microsoft.com/{version}/{resource}`"
+        },
+        {
+          "name": "Method",
+          "key": "Method",
+          "required": true,
+          "type": "string",
+          "description": "The HTTP method (default is GET)"
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "binary",
+          "description": "The request body content"
+        },
+        {
+          "name": "Content-Type",
+          "key": "ContentType",
+          "required": false,
+          "type": "string",
+          "description": "The content-type header for the body (default is application/json)"
+        },
+        {
+          "name": "CustomHeader1",
+          "key": "CustomHeader1",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 1. Specify in format: header-name: header-value"
+        },
+        {
+          "name": "CustomHeader2",
+          "key": "CustomHeader2",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 2. Specify in format: header-name: header-value"
+        },
+        {
+          "name": "CustomHeader3",
+          "key": "CustomHeader3",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 3. Specify in format: header-name: header-value"
+        },
+        {
+          "name": "CustomHeader4",
+          "key": "CustomHeader4",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 4. Specify in format: header-name: header-value"
+        },
+        {
+          "name": "CustomHeader5",
+          "key": "CustomHeader5",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 5. Specify in format: header-name: header-value"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- ObjectWithoutType"
+      }
+    },
+    "ListAiInsights": {
+      "operationId": "ListAiInsights",
+      "kind": "action",
+      "displayName": "List AI insights",
+      "deprecated": false,
+      "description": "- ListAiInsights",
+      "parameters": [
+        {
+          "name": "Meeting ID",
+          "key": "meetingId",
+          "required": true,
+          "type": "string",
+          "description": "The online meeting ID"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- AiInsightCollectionResponse"
+      }
+    },
+    "ListCallRecordings": {
+      "operationId": "ListCallRecordings",
+      "kind": "action",
+      "displayName": "List call recordings",
+      "deprecated": false,
+      "description": "- ListCallRecordings",
+      "parameters": [
+        {
+          "name": "Call ID",
+          "key": "callId",
+          "required": true,
+          "type": "string",
+          "description": "The call ID"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CallRecordingCollectionResponse"
+      }
+    },
+    "ListCallTranscripts": {
+      "operationId": "ListCallTranscripts",
+      "kind": "action",
+      "displayName": "List call transcripts",
+      "deprecated": false,
+      "description": "- ListCallTranscripts",
+      "parameters": [
+        {
+          "name": "Call ID",
+          "key": "callId",
+          "required": true,
+          "type": "string",
+          "description": "The call ID"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CallTranscriptCollectionResponse"
+      }
+    },
+    "ListMeetingRecordings": {
+      "operationId": "ListMeetingRecordings",
+      "kind": "action",
+      "displayName": "List meeting recordings",
+      "deprecated": false,
+      "description": "- ListMeetingRecordings",
+      "parameters": [
+        {
+          "name": "Meeting ID",
+          "key": "meetingId",
+          "required": true,
+          "type": "string",
+          "description": "The online meeting ID"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CallRecordingCollectionResponse"
+      }
+    },
+    "ListMeetingTranscripts": {
+      "operationId": "ListMeetingTranscripts",
+      "kind": "action",
+      "displayName": "List meeting transcripts",
+      "deprecated": false,
+      "description": "- ListMeetingTranscripts",
+      "parameters": [
+        {
+          "name": "Meeting ID",
+          "key": "meetingId",
+          "required": true,
+          "type": "string",
+          "description": "The online meeting ID"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CallTranscriptCollectionResponse"
+      }
+    },
+    "ListMembers": {
+      "operationId": "ListMembers",
+      "kind": "action",
+      "displayName": "List chat or channel members",
+      "deprecated": false,
+      "description": "- ListMembers",
+      "parameters": [
+        {
+          "name": "Thread type",
+          "key": "threadType",
+          "required": true,
+          "type": "string",
+          "description": "Choose message type"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An OData filter query to restrict the entries returned (e.g. membershipType eq 'standard')."
+        },
+        {
+          "name": "List members request",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": "The list members request"
+        }
+      ],
+      "returns": {
+        "raw": "List members response schema\n- Body\n- ListMembersResponseSchema"
+      }
+    },
+    "ListOfferShiftRequests": {
+      "operationId": "ListOfferShiftRequests",
+      "kind": "action",
+      "displayName": "Shifts: List all Offer Shift requests [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListOfferShiftRequests",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of requests to retrieve"
+        },
+        {
+          "name": "Request State",
+          "key": "state",
+          "required": false,
+          "type": "string",
+          "description": "Request state filter"
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Offer Shift Requests List | value | array of OfferShiftRequestResponse | List of Offer Shift requests in the schedule |"
+      }
+    },
+    "ListOpenShiftChangeRequests": {
+      "operationId": "ListOpenShiftChangeRequests",
+      "kind": "action",
+      "displayName": "Shifts: List all Open Shift requests [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListOpenShiftChangeRequests",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of requests to retrieve"
+        },
+        {
+          "name": "Request State",
+          "key": "state",
+          "required": false,
+          "type": "string",
+          "description": "Request state filter"
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Open Shift Change Requests List | value | array of OpenShiftChangeRequestResponse | List of Open Shift Change Requests in the schedule |"
+      }
+    },
+    "ListOpenShifts": {
+      "operationId": "ListOpenShifts",
+      "kind": "action",
+      "displayName": "Shifts: List all Open Shifts [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListOpenShifts",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "From Start Time",
+          "key": "startTime",
+          "required": false,
+          "type": "date-time",
+          "description": "yyyy-MM-ddTHH:mm:ss.fffZ (UTC format)"
+        },
+        {
+          "name": "To End Time",
+          "key": "endTime",
+          "required": false,
+          "type": "date-time",
+          "description": "yyyy-MM-ddTHH:mm:ss.fffZ (UTC format)"
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of open shifts to retrieve"
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Open Shifts List | value | array of OpenShiftResponse | List of open shifts in the schedule |"
+      }
+    },
+    "ListRepliesToMessage": {
+      "operationId": "ListRepliesToMessage",
+      "kind": "action",
+      "displayName": "List replies of a channel message",
+      "deprecated": false,
+      "description": "- ListRepliesToMessage",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Channel",
+          "key": "channelId",
+          "required": true,
+          "type": "string",
+          "description": "Channel ID"
+        },
+        {
+          "name": "Message",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "Message ID"
+        },
+        {
+          "name": "Latest replies count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "The number of latest replies to return. The default value is 20. The supported value is between 1 and 50."
+        }
+      ],
+      "returns": {
+        "raw": "List replies response schema\n- Body\n- ListRepliesResponseSchema"
+      }
+    },
+    "ListSchedulingGroups": {
+      "operationId": "ListSchedulingGroups",
+      "kind": "action",
+      "displayName": "Shifts: List all scheduling groups [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListSchedulingGroups",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve"
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Scheduling Groups List | value | array of SchedulingGroupResponse | List of schedule groups in the schedule |"
+      }
+    },
+    "ListSectionItems": {
+      "operationId": "ListSectionItems",
+      "kind": "action",
+      "displayName": "List section items",
+      "deprecated": false,
+      "description": "- ListSectionItems",
+      "parameters": [
+        {
+          "name": "Section ID",
+          "key": "sectionId",
+          "required": true,
+          "type": "string",
+          "description": "The section ID"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListSectionItemsResponse"
+      }
+    },
+    "ListSections": {
+      "operationId": "ListSections",
+      "kind": "action",
+      "displayName": "List sections",
+      "deprecated": false,
+      "description": "- ListSections",
+      "parameters": [],
+      "returns": {
+        "raw": "- Body\n- ListSectionsResponse"
+      }
+    },
+    "ListShifts": {
+      "operationId": "ListShifts",
+      "kind": "action",
+      "displayName": "Shifts: List all shifts [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListShifts",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "From Start Time",
+          "key": "startTime",
+          "required": false,
+          "type": "date-time",
+          "description": "yyyy-MM-ddTHH:mm:ss.fffZ (UTC format)"
+        },
+        {
+          "name": "To End Time",
+          "key": "endTime",
+          "required": false,
+          "type": "date-time",
+          "description": "yyyy-MM-ddTHH:mm:ss.fffZ (UTC format)"
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of shifts to retrieve"
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Shifts List | value | array of ShiftResponse | List of shifts in the schedule |"
+      }
+    },
+    "ListSwapShiftsChangeRequests": {
+      "operationId": "ListSwapShiftsChangeRequests",
+      "kind": "action",
+      "displayName": "Shifts: List all Swap Shifts requests [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListSwapShiftsChangeRequests",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of requests to retrieve"
+        },
+        {
+          "name": "Request State",
+          "key": "state",
+          "required": false,
+          "type": "string",
+          "description": "Request state filter"
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Swap Shifts Change Requests List | value | array of SwapShiftsChangeRequestResponse | List of Swap Shifts Change Requests in the schedule |"
+      }
+    },
+    "ListTeamMembers": {
+      "operationId": "ListTeamMembers",
+      "kind": "action",
+      "displayName": "List team members",
+      "deprecated": false,
+      "description": "- ListTeamMembers",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An OData filter query to restrict the entries returned (e.g. membershipType eq 'standard')."
+        },
+        {
+          "name": "Top",
+          "key": "$top",
+          "required": false,
+          "type": "string",
+          "description": "An OData top query option for specifying the maximum number of entries returned."
+        }
+      ],
+      "returns": {
+        "raw": "List members response schema\n- Body\n- ListMembersResponseSchema"
+      }
+    },
+    "ListTimeOffReasons": {
+      "operationId": "ListTimeOffReasons",
+      "kind": "action",
+      "displayName": "Shifts: List all Time Off reasons [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListTimeOffReasons",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of Time Off reasons to retrieve"
+        }
+      ],
+      "returns": {
+        "raw": "The list of Time Off Reasons.\n- List of time off reasons associated with a team\n- GetTimeOffReasonsResponse"
+      }
+    },
+    "ListTimeOffRequests": {
+      "operationId": "ListTimeOffRequests",
+      "kind": "action",
+      "displayName": "Shifts: List all Time Off requests [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListTimeOffRequests",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of requests to retrieve"
+        },
+        {
+          "name": "Request State",
+          "key": "state",
+          "required": false,
+          "type": "string",
+          "description": "Request state filter"
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| TimeOff Requests List | value | array of TimeOffRequestResponse | List of Time Off requests in the schedule |"
+      }
+    },
+    "MoveSectionItem": {
+      "operationId": "MoveSectionItem",
+      "kind": "action",
+      "displayName": "Move a section item",
+      "deprecated": false,
+      "description": "- MoveSectionItem",
+      "parameters": [
+        {
+          "name": "Section ID",
+          "key": "sectionId",
+          "required": true,
+          "type": "string",
+          "description": "The section ID"
+        },
+        {
+          "name": "Section Item ID",
+          "key": "sectionItemId",
+          "required": true,
+          "type": "string",
+          "description": "The section item ID (the conversation ID of the underlying chat, channel, meeting, or community)"
+        },
+        {
+          "name": "ETag",
+          "key": "If-Match",
+          "required": true,
+          "type": "string",
+          "description": "The value of the @microsoft.graph.sectionsVersion annotation returned when you list sections, or the @odata.etag value from any previously retrieved section. Required for optimistic concurrency control."
+        },
+        {
+          "name": "Target Section ID",
+          "key": "targetSectionId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of the section to move the item to"
+        }
+      ],
+      "returns": {
+        "raw": "An item (chat, channel, meeting, or community) within a teamwork section\n- Body\n- SectionItemResponse"
+      }
+    },
+    "OfferShiftRequestApprove": {
+      "operationId": "OfferShiftRequestApprove",
+      "kind": "action",
+      "displayName": "Shifts: Approve an Offer Shift request [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OfferShiftRequestApprove",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Offer Shift Request ID",
+          "key": "offerShiftRequestId",
+          "required": true,
+          "type": "string",
+          "description": "The unique ID of the offer shift request"
+        },
+        {
+          "name": "Message From Recipient/Manager",
+          "key": "message",
+          "required": false,
+          "type": "string",
+          "description": "A message when a request is accepted."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "OfferShiftRequestDecline": {
+      "operationId": "OfferShiftRequestDecline",
+      "kind": "action",
+      "displayName": "Shifts: Decline an Offer Shift request [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OfferShiftRequestDecline",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Offer Shift Request ID",
+          "key": "offerShiftRequestId",
+          "required": true,
+          "type": "string",
+          "description": "The unique ID of the offer shift request"
+        },
+        {
+          "name": "Message From Recipient/Manager",
+          "key": "message",
+          "required": false,
+          "type": "string",
+          "description": "A message when a request is declined."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "OnComposeMessageV2": {
+      "operationId": "OnComposeMessageV2",
+      "kind": "trigger",
+      "displayName": "From the compose box (V2)",
+      "deprecated": false,
+      "description": "- OnComposeMessageV2",
+      "parameters": [
+        {
+          "name": "operationId",
+          "key": "operationId",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "host",
+          "key": "host",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "parameters",
+          "key": "parameters",
+          "required": true,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "schema",
+          "key": "schema",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| body | body | object |  |"
+      }
+    },
+    "OnGroupMembershipAdd": {
+      "operationId": "OnGroupMembershipAdd",
+      "kind": "trigger",
+      "displayName": "When a new team member is added",
+      "deprecated": false,
+      "description": "- OnGroupMembershipAdd",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| User ID | id | string | Unique id of the user |"
+      }
+    },
+    "OnGroupMembershipRemoval": {
+      "operationId": "OnGroupMembershipRemoval",
+      "kind": "trigger",
+      "displayName": "When a new team member is removed",
+      "deprecated": false,
+      "description": "- OnGroupMembershipRemoval",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| User ID | id | string | Unique id of the user |"
+      }
+    },
+    "OnMessageSelectedV2": {
+      "operationId": "OnMessageSelectedV2",
+      "kind": "trigger",
+      "displayName": "For a selected message (V2)",
+      "deprecated": false,
+      "description": "- OnMessageSelectedV2",
+      "parameters": [
+        {
+          "name": "operationId",
+          "key": "operationId",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "host",
+          "key": "host",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "parameters",
+          "key": "parameters",
+          "required": true,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "schema",
+          "key": "schema",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| body | body | object |  |"
+      }
+    },
+    "OnNewChannelMessage": {
+      "operationId": "OnNewChannelMessage",
+      "kind": "trigger",
+      "displayName": "When a new channel message is added",
+      "deprecated": false,
+      "description": "- OnNewChannelMessage",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Channel",
+          "key": "channelId",
+          "required": true,
+          "type": "string",
+          "description": "Channel ID"
+        }
+      ],
+      "returns": {
+        "raw": "A message in a channel, one on one chat, or group chat\n- Message\n- ChatMessage"
+      }
+    },
+    "OnNewChannelMessageMentioningMe": {
+      "operationId": "OnNewChannelMessageMentioningMe",
+      "kind": "trigger",
+      "displayName": "When I am mentioned in a channel message",
+      "deprecated": false,
+      "description": "- OnNewChannelMessageMentioningMe",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Channel",
+          "key": "channelId",
+          "required": true,
+          "type": "string",
+          "description": "Channel ID"
+        }
+      ],
+      "returns": {
+        "raw": "A message in a channel, one on one chat, or group chat\n- Message\n- ChatMessage"
+      }
+    },
+    "OpenShiftChangeRequestApprove": {
+      "operationId": "OpenShiftChangeRequestApprove",
+      "kind": "action",
+      "displayName": "Shifts: Approve an Open Shift request [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OpenShiftChangeRequestApprove",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Open Shift Change Request ID",
+          "key": "openShiftChangeRequestId",
+          "required": true,
+          "type": "string",
+          "description": "The unique ID of the request"
+        },
+        {
+          "name": "Message From Manager",
+          "key": "message",
+          "required": false,
+          "type": "string",
+          "description": "A message from the manager to the sender/recipient when a request is accepted."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "OpenShiftChangeRequestDecline": {
+      "operationId": "OpenShiftChangeRequestDecline",
+      "kind": "action",
+      "displayName": "Shifts: Decline an Open Shift request [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OpenShiftChangeRequestDecline",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Open Shift Change Request ID",
+          "key": "openShiftChangeRequestId",
+          "required": true,
+          "type": "string",
+          "description": "The unique ID of the request"
+        },
+        {
+          "name": "Message From Manager",
+          "key": "message",
+          "required": false,
+          "type": "string",
+          "description": "A message from the manager to the sender/recipient when a request is declined."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "PostCardAndWaitForResponse": {
+      "operationId": "PostCardAndWaitForResponse",
+      "kind": "action",
+      "displayName": "Post adaptive card and wait for a response",
+      "deprecated": false,
+      "description": "- PostCardAndWaitForResponse",
+      "parameters": [
+        {
+          "name": "Post as",
+          "key": "poster",
+          "required": true,
+          "type": "string",
+          "description": "Select an option"
+        },
+        {
+          "name": "Post in",
+          "key": "location",
+          "required": true,
+          "type": "string",
+          "description": "Select an option"
+        },
+        {
+          "name": "Flow continuation subscription request",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": "The flow continuation subscription request"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "PostCardToConversation": {
+      "operationId": "PostCardToConversation",
+      "kind": "action",
+      "displayName": "Post card in a chat or channel",
+      "deprecated": false,
+      "description": "- PostCardToConversation",
+      "parameters": [
+        {
+          "name": "Post as",
+          "key": "poster",
+          "required": true,
+          "type": "string",
+          "description": "Select an option"
+        },
+        {
+          "name": "Post in",
+          "key": "location",
+          "required": true,
+          "type": "string",
+          "description": "Select an option"
+        },
+        {
+          "name": "Post card request",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": "The post card request"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- PostToConversationResponse"
+      }
+    },
+    "PostChannelAdaptiveCard": {
+      "operationId": "PostChannelAdaptiveCard",
+      "kind": "action",
+      "displayName": "Post your own adaptive card as the Flow bot to a channel [DEPRECATED]",
+      "deprecated": true,
+      "description": "- PostChannelAdaptiveCard",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Post adaptive card request",
+          "key": "PostAdaptiveCardRequest",
+          "required": true,
+          "type": "dynamic",
+          "description": "The post adaptive card request"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- MessageId"
+      }
+    },
+    "PostChannelNotification": {
+      "operationId": "PostChannelNotification",
+      "kind": "action",
+      "displayName": "Post a message as the Flow bot to a channel [DEPRECATED]",
+      "deprecated": true,
+      "description": "- PostChannelNotification",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Post notification request",
+          "key": "PostNotificationRequest",
+          "required": true,
+          "type": "dynamic",
+          "description": "The post notification request"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "PostFeedNotification": {
+      "operationId": "PostFeedNotification",
+      "kind": "action",
+      "displayName": "Post a feed notification",
+      "deprecated": false,
+      "description": "- PostFeedNotification",
+      "parameters": [
+        {
+          "name": "Post as",
+          "key": "poster",
+          "required": true,
+          "type": "string",
+          "description": "Select an option"
+        },
+        {
+          "name": "Notification type",
+          "key": "notificationType",
+          "required": true,
+          "type": "string",
+          "description": "Choose notification type"
+        },
+        {
+          "name": "Post feed notification request",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": "The post feed notification request"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "PostMessageToChannel": {
+      "operationId": "PostMessageToChannel",
+      "kind": "action",
+      "displayName": "Post a message [DEPRECATED]",
+      "deprecated": true,
+      "description": "- PostMessageToChannel",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Channel",
+          "key": "channelId",
+          "required": true,
+          "type": "string",
+          "description": "Channel ID"
+        },
+        {
+          "name": "Message",
+          "key": "content",
+          "required": true,
+          "type": "html",
+          "description": "Body of the message."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "PostMessageToChannelV2": {
+      "operationId": "PostMessageToChannelV2",
+      "kind": "action",
+      "displayName": "Post a message (V2) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- PostMessageToChannelV2",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Channel",
+          "key": "channelId",
+          "required": true,
+          "type": "string",
+          "description": "Channel ID"
+        },
+        {
+          "name": "Subject",
+          "key": "subject",
+          "required": false,
+          "type": "string",
+          "description": "Subject of the message."
+        },
+        {
+          "name": "Message",
+          "key": "content",
+          "required": true,
+          "type": "string",
+          "description": "Body of the message."
+        },
+        {
+          "name": "Type",
+          "key": "contentType",
+          "required": true,
+          "type": "string",
+          "description": "Content type: html or text."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "PostMessageToChannelV3": {
+      "operationId": "PostMessageToChannelV3",
+      "kind": "action",
+      "displayName": "Post a message (V3) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- PostMessageToChannelV3",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Channel",
+          "key": "channelId",
+          "required": true,
+          "type": "string",
+          "description": "Channel ID"
+        },
+        {
+          "name": "Subject",
+          "key": "subject",
+          "required": false,
+          "type": "string",
+          "description": "Subject of the message."
+        },
+        {
+          "name": "Message",
+          "key": "content",
+          "required": true,
+          "type": "html",
+          "description": "Body of the message."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- MessageId"
+      }
+    },
+    "PostMessageToConversation": {
+      "operationId": "PostMessageToConversation",
+      "kind": "action",
+      "displayName": "Post message in a chat or channel",
+      "deprecated": false,
+      "description": "- PostMessageToConversation",
+      "parameters": [
+        {
+          "name": "Post as",
+          "key": "poster",
+          "required": true,
+          "type": "string",
+          "description": "Select an option"
+        },
+        {
+          "name": "Post in",
+          "key": "location",
+          "required": true,
+          "type": "string",
+          "description": "Select an option"
+        },
+        {
+          "name": "Post message request",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": "The post message request"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- PostToConversationResponse"
+      }
+    },
+    "PostMessageToSelf": {
+      "operationId": "PostMessageToSelf",
+      "kind": "action",
+      "displayName": "Post a message to myself",
+      "deprecated": false,
+      "description": "- PostMessageToSelf",
+      "parameters": [
+        {
+          "name": "Content type",
+          "key": "contentType",
+          "required": false,
+          "type": "string",
+          "description": "The type of the message content"
+        },
+        {
+          "name": "Content",
+          "key": "content",
+          "required": true,
+          "type": "string",
+          "description": "The text or HTML content of the message"
+        }
+      ],
+      "returns": {
+        "raw": "A message in a channel, one on one chat, or group chat\n- Message\n- ChatMessage"
+      }
+    },
+    "PostReplyToMessage": {
+      "operationId": "PostReplyToMessage",
+      "kind": "action",
+      "displayName": "Post a reply to a message [DEPRECATED]",
+      "deprecated": true,
+      "description": "- PostReplyToMessage",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Channel",
+          "key": "channelId",
+          "required": true,
+          "type": "string",
+          "description": "Channel ID"
+        },
+        {
+          "name": "Message",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "Message ID"
+        },
+        {
+          "name": "Subject",
+          "key": "subject",
+          "required": false,
+          "type": "string",
+          "description": "Subject of the message."
+        },
+        {
+          "name": "Reply",
+          "key": "content",
+          "required": true,
+          "type": "string",
+          "description": "Body of the message."
+        },
+        {
+          "name": "Type",
+          "key": "contentType",
+          "required": true,
+          "type": "string",
+          "description": "Content type: html or text."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "PostReplyToMessageV2": {
+      "operationId": "PostReplyToMessageV2",
+      "kind": "action",
+      "displayName": "Post a reply to a message (V2) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- PostReplyToMessageV2",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Channel",
+          "key": "channelId",
+          "required": true,
+          "type": "string",
+          "description": "Channel ID"
+        },
+        {
+          "name": "Message",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "Message ID"
+        },
+        {
+          "name": "Subject",
+          "key": "subject",
+          "required": false,
+          "type": "string",
+          "description": "Subject of the message."
+        },
+        {
+          "name": "Reply",
+          "key": "content",
+          "required": true,
+          "type": "html",
+          "description": "Body of the message."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "PostUserAdaptiveCard": {
+      "operationId": "PostUserAdaptiveCard",
+      "kind": "action",
+      "displayName": "Post your own adaptive card as the Flow bot to a user [DEPRECATED]",
+      "deprecated": true,
+      "description": "- PostUserAdaptiveCard",
+      "parameters": [
+        {
+          "name": "Post adaptive card request",
+          "key": "PostAdaptiveCardRequest",
+          "required": true,
+          "type": "dynamic",
+          "description": "The post adaptive card request"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- MessageId"
+      }
+    },
+    "PostUserNotification": {
+      "operationId": "PostUserNotification",
+      "kind": "action",
+      "displayName": "Post a message as the Flow bot to a user [DEPRECATED]",
+      "deprecated": true,
+      "description": "- PostUserNotification",
+      "parameters": [
+        {
+          "name": "Post notification request",
+          "key": "PostNotificationRequest",
+          "required": true,
+          "type": "dynamic",
+          "description": "The post notification request"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "RecordingTrigger": {
+      "operationId": "RecordingTrigger",
+      "kind": "trigger",
+      "displayName": "When a recording is available",
+      "deprecated": false,
+      "description": "- RecordingTrigger",
+      "parameters": [
+        {
+          "name": "Scope",
+          "key": "scopeType",
+          "required": true,
+          "type": "string",
+          "description": "The scope of recordings to monitor"
+        },
+        {
+          "name": "body",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "Recording details\n- Body\n- RecordingWebhookResponseSchema"
+      }
+    },
+    "RemoveMemberFromChannel": {
+      "operationId": "RemoveMemberFromChannel",
+      "kind": "action",
+      "displayName": "Remove a direct member from a channel",
+      "deprecated": false,
+      "description": "- RemoveMemberFromChannel",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Channel",
+          "key": "channelId",
+          "required": true,
+          "type": "string",
+          "description": "Channel ID"
+        },
+        {
+          "name": "Membership ID",
+          "key": "membershipId",
+          "required": true,
+          "type": "string",
+          "description": "The membership ID of the direct member to remove from the channel"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "RemoveMemberFromTeam": {
+      "operationId": "RemoveMemberFromTeam",
+      "kind": "action",
+      "displayName": "Remove a member from a team",
+      "deprecated": false,
+      "description": "- RemoveMemberFromTeam",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Membership ID",
+          "key": "membershipId",
+          "required": true,
+          "type": "string",
+          "description": "The membership ID of the member to remove from the team"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "RemoveSectionItem": {
+      "operationId": "RemoveSectionItem",
+      "kind": "action",
+      "displayName": "Remove an item from a section",
+      "deprecated": false,
+      "description": "- RemoveSectionItem",
+      "parameters": [
+        {
+          "name": "Section ID",
+          "key": "sectionId",
+          "required": true,
+          "type": "string",
+          "description": "The section ID"
+        },
+        {
+          "name": "Section Item ID",
+          "key": "sectionItemId",
+          "required": true,
+          "type": "string",
+          "description": "The section item ID (the conversation ID of the underlying chat, channel, meeting, or community)"
+        },
+        {
+          "name": "ETag",
+          "key": "If-Match",
+          "required": true,
+          "type": "string",
+          "description": "The value of the @microsoft.graph.sectionsVersion annotation returned when you list sections, or the @odata.etag value from any previously retrieved section. Required for optimistic concurrency control."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ReplyWithCardToConversation": {
+      "operationId": "ReplyWithCardToConversation",
+      "kind": "action",
+      "displayName": "Reply with an adaptive card in a channel",
+      "deprecated": false,
+      "description": "- ReplyWithCardToConversation",
+      "parameters": [
+        {
+          "name": "Post as",
+          "key": "poster",
+          "required": true,
+          "type": "string",
+          "description": "Select an option"
+        },
+        {
+          "name": "Post in",
+          "key": "location",
+          "required": true,
+          "type": "string",
+          "description": "Select an option"
+        },
+        {
+          "name": "Reply adaptive card request",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": "The reply adaptive card request"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- PostToConversationResponse"
+      }
+    },
+    "ReplyWithMessageToConversation": {
+      "operationId": "ReplyWithMessageToConversation",
+      "kind": "action",
+      "displayName": "Reply with a message in a channel",
+      "deprecated": false,
+      "description": "- ReplyWithMessageToConversation",
+      "parameters": [
+        {
+          "name": "Post as",
+          "key": "poster",
+          "required": true,
+          "type": "string",
+          "description": "Select an option"
+        },
+        {
+          "name": "Post in",
+          "key": "location",
+          "required": true,
+          "type": "string",
+          "description": "Select an option"
+        },
+        {
+          "name": "Reply message request",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": "The reply message request"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- PostToConversationResponse"
+      }
+    },
+    "SubscribeChannelFlowContinuation": {
+      "operationId": "SubscribeChannelFlowContinuation",
+      "kind": "action",
+      "displayName": "Post an Adaptive Card to a Teams channel and wait for a response [DEPRECATED]",
+      "deprecated": true,
+      "description": "- SubscribeChannelFlowContinuation",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Update message",
+          "key": "updateMessage",
+          "required": false,
+          "type": "string",
+          "description": "Message to be included in an update to the original card following response"
+        },
+        {
+          "name": "Should update card",
+          "key": "shouldUpdateCard",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether or not to update the card following response"
+        },
+        {
+          "name": "Channel",
+          "key": "channelId",
+          "required": true,
+          "type": "string",
+          "description": "Add channel ID"
+        },
+        {
+          "name": "Message",
+          "key": "messageBody",
+          "required": true,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "SubscribeUserFlowContinuation": {
+      "operationId": "SubscribeUserFlowContinuation",
+      "kind": "action",
+      "displayName": "Post an Adaptive Card to a Teams user and wait for a response [DEPRECATED]",
+      "deprecated": true,
+      "description": "- SubscribeUserFlowContinuation",
+      "parameters": [
+        {
+          "name": "Update message",
+          "key": "updateMessage",
+          "required": false,
+          "type": "string",
+          "description": "Message to be included in an update to the original card following response"
+        },
+        {
+          "name": "Should update card",
+          "key": "shouldUpdateCard",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether or not to update the card following response"
+        },
+        {
+          "name": "Recipient",
+          "key": "to",
+          "required": true,
+          "type": "string",
+          "description": "Add an email address"
+        },
+        {
+          "name": "Summary",
+          "key": "summary",
+          "required": false,
+          "type": "string",
+          "description": "The message summary"
+        },
+        {
+          "name": "IsAlert",
+          "key": "isAlert",
+          "required": false,
+          "type": "boolean",
+          "description": "If the message will be shown in the activity feed"
+        },
+        {
+          "name": "Message",
+          "key": "messageBody",
+          "required": true,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "SubscribeUserMessageWithOptions": {
+      "operationId": "SubscribeUserMessageWithOptions",
+      "kind": "action",
+      "displayName": "Post a choice of options as the Flow bot to a user",
+      "deprecated": false,
+      "description": "- SubscribeUserMessageWithOptions",
+      "parameters": [
+        {
+          "name": "User message with options subscription request",
+          "key": "UserMessageWithOptionsSubscriptionRequest",
+          "required": true,
+          "type": "dynamic",
+          "description": "The user message with options subscription request"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "SwapShiftsChangeRequestApprove": {
+      "operationId": "SwapShiftsChangeRequestApprove",
+      "kind": "action",
+      "displayName": "Shifts: Approve a Swap Shifts request [DEPRECATED]",
+      "deprecated": true,
+      "description": "- SwapShiftsChangeRequestApprove",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Swap Shifts Change Request ID",
+          "key": "swapShiftsChangeRequestId",
+          "required": true,
+          "type": "string",
+          "description": "The unique ID of the request"
+        },
+        {
+          "name": "Message From Recipient/Manager",
+          "key": "message",
+          "required": false,
+          "type": "string",
+          "description": "A message when a request is accepted."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "SwapShiftsChangeRequestDecline": {
+      "operationId": "SwapShiftsChangeRequestDecline",
+      "kind": "action",
+      "displayName": "Shifts: Decline a Swap Shifts request [DEPRECATED]",
+      "deprecated": true,
+      "description": "- SwapShiftsChangeRequestDecline",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Swap Shifts Change Request ID",
+          "key": "swapShiftsChangeRequestId",
+          "required": true,
+          "type": "string",
+          "description": "The unique ID of the request"
+        },
+        {
+          "name": "Message From Recipient/Manager",
+          "key": "message",
+          "required": false,
+          "type": "string",
+          "description": "A message when a request is declined."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "TeamsCardTrigger": {
+      "operationId": "TeamsCardTrigger",
+      "kind": "trigger",
+      "displayName": "When someone responds to an adaptive card",
+      "deprecated": false,
+      "description": "- TeamsCardTrigger",
+      "parameters": [],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "TimeOffRequestApprove": {
+      "operationId": "TimeOffRequestApprove",
+      "kind": "action",
+      "displayName": "Shifts: Approve a Time Off request [DEPRECATED]",
+      "deprecated": true,
+      "description": "- TimeOffRequestApprove",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Time Off Request ID",
+          "key": "timeOffRequestId",
+          "required": true,
+          "type": "string",
+          "description": "The unique ID of the time off request"
+        },
+        {
+          "name": "Message From Manager",
+          "key": "message",
+          "required": false,
+          "type": "string",
+          "description": "A message from the manager to the sender/recipient when a request is accepted."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "TimeOffRequestDecline": {
+      "operationId": "TimeOffRequestDecline",
+      "kind": "action",
+      "displayName": "Shifts: Decline a Time Off request [DEPRECATED]",
+      "deprecated": true,
+      "description": "- TimeOffRequestDecline",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Time Off Request ID",
+          "key": "timeOffRequestId",
+          "required": true,
+          "type": "string",
+          "description": "The unique ID of the time off request"
+        },
+        {
+          "name": "Message From Manager",
+          "key": "message",
+          "required": false,
+          "type": "string",
+          "description": "A message from the manager to the sender/recipient when a request is declined."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "TranscriptTrigger": {
+      "operationId": "TranscriptTrigger",
+      "kind": "trigger",
+      "displayName": "When a transcript is available",
+      "deprecated": false,
+      "description": "- TranscriptTrigger",
+      "parameters": [
+        {
+          "name": "Scope",
+          "key": "scopeType",
+          "required": true,
+          "type": "string",
+          "description": "The scope of transcripts to monitor"
+        },
+        {
+          "name": "body",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "Transcript details\n- Body\n- TranscriptWebhookResponseSchema"
+      }
+    },
+    "UpdateCardInConversation": {
+      "operationId": "UpdateCardInConversation",
+      "kind": "action",
+      "displayName": "Update an adaptive card in a chat or channel",
+      "deprecated": false,
+      "description": "- UpdateCardInConversation",
+      "parameters": [
+        {
+          "name": "Post as",
+          "key": "poster",
+          "required": true,
+          "type": "string",
+          "description": "Select an option"
+        },
+        {
+          "name": "Post in",
+          "key": "location",
+          "required": true,
+          "type": "string",
+          "description": "Select an option"
+        },
+        {
+          "name": "Update adaptive card request",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": "The update adaptive card request"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "UpdateOpenShift": {
+      "operationId": "UpdateOpenShift",
+      "kind": "action",
+      "displayName": "Shifts: Update an Open Shift [DEPRECATED]",
+      "deprecated": true,
+      "description": "- UpdateOpenShift",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "teamId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Open Shift ID",
+          "key": "openShiftId",
+          "required": true,
+          "type": "string",
+          "description": "The unique ID of the open shift."
+        },
+        {
+          "name": "Scheduling Group ID",
+          "key": "schedulingGroupId",
+          "required": false,
+          "type": "string",
+          "description": "Scheduling Group ID"
+        },
+        {
+          "name": "Display Name",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": "Display Name"
+        },
+        {
+          "name": "Notes",
+          "key": "notes",
+          "required": false,
+          "type": "string",
+          "description": "Notes"
+        },
+        {
+          "name": "From Start Time",
+          "key": "startDateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "yyyy-MM-ddTHH:mm:ss.fffZ (UTC format)"
+        },
+        {
+          "name": "To End Time",
+          "key": "endDateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "yyyy-MM-ddTHH:mm:ss.fffZ (UTC format)"
+        },
+        {
+          "name": "Theme",
+          "key": "theme",
+          "required": false,
+          "type": "string",
+          "description": "Theme"
+        },
+        {
+          "name": "Open Slot Count",
+          "key": "openSlotCount",
+          "required": true,
+          "type": "integer",
+          "description": "Open Slot Count"
+        },
+        {
+          "name": "Is Paid",
+          "key": "isPaid",
+          "required": false,
+          "type": "boolean",
+          "description": "Is Paid"
+        },
+        {
+          "name": "From Start Time",
+          "key": "startDateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "yyyy-MM-ddTHH:mm:ss.fffZ (UTC format)"
+        },
+        {
+          "name": "To End Time",
+          "key": "endDateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "yyyy-MM-ddTHH:mm:ss.fffZ (UTC format)"
+        },
+        {
+          "name": "Code",
+          "key": "code",
+          "required": false,
+          "type": "string",
+          "description": "Code"
+        },
+        {
+          "name": "Display Name",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": "Display Name"
+        }
+      ],
+      "returns": {
+        "raw": "Open Shift Entity\n- Open Shift\n- OpenShiftResponse"
+      }
+    },
+    "UpdateSection": {
+      "operationId": "UpdateSection",
+      "kind": "action",
+      "displayName": "Update a section",
+      "deprecated": false,
+      "description": "- UpdateSection",
+      "parameters": [
+        {
+          "name": "Section ID",
+          "key": "sectionId",
+          "required": true,
+          "type": "string",
+          "description": "The section ID"
+        },
+        {
+          "name": "ETag",
+          "key": "If-Match",
+          "required": true,
+          "type": "string",
+          "description": "The value of the @microsoft.graph.sectionsVersion annotation returned when you list sections, or the @odata.etag value from any previously retrieved section. Required for optimistic concurrency control."
+        },
+        {
+          "name": "Display Name",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": "The display name of the section"
+        },
+        {
+          "name": "Icon Type",
+          "key": "iconType",
+          "required": false,
+          "type": "string",
+          "description": "Type of icon. Emoji Unicode character."
+        },
+        {
+          "name": "Is Expanded",
+          "key": "isExpanded",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether the section is expanded"
+        },
+        {
+          "name": "Sort Type",
+          "key": "sortType",
+          "required": false,
+          "type": "string",
+          "description": "The sort type for the section"
+        }
+      ],
+      "returns": {
+        "raw": "A teamwork section\n- Body\n- SectionResponse"
+      }
+    },
+    "UpdateTag": {
+      "operationId": "UpdateTag",
+      "kind": "action",
+      "displayName": "Update a team tag",
+      "deprecated": false,
+      "description": "- UpdateTag",
+      "parameters": [
+        {
+          "name": "Team",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "Select team"
+        },
+        {
+          "name": "Tag",
+          "key": "tagId",
+          "required": true,
+          "type": "string",
+          "description": "Select tag"
+        },
+        {
+          "name": "Display Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": "The new name of the tag as it appears to the user in Microsoft Teams."
+        }
+      ],
+      "returns": {
+        "raw": "The created tag for a team\n- Tag\n- CreateTagResponseSchema"
+      }
+    },
+    "WebhookAtMentionTrigger": {
+      "operationId": "WebhookAtMentionTrigger",
+      "kind": "trigger",
+      "displayName": "When I'm @mentioned",
+      "deprecated": false,
+      "description": "- WebhookAtMentionTrigger",
+      "parameters": [
+        {
+          "name": "Message type",
+          "key": "threadType",
+          "required": true,
+          "type": "string",
+          "description": "Choose message type"
+        },
+        {
+          "name": "requestBody",
+          "key": "requestBody",
+          "required": false,
+          "type": "dynamic",
+          "description": "This is the request body of the Webhook"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "WebhookChatMessageTrigger": {
+      "operationId": "WebhookChatMessageTrigger",
+      "kind": "trigger",
+      "displayName": "When a new chat message is added",
+      "deprecated": false,
+      "description": "- WebhookChatMessageTrigger",
+      "parameters": [],
+      "returns": {
+        "raw": "Message details\n- Body\n- ChatMessageWebhookResponseSchema"
+      }
+    },
+    "WebhookKeywordTrigger": {
+      "operationId": "WebhookKeywordTrigger",
+      "kind": "trigger",
+      "displayName": "When keywords are mentioned",
+      "deprecated": false,
+      "description": "- WebhookKeywordTrigger",
+      "parameters": [
+        {
+          "name": "Message type",
+          "key": "threadType",
+          "required": true,
+          "type": "string",
+          "description": "Choose message type"
+        },
+        {
+          "name": "Keywords to search for",
+          "key": "$search",
+          "required": true,
+          "type": "string",
+          "description": "A comma separated list of keywords to search for"
+        },
+        {
+          "name": "requestBody",
+          "key": "requestBody",
+          "required": false,
+          "type": "dynamic",
+          "description": "This is the request body of the Webhook"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "WebhookMessageReactionTrigger": {
+      "operationId": "WebhookMessageReactionTrigger",
+      "kind": "trigger",
+      "displayName": "When someone reacted to a message in chat",
+      "deprecated": false,
+      "description": "- WebhookMessageReactionTrigger",
+      "parameters": [
+        {
+          "name": "Emoji to Track",
+          "key": "reactionKey",
+          "required": true,
+          "type": "string",
+          "description": "Choose emoji to monitor for message reactions"
+        },
+        {
+          "name": "Trigger Frequency",
+          "key": "frequency",
+          "required": true,
+          "type": "string",
+          "description": "Whether the flow should be triggered by every reaction or only the first reaction on a particular message"
+        },
+        {
+          "name": "Who can trigger?",
+          "key": "runningPolicy",
+          "required": true,
+          "type": "string",
+          "description": "Specify who can trigger this workflow"
+        },
+        {
+          "name": "Message type",
+          "key": "threadType",
+          "required": true,
+          "type": "string",
+          "description": "Choose message type"
+        },
+        {
+          "name": "requestBody",
+          "key": "requestBody",
+          "required": false,
+          "type": "dynamic",
+          "description": "This is the request body of the Webhook"
+        }
+      ],
+      "returns": {
+        "raw": "Message details\n- Body\n- MessageReactionWebhookResponseSchema"
+      }
+    },
+    "WebhookNewMessageTrigger": {
+      "operationId": "WebhookNewMessageTrigger",
+      "kind": "trigger",
+      "displayName": "When a new message is added to a chat or channel",
+      "deprecated": false,
+      "description": "- WebhookNewMessageTrigger",
+      "parameters": [
+        {
+          "name": "Message type",
+          "key": "threadType",
+          "required": true,
+          "type": "string",
+          "description": "Choose message type"
+        },
+        {
+          "name": "requestBody",
+          "key": "requestBody",
+          "required": false,
+          "type": "dynamic",
+          "description": "This is the request body of the Webhook"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

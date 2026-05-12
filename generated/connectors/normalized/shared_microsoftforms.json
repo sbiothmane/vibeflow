@@ -1,0 +1,103 @@
+{
+  "connectorId": "shared_microsoftforms",
+  "displayName": "Microsoft Forms",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/microsoftforms/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-10-06T19:01:00.0000000Z",
+  "sourceGitCommit": "3364df2c694abf219dcd0b5ad192f99a9c163c61",
+  "sourcePath": "docs/MicrosoftForms/index.yml",
+  "operations": {
+    "CreateFormWebhook": {
+      "operationId": "CreateFormWebhook",
+      "kind": "trigger",
+      "displayName": "When a new response is submitted",
+      "deprecated": false,
+      "description": "- CreateFormWebhook",
+      "parameters": [
+        {
+          "name": "Form Id",
+          "key": "form_id",
+          "required": true,
+          "type": "string",
+          "description": "Pick a form."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- WebhookPayload"
+      },
+      "usedInExamples": 2,
+      "observedParametersInExamples": {
+        "form_id": 2
+      }
+    },
+    "GetFormDetailsById": {
+      "operationId": "GetFormDetailsById",
+      "kind": "action",
+      "displayName": "Get form details",
+      "deprecated": false,
+      "description": "- GetFormDetailsById",
+      "parameters": [
+        {
+          "name": "Form Id",
+          "key": "form_id",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of the form"
+        }
+      ],
+      "returns": {
+        "raw": "Form details\n- Body\n- GetFormDetailsByIdResult"
+      }
+    },
+    "GetFormResponseById": {
+      "operationId": "GetFormResponseById",
+      "kind": "action",
+      "displayName": "Get response details",
+      "deprecated": false,
+      "description": "- GetFormResponseById",
+      "parameters": [
+        {
+          "name": "Form Id",
+          "key": "form_id",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of the form"
+        },
+        {
+          "name": "Response Id",
+          "key": "response_id",
+          "required": true,
+          "type": "integer",
+          "description": "Unique identifier of the response"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      },
+      "usedInExamples": 2,
+      "observedParametersInExamples": {
+        "form_id": 2,
+        "response_id": 2
+      }
+    },
+    "GetFormResponses": {
+      "operationId": "GetFormResponses",
+      "kind": "trigger",
+      "displayName": "When a new response is submitted [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetFormResponses",
+      "parameters": [
+        {
+          "name": "Form title",
+          "key": "form_id",
+          "required": true,
+          "type": "string",
+          "description": "Pick a form."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

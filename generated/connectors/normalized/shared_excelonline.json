@@ -1,0 +1,430 @@
+{
+  "connectorId": "shared_excelonline",
+  "displayName": "Excel Online (OneDrive)",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/excelonline/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-03-20T19:07:00.0000000Z",
+  "sourceGitCommit": "d3c2ea8192375aac2575a7c5165eb1524f0adbf6",
+  "sourcePath": "docs/excelonline/index.yml",
+  "operations": {
+    "AddRow": {
+      "operationId": "AddRow",
+      "kind": "action",
+      "displayName": "Add a row into a table [DEPRECATED]",
+      "deprecated": true,
+      "description": "- AddRow",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a table from the drop-down."
+        },
+        {
+          "name": "Row",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Row to insert into the specified Excel table."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "AddRowV2": {
+      "operationId": "AddRowV2",
+      "kind": "action",
+      "displayName": "Add a row into a table",
+      "deprecated": false,
+      "description": "- AddRowV2",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a table from the drop-down."
+        },
+        {
+          "name": "Row",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Row to add into the specified Excel table."
+        },
+        {
+          "name": "DateTime Format",
+          "key": "dateTimeFormat",
+          "required": false,
+          "type": "string",
+          "description": "DateTime Format."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "CreateIdColumn": {
+      "operationId": "CreateIdColumn",
+      "kind": "action",
+      "displayName": "Add a key column to a table",
+      "deprecated": false,
+      "description": "- CreateIdColumn",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a table from the drop-down."
+        },
+        {
+          "name": "Key Column",
+          "key": "idColumn",
+          "required": false,
+          "type": "string",
+          "description": "Provide the key column name."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CreateTable": {
+      "operationId": "CreateTable",
+      "kind": "action",
+      "displayName": "Create table",
+      "deprecated": false,
+      "description": "- CreateTable",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table name",
+          "key": "TableName",
+          "required": false,
+          "type": "string",
+          "description": "Enter the Excel table name."
+        },
+        {
+          "name": "Table range",
+          "key": "Range",
+          "required": true,
+          "type": "string",
+          "description": "Enter the table address using A1 notation."
+        },
+        {
+          "name": "Columns names",
+          "key": "ColumnsNames",
+          "required": false,
+          "type": "string",
+          "description": "Enter the columns names separated by ';' or ','."
+        }
+      ],
+      "returns": {
+        "raw": "Table metadata\n- Body\n- TableMetadata"
+      }
+    },
+    "CreateWorksheet": {
+      "operationId": "CreateWorksheet",
+      "kind": "action",
+      "displayName": "Create worksheet",
+      "deprecated": false,
+      "description": "- CreateWorksheet",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "Worksheet name."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- WorksheetMetadata"
+      }
+    },
+    "DeleteItem": {
+      "operationId": "DeleteItem",
+      "kind": "action",
+      "displayName": "Delete a row",
+      "deprecated": false,
+      "description": "- DeleteItem",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a table from the drop-down."
+        },
+        {
+          "name": "Key Column",
+          "key": "idColumn",
+          "required": true,
+          "type": "string",
+          "description": "Select a column from the drop-down."
+        },
+        {
+          "name": "Key Value",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Enter the key value."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetAllWorksheets": {
+      "operationId": "GetAllWorksheets",
+      "kind": "action",
+      "displayName": "Get worksheets",
+      "deprecated": false,
+      "description": "- GetAllWorksheets",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of WorksheetMetadata |  |"
+      }
+    },
+    "GetItem": {
+      "operationId": "GetItem",
+      "kind": "action",
+      "displayName": "Get a row",
+      "deprecated": false,
+      "description": "- GetItem",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a table from the drop-down."
+        },
+        {
+          "name": "Key Column",
+          "key": "idColumn",
+          "required": true,
+          "type": "string",
+          "description": "Select a column from the drop-down."
+        },
+        {
+          "name": "Key Value",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Enter the key value."
+        },
+        {
+          "name": "DateTime Format",
+          "key": "dateTimeFormat",
+          "required": false,
+          "type": "string",
+          "description": "DateTime Format."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetItems": {
+      "operationId": "GetItems",
+      "kind": "action",
+      "displayName": "List rows present in a table",
+      "deprecated": false,
+      "description": "- GetItems",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a table from the drop-down."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA filter query to restrict the entries returned."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Skip Count",
+          "key": "$skip",
+          "required": false,
+          "type": "integer",
+          "description": "The number of entries to skip (default = 0)."
+        },
+        {
+          "name": "Select Query",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of columns to retrieve (first 500 by default)."
+        },
+        {
+          "name": "DateTime Format",
+          "key": "dateTimeFormat",
+          "required": false,
+          "type": "string",
+          "description": "DateTime Format."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetTables": {
+      "operationId": "GetTables",
+      "kind": "action",
+      "displayName": "Get tables",
+      "deprecated": false,
+      "description": "- GetTables",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object |  |\n| Id | value.id | string | Table Id. |\n| Name | value.name | string | Table name. |\n| Show banded columns | value.showBandedColumns | boolean | Show banded columns. |\n| Highlight first column | value.highlightFirstColumn | boolean | Highlight first column. |\n| Highlight last column | value.highlightLastColumn | boolean | Highlight last column. |\n| Show banded rows | value.showBandedRows | boolean | Show banded rows. |\n| Show filter button | value.showFilterButton | boolean | Show filter button. |\n| Show headers | value.showHeaders | boolean | Show headers. |\n| Show totals | value.showTotals | boolean | Show totals. |\n| Style | value.style | string | Table style. |"
+      }
+    },
+    "PatchItem": {
+      "operationId": "PatchItem",
+      "kind": "action",
+      "displayName": "Update a row",
+      "deprecated": false,
+      "description": "- PatchItem",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a table from the drop-down."
+        },
+        {
+          "name": "Key Column",
+          "key": "idColumn",
+          "required": true,
+          "type": "string",
+          "description": "Select a column from the drop-down."
+        },
+        {
+          "name": "Key Value",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Enter the key value."
+        },
+        {
+          "name": "Provide the item properties",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Provide the item properties."
+        },
+        {
+          "name": "DateTime Format",
+          "key": "dateTimeFormat",
+          "required": false,
+          "type": "string",
+          "description": "DateTime Format."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

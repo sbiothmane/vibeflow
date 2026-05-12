@@ -1,0 +1,51 @@
+{
+  "connectorId": "shared_azureeventgridpublish",
+  "displayName": "Azure Event Grid Publish",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azureeventgridpublish/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-04-24T01:00:00.0000000Z",
+  "sourceGitCommit": "63f1cb79629cd01a13220e8a88319b4e7f88925c",
+  "sourcePath": "docs/azureeventgridpublish/index.yml",
+  "operations": {
+    "PublishEvent": {
+      "operationId": "PublishEvent",
+      "kind": "action",
+      "displayName": "Publish Event",
+      "deprecated": false,
+      "description": "- PublishEvent",
+      "parameters": [
+        {
+          "name": "ID",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Useful to idenitify individual events."
+        },
+        {
+          "name": "Subject",
+          "key": "subject",
+          "required": true,
+          "type": "string",
+          "description": "Subject for the event."
+        },
+        {
+          "name": "Event Type",
+          "key": "eventType",
+          "required": true,
+          "type": "string",
+          "description": "Type of event being emitted."
+        },
+        {
+          "name": "Event Time",
+          "key": "eventTime",
+          "required": false,
+          "type": "date-time",
+          "description": "Date and time for the emitted event. Empty will default to current time."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

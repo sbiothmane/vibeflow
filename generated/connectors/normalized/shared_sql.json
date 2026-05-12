@@ -1,0 +1,815 @@
+{
+  "connectorId": "shared_sql",
+  "displayName": "SQL Server",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/sql/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-08-19T19:01:00.0000000Z",
+  "sourceGitCommit": "ae6395006a7dfb27df502f5ed40bc5604ddfefb8",
+  "sourcePath": "docs/Sql/index.yml",
+  "operations": {
+    "DeleteItem": {
+      "operationId": "DeleteItem",
+      "kind": "action",
+      "displayName": "Delete row [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DeleteItem",
+      "parameters": [
+        {
+          "name": "Table name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Name of table"
+        },
+        {
+          "name": "Row id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of the row to delete"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteItem_V2": {
+      "operationId": "DeleteItem_V2",
+      "kind": "action",
+      "displayName": "Delete row (V2)",
+      "deprecated": false,
+      "description": "- DeleteItem_V2",
+      "parameters": [
+        {
+          "name": "Server name",
+          "key": "server",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL server"
+        },
+        {
+          "name": "Database name",
+          "key": "database",
+          "required": true,
+          "type": "string",
+          "description": "Database name"
+        },
+        {
+          "name": "Table name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Name of table"
+        },
+        {
+          "name": "Row id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of the row to delete"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ExecutePassThroughNativeQuery": {
+      "operationId": "ExecutePassThroughNativeQuery",
+      "kind": "action",
+      "displayName": "Execute a SQL query [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ExecutePassThroughNativeQuery",
+      "parameters": [
+        {
+          "name": "Query",
+          "key": "query",
+          "required": true,
+          "type": "dynamic",
+          "description": "query body"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "ExecutePassThroughNativeQuery_V2": {
+      "operationId": "ExecutePassThroughNativeQuery_V2",
+      "kind": "action",
+      "displayName": "Execute a SQL query (V2)",
+      "deprecated": false,
+      "description": "- ExecutePassThroughNativeQuery_V2",
+      "parameters": [
+        {
+          "name": "Server name",
+          "key": "server",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL server"
+        },
+        {
+          "name": "Database name",
+          "key": "database",
+          "required": true,
+          "type": "string",
+          "description": "Database name"
+        },
+        {
+          "name": "Query",
+          "key": "query",
+          "required": true,
+          "type": "dynamic",
+          "description": "query body"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "ExecuteProcedure": {
+      "operationId": "ExecuteProcedure",
+      "kind": "action",
+      "displayName": "Execute stored procedure",
+      "deprecated": false,
+      "description": "- ExecuteProcedure",
+      "parameters": [
+        {
+          "name": "Procedure name",
+          "key": "procedure",
+          "required": true,
+          "type": "string",
+          "description": "Name of stored procedure"
+        },
+        {
+          "name": "Parameters list",
+          "key": "parameters",
+          "required": true,
+          "type": "dynamic",
+          "description": "Input parameters to the stored procedure"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "ExecuteProcedure_V2": {
+      "operationId": "ExecuteProcedure_V2",
+      "kind": "action",
+      "displayName": "Execute stored procedure (V2)",
+      "deprecated": false,
+      "description": "- ExecuteProcedure_V2",
+      "parameters": [
+        {
+          "name": "Server name",
+          "key": "server",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL server"
+        },
+        {
+          "name": "Database name",
+          "key": "database",
+          "required": true,
+          "type": "string",
+          "description": "Database name"
+        },
+        {
+          "name": "Procedure name",
+          "key": "procedure",
+          "required": true,
+          "type": "string",
+          "description": "Name of stored procedure"
+        },
+        {
+          "name": "Parameters list",
+          "key": "parameters",
+          "required": true,
+          "type": "dynamic",
+          "description": "Input parameters to the stored procedure"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetItem": {
+      "operationId": "GetItem",
+      "kind": "action",
+      "displayName": "Get row [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetItem",
+      "parameters": [
+        {
+          "name": "Table name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL table"
+        },
+        {
+          "name": "Row id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of the row to retrieve"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetItem_V2": {
+      "operationId": "GetItem_V2",
+      "kind": "action",
+      "displayName": "Get row (V2)",
+      "deprecated": false,
+      "description": "- GetItem_V2",
+      "parameters": [
+        {
+          "name": "Server name",
+          "key": "server",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL server"
+        },
+        {
+          "name": "Database name",
+          "key": "database",
+          "required": true,
+          "type": "string",
+          "description": "Database name"
+        },
+        {
+          "name": "Table name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL table"
+        },
+        {
+          "name": "Row id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of the row to retrieve"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetItems": {
+      "operationId": "GetItems",
+      "kind": "action",
+      "displayName": "Get rows [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetItems",
+      "parameters": [
+        {
+          "name": "Table name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL table"
+        },
+        {
+          "name": "Aggregation transformation",
+          "key": "$apply",
+          "required": false,
+          "type": "string",
+          "description": "A sequence of OData aggregation transformations"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA filter query to restrict the entries returned (e.g. stringColumn eq 'string' OR numberColumn lt 123)."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Skip Count",
+          "key": "$skip",
+          "required": false,
+          "type": "integer",
+          "description": "The number of entries to skip (default = 0)."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Select Query",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "Specific fields to retrieve from entries (default = all)."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetItems_V2": {
+      "operationId": "GetItems_V2",
+      "kind": "action",
+      "displayName": "Get rows (V2)",
+      "deprecated": false,
+      "description": "- GetItems_V2",
+      "parameters": [
+        {
+          "name": "Server name",
+          "key": "server",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL server"
+        },
+        {
+          "name": "Database name",
+          "key": "database",
+          "required": true,
+          "type": "string",
+          "description": "Database name"
+        },
+        {
+          "name": "Table name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL table"
+        },
+        {
+          "name": "Aggregation transformation",
+          "key": "$apply",
+          "required": false,
+          "type": "string",
+          "description": "A sequence of OData aggregation transformations"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA filter query to restrict the entries returned (e.g. stringColumn eq 'string' OR numberColumn lt 123)."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Skip Count",
+          "key": "$skip",
+          "required": false,
+          "type": "integer",
+          "description": "The number of entries to skip (default = 0)."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Select Query",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "Specific fields to retrieve from entries (default = all)."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetOnNewItems": {
+      "operationId": "GetOnNewItems",
+      "kind": "trigger",
+      "displayName": "When an item is created [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetOnNewItems",
+      "parameters": [
+        {
+          "name": "Table name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL table"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA filter query to restrict the entries returned (e.g. stringColumn eq 'string' OR numberColumn lt 123)."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Select Query",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "Specific fields to retrieve from entries (default = all)."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetOnNewItems_V2": {
+      "operationId": "GetOnNewItems_V2",
+      "kind": "trigger",
+      "displayName": "When an item is created (V2)",
+      "deprecated": false,
+      "description": "- GetOnNewItems_V2",
+      "parameters": [
+        {
+          "name": "Server name",
+          "key": "server",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL server"
+        },
+        {
+          "name": "Database name",
+          "key": "database",
+          "required": true,
+          "type": "string",
+          "description": "Database name"
+        },
+        {
+          "name": "Table name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL table"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA filter query to restrict the entries returned (e.g. stringColumn eq 'string' OR numberColumn lt 123)."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Select Query",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "Specific fields to retrieve from entries (default = all)."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetOnUpdatedItems": {
+      "operationId": "GetOnUpdatedItems",
+      "kind": "trigger",
+      "displayName": "When an item is modified [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetOnUpdatedItems",
+      "parameters": [
+        {
+          "name": "Table name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL table"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA filter query to restrict the entries returned (e.g. stringColumn eq 'string' OR numberColumn lt 123)."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Select Query",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "Specific fields to retrieve from entries (default = all)."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetOnUpdatedItems_V2": {
+      "operationId": "GetOnUpdatedItems_V2",
+      "kind": "trigger",
+      "displayName": "When an item is modified (V2)",
+      "deprecated": false,
+      "description": "- GetOnUpdatedItems_V2",
+      "parameters": [
+        {
+          "name": "Server name",
+          "key": "server",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL server"
+        },
+        {
+          "name": "Database name",
+          "key": "database",
+          "required": true,
+          "type": "string",
+          "description": "Database name"
+        },
+        {
+          "name": "Table name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL table"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA filter query to restrict the entries returned (e.g. stringColumn eq 'string' OR numberColumn lt 123)."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Select Query",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "Specific fields to retrieve from entries (default = all)."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetTables": {
+      "operationId": "GetTables",
+      "kind": "action",
+      "displayName": "Lists tables exposed by the connection [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetTables",
+      "parameters": [],
+      "returns": {
+        "raw": "Represents a list of tables.\n- Body\n- TablesList"
+      }
+    },
+    "GetTables_V2": {
+      "operationId": "GetTables_V2",
+      "kind": "action",
+      "displayName": "Get tables (V2)",
+      "deprecated": false,
+      "description": "- GetTables_V2",
+      "parameters": [
+        {
+          "name": "Server name",
+          "key": "server",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL server"
+        },
+        {
+          "name": "Database name",
+          "key": "database",
+          "required": true,
+          "type": "string",
+          "description": "Database name"
+        }
+      ],
+      "returns": {
+        "raw": "Represents a list of tables.\n- Body\n- TablesList"
+      }
+    },
+    "PatchItem": {
+      "operationId": "PatchItem",
+      "kind": "action",
+      "displayName": "Update row [DEPRECATED]",
+      "deprecated": true,
+      "description": "- PatchItem",
+      "parameters": [
+        {
+          "name": "Table name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Name of table"
+        },
+        {
+          "name": "Row id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of the row to update"
+        },
+        {
+          "name": "Row",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Row with updated values"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "PatchItem_V2": {
+      "operationId": "PatchItem_V2",
+      "kind": "action",
+      "displayName": "Update row (V2)",
+      "deprecated": false,
+      "description": "- PatchItem_V2",
+      "parameters": [
+        {
+          "name": "Server name",
+          "key": "server",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL server"
+        },
+        {
+          "name": "Database name",
+          "key": "database",
+          "required": true,
+          "type": "string",
+          "description": "Database name"
+        },
+        {
+          "name": "Table name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Name of table"
+        },
+        {
+          "name": "Row id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of the row to update"
+        },
+        {
+          "name": "Row",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Row with updated values"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "PostItem": {
+      "operationId": "PostItem",
+      "kind": "action",
+      "displayName": "Insert row [DEPRECATED]",
+      "deprecated": true,
+      "description": "- PostItem",
+      "parameters": [
+        {
+          "name": "Table name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Name of table"
+        },
+        {
+          "name": "Row",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Row to insert into the specified table"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "PostItem_V2": {
+      "operationId": "PostItem_V2",
+      "kind": "action",
+      "displayName": "Insert row (V2)",
+      "deprecated": false,
+      "description": "- PostItem_V2",
+      "parameters": [
+        {
+          "name": "Server name",
+          "key": "server",
+          "required": true,
+          "type": "string",
+          "description": "Name of SQL server"
+        },
+        {
+          "name": "Database name",
+          "key": "database",
+          "required": true,
+          "type": "string",
+          "description": "Database name"
+        },
+        {
+          "name": "Table name",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Name of table"
+        },
+        {
+          "name": "Row",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Row to insert into the specified table"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "SqlExecutePassThroughPowerQuery": {
+      "operationId": "SqlExecutePassThroughPowerQuery",
+      "kind": "action",
+      "displayName": "Transform data using Power Query",
+      "deprecated": false,
+      "description": "- SqlExecutePassThroughPowerQuery",
+      "parameters": [
+        {
+          "name": "query",
+          "key": "query",
+          "required": false,
+          "type": "mquery",
+          "description": "Query Text"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

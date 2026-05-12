@@ -1,0 +1,957 @@
+{
+  "connectorId": "shared_azuretables",
+  "displayName": "Azure Table Storage",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azuretables/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-11-04T19:00:00.0000000Z",
+  "sourceGitCommit": "ebae6cad213ce08ef1a49556da0cfb74235fb057",
+  "sourcePath": "docs/azuretables/index.yml",
+  "operations": {
+    "CreateEntity": {
+      "operationId": "CreateEntity",
+      "kind": "action",
+      "displayName": "Insert Entity [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateEntity",
+      "parameters": [
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        }
+      ],
+      "returns": {
+        "raw": "Data for a single entity\n- Entity\n- InsertEntityResponse"
+      }
+    },
+    "CreateEntity_V2": {
+      "operationId": "CreateEntity_V2",
+      "kind": "action",
+      "displayName": "Insert Entity (V2)",
+      "deprecated": false,
+      "description": "- CreateEntity_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or table endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or table endpoint."
+        },
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        }
+      ],
+      "returns": {
+        "raw": "Data for a single entity\n- Entity\n- InsertEntityResponse"
+      }
+    },
+    "CreateTable": {
+      "operationId": "CreateTable",
+      "kind": "action",
+      "displayName": "Create table [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateTable",
+      "parameters": [
+        {
+          "name": "Table",
+          "key": "TableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the new table"
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request."
+        }
+      ],
+      "returns": {
+        "raw": "The metadata for the table\n- Table metadata\n- getTableResponse"
+      }
+    },
+    "CreateTable_V2": {
+      "operationId": "CreateTable_V2",
+      "kind": "action",
+      "displayName": "Create table (V2)",
+      "deprecated": false,
+      "description": "- CreateTable_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or table endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or table endpoint."
+        },
+        {
+          "name": "Table",
+          "key": "TableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the new table"
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request."
+        }
+      ],
+      "returns": {
+        "raw": "The metadata for the table\n- Table metadata\n- getTableResponse"
+      }
+    },
+    "DeleteEntity": {
+      "operationId": "DeleteEntity",
+      "kind": "action",
+      "displayName": "Delete Entity [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DeleteEntity",
+      "parameters": [
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Partition Key",
+          "key": "PartitionKey",
+          "required": true,
+          "type": "string",
+          "description": "The partition id containing this entity"
+        },
+        {
+          "name": "Row Key",
+          "key": "RowKey",
+          "required": true,
+          "type": "string",
+          "description": "The row id containing this entity"
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        },
+        {
+          "name": "ETag",
+          "key": "If-Match",
+          "required": false,
+          "type": "string",
+          "description": "Etag to match for concurrency. \\* to match all values."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteEntity_V2": {
+      "operationId": "DeleteEntity_V2",
+      "kind": "action",
+      "displayName": "Delete Entity (V2)",
+      "deprecated": false,
+      "description": "- DeleteEntity_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or table endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or table endpoint."
+        },
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Partition Key",
+          "key": "PartitionKey",
+          "required": true,
+          "type": "string",
+          "description": "The partition id containing this entity"
+        },
+        {
+          "name": "Row Key",
+          "key": "RowKey",
+          "required": true,
+          "type": "string",
+          "description": "The row id containing this entity"
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        },
+        {
+          "name": "ETag",
+          "key": "If-Match",
+          "required": false,
+          "type": "string",
+          "description": "Etag to match for concurrency. \\* to match all values."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteTable": {
+      "operationId": "DeleteTable",
+      "kind": "action",
+      "displayName": "Delete a table [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DeleteTable",
+      "parameters": [
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteTable_V2": {
+      "operationId": "DeleteTable_V2",
+      "kind": "action",
+      "displayName": "Delete a table (V2)",
+      "deprecated": false,
+      "description": "- DeleteTable_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or table endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or table endpoint."
+        },
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetEntities": {
+      "operationId": "GetEntities",
+      "kind": "action",
+      "displayName": "Get entities [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetEntities",
+      "parameters": [
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "OData filter query for which entities to return. Example: Column eq 'Value' and Column2 ne 2. Invalid OData queries, such as not wrapping string values in quotes will return 501."
+        },
+        {
+          "name": "Select Query",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "OData select query for the columns to be returned. Example: Column, PartitionKey"
+        }
+      ],
+      "returns": {
+        "raw": "Entity Response Object\n- Get entities result\n- getEntitiesResponse"
+      }
+    },
+    "GetEntities_V2": {
+      "operationId": "GetEntities_V2",
+      "kind": "action",
+      "displayName": "Get entities (V2)",
+      "deprecated": false,
+      "description": "- GetEntities_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or table endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or table endpoint."
+        },
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "OData filter query for which entities to return. Example: Column eq 'Value' and Column2 ne 2. Invalid OData queries, such as not wrapping string values in quotes will return 501."
+        },
+        {
+          "name": "Select Query",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "OData select query for the columns to be returned. Example: Column, PartitionKey"
+        }
+      ],
+      "returns": {
+        "raw": "Entity Response Object\n- Get entities result\n- getEntitiesResponse"
+      }
+    },
+    "GetEntity": {
+      "operationId": "GetEntity",
+      "kind": "action",
+      "displayName": "Get entity [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetEntity",
+      "parameters": [
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Partition Key",
+          "key": "PartitionKey",
+          "required": true,
+          "type": "string",
+          "description": "The partition id containing this entity"
+        },
+        {
+          "name": "Row Key",
+          "key": "RowKey",
+          "required": true,
+          "type": "string",
+          "description": "The row id containing this entity"
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request."
+        },
+        {
+          "name": "Select Query",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "OData select query for the columns to be returned. Example: Column, PartitionKey"
+        }
+      ],
+      "returns": {
+        "raw": "An entity\n- An entity\n- getEntityResponse"
+      }
+    },
+    "GetEntity_V2": {
+      "operationId": "GetEntity_V2",
+      "kind": "action",
+      "displayName": "Get entity (V2)",
+      "deprecated": false,
+      "description": "- GetEntity_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or table endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or table endpoint."
+        },
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Partition Key",
+          "key": "PartitionKey",
+          "required": true,
+          "type": "string",
+          "description": "The partition id containing this entity"
+        },
+        {
+          "name": "Row Key",
+          "key": "RowKey",
+          "required": true,
+          "type": "string",
+          "description": "The row id containing this entity"
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request."
+        },
+        {
+          "name": "Select Query",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "OData select query for the columns to be returned. Example: Column, PartitionKey"
+        }
+      ],
+      "returns": {
+        "raw": "An entity\n- An entity\n- getEntityResponse"
+      }
+    },
+    "GetTable": {
+      "operationId": "GetTable",
+      "kind": "action",
+      "displayName": "Get a table [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetTable",
+      "parameters": [
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request."
+        }
+      ],
+      "returns": {
+        "raw": "The metadata for the table\n- Table metadata\n- getTableResponse"
+      }
+    },
+    "GetTable_V2": {
+      "operationId": "GetTable_V2",
+      "kind": "action",
+      "displayName": "Get a table (V2)",
+      "deprecated": false,
+      "description": "- GetTable_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or table endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or table endpoint."
+        },
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request."
+        }
+      ],
+      "returns": {
+        "raw": "The metadata for the table\n- Table metadata\n- getTableResponse"
+      }
+    },
+    "GetTables": {
+      "operationId": "GetTables",
+      "kind": "action",
+      "displayName": "List tables [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetTables",
+      "parameters": [
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request."
+        }
+      ],
+      "returns": {
+        "raw": "Table query response object\n- Body\n- getTablesResponse"
+      }
+    },
+    "GetTables_V2": {
+      "operationId": "GetTables_V2",
+      "kind": "action",
+      "displayName": "List tables (V2)",
+      "deprecated": false,
+      "description": "- GetTables_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or table endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or table endpoint."
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request."
+        }
+      ],
+      "returns": {
+        "raw": "Table query response object\n- Body\n- getTablesResponse"
+      }
+    },
+    "InsertMergeEntity": {
+      "operationId": "InsertMergeEntity",
+      "kind": "action",
+      "displayName": "Insert or Merge Entity [DEPRECATED]",
+      "deprecated": true,
+      "description": "- InsertMergeEntity",
+      "parameters": [
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Partition Key",
+          "key": "PartitionKey",
+          "required": true,
+          "type": "string",
+          "description": "The partition id containing this entity"
+        },
+        {
+          "name": "Row Key",
+          "key": "RowKey",
+          "required": true,
+          "type": "string",
+          "description": "The row id containing this entity"
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "InsertMergeEntity_V2": {
+      "operationId": "InsertMergeEntity_V2",
+      "kind": "action",
+      "displayName": "Insert or Merge Entity (V2)",
+      "deprecated": false,
+      "description": "- InsertMergeEntity_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or table endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or table endpoint."
+        },
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Partition Key",
+          "key": "PartitionKey",
+          "required": true,
+          "type": "string",
+          "description": "The partition id containing this entity"
+        },
+        {
+          "name": "Row Key",
+          "key": "RowKey",
+          "required": true,
+          "type": "string",
+          "description": "The row id containing this entity"
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "InsertReplaceEntity": {
+      "operationId": "InsertReplaceEntity",
+      "kind": "action",
+      "displayName": "Insert or Replace Entity [DEPRECATED]",
+      "deprecated": true,
+      "description": "- InsertReplaceEntity",
+      "parameters": [
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Partition Key",
+          "key": "PartitionKey",
+          "required": true,
+          "type": "string",
+          "description": "The partition id containing this entity"
+        },
+        {
+          "name": "Row Key",
+          "key": "RowKey",
+          "required": true,
+          "type": "string",
+          "description": "The row id containing this entity"
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request.."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "InsertReplaceEntity_V2": {
+      "operationId": "InsertReplaceEntity_V2",
+      "kind": "action",
+      "displayName": "Insert or Replace Entity (V2)",
+      "deprecated": false,
+      "description": "- InsertReplaceEntity_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or table endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or table endpoint."
+        },
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Partition Key",
+          "key": "PartitionKey",
+          "required": true,
+          "type": "string",
+          "description": "The partition id containing this entity"
+        },
+        {
+          "name": "Row Key",
+          "key": "RowKey",
+          "required": true,
+          "type": "string",
+          "description": "The row id containing this entity"
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request.."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "MergeEntity": {
+      "operationId": "MergeEntity",
+      "kind": "action",
+      "displayName": "Merge Entity [DEPRECATED]",
+      "deprecated": true,
+      "description": "- MergeEntity",
+      "parameters": [
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Partition Key",
+          "key": "PartitionKey",
+          "required": true,
+          "type": "string",
+          "description": "The partition id containing this entity"
+        },
+        {
+          "name": "Row Key",
+          "key": "RowKey",
+          "required": true,
+          "type": "string",
+          "description": "The row id containing this entity"
+        },
+        {
+          "name": "ETag",
+          "key": "If-Match",
+          "required": true,
+          "type": "string",
+          "description": "Etag to match for concurrency. \\* to match all values."
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "MergeEntity_V2": {
+      "operationId": "MergeEntity_V2",
+      "kind": "action",
+      "displayName": "Merge Entity (V2)",
+      "deprecated": false,
+      "description": "- MergeEntity_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or table endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or table endpoint."
+        },
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Partition Key",
+          "key": "PartitionKey",
+          "required": true,
+          "type": "string",
+          "description": "The partition id containing this entity"
+        },
+        {
+          "name": "Row Key",
+          "key": "RowKey",
+          "required": true,
+          "type": "string",
+          "description": "The row id containing this entity"
+        },
+        {
+          "name": "ETag",
+          "key": "If-Match",
+          "required": true,
+          "type": "string",
+          "description": "Etag to match for concurrency. \\* to match all values."
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for tracking the request."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ReplaceEntity": {
+      "operationId": "ReplaceEntity",
+      "kind": "action",
+      "displayName": "Replace Entity [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ReplaceEntity",
+      "parameters": [
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Partition Key",
+          "key": "PartitionKey",
+          "required": true,
+          "type": "string",
+          "description": "The partition id containing this entity"
+        },
+        {
+          "name": "Row Key",
+          "key": "RowKey",
+          "required": true,
+          "type": "string",
+          "description": "The row id containing this entity"
+        },
+        {
+          "name": "ETag",
+          "key": "If-Match",
+          "required": true,
+          "type": "string",
+          "description": "ETag to match for concurrency. \\* to match all values."
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ReplaceEntity_V2": {
+      "operationId": "ReplaceEntity_V2",
+      "kind": "action",
+      "displayName": "Replace Entity (V2)",
+      "deprecated": false,
+      "description": "- ReplaceEntity_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or table endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or table endpoint."
+        },
+        {
+          "name": "Table",
+          "key": "tableName",
+          "required": true,
+          "type": "string",
+          "description": "Specify the table."
+        },
+        {
+          "name": "Partition Key",
+          "key": "PartitionKey",
+          "required": true,
+          "type": "string",
+          "description": "The partition id containing this entity"
+        },
+        {
+          "name": "Row Key",
+          "key": "RowKey",
+          "required": true,
+          "type": "string",
+          "description": "The row id containing this entity"
+        },
+        {
+          "name": "ETag",
+          "key": "If-Match",
+          "required": true,
+          "type": "string",
+          "description": "ETag to match for concurrency. \\* to match all values."
+        },
+        {
+          "name": "Client Request Id",
+          "key": "x-ms-client-request-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

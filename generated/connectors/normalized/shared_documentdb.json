@@ -1,0 +1,1917 @@
+{
+  "connectorId": "shared_documentdb",
+  "displayName": "Azure Cosmos DB",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/documentdb/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-07-02T01:01:00.0000000Z",
+  "sourceGitCommit": "70b4ce8e0e173553e34b919ec1525f9f4460f1b2",
+  "sourcePath": "docs/DocumentDB/index.yml",
+  "operations": {
+    "CreateDocument": {
+      "operationId": "CreateDocument",
+      "kind": "action",
+      "displayName": "Create or update document [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateDocument",
+      "parameters": [
+        {
+          "name": "Partition key value",
+          "key": "x-ms-documentdb-raw-partitionkey",
+          "required": false,
+          "type": "string",
+          "description": "The partition key value for the requested document or attachment operation."
+        },
+        {
+          "name": "Max Item Count",
+          "key": "x-ms-max-item-count",
+          "required": false,
+          "type": "number",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "x-ms-continuation",
+          "required": false,
+          "type": "string",
+          "description": "A string token returned for queries and read-feed operations if there are more results to be read."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "x-ms-consistency-level",
+          "required": false,
+          "type": "string",
+          "description": "This is the consistency level override. The valid values are: Strong, Bounded, Session, or Eventual (in order of strongest to weakest)."
+        },
+        {
+          "name": "Session Token",
+          "key": "x-ms-session-token",
+          "required": false,
+          "type": "string",
+          "description": "A string token used with session level consistency."
+        },
+        {
+          "name": "Activity id",
+          "key": "x-ms-activity-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        },
+        {
+          "name": "IsUpsert",
+          "key": "x-ms-documentdb-is-upsert",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to true, the document will be replaced if it exists else created."
+        },
+        {
+          "name": "Pre-Trigger",
+          "key": "x-ms-documentdb-pre-trigger-include",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of trigger names to run before the document operation is executed."
+        },
+        {
+          "name": "Post-Trigger",
+          "key": "x-ms-documentdb-post-trigger-include",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of trigger names to run after the document operation is executed."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- postDocumentsResponse"
+      }
+    },
+    "CreateDocumentV2": {
+      "operationId": "CreateDocumentV2",
+      "kind": "action",
+      "displayName": "Create or update document (V2) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateDocumentV2",
+      "parameters": [
+        {
+          "name": "Max Item Count",
+          "key": "x-ms-max-item-count",
+          "required": false,
+          "type": "number",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "x-ms-continuation",
+          "required": false,
+          "type": "string",
+          "description": "A string token returned for queries and read-feed operations if there are more results to be read."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "x-ms-consistency-level",
+          "required": false,
+          "type": "string",
+          "description": "This is the consistency level override. The valid values are: Strong, Bounded, Session, or Eventual (in order of strongest to weakest)."
+        },
+        {
+          "name": "Session Token",
+          "key": "x-ms-session-token",
+          "required": false,
+          "type": "string",
+          "description": "A string token used with session level consistency."
+        },
+        {
+          "name": "Activity id",
+          "key": "x-ms-activity-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        },
+        {
+          "name": "IsUpsert",
+          "key": "x-ms-documentdb-is-upsert",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to true, the document will be replaced if it exists else created."
+        },
+        {
+          "name": "Pre-Trigger",
+          "key": "x-ms-documentdb-pre-trigger-include",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of trigger names to run before the document operation is executed."
+        },
+        {
+          "name": "Post-Trigger",
+          "key": "x-ms-documentdb-post-trigger-include",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of trigger names to run after the document operation is executed."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- postDocumentsResponse"
+      }
+    },
+    "CreateDocument_V3": {
+      "operationId": "CreateDocument_V3",
+      "kind": "action",
+      "displayName": "Create or update document (V3)",
+      "deprecated": false,
+      "description": "- CreateDocument_V3",
+      "parameters": [
+        {
+          "name": "Max Item Count",
+          "key": "x-ms-max-item-count",
+          "required": false,
+          "type": "number",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "x-ms-continuation",
+          "required": false,
+          "type": "string",
+          "description": "A string token returned for queries and read-feed operations if there are more results to be read."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "x-ms-consistency-level",
+          "required": false,
+          "type": "string",
+          "description": "This is the consistency level override. The valid values are: Strong, Bounded, Session, or Eventual (in order of strongest to weakest)."
+        },
+        {
+          "name": "Session Token",
+          "key": "x-ms-session-token",
+          "required": false,
+          "type": "string",
+          "description": "A string token used with session level consistency."
+        },
+        {
+          "name": "Activity id",
+          "key": "x-ms-activity-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        },
+        {
+          "name": "IsUpsert",
+          "key": "x-ms-documentdb-is-upsert",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to true, the document will be replaced if it exists else created."
+        },
+        {
+          "name": "Pre-Trigger",
+          "key": "x-ms-documentdb-pre-trigger-include",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of trigger names to run before the document operation is executed."
+        },
+        {
+          "name": "Post-Trigger",
+          "key": "x-ms-documentdb-post-trigger-include",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of trigger names to run after the document operation is executed."
+        },
+        {
+          "name": "Azure Cosmos DB account name",
+          "key": "cosmosDbAccountName",
+          "required": true,
+          "type": "string",
+          "description": "The Azure Cosmos DB account name (without documents.azure.com)."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- postDocumentsResponse"
+      }
+    },
+    "CreateStoredProcedure": {
+      "operationId": "CreateStoredProcedure",
+      "kind": "action",
+      "displayName": "Create stored procedure [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateStoredProcedure",
+      "parameters": [
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Function definition",
+          "key": "body",
+          "required": false,
+          "type": "string",
+          "description": "Function that defines the stored procedure, e.g. 'function(params){ ... }'"
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "New id of the stored procedure."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- createStoredProcedureResponse"
+      }
+    },
+    "CreateStoredProcedure_V2": {
+      "operationId": "CreateStoredProcedure_V2",
+      "kind": "action",
+      "displayName": "Create stored procedure (V2)",
+      "deprecated": false,
+      "description": "- CreateStoredProcedure_V2",
+      "parameters": [
+        {
+          "name": "Azure Cosmos DB account name",
+          "key": "cosmosDbAccountName",
+          "required": true,
+          "type": "string",
+          "description": "The Azure Cosmos DB account name (without documents.azure.com)."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Function definition",
+          "key": "body",
+          "required": false,
+          "type": "string",
+          "description": "Function that defines the stored procedure, e.g. 'function(params){ ... }'"
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "New id of the stored procedure."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- createStoredProcedureResponse"
+      }
+    },
+    "DeleteDocument": {
+      "operationId": "DeleteDocument",
+      "kind": "action",
+      "displayName": "Delete a document [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DeleteDocument",
+      "parameters": [
+        {
+          "name": "Partition key value",
+          "key": "x-ms-documentdb-raw-partitionkey",
+          "required": false,
+          "type": "string",
+          "description": "The partition key value for the requested document or attachment operation."
+        },
+        {
+          "name": "Max Item Count",
+          "key": "x-ms-max-item-count",
+          "required": false,
+          "type": "number",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "x-ms-continuation",
+          "required": false,
+          "type": "string",
+          "description": "A string token returned for queries and read-feed operations if there are more results to be read."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "x-ms-consistency-level",
+          "required": false,
+          "type": "string",
+          "description": "This is the consistency level override. The valid values are: Strong, Bounded, Session, or Eventual (in order of strongest to weakest)."
+        },
+        {
+          "name": "Session Token",
+          "key": "x-ms-session-token",
+          "required": false,
+          "type": "string",
+          "description": "A string token used with session level consistency."
+        },
+        {
+          "name": "Activity id",
+          "key": "x-ms-activity-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        },
+        {
+          "name": "Pre-Trigger",
+          "key": "x-ms-documentdb-pre-trigger-include",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of trigger names to run before the document operation is executed."
+        },
+        {
+          "name": "Post-Trigger",
+          "key": "x-ms-documentdb-post-trigger-include",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of trigger names to run after the document operation is executed."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Document ID",
+          "key": "documentId",
+          "required": true,
+          "type": "string",
+          "description": "The identifier of the document."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteDocument_V2": {
+      "operationId": "DeleteDocument_V2",
+      "kind": "action",
+      "displayName": "Delete a document (V2)",
+      "deprecated": false,
+      "description": "- DeleteDocument_V2",
+      "parameters": [
+        {
+          "name": "Partition key value",
+          "key": "x-ms-documentdb-raw-partitionkey",
+          "required": false,
+          "type": "string",
+          "description": "The partition key value for the requested document or attachment operation."
+        },
+        {
+          "name": "Max Item Count",
+          "key": "x-ms-max-item-count",
+          "required": false,
+          "type": "number",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "x-ms-continuation",
+          "required": false,
+          "type": "string",
+          "description": "A string token returned for queries and read-feed operations if there are more results to be read."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "x-ms-consistency-level",
+          "required": false,
+          "type": "string",
+          "description": "This is the consistency level override. The valid values are: Strong, Bounded, Session, or Eventual (in order of strongest to weakest)."
+        },
+        {
+          "name": "Session Token",
+          "key": "x-ms-session-token",
+          "required": false,
+          "type": "string",
+          "description": "A string token used with session level consistency."
+        },
+        {
+          "name": "Activity id",
+          "key": "x-ms-activity-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        },
+        {
+          "name": "Pre-Trigger",
+          "key": "x-ms-documentdb-pre-trigger-include",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of trigger names to run before the document operation is executed."
+        },
+        {
+          "name": "Post-Trigger",
+          "key": "x-ms-documentdb-post-trigger-include",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of trigger names to run after the document operation is executed."
+        },
+        {
+          "name": "Azure Cosmos DB account name",
+          "key": "cosmosDbAccountName",
+          "required": true,
+          "type": "string",
+          "description": "The Azure Cosmos DB account name (without documents.azure.com)."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Document ID",
+          "key": "documentId",
+          "required": true,
+          "type": "string",
+          "description": "The identifier of the document."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteStoredProcedure": {
+      "operationId": "DeleteStoredProcedure",
+      "kind": "action",
+      "displayName": "Delete stored procedure [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DeleteStoredProcedure",
+      "parameters": [
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Sproc ID",
+          "key": "sprocId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the stored procedure."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- string"
+      }
+    },
+    "DeleteStoredProcedure_V2": {
+      "operationId": "DeleteStoredProcedure_V2",
+      "kind": "action",
+      "displayName": "Delete stored procedure (V2)",
+      "deprecated": false,
+      "description": "- DeleteStoredProcedure_V2",
+      "parameters": [
+        {
+          "name": "Azure Cosmos DB account name",
+          "key": "cosmosDbAccountName",
+          "required": true,
+          "type": "string",
+          "description": "The Azure Cosmos DB account name (without documents.azure.com)."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Sproc ID",
+          "key": "sprocId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the stored procedure."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- string"
+      }
+    },
+    "ExecuteStoredProcedure": {
+      "operationId": "ExecuteStoredProcedure",
+      "kind": "action",
+      "displayName": "Execute stored procedure [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ExecuteStoredProcedure",
+      "parameters": [
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Partition key value",
+          "key": "x-ms-documentdb-raw-partitionkey",
+          "required": false,
+          "type": "string",
+          "description": "The partition key value for the requested document or attachment operation."
+        },
+        {
+          "name": "Sproc ID",
+          "key": "sprocId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the stored procedure."
+        },
+        {
+          "name": "Parameters for the stored procedure",
+          "key": "parameters",
+          "required": false,
+          "type": "string",
+          "description": "Specify valid JSON for the parameters of the stored procedure, e.g. [\"param1\", \"param2\"]."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- ObjectWithoutType"
+      }
+    },
+    "ExecuteStoredProcedure_V2": {
+      "operationId": "ExecuteStoredProcedure_V2",
+      "kind": "action",
+      "displayName": "Execute stored procedure (V2)",
+      "deprecated": false,
+      "description": "- ExecuteStoredProcedure_V2",
+      "parameters": [
+        {
+          "name": "Azure Cosmos DB account name",
+          "key": "cosmosDbAccountName",
+          "required": true,
+          "type": "string",
+          "description": "The Azure Cosmos DB account name (without documents.azure.com)."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Partition key value",
+          "key": "x-ms-documentdb-raw-partitionkey",
+          "required": false,
+          "type": "string",
+          "description": "The partition key value for the requested document or attachment operation."
+        },
+        {
+          "name": "Sproc ID",
+          "key": "sprocId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the stored procedure."
+        },
+        {
+          "name": "Parameters for the stored procedure",
+          "key": "parameters",
+          "required": false,
+          "type": "string",
+          "description": "Specify valid JSON for the parameters of the stored procedure, e.g. [\"param1\", \"param2\"]."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- ObjectWithoutType"
+      }
+    },
+    "GetDocument": {
+      "operationId": "GetDocument",
+      "kind": "action",
+      "displayName": "Get a document [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetDocument",
+      "parameters": [
+        {
+          "name": "Partition key value",
+          "key": "x-ms-documentdb-raw-partitionkey",
+          "required": false,
+          "type": "string",
+          "description": "The partition key value for the requested document or attachment operation."
+        },
+        {
+          "name": "Max Item Count",
+          "key": "x-ms-max-item-count",
+          "required": false,
+          "type": "number",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "x-ms-continuation",
+          "required": false,
+          "type": "string",
+          "description": "A string token returned for queries and read-feed operations if there are more results to be read."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "x-ms-consistency-level",
+          "required": false,
+          "type": "string",
+          "description": "This is the consistency level override. The valid values are: Strong, Bounded, Session, or Eventual (in order of strongest to weakest)."
+        },
+        {
+          "name": "Session Token",
+          "key": "x-ms-session-token",
+          "required": false,
+          "type": "string",
+          "description": "A string token used with session level consistency."
+        },
+        {
+          "name": "Activity id",
+          "key": "x-ms-activity-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Document ID",
+          "key": "documentId",
+          "required": true,
+          "type": "string",
+          "description": "The identifier for the document."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "GetDocument_V2": {
+      "operationId": "GetDocument_V2",
+      "kind": "action",
+      "displayName": "Get a document (V2)",
+      "deprecated": false,
+      "description": "- GetDocument_V2",
+      "parameters": [
+        {
+          "name": "Partition key value",
+          "key": "x-ms-documentdb-raw-partitionkey",
+          "required": false,
+          "type": "string",
+          "description": "The partition key value for the requested document or attachment operation."
+        },
+        {
+          "name": "Max Item Count",
+          "key": "x-ms-max-item-count",
+          "required": false,
+          "type": "number",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "x-ms-continuation",
+          "required": false,
+          "type": "string",
+          "description": "A string token returned for queries and read-feed operations if there are more results to be read."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "x-ms-consistency-level",
+          "required": false,
+          "type": "string",
+          "description": "This is the consistency level override. The valid values are: Strong, Bounded, Session, or Eventual (in order of strongest to weakest)."
+        },
+        {
+          "name": "Session Token",
+          "key": "x-ms-session-token",
+          "required": false,
+          "type": "string",
+          "description": "A string token used with session level consistency."
+        },
+        {
+          "name": "Activity id",
+          "key": "x-ms-activity-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        },
+        {
+          "name": "Azure Cosmos DB account name",
+          "key": "cosmosDbAccountName",
+          "required": true,
+          "type": "string",
+          "description": "The Azure Cosmos DB account name (without documents.azure.com)."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Document ID",
+          "key": "documentId",
+          "required": true,
+          "type": "string",
+          "description": "The identifier for the document."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "GetDocuments": {
+      "operationId": "GetDocuments",
+      "kind": "action",
+      "displayName": "Get all documents [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetDocuments",
+      "parameters": [
+        {
+          "name": "Partition key value",
+          "key": "x-ms-documentdb-raw-partitionkey",
+          "required": false,
+          "type": "string",
+          "description": "The partition key value for the requested document or attachment operation."
+        },
+        {
+          "name": "Max Item Count",
+          "key": "x-ms-max-item-count",
+          "required": false,
+          "type": "number",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "x-ms-continuation",
+          "required": false,
+          "type": "string",
+          "description": "A string token returned for queries and read-feed operations if there are more results to be read."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "x-ms-consistency-level",
+          "required": false,
+          "type": "string",
+          "description": "This is the consistency level override. The valid values are: Strong, Bounded, Session, or Eventual (in order of strongest to weakest)."
+        },
+        {
+          "name": "Session Token",
+          "key": "x-ms-session-token",
+          "required": false,
+          "type": "string",
+          "description": "A string token used with session level consistency."
+        },
+        {
+          "name": "Activity id",
+          "key": "x-ms-activity-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- getDocumentsResponse"
+      }
+    },
+    "GetDocumentsV2": {
+      "operationId": "GetDocumentsV2",
+      "kind": "action",
+      "displayName": "Get all documents V2 [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetDocumentsV2",
+      "parameters": [
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Partition key value",
+          "key": "partitionKey",
+          "required": false,
+          "type": "string",
+          "description": "If empty, all partitions will be used to search for documents."
+        },
+        {
+          "name": "Max Item Count",
+          "key": "maxItemCount",
+          "required": false,
+          "type": "integer",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "A token to fetch additional results."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "consistencyLevel",
+          "required": false,
+          "type": "string",
+          "description": "Consistency level required for the feed (query/read feed) operation."
+        },
+        {
+          "name": "Session Token",
+          "key": "sessionToken",
+          "required": false,
+          "type": "string",
+          "description": "The session token for use with session consistency."
+        }
+      ],
+      "returns": {
+        "raw": "Array of documents that match the requested query and the related metadata.\n- Body\n- DocumentsCollection"
+      }
+    },
+    "GetDocuments_V3": {
+      "operationId": "GetDocuments_V3",
+      "kind": "action",
+      "displayName": "Get all documents (V3)",
+      "deprecated": false,
+      "description": "- GetDocuments_V3",
+      "parameters": [
+        {
+          "name": "Partition key value",
+          "key": "x-ms-documentdb-raw-partitionkey",
+          "required": false,
+          "type": "string",
+          "description": "The partition key value for the requested document or attachment operation."
+        },
+        {
+          "name": "Max Item Count",
+          "key": "x-ms-max-item-count",
+          "required": false,
+          "type": "number",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "x-ms-continuation",
+          "required": false,
+          "type": "string",
+          "description": "A string token returned for queries and read-feed operations if there are more results to be read."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "x-ms-consistency-level",
+          "required": false,
+          "type": "string",
+          "description": "This is the consistency level override. The valid values are: Strong, Bounded, Session, or Eventual (in order of strongest to weakest)."
+        },
+        {
+          "name": "Session Token",
+          "key": "x-ms-session-token",
+          "required": false,
+          "type": "string",
+          "description": "A string token used with session level consistency."
+        },
+        {
+          "name": "Activity id",
+          "key": "x-ms-activity-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        },
+        {
+          "name": "Azure Cosmos DB account name",
+          "key": "cosmosDbAccountName",
+          "required": true,
+          "type": "string",
+          "description": "The Azure Cosmos DB account name (without documents.azure.com)."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- getDocumentsResponse"
+      }
+    },
+    "GetStoredProcedures": {
+      "operationId": "GetStoredProcedures",
+      "kind": "action",
+      "displayName": "Get stored procedures [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetStoredProcedures",
+      "parameters": [
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- getStoredProceduresResponse"
+      }
+    },
+    "GetStoredProcedures_V2": {
+      "operationId": "GetStoredProcedures_V2",
+      "kind": "action",
+      "displayName": "Get stored procedures (V2)",
+      "deprecated": false,
+      "description": "- GetStoredProcedures_V2",
+      "parameters": [
+        {
+          "name": "Azure Cosmos DB account name",
+          "key": "cosmosDbAccountName",
+          "required": true,
+          "type": "string",
+          "description": "The Azure Cosmos DB account name (without documents.azure.com)."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- getStoredProceduresResponse"
+      }
+    },
+    "QueryDocuments": {
+      "operationId": "QueryDocuments",
+      "kind": "action",
+      "displayName": "Query documents [DEPRECATED]",
+      "deprecated": true,
+      "description": "- QueryDocuments",
+      "parameters": [
+        {
+          "name": "Partition key value",
+          "key": "x-ms-documentdb-raw-partitionkey",
+          "required": false,
+          "type": "string",
+          "description": "The partition key value for the requested document or attachment operation."
+        },
+        {
+          "name": "Max Item Count",
+          "key": "x-ms-max-item-count",
+          "required": false,
+          "type": "number",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "x-ms-continuation",
+          "required": false,
+          "type": "string",
+          "description": "A string token returned for queries and read-feed operations if there are more results to be read."
+        },
+        {
+          "name": "Enable Cross Partition",
+          "key": "x-ms-documentdb-query-enablecrosspartition",
+          "required": false,
+          "type": "boolean",
+          "description": "If the collection is partitioned, this must be set to True to allow execution across multiple partitions."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "x-ms-consistency-level",
+          "required": false,
+          "type": "string",
+          "description": "This is the consistency level override. The valid values are: Strong, Bounded, Session, or Eventual (in order of strongest to weakest)."
+        },
+        {
+          "name": "Session Token",
+          "key": "x-ms-session-token",
+          "required": false,
+          "type": "string",
+          "description": "A string token used with session level consistency."
+        },
+        {
+          "name": "Activity id",
+          "key": "x-ms-activity-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "query",
+          "key": "query",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- queryResponse"
+      }
+    },
+    "QueryDocumentsV2": {
+      "operationId": "QueryDocumentsV2",
+      "kind": "action",
+      "displayName": "Query documents V2 [DEPRECATED]",
+      "deprecated": true,
+      "description": "- QueryDocumentsV2",
+      "parameters": [
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "QueryText",
+          "key": "QueryText",
+          "required": false,
+          "type": "string",
+          "description": "SQL Syntax Query over documents"
+        },
+        {
+          "name": "Partition key value",
+          "key": "partitionKey",
+          "required": false,
+          "type": "string",
+          "description": "Partition key value."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "A token to fetch additional results from the operation."
+        }
+      ],
+      "returns": {
+        "raw": "Array of documents that match the requested query and the related metadata.\n- Body\n- QueryDocumentsResponse"
+      }
+    },
+    "QueryDocumentsV3": {
+      "operationId": "QueryDocumentsV3",
+      "kind": "action",
+      "displayName": "Query documents V3 [DEPRECATED]",
+      "deprecated": true,
+      "description": "- QueryDocumentsV3",
+      "parameters": [
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "SQL Syntax Query",
+          "key": "queryText",
+          "required": true,
+          "type": "string",
+          "description": "SQL query."
+        },
+        {
+          "name": "Partition key value",
+          "key": "partitionKey",
+          "required": false,
+          "type": "string",
+          "description": "If empty, all partitions will be used to search for documents."
+        },
+        {
+          "name": "Max Item Count",
+          "key": "maxItemCount",
+          "required": false,
+          "type": "integer",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "A token to fetch additional results."
+        },
+        {
+          "name": "Enable Cross Partition",
+          "key": "enableCrossPartition",
+          "required": false,
+          "type": "boolean",
+          "description": "Indicates whether user are enabled to send more than one request to execute the query."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "consistencyLevel",
+          "required": false,
+          "type": "string",
+          "description": "Consistency level required for the feed (query/read feed) operation."
+        },
+        {
+          "name": "Session Token",
+          "key": "sessionToken",
+          "required": false,
+          "type": "string",
+          "description": "The session token for use with session consistency."
+        }
+      ],
+      "returns": {
+        "raw": "Array of documents that match the requested query and the related metadata.\n- Body\n- DocumentsCollection"
+      }
+    },
+    "QueryDocumentsV4": {
+      "operationId": "QueryDocumentsV4",
+      "kind": "action",
+      "displayName": "Query documents V4 [DEPRECATED]",
+      "deprecated": true,
+      "description": "- QueryDocumentsV4",
+      "parameters": [
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Container ID",
+          "key": "containerId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the container."
+        },
+        {
+          "name": "SQL Syntax Query",
+          "key": "queryText",
+          "required": false,
+          "type": "string",
+          "description": "SQL query. If empty, will return all documents."
+        },
+        {
+          "name": "Partition key value",
+          "key": "partitionKey",
+          "required": false,
+          "type": "string",
+          "description": "If empty, all partitions will be used to search for documents."
+        },
+        {
+          "name": "Max Item Count",
+          "key": "maxItemCount",
+          "required": false,
+          "type": "integer",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "A token to fetch additional results."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "consistencyLevel",
+          "required": false,
+          "type": "string",
+          "description": "Consistency level required for the feed (query/read feed) operation."
+        },
+        {
+          "name": "Session Token",
+          "key": "sessionToken",
+          "required": false,
+          "type": "string",
+          "description": "The session token for use with session consistency."
+        }
+      ],
+      "returns": {
+        "raw": "Array of documents that match the requested query and the related metadata.\n- Body\n- DocumentsCollection"
+      }
+    },
+    "QueryDocuments_V5": {
+      "operationId": "QueryDocuments_V5",
+      "kind": "action",
+      "displayName": "Query documents V5",
+      "deprecated": false,
+      "description": "- QueryDocuments_V5",
+      "parameters": [
+        {
+          "name": "Azure Cosmos DB account name",
+          "key": "cosmosDbAccountName",
+          "required": true,
+          "type": "string",
+          "description": "The Azure Cosmos DB account name (without documents.azure.com)."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Container ID",
+          "key": "containerId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the container."
+        },
+        {
+          "name": "SQL Syntax Query",
+          "key": "queryText",
+          "required": false,
+          "type": "string",
+          "description": "SQL query. If empty, will return all documents."
+        },
+        {
+          "name": "Partition key value",
+          "key": "partitionKey",
+          "required": false,
+          "type": "string",
+          "description": "Value must be provided according to its type (\"string\", 42, 0.5). If empty, all partitions will be used to search for documents."
+        },
+        {
+          "name": "Max Item Count",
+          "key": "maxItemCount",
+          "required": false,
+          "type": "integer",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "A token to fetch additional results."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "consistencyLevel",
+          "required": false,
+          "type": "string",
+          "description": "Consistency level required for the feed (query/read feed) operation."
+        },
+        {
+          "name": "Session Token",
+          "key": "sessionToken",
+          "required": false,
+          "type": "string",
+          "description": "The session token for use with session consistency."
+        }
+      ],
+      "returns": {
+        "raw": "Array of documents that match the requested query and the related metadata.\n- Body\n- DocumentsCollection"
+      }
+    },
+    "ReplaceDocument": {
+      "operationId": "ReplaceDocument",
+      "kind": "action",
+      "displayName": "Replace a document [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ReplaceDocument",
+      "parameters": [
+        {
+          "name": "Partition key value",
+          "key": "x-ms-documentdb-raw-partitionkey",
+          "required": false,
+          "type": "string",
+          "description": "The partition key value for the requested document or attachment operation."
+        },
+        {
+          "name": "Max Item Count",
+          "key": "x-ms-max-item-count",
+          "required": false,
+          "type": "number",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "x-ms-continuation",
+          "required": false,
+          "type": "string",
+          "description": "A string token returned for queries and read-feed operations if there are more results to be read."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "x-ms-consistency-level",
+          "required": false,
+          "type": "string",
+          "description": "This is the consistency level override. The valid values are: Strong, Bounded, Session, or Eventual (in order of strongest to weakest)."
+        },
+        {
+          "name": "Session Token",
+          "key": "x-ms-session-token",
+          "required": false,
+          "type": "string",
+          "description": "A string token used with session level consistency."
+        },
+        {
+          "name": "Activity id",
+          "key": "x-ms-activity-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        },
+        {
+          "name": "Pre-Trigger",
+          "key": "x-ms-documentdb-pre-trigger-include",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of trigger names to run before the document operation is executed."
+        },
+        {
+          "name": "Post-Trigger",
+          "key": "x-ms-documentdb-post-trigger-include",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of trigger names to run after the document operation is executed."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Document ID",
+          "key": "documentId",
+          "required": true,
+          "type": "string",
+          "description": "The identifier of the document."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- putDocumentResponse"
+      }
+    },
+    "ReplaceDocument_V2": {
+      "operationId": "ReplaceDocument_V2",
+      "kind": "action",
+      "displayName": "Replace a document (V2)",
+      "deprecated": false,
+      "description": "- ReplaceDocument_V2",
+      "parameters": [
+        {
+          "name": "Partition key value",
+          "key": "x-ms-documentdb-raw-partitionkey",
+          "required": false,
+          "type": "string",
+          "description": "The partition key value for the requested document or attachment operation."
+        },
+        {
+          "name": "Max Item Count",
+          "key": "x-ms-max-item-count",
+          "required": false,
+          "type": "number",
+          "description": "An integer indicating the maximum number of items to be returned per page."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "x-ms-continuation",
+          "required": false,
+          "type": "string",
+          "description": "A string token returned for queries and read-feed operations if there are more results to be read."
+        },
+        {
+          "name": "Consistency Level",
+          "key": "x-ms-consistency-level",
+          "required": false,
+          "type": "string",
+          "description": "This is the consistency level override. The valid values are: Strong, Bounded, Session, or Eventual (in order of strongest to weakest)."
+        },
+        {
+          "name": "Session Token",
+          "key": "x-ms-session-token",
+          "required": false,
+          "type": "string",
+          "description": "A string token used with session level consistency."
+        },
+        {
+          "name": "Activity id",
+          "key": "x-ms-activity-id",
+          "required": false,
+          "type": "string",
+          "description": "A client supplied identifier for the operation, which will be echoed in the server response."
+        },
+        {
+          "name": "Pre-Trigger",
+          "key": "x-ms-documentdb-pre-trigger-include",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of trigger names to run before the document operation is executed."
+        },
+        {
+          "name": "Post-Trigger",
+          "key": "x-ms-documentdb-post-trigger-include",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of trigger names to run after the document operation is executed."
+        },
+        {
+          "name": "Azure Cosmos DB account name",
+          "key": "cosmosDbAccountName",
+          "required": true,
+          "type": "string",
+          "description": "The Azure Cosmos DB account name (without documents.azure.com)."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Document ID",
+          "key": "documentId",
+          "required": true,
+          "type": "string",
+          "description": "The identifier of the document."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- putDocumentResponse"
+      }
+    },
+    "ReplaceStoredProcedure": {
+      "operationId": "ReplaceStoredProcedure",
+      "kind": "action",
+      "displayName": "Replace stored procedure [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ReplaceStoredProcedure",
+      "parameters": [
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Sproc ID",
+          "key": "sprocId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the stored procedure."
+        },
+        {
+          "name": "Function definition",
+          "key": "body",
+          "required": false,
+          "type": "string",
+          "description": "Function that defines the stored procedure, e.g. 'function(params){ ... }'"
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Id of the existing stored procedure."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- createStoredProcedureResponse"
+      }
+    },
+    "ReplaceStoredProcedure_V2": {
+      "operationId": "ReplaceStoredProcedure_V2",
+      "kind": "action",
+      "displayName": "Replace stored procedure (V2)",
+      "deprecated": false,
+      "description": "- ReplaceStoredProcedure_V2",
+      "parameters": [
+        {
+          "name": "Azure Cosmos DB account name",
+          "key": "cosmosDbAccountName",
+          "required": true,
+          "type": "string",
+          "description": "The Azure Cosmos DB account name (without documents.azure.com)."
+        },
+        {
+          "name": "Database ID",
+          "key": "databaseId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the database."
+        },
+        {
+          "name": "Collection ID",
+          "key": "collectionId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the collection."
+        },
+        {
+          "name": "Sproc ID",
+          "key": "sprocId",
+          "required": true,
+          "type": "string",
+          "description": "The name of the stored procedure."
+        },
+        {
+          "name": "Function definition",
+          "key": "body",
+          "required": false,
+          "type": "string",
+          "description": "Function that defines the stored procedure, e.g. 'function(params){ ... }'"
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Id of the existing stored procedure."
+        },
+        {
+          "name": "API version",
+          "key": "x-ms-version",
+          "required": false,
+          "type": "string",
+          "description": "API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- createStoredProcedureResponse"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

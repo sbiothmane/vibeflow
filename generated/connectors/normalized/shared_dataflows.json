@@ -1,0 +1,77 @@
+{
+  "connectorId": "shared_dataflows",
+  "displayName": "Power Query Dataflows",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/dataflows/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-03-10T01:07:00.0000000Z",
+  "sourceGitCommit": "5c5799b61d661d98e1115eac606ed4ed2f3cc6d7",
+  "sourcePath": "docs/dataflows/index.yml",
+  "operations": {
+    "OnRefreshComplete": {
+      "operationId": "OnRefreshComplete",
+      "kind": "trigger",
+      "displayName": "When a dataflow refresh completes",
+      "deprecated": false,
+      "description": "- OnRefreshComplete",
+      "parameters": [
+        {
+          "name": "Group Type",
+          "key": "workspaceType",
+          "required": true,
+          "type": "string",
+          "description": "Select workspace or environment"
+        },
+        {
+          "name": "Group",
+          "key": "groupIdForOnRefreshComplete",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace or environment"
+        },
+        {
+          "name": "Dataflow",
+          "key": "dataflowIdForOnRefreshComplete",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the dataflow"
+        }
+      ],
+      "returns": {
+        "raw": "An individual dataflow refresh\n- Body\n- RefreshModel"
+      }
+    },
+    "RefreshDataflow": {
+      "operationId": "RefreshDataflow",
+      "kind": "action",
+      "displayName": "Refresh a dataflow",
+      "deprecated": false,
+      "description": "- RefreshDataflow",
+      "parameters": [
+        {
+          "name": "Group Type",
+          "key": "workspaceType",
+          "required": true,
+          "type": "string",
+          "description": "Select workspace or environment"
+        },
+        {
+          "name": "Group",
+          "key": "groupIdForRefreshDataflow",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the workspace or environment"
+        },
+        {
+          "name": "Dataflow",
+          "key": "dataflowIdForRefreshDataflow",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the dataflow"
+        }
+      ],
+      "returns": {
+        "raw": "The dataflow being refreshed\n- Body\n- DataflowModel"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

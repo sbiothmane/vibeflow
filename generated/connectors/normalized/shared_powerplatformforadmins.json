@@ -1,0 +1,1602 @@
+{
+  "connectorId": "shared_powerplatformforadmins",
+  "displayName": "Power Platform for Admins",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/powerplatformforadmins/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-03-26T01:07:00.0000000Z",
+  "sourceGitCommit": "ddd50f862a19e850e063936ce2b61ad4eec06165",
+  "sourcePath": "docs/powerplatformforadmins/index.yml",
+  "operations": {
+    "Add-AdminPowerAppsSyncUser": {
+      "operationId": "Add-AdminPowerAppsSyncUser",
+      "kind": "action",
+      "displayName": "Force Sync user",
+      "deprecated": false,
+      "description": "- Add-AdminPowerAppsSyncUser",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "ObjectId",
+          "key": "ObjectId",
+          "required": true,
+          "type": "string",
+          "description": "User object Id."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CreatePolicyV2": {
+      "operationId": "CreatePolicyV2",
+      "kind": "action",
+      "displayName": "Create DLP Policy V2",
+      "deprecated": false,
+      "description": "- CreatePolicyV2",
+      "parameters": [
+        {
+          "name": "Display name",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Default connectors classification",
+          "key": "defaultConnectorsClassification",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "classification",
+          "key": "classification",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Policy environment type",
+          "key": "environmentType",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- PolicyV2"
+      }
+    },
+    "DeletePolicyV2": {
+      "operationId": "DeletePolicyV2",
+      "kind": "action",
+      "displayName": "Delete DLP Policy V2",
+      "deprecated": false,
+      "description": "- DeletePolicyV2",
+      "parameters": [
+        {
+          "name": "Policy",
+          "key": "policy",
+          "required": true,
+          "type": "string",
+          "description": "The name field of the Policy."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "Edit-AdminDlpPolicy": {
+      "operationId": "Edit-AdminDlpPolicy",
+      "kind": "action",
+      "displayName": "Update Tenant DLP Policy",
+      "deprecated": false,
+      "description": "- Edit-AdminDlpPolicy",
+      "parameters": [
+        {
+          "name": "Policy",
+          "key": "policy",
+          "required": true,
+          "type": "string",
+          "description": "The name field of the Policy."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        },
+        {
+          "name": "Display Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": "Api Policy display name."
+        },
+        {
+          "name": "Schema Version",
+          "key": "$schema",
+          "required": true,
+          "type": "string",
+          "description": "Api Policy definition $schema."
+        },
+        {
+          "name": "Constraint Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Policy constraint type, leave blank to apply policy to all Environments."
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Policy Environment name field."
+        },
+        {
+          "name": "ID",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Policy Environment ID field."
+        },
+        {
+          "name": "Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Policy Environment type field."
+        },
+        {
+          "name": "Environment Filter Type",
+          "key": "filterType",
+          "required": true,
+          "type": "string",
+          "description": "Api Policy constraint environmentFilter1 parameter filterType."
+        },
+        {
+          "name": "Business Data description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": "Policy business data group description."
+        },
+        {
+          "name": "Connector ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Business Data connector ID field."
+        },
+        {
+          "name": "Connector Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "Business Data connector name field."
+        },
+        {
+          "name": "Connector Type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "Business Data connector type field."
+        },
+        {
+          "name": "Non Business Data description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": "Policy non business data group description."
+        },
+        {
+          "name": "Connector ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Non Business Data connector ID field."
+        },
+        {
+          "name": "Connector Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "Non Business Data connector name field."
+        },
+        {
+          "name": "Connector Type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "Non Business Data connector type field."
+        },
+        {
+          "name": "Default Group",
+          "key": "defaultApiGroup",
+          "required": true,
+          "type": "string",
+          "description": "Group a new connector is automatically added to."
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Policy rule apiGroupRule type."
+        },
+        {
+          "name": "apiGroup",
+          "key": "apiGroup",
+          "required": true,
+          "type": "string",
+          "description": "Policy rule apiGroupRule parameter apiGroup."
+        },
+        {
+          "name": "Block Action Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Block action type, leave blank if adding a block is not desired."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Policy"
+      }
+    },
+    "Edit-AdminEnvironmentRoleAssignment": {
+      "operationId": "Edit-AdminEnvironmentRoleAssignment",
+      "kind": "action",
+      "displayName": "Edit Environment Role Assignment",
+      "deprecated": false,
+      "description": "- Edit-AdminEnvironmentRoleAssignment",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        },
+        {
+          "name": "Principal Email",
+          "key": "email",
+          "required": false,
+          "type": "string",
+          "description": "The principal email of the user."
+        },
+        {
+          "name": "Principal Tenant ID",
+          "key": "tenantId",
+          "required": false,
+          "type": "string",
+          "description": "The principal tenant ID of the user."
+        },
+        {
+          "name": "Principal Object ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The principal object ID of the user."
+        },
+        {
+          "name": "Principal Type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "The principal type of the user."
+        },
+        {
+          "name": "Role Definition ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The role definition ID. Format: /providers/Microsoft.BusinessAppPlatform/scopes/admin/environments/{environment}/{roleName}."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The id field."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- RoleAssignment"
+      }
+    },
+    "EditEnvironmentPolicy": {
+      "operationId": "EditEnvironmentPolicy",
+      "kind": "action",
+      "displayName": "Update Environment DLP Policy",
+      "deprecated": false,
+      "description": "- EditEnvironmentPolicy",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "Policy",
+          "key": "policy",
+          "required": true,
+          "type": "string",
+          "description": "The name field of the Policy."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        },
+        {
+          "name": "Display Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": "Api Policy display name."
+        },
+        {
+          "name": "Schema Version",
+          "key": "$schema",
+          "required": true,
+          "type": "string",
+          "description": "Api Policy definition $schema."
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Policy Environment name field."
+        },
+        {
+          "name": "ID",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Policy Environment ID field."
+        },
+        {
+          "name": "Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Policy Environment type field."
+        },
+        {
+          "name": "Business Data description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": "Policy business data group description."
+        },
+        {
+          "name": "Connector ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Business Data connector ID field."
+        },
+        {
+          "name": "Connector Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "Business Data connector name field."
+        },
+        {
+          "name": "Connector Type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "Business Data connector type field."
+        },
+        {
+          "name": "Non Business Data description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": "Policy non business data group description."
+        },
+        {
+          "name": "Connector ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Non Business Data connector ID field."
+        },
+        {
+          "name": "Connector Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "Non Business Data connector name field."
+        },
+        {
+          "name": "Connector Type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "Non Business Data connector type field."
+        },
+        {
+          "name": "Default Group",
+          "key": "defaultApiGroup",
+          "required": true,
+          "type": "string",
+          "description": "Group a new connector is automatically added to."
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Policy rule apiGroupRule type."
+        },
+        {
+          "name": "apiGroup",
+          "key": "apiGroup",
+          "required": true,
+          "type": "string",
+          "description": "Policy rule apiGroupRule parameter apiGroup."
+        },
+        {
+          "name": "Block Action Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Block action type, leave blank if adding a block is not desired."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Policy"
+      }
+    },
+    "Get-AdminDlpPolicies": {
+      "operationId": "Get-AdminDlpPolicies",
+      "kind": "action",
+      "displayName": "List DLP Policies",
+      "deprecated": false,
+      "description": "- Get-AdminDlpPolicies",
+      "parameters": [
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceArray[Policy]"
+      }
+    },
+    "Get-AdminEnvironment": {
+      "operationId": "Get-AdminEnvironment",
+      "kind": "action",
+      "displayName": "List Environments as Admin",
+      "deprecated": false,
+      "description": "- Get-AdminEnvironment",
+      "parameters": [
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        },
+        {
+          "name": "Skip Token",
+          "key": "$skiptoken",
+          "required": false,
+          "type": "string",
+          "description": "The input used to get the next page of the response."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of Environments in the response."
+        },
+        {
+          "name": "Expand properties",
+          "key": "$expand",
+          "required": false,
+          "type": "string",
+          "description": "Allows access to expand response properties."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceArray[Environment]"
+      }
+    },
+    "Get-AdminEnvironmentRoleAssignment": {
+      "operationId": "Get-AdminEnvironmentRoleAssignment",
+      "kind": "action",
+      "displayName": "List Environment Role Assignments",
+      "deprecated": false,
+      "description": "- Get-AdminEnvironmentRoleAssignment",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceArray[RoleAssignment]"
+      }
+    },
+    "GetEnvironmentOperation": {
+      "operationId": "GetEnvironmentOperation",
+      "kind": "action",
+      "displayName": "Get Environment Operation Status (Preview)",
+      "deprecated": false,
+      "description": "- GetEnvironmentOperation",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "Operation",
+          "key": "operationName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Operation."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetEnvironmentPolicy": {
+      "operationId": "GetEnvironmentPolicy",
+      "kind": "action",
+      "displayName": "Get Environment DLP Policy",
+      "deprecated": false,
+      "description": "- GetEnvironmentPolicy",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "Policy",
+          "key": "policy",
+          "required": true,
+          "type": "string",
+          "description": "The name field of the Policy."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Policy"
+      }
+    },
+    "GetLifecycleOperationStatus": {
+      "operationId": "GetLifecycleOperationStatus",
+      "kind": "action",
+      "displayName": "Get Lifecycle Operation Status",
+      "deprecated": false,
+      "description": "- GetLifecycleOperationStatus",
+      "parameters": [
+        {
+          "name": "Lifecycle Operation",
+          "key": "lifecycleOperationId",
+          "required": true,
+          "type": "string",
+          "description": "The Id of the lifecycle operation."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetPolicyV2": {
+      "operationId": "GetPolicyV2",
+      "kind": "action",
+      "displayName": "Get DLP Policy V2",
+      "deprecated": false,
+      "description": "- GetPolicyV2",
+      "parameters": [
+        {
+          "name": "Policy",
+          "key": "policy",
+          "required": true,
+          "type": "string",
+          "description": "The name field of the Policy."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- PolicyV2"
+      }
+    },
+    "GetProvisionOperation": {
+      "operationId": "GetProvisionOperation",
+      "kind": "action",
+      "displayName": "Get CDS Provisioning Status",
+      "deprecated": false,
+      "description": "- GetProvisionOperation",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "Operation",
+          "key": "operationName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Operation."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetProvisionOperationV2": {
+      "operationId": "GetProvisionOperationV2",
+      "kind": "action",
+      "displayName": "Get database provisioning status",
+      "deprecated": false,
+      "description": "- GetProvisionOperationV2",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "Operation",
+          "key": "operationName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the operation. This entire URI will be returned as the Location header from /provisionInstance, and will include this value."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetSingleEnvironment": {
+      "operationId": "GetSingleEnvironment",
+      "kind": "action",
+      "displayName": "Get Environment as Admin",
+      "deprecated": false,
+      "description": "- GetSingleEnvironment",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": "Environment object.\n- Body\n- Environment"
+      }
+    },
+    "GetTenantPolicy": {
+      "operationId": "GetTenantPolicy",
+      "kind": "action",
+      "displayName": "Get Tenant DLP Policy",
+      "deprecated": false,
+      "description": "- GetTenantPolicy",
+      "parameters": [
+        {
+          "name": "Policy",
+          "key": "policy",
+          "required": true,
+          "type": "string",
+          "description": "The name field of the Policy."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Policy"
+      }
+    },
+    "ListEnvironmentCurrencies": {
+      "operationId": "ListEnvironmentCurrencies",
+      "kind": "action",
+      "displayName": "List Supported Environment Currencies",
+      "deprecated": false,
+      "description": "- ListEnvironmentCurrencies",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "environmentLocation",
+          "required": true,
+          "type": "string",
+          "description": "The location of the Environment."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Currencies"
+      }
+    },
+    "ListEnvironmentLanguages": {
+      "operationId": "ListEnvironmentLanguages",
+      "kind": "action",
+      "displayName": "List Supported Environment Languages",
+      "deprecated": false,
+      "description": "- ListEnvironmentLanguages",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "environmentLocation",
+          "required": true,
+          "type": "string",
+          "description": "The location of the Environment."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Languages"
+      }
+    },
+    "ListPoliciesV2": {
+      "operationId": "ListPoliciesV2",
+      "kind": "action",
+      "displayName": "List DLP Policies V2",
+      "deprecated": false,
+      "description": "- ListPoliciesV2",
+      "parameters": [
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        },
+        {
+          "name": "Skip Token",
+          "key": "$skiptoken",
+          "required": false,
+          "type": "string",
+          "description": "The input used to get the next page of the response."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of DLP Policies in the response."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceArray[PolicyV2]"
+      }
+    },
+    "ListSupportedLocations": {
+      "operationId": "ListSupportedLocations",
+      "kind": "action",
+      "displayName": "List Supported Locations",
+      "deprecated": false,
+      "description": "- ListSupportedLocations",
+      "parameters": [
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Locations"
+      }
+    },
+    "ListUnblockableConnectors": {
+      "operationId": "ListUnblockableConnectors",
+      "kind": "action",
+      "displayName": "List Unblockable Connectors",
+      "deprecated": false,
+      "description": "- ListUnblockableConnectors",
+      "parameters": [],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n|  |  | array of object |  |\n| id | id | string |  |\n| unblockable | metadata.unblockable | boolean |  |"
+      }
+    },
+    "ListVirtualConnectors": {
+      "operationId": "ListVirtualConnectors",
+      "kind": "action",
+      "displayName": "List Virtual Connectors",
+      "deprecated": false,
+      "description": "- ListVirtualConnectors",
+      "parameters": [],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n|  |  | array of object |  |\n| id | id | string |  |\n| virtualConnector | metadata.virtualConnector | boolean |  |\n| name | metadata.name | string |  |\n| type | metadata.type | string |  |\n| iconUri | metadata.iconUri | string |  |\n| displayName | metadata.displayName | string |  |"
+      }
+    },
+    "NewAdminEnvironment": {
+      "operationId": "NewAdminEnvironment",
+      "kind": "action",
+      "displayName": "Create Environment",
+      "deprecated": false,
+      "description": "- NewAdminEnvironment",
+      "parameters": [
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The date value of the API."
+        },
+        {
+          "name": "Location",
+          "key": "location",
+          "required": true,
+          "type": "string",
+          "description": "Region the Environment is deployed in."
+        },
+        {
+          "name": "Display Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": "Vanity name of the Environment."
+        },
+        {
+          "name": "Environment Sku",
+          "key": "environmentSku",
+          "required": true,
+          "type": "string",
+          "description": "Type of Environment."
+        }
+      ],
+      "returns": {
+        "raw": "Environment object.\n- Body\n- Environment"
+      }
+    },
+    "NewEnvironmentPolicy": {
+      "operationId": "NewEnvironmentPolicy",
+      "kind": "action",
+      "displayName": "Create Environment DLP Policy",
+      "deprecated": false,
+      "description": "- NewEnvironmentPolicy",
+      "parameters": [
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        },
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "Display Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": "Api Policy display name."
+        },
+        {
+          "name": "Schema Version",
+          "key": "$schema",
+          "required": true,
+          "type": "string",
+          "description": "Api Policy definition $schema."
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Policy Environment name field."
+        },
+        {
+          "name": "ID",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Policy Environment ID field."
+        },
+        {
+          "name": "Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Policy Environment type field."
+        },
+        {
+          "name": "Business Data description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": "Policy business data group description."
+        },
+        {
+          "name": "Connector ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Business Data connector ID field."
+        },
+        {
+          "name": "Connector Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "Business Data connector name field."
+        },
+        {
+          "name": "Connector Type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "Business Data connector type field."
+        },
+        {
+          "name": "Non Business Data description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": "Policy non business data group description."
+        },
+        {
+          "name": "Connector ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Non Business Data connector ID field."
+        },
+        {
+          "name": "Connector Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "Non Business Data connector name field."
+        },
+        {
+          "name": "Connector Type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "Non Business Data connector type field."
+        },
+        {
+          "name": "Default Group",
+          "key": "defaultApiGroup",
+          "required": true,
+          "type": "string",
+          "description": "Group a new connector is automatically added to."
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Policy rule apiGroupRule type."
+        },
+        {
+          "name": "apiGroup",
+          "key": "apiGroup",
+          "required": true,
+          "type": "string",
+          "description": "Policy rule apiGroupRule parameter apiGroup."
+        },
+        {
+          "name": "Block Action Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Block action type, leave blank if adding a block is not desired."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Policy"
+      }
+    },
+    "NewTenantPolicy": {
+      "operationId": "NewTenantPolicy",
+      "kind": "action",
+      "displayName": "Create Tenant DLP Policy",
+      "deprecated": false,
+      "description": "- NewTenantPolicy",
+      "parameters": [
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        },
+        {
+          "name": "Display Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": "Api Policy display name."
+        },
+        {
+          "name": "Schema Version",
+          "key": "$schema",
+          "required": true,
+          "type": "string",
+          "description": "Api Policy definition $schema."
+        },
+        {
+          "name": "Constraint Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Policy constraint type, leave blank to apply policy to all Environments."
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Policy Environment name field."
+        },
+        {
+          "name": "ID",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Policy Environment ID field."
+        },
+        {
+          "name": "Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Policy Environment type field."
+        },
+        {
+          "name": "Environment Filter Type",
+          "key": "filterType",
+          "required": true,
+          "type": "string",
+          "description": "Api Policy constraint environmentFilter1 parameter filterType."
+        },
+        {
+          "name": "Business Data description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": "Policy business data group description."
+        },
+        {
+          "name": "Connector ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Business Data connector ID field."
+        },
+        {
+          "name": "Connector Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "Business Data connector name field."
+        },
+        {
+          "name": "Connector Type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "Business Data connector type field."
+        },
+        {
+          "name": "Non Business Data description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": "Policy non business data group description."
+        },
+        {
+          "name": "Connector ID",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "Non Business Data connector ID field."
+        },
+        {
+          "name": "Connector Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "Non Business Data connector name field."
+        },
+        {
+          "name": "Connector Type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "Non Business Data connector type field."
+        },
+        {
+          "name": "Default Group",
+          "key": "defaultApiGroup",
+          "required": true,
+          "type": "string",
+          "description": "Group a new connector is automatically added to."
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Policy rule apiGroupRule type."
+        },
+        {
+          "name": "apiGroup",
+          "key": "apiGroup",
+          "required": true,
+          "type": "string",
+          "description": "Policy rule apiGroupRule parameter apiGroup."
+        },
+        {
+          "name": "Block Action Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Block action type, leave blank if adding a block is not desired."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Policy"
+      }
+    },
+    "ProvisionInstance": {
+      "operationId": "ProvisionInstance",
+      "kind": "action",
+      "displayName": "Create CDS Database",
+      "deprecated": false,
+      "description": "- ProvisionInstance",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "Base language",
+          "key": "baseLanguage",
+          "required": false,
+          "type": "integer",
+          "description": "Any language returned from List Environment Languages."
+        },
+        {
+          "name": "Currency code",
+          "key": "code",
+          "required": false,
+          "type": "string",
+          "description": "Any currency code returned from List Environment Currencies."
+        },
+        {
+          "name": "Templates",
+          "key": "templates",
+          "required": false,
+          "type": "array of string",
+          "description": "Validated list of CRM templates to pass to the provision call."
+        }
+      ],
+      "returns": {
+        "raw": "Environment object.\n- Body\n- Environment"
+      }
+    },
+    "Remove-AdminEnvironment": {
+      "operationId": "Remove-AdminEnvironment",
+      "kind": "action",
+      "displayName": "Delete Environment",
+      "deprecated": false,
+      "description": "- Remove-AdminEnvironment",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "RemoveEnvironmentPolicy": {
+      "operationId": "RemoveEnvironmentPolicy",
+      "kind": "action",
+      "displayName": "Delete Environment DLP Policy",
+      "deprecated": false,
+      "description": "- RemoveEnvironmentPolicy",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "Policy",
+          "key": "policy",
+          "required": true,
+          "type": "string",
+          "description": "The name field of the Policy."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "RemoveTenantPolicy": {
+      "operationId": "RemoveTenantPolicy",
+      "kind": "action",
+      "displayName": "Delete Tenant DLP Policy",
+      "deprecated": false,
+      "description": "- RemoveTenantPolicy",
+      "parameters": [
+        {
+          "name": "Policy",
+          "key": "policy",
+          "required": true,
+          "type": "string",
+          "description": "The name field of the Policy."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "UpdateEnvironment": {
+      "operationId": "UpdateEnvironment",
+      "kind": "action",
+      "displayName": "Update Environment",
+      "deprecated": false,
+      "description": "- UpdateEnvironment",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        },
+        {
+          "name": "description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "displayName",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "securityGroupId",
+          "key": "securityGroupId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "UpdatePolicyV2": {
+      "operationId": "UpdatePolicyV2",
+      "kind": "action",
+      "displayName": "Update DLP Policy V2",
+      "deprecated": false,
+      "description": "- UpdatePolicyV2",
+      "parameters": [
+        {
+          "name": "Policy",
+          "key": "policy",
+          "required": true,
+          "type": "string",
+          "description": "The name field of the Policy."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        },
+        {
+          "name": "Display name",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Default connectors classification",
+          "key": "defaultConnectorsClassification",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "classification",
+          "key": "classification",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Policy environment type",
+          "key": "environmentType",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- PolicyV2"
+      }
+    },
+    "ValidateDelete": {
+      "operationId": "ValidateDelete",
+      "kind": "action",
+      "displayName": "Validate Environment Delete",
+      "deprecated": false,
+      "description": "- ValidateDelete",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environment",
+          "required": true,
+          "type": "string",
+          "description": "Name of the Environment."
+        },
+        {
+          "name": "API Version",
+          "key": "api-version",
+          "required": false,
+          "type": "string",
+          "description": "The date value of the API."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ValidateDeleteResponse"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

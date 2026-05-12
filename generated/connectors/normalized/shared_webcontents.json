@@ -1,0 +1,70 @@
+{
+  "connectorId": "shared_webcontents",
+  "displayName": "HTTP with Microsoft Entra ID (preauthorized)",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/webcontents/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-03-27T19:07:00.0000000Z",
+  "sourceGitCommit": "cbe3fddfee6df7864687c0187c1bd3aabf415069",
+  "sourcePath": "docs/webcontents/index.yml",
+  "operations": {
+    "GetFileContent": {
+      "operationId": "GetFileContent",
+      "kind": "action",
+      "displayName": "Get web resource",
+      "deprecated": false,
+      "description": "- GetFileContent",
+      "parameters": [
+        {
+          "name": "Resource path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "File identifier"
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "InvokeHttp": {
+      "operationId": "InvokeHttp",
+      "kind": "action",
+      "displayName": "Invoke an HTTP request",
+      "deprecated": false,
+      "description": "- InvokeHttp",
+      "parameters": [
+        {
+          "name": "Method",
+          "key": "method",
+          "required": true,
+          "type": "string",
+          "description": "One of the known HTTP verbs: GET, DELETE, PATCH, POST, PUT."
+        },
+        {
+          "name": "Url of the request",
+          "key": "url",
+          "required": true,
+          "type": "string",
+          "description": "A full or relative URL to the resource. If it is a full URL , it must match the base resource URL set in the connection."
+        },
+        {
+          "name": "Headers",
+          "key": "headers",
+          "required": false,
+          "type": "object",
+          "description": "The request headers."
+        },
+        {
+          "name": "Body of the request",
+          "key": "body",
+          "required": false,
+          "type": "string",
+          "description": "Body of the request when the method requires it."
+        }
+      ],
+      "returns": {
+        "raw": "The content of the response.\n- Body\n- string"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

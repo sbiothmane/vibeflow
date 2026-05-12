@@ -1,0 +1,341 @@
+{
+  "connectorId": "shared_smtp",
+  "displayName": "SMTP",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/smtp/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-03-26T01:07:00.0000000Z",
+  "sourceGitCommit": "ddd50f862a19e850e063936ce2b61ad4eec06165",
+  "sourcePath": "docs/smtp/index.yml",
+  "operations": {
+    "SendEmail": {
+      "operationId": "SendEmail",
+      "kind": "action",
+      "displayName": "Send Email [DEPRECATED]",
+      "deprecated": true,
+      "description": "- SendEmail",
+      "parameters": [
+        {
+          "name": "From",
+          "key": "From",
+          "required": false,
+          "type": "email",
+          "description": "Email address of sender like sender@domain.com"
+        },
+        {
+          "name": "To",
+          "key": "To",
+          "required": false,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like recipient1@domain.com;recipient2@domain.com"
+        },
+        {
+          "name": "CC",
+          "key": "CC",
+          "required": false,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like recipient1@domain.com;recipient2@domain.com"
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": false,
+          "type": "string",
+          "description": "Email subject"
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "string",
+          "description": "Email body"
+        },
+        {
+          "name": "Is HTML",
+          "key": "IsHtml",
+          "required": false,
+          "type": "boolean",
+          "description": "Send the email as HTML (true/false)"
+        },
+        {
+          "name": "Bcc",
+          "key": "Bcc",
+          "required": false,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like recipient1@domain.com;recipient2@domain.com."
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "Importance of the email (High, Normal, or Low)"
+        },
+        {
+          "name": "Read Receipt",
+          "key": "ReadReceipt",
+          "required": false,
+          "type": "email",
+          "description": "Specify email address for Read receipt"
+        },
+        {
+          "name": "Delivery Receipt",
+          "key": "DeliveryReceipt",
+          "required": false,
+          "type": "email",
+          "description": "Specify email address for Delivery receipt"
+        },
+        {
+          "name": "File name",
+          "key": "FileName",
+          "required": false,
+          "type": "string",
+          "description": "File name"
+        },
+        {
+          "name": "Content id",
+          "key": "ContentId",
+          "required": false,
+          "type": "string",
+          "description": "Content id"
+        },
+        {
+          "name": "Content data",
+          "key": "ContentData",
+          "required": true,
+          "type": "string",
+          "description": "Content data (base64 encoded for streams and as-is for string)"
+        },
+        {
+          "name": "Content type",
+          "key": "ContentType",
+          "required": true,
+          "type": "string",
+          "description": "Content type"
+        },
+        {
+          "name": "Content Transfer Encoding",
+          "key": "ContentTransferEncoding",
+          "required": true,
+          "type": "string",
+          "description": "Content Transfer Encoding (base64 or none)"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- string"
+      }
+    },
+    "SendEmailV2": {
+      "operationId": "SendEmailV2",
+      "kind": "action",
+      "displayName": "Send Email [DEPRECATED]",
+      "deprecated": true,
+      "description": "- SendEmailV2",
+      "parameters": [
+        {
+          "name": "From",
+          "key": "From",
+          "required": false,
+          "type": "email",
+          "description": "Email address of sender like sender@domain.com"
+        },
+        {
+          "name": "To",
+          "key": "To",
+          "required": false,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like recipient1@domain.com;recipient2@domain.com"
+        },
+        {
+          "name": "CC",
+          "key": "CC",
+          "required": false,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like recipient1@domain.com;recipient2@domain.com"
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": false,
+          "type": "string",
+          "description": "Email subject"
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "string",
+          "description": "Email body"
+        },
+        {
+          "name": "Is HTML",
+          "key": "IsHtml",
+          "required": false,
+          "type": "boolean",
+          "description": "Send the email as HTML (true/false)"
+        },
+        {
+          "name": "Bcc",
+          "key": "Bcc",
+          "required": false,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like recipient1@domain.com;recipient2@domain.com."
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "Importance of the email (High, Normal, or Low)"
+        },
+        {
+          "name": "Read Receipt",
+          "key": "ReadReceipt",
+          "required": false,
+          "type": "email",
+          "description": "Specify email address for Read receipt"
+        },
+        {
+          "name": "Delivery Receipt",
+          "key": "DeliveryReceipt",
+          "required": false,
+          "type": "email",
+          "description": "Specify email address for Delivery receipt"
+        },
+        {
+          "name": "Content data",
+          "key": "ContentData",
+          "required": true,
+          "type": "byte",
+          "description": "Content data"
+        },
+        {
+          "name": "Content type",
+          "key": "ContentType",
+          "required": true,
+          "type": "string",
+          "description": "Content type"
+        },
+        {
+          "name": "File name",
+          "key": "FileName",
+          "required": false,
+          "type": "string",
+          "description": "File name"
+        },
+        {
+          "name": "Content id",
+          "key": "ContentId",
+          "required": false,
+          "type": "string",
+          "description": "Content id"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "SendEmailV3": {
+      "operationId": "SendEmailV3",
+      "kind": "action",
+      "displayName": "Send Email (V3)",
+      "deprecated": false,
+      "description": "- SendEmailV3",
+      "parameters": [
+        {
+          "name": "From",
+          "key": "From",
+          "required": false,
+          "type": "email",
+          "description": "Email address of sender like sender@domain.com"
+        },
+        {
+          "name": "To",
+          "key": "To",
+          "required": false,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like recipient1@domain.com;recipient2@domain.com"
+        },
+        {
+          "name": "CC",
+          "key": "CC",
+          "required": false,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like recipient1@domain.com;recipient2@domain.com"
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": false,
+          "type": "string",
+          "description": "Email subject"
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "html",
+          "description": "Email body"
+        },
+        {
+          "name": "Bcc",
+          "key": "Bcc",
+          "required": false,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like recipient1@domain.com;recipient2@domain.com."
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "Importance of the email (High, Normal, or Low)"
+        },
+        {
+          "name": "Read Receipt",
+          "key": "ReadReceipt",
+          "required": false,
+          "type": "email",
+          "description": "Specify email address for Read receipt"
+        },
+        {
+          "name": "Delivery Receipt",
+          "key": "DeliveryReceipt",
+          "required": false,
+          "type": "email",
+          "description": "Specify email address for Delivery receipt"
+        },
+        {
+          "name": "Content data",
+          "key": "ContentData",
+          "required": true,
+          "type": "byte",
+          "description": "Content data"
+        },
+        {
+          "name": "Content type",
+          "key": "ContentType",
+          "required": true,
+          "type": "string",
+          "description": "Content type"
+        },
+        {
+          "name": "File name",
+          "key": "FileName",
+          "required": false,
+          "type": "string",
+          "description": "File name"
+        },
+        {
+          "name": "Content id",
+          "key": "ContentId",
+          "required": false,
+          "type": "string",
+          "description": "Content id"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

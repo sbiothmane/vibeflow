@@ -1,0 +1,72 @@
+{
+  "connectorId": "shared_azureeventgrid",
+  "displayName": "Azure Event Grid",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azureeventgrid/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-04-24T01:00:00.0000000Z",
+  "sourceGitCommit": "63f1cb79629cd01a13220e8a88319b4e7f88925c",
+  "sourcePath": "docs/azureeventgrid/index.yml",
+  "operations": {
+    "CreateSubscription": {
+      "operationId": "CreateSubscription",
+      "kind": "trigger",
+      "displayName": "When a resource event occurs",
+      "deprecated": false,
+      "description": "- CreateSubscription",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Type",
+          "key": "resourceType",
+          "required": true,
+          "type": "string",
+          "description": "Type of resource to create event subscription on."
+        },
+        {
+          "name": "Subscription Name",
+          "key": "subscriptionName",
+          "required": false,
+          "type": "string",
+          "description": "Name to use for the new Event Grid subscription."
+        },
+        {
+          "name": "Resource Name",
+          "key": "topic",
+          "required": true,
+          "type": "string",
+          "description": "Name of the resource to listen to for events."
+        },
+        {
+          "name": "Prefix Filter",
+          "key": "subjectBeginsWith",
+          "required": false,
+          "type": "string",
+          "description": "A filter like: Sample-workitems/{name}"
+        },
+        {
+          "name": "Suffix Filter",
+          "key": "subjectEndsWith",
+          "required": false,
+          "type": "string",
+          "description": "A filter like: .jpg"
+        },
+        {
+          "name": "Event Type",
+          "key": "includedEventTypes",
+          "required": false,
+          "type": "array of string",
+          "description": "Type of event to listen for."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Event data | data |  | Contains the data from the event. |\n| Event Time | eventTime | date-time | Time of the event. |\n| Event Type | eventType | string | Type of the event. |\n| ID | id | string | ID for the event. |\n| Subject | subject | string | Subject of the event. |\n| Topic | topic | string | Resource that fired the event. |"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

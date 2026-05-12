@@ -1,0 +1,70 @@
+{
+  "connectorId": "shared_rss",
+  "displayName": "RSS",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/rss/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-03-27T19:07:00.0000000Z",
+  "sourceGitCommit": "cbe3fddfee6df7864687c0187c1bd3aabf415069",
+  "sourcePath": "docs/RSS/index.yml",
+  "operations": {
+    "ListFeedItems": {
+      "operationId": "ListFeedItems",
+      "kind": "action",
+      "displayName": "List all RSS feed items",
+      "deprecated": false,
+      "description": "- ListFeedItems",
+      "parameters": [
+        {
+          "name": "The RSS feed URL",
+          "key": "feedUrl",
+          "required": true,
+          "type": "string",
+          "description": "The RSS feed URL (Example: http://rss.cnn.com/rss/cnn_topstories.rss)."
+        },
+        {
+          "name": "since",
+          "key": "since",
+          "required": false,
+          "type": "string",
+          "description": "The date since when RSS feed should be retrieved (Example: 2018-12-29 10:24:05Z)."
+        },
+        {
+          "name": "Chosen property will be used to determine which items are new.",
+          "key": "sinceProperty",
+          "required": false,
+          "type": "string",
+          "description": "Chosen property will be used for trigger state."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of FeedItem"
+      }
+    },
+    "OnNewFeed": {
+      "operationId": "OnNewFeed",
+      "kind": "trigger",
+      "displayName": "When a feed item is published",
+      "deprecated": false,
+      "description": "- OnNewFeed",
+      "parameters": [
+        {
+          "name": "The RSS feed URL",
+          "key": "feedUrl",
+          "required": true,
+          "type": "string",
+          "description": "The RSS feed URL (Example: http://rss.cnn.com/rss/cnn_topstories.rss)."
+        },
+        {
+          "name": "Chosen property will be used to determine which items are new.",
+          "key": "sinceProperty",
+          "required": false,
+          "type": "string",
+          "description": "Chosen property will be used for trigger state."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a wrapper object for batch trigger response\n- Body\n- TriggerBatchResponse[FeedItem]"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

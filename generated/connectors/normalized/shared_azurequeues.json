@@ -1,0 +1,409 @@
+{
+  "connectorId": "shared_azurequeues",
+  "displayName": "Azure Queues",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azurequeues/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-02-06T01:07:00.0000000Z",
+  "sourceGitCommit": "300019c266037195c5f7c9642a2988b22ece20b6",
+  "sourcePath": "docs/AzureQueues/index.yml",
+  "operations": {
+    "DeleteMessage": {
+      "operationId": "DeleteMessage",
+      "kind": "action",
+      "displayName": "Delete message [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DeleteMessage",
+      "parameters": [
+        {
+          "name": "Queue Name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "The queue to delete a message from."
+        },
+        {
+          "name": "Message ID",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of the message to delete."
+        },
+        {
+          "name": "Pop Receipt",
+          "key": "popreceipt",
+          "required": true,
+          "type": "string",
+          "description": "A valid pop receipt value returned from an earlier call to the Get Messages."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteMessage_V2": {
+      "operationId": "DeleteMessage_V2",
+      "kind": "action",
+      "displayName": "Delete message (V2)",
+      "deprecated": false,
+      "description": "- DeleteMessage_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or queue endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or queue endpoint."
+        },
+        {
+          "name": "Queue Name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "The queue to delete a message from."
+        },
+        {
+          "name": "Message ID",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of the message to delete."
+        },
+        {
+          "name": "Pop Receipt",
+          "key": "popreceipt",
+          "required": true,
+          "type": "string",
+          "description": "A valid pop receipt value returned from an earlier call to the Get Messages."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetMessages": {
+      "operationId": "GetMessages",
+      "kind": "action",
+      "displayName": "Get messages [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetMessages",
+      "parameters": [
+        {
+          "name": "Queue Name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "The queue to get Messages from."
+        },
+        {
+          "name": "Number of Messages",
+          "key": "numofmessages",
+          "required": false,
+          "type": "string",
+          "description": "The number of messages to grab from the queue (default 1)."
+        },
+        {
+          "name": "Visibility Timeout",
+          "key": "visibilitytimeout",
+          "required": false,
+          "type": "string",
+          "description": "The time in seconds that messages will be invisible to other consumers (default 30)."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Messages"
+      }
+    },
+    "GetMessages_V2": {
+      "operationId": "GetMessages_V2",
+      "kind": "action",
+      "displayName": "Get messages (V2)",
+      "deprecated": false,
+      "description": "- GetMessages_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or queue endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or queue endpoint."
+        },
+        {
+          "name": "Queue Name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "The queue to get Messages from."
+        },
+        {
+          "name": "Number of Messages",
+          "key": "numofmessages",
+          "required": false,
+          "type": "string",
+          "description": "The number of messages to grab from the queue (default 1)."
+        },
+        {
+          "name": "Visibility Timeout",
+          "key": "visibilitytimeout",
+          "required": false,
+          "type": "string",
+          "description": "The time in seconds that messages will be invisible to other consumers (default 30)."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Messages"
+      }
+    },
+    "ListQueues": {
+      "operationId": "ListQueues",
+      "kind": "action",
+      "displayName": "List queues [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListQueues",
+      "parameters": [],
+      "returns": {
+        "raw": "- Items\n- QueueArray"
+      }
+    },
+    "ListQueues_V2": {
+      "operationId": "ListQueues_V2",
+      "kind": "action",
+      "displayName": "List queues (V2)",
+      "deprecated": false,
+      "description": "- ListQueues_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or queue endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or queue endpoint."
+        }
+      ],
+      "returns": {
+        "raw": "- Items\n- QueueArray"
+      }
+    },
+    "OnMessageThresholdReached": {
+      "operationId": "OnMessageThresholdReached",
+      "kind": "trigger",
+      "displayName": "When a specified number of messages are in a given queue [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnMessageThresholdReached",
+      "parameters": [
+        {
+          "name": "Queue Name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "The queue to check for messages."
+        },
+        {
+          "name": "Threshold",
+          "key": "threshold",
+          "required": true,
+          "type": "integer",
+          "description": "The number of messages to wait for to fire the trigger."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- string"
+      }
+    },
+    "OnMessageThresholdReached_V2": {
+      "operationId": "OnMessageThresholdReached_V2",
+      "kind": "trigger",
+      "displayName": "When a specified number of messages are in a given queue (V2)",
+      "deprecated": false,
+      "description": "- OnMessageThresholdReached_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or queue endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or queue endpoint."
+        },
+        {
+          "name": "Queue Name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "The queue to check for messages."
+        },
+        {
+          "name": "Threshold",
+          "key": "threshold",
+          "required": true,
+          "type": "integer",
+          "description": "The number of messages to wait for to fire the trigger."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- string"
+      }
+    },
+    "OnMessages": {
+      "operationId": "OnMessages",
+      "kind": "trigger",
+      "displayName": "When there are messages in a queue [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnMessages",
+      "parameters": [
+        {
+          "name": "Queue Name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "The queue to check for messages"
+        },
+        {
+          "name": "Visibility Timeout",
+          "key": "visibilitytimeout",
+          "required": false,
+          "type": "string",
+          "description": "The time in seconds that messages will be invisible to other consumers (default 30)"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Messages"
+      }
+    },
+    "OnMessages_V2": {
+      "operationId": "OnMessages_V2",
+      "kind": "trigger",
+      "displayName": "When there are messages in a queue (V2)",
+      "deprecated": false,
+      "description": "- OnMessages_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or queue endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or queue endpoint."
+        },
+        {
+          "name": "Queue Name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "The queue to check for messages"
+        },
+        {
+          "name": "Visibility Timeout",
+          "key": "visibilitytimeout",
+          "required": false,
+          "type": "string",
+          "description": "The time in seconds that messages will be invisible to other consumers (default 30)"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Messages"
+      }
+    },
+    "PutMessage": {
+      "operationId": "PutMessage",
+      "kind": "action",
+      "displayName": "Put a message on a queue [DEPRECATED]",
+      "deprecated": true,
+      "description": "- PutMessage",
+      "parameters": [
+        {
+          "name": "Queue Name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "The queue to put a message to."
+        },
+        {
+          "name": "Message",
+          "key": "message",
+          "required": true,
+          "type": "string",
+          "description": "The message content to post to the queue."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "PutMessage_V2": {
+      "operationId": "PutMessage_V2",
+      "kind": "action",
+      "displayName": "Put a message on a queue (V2)",
+      "deprecated": false,
+      "description": "- PutMessage_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or queue endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or queue endpoint."
+        },
+        {
+          "name": "Queue Name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "The queue to put a message to."
+        },
+        {
+          "name": "Message",
+          "key": "message",
+          "required": true,
+          "type": "string",
+          "description": "The message content to post to the queue."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "PutQueue": {
+      "operationId": "PutQueue",
+      "kind": "action",
+      "displayName": "Create a new queue [DEPRECATED]",
+      "deprecated": true,
+      "description": "- PutQueue",
+      "parameters": [
+        {
+          "name": "Queue Name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the queue to create."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- string"
+      }
+    },
+    "PutQueue_V2": {
+      "operationId": "PutQueue_V2",
+      "kind": "action",
+      "displayName": "Create a new queue (V2)",
+      "deprecated": false,
+      "description": "- PutQueue_V2",
+      "parameters": [
+        {
+          "name": "Storage account name or queue endpoint",
+          "key": "storageAccountName",
+          "required": true,
+          "type": "string",
+          "description": "Azure Storage account name or queue endpoint."
+        },
+        {
+          "name": "Queue Name",
+          "key": "queueName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the queue to create."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- string"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

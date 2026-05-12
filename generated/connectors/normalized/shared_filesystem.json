@@ -1,0 +1,386 @@
+{
+  "connectorId": "shared_filesystem",
+  "displayName": "File System",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/filesystem/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-03-27T19:07:00.0000000Z",
+  "sourceGitCommit": "cbe3fddfee6df7864687c0187c1bd3aabf415069",
+  "sourcePath": "docs/filesystem/index.yml",
+  "operations": {
+    "AppendFile": {
+      "operationId": "AppendFile",
+      "kind": "action",
+      "displayName": "Append file",
+      "deprecated": false,
+      "description": "- AppendFile",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select a file"
+        },
+        {
+          "name": "File content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "Content to add to the file"
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "CopyFile": {
+      "operationId": "CopyFile",
+      "kind": "action",
+      "displayName": "Copy file",
+      "deprecated": false,
+      "description": "- CopyFile",
+      "parameters": [
+        {
+          "name": "Source path",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Path to source file"
+        },
+        {
+          "name": "Destination file path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "Destination file path, including target filename"
+        },
+        {
+          "name": "Overwrite?",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Overwrites the destination file if set to 'true"
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "CreateFile": {
+      "operationId": "CreateFile",
+      "kind": "action",
+      "displayName": "Create file",
+      "deprecated": false,
+      "description": "- CreateFile",
+      "parameters": [
+        {
+          "name": "Folder path",
+          "key": "folderPath",
+          "required": true,
+          "type": "string",
+          "description": "Select a folder"
+        },
+        {
+          "name": "File name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Name of the file"
+        },
+        {
+          "name": "File content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "Content of the file"
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "DeleteFile": {
+      "operationId": "DeleteFile",
+      "kind": "action",
+      "displayName": "Delete file",
+      "deprecated": false,
+      "description": "- DeleteFile",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select a file"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ExtractFolderV2": {
+      "operationId": "ExtractFolderV2",
+      "kind": "action",
+      "displayName": "Extract archive to folder",
+      "deprecated": false,
+      "description": "- ExtractFolderV2",
+      "parameters": [
+        {
+          "name": "Source archive file path",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Path to the archive file"
+        },
+        {
+          "name": "Destination folder path",
+          "key": "destination",
+          "required": true,
+          "type": "string",
+          "description": "Path to the destination folder"
+        },
+        {
+          "name": "Overwrite?",
+          "key": "overwrite",
+          "required": false,
+          "type": "boolean",
+          "description": "Overwrites the destination files if set to 'true'"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "GetFileContent": {
+      "operationId": "GetFileContent",
+      "kind": "action",
+      "displayName": "Get file content",
+      "deprecated": false,
+      "description": "- GetFileContent",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select a file"
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "Infer content-type based on extension"
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "GetFileContentByPath": {
+      "operationId": "GetFileContentByPath",
+      "kind": "action",
+      "displayName": "Get file content using path",
+      "deprecated": false,
+      "description": "- GetFileContentByPath",
+      "parameters": [
+        {
+          "name": "File path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "Select a file"
+        },
+        {
+          "name": "Infer Content Type",
+          "key": "inferContentType",
+          "required": false,
+          "type": "boolean",
+          "description": "Infer content-type based on extension"
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file.\n- File Content\n- binary"
+      }
+    },
+    "GetFileMetadata": {
+      "operationId": "GetFileMetadata",
+      "kind": "action",
+      "displayName": "Get file metadata",
+      "deprecated": false,
+      "description": "- GetFileMetadata",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select a file"
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "GetFileMetadataByPath": {
+      "operationId": "GetFileMetadataByPath",
+      "kind": "action",
+      "displayName": "Get file metadata using path",
+      "deprecated": false,
+      "description": "- GetFileMetadataByPath",
+      "parameters": [
+        {
+          "name": "File path",
+          "key": "path",
+          "required": true,
+          "type": "string",
+          "description": "Select a file"
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    },
+    "ListFolder": {
+      "operationId": "ListFolder",
+      "kind": "action",
+      "displayName": "List files in folder",
+      "deprecated": false,
+      "description": "- ListFolder",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select a folder"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "ListRootFolder": {
+      "operationId": "ListRootFolder",
+      "kind": "action",
+      "displayName": "List files in root folder",
+      "deprecated": false,
+      "description": "- ListRootFolder",
+      "parameters": [],
+      "returns": {
+        "raw": "- response\n- array of BlobMetadata"
+      }
+    },
+    "OnNewFiles": {
+      "operationId": "OnNewFiles",
+      "kind": "trigger",
+      "displayName": "When a file is created (properties only)",
+      "deprecated": false,
+      "description": "- OnNewFiles",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "Select a folder"
+        },
+        {
+          "name": "Number of files to return",
+          "key": "maxFileCount",
+          "required": false,
+          "type": "integer",
+          "description": "Maximum number of files to return by single trigger run (1-100). Note that 'Split On' setting can force trigger to process each item individually."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- List of Files\n- BlobMetadata"
+      }
+    },
+    "OnUpdatedFiles": {
+      "operationId": "OnUpdatedFiles",
+      "kind": "trigger",
+      "displayName": "When a file is added or modified (properties only)",
+      "deprecated": false,
+      "description": "- OnUpdatedFiles",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "Select a folder"
+        },
+        {
+          "name": "Number of files to return",
+          "key": "maxFileCount",
+          "required": false,
+          "type": "integer",
+          "description": "Maximum number of files to return by single trigger run (1-100). Note that 'Split On' setting can force trigger to process each item individually."
+        },
+        {
+          "name": "Check Created and Modified Time",
+          "key": "checkBothCreatedAndModifiedDateTime",
+          "required": false,
+          "type": "boolean",
+          "description": "If the flag is set to true, the trigger will check the file's created date and time and the file's last modified date and time. If the flag is set to false, the trigger will only check the file's last modified date and time."
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- List of Files\n- BlobMetadata"
+      }
+    },
+    "RenameFile": {
+      "operationId": "RenameFile",
+      "kind": "action",
+      "displayName": "Rename File",
+      "deprecated": false,
+      "description": "- RenameFile",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select a file"
+        },
+        {
+          "name": "New name",
+          "key": "newName",
+          "required": true,
+          "type": "string",
+          "description": "New name for the file"
+        }
+      ],
+      "returns": {
+        "raw": "Represents blob datasets metadata response\n- Body\n- BlobMetadataResponse"
+      }
+    },
+    "UpdateFile": {
+      "operationId": "UpdateFile",
+      "kind": "action",
+      "displayName": "Update file",
+      "deprecated": false,
+      "description": "- UpdateFile",
+      "parameters": [
+        {
+          "name": "File",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select a file"
+        },
+        {
+          "name": "File content",
+          "key": "body",
+          "required": true,
+          "type": "binary",
+          "description": "Content of the file"
+        }
+      ],
+      "returns": {
+        "raw": "Blob metadata\n- Body\n- BlobMetadata"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

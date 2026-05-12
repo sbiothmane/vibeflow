@@ -1,0 +1,453 @@
+{
+  "connectorId": "shared_sendgrid",
+  "displayName": "SendGrid",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/sendgrid/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-10-27T19:01:00.0000000Z",
+  "sourceGitCommit": "0a1ebb8b0c9b05f58fcdeb924d02b27324fd49c9",
+  "sourcePath": "docs/SendGrid/index.yml",
+  "operations": {
+    "AddGlobalSuppression": {
+      "operationId": "AddGlobalSuppression",
+      "kind": "action",
+      "displayName": "Add a global suppression",
+      "deprecated": false,
+      "description": "- AddGlobalSuppression",
+      "parameters": [
+        {
+          "name": "Recipient email",
+          "key": "recipient_emails",
+          "required": false,
+          "type": "array of string",
+          "description": "Recipient email"
+        }
+      ],
+      "returns": {
+        "raw": "Add global suppress Response\n- Body\n- AddGlobalSuppressRequestAndResponse"
+      }
+    },
+    "AddRecipientToList": {
+      "operationId": "AddRecipientToList",
+      "kind": "action",
+      "displayName": "Add recipient to list",
+      "deprecated": false,
+      "description": "- AddRecipientToList",
+      "parameters": [
+        {
+          "name": "List id",
+          "key": "listId",
+          "required": true,
+          "type": "string",
+          "description": "Unique id of the recipient list."
+        },
+        {
+          "name": "Recipient id",
+          "key": "recipientId",
+          "required": true,
+          "type": "string",
+          "description": "Unique id of the recipient."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "CheckEmailIsInUnsubscribesList": {
+      "operationId": "CheckEmailIsInUnsubscribesList",
+      "kind": "action",
+      "displayName": "Check if email is in unsubscribed email list",
+      "deprecated": false,
+      "description": "- CheckEmailIsInUnsubscribesList",
+      "parameters": [
+        {
+          "name": "Email",
+          "key": "email",
+          "required": true,
+          "type": "string",
+          "description": "The email to check."
+        }
+      ],
+      "returns": {
+        "raw": "Email Is Unsubscribed Response\n- Email Is Unsubscribed Response\n- EmailIsUnsubscribedResponse"
+      }
+    },
+    "DeleteBounce": {
+      "operationId": "DeleteBounce",
+      "kind": "action",
+      "displayName": "Delete an email from bounce list",
+      "deprecated": false,
+      "description": "- DeleteBounce",
+      "parameters": [
+        {
+          "name": "Email",
+          "key": "email",
+          "required": true,
+          "type": "string",
+          "description": "The email to delete."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteGlobalSuppression": {
+      "operationId": "DeleteGlobalSuppression",
+      "kind": "action",
+      "displayName": "Delete the global suppression",
+      "deprecated": false,
+      "description": "- DeleteGlobalSuppression",
+      "parameters": [
+        {
+          "name": "Email",
+          "key": "email",
+          "required": true,
+          "type": "string",
+          "description": "The email to delete."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetBounce": {
+      "operationId": "GetBounce",
+      "kind": "action",
+      "displayName": "Get bounce for an email",
+      "deprecated": false,
+      "description": "- GetBounce",
+      "parameters": [
+        {
+          "name": "Email",
+          "key": "email",
+          "required": true,
+          "type": "string",
+          "description": "The email to check."
+        }
+      ],
+      "returns": {
+        "raw": "List of bounces\n- Items\n- Bounces"
+      }
+    },
+    "GetGlobalSuppression": {
+      "operationId": "GetGlobalSuppression",
+      "kind": "action",
+      "displayName": "Get the global suppression",
+      "deprecated": false,
+      "description": "- GetGlobalSuppression",
+      "parameters": [
+        {
+          "name": "Email",
+          "key": "email",
+          "required": true,
+          "type": "string",
+          "description": "The email to check."
+        }
+      ],
+      "returns": {
+        "raw": "Add global suppress Response\n- Body\n- GetGlobalSuppressResponse"
+      }
+    },
+    "SendEmailApiV3": {
+      "operationId": "SendEmailApiV3",
+      "kind": "action",
+      "displayName": "Send email (V2) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- SendEmailApiV3",
+      "parameters": [
+        {
+          "name": "From",
+          "key": "from",
+          "required": true,
+          "type": "email",
+          "description": "Origination address of your email. Must be a valid email address from your domain"
+        },
+        {
+          "name": "From name",
+          "key": "fromname",
+          "required": false,
+          "type": "string",
+          "description": "Origination name of your email"
+        },
+        {
+          "name": "To",
+          "key": "to",
+          "required": true,
+          "type": "email",
+          "description": "Valid email addresses separated by a semicolon or comma"
+        },
+        {
+          "name": "To names",
+          "key": "toname",
+          "required": false,
+          "type": "string",
+          "description": "A display name for each email address separated by a semicolon or comma"
+        },
+        {
+          "name": "Subject",
+          "key": "subject",
+          "required": true,
+          "type": "string",
+          "description": "Subject of your email"
+        },
+        {
+          "name": "Email body",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "Content of your email"
+        },
+        {
+          "name": "Is Html",
+          "key": "ishtml",
+          "required": false,
+          "type": "boolean",
+          "description": "Specify whether the content of the email is HTML or plain text"
+        },
+        {
+          "name": "CC",
+          "key": "cc",
+          "required": false,
+          "type": "email",
+          "description": "Valid email addresses separated by a semicolon or comma"
+        },
+        {
+          "name": "CC names",
+          "key": "ccname",
+          "required": false,
+          "type": "string",
+          "description": "A display name for each CC email address separated by a semicolon or comma"
+        },
+        {
+          "name": "Bcc",
+          "key": "bcc",
+          "required": false,
+          "type": "email",
+          "description": "Valid email addresses separated by a semicolon or comma"
+        },
+        {
+          "name": "BCC names",
+          "key": "bccname",
+          "required": false,
+          "type": "string",
+          "description": "A display name for each BCC email address separated by a semicolon or comma"
+        },
+        {
+          "name": "Attachment",
+          "key": "file",
+          "required": false,
+          "type": "byte",
+          "description": "Attachment file content"
+        },
+        {
+          "name": "Attachment file name",
+          "key": "filename",
+          "required": false,
+          "type": "string",
+          "description": "Attachment file name"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "SendEmailV3": {
+      "operationId": "SendEmailV3",
+      "kind": "action",
+      "displayName": "Send email (V3) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- SendEmailV3",
+      "parameters": [
+        {
+          "name": "From",
+          "key": "from",
+          "required": true,
+          "type": "email",
+          "description": "Origination address of your email. Must be a valid email address from your domain"
+        },
+        {
+          "name": "From name",
+          "key": "fromname",
+          "required": false,
+          "type": "string",
+          "description": "Origination name of your email"
+        },
+        {
+          "name": "To",
+          "key": "to",
+          "required": true,
+          "type": "email",
+          "description": "Valid email addresses separated by a semicolon or comma"
+        },
+        {
+          "name": "To names",
+          "key": "toname",
+          "required": false,
+          "type": "string",
+          "description": "A display name for each email address separated by a semicolon or comma"
+        },
+        {
+          "name": "Subject",
+          "key": "subject",
+          "required": true,
+          "type": "string",
+          "description": "Subject of your email"
+        },
+        {
+          "name": "Email body",
+          "key": "text",
+          "required": true,
+          "type": "html",
+          "description": "Content of your email"
+        },
+        {
+          "name": "CC",
+          "key": "cc",
+          "required": false,
+          "type": "email",
+          "description": "Valid email addresses separated by a semicolon or comma"
+        },
+        {
+          "name": "CC names",
+          "key": "ccname",
+          "required": false,
+          "type": "string",
+          "description": "A display name for each CC email address separated by a semicolon or comma"
+        },
+        {
+          "name": "Bcc",
+          "key": "bcc",
+          "required": false,
+          "type": "email",
+          "description": "Valid email addresses separated by a semicolon or comma"
+        },
+        {
+          "name": "BCC names",
+          "key": "bccname",
+          "required": false,
+          "type": "string",
+          "description": "A display name for each BCC email address separated by a semicolon or comma"
+        },
+        {
+          "name": "Attachment",
+          "key": "file",
+          "required": false,
+          "type": "byte",
+          "description": "Attachment file content"
+        },
+        {
+          "name": "Attachment file name",
+          "key": "filename",
+          "required": false,
+          "type": "string",
+          "description": "Attachment file name"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "SendEmailV4": {
+      "operationId": "SendEmailV4",
+      "kind": "action",
+      "displayName": "Send email (V4)",
+      "deprecated": false,
+      "description": "- SendEmailV4",
+      "parameters": [
+        {
+          "name": "Content",
+          "key": "content",
+          "required": false,
+          "type": "byte",
+          "description": "Attachment file content"
+        },
+        {
+          "name": "Name",
+          "key": "filename",
+          "required": false,
+          "type": "string",
+          "description": "Attachment file name"
+        },
+        {
+          "name": "ContentType",
+          "key": "contenttype",
+          "required": false,
+          "type": "string",
+          "description": "Type of content in the attachment."
+        },
+        {
+          "name": "From",
+          "key": "from",
+          "required": true,
+          "type": "email",
+          "description": "Origination address of your email. Must be a valid email address from your domain"
+        },
+        {
+          "name": "From name",
+          "key": "fromname",
+          "required": false,
+          "type": "string",
+          "description": "Origination name of your email"
+        },
+        {
+          "name": "To",
+          "key": "to",
+          "required": true,
+          "type": "email",
+          "description": "Valid email addresses separated by a semicolon or comma"
+        },
+        {
+          "name": "To names",
+          "key": "toname",
+          "required": false,
+          "type": "string",
+          "description": "A display name for each email address separated by a semicolon or comma"
+        },
+        {
+          "name": "Subject",
+          "key": "subject",
+          "required": true,
+          "type": "string",
+          "description": "Subject of your email"
+        },
+        {
+          "name": "Email body",
+          "key": "text",
+          "required": true,
+          "type": "html",
+          "description": "Content of your email"
+        },
+        {
+          "name": "CC",
+          "key": "cc",
+          "required": false,
+          "type": "email",
+          "description": "Valid email addresses separated by a semicolon or comma"
+        },
+        {
+          "name": "CC names",
+          "key": "ccname",
+          "required": false,
+          "type": "string",
+          "description": "A display name for each CC email address separated by a semicolon or comma"
+        },
+        {
+          "name": "Bcc",
+          "key": "bcc",
+          "required": false,
+          "type": "email",
+          "description": "Valid email addresses separated by a semicolon or comma"
+        },
+        {
+          "name": "BCC names",
+          "key": "bccname",
+          "required": false,
+          "type": "string",
+          "description": "A display name for each BCC email address separated by a semicolon or comma"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

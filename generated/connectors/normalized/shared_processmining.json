@@ -1,0 +1,55 @@
+{
+  "connectorId": "shared_processmining",
+  "displayName": "Process Mining",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/processmining/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-11-14T01:00:00.0000000Z",
+  "sourceGitCommit": "48a9375046661d90e1473a500afeee4dff58d05f",
+  "sourcePath": "docs/processmining/index.yml",
+  "operations": {
+    "InvokeMCP": {
+      "operationId": "InvokeMCP",
+      "kind": "action",
+      "displayName": "Process Mining MCP (Preview) (Preview)",
+      "deprecated": false,
+      "description": "- InvokeMCP",
+      "parameters": [],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "PollProcessMiningTrigger": {
+      "operationId": "PollProcessMiningTrigger",
+      "kind": "trigger",
+      "displayName": "When a Process data is refreshed (Preview)",
+      "deprecated": false,
+      "description": "- PollProcessMiningTrigger",
+      "parameters": [
+        {
+          "name": "Process",
+          "key": "processId",
+          "required": true,
+          "type": "string",
+          "description": "The id of the process."
+        },
+        {
+          "name": "View",
+          "key": "viewId",
+          "required": true,
+          "type": "string",
+          "description": "The id of the view."
+        },
+        {
+          "name": "Business rule",
+          "key": "businessRuleId",
+          "required": true,
+          "type": "string",
+          "description": "The id of the Business Rule."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- TriggerData"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

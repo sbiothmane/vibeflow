@@ -1,0 +1,4231 @@
+{
+  "connectorId": "shared_outlook",
+  "displayName": "Outlook.com",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/outlook/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-03-24T01:07:00.0000000Z",
+  "sourceGitCommit": "4ca0543783a46ed80e2f607ad2198e71669f5613",
+  "sourcePath": "docs/Outlook/index.yml",
+  "operations": {
+    "CalendarDeleteItem": {
+      "operationId": "CalendarDeleteItem",
+      "kind": "action",
+      "displayName": "Delete event",
+      "deprecated": false,
+      "description": "- CalendarDeleteItem",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select an event"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CalendarGetItem": {
+      "operationId": "CalendarGetItem",
+      "kind": "action",
+      "displayName": "Get event (V1) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CalendarGetItem",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Item id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select an event"
+        }
+      ],
+      "returns": {
+        "raw": "Connector specific calendar event model class for the backend\n- Body\n- CalendarEventBackend"
+      }
+    },
+    "CalendarGetItems": {
+      "operationId": "CalendarGetItems",
+      "kind": "action",
+      "displayName": "Get events (V1) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CalendarGetItems",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Skip Count",
+          "key": "$skip",
+          "required": false,
+          "type": "integer",
+          "description": "The number of entries to skip (default = 0)."
+        }
+      ],
+      "returns": {
+        "raw": "Entity list response\n- Body\n- EntityListResponse[CalendarEventBackend]"
+      }
+    },
+    "CalendarGetOnChangedItems": {
+      "operationId": "CalendarGetOnChangedItems",
+      "kind": "trigger",
+      "displayName": "When an event is added, updated or deleted [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CalendarGetOnChangedItems",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Incoming Days Tracked",
+          "key": "incomingDays",
+          "required": false,
+          "type": "integer",
+          "description": "Number of incoming days in calendar to be tracked"
+        },
+        {
+          "name": "Past Days Tracked",
+          "key": "pastDays",
+          "required": false,
+          "type": "integer",
+          "description": "Number of past days in calendar to be tracked"
+        }
+      ],
+      "returns": {
+        "raw": "The list of calendar items with action type\n- Body\n- CalendarEventListWithActionType"
+      }
+    },
+    "CalendarGetOnChangedItemsV2": {
+      "operationId": "CalendarGetOnChangedItemsV2",
+      "kind": "trigger",
+      "displayName": "When an event is added, updated or deleted (V2)",
+      "deprecated": false,
+      "description": "- CalendarGetOnChangedItemsV2",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Incoming Days Tracked",
+          "key": "incomingDays",
+          "required": false,
+          "type": "integer",
+          "description": "Number of incoming days in calendar to be tracked"
+        },
+        {
+          "name": "Past Days Tracked",
+          "key": "pastDays",
+          "required": false,
+          "type": "integer",
+          "description": "Number of past days in calendar to be tracked"
+        }
+      ],
+      "returns": {
+        "raw": "The list of calendar items with action type\n- Body\n- CalendarEventListWithActionType"
+      }
+    },
+    "CalendarGetOnNewItems": {
+      "operationId": "CalendarGetOnNewItems",
+      "kind": "trigger",
+      "displayName": "When a new event is created (V1) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CalendarGetOnNewItems",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Skip Count",
+          "key": "$skip",
+          "required": false,
+          "type": "integer",
+          "description": "The number of entries to skip (default = 0)."
+        }
+      ],
+      "returns": {
+        "raw": "The list of calendar items\n- Body\n- CalendarEventList"
+      }
+    },
+    "CalendarGetOnNewItemsV2": {
+      "operationId": "CalendarGetOnNewItemsV2",
+      "kind": "trigger",
+      "displayName": "When a new event is created (V2)",
+      "deprecated": false,
+      "description": "- CalendarGetOnNewItemsV2",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Skip Count",
+          "key": "$skip",
+          "required": false,
+          "type": "integer",
+          "description": "The number of entries to skip (default = 0)."
+        }
+      ],
+      "returns": {
+        "raw": "The list of calendar items\n- Body\n- CalendarEventListClientReceive"
+      }
+    },
+    "CalendarGetOnUpdatedItems": {
+      "operationId": "CalendarGetOnUpdatedItems",
+      "kind": "trigger",
+      "displayName": "When an event is modified (V1) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CalendarGetOnUpdatedItems",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Skip Count",
+          "key": "$skip",
+          "required": false,
+          "type": "integer",
+          "description": "The number of entries to skip (default = 0)."
+        }
+      ],
+      "returns": {
+        "raw": "The list of calendar items\n- Body\n- CalendarEventList"
+      }
+    },
+    "CalendarGetOnUpdatedItemsV2": {
+      "operationId": "CalendarGetOnUpdatedItemsV2",
+      "kind": "trigger",
+      "displayName": "When an event is modified (V2)",
+      "deprecated": false,
+      "description": "- CalendarGetOnUpdatedItemsV2",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Skip Count",
+          "key": "$skip",
+          "required": false,
+          "type": "integer",
+          "description": "The number of entries to skip (default = 0)."
+        }
+      ],
+      "returns": {
+        "raw": "The list of calendar items\n- Body\n- CalendarEventListClientReceive"
+      }
+    },
+    "CalendarGetTables": {
+      "operationId": "CalendarGetTables",
+      "kind": "action",
+      "displayName": "Get calendars",
+      "deprecated": false,
+      "description": "- CalendarGetTables",
+      "parameters": [],
+      "returns": {
+        "raw": "Entity list response\n- Body\n- EntityListResponse[Table]"
+      }
+    },
+    "CalendarPatchItem": {
+      "operationId": "CalendarPatchItem",
+      "kind": "action",
+      "displayName": "Update event (V1) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CalendarPatchItem",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select an event"
+        },
+        {
+          "name": "Id",
+          "key": "Id",
+          "required": false,
+          "type": "string",
+          "description": "The Event's unique identifier"
+        },
+        {
+          "name": "Response",
+          "key": "Response",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Time",
+          "key": "Time",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "Type",
+          "key": "Type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Name",
+          "key": "Name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Address",
+          "key": "Address",
+          "required": false,
+          "type": "email",
+          "description": ""
+        },
+        {
+          "name": "ContentType",
+          "key": "ContentType",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Content",
+          "key": "Content",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Body preview",
+          "key": "BodyPreview",
+          "required": false,
+          "type": "string",
+          "description": "The preview of the message associated with the event"
+        },
+        {
+          "name": "Categories",
+          "key": "Categories",
+          "required": false,
+          "type": "array of string",
+          "description": "The categories associated with the event"
+        },
+        {
+          "name": "Change key",
+          "key": "ChangeKey",
+          "required": false,
+          "type": "string",
+          "description": "This property identifies the version of the event object. Every time the event is changed, ChangeKey changes as well."
+        },
+        {
+          "name": "Created time",
+          "key": "DateTimeCreated",
+          "required": false,
+          "type": "date-time",
+          "description": "The date and time that the event was created"
+        },
+        {
+          "name": "Last modified time",
+          "key": "DateTimeLastModified",
+          "required": false,
+          "type": "date-time",
+          "description": "The date and time that the event was last modified"
+        },
+        {
+          "name": "End time",
+          "key": "End",
+          "required": true,
+          "type": "date-time",
+          "description": "The end time of the event"
+        },
+        {
+          "name": "End time zone",
+          "key": "EndTimeZone",
+          "required": false,
+          "type": "string",
+          "description": "This property specifies the time zone of the meeting end time. The value must be as defined in Windows (example: 'Pacific Standard Time')."
+        },
+        {
+          "name": "Has attachments?",
+          "key": "HasAttachments",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event has attachments"
+        },
+        {
+          "name": "Event Unique ID",
+          "key": "ICalUId",
+          "required": false,
+          "type": "string",
+          "description": "A unique identifier that is shared by all instances of an event across different calendars"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "The importance of the event: Low, Normal, or High"
+        },
+        {
+          "name": "Is all day event?",
+          "key": "IsAllDay",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event lasts all day"
+        },
+        {
+          "name": "Is cancelled?",
+          "key": "IsCancelled",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event has been canceled"
+        },
+        {
+          "name": "Is Organizer",
+          "key": "IsOrganizer",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the message sender is also the organizer"
+        },
+        {
+          "name": "DisplayName",
+          "key": "DisplayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Street",
+          "key": "Street",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "City",
+          "key": "City",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "State",
+          "key": "State",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "CountryOrRegion",
+          "key": "CountryOrRegion",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "PostalCode",
+          "key": "PostalCode",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Altitude",
+          "key": "Altitude",
+          "required": false,
+          "type": "double",
+          "description": ""
+        },
+        {
+          "name": "Latitude",
+          "key": "Latitude",
+          "required": false,
+          "type": "double",
+          "description": ""
+        },
+        {
+          "name": "Longitude",
+          "key": "Longitude",
+          "required": false,
+          "type": "double",
+          "description": ""
+        },
+        {
+          "name": "Accuracy",
+          "key": "Accuracy",
+          "required": false,
+          "type": "double",
+          "description": ""
+        },
+        {
+          "name": "AltitudeAccuracy",
+          "key": "AltitudeAccuracy",
+          "required": false,
+          "type": "double",
+          "description": ""
+        },
+        {
+          "name": "Name",
+          "key": "Name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Address",
+          "key": "Address",
+          "required": false,
+          "type": "email",
+          "description": ""
+        },
+        {
+          "name": "Type",
+          "key": "Type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Interval",
+          "key": "Interval",
+          "required": false,
+          "type": "integer",
+          "description": ""
+        },
+        {
+          "name": "Month",
+          "key": "Month",
+          "required": false,
+          "type": "integer",
+          "description": ""
+        },
+        {
+          "name": "DayOfMonth",
+          "key": "DayOfMonth",
+          "required": false,
+          "type": "integer",
+          "description": ""
+        },
+        {
+          "name": "DaysOfWeek",
+          "key": "DaysOfWeek",
+          "required": false,
+          "type": "array of string",
+          "description": ""
+        },
+        {
+          "name": "FirstDayOfWeek",
+          "key": "FirstDayOfWeek",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Index",
+          "key": "Index",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Type",
+          "key": "Type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "StartDate",
+          "key": "StartDate",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "EndDate",
+          "key": "EndDate",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "NumberOfOccurrences",
+          "key": "NumberOfOccurrences",
+          "required": false,
+          "type": "integer",
+          "description": ""
+        },
+        {
+          "name": "Reminder",
+          "key": "Reminder",
+          "required": false,
+          "type": "integer",
+          "description": "Time in minutes before event start to remind"
+        },
+        {
+          "name": "Response requested",
+          "key": "ResponseRequested",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the sender would like a response when the event is accepted or declined"
+        },
+        {
+          "name": "Response",
+          "key": "Response",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Time",
+          "key": "Time",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "Series master id",
+          "key": "SeriesMasterId",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for Series Master event type"
+        },
+        {
+          "name": "Show as",
+          "key": "ShowAs",
+          "required": false,
+          "type": "string",
+          "description": "Shows as free or busy"
+        },
+        {
+          "name": "Start time",
+          "key": "Start",
+          "required": true,
+          "type": "date-time",
+          "description": "The start time of the event"
+        },
+        {
+          "name": "Start time zone",
+          "key": "StartTimeZone",
+          "required": false,
+          "type": "string",
+          "description": "This property specifies the time zone of the meeting start time. The value must be as defined in Windows (example: 'Pacific Standard Time')."
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": true,
+          "type": "string",
+          "description": "Event subject"
+        },
+        {
+          "name": "Type",
+          "key": "Type",
+          "required": false,
+          "type": "string",
+          "description": "The event type: Single Instance, Occurrence, Exception, or Series Master"
+        },
+        {
+          "name": "Web link",
+          "key": "WebLink",
+          "required": false,
+          "type": "uri",
+          "description": "The preview of the message associated with the event"
+        },
+        {
+          "name": "Reason",
+          "key": "Reason",
+          "required": false,
+          "type": "string",
+          "description": "The reason property used by O365 sync events protocol, will be 'deleted' if its a deleted event."
+        }
+      ],
+      "returns": {
+        "raw": "Connector specific calendar event model class for the backend\n- Body\n- CalendarEventBackend"
+      }
+    },
+    "CalendarPostItem": {
+      "operationId": "CalendarPostItem",
+      "kind": "action",
+      "displayName": "Create event (V1) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CalendarPostItem",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Id",
+          "key": "Id",
+          "required": false,
+          "type": "string",
+          "description": "The Event's unique identifier"
+        },
+        {
+          "name": "Response",
+          "key": "Response",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Time",
+          "key": "Time",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "Type",
+          "key": "Type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Name",
+          "key": "Name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Address",
+          "key": "Address",
+          "required": false,
+          "type": "email",
+          "description": ""
+        },
+        {
+          "name": "ContentType",
+          "key": "ContentType",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Content",
+          "key": "Content",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Body preview",
+          "key": "BodyPreview",
+          "required": false,
+          "type": "string",
+          "description": "The preview of the message associated with the event"
+        },
+        {
+          "name": "Categories",
+          "key": "Categories",
+          "required": false,
+          "type": "array of string",
+          "description": "The categories associated with the event"
+        },
+        {
+          "name": "Change key",
+          "key": "ChangeKey",
+          "required": false,
+          "type": "string",
+          "description": "This property identifies the version of the event object. Every time the event is changed, ChangeKey changes as well."
+        },
+        {
+          "name": "Created time",
+          "key": "DateTimeCreated",
+          "required": false,
+          "type": "date-time",
+          "description": "The date and time that the event was created"
+        },
+        {
+          "name": "Last modified time",
+          "key": "DateTimeLastModified",
+          "required": false,
+          "type": "date-time",
+          "description": "The date and time that the event was last modified"
+        },
+        {
+          "name": "End time",
+          "key": "End",
+          "required": true,
+          "type": "date-time",
+          "description": "The end time of the event"
+        },
+        {
+          "name": "End time zone",
+          "key": "EndTimeZone",
+          "required": false,
+          "type": "string",
+          "description": "This property specifies the time zone of the meeting end time. The value must be as defined in Windows (example: 'Pacific Standard Time')."
+        },
+        {
+          "name": "Has attachments?",
+          "key": "HasAttachments",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event has attachments"
+        },
+        {
+          "name": "Event Unique ID",
+          "key": "ICalUId",
+          "required": false,
+          "type": "string",
+          "description": "A unique identifier that is shared by all instances of an event across different calendars"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "The importance of the event: Low, Normal, or High"
+        },
+        {
+          "name": "Is all day event?",
+          "key": "IsAllDay",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event lasts all day"
+        },
+        {
+          "name": "Is cancelled?",
+          "key": "IsCancelled",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event has been canceled"
+        },
+        {
+          "name": "Is Organizer",
+          "key": "IsOrganizer",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the message sender is also the organizer"
+        },
+        {
+          "name": "DisplayName",
+          "key": "DisplayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Street",
+          "key": "Street",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "City",
+          "key": "City",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "State",
+          "key": "State",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "CountryOrRegion",
+          "key": "CountryOrRegion",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "PostalCode",
+          "key": "PostalCode",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Altitude",
+          "key": "Altitude",
+          "required": false,
+          "type": "double",
+          "description": ""
+        },
+        {
+          "name": "Latitude",
+          "key": "Latitude",
+          "required": false,
+          "type": "double",
+          "description": ""
+        },
+        {
+          "name": "Longitude",
+          "key": "Longitude",
+          "required": false,
+          "type": "double",
+          "description": ""
+        },
+        {
+          "name": "Accuracy",
+          "key": "Accuracy",
+          "required": false,
+          "type": "double",
+          "description": ""
+        },
+        {
+          "name": "AltitudeAccuracy",
+          "key": "AltitudeAccuracy",
+          "required": false,
+          "type": "double",
+          "description": ""
+        },
+        {
+          "name": "Name",
+          "key": "Name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Address",
+          "key": "Address",
+          "required": false,
+          "type": "email",
+          "description": ""
+        },
+        {
+          "name": "Type",
+          "key": "Type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Interval",
+          "key": "Interval",
+          "required": false,
+          "type": "integer",
+          "description": ""
+        },
+        {
+          "name": "Month",
+          "key": "Month",
+          "required": false,
+          "type": "integer",
+          "description": ""
+        },
+        {
+          "name": "DayOfMonth",
+          "key": "DayOfMonth",
+          "required": false,
+          "type": "integer",
+          "description": ""
+        },
+        {
+          "name": "DaysOfWeek",
+          "key": "DaysOfWeek",
+          "required": false,
+          "type": "array of string",
+          "description": ""
+        },
+        {
+          "name": "FirstDayOfWeek",
+          "key": "FirstDayOfWeek",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Index",
+          "key": "Index",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Type",
+          "key": "Type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "StartDate",
+          "key": "StartDate",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "EndDate",
+          "key": "EndDate",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "NumberOfOccurrences",
+          "key": "NumberOfOccurrences",
+          "required": false,
+          "type": "integer",
+          "description": ""
+        },
+        {
+          "name": "Reminder",
+          "key": "Reminder",
+          "required": false,
+          "type": "integer",
+          "description": "Time in minutes before event start to remind"
+        },
+        {
+          "name": "Response requested",
+          "key": "ResponseRequested",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the sender would like a response when the event is accepted or declined"
+        },
+        {
+          "name": "Response",
+          "key": "Response",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Time",
+          "key": "Time",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "Series master id",
+          "key": "SeriesMasterId",
+          "required": false,
+          "type": "string",
+          "description": "Unique identifier for Series Master event type"
+        },
+        {
+          "name": "Show as",
+          "key": "ShowAs",
+          "required": false,
+          "type": "string",
+          "description": "Shows as free or busy"
+        },
+        {
+          "name": "Start time",
+          "key": "Start",
+          "required": true,
+          "type": "date-time",
+          "description": "The start time of the event"
+        },
+        {
+          "name": "Start time zone",
+          "key": "StartTimeZone",
+          "required": false,
+          "type": "string",
+          "description": "This property specifies the time zone of the meeting start time. The value must be as defined in Windows (example: 'Pacific Standard Time')."
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": true,
+          "type": "string",
+          "description": "Event subject"
+        },
+        {
+          "name": "Type",
+          "key": "Type",
+          "required": false,
+          "type": "string",
+          "description": "The event type: Single Instance, Occurrence, Exception, or Series Master"
+        },
+        {
+          "name": "Web link",
+          "key": "WebLink",
+          "required": false,
+          "type": "uri",
+          "description": "The preview of the message associated with the event"
+        },
+        {
+          "name": "Reason",
+          "key": "Reason",
+          "required": false,
+          "type": "string",
+          "description": "The reason property used by O365 sync events protocol, will be 'deleted' if its a deleted event."
+        }
+      ],
+      "returns": {
+        "raw": "Connector specific calendar event model class for the backend\n- Body\n- CalendarEventBackend"
+      }
+    },
+    "ContactDeleteItem": {
+      "operationId": "ContactDeleteItem",
+      "kind": "action",
+      "displayName": "Delete contact",
+      "deprecated": false,
+      "description": "- ContactDeleteItem",
+      "parameters": [
+        {
+          "name": "Folder id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a contacts folder"
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of contact to delete"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ContactGetItem": {
+      "operationId": "ContactGetItem",
+      "kind": "action",
+      "displayName": "Get contact",
+      "deprecated": false,
+      "description": "- ContactGetItem",
+      "parameters": [
+        {
+          "name": "Folder id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a contacts folder"
+        },
+        {
+          "name": "Item id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of a contact to retrieve"
+        }
+      ],
+      "returns": {
+        "raw": "Contact response\n- Body\n- ContactResponse"
+      }
+    },
+    "ContactGetItems": {
+      "operationId": "ContactGetItems",
+      "kind": "action",
+      "displayName": "Get contacts",
+      "deprecated": false,
+      "description": "- ContactGetItems",
+      "parameters": [
+        {
+          "name": "Folder id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of the contacts folder to retrieve"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA filter query to restrict the entries returned (e.g. stringColumn eq 'string' OR numberColumn lt 123)."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Skip Count",
+          "key": "$skip",
+          "required": false,
+          "type": "integer",
+          "description": "The number of entries to skip (default = 0)."
+        }
+      ],
+      "returns": {
+        "raw": "Entity list response\n- Body\n- EntityListResponse[ContactResponse]"
+      }
+    },
+    "ContactGetTables": {
+      "operationId": "ContactGetTables",
+      "kind": "action",
+      "displayName": "Get contact folders",
+      "deprecated": false,
+      "description": "- ContactGetTables",
+      "parameters": [],
+      "returns": {
+        "raw": "Entity list response\n- Body\n- EntityListResponse[Table]"
+      }
+    },
+    "ContactPatchItem": {
+      "operationId": "ContactPatchItem",
+      "kind": "action",
+      "displayName": "Update contact",
+      "deprecated": false,
+      "description": "- ContactPatchItem",
+      "parameters": [
+        {
+          "name": "Folder id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a contacts folder"
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of contact to update"
+        },
+        {
+          "name": "Id",
+          "key": "Id",
+          "required": false,
+          "type": "string",
+          "description": "The contact's unique identifier."
+        },
+        {
+          "name": "Parent folder id",
+          "key": "ParentFolderId",
+          "required": false,
+          "type": "string",
+          "description": "The ID of the contact's parent folder"
+        },
+        {
+          "name": "Birthday",
+          "key": "Birthday",
+          "required": false,
+          "type": "date-time",
+          "description": "The contact's birthday"
+        },
+        {
+          "name": "File as",
+          "key": "FileAs",
+          "required": false,
+          "type": "string",
+          "description": "The name the contact is filed under"
+        },
+        {
+          "name": "Display Name",
+          "key": "DisplayName",
+          "required": false,
+          "type": "string",
+          "description": "The contact's display name"
+        },
+        {
+          "name": "Given name",
+          "key": "GivenName",
+          "required": true,
+          "type": "string",
+          "description": "The contact's given name"
+        },
+        {
+          "name": "Initials",
+          "key": "Initials",
+          "required": false,
+          "type": "string",
+          "description": "The contact's initials"
+        },
+        {
+          "name": "Middle name",
+          "key": "MiddleName",
+          "required": false,
+          "type": "string",
+          "description": "The contact's middle name"
+        },
+        {
+          "name": "Nickname",
+          "key": "NickName",
+          "required": false,
+          "type": "string",
+          "description": "The contact's nickname"
+        },
+        {
+          "name": "Surname",
+          "key": "Surname",
+          "required": false,
+          "type": "string",
+          "description": "The contact's surname"
+        },
+        {
+          "name": "Title",
+          "key": "Title",
+          "required": false,
+          "type": "string",
+          "description": "The contact's title"
+        },
+        {
+          "name": "Generation",
+          "key": "Generation",
+          "required": false,
+          "type": "string",
+          "description": "The contact's generation"
+        },
+        {
+          "name": "Name",
+          "key": "Name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Address",
+          "key": "Address",
+          "required": false,
+          "type": "email",
+          "description": ""
+        },
+        {
+          "name": "IM addresses",
+          "key": "ImAddresses",
+          "required": false,
+          "type": "array of string",
+          "description": "The contact's instant messaging (IM) addresses"
+        },
+        {
+          "name": "JobTitle",
+          "key": "JobTitle",
+          "required": false,
+          "type": "string",
+          "description": "The contact's job title"
+        },
+        {
+          "name": "Company name",
+          "key": "CompanyName",
+          "required": false,
+          "type": "string",
+          "description": "The name of the contact's company"
+        },
+        {
+          "name": "Department",
+          "key": "Department",
+          "required": false,
+          "type": "string",
+          "description": "The contact's department"
+        },
+        {
+          "name": "Office location",
+          "key": "OfficeLocation",
+          "required": false,
+          "type": "string",
+          "description": "The location of the contact's office"
+        },
+        {
+          "name": "Profession",
+          "key": "Profession",
+          "required": false,
+          "type": "string",
+          "description": "The contact's profession"
+        },
+        {
+          "name": "Business home page",
+          "key": "BusinessHomePage",
+          "required": false,
+          "type": "string",
+          "description": "The business home page of the contact"
+        },
+        {
+          "name": "Assistant name",
+          "key": "AssistantName",
+          "required": false,
+          "type": "string",
+          "description": "The name of the contact's assistant"
+        },
+        {
+          "name": "Manager",
+          "key": "Manager",
+          "required": false,
+          "type": "string",
+          "description": "The name of the contact's manager"
+        },
+        {
+          "name": "Home phones",
+          "key": "HomePhones",
+          "required": true,
+          "type": "array of string",
+          "description": "The contact's home phone numbers"
+        },
+        {
+          "name": "Business phones",
+          "key": "BusinessPhones",
+          "required": false,
+          "type": "array of string",
+          "description": "The contact's business phone numbers"
+        },
+        {
+          "name": "Mobile phone",
+          "key": "MobilePhone1",
+          "required": false,
+          "type": "string",
+          "description": "The contact's mobile phone number"
+        },
+        {
+          "name": "Street",
+          "key": "Street",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "City",
+          "key": "City",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "State",
+          "key": "State",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "CountryOrRegion",
+          "key": "CountryOrRegion",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "PostalCode",
+          "key": "PostalCode",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Street",
+          "key": "Street",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "City",
+          "key": "City",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "State",
+          "key": "State",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "CountryOrRegion",
+          "key": "CountryOrRegion",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "PostalCode",
+          "key": "PostalCode",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Street",
+          "key": "Street",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "City",
+          "key": "City",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "State",
+          "key": "State",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "CountryOrRegion",
+          "key": "CountryOrRegion",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "PostalCode",
+          "key": "PostalCode",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Yomi company name",
+          "key": "YomiCompanyName",
+          "required": false,
+          "type": "string",
+          "description": "The phonetic Japanese company name of the contact"
+        },
+        {
+          "name": "Yomi given name",
+          "key": "YomiGivenName",
+          "required": false,
+          "type": "string",
+          "description": "The phonetic Japanese given name (first name) of the contact"
+        },
+        {
+          "name": "Yomi surname",
+          "key": "YomiSurname",
+          "required": false,
+          "type": "string",
+          "description": "The phonetic Japanese surname (last name) of the contact"
+        },
+        {
+          "name": "Categories",
+          "key": "Categories",
+          "required": false,
+          "type": "array of string",
+          "description": "The categories associated with the contact"
+        },
+        {
+          "name": "Change key",
+          "key": "ChangeKey",
+          "required": false,
+          "type": "string",
+          "description": "Identifies the version of the event object"
+        },
+        {
+          "name": "Created time",
+          "key": "DateTimeCreated",
+          "required": false,
+          "type": "date-time",
+          "description": "The time the contact was created"
+        },
+        {
+          "name": "Last modified time",
+          "key": "DateTimeLastModified",
+          "required": false,
+          "type": "date-time",
+          "description": "The time the contact was modified"
+        }
+      ],
+      "returns": {
+        "raw": "Contact response\n- Body\n- ContactResponse"
+      }
+    },
+    "ContactPostItem": {
+      "operationId": "ContactPostItem",
+      "kind": "action",
+      "displayName": "Create contact",
+      "deprecated": false,
+      "description": "- ContactPostItem",
+      "parameters": [
+        {
+          "name": "Folder id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a contacts folder"
+        },
+        {
+          "name": "Id",
+          "key": "Id",
+          "required": false,
+          "type": "string",
+          "description": "The contact's unique identifier."
+        },
+        {
+          "name": "Parent folder id",
+          "key": "ParentFolderId",
+          "required": false,
+          "type": "string",
+          "description": "The ID of the contact's parent folder"
+        },
+        {
+          "name": "Birthday",
+          "key": "Birthday",
+          "required": false,
+          "type": "date-time",
+          "description": "The contact's birthday"
+        },
+        {
+          "name": "File as",
+          "key": "FileAs",
+          "required": false,
+          "type": "string",
+          "description": "The name the contact is filed under"
+        },
+        {
+          "name": "Display Name",
+          "key": "DisplayName",
+          "required": false,
+          "type": "string",
+          "description": "The contact's display name"
+        },
+        {
+          "name": "Given name",
+          "key": "GivenName",
+          "required": true,
+          "type": "string",
+          "description": "The contact's given name"
+        },
+        {
+          "name": "Initials",
+          "key": "Initials",
+          "required": false,
+          "type": "string",
+          "description": "The contact's initials"
+        },
+        {
+          "name": "Middle name",
+          "key": "MiddleName",
+          "required": false,
+          "type": "string",
+          "description": "The contact's middle name"
+        },
+        {
+          "name": "Nickname",
+          "key": "NickName",
+          "required": false,
+          "type": "string",
+          "description": "The contact's nickname"
+        },
+        {
+          "name": "Surname",
+          "key": "Surname",
+          "required": false,
+          "type": "string",
+          "description": "The contact's surname"
+        },
+        {
+          "name": "Title",
+          "key": "Title",
+          "required": false,
+          "type": "string",
+          "description": "The contact's title"
+        },
+        {
+          "name": "Generation",
+          "key": "Generation",
+          "required": false,
+          "type": "string",
+          "description": "The contact's generation"
+        },
+        {
+          "name": "Name",
+          "key": "Name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Address",
+          "key": "Address",
+          "required": false,
+          "type": "email",
+          "description": ""
+        },
+        {
+          "name": "IM addresses",
+          "key": "ImAddresses",
+          "required": false,
+          "type": "array of string",
+          "description": "The contact's instant messaging (IM) addresses"
+        },
+        {
+          "name": "JobTitle",
+          "key": "JobTitle",
+          "required": false,
+          "type": "string",
+          "description": "The contact's job title"
+        },
+        {
+          "name": "Company name",
+          "key": "CompanyName",
+          "required": false,
+          "type": "string",
+          "description": "The name of the contact's company"
+        },
+        {
+          "name": "Department",
+          "key": "Department",
+          "required": false,
+          "type": "string",
+          "description": "The contact's department"
+        },
+        {
+          "name": "Office location",
+          "key": "OfficeLocation",
+          "required": false,
+          "type": "string",
+          "description": "The location of the contact's office"
+        },
+        {
+          "name": "Profession",
+          "key": "Profession",
+          "required": false,
+          "type": "string",
+          "description": "The contact's profession"
+        },
+        {
+          "name": "Business home page",
+          "key": "BusinessHomePage",
+          "required": false,
+          "type": "string",
+          "description": "The business home page of the contact"
+        },
+        {
+          "name": "Assistant name",
+          "key": "AssistantName",
+          "required": false,
+          "type": "string",
+          "description": "The name of the contact's assistant"
+        },
+        {
+          "name": "Manager",
+          "key": "Manager",
+          "required": false,
+          "type": "string",
+          "description": "The name of the contact's manager"
+        },
+        {
+          "name": "Home phones",
+          "key": "HomePhones",
+          "required": true,
+          "type": "array of string",
+          "description": "The contact's home phone numbers"
+        },
+        {
+          "name": "Business phones",
+          "key": "BusinessPhones",
+          "required": false,
+          "type": "array of string",
+          "description": "The contact's business phone numbers"
+        },
+        {
+          "name": "Mobile phone",
+          "key": "MobilePhone1",
+          "required": false,
+          "type": "string",
+          "description": "The contact's mobile phone number"
+        },
+        {
+          "name": "Street",
+          "key": "Street",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "City",
+          "key": "City",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "State",
+          "key": "State",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "CountryOrRegion",
+          "key": "CountryOrRegion",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "PostalCode",
+          "key": "PostalCode",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Street",
+          "key": "Street",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "City",
+          "key": "City",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "State",
+          "key": "State",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "CountryOrRegion",
+          "key": "CountryOrRegion",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "PostalCode",
+          "key": "PostalCode",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Street",
+          "key": "Street",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "City",
+          "key": "City",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "State",
+          "key": "State",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "CountryOrRegion",
+          "key": "CountryOrRegion",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "PostalCode",
+          "key": "PostalCode",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Yomi company name",
+          "key": "YomiCompanyName",
+          "required": false,
+          "type": "string",
+          "description": "The phonetic Japanese company name of the contact"
+        },
+        {
+          "name": "Yomi given name",
+          "key": "YomiGivenName",
+          "required": false,
+          "type": "string",
+          "description": "The phonetic Japanese given name (first name) of the contact"
+        },
+        {
+          "name": "Yomi surname",
+          "key": "YomiSurname",
+          "required": false,
+          "type": "string",
+          "description": "The phonetic Japanese surname (last name) of the contact"
+        },
+        {
+          "name": "Categories",
+          "key": "Categories",
+          "required": false,
+          "type": "array of string",
+          "description": "The categories associated with the contact"
+        },
+        {
+          "name": "Change key",
+          "key": "ChangeKey",
+          "required": false,
+          "type": "string",
+          "description": "Identifies the version of the event object"
+        },
+        {
+          "name": "Created time",
+          "key": "DateTimeCreated",
+          "required": false,
+          "type": "date-time",
+          "description": "The time the contact was created"
+        },
+        {
+          "name": "Last modified time",
+          "key": "DateTimeLastModified",
+          "required": false,
+          "type": "date-time",
+          "description": "The time the contact was modified"
+        }
+      ],
+      "returns": {
+        "raw": "Contact response\n- Body\n- ContactResponse"
+      }
+    },
+    "DeleteEmail": {
+      "operationId": "DeleteEmail",
+      "kind": "action",
+      "displayName": "Delete email",
+      "deprecated": false,
+      "description": "- DeleteEmail",
+      "parameters": [
+        {
+          "name": "Message Id",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "Id of the email to delete."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Flag": {
+      "operationId": "Flag",
+      "kind": "action",
+      "displayName": "Flag email",
+      "deprecated": false,
+      "description": "- Flag",
+      "parameters": [
+        {
+          "name": "Message Id",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "Id of the email to be flagged."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ForwardEmail": {
+      "operationId": "ForwardEmail",
+      "kind": "action",
+      "displayName": "Forward an email",
+      "deprecated": false,
+      "description": "- ForwardEmail",
+      "parameters": [
+        {
+          "name": "Message Id",
+          "key": "message_id",
+          "required": true,
+          "type": "string",
+          "description": "Id of the message to forward."
+        },
+        {
+          "name": "Comment",
+          "key": "Comment",
+          "required": false,
+          "type": "string",
+          "description": "Comment"
+        },
+        {
+          "name": "To",
+          "key": "ToRecipients",
+          "required": true,
+          "type": "string",
+          "description": "Semicolon separated list of recipients to forward the message to"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetAttachment": {
+      "operationId": "GetAttachment",
+      "kind": "action",
+      "displayName": "Get attachment",
+      "deprecated": false,
+      "description": "- GetAttachment",
+      "parameters": [
+        {
+          "name": "Message Id",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "Id of the email."
+        },
+        {
+          "name": "Attachment Id",
+          "key": "attachmentId",
+          "required": true,
+          "type": "string",
+          "description": "Id of the attachment to download."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- binary"
+      }
+    },
+    "GetEmail": {
+      "operationId": "GetEmail",
+      "kind": "action",
+      "displayName": "Get email",
+      "deprecated": false,
+      "description": "- GetEmail",
+      "parameters": [
+        {
+          "name": "Message Id",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "Id of the email."
+        },
+        {
+          "name": "Include Attachments",
+          "key": "includeAttachments",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to true, attachments content will also be retrieved along with the email."
+        },
+        {
+          "name": "Internet Message Id",
+          "key": "internetMessageId",
+          "required": false,
+          "type": "string",
+          "description": "Internet Message Id."
+        }
+      ],
+      "returns": {
+        "raw": "Receive Email Message\n- Body\n- ClientReceiveMessage"
+      }
+    },
+    "GetEmails": {
+      "operationId": "GetEmails",
+      "kind": "action",
+      "displayName": "Get emails [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetEmails",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Mail folder to retrieve emails from (default: 'Inbox')."
+        },
+        {
+          "name": "Fetch Only Unread Messages",
+          "key": "fetchOnlyUnread",
+          "required": false,
+          "type": "boolean",
+          "description": "Retrieve only unread emails?."
+        },
+        {
+          "name": "Include Attachments",
+          "key": "includeAttachments",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to true, attachments content will also be retrieved along with the email."
+        },
+        {
+          "name": "Search Query",
+          "key": "searchQuery",
+          "required": false,
+          "type": "string",
+          "description": "Search query (like in the Outlook client) to filter emails."
+        },
+        {
+          "name": "Top",
+          "key": "top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of emails to retrieve (default: 10)."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of ClientReceiveMessageStringEnums"
+      }
+    },
+    "GetEmailsV2": {
+      "operationId": "GetEmailsV2",
+      "kind": "action",
+      "displayName": "Get emails (V2)",
+      "deprecated": false,
+      "description": "- GetEmailsV2",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Mail folder to retrieve emails from (default: 'Inbox')."
+        },
+        {
+          "name": "To",
+          "key": "to",
+          "required": false,
+          "type": "email",
+          "description": "Recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "CC",
+          "key": "cc",
+          "required": false,
+          "type": "email",
+          "description": "CC recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "To or CC",
+          "key": "toOrCc",
+          "required": false,
+          "type": "email",
+          "description": "To or CC recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "From",
+          "key": "from",
+          "required": false,
+          "type": "email",
+          "description": "Sender email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "Importance",
+          "key": "importance",
+          "required": false,
+          "type": "string",
+          "description": "Importance of the email (Any, High, Normal, Low)."
+        },
+        {
+          "name": "Only with Attachments",
+          "key": "fetchOnlyWithAttachment",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to true, only emails with an attachment will be retrieved. Emails without any attachments will be skipped. If set to false, all emails will be retrieved."
+        },
+        {
+          "name": "Subject Filter",
+          "key": "subjectFilter",
+          "required": false,
+          "type": "string",
+          "description": "String to look for in the subject line."
+        },
+        {
+          "name": "Fetch Only Unread Messages",
+          "key": "fetchOnlyUnread",
+          "required": false,
+          "type": "boolean",
+          "description": "Retrieve only unread emails?."
+        },
+        {
+          "name": "Include Attachments",
+          "key": "includeAttachments",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to true, attachments content will also be retrieved along with the email."
+        },
+        {
+          "name": "Search Query",
+          "key": "searchQuery",
+          "required": false,
+          "type": "string",
+          "description": "Search query to filter emails. How to use '$search' parameter please refer to: https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/complex-types-for-mail-contacts-calendar#search-requests."
+        },
+        {
+          "name": "Top",
+          "key": "top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of emails to retrieve (default: 10)."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a wrapper object for batch response\n- Body\n- BatchResponse[ClientReceiveMessage]"
+      }
+    },
+    "GetEventsCalendarView": {
+      "operationId": "GetEventsCalendarView",
+      "kind": "action",
+      "displayName": "Get calendar view of events [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetEventsCalendarView",
+      "parameters": [
+        {
+          "name": "Calendar Id",
+          "key": "calendarId",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar."
+        },
+        {
+          "name": "Start Time",
+          "key": "startDateTimeOffset",
+          "required": true,
+          "type": "string",
+          "description": "Start time (example: '2017-01-01T08:00:00-07:00')."
+        },
+        {
+          "name": "End Time",
+          "key": "endDateTimeOffset",
+          "required": true,
+          "type": "string",
+          "description": "End time (example: '2017-02-01T08:00:00-07:00')."
+        }
+      ],
+      "returns": {
+        "raw": "Response containing a list and next link\n- Body\n- PaginatedListResponse[CalendarEventClientReceiveStringEnums]"
+      }
+    },
+    "GetEventsCalendarViewV2": {
+      "operationId": "GetEventsCalendarViewV2",
+      "kind": "action",
+      "displayName": "Get calendar view of events (V2)",
+      "deprecated": false,
+      "description": "- GetEventsCalendarViewV2",
+      "parameters": [
+        {
+          "name": "Calendar Id",
+          "key": "calendarId",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Start Time",
+          "key": "startDateTimeOffset",
+          "required": true,
+          "type": "string",
+          "description": "Start time (example: '2017-01-01T08:00:00-07:00')"
+        },
+        {
+          "name": "End Time",
+          "key": "endDateTimeOffset",
+          "required": true,
+          "type": "string",
+          "description": "End time (example: '2017-02-01T08:00:00-07:00')"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA filter query to restrict the entries returned (e.g. stringColumn eq 'string' OR numberColumn lt 123)."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Skip Count",
+          "key": "$skip",
+          "required": false,
+          "type": "integer",
+          "description": "The number of entries to skip (default = 0)."
+        },
+        {
+          "name": "Search",
+          "key": "search",
+          "required": false,
+          "type": "string",
+          "description": "Search text for matching event body and subject"
+        }
+      ],
+      "returns": {
+        "raw": "Entity list response\n- Body\n- EntityListResponse[CalendarEventClientReceiveStringEnums]"
+      }
+    },
+    "MarkAsRead": {
+      "operationId": "MarkAsRead",
+      "kind": "action",
+      "displayName": "Mark as read",
+      "deprecated": false,
+      "description": "- MarkAsRead",
+      "parameters": [
+        {
+          "name": "Message Id",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "Id of the email to be marked as read."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "Move": {
+      "operationId": "Move",
+      "kind": "action",
+      "displayName": "Move email",
+      "deprecated": false,
+      "description": "- Move",
+      "parameters": [
+        {
+          "name": "Message Id",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "Id of the email to be moved."
+        },
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": true,
+          "type": "string",
+          "description": "Mail folder to move the email to."
+        }
+      ],
+      "returns": {
+        "raw": "Receive Email Message\n- Body\n- ClientReceiveMessageStringEnums"
+      }
+    },
+    "OnFlaggedEmail": {
+      "operationId": "OnFlaggedEmail",
+      "kind": "trigger",
+      "displayName": "When an email is flagged [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnFlaggedEmail",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Mail folder to check for new emails."
+        },
+        {
+          "name": "To",
+          "key": "to",
+          "required": false,
+          "type": "email",
+          "description": "Recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "CC",
+          "key": "cc",
+          "required": false,
+          "type": "email",
+          "description": "CC recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "To or CC",
+          "key": "toOrCc",
+          "required": false,
+          "type": "email",
+          "description": "To or CC recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "From",
+          "key": "from",
+          "required": false,
+          "type": "email",
+          "description": "Sender email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "Importance",
+          "key": "importance",
+          "required": false,
+          "type": "string",
+          "description": "Importance of the email (Any, High, Normal, Low)."
+        },
+        {
+          "name": "Only with Attachments",
+          "key": "fetchOnlyWithAttachment",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to true, only emails with an attachment will be retrieved. Emails without any attachments will be skipped. If set to false, all emails will be retrieved."
+        },
+        {
+          "name": "Include Attachments",
+          "key": "includeAttachments",
+          "required": false,
+          "type": "boolean",
+          "description": "Should the response of the trigger include the attachments content."
+        },
+        {
+          "name": "Subject Filter",
+          "key": "subjectFilter",
+          "required": false,
+          "type": "string",
+          "description": "String to look for in the subject line."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a wrapper object for batch trigger response\n- Body\n- TriggerBatchResponse[ClientReceiveMessage]"
+      }
+    },
+    "OnFlaggedEmailV2": {
+      "operationId": "OnFlaggedEmailV2",
+      "kind": "trigger",
+      "displayName": "When an email is flagged (V2)",
+      "deprecated": false,
+      "description": "- OnFlaggedEmailV2",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Mail folder to check for new emails."
+        },
+        {
+          "name": "To",
+          "key": "to",
+          "required": false,
+          "type": "email",
+          "description": "Recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "CC",
+          "key": "cc",
+          "required": false,
+          "type": "email",
+          "description": "CC recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "To or CC",
+          "key": "toOrCc",
+          "required": false,
+          "type": "email",
+          "description": "To or CC recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "From",
+          "key": "from",
+          "required": false,
+          "type": "email",
+          "description": "Sender email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "Importance",
+          "key": "importance",
+          "required": false,
+          "type": "string",
+          "description": "Importance of the email (Any, High, Normal, Low)."
+        },
+        {
+          "name": "Only with Attachments",
+          "key": "fetchOnlyWithAttachment",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to true, only emails with an attachment will be retrieved. Emails without any attachments will be skipped. If set to false, all emails will be retrieved."
+        },
+        {
+          "name": "Include Attachments",
+          "key": "includeAttachments",
+          "required": false,
+          "type": "boolean",
+          "description": "Should the response of the trigger include the attachments content."
+        },
+        {
+          "name": "Subject Filter",
+          "key": "subjectFilter",
+          "required": false,
+          "type": "string",
+          "description": "String to look for in the subject line."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a wrapper object for batch trigger response\n- Body\n- TriggerBatchResponse[ClientReceiveMessage]"
+      }
+    },
+    "OnNewEmail": {
+      "operationId": "OnNewEmail",
+      "kind": "trigger",
+      "displayName": "When a new email arrives [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnNewEmail",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Mail folder to check for new emails."
+        },
+        {
+          "name": "To",
+          "key": "to",
+          "required": false,
+          "type": "email",
+          "description": "Recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "CC",
+          "key": "cc",
+          "required": false,
+          "type": "email",
+          "description": "CC recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "To or CC",
+          "key": "toOrCc",
+          "required": false,
+          "type": "email",
+          "description": "To or CC recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "From",
+          "key": "from",
+          "required": false,
+          "type": "email",
+          "description": "Sender email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "Importance",
+          "key": "importance",
+          "required": false,
+          "type": "string",
+          "description": "Importance of the email (Any, High, Normal, Low)."
+        },
+        {
+          "name": "Only with Attachments",
+          "key": "fetchOnlyWithAttachment",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to true, only emails with an attachment will be retrieved. Emails without any attachments will be skipped. If set to false, all emails will be retrieved."
+        },
+        {
+          "name": "Include Attachments",
+          "key": "includeAttachments",
+          "required": false,
+          "type": "boolean",
+          "description": "Should the response of the trigger include the attachments content."
+        },
+        {
+          "name": "Subject Filter",
+          "key": "subjectFilter",
+          "required": false,
+          "type": "string",
+          "description": "String to look for in the subject line."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a wrapper object for batch trigger response\n- Body\n- TriggerBatchResponse[ClientReceiveMessage]"
+      }
+    },
+    "OnNewEmailV2": {
+      "operationId": "OnNewEmailV2",
+      "kind": "trigger",
+      "displayName": "When a new email arrives (V2)",
+      "deprecated": false,
+      "description": "- OnNewEmailV2",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Mail folder to check for new emails."
+        },
+        {
+          "name": "To",
+          "key": "to",
+          "required": false,
+          "type": "email",
+          "description": "Recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "CC",
+          "key": "cc",
+          "required": false,
+          "type": "email",
+          "description": "CC recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "To or CC",
+          "key": "toOrCc",
+          "required": false,
+          "type": "email",
+          "description": "To or CC recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "From",
+          "key": "from",
+          "required": false,
+          "type": "email",
+          "description": "Sender email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "Importance",
+          "key": "importance",
+          "required": false,
+          "type": "string",
+          "description": "Importance of the email (Any, High, Normal, Low)."
+        },
+        {
+          "name": "Only with Attachments",
+          "key": "fetchOnlyWithAttachment",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to true, only emails with an attachment will be retrieved. Emails without any attachments will be skipped. If set to false, all emails will be retrieved."
+        },
+        {
+          "name": "Include Attachments",
+          "key": "includeAttachments",
+          "required": false,
+          "type": "boolean",
+          "description": "Should the response of the trigger include the attachments content."
+        },
+        {
+          "name": "Subject Filter",
+          "key": "subjectFilter",
+          "required": false,
+          "type": "string",
+          "description": "String to look for in the subject line."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a wrapper object for batch trigger response\n- Body\n- TriggerBatchResponse[ClientReceiveMessage]"
+      }
+    },
+    "OnNewMentionMeEmail": {
+      "operationId": "OnNewMentionMeEmail",
+      "kind": "trigger",
+      "displayName": "When a new email mentioning me arrives [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnNewMentionMeEmail",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Mail folder to check for new emails."
+        },
+        {
+          "name": "To",
+          "key": "to",
+          "required": false,
+          "type": "email",
+          "description": "Recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "CC",
+          "key": "cc",
+          "required": false,
+          "type": "email",
+          "description": "CC recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "To or CC",
+          "key": "toOrCc",
+          "required": false,
+          "type": "email",
+          "description": "To or CC recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "From",
+          "key": "from",
+          "required": false,
+          "type": "email",
+          "description": "Sender email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "Importance",
+          "key": "importance",
+          "required": false,
+          "type": "string",
+          "description": "Importance of the email (Any, High, Normal, Low)."
+        },
+        {
+          "name": "Only with Attachments",
+          "key": "fetchOnlyWithAttachment",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to true, only emails with an attachment will be retrieved. Emails without any attachments will be skipped. If set to false, all emails will be retrieved."
+        },
+        {
+          "name": "Include Attachments",
+          "key": "includeAttachments",
+          "required": false,
+          "type": "boolean",
+          "description": "Should the response of the trigger include the attachments content."
+        },
+        {
+          "name": "Subject Filter",
+          "key": "subjectFilter",
+          "required": false,
+          "type": "string",
+          "description": "String to look for in the subject line."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a wrapper object for batch trigger response\n- Body\n- TriggerBatchResponse[ClientReceiveMessage]"
+      }
+    },
+    "OnNewMentionMeEmailV2": {
+      "operationId": "OnNewMentionMeEmailV2",
+      "kind": "trigger",
+      "displayName": "When a new email mentioning me arrives (V2)",
+      "deprecated": false,
+      "description": "- OnNewMentionMeEmailV2",
+      "parameters": [
+        {
+          "name": "Folder",
+          "key": "folderPath",
+          "required": false,
+          "type": "string",
+          "description": "Mail folder to check for new emails."
+        },
+        {
+          "name": "To",
+          "key": "to",
+          "required": false,
+          "type": "email",
+          "description": "Recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "CC",
+          "key": "cc",
+          "required": false,
+          "type": "email",
+          "description": "CC recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "To or CC",
+          "key": "toOrCc",
+          "required": false,
+          "type": "email",
+          "description": "To or CC recipient email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "From",
+          "key": "from",
+          "required": false,
+          "type": "email",
+          "description": "Sender email addresses separated by semicolons (If any match, the trigger will run)."
+        },
+        {
+          "name": "Importance",
+          "key": "importance",
+          "required": false,
+          "type": "string",
+          "description": "Importance of the email (Any, High, Normal, Low)."
+        },
+        {
+          "name": "Only with Attachments",
+          "key": "fetchOnlyWithAttachment",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to true, only emails with an attachment will be retrieved. Emails without any attachments will be skipped. If set to false, all emails will be retrieved."
+        },
+        {
+          "name": "Include Attachments",
+          "key": "includeAttachments",
+          "required": false,
+          "type": "boolean",
+          "description": "Should the response of the trigger include the attachments content."
+        },
+        {
+          "name": "Subject Filter",
+          "key": "subjectFilter",
+          "required": false,
+          "type": "string",
+          "description": "String to look for in the subject line."
+        }
+      ],
+      "returns": {
+        "raw": "Represents a wrapper object for batch trigger response\n- Body\n- TriggerBatchResponse[ClientReceiveMessage]"
+      }
+    },
+    "OnUpcomingEvents": {
+      "operationId": "OnUpcomingEvents",
+      "kind": "trigger",
+      "displayName": "When an upcoming event is starting soon [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnUpcomingEvents",
+      "parameters": [
+        {
+          "name": "Calendar Id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of the calendar."
+        },
+        {
+          "name": "Look-Ahead Time",
+          "key": "lookAheadTimeInMinutes",
+          "required": false,
+          "type": "integer",
+          "description": "Time (in minutes) to look ahead for upcoming events."
+        }
+      ],
+      "returns": {
+        "raw": "The list of calendar items\n- Body\n- CalendarEventList"
+      }
+    },
+    "OnUpcomingEventsV2": {
+      "operationId": "OnUpcomingEventsV2",
+      "kind": "trigger",
+      "displayName": "When an upcoming event is starting soon (V2)",
+      "deprecated": false,
+      "description": "- OnUpcomingEventsV2",
+      "parameters": [
+        {
+          "name": "Calendar Id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Unique identifier of the calendar."
+        },
+        {
+          "name": "Look-Ahead Time",
+          "key": "lookAheadTimeInMinutes",
+          "required": false,
+          "type": "integer",
+          "description": "Time (in minutes) to look ahead for upcoming events."
+        }
+      ],
+      "returns": {
+        "raw": "The list of calendar items\n- Body\n- CalendarEventListClientReceive"
+      }
+    },
+    "ReplyTo": {
+      "operationId": "ReplyTo",
+      "kind": "action",
+      "displayName": "Reply to email [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ReplyTo",
+      "parameters": [
+        {
+          "name": "Message Id",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "Id of the email to reply to."
+        },
+        {
+          "name": "Comment",
+          "key": "comment",
+          "required": true,
+          "type": "string",
+          "description": "Reply comment."
+        },
+        {
+          "name": "Reply All",
+          "key": "replyAll",
+          "required": false,
+          "type": "boolean",
+          "description": "Reply to all recipients."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ReplyToV2": {
+      "operationId": "ReplyToV2",
+      "kind": "action",
+      "displayName": "Reply to email (V2) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ReplyToV2",
+      "parameters": [
+        {
+          "name": "Message Id",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "Id of the email to reply to."
+        },
+        {
+          "name": "To",
+          "key": "To",
+          "required": false,
+          "type": "email",
+          "description": "Example: recipient1@domain.com; recipient2@domain.com"
+        },
+        {
+          "name": "CC",
+          "key": "Cc",
+          "required": false,
+          "type": "email",
+          "description": "Example: recipient1@domain.com; recipient2@domain.com"
+        },
+        {
+          "name": "BCC",
+          "key": "Bcc",
+          "required": false,
+          "type": "email",
+          "description": "Example: recipient1@domain.com; recipient2@domain.com"
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": false,
+          "type": "string",
+          "description": "Email subject (if empty, the original subject used)."
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "string",
+          "description": "Content of the email."
+        },
+        {
+          "name": "Reply All",
+          "key": "ReplyAll",
+          "required": false,
+          "type": "boolean",
+          "description": "True to reply to all recipients. (default: False)"
+        },
+        {
+          "name": "Is HTML",
+          "key": "IsHtml",
+          "required": false,
+          "type": "boolean",
+          "description": "True to send the reply as HTML. (default: True)"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "Pick an importance. (default: Low)"
+        },
+        {
+          "name": "Name",
+          "key": "Name",
+          "required": true,
+          "type": "string",
+          "description": "Attachment name"
+        },
+        {
+          "name": "Content",
+          "key": "ContentBytes",
+          "required": true,
+          "type": "byte",
+          "description": "Attachment content"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ReplyToV3": {
+      "operationId": "ReplyToV3",
+      "kind": "action",
+      "displayName": "Reply to email (V3)",
+      "deprecated": false,
+      "description": "- ReplyToV3",
+      "parameters": [
+        {
+          "name": "Message Id",
+          "key": "messageId",
+          "required": true,
+          "type": "string",
+          "description": "Id of the email to reply to."
+        },
+        {
+          "name": "To",
+          "key": "To",
+          "required": false,
+          "type": "email",
+          "description": "Example: recipient1@domain.com; recipient2@domain.com"
+        },
+        {
+          "name": "CC",
+          "key": "Cc",
+          "required": false,
+          "type": "email",
+          "description": "Example: recipient1@domain.com; recipient2@domain.com"
+        },
+        {
+          "name": "BCC",
+          "key": "Bcc",
+          "required": false,
+          "type": "email",
+          "description": "Example: recipient1@domain.com; recipient2@domain.com"
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": false,
+          "type": "string",
+          "description": "Email subject (if empty, the original subject used)."
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "html",
+          "description": "Content of the email."
+        },
+        {
+          "name": "Reply All",
+          "key": "ReplyAll",
+          "required": false,
+          "type": "boolean",
+          "description": "True to reply to all recipients. (default: False)"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "Pick an importance. (default: Low)"
+        },
+        {
+          "name": "Name",
+          "key": "Name",
+          "required": true,
+          "type": "string",
+          "description": "Attachment name"
+        },
+        {
+          "name": "Content",
+          "key": "ContentBytes",
+          "required": true,
+          "type": "byte",
+          "description": "Attachment content"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "RespondToEvent": {
+      "operationId": "RespondToEvent",
+      "kind": "action",
+      "displayName": "Respond to an event invite",
+      "deprecated": false,
+      "description": "- RespondToEvent",
+      "parameters": [
+        {
+          "name": "Event Id",
+          "key": "event_id",
+          "required": true,
+          "type": "string",
+          "description": "Id of the event to respond to."
+        },
+        {
+          "name": "Response",
+          "key": "response",
+          "required": true,
+          "type": "string",
+          "description": "Response for the event invite"
+        },
+        {
+          "name": "Comment",
+          "key": "Comment",
+          "required": false,
+          "type": "string",
+          "description": "Comment"
+        },
+        {
+          "name": "Send response?",
+          "key": "SendResponse",
+          "required": false,
+          "type": "boolean",
+          "description": "Send response to organizer?"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "SendApprovalMail": {
+      "operationId": "SendApprovalMail",
+      "kind": "action",
+      "displayName": "Send approval email",
+      "deprecated": false,
+      "description": "- SendApprovalMail",
+      "parameters": [
+        {
+          "name": "To",
+          "key": "To",
+          "required": true,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like someone@contoso.com"
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": false,
+          "type": "string",
+          "description": "Subject"
+        },
+        {
+          "name": "User Options",
+          "key": "Options",
+          "required": false,
+          "type": "string",
+          "description": "User Options"
+        },
+        {
+          "name": "Header Text",
+          "key": "HeaderText",
+          "required": false,
+          "type": "string",
+          "description": "Header text for email body"
+        },
+        {
+          "name": "Selection Text",
+          "key": "SelectionText",
+          "required": false,
+          "type": "string",
+          "description": "Header text for users options selection"
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "string",
+          "description": "Body"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "Importance"
+        },
+        {
+          "name": "Name",
+          "key": "Name",
+          "required": true,
+          "type": "string",
+          "description": "Attachment name"
+        },
+        {
+          "name": "Content",
+          "key": "ContentBytes",
+          "required": true,
+          "type": "byte",
+          "description": "Attachment content"
+        },
+        {
+          "name": "Use only HTML message",
+          "key": "UseOnlyHTMLMessage",
+          "required": false,
+          "type": "boolean",
+          "description": "Use only HTML message"
+        },
+        {
+          "name": "Hide HTML message",
+          "key": "HideHTMLMessage",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to Yes, then the email body is hidden and only message card is displayed. Email clients which do not support actionable messages will display HTML message regardless of the parameter value."
+        },
+        {
+          "name": "Show HTML confirmation dialog",
+          "key": "ShowHTMLConfirmationDialog",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to Yes then a dialog wil be shown to confirm selected option of HTML message"
+        }
+      ],
+      "returns": {
+        "raw": "Approval Email Response\n- Body\n- ApprovalEmailResponse"
+      }
+    },
+    "SendEmail": {
+      "operationId": "SendEmail",
+      "kind": "action",
+      "displayName": "Send an email [DEPRECATED]",
+      "deprecated": true,
+      "description": "- SendEmail",
+      "parameters": [
+        {
+          "name": "CC",
+          "key": "Cc",
+          "required": false,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like someone@contoso.com"
+        },
+        {
+          "name": "BCC",
+          "key": "Bcc",
+          "required": false,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like someone@contoso.com"
+        },
+        {
+          "name": "To",
+          "key": "To",
+          "required": true,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like someone@contoso.com"
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": true,
+          "type": "string",
+          "description": "Specify the subject of the mail"
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": true,
+          "type": "string",
+          "description": "Specify the body of the mail"
+        },
+        {
+          "name": "Name",
+          "key": "Name",
+          "required": true,
+          "type": "string",
+          "description": "Attachment name"
+        },
+        {
+          "name": "Content",
+          "key": "ContentBytes",
+          "required": true,
+          "type": "byte",
+          "description": "Attachment content"
+        },
+        {
+          "name": "Reply To",
+          "key": "ReplyTo",
+          "required": false,
+          "type": "email",
+          "description": "The email addresses to use when replying"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "Importance"
+        },
+        {
+          "name": "Is HTML",
+          "key": "IsHtml",
+          "required": false,
+          "type": "boolean",
+          "description": "Is Html?"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "SendEmailV2": {
+      "operationId": "SendEmailV2",
+      "kind": "action",
+      "displayName": "Send an email (V2)",
+      "deprecated": false,
+      "description": "- SendEmailV2",
+      "parameters": [
+        {
+          "name": "To",
+          "key": "To",
+          "required": true,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like someone@contoso.com"
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": true,
+          "type": "string",
+          "description": "Specify the subject of the mail"
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": true,
+          "type": "html",
+          "description": "Specify the body of the mail"
+        },
+        {
+          "name": "From (Send as)",
+          "key": "From",
+          "required": false,
+          "type": "email",
+          "description": "Email address to send mail from (requires \"Send as\" or \"Send on behalf of\" permission for that mailbox). For more info on granting permissions please refer https://docs.microsoft.com/office365/admin/manage/send-email-as-distribution-list"
+        },
+        {
+          "name": "CC",
+          "key": "Cc",
+          "required": false,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like someone@contoso.com"
+        },
+        {
+          "name": "BCC",
+          "key": "Bcc",
+          "required": false,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like someone@contoso.com"
+        },
+        {
+          "name": "Name",
+          "key": "Name",
+          "required": true,
+          "type": "string",
+          "description": "Attachment name"
+        },
+        {
+          "name": "Content",
+          "key": "ContentBytes",
+          "required": true,
+          "type": "byte",
+          "description": "Attachment content"
+        },
+        {
+          "name": "Reply To",
+          "key": "ReplyTo",
+          "required": false,
+          "type": "email",
+          "description": "The email addresses to use when replying"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "Importance"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "SendMailWithOptions": {
+      "operationId": "SendMailWithOptions",
+      "kind": "action",
+      "displayName": "Send email with options",
+      "deprecated": false,
+      "description": "- SendMailWithOptions",
+      "parameters": [
+        {
+          "name": "To",
+          "key": "To",
+          "required": true,
+          "type": "email",
+          "description": "Specify email addresses separated by semicolons like someone@contoso.com"
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": false,
+          "type": "string",
+          "description": "Subject of the email"
+        },
+        {
+          "name": "User Options",
+          "key": "Options",
+          "required": false,
+          "type": "string",
+          "description": "List of comma separated options for the email response"
+        },
+        {
+          "name": "Header Text",
+          "key": "HeaderText",
+          "required": false,
+          "type": "string",
+          "description": "Header text for email body"
+        },
+        {
+          "name": "Selection Text",
+          "key": "SelectionText",
+          "required": false,
+          "type": "string",
+          "description": "Header text for users options selection"
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "string",
+          "description": "Body of the email"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "Importance"
+        },
+        {
+          "name": "Name",
+          "key": "Name",
+          "required": true,
+          "type": "string",
+          "description": "Attachment name"
+        },
+        {
+          "name": "Content",
+          "key": "ContentBytes",
+          "required": true,
+          "type": "byte",
+          "description": "Attachment content"
+        },
+        {
+          "name": "Use only HTML message",
+          "key": "UseOnlyHTMLMessage",
+          "required": false,
+          "type": "boolean",
+          "description": "Use only HTML message"
+        },
+        {
+          "name": "Hide HTML message",
+          "key": "HideHTMLMessage",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to Yes, then the email body is hidden and only message card is displayed. Email clients which do not support actionable messages will display HTML message regardless of the parameter value."
+        },
+        {
+          "name": "Show HTML confirmation dialog",
+          "key": "ShowHTMLConfirmationDialog",
+          "required": false,
+          "type": "boolean",
+          "description": "If set to Yes then a dialog wil be shown to confirm selected option of HTML message"
+        }
+      ],
+      "returns": {
+        "raw": "Approval Email Response\n- Body\n- ApprovalEmailResponse"
+      }
+    },
+    "V2CalendarGetItem": {
+      "operationId": "V2CalendarGetItem",
+      "kind": "action",
+      "displayName": "Get event (V2)",
+      "deprecated": false,
+      "description": "- V2CalendarGetItem",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Item id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select an event"
+        }
+      ],
+      "returns": {
+        "raw": "Connector specific calendar event model class for the client\n- Body\n- CalendarEventClientReceiveStringEnums"
+      }
+    },
+    "V2CalendarGetItems": {
+      "operationId": "V2CalendarGetItems",
+      "kind": "action",
+      "displayName": "Get events (V2) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- V2CalendarGetItems",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA filter query to restrict the entries returned (e.g. stringColumn eq 'string' OR numberColumn lt 123)."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Skip Count",
+          "key": "$skip",
+          "required": false,
+          "type": "integer",
+          "description": "The number of entries to skip (default = 0)."
+        }
+      ],
+      "returns": {
+        "raw": "Entity list response\n- Body\n- EntityListResponse[CalendarEventClientReceiveStringEnums]"
+      }
+    },
+    "V2CalendarPatchItem": {
+      "operationId": "V2CalendarPatchItem",
+      "kind": "action",
+      "displayName": "Update event (V2) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- V2CalendarPatchItem",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select an event"
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": true,
+          "type": "string",
+          "description": "Event subject"
+        },
+        {
+          "name": "Start time",
+          "key": "Start",
+          "required": true,
+          "type": "date-time",
+          "description": "Start time of the event (example: '2016-11-01T14:30:00Z')"
+        },
+        {
+          "name": "End time",
+          "key": "End",
+          "required": true,
+          "type": "date-time",
+          "description": "End time of the event (example: '2016-11-01T15:30:00Z')"
+        },
+        {
+          "name": "Time zone",
+          "key": "TimeZone",
+          "required": false,
+          "type": "string",
+          "description": "Time zone of the event"
+        },
+        {
+          "name": "Required attendees",
+          "key": "RequiredAttendees",
+          "required": false,
+          "type": "email",
+          "description": "Required attendees for the event separated by semicolons"
+        },
+        {
+          "name": "Optional attendees",
+          "key": "OptionalAttendees",
+          "required": false,
+          "type": "email",
+          "description": "Optional attendees for the event separated by semicolons"
+        },
+        {
+          "name": "Resource attendees",
+          "key": "ResourceAttendees",
+          "required": false,
+          "type": "string",
+          "description": "Resource attendees for the event separated by semicolons"
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "string",
+          "description": "Body of the message associated with the event"
+        },
+        {
+          "name": "Is HTML",
+          "key": "IsHtml",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the body is Html"
+        },
+        {
+          "name": "Location",
+          "key": "Location",
+          "required": false,
+          "type": "string",
+          "description": "Location of the event"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "The importance of the event: Low, Normal, or High"
+        },
+        {
+          "name": "Is all day event?",
+          "key": "IsAllDay",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event lasts all day"
+        },
+        {
+          "name": "Recurrence",
+          "key": "Recurrence",
+          "required": false,
+          "type": "string",
+          "description": "The recurrence pattern for the event"
+        },
+        {
+          "name": "Recurrence end time",
+          "key": "RecurrenceEnd",
+          "required": false,
+          "type": "date-time",
+          "description": "End time of the recurrence"
+        },
+        {
+          "name": "Number of occurrences",
+          "key": "NumberOfOccurrences",
+          "required": false,
+          "type": "integer",
+          "description": "How many times to repeat the event"
+        },
+        {
+          "name": "Reminder",
+          "key": "Reminder",
+          "required": false,
+          "type": "integer",
+          "description": "Time in minutes before event start to remind"
+        },
+        {
+          "name": "Show as",
+          "key": "ShowAs",
+          "required": false,
+          "type": "string",
+          "description": "Status to show during the event"
+        },
+        {
+          "name": "Response requested",
+          "key": "ResponseRequested",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the sender would like a response when the event is accepted or declined"
+        }
+      ],
+      "returns": {
+        "raw": "Connector specific calendar event model class for the client\n- Body\n- CalendarEventClientReceiveStringEnums"
+      }
+    },
+    "V2CalendarPostItem": {
+      "operationId": "V2CalendarPostItem",
+      "kind": "action",
+      "displayName": "Create event (V2) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- V2CalendarPostItem",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": true,
+          "type": "string",
+          "description": "Event subject"
+        },
+        {
+          "name": "Start time",
+          "key": "Start",
+          "required": true,
+          "type": "date-time",
+          "description": "Start time of the event (example: '2016-11-01T14:30:00Z')"
+        },
+        {
+          "name": "End time",
+          "key": "End",
+          "required": true,
+          "type": "date-time",
+          "description": "End time of the event (example: '2016-11-01T15:30:00Z')"
+        },
+        {
+          "name": "Time zone",
+          "key": "TimeZone",
+          "required": false,
+          "type": "string",
+          "description": "Time zone of the event"
+        },
+        {
+          "name": "Required attendees",
+          "key": "RequiredAttendees",
+          "required": false,
+          "type": "email",
+          "description": "Required attendees for the event separated by semicolons"
+        },
+        {
+          "name": "Optional attendees",
+          "key": "OptionalAttendees",
+          "required": false,
+          "type": "email",
+          "description": "Optional attendees for the event separated by semicolons"
+        },
+        {
+          "name": "Resource attendees",
+          "key": "ResourceAttendees",
+          "required": false,
+          "type": "string",
+          "description": "Resource attendees for the event separated by semicolons"
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "string",
+          "description": "Body of the message associated with the event"
+        },
+        {
+          "name": "Is HTML",
+          "key": "IsHtml",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the body is Html"
+        },
+        {
+          "name": "Location",
+          "key": "Location",
+          "required": false,
+          "type": "string",
+          "description": "Location of the event"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "The importance of the event: Low, Normal, or High"
+        },
+        {
+          "name": "Is all day event?",
+          "key": "IsAllDay",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event lasts all day"
+        },
+        {
+          "name": "Recurrence",
+          "key": "Recurrence",
+          "required": false,
+          "type": "string",
+          "description": "The recurrence pattern for the event"
+        },
+        {
+          "name": "Recurrence end time",
+          "key": "RecurrenceEnd",
+          "required": false,
+          "type": "date-time",
+          "description": "End time of the recurrence"
+        },
+        {
+          "name": "Number of occurrences",
+          "key": "NumberOfOccurrences",
+          "required": false,
+          "type": "integer",
+          "description": "How many times to repeat the event"
+        },
+        {
+          "name": "Reminder",
+          "key": "Reminder",
+          "required": false,
+          "type": "integer",
+          "description": "Time in minutes before event start to remind"
+        },
+        {
+          "name": "Show as",
+          "key": "ShowAs",
+          "required": false,
+          "type": "string",
+          "description": "Status to show during the event"
+        },
+        {
+          "name": "Response requested",
+          "key": "ResponseRequested",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the sender would like a response when the event is accepted or declined"
+        }
+      ],
+      "returns": {
+        "raw": "Connector specific calendar event model class for the client\n- Body\n- CalendarEventClientReceiveStringEnums"
+      }
+    },
+    "V3CalendarGetItems": {
+      "operationId": "V3CalendarGetItems",
+      "kind": "action",
+      "displayName": "Get events (V3)",
+      "deprecated": false,
+      "description": "- V3CalendarGetItems",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA filter query to restrict the entries returned (e.g. stringColumn eq 'string' OR numberColumn lt 123)."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Skip Count",
+          "key": "$skip",
+          "required": false,
+          "type": "integer",
+          "description": "The number of entries to skip (default = 0)."
+        }
+      ],
+      "returns": {
+        "raw": "The list of calendar items\n- Body\n- CalendarEventListClientReceive"
+      }
+    },
+    "V3CalendarPatchItem": {
+      "operationId": "V3CalendarPatchItem",
+      "kind": "action",
+      "displayName": "Update event (V3)",
+      "deprecated": false,
+      "description": "- V3CalendarPatchItem",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Select an event"
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": true,
+          "type": "string",
+          "description": "Event subject"
+        },
+        {
+          "name": "Start time",
+          "key": "Start",
+          "required": true,
+          "type": "date-time",
+          "description": "Start time of the event (example: '2016-11-01T14:30:00Z')"
+        },
+        {
+          "name": "End time",
+          "key": "End",
+          "required": true,
+          "type": "date-time",
+          "description": "End time of the event (example: '2016-11-01T15:30:00Z')"
+        },
+        {
+          "name": "Time zone",
+          "key": "TimeZone",
+          "required": false,
+          "type": "string",
+          "description": "Time zone of the event"
+        },
+        {
+          "name": "Required attendees",
+          "key": "RequiredAttendees",
+          "required": false,
+          "type": "email",
+          "description": "Required attendees for the event separated by semicolons"
+        },
+        {
+          "name": "Optional attendees",
+          "key": "OptionalAttendees",
+          "required": false,
+          "type": "email",
+          "description": "Optional attendees for the event separated by semicolons"
+        },
+        {
+          "name": "Resource attendees",
+          "key": "ResourceAttendees",
+          "required": false,
+          "type": "string",
+          "description": "Resource attendees for the event separated by semicolons"
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "html",
+          "description": "Body of the message associated with the event"
+        },
+        {
+          "name": "Location",
+          "key": "Location",
+          "required": false,
+          "type": "string",
+          "description": "Location of the event"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "The importance of the event: Low, Normal, or High"
+        },
+        {
+          "name": "Is all day event?",
+          "key": "IsAllDay",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event lasts all day"
+        },
+        {
+          "name": "Recurrence",
+          "key": "Recurrence",
+          "required": false,
+          "type": "string",
+          "description": "The recurrence pattern for the event"
+        },
+        {
+          "name": "Recurrence end time",
+          "key": "RecurrenceEnd",
+          "required": false,
+          "type": "date-time",
+          "description": "End time of the recurrence"
+        },
+        {
+          "name": "Number of occurrences",
+          "key": "NumberOfOccurrences",
+          "required": false,
+          "type": "integer",
+          "description": "How many times to repeat the event"
+        },
+        {
+          "name": "Reminder",
+          "key": "Reminder",
+          "required": false,
+          "type": "integer",
+          "description": "Time in minutes before event start to remind"
+        },
+        {
+          "name": "Show as",
+          "key": "ShowAs",
+          "required": false,
+          "type": "string",
+          "description": "Status to show during the event"
+        },
+        {
+          "name": "Response requested",
+          "key": "ResponseRequested",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the sender would like a response when the event is accepted or declined"
+        }
+      ],
+      "returns": {
+        "raw": "Connector specific calendar event model class for the client\n- Body\n- CalendarEventClientReceiveStringEnums"
+      }
+    },
+    "V3CalendarPostItem": {
+      "operationId": "V3CalendarPostItem",
+      "kind": "action",
+      "displayName": "Create event (V3)",
+      "deprecated": false,
+      "description": "- V3CalendarPostItem",
+      "parameters": [
+        {
+          "name": "Calendar id",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a calendar"
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": true,
+          "type": "string",
+          "description": "Event subject"
+        },
+        {
+          "name": "Start time",
+          "key": "Start",
+          "required": true,
+          "type": "date-time",
+          "description": "Start time of the event (example: '2016-11-01T14:30:00Z')"
+        },
+        {
+          "name": "End time",
+          "key": "End",
+          "required": true,
+          "type": "date-time",
+          "description": "End time of the event (example: '2016-11-01T15:30:00Z')"
+        },
+        {
+          "name": "Time zone",
+          "key": "TimeZone",
+          "required": false,
+          "type": "string",
+          "description": "Time zone of the event"
+        },
+        {
+          "name": "Required attendees",
+          "key": "RequiredAttendees",
+          "required": false,
+          "type": "email",
+          "description": "Required attendees for the event separated by semicolons"
+        },
+        {
+          "name": "Optional attendees",
+          "key": "OptionalAttendees",
+          "required": false,
+          "type": "email",
+          "description": "Optional attendees for the event separated by semicolons"
+        },
+        {
+          "name": "Resource attendees",
+          "key": "ResourceAttendees",
+          "required": false,
+          "type": "string",
+          "description": "Resource attendees for the event separated by semicolons"
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "html",
+          "description": "Body of the message associated with the event"
+        },
+        {
+          "name": "Location",
+          "key": "Location",
+          "required": false,
+          "type": "string",
+          "description": "Location of the event"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "The importance of the event: Low, Normal, or High"
+        },
+        {
+          "name": "Is all day event?",
+          "key": "IsAllDay",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event lasts all day"
+        },
+        {
+          "name": "Recurrence",
+          "key": "Recurrence",
+          "required": false,
+          "type": "string",
+          "description": "The recurrence pattern for the event"
+        },
+        {
+          "name": "Recurrence end time",
+          "key": "RecurrenceEnd",
+          "required": false,
+          "type": "date-time",
+          "description": "End time of the recurrence"
+        },
+        {
+          "name": "Number of occurrences",
+          "key": "NumberOfOccurrences",
+          "required": false,
+          "type": "integer",
+          "description": "How many times to repeat the event"
+        },
+        {
+          "name": "Reminder",
+          "key": "Reminder",
+          "required": false,
+          "type": "integer",
+          "description": "Time in minutes before event start to remind"
+        },
+        {
+          "name": "Show as",
+          "key": "ShowAs",
+          "required": false,
+          "type": "string",
+          "description": "Status to show during the event"
+        },
+        {
+          "name": "Response requested",
+          "key": "ResponseRequested",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the sender would like a response when the event is accepted or declined"
+        }
+      ],
+      "returns": {
+        "raw": "Connector specific calendar event model class for the client\n- Body\n- CalendarEventClientReceiveStringEnums"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

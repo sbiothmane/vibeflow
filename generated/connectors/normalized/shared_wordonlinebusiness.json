@@ -1,0 +1,124 @@
+{
+  "connectorId": "shared_wordonlinebusiness",
+  "displayName": "Word Online (Business)",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/wordonlinebusiness/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-08-06T01:00:00.0000000Z",
+  "sourceGitCommit": "4b84da19b1d2d4484eb2966ade81f35b967697f4",
+  "sourcePath": "docs/wordonlinebusiness/index.yml",
+  "operations": {
+    "CreateFileItem": {
+      "operationId": "CreateFileItem",
+      "kind": "action",
+      "displayName": "Populate a Microsoft Word template",
+      "deprecated": false,
+      "description": "- CreateFileItem",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (colons are required)."
+        },
+        {
+          "name": "Document Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select a Word file through File Browse."
+        },
+        {
+          "name": "dynamicFileSchema",
+          "key": "dynamicFileSchema",
+          "required": false,
+          "type": "dynamic",
+          "description": "Dynamic Schema of items in selected File"
+        }
+      ],
+      "returns": {
+        "raw": "- Microsoft Word document\n- binary"
+      }
+    },
+    "CreateWordFileWithContent": {
+      "operationId": "CreateWordFileWithContent",
+      "kind": "action",
+      "displayName": "Create a Microsoft Word document with the given content",
+      "deprecated": false,
+      "description": "- CreateWordFileWithContent",
+      "parameters": [
+        {
+          "name": "Content",
+          "key": "content",
+          "required": true,
+          "type": "string",
+          "description": "Content of the word document"
+        },
+        {
+          "name": "File Name",
+          "key": "fileName",
+          "required": false,
+          "type": "string",
+          "description": "Name of the file"
+        }
+      ],
+      "returns": {
+        "raw": "- Microsoft Word document URL\n- string"
+      }
+    },
+    "GetFilePDF": {
+      "operationId": "GetFilePDF",
+      "kind": "action",
+      "displayName": "Convert Word Document to PDF",
+      "deprecated": false,
+      "description": "- GetFilePDF",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (colons are required)."
+        },
+        {
+          "name": "Document Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select a Word file through File Browse."
+        },
+        {
+          "name": "Extract Sensitivity Label",
+          "key": "extractSensitivityLabel",
+          "required": false,
+          "type": "boolean",
+          "description": "Select if you want to extract Sensitivity label (false, true)."
+        },
+        {
+          "name": "Sensitivity Label Metadata",
+          "key": "fetchSensitivityLabelMetadata",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to fetch sensitivity label Metadata for associated LabelId."
+        }
+      ],
+      "returns": {
+        "raw": "- PDF document\n- binary"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

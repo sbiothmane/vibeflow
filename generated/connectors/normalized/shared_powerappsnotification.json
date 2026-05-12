@@ -1,0 +1,51 @@
+{
+  "connectorId": "shared_powerappsnotification",
+  "displayName": "Power Apps Notification",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/powerappsnotification/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-10-29T01:00:00.0000000Z",
+  "sourceGitCommit": "d459c69c9065cf5e5fd6ab20606ad73c60f8e4b0",
+  "sourcePath": "docs/PowerAppsNotification/index.yml",
+  "operations": {
+    "SendPushNotification": {
+      "operationId": "SendPushNotification",
+      "kind": "action",
+      "displayName": "Send push notification",
+      "deprecated": false,
+      "description": "- SendPushNotification",
+      "parameters": [
+        {
+          "name": "Recipients",
+          "key": "recipients",
+          "required": false,
+          "type": "array of string",
+          "description": "List of user emails or user principle identifiers."
+        },
+        {
+          "name": "Message",
+          "key": "message",
+          "required": false,
+          "type": "string",
+          "description": "Message body for the push notification."
+        },
+        {
+          "name": "Open App",
+          "key": "openApp",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether to open or not the app when user taps on the push notification."
+        },
+        {
+          "name": "Parameters",
+          "key": "params",
+          "required": false,
+          "type": "object",
+          "description": "Key value parameters to pass with the notification."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

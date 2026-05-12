@@ -1,0 +1,877 @@
+{
+  "connectorId": "shared_todo",
+  "displayName": "Microsoft To-Do (Business)",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/todo/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-04-09T19:04:00.0000000Z",
+  "sourceGitCommit": "f7be96830f27ff20c9beaa60e4be74378750ef16",
+  "sourcePath": "docs/todo/index.yml",
+  "operations": {
+    "CreateToDo": {
+      "operationId": "CreateToDo",
+      "kind": "action",
+      "displayName": "Add a to-do [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateToDo",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": false,
+          "type": "string",
+          "description": "To-do list"
+        },
+        {
+          "name": "Due Date",
+          "key": "DateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "YYYY-MM-DD or YYYY-MM-DDThh:mm:ssZ (note the time portion will be ignored)"
+        },
+        {
+          "name": "Reminder Date-Time",
+          "key": "DateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "YYYY-MM-DDThh:mm:ssZ (UTC format)"
+        },
+        {
+          "name": "Start Date",
+          "key": "DateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "YYYY-MM-DD or YYYY-MM-DDThh:mm:ssZ (note the time portion will be ignored)"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "Low, normal or high."
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": true,
+          "type": "string",
+          "description": "Brief description or title of the to-do."
+        },
+        {
+          "name": "Status",
+          "key": "Status",
+          "required": false,
+          "type": "string",
+          "description": "Indicates state or progress of the to-do - not started, in progress, completed, waiting on others or deferred."
+        },
+        {
+          "name": "Sensitivity",
+          "key": "Sensitivity",
+          "required": false,
+          "type": "string",
+          "description": "Indicates the level of privacy for the event."
+        },
+        {
+          "name": "Content Type",
+          "key": "ContentType",
+          "required": false,
+          "type": "string",
+          "description": "Text=0, HTML=1"
+        },
+        {
+          "name": "Content",
+          "key": "Content",
+          "required": false,
+          "type": "string",
+          "description": "The text or HTML content."
+        },
+        {
+          "name": "Categories",
+          "key": "Categories",
+          "required": false,
+          "type": "array of string",
+          "description": "Collection of category names associated with the to-do."
+        },
+        {
+          "name": "Is Reminder On",
+          "key": "IsReminderOn",
+          "required": false,
+          "type": "boolean",
+          "description": "True if an alert is set to remind the user of the to-do."
+        }
+      ],
+      "returns": {
+        "raw": "A Microsoft To-Do object.\n- Body\n- ToDo"
+      }
+    },
+    "CreateToDoList": {
+      "operationId": "CreateToDoList",
+      "kind": "action",
+      "displayName": "Create a to-do list [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateToDoList",
+      "parameters": [
+        {
+          "name": "Name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "List name"
+        }
+      ],
+      "returns": {
+        "raw": "An Microsoft To-Do list.\n- Body\n- TodoList"
+      }
+    },
+    "CreateToDoListV2": {
+      "operationId": "CreateToDoListV2",
+      "kind": "action",
+      "displayName": "Create a to-do list (V2)",
+      "deprecated": false,
+      "description": "- CreateToDoListV2",
+      "parameters": [
+        {
+          "name": "Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": "List name"
+        }
+      ],
+      "returns": {
+        "raw": "An Microsoft To-Do list.\n- Body\n- TodoList_V2"
+      }
+    },
+    "CreateToDoV2": {
+      "operationId": "CreateToDoV2",
+      "kind": "action",
+      "displayName": "Add a to-do (V2) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateToDoV2",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": false,
+          "type": "string",
+          "description": "To-do list"
+        },
+        {
+          "name": "Due Date",
+          "key": "DateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "YYYY-MM-DD or YYYY-MM-DDThh:mm:ssZ (note the time portion will be ignored)"
+        },
+        {
+          "name": "Reminder Date-Time",
+          "key": "DateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "YYYY-MM-DDThh:mm:ssZ (UTC format)"
+        },
+        {
+          "name": "Start Date",
+          "key": "DateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "YYYY-MM-DD or YYYY-MM-DDThh:mm:ssZ (note the time portion will be ignored)"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "Low, normal or high."
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": true,
+          "type": "string",
+          "description": "Brief description or title of the to-do."
+        },
+        {
+          "name": "Status",
+          "key": "Status",
+          "required": false,
+          "type": "string",
+          "description": "Indicates state or progress of the to-do - not started, in progress, completed, waiting on others or deferred."
+        },
+        {
+          "name": "Sensitivity",
+          "key": "Sensitivity",
+          "required": false,
+          "type": "string",
+          "description": "Indicates the level of privacy for the event."
+        },
+        {
+          "name": "Content",
+          "key": "Content",
+          "required": false,
+          "type": "html",
+          "description": "The content."
+        },
+        {
+          "name": "Categories",
+          "key": "Categories",
+          "required": false,
+          "type": "array of string",
+          "description": "Collection of category names associated with the to-do."
+        },
+        {
+          "name": "Is Reminder On",
+          "key": "IsReminderOn",
+          "required": false,
+          "type": "boolean",
+          "description": "True if an alert is set to remind the user of the to-do."
+        }
+      ],
+      "returns": {
+        "raw": "A Microsoft To-Do object.\n- Body\n- ToDoHtml"
+      }
+    },
+    "CreateToDoV3": {
+      "operationId": "CreateToDoV3",
+      "kind": "action",
+      "displayName": "Add a to-do (V3)",
+      "deprecated": false,
+      "description": "- CreateToDoV3",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        },
+        {
+          "name": "Due Date",
+          "key": "dateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "YYYY-MM-DDThh:mm:ss"
+        },
+        {
+          "name": "Reminder Date-Time",
+          "key": "dateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "YYYY-MM-DDThh:mm:ss"
+        },
+        {
+          "name": "Importance",
+          "key": "importance",
+          "required": false,
+          "type": "string",
+          "description": "Low, normal or high."
+        },
+        {
+          "name": "Title",
+          "key": "title",
+          "required": true,
+          "type": "string",
+          "description": "Brief description or title of the to-do."
+        },
+        {
+          "name": "Status",
+          "key": "status",
+          "required": false,
+          "type": "string",
+          "description": "Indicates state or progress of the to-do - not started, in progress, completed, waiting on others or deferred."
+        },
+        {
+          "name": "Content",
+          "key": "content",
+          "required": false,
+          "type": "html",
+          "description": "The content of the item."
+        },
+        {
+          "name": "Is Reminder On",
+          "key": "isReminderOn",
+          "required": false,
+          "type": "boolean",
+          "description": "True if an alert is set to remind the user of the to-do."
+        }
+      ],
+      "returns": {
+        "raw": "A Microsoft To-Do object.\n- Body\n- ToDo_V2"
+      }
+    },
+    "DeleteToDo": {
+      "operationId": "DeleteToDo",
+      "kind": "action",
+      "displayName": "Delete to-do [DEPRECATED]",
+      "deprecated": true,
+      "description": "- DeleteToDo",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        },
+        {
+          "name": "To-do task",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "To-do task"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteToDoList": {
+      "operationId": "DeleteToDoList",
+      "kind": "action",
+      "displayName": "Delete a to-do list",
+      "deprecated": false,
+      "description": "- DeleteToDoList",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteToDoV2": {
+      "operationId": "DeleteToDoV2",
+      "kind": "action",
+      "displayName": "Delete to-do (V2)",
+      "deprecated": false,
+      "description": "- DeleteToDoV2",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        },
+        {
+          "name": "To-do task",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "To-do task"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetAllTodoLists": {
+      "operationId": "GetAllTodoLists",
+      "kind": "action",
+      "displayName": "List all to-do lists [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetAllTodoLists",
+      "parameters": [],
+      "returns": {
+        "raw": "- response\n- array of TodoList"
+      }
+    },
+    "GetAllTodoListsV2": {
+      "operationId": "GetAllTodoListsV2",
+      "kind": "action",
+      "displayName": "List all to-do lists (V2)",
+      "deprecated": false,
+      "description": "- GetAllTodoListsV2",
+      "parameters": [],
+      "returns": {
+        "raw": "- response\n- array of TodoList_V2"
+      }
+    },
+    "GetToDo": {
+      "operationId": "GetToDo",
+      "kind": "action",
+      "displayName": "Get a to-do [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetToDo",
+      "parameters": [
+        {
+          "name": "To-do Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "To-do Id"
+        }
+      ],
+      "returns": {
+        "raw": "A Microsoft To-Do object.\n- Body\n- ToDo"
+      }
+    },
+    "GetToDoList": {
+      "operationId": "GetToDoList",
+      "kind": "action",
+      "displayName": "Get a to-do list [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetToDoList",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        }
+      ],
+      "returns": {
+        "raw": "An Microsoft To-Do list.\n- Body\n- TodoList"
+      }
+    },
+    "GetToDoListV2": {
+      "operationId": "GetToDoListV2",
+      "kind": "action",
+      "displayName": "Get a to-do list (V2)",
+      "deprecated": false,
+      "description": "- GetToDoListV2",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        }
+      ],
+      "returns": {
+        "raw": "An Microsoft To-Do list.\n- Body\n- TodoList_V2"
+      }
+    },
+    "GetToDoV2": {
+      "operationId": "GetToDoV2",
+      "kind": "action",
+      "displayName": "Get a to-do (V2) [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetToDoV2",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        },
+        {
+          "name": "To-do task",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "To-do task"
+        }
+      ],
+      "returns": {
+        "raw": "A Microsoft To-Do object.\n- Body\n- ToDo"
+      }
+    },
+    "GetToDoV3": {
+      "operationId": "GetToDoV3",
+      "kind": "action",
+      "displayName": "Get a to-do (V3)",
+      "deprecated": false,
+      "description": "- GetToDoV3",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        },
+        {
+          "name": "To-do task",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "To-do task"
+        }
+      ],
+      "returns": {
+        "raw": "A Microsoft To-Do object.\n- Body\n- ToDo_V2"
+      }
+    },
+    "ListAllToDos": {
+      "operationId": "ListAllToDos",
+      "kind": "action",
+      "displayName": "List all to-do's [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListAllToDos",
+      "parameters": [
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = 10, maximum = 999)."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of ToDo"
+      }
+    },
+    "ListToDosByFolder": {
+      "operationId": "ListToDosByFolder",
+      "kind": "action",
+      "displayName": "List to-do's by folder [DEPRECATED]",
+      "deprecated": true,
+      "description": "- ListToDosByFolder",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = 10, maximum = 999)."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of ToDo"
+      }
+    },
+    "ListToDosByFolderV2": {
+      "operationId": "ListToDosByFolderV2",
+      "kind": "action",
+      "displayName": "List to-do's by folder (V2)",
+      "deprecated": false,
+      "description": "- ListToDosByFolderV2",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = 10, maximum = 999)."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of ToDo_V2"
+      }
+    },
+    "OnNewToDo": {
+      "operationId": "OnNewToDo",
+      "kind": "trigger",
+      "displayName": "When a new to-do is created [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnNewToDo",
+      "parameters": [],
+      "returns": {
+        "raw": "A Microsoft To-Do object.\n- Body\n- ToDo"
+      }
+    },
+    "OnNewToDoInFolder": {
+      "operationId": "OnNewToDoInFolder",
+      "kind": "trigger",
+      "displayName": "When a new to-do in a specific folder is created [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnNewToDoInFolder",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        }
+      ],
+      "returns": {
+        "raw": "A Microsoft To-Do object.\n- Body\n- ToDo"
+      }
+    },
+    "OnNewToDoInFolderV2": {
+      "operationId": "OnNewToDoInFolderV2",
+      "kind": "trigger",
+      "displayName": "When a new to-do in a specific folder is created (V2)",
+      "deprecated": false,
+      "description": "- OnNewToDoInFolderV2",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        }
+      ],
+      "returns": {
+        "raw": "A Microsoft To-Do object.\n- Body\n- ToDo_V2"
+      }
+    },
+    "OnUpdateToDo": {
+      "operationId": "OnUpdateToDo",
+      "kind": "trigger",
+      "displayName": "When a to-do is updated [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnUpdateToDo",
+      "parameters": [],
+      "returns": {
+        "raw": "A Microsoft To-Do object.\n- Body\n- ToDo"
+      }
+    },
+    "OnUpdateToDoInFolder": {
+      "operationId": "OnUpdateToDoInFolder",
+      "kind": "trigger",
+      "displayName": "When a to-do in a specific folder is updated [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnUpdateToDoInFolder",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        }
+      ],
+      "returns": {
+        "raw": "A Microsoft To-Do object.\n- Body\n- ToDo"
+      }
+    },
+    "OnUpdateToDoInFolderV2": {
+      "operationId": "OnUpdateToDoInFolderV2",
+      "kind": "trigger",
+      "displayName": "When a to-do in a specific folder is updated (V2)",
+      "deprecated": false,
+      "description": "- OnUpdateToDoInFolderV2",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        }
+      ],
+      "returns": {
+        "raw": "A Microsoft To-Do object.\n- Body\n- ToDo_V2"
+      }
+    },
+    "UpdateToDo": {
+      "operationId": "UpdateToDo",
+      "kind": "action",
+      "displayName": "Update to-do [DEPRECATED]",
+      "deprecated": true,
+      "description": "- UpdateToDo",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        },
+        {
+          "name": "To-do task",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "To-do task"
+        },
+        {
+          "name": "Due Date",
+          "key": "DateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "YYYY-MM-DD or YYYY-MM-DDThh:mm:ssZ (note the time portion will be ignored)"
+        },
+        {
+          "name": "Reminder Date-Time",
+          "key": "DateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "YYYY-MM-DDThh:mm:ssZ (UTC format)"
+        },
+        {
+          "name": "Start Date",
+          "key": "DateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "YYYY-MM-DD or YYYY-MM-DDThh:mm:ssZ (note the time portion will be ignored)"
+        },
+        {
+          "name": "Importance",
+          "key": "Importance",
+          "required": false,
+          "type": "string",
+          "description": "Low, normal or high."
+        },
+        {
+          "name": "Subject",
+          "key": "Subject",
+          "required": false,
+          "type": "string",
+          "description": "Brief description or title of the to-do."
+        },
+        {
+          "name": "Status",
+          "key": "Status",
+          "required": false,
+          "type": "string",
+          "description": "Indicates state or progress of the to-do - not started, in progress, completed, waiting on others or deferred."
+        },
+        {
+          "name": "Sensitivity",
+          "key": "Sensitivity",
+          "required": false,
+          "type": "string",
+          "description": "Indicates the level of privacy for the event."
+        },
+        {
+          "name": "Content Type",
+          "key": "ContentType",
+          "required": false,
+          "type": "string",
+          "description": "Text=0, HTML=1"
+        },
+        {
+          "name": "Content",
+          "key": "Content",
+          "required": false,
+          "type": "string",
+          "description": "The text or HTML content."
+        },
+        {
+          "name": "Categories",
+          "key": "Categories",
+          "required": false,
+          "type": "array of string",
+          "description": "Collection of category names associated with the to-do."
+        },
+        {
+          "name": "Is Reminder On",
+          "key": "IsReminderOn",
+          "required": false,
+          "type": "boolean",
+          "description": "True if an alert is set to remind the user of the to-do."
+        }
+      ],
+      "returns": {
+        "raw": "A Microsoft To-Do object.\n- Body\n- ToDo"
+      }
+    },
+    "UpdateToDoList": {
+      "operationId": "UpdateToDoList",
+      "kind": "action",
+      "displayName": "Update a to-do list",
+      "deprecated": false,
+      "description": "- UpdateToDoList",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        },
+        {
+          "name": "Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": "List name"
+        }
+      ],
+      "returns": {
+        "raw": "An Microsoft To-Do list.\n- Body\n- TodoList_V2"
+      }
+    },
+    "UpdateToDoV2": {
+      "operationId": "UpdateToDoV2",
+      "kind": "action",
+      "displayName": "Update to-do (V2)",
+      "deprecated": false,
+      "description": "- UpdateToDoV2",
+      "parameters": [
+        {
+          "name": "To-do List",
+          "key": "folderId",
+          "required": true,
+          "type": "string",
+          "description": "To-do list"
+        },
+        {
+          "name": "To-do task",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "To-do task"
+        },
+        {
+          "name": "Due Date",
+          "key": "dateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "YYYY-MM-DDThh:mm:ss"
+        },
+        {
+          "name": "Reminder Date-Time",
+          "key": "dateTime",
+          "required": false,
+          "type": "date-time",
+          "description": "YYYY-MM-DDThh:mm:ss"
+        },
+        {
+          "name": "Importance",
+          "key": "importance",
+          "required": false,
+          "type": "string",
+          "description": "Low, normal or high."
+        },
+        {
+          "name": "Title",
+          "key": "title",
+          "required": false,
+          "type": "string",
+          "description": "Brief description or title of the to-do."
+        },
+        {
+          "name": "Status",
+          "key": "status",
+          "required": false,
+          "type": "string",
+          "description": "Indicates state or progress of the to-do - not started, in progress, completed, waiting on others or deferred."
+        },
+        {
+          "name": "Content",
+          "key": "content",
+          "required": false,
+          "type": "html",
+          "description": "The content of the item."
+        },
+        {
+          "name": "Is Reminder On",
+          "key": "isReminderOn",
+          "required": false,
+          "type": "boolean",
+          "description": "True if an alert is set to remind the user of the to-do."
+        }
+      ],
+      "returns": {
+        "raw": "A Microsoft To-Do object.\n- Body\n- ToDo_V2"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

@@ -1,0 +1,1841 @@
+{
+  "connectorId": "shared_commondataserviceforapps",
+  "displayName": "Microsoft Dataverse",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/commondataserviceforapps/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-05-05T19:06:00.0000000Z",
+  "sourceGitCommit": "181182d93e37b1e3c2f362a907d452853c68778a",
+  "sourcePath": "docs/commondataserviceforapps/index.yml",
+  "operations": {
+    "AssociateEntities": {
+      "operationId": "AssociateEntities",
+      "kind": "action",
+      "displayName": "Relate rows",
+      "deprecated": false,
+      "description": "- AssociateEntities",
+      "parameters": [
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Relationship",
+          "key": "associationEntityRelationship",
+          "required": true,
+          "type": "string",
+          "description": "Choose relationship type"
+        },
+        {
+          "name": "Relate with",
+          "key": "@odata.id",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row URL using OData ID from a previous step or typing the full URL (eg. https://org0.crm.dynamics.com/api/data/v9.0/faxes(3ce6c728-3c8a-4b55-a4ee-a251b253c3ee)"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "AssociateEntitiesWithOrganization": {
+      "operationId": "AssociateEntitiesWithOrganization",
+      "kind": "action",
+      "displayName": "Relate rows in selected environment",
+      "deprecated": false,
+      "description": "- AssociateEntitiesWithOrganization",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "organization",
+          "required": true,
+          "type": "string",
+          "description": "Choose an environment"
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Relationship",
+          "key": "associationEntityRelationship",
+          "required": true,
+          "type": "string",
+          "description": "Choose relationship type"
+        },
+        {
+          "name": "Relate with",
+          "key": "@odata.id",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row URL using OData ID from a previous step or typing the full URL (eg. https://org0.crm.dynamics.com/api/data/v9.0/faxes(3ce6c728-3c8a-4b55-a4ee-a251b253c3ee)"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "BusinessEventsTrigger": {
+      "operationId": "BusinessEventsTrigger",
+      "kind": "trigger",
+      "displayName": "When an action is performed",
+      "deprecated": false,
+      "description": "- BusinessEventsTrigger",
+      "parameters": [
+        {
+          "name": "Catalog",
+          "key": "catalog",
+          "required": true,
+          "type": "string",
+          "description": "Choose an option to filter tables and actions."
+        },
+        {
+          "name": "Category",
+          "key": "category",
+          "required": true,
+          "type": "string",
+          "description": "Choose an option to filter tables and actions."
+        },
+        {
+          "name": "Table name",
+          "key": "entityname",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table to filter actions."
+        },
+        {
+          "name": "Action name",
+          "key": "sdkmessagename",
+          "required": true,
+          "type": "string",
+          "description": "Choose an action."
+        }
+      ],
+      "returns": {
+        "raw": "An action and table item.\n- Body\n- WebhookNotificationContentForWhenAnActionIsPerformed"
+      }
+    },
+    "CreateRecord": {
+      "operationId": "CreateRecord",
+      "kind": "action",
+      "displayName": "Add a new row",
+      "deprecated": false,
+      "description": "- CreateRecord",
+      "parameters": [
+        {
+          "name": "Return Full Metadata",
+          "key": "x-ms-odata-metadata-full",
+          "required": false,
+          "type": "boolean",
+          "description": "The header parameter to customer to opt-in returning full odata metadata in response."
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "",
+          "key": "",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "CreateRecordWithOrganization": {
+      "operationId": "CreateRecordWithOrganization",
+      "kind": "action",
+      "displayName": "Add a new row to selected environment",
+      "deprecated": false,
+      "description": "- CreateRecordWithOrganization",
+      "parameters": [
+        {
+          "name": "Return Full Metadata",
+          "key": "x-ms-odata-metadata-full",
+          "required": false,
+          "type": "boolean",
+          "description": "The header parameter to customer to opt-in returning full odata metadata in response."
+        },
+        {
+          "name": "Environment",
+          "key": "organization",
+          "required": true,
+          "type": "string",
+          "description": "Choose an environment"
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row Item",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Row to create"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "DeleteRecord": {
+      "operationId": "DeleteRecord",
+      "kind": "action",
+      "displayName": "Delete a row",
+      "deprecated": false,
+      "description": "- DeleteRecord",
+      "parameters": [
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Partition Id",
+          "key": "partitionId",
+          "required": false,
+          "type": "string",
+          "description": "An option to specify the partitionId while deleting row for NoSQL tables"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteRecordWithOrganization": {
+      "operationId": "DeleteRecordWithOrganization",
+      "kind": "action",
+      "displayName": "Delete a row from selected environment",
+      "deprecated": false,
+      "description": "- DeleteRecordWithOrganization",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "organization",
+          "required": true,
+          "type": "string",
+          "description": "Choose an environment"
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Partition Id",
+          "key": "partitionId",
+          "required": false,
+          "type": "string",
+          "description": "An option to specify the partitionId while deleting row for NoSQL tables"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DisassociateEntities": {
+      "operationId": "DisassociateEntities",
+      "kind": "action",
+      "displayName": "Unrelate rows",
+      "deprecated": false,
+      "description": "- DisassociateEntities",
+      "parameters": [
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Relationship",
+          "key": "associationEntityRelationship",
+          "required": true,
+          "type": "string",
+          "description": "Choose relationship type"
+        },
+        {
+          "name": "Unrelate with",
+          "key": "$id",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row URL using OData ID from a previous step or typing the full URL (eg. https://org0.crm.dynamics.com/api/data/v9.0/faxes(3ce6c728-3c8a-4b55-a4ee-a251b253c3ee)"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DisassociateEntitiesWithOrganization": {
+      "operationId": "DisassociateEntitiesWithOrganization",
+      "kind": "action",
+      "displayName": "Unrelate rows in selected environment",
+      "deprecated": false,
+      "description": "- DisassociateEntitiesWithOrganization",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "organization",
+          "required": true,
+          "type": "string",
+          "description": "Choose an environment"
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Relationship",
+          "key": "associationEntityRelationship",
+          "required": true,
+          "type": "string",
+          "description": "Choose relationship type"
+        },
+        {
+          "name": "Unrelate with",
+          "key": "$id",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row URL using OData ID from a previous step or typing the full URL (eg. https://org0.crm.dynamics.com/api/data/v9.0/faxes(3ce6c728-3c8a-4b55-a4ee-a251b253c3ee)"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ExecuteChangeset": {
+      "operationId": "ExecuteChangeset",
+      "kind": "action",
+      "displayName": "Perform a changeset request",
+      "deprecated": false,
+      "description": "- ExecuteChangeset",
+      "parameters": [],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetEntityFileImageFieldContent": {
+      "operationId": "GetEntityFileImageFieldContent",
+      "kind": "action",
+      "displayName": "Download a file or an image",
+      "deprecated": false,
+      "description": "- GetEntityFileImageFieldContent",
+      "parameters": [
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Column name",
+          "key": "fileImageFieldName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a column"
+        },
+        {
+          "name": "Image size",
+          "key": "size",
+          "required": false,
+          "type": "string",
+          "description": "Enter 'full' for entire image if enabled (default = thumbnail)"
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file or image\n- File or image content\n- binary"
+      }
+    },
+    "GetEntityFileImageFieldContentWithOrganization": {
+      "operationId": "GetEntityFileImageFieldContentWithOrganization",
+      "kind": "action",
+      "displayName": "Download a file or an image from selected environment",
+      "deprecated": false,
+      "description": "- GetEntityFileImageFieldContentWithOrganization",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "organization",
+          "required": true,
+          "type": "string",
+          "description": "Choose an environment"
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Column name",
+          "key": "fileImageFieldName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a column"
+        },
+        {
+          "name": "Image size",
+          "key": "size",
+          "required": false,
+          "type": "string",
+          "description": "Enter 'full' for entire image if enabled (default = thumbnail)"
+        }
+      ],
+      "returns": {
+        "raw": "The content of the file or image\n- File or image content\n- binary"
+      }
+    },
+    "GetItem": {
+      "operationId": "GetItem",
+      "kind": "action",
+      "displayName": "Get a row by ID",
+      "deprecated": false,
+      "description": "- GetItem",
+      "parameters": [
+        {
+          "name": "Return Full Metadata",
+          "key": "x-ms-odata-metadata-full",
+          "required": false,
+          "type": "boolean",
+          "description": "The header parameter to customer to opt-in returning full odata metadata in response."
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Select columns",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "Enter a comma-separated list of column unique names to limit which columns are listed"
+        },
+        {
+          "name": "Expand Query",
+          "key": "$expand",
+          "required": false,
+          "type": "string",
+          "description": "Enter an Odata style expand query to list related rows"
+        },
+        {
+          "name": "Partition Id",
+          "key": "partitionId",
+          "required": false,
+          "type": "string",
+          "description": "An option to specify the partitionId while retrieving data for NoSQL tables"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "GetItemWithOrganization": {
+      "operationId": "GetItemWithOrganization",
+      "kind": "action",
+      "displayName": "Get a row by ID from selected environment",
+      "deprecated": false,
+      "description": "- GetItemWithOrganization",
+      "parameters": [
+        {
+          "name": "Return Full Metadata",
+          "key": "x-ms-odata-metadata-full",
+          "required": false,
+          "type": "boolean",
+          "description": "The header parameter to customer to opt-in returning full odata metadata in response."
+        },
+        {
+          "name": "Environment",
+          "key": "organization",
+          "required": true,
+          "type": "string",
+          "description": "Choose an environment"
+        },
+        {
+          "name": "Extract Sensitivity Label",
+          "key": "MSCRM.IncludeMipSensitivityLabel",
+          "required": false,
+          "type": "boolean",
+          "description": "Select if you want to fetch Sensitivity Label ID"
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Select columns",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "Enter a comma-separated list of column unique names to limit which columns are listed"
+        },
+        {
+          "name": "Expand Query",
+          "key": "$expand",
+          "required": false,
+          "type": "string",
+          "description": "Enter an Odata style expand query to list related rows"
+        },
+        {
+          "name": "Partition Id",
+          "key": "partitionId",
+          "required": false,
+          "type": "string",
+          "description": "An option to specify the partitionId while retrieving data for NoSQL tables"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetRelevantRows": {
+      "operationId": "GetRelevantRows",
+      "kind": "action",
+      "displayName": "Search rows (preview)",
+      "deprecated": false,
+      "description": "- GetRelevantRows",
+      "parameters": [
+        {
+          "name": "Search term",
+          "key": "search",
+          "required": true,
+          "type": "string",
+          "description": "Enter a search term, eg. Contoso. Searches modifiers like boolean operators, wildcards, fuzzy search, proximity search etc. require the search type full"
+        },
+        {
+          "name": "Search type",
+          "key": "searchtype",
+          "required": false,
+          "type": "string",
+          "description": "Enter whether simple or full search syntax should be used (default is simple)"
+        },
+        {
+          "name": "Search mode",
+          "key": "searchmode",
+          "required": false,
+          "type": "string",
+          "description": "Enter whether any or all of the search terms must be matched (default is any)"
+        },
+        {
+          "name": "Row count",
+          "key": "top",
+          "required": false,
+          "type": "integer",
+          "description": "Enter the number of search results to be listed (default = 50)"
+        },
+        {
+          "name": "Row filter",
+          "key": "filter",
+          "required": false,
+          "type": "string",
+          "description": "Enter an Odata style filter expression to narrow the search"
+        },
+        {
+          "name": "Table filter",
+          "key": "entities",
+          "required": false,
+          "type": "array of string",
+          "description": "Enter a comma-separated list of tables to be searched (default is all tables)"
+        },
+        {
+          "name": "Sort by",
+          "key": "orderby",
+          "required": false,
+          "type": "array of string",
+          "description": "Enter a comma-separated list of column unique names followed by asc or desc"
+        },
+        {
+          "name": "Facet query",
+          "key": "facets",
+          "required": false,
+          "type": "array of string",
+          "description": "Enter a comma-separated list of facet queries to narrow the search"
+        },
+        {
+          "name": "Skip rows",
+          "key": "skip",
+          "required": false,
+          "type": "integer",
+          "description": "Enter the number of search results to be skipped"
+        },
+        {
+          "name": "Return row count",
+          "key": "returntotalrecordcount",
+          "required": false,
+          "type": "boolean",
+          "description": "Choose an option"
+        }
+      ],
+      "returns": {
+        "raw": "The search output.\n- Body\n- SearchOutput"
+      }
+    },
+    "InvokeMCP": {
+      "operationId": "InvokeMCP",
+      "kind": "action",
+      "displayName": "Microsoft Dataverse MCP Server (Preview)",
+      "deprecated": false,
+      "description": "- InvokeMCP",
+      "parameters": [],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "InvokeMCPPreview": {
+      "operationId": "InvokeMCPPreview",
+      "kind": "action",
+      "displayName": "Microsoft Dataverse MCP Server (Preview) (Preview)",
+      "deprecated": false,
+      "description": "- InvokeMCPPreview",
+      "parameters": [],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ListRecords": {
+      "operationId": "ListRecords",
+      "kind": "action",
+      "displayName": "List rows",
+      "deprecated": false,
+      "description": "- ListRecords",
+      "parameters": [
+        {
+          "name": "Return Full Metadata",
+          "key": "x-ms-odata-metadata-full",
+          "required": false,
+          "type": "boolean",
+          "description": "The header parameter to customer to opt-in returning full odata metadata in response."
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Select columns",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "Enter a comma-separated list of column unique names to limit which columns are listed"
+        },
+        {
+          "name": "Filter rows",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "Enter an OData style filter expression to limit which rows are listed"
+        },
+        {
+          "name": "Sort By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "Columns to sort by in OData orderBy style (excluding lookups)"
+        },
+        {
+          "name": "Expand Query",
+          "key": "$expand",
+          "required": false,
+          "type": "string",
+          "description": "Enter an Odata style expand query to list related rows"
+        },
+        {
+          "name": "Fetch Xml Query",
+          "key": "fetchXml",
+          "required": false,
+          "type": "string",
+          "description": "Enter a Fetch XML query for advanced customization"
+        },
+        {
+          "name": "Row count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Enter the number of rows to be listed (default = 5000)"
+        },
+        {
+          "name": "Skip token",
+          "key": "$skiptoken",
+          "required": false,
+          "type": "string",
+          "description": "Enter the skip token obtained from a previous run to list rows from the next page"
+        },
+        {
+          "name": "Partition ID",
+          "key": "partitionId",
+          "required": false,
+          "type": "string",
+          "description": "An option to specify the partitionId while retrieving data for NoSQL tables"
+        }
+      ],
+      "returns": {
+        "raw": "List of tables\n- Body\n- EntityItemList"
+      }
+    },
+    "ListRecordsWithOrganization": {
+      "operationId": "ListRecordsWithOrganization",
+      "kind": "action",
+      "displayName": "List rows from selected environment",
+      "deprecated": false,
+      "description": "- ListRecordsWithOrganization",
+      "parameters": [
+        {
+          "name": "Return Full Metadata",
+          "key": "x-ms-odata-metadata-full",
+          "required": false,
+          "type": "boolean",
+          "description": "The header parameter to customer to opt-in returning full odata metadata in response."
+        },
+        {
+          "name": "Environment",
+          "key": "organization",
+          "required": true,
+          "type": "string",
+          "description": "Choose an environment"
+        },
+        {
+          "name": "Extract Sensitivity Label",
+          "key": "MSCRM.IncludeMipSensitivityLabel",
+          "required": false,
+          "type": "boolean",
+          "description": "Select if you want to fetch Sensitivity Label ID"
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Select columns",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "Enter a comma-separated list of column unique names to limit which columns are listed"
+        },
+        {
+          "name": "Filter rows",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "Enter an OData style filter expression to limit which rows are listed"
+        },
+        {
+          "name": "Sort By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "Columns to sort by in OData orderBy style (excluding lookups)"
+        },
+        {
+          "name": "Expand Query",
+          "key": "$expand",
+          "required": false,
+          "type": "string",
+          "description": "Enter an Odata style expand query to list related rows"
+        },
+        {
+          "name": "Fetch Xml Query",
+          "key": "fetchXml",
+          "required": false,
+          "type": "string",
+          "description": "Enter a Fetch XML query for advanced customization"
+        },
+        {
+          "name": "Row count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Enter rows to list. The default is 2000. Enable paging in settings for more rows."
+        },
+        {
+          "name": "Skip token",
+          "key": "$skiptoken",
+          "required": false,
+          "type": "string",
+          "description": "Enter the skip token obtained from a previous run to list rows from the next page"
+        },
+        {
+          "name": "Partition ID",
+          "key": "partitionId",
+          "required": false,
+          "type": "string",
+          "description": "An option to specify the partitionId while retrieving data for NoSQL tables"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "OnFlowStepRun": {
+      "operationId": "OnFlowStepRun",
+      "kind": "trigger",
+      "displayName": "When a flow step is run from a business process flow",
+      "deprecated": false,
+      "description": "- OnFlowStepRun",
+      "parameters": [
+        {
+          "name": "operationId",
+          "key": "operationId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "host",
+          "key": "host",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "schema",
+          "key": "schema",
+          "required": true,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Flows Workflow Log Id | entity.FlowsWorkflowLogId | string | Flow workflow log id. |\n| BPF Instance Id | entity.BPFInstanceId | string | Business process flow instance id. |\n| BPF Instance Table Name | entity.BPFInstanceEntityName | string | Business process flow instance table name. |\n| BPF Definition Id | entity.BPFDefinitionId | string | Business process flow definition id. |\n| BPF Definition Table Name | entity.BPFDefinitionEntityName | string | Business process flow definition table name. |\n| Step Id | entity.StepId | string | Business process flow step id. |\n| BPF Definition Name | entity.BPFDefinitionName | string | Business process flow definition name. |\n| BPF Instance Name | entity.BPFInstanceName | string | Business process flow instance name. |\n| BPF Flow Stage Localized Name | entity.BPFFlowStageLocalizedName | string | Business process flow stage localized name. |\n| BPF Flow Stage Table Name | entity.BPFFlowStageEntityName | string | Business process flow stage table name. |\n| BPF Flow Stage Table Collection Name | entity.BPFFlowStageEntityCollectionName | string | Business process flow stage table collection name. |\n| BPF Flow Stage Table Row Id | entity.BPFFlowStageEntityRecordId | string | Business process flow stage table row id. |\n| BPF Active Stage Id | entity.BPFActiveStageId | string | Business process flow active stage id. |\n| BPF Active Stage Table Name | entity.BPFActiveStageEntityName | string | Business process flow active stage table name. |\n| BPF Active Stage Localized Name | entity.BPFActiveStageLocalizedName | string | Business process flow active stage localized name. |"
+      }
+    },
+    "OnRecordSelected": {
+      "operationId": "OnRecordSelected",
+      "kind": "trigger",
+      "displayName": "When a row is selected",
+      "deprecated": false,
+      "description": "- OnRecordSelected",
+      "parameters": [
+        {
+          "name": "operationId",
+          "key": "operationId",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "host",
+          "key": "host",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "parameters",
+          "key": "parameters",
+          "required": true,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "schema",
+          "key": "schema",
+          "required": true,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "headersSchema",
+          "key": "headersSchema",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| rows | body.rows | array of object |  |\n| items | body.rows | object |  |\n| User id | headers.x-ms-user-id-encoded | guid | The unique identifier of the user who triggered the flow in AAD. |\n| User email | headers.x-ms-user-email-encoded | byte | The email address of the user who triggered the flow. |\n| User name | headers.x-ms-user-name-encoded | byte | The display name of the user who triggered the flow. |\n| Timestamp | headers.x-ms-user-timestamp | string | The time the flow was triggered. |"
+      }
+    },
+    "PerformBackgroundOperation": {
+      "operationId": "PerformBackgroundOperation",
+      "kind": "action",
+      "displayName": "Perform a background operation (preview)",
+      "deprecated": false,
+      "description": "- PerformBackgroundOperation",
+      "parameters": [
+        {
+          "name": "Dynamic Items",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Dynamic Items"
+        },
+        {
+          "name": "Catalog",
+          "key": "catalog",
+          "required": true,
+          "type": "string",
+          "description": "Choose a catalog to filter tables and actions."
+        },
+        {
+          "name": "Category",
+          "key": "category",
+          "required": true,
+          "type": "string",
+          "description": "Choose a category to filter tables and actions."
+        },
+        {
+          "name": "Action name",
+          "key": "actionName",
+          "required": true,
+          "type": "string",
+          "description": "Choose an action."
+        }
+      ],
+      "returns": {
+        "raw": "The action response object which includes background operation state code and status code.\n- Body\n- WebhookNotificationContentForPerformBackgroundOperation"
+      }
+    },
+    "PerformBoundAction": {
+      "operationId": "PerformBoundAction",
+      "kind": "action",
+      "displayName": "Perform a bound action",
+      "deprecated": false,
+      "description": "- PerformBoundAction",
+      "parameters": [
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Action Name",
+          "key": "actionName",
+          "required": true,
+          "type": "string",
+          "description": "Choose an action"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "",
+          "key": "",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "PerformBoundActionWithOrganization": {
+      "operationId": "PerformBoundActionWithOrganization",
+      "kind": "action",
+      "displayName": "Perform a bound action in selected environment",
+      "deprecated": false,
+      "description": "- PerformBoundActionWithOrganization",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "organization",
+          "required": true,
+          "type": "string",
+          "description": "Choose an environment"
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Action Name",
+          "key": "actionName",
+          "required": true,
+          "type": "string",
+          "description": "Choose an action"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Action parameters",
+          "key": "item",
+          "required": false,
+          "type": "dynamic",
+          "description": "Action parameters"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "PerformUnboundAction": {
+      "operationId": "PerformUnboundAction",
+      "kind": "action",
+      "displayName": "Perform an unbound action",
+      "deprecated": false,
+      "description": "- PerformUnboundAction",
+      "parameters": [
+        {
+          "name": "Action Name",
+          "key": "actionName",
+          "required": true,
+          "type": "string",
+          "description": "Choose an action"
+        },
+        {
+          "name": "",
+          "key": "",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "PerformUnboundActionWithOrganization": {
+      "operationId": "PerformUnboundActionWithOrganization",
+      "kind": "action",
+      "displayName": "Perform an unbound action in selected environment",
+      "deprecated": false,
+      "description": "- PerformUnboundActionWithOrganization",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "organization",
+          "required": true,
+          "type": "string",
+          "description": "Choose an environment"
+        },
+        {
+          "name": "Action Name",
+          "key": "actionName",
+          "required": true,
+          "type": "string",
+          "description": "Choose an action"
+        },
+        {
+          "name": "Action parameters",
+          "key": "item",
+          "required": false,
+          "type": "dynamic",
+          "description": "Action parameters"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "SubscribeWebhookTrigger": {
+      "operationId": "SubscribeWebhookTrigger",
+      "kind": "trigger",
+      "displayName": "When a row is added, modified or deleted",
+      "deprecated": false,
+      "description": "- SubscribeWebhookTrigger",
+      "parameters": [
+        {
+          "name": "Change type",
+          "key": "message",
+          "required": true,
+          "type": "integer",
+          "description": "Choose when the flow triggers"
+        },
+        {
+          "name": "Table name",
+          "key": "entityname",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Scope",
+          "key": "scope",
+          "required": true,
+          "type": "integer",
+          "description": "Choose a scope to limit which rows can trigger the flow"
+        },
+        {
+          "name": "Select columns",
+          "key": "filteringattributes",
+          "required": false,
+          "type": "string",
+          "description": "Enter a comma-separated list of column unique names. The flow triggers if any of them are modified"
+        },
+        {
+          "name": "Filter rows",
+          "key": "filterexpression",
+          "required": false,
+          "type": "string",
+          "description": "Odata expression to limit rows that can trigger the flow, eg. statecode eq 0"
+        },
+        {
+          "name": "Delay until",
+          "key": "postponeuntil",
+          "required": false,
+          "type": "string",
+          "description": "Enter a time to delay the trigger evaluation, eg. 2020-01-01T10:10:00Z"
+        },
+        {
+          "name": "Run as",
+          "key": "runas",
+          "required": false,
+          "type": "integer",
+          "description": "Choose the running user for steps where invoker connections are used"
+        }
+      ],
+      "returns": {
+        "raw": "A Table item.\n- Body\n- WebhookNotificationContent"
+      }
+    },
+    "UpdateEntityFileImageFieldContent": {
+      "operationId": "UpdateEntityFileImageFieldContent",
+      "kind": "action",
+      "displayName": "Upload a file or an image",
+      "deprecated": false,
+      "description": "- UpdateEntityFileImageFieldContent",
+      "parameters": [
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Column name",
+          "key": "fileImageFieldName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a column"
+        },
+        {
+          "name": "Content",
+          "key": "item",
+          "required": true,
+          "type": "binary",
+          "description": "Add file or image content"
+        },
+        {
+          "name": "Content name",
+          "key": "x-ms-file-name",
+          "required": true,
+          "type": "string",
+          "description": "Enter a name for the file or image"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "UpdateEntityFileImageFieldContentWithOrganization": {
+      "operationId": "UpdateEntityFileImageFieldContentWithOrganization",
+      "kind": "action",
+      "displayName": "Upload a file or an image to selected environment",
+      "deprecated": false,
+      "description": "- UpdateEntityFileImageFieldContentWithOrganization",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "organization",
+          "required": true,
+          "type": "string",
+          "description": "Choose an environment"
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Column name",
+          "key": "fileImageFieldName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a column"
+        },
+        {
+          "name": "Content",
+          "key": "item",
+          "required": true,
+          "type": "binary",
+          "description": "Add file or image content"
+        },
+        {
+          "name": "Content name",
+          "key": "x-ms-file-name",
+          "required": true,
+          "type": "string",
+          "description": "Enter a name for the file or image"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "UpdateOnlyRecord": {
+      "operationId": "UpdateOnlyRecord",
+      "kind": "action",
+      "displayName": "Update a row",
+      "deprecated": false,
+      "description": "- UpdateOnlyRecord",
+      "parameters": [
+        {
+          "name": "Return Full Metadata",
+          "key": "x-ms-odata-metadata-full",
+          "required": false,
+          "type": "boolean",
+          "description": "The header parameter to customer to opt-in returning full odata metadata in response."
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "",
+          "key": "",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "UpdateOnlyRecordWithOrganization": {
+      "operationId": "UpdateOnlyRecordWithOrganization",
+      "kind": "action",
+      "displayName": "Update a row in selected environment",
+      "deprecated": false,
+      "description": "- UpdateOnlyRecordWithOrganization",
+      "parameters": [
+        {
+          "name": "Return Full Metadata",
+          "key": "x-ms-odata-metadata-full",
+          "required": false,
+          "type": "boolean",
+          "description": "The header parameter to customer to opt-in returning full odata metadata in response."
+        },
+        {
+          "name": "Environment",
+          "key": "organization",
+          "required": true,
+          "type": "string",
+          "description": "Choose an environment"
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Row Item",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Row to update"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "UpdateRecord": {
+      "operationId": "UpdateRecord",
+      "kind": "action",
+      "displayName": "Upsert a row",
+      "deprecated": false,
+      "description": "- UpdateRecord",
+      "parameters": [
+        {
+          "name": "Return Full Metadata",
+          "key": "x-ms-odata-metadata-full",
+          "required": false,
+          "type": "boolean",
+          "description": "The header parameter to customer to opt-in returning full odata metadata in response."
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "",
+          "key": "",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- object"
+      }
+    },
+    "UpdateRecordWithOrganization": {
+      "operationId": "UpdateRecordWithOrganization",
+      "kind": "action",
+      "displayName": "Upsert a row in selected environment",
+      "deprecated": false,
+      "description": "- UpdateRecordWithOrganization",
+      "parameters": [
+        {
+          "name": "Return Full Metadata",
+          "key": "x-ms-odata-metadata-full",
+          "required": false,
+          "type": "boolean",
+          "description": "The header parameter to customer to opt-in returning full odata metadata in response."
+        },
+        {
+          "name": "Environment",
+          "key": "organization",
+          "required": true,
+          "type": "string",
+          "description": "Choose an environment"
+        },
+        {
+          "name": "Table name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "Choose a table"
+        },
+        {
+          "name": "Row ID",
+          "key": "recordId",
+          "required": true,
+          "type": "string",
+          "description": "Enter the row's globally unique identifier (GUID)"
+        },
+        {
+          "name": "Row Item",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Row to update"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "mcp_ContactCenterMCPServer": {
+      "operationId": "mcp_ContactCenterMCPServer",
+      "kind": "action",
+      "displayName": "Dynamics 365 Contact Center MCP (Deprecated)",
+      "deprecated": false,
+      "description": "- mcp_ContactCenterMCPServer",
+      "parameters": [
+        {
+          "name": "jsonrpc",
+          "key": "jsonrpc",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "method",
+          "key": "method",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "params",
+          "key": "params",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "result",
+          "key": "result",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "error",
+          "key": "error",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "sessionId",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- MCPQueryResponse"
+      }
+    },
+    "mcp_ConversationOrchestratorMCPServer": {
+      "operationId": "mcp_ConversationOrchestratorMCPServer",
+      "kind": "action",
+      "displayName": "Dynamics 365 Conversation Orchestrator MCP (Preview)",
+      "deprecated": false,
+      "description": "- mcp_ConversationOrchestratorMCPServer",
+      "parameters": [
+        {
+          "name": "jsonrpc",
+          "key": "jsonrpc",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "method",
+          "key": "method",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "params",
+          "key": "params",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "result",
+          "key": "result",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "error",
+          "key": "error",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "sessionId",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- MCPQueryResponse"
+      }
+    },
+    "mcp_DataverseMCPServer": {
+      "operationId": "mcp_DataverseMCPServer",
+      "kind": "action",
+      "displayName": "Dataverse MCP Server (Deprecated)",
+      "deprecated": false,
+      "description": "- mcp_DataverseMCPServer",
+      "parameters": [
+        {
+          "name": "jsonrpc",
+          "key": "jsonrpc",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "method",
+          "key": "method",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "params",
+          "key": "params",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "result",
+          "key": "result",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "error",
+          "key": "error",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "sessionId",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- MCPQueryResponse"
+      }
+    },
+    "mcp_ERPMCPServer": {
+      "operationId": "mcp_ERPMCPServer",
+      "kind": "action",
+      "displayName": "Dynamics 365 ERP MCP (Deprecated)",
+      "deprecated": false,
+      "description": "- mcp_ERPMCPServer",
+      "parameters": [
+        {
+          "name": "jsonrpc",
+          "key": "jsonrpc",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "method",
+          "key": "method",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "params",
+          "key": "params",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "result",
+          "key": "result",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "error",
+          "key": "error",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "sessionId",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- MCPQueryResponse"
+      }
+    },
+    "mcp_SalesMCPServer": {
+      "operationId": "mcp_SalesMCPServer",
+      "kind": "action",
+      "displayName": "D365 Sales MCP Server (deprecated)",
+      "deprecated": false,
+      "description": "- mcp_SalesMCPServer",
+      "parameters": [
+        {
+          "name": "jsonrpc",
+          "key": "jsonrpc",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "method",
+          "key": "method",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "params",
+          "key": "params",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "result",
+          "key": "result",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "error",
+          "key": "error",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "sessionId",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- MCPQueryResponse"
+      }
+    },
+    "mcp_ServiceMCPServer": {
+      "operationId": "mcp_ServiceMCPServer",
+      "kind": "action",
+      "displayName": "D365 Service MCP Server (Deprecated)",
+      "deprecated": false,
+      "description": "- mcp_ServiceMCPServer",
+      "parameters": [
+        {
+          "name": "jsonrpc",
+          "key": "jsonrpc",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "method",
+          "key": "method",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "params",
+          "key": "params",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "result",
+          "key": "result",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "error",
+          "key": "error",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "sessionId",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- MCPQueryResponse"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

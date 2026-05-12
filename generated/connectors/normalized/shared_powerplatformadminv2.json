@@ -1,0 +1,6265 @@
+{
+  "connectorId": "shared_powerplatformadminv2",
+  "displayName": "Power Platform for Admins V2",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/powerplatformadminv2/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-04-28T01:06:00.0000000Z",
+  "sourceGitCommit": "38b2850b21859cf1397a730fa15d49904b4a64ed",
+  "sourcePath": "docs/powerplatformadminv2/index.yml",
+  "operations": {
+    "AddAllowedIpAddresses": {
+      "operationId": "AddAllowedIpAddresses",
+      "kind": "action",
+      "displayName": "Add allowed IP addresses on a Power Pages website",
+      "deprecated": false,
+      "description": "- AddAllowedIpAddresses",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "IpAddress",
+          "key": "IpAddress",
+          "required": false,
+          "type": "string",
+          "description": "The IP address or CIDR range"
+        },
+        {
+          "name": "IpAddressType",
+          "key": "IpAddressType",
+          "required": false,
+          "type": "string",
+          "description": "The type of the IP address"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- AllowedIpAddressesConfiguration"
+      }
+    },
+    "AddBillingPolicyEnvironment": {
+      "operationId": "AddBillingPolicyEnvironment",
+      "kind": "action",
+      "displayName": "Link billing policy ID with environments",
+      "deprecated": false,
+      "description": "- AddBillingPolicyEnvironment",
+      "parameters": [
+        {
+          "name": "Billing Policy Id",
+          "key": "billingPolicyId",
+          "required": true,
+          "type": "string",
+          "description": "The billing policy ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "environmentIds",
+          "key": "environmentIds",
+          "required": false,
+          "type": "array of string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "AddEnvironmentToGroup": {
+      "operationId": "AddEnvironmentToGroup",
+      "kind": "action",
+      "displayName": "Add the environment to the environment group",
+      "deprecated": false,
+      "description": "- AddEnvironmentToGroup",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "uuid",
+          "description": "The group ID."
+        },
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ApplyAdminRole": {
+      "operationId": "ApplyAdminRole",
+      "kind": "action",
+      "displayName": "Apply the system administrator role to the selected user",
+      "deprecated": false,
+      "description": "- ApplyAdminRole",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ConvertTrialToProduction": {
+      "operationId": "ConvertTrialToProduction",
+      "kind": "action",
+      "displayName": "Convert a trial Power Pages website to production",
+      "deprecated": false,
+      "description": "- ConvertTrialToProduction",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "EnableCDN",
+          "key": "EnableCDN",
+          "required": false,
+          "type": "boolean",
+          "description": "Enable Content Delivery Network (CDN) for the website"
+        },
+        {
+          "name": "EnableWAF",
+          "key": "EnableWAF",
+          "required": false,
+          "type": "boolean",
+          "description": "Enable Web Application Firewall (WAF) for the website"
+        },
+        {
+          "name": "UseDynamics365PortalAddOnLicense",
+          "key": "UseDynamics365PortalAddOnLicense",
+          "required": false,
+          "type": "boolean",
+          "description": "Use Dynamics 365 Portal Add-On License for the website"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CopyEnvironment": {
+      "operationId": "CopyEnvironment",
+      "kind": "action",
+      "displayName": "Copy the environment from the specified source to the target (Preview)",
+      "deprecated": false,
+      "description": "- CopyEnvironment",
+      "parameters": [
+        {
+          "name": "Target Environment Id",
+          "key": "targetEnvironmentId",
+          "required": true,
+          "type": "string",
+          "description": "The target environment will be overwritten."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "sourceEnvironmentId",
+          "key": "sourceEnvironmentId",
+          "required": true,
+          "type": "string",
+          "description": "Source environment ID to copy from."
+        },
+        {
+          "name": "copyType",
+          "key": "copyType",
+          "required": true,
+          "type": "string",
+          "description": "Represents the type of copy operation."
+        },
+        {
+          "name": "environmentNameToOverride",
+          "key": "environmentNameToOverride",
+          "required": false,
+          "type": "string",
+          "description": "Environment name to override on target environment."
+        },
+        {
+          "name": "securityGroupIdToOverride",
+          "key": "securityGroupIdToOverride",
+          "required": false,
+          "type": "string",
+          "description": "Security group ID to override on target environment."
+        },
+        {
+          "name": "skipAuditData",
+          "key": "skipAuditData",
+          "required": false,
+          "type": "boolean",
+          "description": "Boolean flag to skip audit data for copy."
+        },
+        {
+          "name": "executeAdvancedCopyForFinanceAndOperations",
+          "key": "executeAdvancedCopyForFinanceAndOperations",
+          "required": false,
+          "type": "boolean",
+          "description": "Boolean flag to execute advanced copy for Finance and Operation data."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CreateBillingPolicy": {
+      "operationId": "CreateBillingPolicy",
+      "kind": "action",
+      "displayName": "Creates the billing policy at tenant level",
+      "deprecated": false,
+      "description": "- CreateBillingPolicy",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "location",
+          "key": "location",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "subscriptionId",
+          "key": "subscriptionId",
+          "required": false,
+          "type": "uuid",
+          "description": "The tenant subscription Id."
+        },
+        {
+          "name": "resourceGroup",
+          "key": "resourceGroup",
+          "required": false,
+          "type": "string",
+          "description": "The resource group within the tenant subscription."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "status",
+          "key": "status",
+          "required": false,
+          "type": "string",
+          "description": "The desired ISV contract status."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- BillingPolicyResponseModel"
+      }
+    },
+    "CreateCrossTenantConnectionReport": {
+      "operationId": "CreateCrossTenantConnectionReport",
+      "kind": "action",
+      "displayName": "Generate or fetch a cross-tenant connection report",
+      "deprecated": false,
+      "description": "- CreateCrossTenantConnectionReport",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CrossTenantConnectionReport"
+      }
+    },
+    "CreateEnviornmentGroupRuleBasedAssignment": {
+      "operationId": "CreateEnviornmentGroupRuleBasedAssignment",
+      "kind": "action",
+      "displayName": "Create environment group rule based assignment",
+      "deprecated": false,
+      "description": "- CreateEnviornmentGroupRuleBasedAssignment",
+      "parameters": [
+        {
+          "name": "Policy Id",
+          "key": "policyId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the policy."
+        },
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the environment group."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "resourceId",
+          "key": "resourceId",
+          "required": true,
+          "type": "string",
+          "description": "Resource Id ex. the environment group id."
+        },
+        {
+          "name": "resourceType",
+          "key": "resourceType",
+          "required": true,
+          "type": "string",
+          "description": "The Resource type."
+        },
+        {
+          "name": "behaviorType",
+          "key": "behaviorType",
+          "required": true,
+          "type": "string",
+          "description": "The Behavior type."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- RuleAssignment"
+      }
+    },
+    "CreateEnvironmentBackup": {
+      "operationId": "CreateEnvironmentBackup",
+      "kind": "action",
+      "displayName": "Creates a backup of the specified environment (Preview)",
+      "deprecated": false,
+      "description": "- CreateEnvironmentBackup",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "label",
+          "key": "label",
+          "required": true,
+          "type": "string",
+          "description": "The label for the manually created backup."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EnvironmentBackup"
+      }
+    },
+    "CreateEnvironmentGroup": {
+      "operationId": "CreateEnvironmentGroup",
+      "kind": "action",
+      "displayName": "Create the environment group",
+      "deprecated": false,
+      "description": "- CreateEnvironmentGroup",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "uuid",
+          "description": ""
+        },
+        {
+          "name": "displayName",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "parentGroupId",
+          "key": "parentGroupId",
+          "required": false,
+          "type": "uuid",
+          "description": ""
+        },
+        {
+          "name": "childrenGroupIds",
+          "key": "childrenGroupIds",
+          "required": false,
+          "type": "array of uuid",
+          "description": ""
+        },
+        {
+          "name": "createdTime",
+          "key": "createdTime",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "displayName",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "email",
+          "key": "email",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "tenantId",
+          "key": "tenantId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "userPrincipalName",
+          "key": "userPrincipalName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "lastModifiedTime",
+          "key": "lastModifiedTime",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "displayName",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "email",
+          "key": "email",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "tenantId",
+          "key": "tenantId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "userPrincipalName",
+          "key": "userPrincipalName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EnvironmentGroup"
+      }
+    },
+    "CreateEnvironmentGroupRoleAssignment": {
+      "operationId": "CreateEnvironmentGroupRoleAssignment",
+      "kind": "action",
+      "displayName": "Create environment group role assignment",
+      "deprecated": false,
+      "description": "- CreateEnvironmentGroupRoleAssignment",
+      "parameters": [
+        {
+          "name": "Environment Group Id",
+          "key": "environmentGroupId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the environment group."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "principalObjectId",
+          "key": "principalObjectId",
+          "required": false,
+          "type": "string",
+          "description": "The Id of the principal to assign"
+        },
+        {
+          "name": "roleDefinitionId",
+          "key": "roleDefinitionId",
+          "required": false,
+          "type": "string",
+          "description": "The Id of the role definition"
+        },
+        {
+          "name": "scope",
+          "key": "scope",
+          "required": false,
+          "type": "string",
+          "description": "The assignment scope"
+        },
+        {
+          "name": "principalType",
+          "key": "principalType",
+          "required": false,
+          "type": "string",
+          "description": "The type of the principal"
+        }
+      ],
+      "returns": {
+        "raw": "The role assignments.\n- Body\n- RoleAssignmentResponse"
+      }
+    },
+    "CreateEnvironmentManagementSettings": {
+      "operationId": "CreateEnvironmentManagementSettings",
+      "kind": "action",
+      "displayName": "Create environment management settings",
+      "deprecated": false,
+      "description": "- CreateEnvironmentManagementSettings",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "",
+          "key": "",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "Represents the response object for APIs in this service.\n- Body\n- CreateEnvironmentManagementSettingResponse"
+      }
+    },
+    "CreateEnvironmentRoleAssignment": {
+      "operationId": "CreateEnvironmentRoleAssignment",
+      "kind": "action",
+      "displayName": "Create environment role assignment",
+      "deprecated": false,
+      "description": "- CreateEnvironmentRoleAssignment",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the environment."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "principalObjectId",
+          "key": "principalObjectId",
+          "required": false,
+          "type": "string",
+          "description": "The Id of the principal to assign"
+        },
+        {
+          "name": "roleDefinitionId",
+          "key": "roleDefinitionId",
+          "required": false,
+          "type": "string",
+          "description": "The Id of the role definition"
+        },
+        {
+          "name": "scope",
+          "key": "scope",
+          "required": false,
+          "type": "string",
+          "description": "The assignment scope"
+        },
+        {
+          "name": "principalType",
+          "key": "principalType",
+          "required": false,
+          "type": "string",
+          "description": "The type of the principal"
+        }
+      ],
+      "returns": {
+        "raw": "The role assignments.\n- Body\n- RoleAssignmentResponse"
+      }
+    },
+    "CreateEnvironmentRuleBasedAssignment": {
+      "operationId": "CreateEnvironmentRuleBasedAssignment",
+      "kind": "action",
+      "displayName": "Create environment rule based assignment",
+      "deprecated": false,
+      "description": "- CreateEnvironmentRuleBasedAssignment",
+      "parameters": [
+        {
+          "name": "Policy Id",
+          "key": "policyId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the policy."
+        },
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the environment."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "resourceId",
+          "key": "resourceId",
+          "required": true,
+          "type": "string",
+          "description": "Resource Id ex. the environment group id."
+        },
+        {
+          "name": "resourceType",
+          "key": "resourceType",
+          "required": true,
+          "type": "string",
+          "description": "The Resource type."
+        },
+        {
+          "name": "behaviorType",
+          "key": "behaviorType",
+          "required": true,
+          "type": "string",
+          "description": "The Behavior type."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- RuleAssignment"
+      }
+    },
+    "CreateISVContract": {
+      "operationId": "CreateISVContract",
+      "kind": "action",
+      "displayName": "Create an ISV contract",
+      "deprecated": false,
+      "description": "- CreateISVContract",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "status",
+          "key": "status",
+          "required": true,
+          "type": "string",
+          "description": "The desired ISV contract status."
+        },
+        {
+          "name": "geo",
+          "key": "geo",
+          "required": true,
+          "type": "string",
+          "description": "Resource location for billing account creation. Immutable."
+        },
+        {
+          "name": "tenantId",
+          "key": "tenantId",
+          "required": false,
+          "type": "uuid",
+          "description": "The ID of the customer tenant."
+        },
+        {
+          "name": "allowOtherPremiumConnectors",
+          "key": "allowOtherPremiumConnectors",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether metered usage with premium connectors may be attributed."
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "The name of an API connector."
+        },
+        {
+          "name": "subscriptionId",
+          "key": "subscriptionId",
+          "required": false,
+          "type": "uuid",
+          "description": "The tenant subscription Id."
+        },
+        {
+          "name": "resourceGroup",
+          "key": "resourceGroup",
+          "required": false,
+          "type": "string",
+          "description": "The resource group within the tenant subscription."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "cloudFlowRunsPayAsYouGoState",
+          "key": "cloudFlowRunsPayAsYouGoState",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- IsvContractResponseModel"
+      }
+    },
+    "CreateRoleAssignment": {
+      "operationId": "CreateRoleAssignment",
+      "kind": "action",
+      "displayName": "Create role assignment",
+      "deprecated": false,
+      "description": "- CreateRoleAssignment",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "principalObjectId",
+          "key": "principalObjectId",
+          "required": false,
+          "type": "string",
+          "description": "The Id of the principal to assign"
+        },
+        {
+          "name": "roleDefinitionId",
+          "key": "roleDefinitionId",
+          "required": false,
+          "type": "string",
+          "description": "The Id of the role definition"
+        },
+        {
+          "name": "scope",
+          "key": "scope",
+          "required": false,
+          "type": "string",
+          "description": "The assignment scope"
+        },
+        {
+          "name": "principalType",
+          "key": "principalType",
+          "required": false,
+          "type": "string",
+          "description": "The type of the principal"
+        }
+      ],
+      "returns": {
+        "raw": "The role assignments.\n- Body\n- RoleAssignmentResponse"
+      }
+    },
+    "CreateRuleBasedPolicy": {
+      "operationId": "CreateRuleBasedPolicy",
+      "kind": "action",
+      "displayName": "Create rule based policy",
+      "deprecated": false,
+      "description": "- CreateRuleBasedPolicy",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "The name of the policy."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The unique identifier of the rule set."
+        },
+        {
+          "name": "version",
+          "key": "version",
+          "required": false,
+          "type": "string",
+          "description": "The version of the rule set."
+        },
+        {
+          "name": "inputs",
+          "key": "inputs",
+          "required": false,
+          "type": "object",
+          "description": "The inputs for the rule set, which may vary based on the rule."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Policy"
+      }
+    },
+    "CreateRuleSet": {
+      "operationId": "CreateRuleSet",
+      "kind": "action",
+      "displayName": "Create Rule Set",
+      "deprecated": false,
+      "description": "- CreateRuleSet",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "uuid",
+          "description": "The unique identifier of the environment."
+        },
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "uuid",
+          "description": "The unique identifier of the environment group."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The ID of the Rule Set."
+        },
+        {
+          "name": "lastModified",
+          "key": "lastModified",
+          "required": false,
+          "type": "date-time",
+          "description": "The last modified timestamp."
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "The type of environment filter."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The ID of the environment."
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "The type of the environment."
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "The name of the environment."
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "The type of the Rule Set."
+        },
+        {
+          "name": "resourceType",
+          "key": "resourceType",
+          "required": true,
+          "type": "string",
+          "description": "The type of resource."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The rule ID."
+        },
+        {
+          "name": "value",
+          "key": "value",
+          "required": false,
+          "type": "string",
+          "description": "The rule value."
+        }
+      ],
+      "returns": {
+        "raw": "Rule Set data transfer object.\n- Body\n- RuleSetDto"
+      }
+    },
+    "CreateWafRules": {
+      "operationId": "CreateWafRules",
+      "kind": "action",
+      "displayName": "Create web application Firewall rules on a Power Pages website",
+      "deprecated": false,
+      "description": "- CreateWafRules",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "Name of the custom rule"
+        },
+        {
+          "name": "priority",
+          "key": "priority",
+          "required": false,
+          "type": "integer",
+          "description": "Priority of the rule"
+        },
+        {
+          "name": "enabledState",
+          "key": "enabledState",
+          "required": false,
+          "type": "string",
+          "description": "State of the rule"
+        },
+        {
+          "name": "ruleType",
+          "key": "ruleType",
+          "required": false,
+          "type": "string",
+          "description": "WAF rule type"
+        },
+        {
+          "name": "rateLimitDurationInMinutes",
+          "key": "rateLimitDurationInMinutes",
+          "required": false,
+          "type": "integer",
+          "description": "Duration in minutes for rate limiting"
+        },
+        {
+          "name": "rateLimitThreshold",
+          "key": "rateLimitThreshold",
+          "required": false,
+          "type": "integer",
+          "description": "Threshold for rate limiting"
+        },
+        {
+          "name": "matchVariable",
+          "key": "matchVariable",
+          "required": false,
+          "type": "string",
+          "description": "Variable to match"
+        },
+        {
+          "name": "selector",
+          "key": "selector",
+          "required": false,
+          "type": "string",
+          "description": "Selector for the match variable"
+        },
+        {
+          "name": "operator",
+          "key": "operator",
+          "required": false,
+          "type": "string",
+          "description": "Operator for the match condition"
+        },
+        {
+          "name": "negateCondition",
+          "key": "negateCondition",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether to negate the condition"
+        },
+        {
+          "name": "matchValue",
+          "key": "matchValue",
+          "required": false,
+          "type": "array of string",
+          "description": "Values to match"
+        },
+        {
+          "name": "transforms",
+          "key": "transforms",
+          "required": false,
+          "type": "array of string",
+          "description": "Transformations to apply"
+        },
+        {
+          "name": "action",
+          "key": "action",
+          "required": false,
+          "type": "string",
+          "description": "Action to take when the rule matches"
+        },
+        {
+          "name": "RuleSetType",
+          "key": "RuleSetType",
+          "required": false,
+          "type": "string",
+          "description": "Type of the managed rule set"
+        },
+        {
+          "name": "RuleSetVersion",
+          "key": "RuleSetVersion",
+          "required": false,
+          "type": "string",
+          "description": "Version of the managed rule set"
+        },
+        {
+          "name": "RuleSetAction",
+          "key": "RuleSetAction",
+          "required": false,
+          "type": "string",
+          "description": "Action to take for the rule set"
+        },
+        {
+          "name": "Exclusions",
+          "key": "Exclusions",
+          "required": false,
+          "type": "array of string",
+          "description": "List of exclusions for the rule set"
+        },
+        {
+          "name": "RuleGroupName",
+          "key": "RuleGroupName",
+          "required": false,
+          "type": "string",
+          "description": "Name of the rule group"
+        },
+        {
+          "name": "Exclusions",
+          "key": "Exclusions",
+          "required": false,
+          "type": "array of string",
+          "description": "List of exclusions for the rule group"
+        },
+        {
+          "name": "RuleId",
+          "key": "RuleId",
+          "required": false,
+          "type": "string",
+          "description": "ID of the rule"
+        },
+        {
+          "name": "EnabledState",
+          "key": "EnabledState",
+          "required": false,
+          "type": "string",
+          "description": "State of the rule"
+        },
+        {
+          "name": "Action",
+          "key": "Action",
+          "required": false,
+          "type": "string",
+          "description": "Action to take for the rule"
+        },
+        {
+          "name": "Exclusions",
+          "key": "Exclusions",
+          "required": false,
+          "type": "array of string",
+          "description": "List of exclusions for the rule"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CreateWebsite": {
+      "operationId": "CreateWebsite",
+      "kind": "action",
+      "displayName": "Create a Power Pages website",
+      "deprecated": false,
+      "description": "- CreateWebsite",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "dataverseOrganizationId",
+          "key": "dataverseOrganizationId",
+          "required": true,
+          "type": "uuid",
+          "description": "Dataverse organization's unique identifier (ID)"
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "Name of the website"
+        },
+        {
+          "name": "templateName",
+          "key": "templateName",
+          "required": true,
+          "type": "string",
+          "description": "Website template name"
+        },
+        {
+          "name": "selectedBaseLanguage",
+          "key": "selectedBaseLanguage",
+          "required": true,
+          "type": "integer",
+          "description": "Language ID - https://go.microsoft.com/fwlink/?linkid=2208135"
+        },
+        {
+          "name": "subdomain",
+          "key": "subdomain",
+          "required": true,
+          "type": "string",
+          "description": "Subdomain for the website URL"
+        },
+        {
+          "name": "websiteRecordId",
+          "key": "websiteRecordId",
+          "required": false,
+          "type": "string",
+          "description": "Dataverse record unique identifier (ID) of the website"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteApproval": {
+      "operationId": "DeleteApproval",
+      "kind": "action",
+      "displayName": "Delete an approval for DSR compliance",
+      "deprecated": false,
+      "description": "- DeleteApproval",
+      "parameters": [
+        {
+          "name": "Approval Id",
+          "key": "approvalId",
+          "required": true,
+          "type": "uuid",
+          "description": "The approval ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteBillingPolicy": {
+      "operationId": "DeleteBillingPolicy",
+      "kind": "action",
+      "displayName": "Delete billing policy",
+      "deprecated": false,
+      "description": "- DeleteBillingPolicy",
+      "parameters": [
+        {
+          "name": "Billing Policy Id",
+          "key": "billingPolicyId",
+          "required": true,
+          "type": "string",
+          "description": "The billing policy ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteConnection": {
+      "operationId": "DeleteConnection",
+      "kind": "action",
+      "displayName": "Delete a connection for DSR compliance",
+      "deprecated": false,
+      "description": "- DeleteConnection",
+      "parameters": [
+        {
+          "name": "Connection Id",
+          "key": "connectionIdentifier",
+          "required": true,
+          "type": "string",
+          "description": "The connection ID in apiName/connectionName format."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteCopilotAgent": {
+      "operationId": "DeleteCopilotAgent",
+      "kind": "action",
+      "displayName": "Delete a bot in Copilot Studio",
+      "deprecated": false,
+      "description": "- DeleteCopilotAgent",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Bot Id",
+          "key": "BotId",
+          "required": true,
+          "type": "string",
+          "description": "The bot ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteEnvironmentBackup": {
+      "operationId": "DeleteEnvironmentBackup",
+      "kind": "action",
+      "displayName": "Deletes the specified backup (Preview)",
+      "deprecated": false,
+      "description": "- DeleteEnvironmentBackup",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Backup Id",
+          "key": "backupId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of the backup."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteEnvironmentByID": {
+      "operationId": "DeleteEnvironmentByID",
+      "kind": "action",
+      "displayName": "Deletes the specified environment by ID (Preview)",
+      "deprecated": false,
+      "description": "- DeleteEnvironmentByID",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteEnvironmentGroup": {
+      "operationId": "DeleteEnvironmentGroup",
+      "kind": "action",
+      "displayName": "Delete the environment group",
+      "deprecated": false,
+      "description": "- DeleteEnvironmentGroup",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "The group ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteEnvironmentGroupRoleAssignment": {
+      "operationId": "DeleteEnvironmentGroupRoleAssignment",
+      "kind": "action",
+      "displayName": "Delete environment group role assignment",
+      "deprecated": false,
+      "description": "- DeleteEnvironmentGroupRoleAssignment",
+      "parameters": [
+        {
+          "name": "Environment Group Id",
+          "key": "environmentGroupId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the environment group."
+        },
+        {
+          "name": "Role Assignment Id",
+          "key": "roleAssignmentId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the role assignment."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteEnvironmentRoleAssignment": {
+      "operationId": "DeleteEnvironmentRoleAssignment",
+      "kind": "action",
+      "displayName": "Delete environment role assignment",
+      "deprecated": false,
+      "description": "- DeleteEnvironmentRoleAssignment",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the environment."
+        },
+        {
+          "name": "Role Assignment Id",
+          "key": "roleAssignmentId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the role assignment."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteFlow": {
+      "operationId": "DeleteFlow",
+      "kind": "action",
+      "displayName": "Delete a flow for DSR compliance",
+      "deprecated": false,
+      "description": "- DeleteFlow",
+      "parameters": [
+        {
+          "name": "Flow Id",
+          "key": "flowId",
+          "required": true,
+          "type": "uuid",
+          "description": "The flow ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteISVContract": {
+      "operationId": "DeleteISVContract",
+      "kind": "action",
+      "displayName": "Delete an ISV contract",
+      "deprecated": false,
+      "description": "- DeleteISVContract",
+      "parameters": [
+        {
+          "name": "Isv Contract Id",
+          "key": "isvContractId",
+          "required": true,
+          "type": "string",
+          "description": "The ISV contract ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeletePrompt": {
+      "operationId": "DeletePrompt",
+      "kind": "action",
+      "displayName": "Delete an AI model prompt for DSR compliance",
+      "deprecated": false,
+      "description": "- DeletePrompt",
+      "parameters": [
+        {
+          "name": "Prompt Id",
+          "key": "promptId",
+          "required": true,
+          "type": "uuid",
+          "description": "The AI model prompt ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteRoleAssignment": {
+      "operationId": "DeleteRoleAssignment",
+      "kind": "action",
+      "displayName": "Delete role assignment",
+      "deprecated": false,
+      "description": "- DeleteRoleAssignment",
+      "parameters": [
+        {
+          "name": "Role Assignment Id",
+          "key": "roleAssignmentId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the role assignment."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteRuleSet": {
+      "operationId": "DeleteRuleSet",
+      "kind": "action",
+      "displayName": "Delete Rule Set",
+      "deprecated": false,
+      "description": "- DeleteRuleSet",
+      "parameters": [
+        {
+          "name": "Rule Set Id",
+          "key": "ruleSetId",
+          "required": true,
+          "type": "uuid",
+          "description": "The unique identifier of the Rule Set."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteWafCustomRules": {
+      "operationId": "DeleteWafCustomRules",
+      "kind": "action",
+      "displayName": "Deletes web application firewall custom rules on a Power Pages website",
+      "deprecated": false,
+      "description": "- DeleteWafCustomRules",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "body",
+          "key": "body",
+          "required": true,
+          "type": "array of string",
+          "description": "List of custom rule names"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteWebsite": {
+      "operationId": "DeleteWebsite",
+      "kind": "action",
+      "displayName": "Delete a Power Pages website",
+      "deprecated": false,
+      "description": "- DeleteWebsite",
+      "parameters": [
+        {
+          "name": "Operation- Location",
+          "key": "Operation-Location",
+          "required": true,
+          "type": "string",
+          "description": "Operation location."
+        },
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DisableDisasterRecovery": {
+      "operationId": "DisableDisasterRecovery",
+      "kind": "action",
+      "displayName": "Disables disaster recovery on the specified environment (Preview)",
+      "deprecated": false,
+      "description": "- DisableDisasterRecovery",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Represents the result of an operation execution.\n- Body\n- OperationExecutionResult"
+      }
+    },
+    "DisableEnvironment": {
+      "operationId": "DisableEnvironment",
+      "kind": "action",
+      "displayName": "Disables the specified environment (Preview)",
+      "deprecated": false,
+      "description": "- DisableEnvironment",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "reason",
+          "key": "reason",
+          "required": false,
+          "type": "string",
+          "description": "The reason of this state change."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DisableManagedEnvironment": {
+      "operationId": "DisableManagedEnvironment",
+      "kind": "action",
+      "displayName": "Disables managed governance for the specified environment (Preview)",
+      "deprecated": false,
+      "description": "- DisableManagedEnvironment",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Represents the result of an operation execution.\n- Body\n- OperationExecutionResult"
+      }
+    },
+    "DisableWaf": {
+      "operationId": "DisableWaf",
+      "kind": "action",
+      "displayName": "Disable web application Firewall on a Power Pages website",
+      "deprecated": false,
+      "description": "- DisableWaf",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Web application firewall status\n- response\n- WebApplicationFirewallStatus"
+      }
+    },
+    "EnableDisasterRecovery": {
+      "operationId": "EnableDisasterRecovery",
+      "kind": "action",
+      "displayName": "Enables disaster recovery on the specified environment (Preview)",
+      "deprecated": false,
+      "description": "- EnableDisasterRecovery",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Represents the result of an operation execution.\n- Body\n- OperationExecutionResult"
+      }
+    },
+    "EnableEnvironment": {
+      "operationId": "EnableEnvironment",
+      "kind": "action",
+      "displayName": "Enables the specified environment (Preview)",
+      "deprecated": false,
+      "description": "- EnableEnvironment",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "reason",
+          "key": "reason",
+          "required": false,
+          "type": "string",
+          "description": "The reason of this state change."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "EnableManagedEnvironment": {
+      "operationId": "EnableManagedEnvironment",
+      "kind": "action",
+      "displayName": "Enables managed governance for the specified environment (Preview)",
+      "deprecated": false,
+      "description": "- EnableManagedEnvironment",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Represents the result of an operation execution.\n- Body\n- OperationExecutionResult"
+      }
+    },
+    "EnableWAF": {
+      "operationId": "EnableWAF",
+      "kind": "action",
+      "displayName": "Enable web application firewall on a Power Pages website",
+      "deprecated": false,
+      "description": "- EnableWAF",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ExecuteRecommendationAction": {
+      "operationId": "ExecuteRecommendationAction",
+      "kind": "action",
+      "displayName": "Execute recommendation action",
+      "deprecated": false,
+      "description": "- ExecuteRecommendationAction",
+      "parameters": [
+        {
+          "name": "body",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": "Request body for the action to execute"
+        },
+        {
+          "name": "Action Name",
+          "key": "actionName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the action to execute."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "The response for action performed on resources\n- Body\n- AdvisorActionResponse"
+      }
+    },
+    "Get-AdminApp": {
+      "operationId": "Get-AdminApp",
+      "kind": "action",
+      "displayName": "Get app as administrator",
+      "deprecated": false,
+      "description": "- Get-AdminApp",
+      "parameters": [
+        {
+          "name": "Environment name",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the environment."
+        },
+        {
+          "name": "PowerApp name",
+          "key": "app",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the PowerApp."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- PowerApp"
+      }
+    },
+    "Get-AdminApps": {
+      "operationId": "Get-AdminApps",
+      "kind": "action",
+      "displayName": "Get apps as administrator",
+      "deprecated": false,
+      "description": "- Get-AdminApps",
+      "parameters": [
+        {
+          "name": "Environment name",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "Name field of the environment."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of apps in the response."
+        },
+        {
+          "name": "Skip token",
+          "key": "$skiptoken",
+          "required": false,
+          "type": "string",
+          "description": "Get next page of responses."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceArrayPowerApp"
+      }
+    },
+    "GetApplicationPackageInstallStatus": {
+      "operationId": "GetApplicationPackageInstallStatus",
+      "kind": "action",
+      "displayName": "Get the polling status for a previously triggered installation",
+      "deprecated": false,
+      "description": "- GetApplicationPackageInstallStatus",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "Environment ID (not to be confused with organization ID)."
+        },
+        {
+          "name": "Operation Id",
+          "key": "operationId",
+          "required": true,
+          "type": "uuid",
+          "description": "Operation ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- InstancePackageOperationPollingResponse"
+      }
+    },
+    "GetApprovals": {
+      "operationId": "GetApprovals",
+      "kind": "action",
+      "displayName": "Get approvals for DSR export",
+      "deprecated": false,
+      "description": "- GetApprovals",
+      "parameters": [
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "Continuation token for paging."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Generic paged response for DSR compliance APIs.\n- Body\n- DsrPagedResponse"
+      }
+    },
+    "GetBillingPolicy": {
+      "operationId": "GetBillingPolicy",
+      "kind": "action",
+      "displayName": "Get the billing policy at tenant level by policy ID",
+      "deprecated": false,
+      "description": "- GetBillingPolicy",
+      "parameters": [
+        {
+          "name": "Billing Policy Id",
+          "key": "billingPolicyId",
+          "required": true,
+          "type": "string",
+          "description": "The billing policy ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- BillingPolicyResponseModel"
+      }
+    },
+    "GetBillingPolicyEnvironment": {
+      "operationId": "GetBillingPolicyEnvironment",
+      "kind": "action",
+      "displayName": "Get the environment linked to the billing policy",
+      "deprecated": false,
+      "description": "- GetBillingPolicyEnvironment",
+      "parameters": [
+        {
+          "name": "Billing Policy Id",
+          "key": "billingPolicyId",
+          "required": true,
+          "type": "string",
+          "description": "The billing policy ID."
+        },
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- BillingPolicyEnvironmentResponseModelV1"
+      }
+    },
+    "GetBotQuarantineStatus": {
+      "operationId": "GetBotQuarantineStatus",
+      "kind": "action",
+      "displayName": "Get Bot Quarantine Status",
+      "deprecated": false,
+      "description": "- GetBotQuarantineStatus",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Bot Id",
+          "key": "BotId",
+          "required": true,
+          "type": "string",
+          "description": "The bot ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- BotQuarantineStatus"
+      }
+    },
+    "GetBusinessContinuityStateFullSnapshot": {
+      "operationId": "GetBusinessContinuityStateFullSnapshot",
+      "kind": "action",
+      "displayName": "Gets business continuity snapshot for environment (Preview)",
+      "deprecated": false,
+      "description": "- GetBusinessContinuityStateFullSnapshot",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- BusinessContinuityStateFullSnapshot"
+      }
+    },
+    "GetConnections": {
+      "operationId": "GetConnections",
+      "kind": "action",
+      "displayName": "Get connections for DSR export",
+      "deprecated": false,
+      "description": "- GetConnections",
+      "parameters": [
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "Continuation token for paging."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Generic paged response for DSR compliance APIs.\n- Body\n- DsrPagedResponse"
+      }
+    },
+    "GetConnectorById": {
+      "operationId": "GetConnectorById",
+      "kind": "action",
+      "displayName": "Get connector by ID",
+      "deprecated": false,
+      "description": "- GetConnectorById",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "ID of the environment."
+        },
+        {
+          "name": "Connector Id",
+          "key": "connectorId",
+          "required": true,
+          "type": "string",
+          "description": "ID of the connector."
+        },
+        {
+          "name": "$filter",
+          "key": "$filter",
+          "required": true,
+          "type": "string",
+          "description": "Filter query to specify the environment."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetConnectorByIdResponse"
+      }
+    },
+    "GetConversationTranscriptsForDsr": {
+      "operationId": "GetConversationTranscriptsForDsr",
+      "kind": "action",
+      "displayName": "Get conversation transcripts for DSR export",
+      "deprecated": false,
+      "description": "- GetConversationTranscriptsForDsr",
+      "parameters": [
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "Continuation token for paging."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Response containing conversation transcripts for DSR export.\n- Body\n- DsrConversationTranscriptsResponse"
+      }
+    },
+    "GetConversationTranscriptsWithEnvironment": {
+      "operationId": "GetConversationTranscriptsWithEnvironment",
+      "kind": "action",
+      "displayName": "Get conversation transcripts for DSR export (environment-scoped)",
+      "deprecated": false,
+      "description": "- GetConversationTranscriptsWithEnvironment",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "Continuation token for paging."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Response containing conversation transcripts for DSR export.\n- Body\n- DsrConversationTranscriptsResponse"
+      }
+    },
+    "GetCrossTenantConnectionReport": {
+      "operationId": "GetCrossTenantConnectionReport",
+      "kind": "action",
+      "displayName": "Get a cross-tenant connection report by report ID for a tenant",
+      "deprecated": false,
+      "description": "- GetCrossTenantConnectionReport",
+      "parameters": [
+        {
+          "name": "Report Id",
+          "key": "reportId",
+          "required": true,
+          "type": "string",
+          "description": "The report ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CrossTenantConnectionReport"
+      }
+    },
+    "GetCurrencyAllocationByEnvironment": {
+      "operationId": "GetCurrencyAllocationByEnvironment",
+      "kind": "action",
+      "displayName": "Get currency allocations for the environment",
+      "deprecated": false,
+      "description": "- GetCurrencyAllocationByEnvironment",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "The response body includes environment ID and allocated currencies.\n- Body\n- AllocationsByEnvironmentResponseModelV1"
+      }
+    },
+    "GetEnvironmentApplicationPackage": {
+      "operationId": "GetEnvironmentApplicationPackage",
+      "kind": "action",
+      "displayName": "Get the list of application packages that are available for install",
+      "deprecated": false,
+      "description": "- GetEnvironmentApplicationPackage",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "Environment ID (not to be confused with Org ID)."
+        },
+        {
+          "name": "App Install State",
+          "key": "appInstallState",
+          "required": false,
+          "type": "string",
+          "description": "Application package install state."
+        },
+        {
+          "name": "Lcid",
+          "key": "lcid",
+          "required": false,
+          "type": "string",
+          "description": "Application package supported language ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ApplicationPackageContinuationResponse"
+      }
+    },
+    "GetEnvironmentBackups": {
+      "operationId": "GetEnvironmentBackups",
+      "kind": "action",
+      "displayName": "Gets the backups for the specified environment (Preview)",
+      "deprecated": false,
+      "description": "- GetEnvironmentBackups",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EnvironmentBackupPagedCollection"
+      }
+    },
+    "GetEnvironmentBillingPolicy": {
+      "operationId": "GetEnvironmentBillingPolicy",
+      "kind": "action",
+      "displayName": "Get the linked billing policy details for an environment",
+      "deprecated": false,
+      "description": "- GetEnvironmentBillingPolicy",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- BillingPolicyResponseModel"
+      }
+    },
+    "GetEnvironmentByIdForUser": {
+      "operationId": "GetEnvironmentByIdForUser",
+      "kind": "action",
+      "displayName": "Retrieves a single environment by ID (preview)",
+      "deprecated": false,
+      "description": "- GetEnvironmentByIdForUser",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EnvironmentResponse"
+      }
+    },
+    "GetEnvironmentCopyCandidates": {
+      "operationId": "GetEnvironmentCopyCandidates",
+      "kind": "action",
+      "displayName": "Gets copy target candidate environments (Preview)",
+      "deprecated": false,
+      "description": "- GetEnvironmentCopyCandidates",
+      "parameters": [
+        {
+          "name": "Source Environment Id",
+          "key": "sourceEnvironmentId",
+          "required": true,
+          "type": "string",
+          "description": "The source environment ID."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EnvironmentPagedCollection"
+      }
+    },
+    "GetEnvironmentGroup": {
+      "operationId": "GetEnvironmentGroup",
+      "kind": "action",
+      "displayName": "Get the environment group",
+      "deprecated": false,
+      "description": "- GetEnvironmentGroup",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "string",
+          "description": "The group ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EnvironmentGroup"
+      }
+    },
+    "GetEnvironmentGroupOperation": {
+      "operationId": "GetEnvironmentGroupOperation",
+      "kind": "action",
+      "displayName": "Get operation status",
+      "deprecated": false,
+      "description": "- GetEnvironmentGroupOperation",
+      "parameters": [
+        {
+          "name": "Operation Id",
+          "key": "operationId",
+          "required": true,
+          "type": "uuid",
+          "description": "The operation ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetFinOpsMaintenanceSettings": {
+      "operationId": "GetFinOpsMaintenanceSettings",
+      "kind": "action",
+      "displayName": "Get Finance and Operations Maintenance Settings",
+      "deprecated": false,
+      "description": "- GetFinOpsMaintenanceSettings",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "uuid",
+          "description": "The unique identifier of the environment."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Finance and Operations Maintenance response.\n- Body\n- FinOpsAdminSettingsResponse"
+      }
+    },
+    "GetFlowRunActionsForDsr": {
+      "operationId": "GetFlowRunActionsForDsr",
+      "kind": "action",
+      "displayName": "Get flow run actions for DSR export",
+      "deprecated": false,
+      "description": "- GetFlowRunActionsForDsr",
+      "parameters": [
+        {
+          "name": "Ai Flow Id",
+          "key": "aiFlowId",
+          "required": true,
+          "type": "string",
+          "description": "The workflow ID."
+        },
+        {
+          "name": "Run Id",
+          "key": "runId",
+          "required": true,
+          "type": "string",
+          "description": "The run ID."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "integer",
+          "description": "Byte offset continuation token for paging."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Response containing flow run action history for DSR export.\n- Body\n- DsrFlowRunsResponse"
+      }
+    },
+    "GetFlowRunActionsWithEnvironment": {
+      "operationId": "GetFlowRunActionsWithEnvironment",
+      "kind": "action",
+      "displayName": "Get flow run actions for DSR export (environment-scoped)",
+      "deprecated": false,
+      "description": "- GetFlowRunActionsWithEnvironment",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Ai Flow Id",
+          "key": "aiFlowId",
+          "required": true,
+          "type": "string",
+          "description": "The workflow ID."
+        },
+        {
+          "name": "Run Id",
+          "key": "runId",
+          "required": true,
+          "type": "string",
+          "description": "The run ID."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "integer",
+          "description": "Byte offset continuation token for paging."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Response containing flow run action history for DSR export.\n- Body\n- DsrFlowRunsResponse"
+      }
+    },
+    "GetFlowRunsNonSingleton": {
+      "operationId": "GetFlowRunsNonSingleton",
+      "kind": "action",
+      "displayName": "Get flow runs for DSR export (environment-scoped)",
+      "deprecated": false,
+      "description": "- GetFlowRunsNonSingleton",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Flow Id",
+          "key": "flowId",
+          "required": true,
+          "type": "uuid",
+          "description": "The flow ID."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "Continuation token for paging."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Generic paged response for DSR compliance APIs.\n- Body\n- DsrPagedResponse"
+      }
+    },
+    "GetFlowRunsSingleton": {
+      "operationId": "GetFlowRunsSingleton",
+      "kind": "action",
+      "displayName": "Get flow runs for DSR export",
+      "deprecated": false,
+      "description": "- GetFlowRunsSingleton",
+      "parameters": [
+        {
+          "name": "Flow Id",
+          "key": "flowId",
+          "required": true,
+          "type": "uuid",
+          "description": "The flow ID."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "Continuation token for paging."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Generic paged response for DSR compliance APIs.\n- Body\n- DsrPagedResponse"
+      }
+    },
+    "GetFlows": {
+      "operationId": "GetFlows",
+      "kind": "action",
+      "displayName": "Get flows for DSR export",
+      "deprecated": false,
+      "description": "- GetFlows",
+      "parameters": [
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "Continuation token for paging."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Generic paged response for DSR compliance APIs.\n- Body\n- DsrPagedResponse"
+      }
+    },
+    "GetISVContract": {
+      "operationId": "GetISVContract",
+      "kind": "action",
+      "displayName": "Get an ISV contract by its identifier (ID)",
+      "deprecated": false,
+      "description": "- GetISVContract",
+      "parameters": [
+        {
+          "name": "Isv Contract Id",
+          "key": "isvContractId",
+          "required": true,
+          "type": "string",
+          "description": "The ISV contract ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- IsvContractResponseModel"
+      }
+    },
+    "GetOperationByID": {
+      "operationId": "GetOperationByID",
+      "kind": "action",
+      "displayName": "Gets the status of an environment lifecycle operation (Preview)",
+      "deprecated": false,
+      "description": "- GetOperationByID",
+      "parameters": [
+        {
+          "name": "Operation Id",
+          "key": "operationId",
+          "required": true,
+          "type": "string",
+          "description": "The operation ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Represents the result of an operation execution.\n- Body\n- OperationExecutionResult"
+      }
+    },
+    "GetOperationsForEnvironment": {
+      "operationId": "GetOperationsForEnvironment",
+      "kind": "action",
+      "displayName": "Lists the environment lifecycle operations for a specific environment (Preview)",
+      "deprecated": false,
+      "description": "- GetOperationsForEnvironment",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Limit",
+          "key": "limit",
+          "required": false,
+          "type": "string",
+          "description": "The limit."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "The continuation token."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- OperationExecutionResultPagedCollection"
+      }
+    },
+    "GetPrompts": {
+      "operationId": "GetPrompts",
+      "kind": "action",
+      "displayName": "Get AI model prompts for DSR export",
+      "deprecated": false,
+      "description": "- GetPrompts",
+      "parameters": [
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "Continuation token for paging."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Generic paged response for DSR compliance APIs.\n- Body\n- DsrPagedResponse"
+      }
+    },
+    "GetRecommendationResources": {
+      "operationId": "GetRecommendationResources",
+      "kind": "action",
+      "displayName": "Get recommendation resources",
+      "deprecated": false,
+      "description": "- GetRecommendationResources",
+      "parameters": [
+        {
+          "name": "Recommendation Name",
+          "key": "scenario",
+          "required": true,
+          "type": "string",
+          "description": "The recommendation name."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Paged list of recommendation resources\n- Body\n- AdvisorRecommendationResourceIEnumerableResponseWithContinuation"
+      }
+    },
+    "GetRecommendations": {
+      "operationId": "GetRecommendations",
+      "kind": "action",
+      "displayName": "Get recommendations",
+      "deprecated": false,
+      "description": "- GetRecommendations",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Paged list of recommendations\n- Body\n- AdvisorRecommendationIEnumerableResponseWithContinuation"
+      }
+    },
+    "GetRestoreCandidates": {
+      "operationId": "GetRestoreCandidates",
+      "kind": "action",
+      "displayName": "Gets restore candidate environments (Preview)",
+      "deprecated": false,
+      "description": "- GetRestoreCandidates",
+      "parameters": [
+        {
+          "name": "Source Environment Id",
+          "key": "sourceEnvironmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID of restore from."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EnvironmentPagedCollection"
+      }
+    },
+    "GetRuleBasedPolicyByID": {
+      "operationId": "GetRuleBasedPolicyByID",
+      "kind": "action",
+      "displayName": "Get rule based policy by ID",
+      "deprecated": false,
+      "description": "- GetRuleBasedPolicyByID",
+      "parameters": [
+        {
+          "name": "Policy Id",
+          "key": "policyId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the policy."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Policy"
+      }
+    },
+    "GetRuleSet": {
+      "operationId": "GetRuleSet",
+      "kind": "action",
+      "displayName": "Get Rule Set for Environment Group",
+      "deprecated": false,
+      "description": "- GetRuleSet",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "uuid",
+          "description": "The unique identifier of the environment."
+        },
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "uuid",
+          "description": "The unique identifier of the environment group."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "OData response wrapper with continuation support.\n- Body\n- MgGovODataResponse"
+      }
+    },
+    "GetRuleSetListForTenant": {
+      "operationId": "GetRuleSetListForTenant",
+      "kind": "action",
+      "displayName": "List Rule Sets for Tenant",
+      "deprecated": false,
+      "description": "- GetRuleSetListForTenant",
+      "parameters": [
+        {
+          "name": "$select",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "OData select query option."
+        },
+        {
+          "name": "$filter",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "OData filter query option."
+        },
+        {
+          "name": "$expand",
+          "key": "$expand",
+          "required": false,
+          "type": "string",
+          "description": "OData expand query option."
+        },
+        {
+          "name": "$skiptoken",
+          "key": "$skiptoken",
+          "required": false,
+          "type": "string",
+          "description": "OData skip token for pagination."
+        },
+        {
+          "name": "$top",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "OData top query option to limit results."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "OData response wrapper with continuation support.\n- Body\n- MgGovODataResponse"
+      }
+    },
+    "GetRunHistoryData": {
+      "operationId": "GetRunHistoryData",
+      "kind": "action",
+      "displayName": "Get run history customer data for DSR export",
+      "deprecated": false,
+      "description": "- GetRunHistoryData",
+      "parameters": [
+        {
+          "name": "Flow Id",
+          "key": "flowId",
+          "required": true,
+          "type": "uuid",
+          "description": "The flow ID."
+        },
+        {
+          "name": "Run Id",
+          "key": "runId",
+          "required": true,
+          "type": "string",
+          "description": "The run ID."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "Base64-encoded continuation token for paging."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Generic paged response for DSR compliance APIs.\n- Body\n- DsrPagedResponse"
+      }
+    },
+    "GetRunHistoryDataNonSingleton": {
+      "operationId": "GetRunHistoryDataNonSingleton",
+      "kind": "action",
+      "displayName": "Get run history customer data for DSR export (environment-scoped)",
+      "deprecated": false,
+      "description": "- GetRunHistoryDataNonSingleton",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Flow Id",
+          "key": "flowId",
+          "required": true,
+          "type": "uuid",
+          "description": "The flow ID."
+        },
+        {
+          "name": "Run Id",
+          "key": "runId",
+          "required": true,
+          "type": "string",
+          "description": "The run ID."
+        },
+        {
+          "name": "Continuation Token",
+          "key": "continuationToken",
+          "required": false,
+          "type": "string",
+          "description": "Base64-encoded continuation token for paging."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Generic paged response for DSR compliance APIs.\n- Body\n- DsrPagedResponse"
+      }
+    },
+    "GetSecurityScanReport": {
+      "operationId": "GetSecurityScanReport",
+      "kind": "action",
+      "displayName": "Get deep scan report for a Power Pages website",
+      "deprecated": false,
+      "description": "- GetSecurityScanReport",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- SiteSecurityResult"
+      }
+    },
+    "GetSecurityScanScore": {
+      "operationId": "GetSecurityScanScore",
+      "kind": "action",
+      "displayName": "Get deep scan score for a Power Pages website",
+      "deprecated": false,
+      "description": "- GetSecurityScanScore",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- SiteSecurityScore"
+      }
+    },
+    "GetStorageWarningByCategory": {
+      "operationId": "GetStorageWarningByCategory",
+      "kind": "action",
+      "displayName": "Storage warning thresholds filtered by category",
+      "deprecated": false,
+      "description": "- GetStorageWarningByCategory",
+      "parameters": [
+        {
+          "name": "Storage Category",
+          "key": "storageCategory",
+          "required": true,
+          "type": "string",
+          "description": "The storage category value."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of StorageWarningThresholdsDocument"
+      }
+    },
+    "GetStorageWarningByCategoryAndEntity": {
+      "operationId": "GetStorageWarningByCategoryAndEntity",
+      "kind": "action",
+      "displayName": "Storage warning thresholds filtered by category and storage entity name",
+      "deprecated": false,
+      "description": "- GetStorageWarningByCategoryAndEntity",
+      "parameters": [
+        {
+          "name": "Storage Category",
+          "key": "storageCategory",
+          "required": true,
+          "type": "string",
+          "description": "The storage category value."
+        },
+        {
+          "name": "Entity Name",
+          "key": "entityName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the entity."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of StorageWarningThresholdsDocument"
+      }
+    },
+    "GetTenantApplicationPackage": {
+      "operationId": "GetTenantApplicationPackage",
+      "kind": "action",
+      "displayName": "List the installable application packages for a tenant",
+      "deprecated": false,
+      "description": "- GetTenantApplicationPackage",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- TenantApplicationPackageContinuationResponse"
+      }
+    },
+    "GetTenantCapacityDetails": {
+      "operationId": "GetTenantCapacityDetails",
+      "kind": "action",
+      "displayName": "Get the tenant capacity details for the tenant",
+      "deprecated": false,
+      "description": "- GetTenantCapacityDetails",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- TenantCapacityDetailsModel"
+      }
+    },
+    "GetUserPerFlowCapacitySource": {
+      "operationId": "GetUserPerFlowCapacitySource",
+      "kind": "action",
+      "displayName": "Get user per flow capacity source data with pagination and filtering options",
+      "deprecated": false,
+      "description": "- GetUserPerFlowCapacitySource",
+      "parameters": [
+        {
+          "name": "Start Date",
+          "key": "startDate",
+          "required": true,
+          "type": "date-time",
+          "description": "The start date for the query range."
+        },
+        {
+          "name": "End Date",
+          "key": "endDate",
+          "required": false,
+          "type": "date-time",
+          "description": "The end date for the query range. Defaults to current UTC time if not provided."
+        },
+        {
+          "name": "Page Number",
+          "key": "pageNumber",
+          "required": false,
+          "type": "integer",
+          "description": "The page number for pagination."
+        },
+        {
+          "name": "Page Size",
+          "key": "pageSize",
+          "required": false,
+          "type": "integer",
+          "description": "The page size for pagination."
+        },
+        {
+          "name": "User Id",
+          "key": "userId",
+          "required": false,
+          "type": "string",
+          "description": "Filter by user identifier."
+        },
+        {
+          "name": "Flow Context",
+          "key": "flowContext",
+          "required": false,
+          "type": "string",
+          "description": "Filter by flow context."
+        },
+        {
+          "name": "Flow License Categorization",
+          "key": "flowLicenseCategorization",
+          "required": false,
+          "type": "string",
+          "description": "Filter by flow license categorization."
+        },
+        {
+          "name": "Resource Id",
+          "key": "resourceId",
+          "required": false,
+          "type": "string",
+          "description": "Filter by resource identifier."
+        },
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": false,
+          "type": "uuid",
+          "description": "Filter by environment identifier."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Paginated result container for user per flow capacity source records.\n- Body\n- PowerPlatformRequestSnapshotResultWithoutPagesUserPerFlowCapacitySourceRecord"
+      }
+    },
+    "GetUserPerFlowCapacitySourceFlowContextSummary": {
+      "operationId": "GetUserPerFlowCapacitySourceFlowContextSummary",
+      "kind": "action",
+      "displayName": "Get flow context summary for user per flow capacity source",
+      "deprecated": false,
+      "description": "- GetUserPerFlowCapacitySourceFlowContextSummary",
+      "parameters": [
+        {
+          "name": "Start Date",
+          "key": "startDate",
+          "required": true,
+          "type": "date-time",
+          "description": "The start date for the query range."
+        },
+        {
+          "name": "End Date",
+          "key": "endDate",
+          "required": false,
+          "type": "date-time",
+          "description": "The end date for the query range. Defaults to current UTC time if not provided."
+        },
+        {
+          "name": "Page Number",
+          "key": "pageNumber",
+          "required": false,
+          "type": "integer",
+          "description": "The page number for pagination."
+        },
+        {
+          "name": "Page Size",
+          "key": "pageSize",
+          "required": false,
+          "type": "integer",
+          "description": "The page size for pagination."
+        },
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": false,
+          "type": "uuid",
+          "description": "Filter by environment identifier."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Paginated result container for flow context summary records.\n- Body\n- PowerPlatformRequestSnapshotResultWithoutPagesUserPerFlowCapacitySourceFlowContextRecord"
+      }
+    },
+    "GetUserPerFlowCapacitySourceFlowContextSummaryForUserId": {
+      "operationId": "GetUserPerFlowCapacitySourceFlowContextSummaryForUserId",
+      "kind": "action",
+      "displayName": "Get flow context summary for a specific user's per flow capacity source",
+      "deprecated": false,
+      "description": "- GetUserPerFlowCapacitySourceFlowContextSummaryForUserId",
+      "parameters": [
+        {
+          "name": "User Id",
+          "key": "userId",
+          "required": true,
+          "type": "uuid",
+          "description": "The user identifier."
+        },
+        {
+          "name": "Start Date",
+          "key": "startDate",
+          "required": true,
+          "type": "date-time",
+          "description": "The start date for the query range."
+        },
+        {
+          "name": "End Date",
+          "key": "endDate",
+          "required": false,
+          "type": "date-time",
+          "description": "The end date for the query range. Defaults to current UTC time if not provided."
+        },
+        {
+          "name": "Page Number",
+          "key": "pageNumber",
+          "required": false,
+          "type": "integer",
+          "description": "The page number for pagination."
+        },
+        {
+          "name": "Page Size",
+          "key": "pageSize",
+          "required": false,
+          "type": "integer",
+          "description": "The page size for pagination."
+        },
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": false,
+          "type": "uuid",
+          "description": "Filter by environment identifier."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Paginated result container for flow context summary records.\n- Body\n- PowerPlatformRequestSnapshotResultWithoutPagesUserPerFlowCapacitySourceFlowContextRecord"
+      }
+    },
+    "GetUserPerFlowCapacitySourceTenantContextSummary": {
+      "operationId": "GetUserPerFlowCapacitySourceTenantContextSummary",
+      "kind": "action",
+      "displayName": "Get tenant context summary for user per flow capacity source",
+      "deprecated": false,
+      "description": "- GetUserPerFlowCapacitySourceTenantContextSummary",
+      "parameters": [
+        {
+          "name": "Start Date",
+          "key": "startDate",
+          "required": true,
+          "type": "date-time",
+          "description": "The start date for the query range."
+        },
+        {
+          "name": "End Date",
+          "key": "endDate",
+          "required": false,
+          "type": "date-time",
+          "description": "The end date for the query range. Defaults to current UTC time if not provided."
+        },
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": false,
+          "type": "uuid",
+          "description": "Filter by environment identifier."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of UserPerFlowCapacitySourceTenantContextSummaryRecord"
+      }
+    },
+    "GetUserPerFlowCapacitySourceUserContextSummary": {
+      "operationId": "GetUserPerFlowCapacitySourceUserContextSummary",
+      "kind": "action",
+      "displayName": "Get the user per flow capacity source user context summary",
+      "deprecated": false,
+      "description": "- GetUserPerFlowCapacitySourceUserContextSummary",
+      "parameters": [
+        {
+          "name": "Start Date",
+          "key": "startDate",
+          "required": true,
+          "type": "date-time",
+          "description": "The start date for the query range."
+        },
+        {
+          "name": "End Date",
+          "key": "endDate",
+          "required": false,
+          "type": "date-time",
+          "description": "The end date for the query range. Defaults to current UTC time if not provided."
+        },
+        {
+          "name": "Page Number",
+          "key": "pageNumber",
+          "required": false,
+          "type": "integer",
+          "description": "The page number for pagination."
+        },
+        {
+          "name": "Page Size",
+          "key": "pageSize",
+          "required": false,
+          "type": "integer",
+          "description": "The page size for pagination."
+        },
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": false,
+          "type": "uuid",
+          "description": "Filter by environment identifier."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Paginated result container for user context summary records.\n- Body\n- PowerPlatformRequestSnapshotResultWithoutPagesUserPerFlowCapacitySourceUserContextRecord"
+      }
+    },
+    "GetUserPerFlowCapacitySourceUserContextSummaryForUserId": {
+      "operationId": "GetUserPerFlowCapacitySourceUserContextSummaryForUserId",
+      "kind": "action",
+      "displayName": "Get user context summary for a specific user's per flow capacity source",
+      "deprecated": false,
+      "description": "- GetUserPerFlowCapacitySourceUserContextSummaryForUserId",
+      "parameters": [
+        {
+          "name": "User Id",
+          "key": "userId",
+          "required": true,
+          "type": "uuid",
+          "description": "The user identifier."
+        },
+        {
+          "name": "Start Date",
+          "key": "startDate",
+          "required": true,
+          "type": "date-time",
+          "description": "The start date for the query range."
+        },
+        {
+          "name": "End Date",
+          "key": "endDate",
+          "required": false,
+          "type": "date-time",
+          "description": "The end date for the query range. Defaults to current UTC time if not provided."
+        },
+        {
+          "name": "Page Number",
+          "key": "pageNumber",
+          "required": false,
+          "type": "integer",
+          "description": "The page number for pagination."
+        },
+        {
+          "name": "Page Size",
+          "key": "pageSize",
+          "required": false,
+          "type": "integer",
+          "description": "The page size for pagination."
+        },
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": false,
+          "type": "uuid",
+          "description": "Filter by environment identifier."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Paginated result container for user context summary records.\n- Body\n- PowerPlatformRequestSnapshotResultWithoutPagesUserPerFlowCapacitySourceUserContextRecord"
+      }
+    },
+    "GetWAFRules": {
+      "operationId": "GetWAFRules",
+      "kind": "action",
+      "displayName": "Get the web application firewall rules",
+      "deprecated": false,
+      "description": "- GetWAFRules",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Rule Type",
+          "key": "ruleType",
+          "required": false,
+          "type": "string",
+          "description": "Type of web application firewall rules to retrieve."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- WebApplicationFirewallConfiguration"
+      }
+    },
+    "GetWAFStatus": {
+      "operationId": "GetWAFStatus",
+      "kind": "action",
+      "displayName": "Get the web application firewall status",
+      "deprecated": false,
+      "description": "- GetWAFStatus",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Web application firewall status\n- response\n- WebApplicationFirewallStatus"
+      }
+    },
+    "GetWebsiteById": {
+      "operationId": "GetWebsiteById",
+      "kind": "action",
+      "displayName": "Get the Power Pages website details by specifying its unique identifier (ID)",
+      "deprecated": false,
+      "description": "- GetWebsiteById",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- WebsiteDto"
+      }
+    },
+    "GetWebsites": {
+      "operationId": "GetWebsites",
+      "kind": "action",
+      "displayName": "List Power Pages websites",
+      "deprecated": false,
+      "description": "- GetWebsites",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Skip",
+          "key": "skip",
+          "required": false,
+          "type": "string",
+          "description": "The number of items to skip before returning the remaining items."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ODataListWebsitesDto"
+      }
+    },
+    "InstallApplicationPackage": {
+      "operationId": "InstallApplicationPackage",
+      "kind": "action",
+      "displayName": "Start the install of application package in target environment",
+      "deprecated": false,
+      "description": "- InstallApplicationPackage",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "Environment ID (not to be confused with the organization ID)."
+        },
+        {
+          "name": "Unique Name",
+          "key": "uniqueName",
+          "required": true,
+          "type": "string",
+          "description": "Package unique name."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "payloadValue",
+          "key": "payloadValue",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- InstancePackage"
+      }
+    },
+    "ListBillingPolicies": {
+      "operationId": "ListBillingPolicies",
+      "kind": "action",
+      "displayName": "Get the list of billing policies for the tenant",
+      "deprecated": false,
+      "description": "- ListBillingPolicies",
+      "parameters": [
+        {
+          "name": "$top",
+          "key": "$top",
+          "required": false,
+          "type": "string",
+          "description": "The ISV contract ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- BillingPolicyResponseModelResponseWithOdataContinuation"
+      }
+    },
+    "ListBillingPolicyEnvironments": {
+      "operationId": "ListBillingPolicyEnvironments",
+      "kind": "action",
+      "displayName": "Get the list of environments linked to the billing policy",
+      "deprecated": false,
+      "description": "- ListBillingPolicyEnvironments",
+      "parameters": [
+        {
+          "name": "Billing Policy Id",
+          "key": "billingPolicyId",
+          "required": true,
+          "type": "string",
+          "description": "The billing policy ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- BillingPolicyEnvironmentResponseModelV1ResponseWithOdataContinuation"
+      }
+    },
+    "ListCloudFlows": {
+      "operationId": "ListCloudFlows",
+      "kind": "action",
+      "displayName": "Retrieve cloud flows with filters",
+      "deprecated": false,
+      "description": "- ListCloudFlows",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Workflow Id",
+          "key": "workflowId",
+          "required": false,
+          "type": "uuid",
+          "description": "The workflow ID."
+        },
+        {
+          "name": "Resource Id",
+          "key": "resourceId",
+          "required": false,
+          "type": "uuid",
+          "description": "The resource ID."
+        },
+        {
+          "name": "Created By",
+          "key": "createdBy",
+          "required": false,
+          "type": "uuid",
+          "description": "The creator Dataverse ID."
+        },
+        {
+          "name": "Owner Id",
+          "key": "ownerId",
+          "required": false,
+          "type": "uuid",
+          "description": "The owner Dataverse ID."
+        },
+        {
+          "name": "Created On Start Date",
+          "key": "createdOnStartDate",
+          "required": false,
+          "type": "date",
+          "description": "Filter for created on or after this date."
+        },
+        {
+          "name": "Created On End Date",
+          "key": "createdOnEndDate",
+          "required": false,
+          "type": "date",
+          "description": "Filter for created on or before this date."
+        },
+        {
+          "name": "Modified On Start Date",
+          "key": "modifiedOnStartDate",
+          "required": false,
+          "type": "date",
+          "description": "Filter for modified on or after this date."
+        },
+        {
+          "name": "Modified On End Date",
+          "key": "modifiedOnEndDate",
+          "required": false,
+          "type": "date",
+          "description": "Filter for modified on or before this date."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of CloudFlow |  |\n| nextLink | nextLink | string | URL to retrieve the next page of results, if any. Page size is 250. |"
+      }
+    },
+    "ListConnections": {
+      "operationId": "ListConnections",
+      "kind": "action",
+      "displayName": "List connections in environment",
+      "deprecated": false,
+      "description": "- ListConnections",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "ID of the environment."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListConnectionsResponse"
+      }
+    },
+    "ListConnectors": {
+      "operationId": "ListConnectors",
+      "kind": "action",
+      "displayName": "List connectors in environment",
+      "deprecated": false,
+      "description": "- ListConnectors",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "ID of the environment."
+        },
+        {
+          "name": "$filter",
+          "key": "$filter",
+          "required": true,
+          "type": "string",
+          "description": "Filter query to specify the environment."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListConnectorsResponse"
+      }
+    },
+    "ListCrossTenantConnectionReports": {
+      "operationId": "ListCrossTenantConnectionReports",
+      "kind": "action",
+      "displayName": "List cross-tenant connection reports for a tenant",
+      "deprecated": false,
+      "description": "- ListCrossTenantConnectionReports",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CrossTenantConnectionReportsResponseWithOdataContinuation"
+      }
+    },
+    "ListCurrencyReports": {
+      "operationId": "ListCurrencyReports",
+      "kind": "action",
+      "displayName": "Get the currency report for the tenant",
+      "deprecated": false,
+      "description": "- ListCurrencyReports",
+      "parameters": [
+        {
+          "name": "Include Allocations",
+          "key": "includeAllocations",
+          "required": false,
+          "type": "boolean",
+          "description": "Flag indicating to include allocations."
+        },
+        {
+          "name": "Include Consumptions",
+          "key": "includeConsumptions",
+          "required": false,
+          "type": "boolean",
+          "description": "Flag indicating to include consumptions."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of CurrencyReportV2"
+      }
+    },
+    "ListEnvironmentGroupRoleAssignments": {
+      "operationId": "ListEnvironmentGroupRoleAssignments",
+      "kind": "action",
+      "displayName": "List environment group role assignments",
+      "deprecated": false,
+      "description": "- ListEnvironmentGroupRoleAssignments",
+      "parameters": [
+        {
+          "name": "Environment Group Id",
+          "key": "environmentGroupId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the environment group."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "The role assignments.\n- Body\n- RoleAssignmentResponse"
+      }
+    },
+    "ListEnvironmentGroups": {
+      "operationId": "ListEnvironmentGroups",
+      "kind": "action",
+      "displayName": "List the environment groups",
+      "deprecated": false,
+      "description": "- ListEnvironmentGroups",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EnvironmentGroupResponseWithOdataContinuation"
+      }
+    },
+    "ListEnvironmentManagementSettings": {
+      "operationId": "ListEnvironmentManagementSettings",
+      "kind": "action",
+      "displayName": "Get environment management setting by ID",
+      "deprecated": false,
+      "description": "- ListEnvironmentManagementSettings",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "ID for the environment management setting."
+        },
+        {
+          "name": "$top",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of records to retrieve. Defaults to 500 if not set."
+        },
+        {
+          "name": "$select",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "List of properties to select for this entity."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Represents the response object for APIs in this service.\n- Body\n- GetEnvironmentManagementSettingResponse"
+      }
+    },
+    "ListEnvironmentRoleAssignments": {
+      "operationId": "ListEnvironmentRoleAssignments",
+      "kind": "action",
+      "displayName": "List environment role assignments",
+      "deprecated": false,
+      "description": "- ListEnvironmentRoleAssignments",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the environment."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "The role assignments.\n- Body\n- RoleAssignmentResponse"
+      }
+    },
+    "ListEnvironmentsForUser": {
+      "operationId": "ListEnvironmentsForUser",
+      "kind": "action",
+      "displayName": "Retrieve a list of environments (preview)",
+      "deprecated": false,
+      "description": "- ListEnvironmentsForUser",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EnvironmentList"
+      }
+    },
+    "ListFlowActions": {
+      "operationId": "ListFlowActions",
+      "kind": "action",
+      "displayName": "Retrieve flow actions with filters",
+      "deprecated": false,
+      "description": "- ListFlowActions",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Workflow Id",
+          "key": "workflowId",
+          "required": false,
+          "type": "uuid",
+          "description": "The workflow ID."
+        },
+        {
+          "name": "Parent Process Stage Id",
+          "key": "parentProcessStageId",
+          "required": false,
+          "type": "uuid",
+          "description": "The parent process stage ID."
+        },
+        {
+          "name": "Connector",
+          "key": "connector",
+          "required": false,
+          "type": "string",
+          "description": "The connector name."
+        },
+        {
+          "name": "Is Trigger",
+          "key": "isTrigger",
+          "required": false,
+          "type": "boolean",
+          "description": "Indicates if the action is a trigger. No filter if unset."
+        },
+        {
+          "name": "Parameter Name",
+          "key": "parameterName",
+          "required": false,
+          "type": "string",
+          "description": "A keyword to search within the parameter name field."
+        },
+        {
+          "name": "Parameter Value",
+          "key": "parameterValue",
+          "required": false,
+          "type": "string",
+          "description": "A keyword to search within the parameter value field."
+        },
+        {
+          "name": "Exact",
+          "key": "exact",
+          "required": false,
+          "type": "boolean",
+          "description": "Use exact matching for parameterName and parameterValue."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of FlowAction |  |\n| nextLink | nextLink | string | URL to retrieve the next page of results, if any. Page size is 250. |"
+      }
+    },
+    "ListFlowRuns": {
+      "operationId": "ListFlowRuns",
+      "kind": "action",
+      "displayName": "Retrieve flow runs by workflow ID",
+      "deprecated": false,
+      "description": "- ListFlowRuns",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Workflow Id",
+          "key": "workflowId",
+          "required": true,
+          "type": "uuid",
+          "description": "The workflow ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of FlowRun |  |\n| nextLink | nextLink | string | URL to retrieve the next page of results, if any. Page size is 250. |"
+      }
+    },
+    "ListISVContracts": {
+      "operationId": "ListISVContracts",
+      "kind": "action",
+      "displayName": "Get the list of ISV contracts for the tenant",
+      "deprecated": false,
+      "description": "- ListISVContracts",
+      "parameters": [
+        {
+          "name": "$top",
+          "key": "$top",
+          "required": false,
+          "type": "string",
+          "description": "Top limit of results."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- IsvContractResponseModelResponseWithOdataContinuation"
+      }
+    },
+    "ListRoleAssignments": {
+      "operationId": "ListRoleAssignments",
+      "kind": "action",
+      "displayName": "List role assignments",
+      "deprecated": false,
+      "description": "- ListRoleAssignments",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "The role assignments.\n- Body\n- RoleAssignmentResponse"
+      }
+    },
+    "ListRoleDefinitions": {
+      "operationId": "ListRoleDefinitions",
+      "kind": "action",
+      "displayName": "List role definitions",
+      "deprecated": false,
+      "description": "- ListRoleDefinitions",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "The available role definitions for assignment.\n- Body\n- RoleDefinitionResponse"
+      }
+    },
+    "ListRuleAssignments": {
+      "operationId": "ListRuleAssignments",
+      "kind": "action",
+      "displayName": "List rule based policy assignments",
+      "deprecated": false,
+      "description": "- ListRuleAssignments",
+      "parameters": [
+        {
+          "name": "Include Rule Set Counts",
+          "key": "includeRuleSetCounts",
+          "required": true,
+          "type": "boolean",
+          "description": "Flag to include rule set counts in the response."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- RuleAssignmentsResponse"
+      }
+    },
+    "ListRuleAssignmentsByEnvironmentGroupId": {
+      "operationId": "ListRuleAssignmentsByEnvironmentGroupId",
+      "kind": "action",
+      "displayName": "List rule based policy assignments for a specific environment group",
+      "deprecated": false,
+      "description": "- ListRuleAssignmentsByEnvironmentGroupId",
+      "parameters": [
+        {
+          "name": "Environment Group Id",
+          "key": "environmentGroupId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the environment group."
+        },
+        {
+          "name": "Include Rule Set Counts",
+          "key": "includeRuleSetCounts",
+          "required": true,
+          "type": "boolean",
+          "description": "Flag to include rule set counts in the response."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- RuleAssignmentsResponse"
+      }
+    },
+    "ListRuleAssignmentsByEnvironmentId": {
+      "operationId": "ListRuleAssignmentsByEnvironmentId",
+      "kind": "action",
+      "displayName": "List rule based policy assignments for a specific environment",
+      "deprecated": false,
+      "description": "- ListRuleAssignmentsByEnvironmentId",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the environment group."
+        },
+        {
+          "name": "Include Rule Set Counts",
+          "key": "includeRuleSetCounts",
+          "required": true,
+          "type": "boolean",
+          "description": "Flag to include rule set counts in the response."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- RuleAssignmentsResponse"
+      }
+    },
+    "ListRuleAssignmentsByPolicyId": {
+      "operationId": "ListRuleAssignmentsByPolicyId",
+      "kind": "action",
+      "displayName": "List rule based policy assignments for a specific policy",
+      "deprecated": false,
+      "description": "- ListRuleAssignmentsByPolicyId",
+      "parameters": [
+        {
+          "name": "Policy Id",
+          "key": "policyId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the policy."
+        },
+        {
+          "name": "Include Rule Set Counts",
+          "key": "includeRuleSetCounts",
+          "required": true,
+          "type": "boolean",
+          "description": "Flag to include rule set counts in the response."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- RuleAssignmentsResponse"
+      }
+    },
+    "ListRuleBasedPolicies": {
+      "operationId": "ListRuleBasedPolicies",
+      "kind": "action",
+      "displayName": "List rule based policies",
+      "deprecated": false,
+      "description": "- ListRuleBasedPolicies",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListPolicyResponse"
+      }
+    },
+    "ListStorageWarnings": {
+      "operationId": "ListStorageWarnings",
+      "kind": "action",
+      "displayName": "Storage warning thresholds",
+      "deprecated": false,
+      "description": "- ListStorageWarnings",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- array of StorageWarningThresholdsDocument"
+      }
+    },
+    "ModifyEnvironmentSku": {
+      "operationId": "ModifyEnvironmentSku",
+      "kind": "action",
+      "displayName": "Modifies sku for the specified environment (Preview)",
+      "deprecated": false,
+      "description": "- ModifyEnvironmentSku",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "environmentSku",
+          "key": "environmentSku",
+          "required": true,
+          "type": "string",
+          "description": "The environment SKU."
+        }
+      ],
+      "returns": {
+        "raw": "Represents the result of an operation execution.\n- Body\n- OperationExecutionResult"
+      }
+    },
+    "PatchCurrencyAllocationByEnvironment": {
+      "operationId": "PatchCurrencyAllocationByEnvironment",
+      "kind": "action",
+      "displayName": "Allocate and deallocate the currencies for the environment",
+      "deprecated": false,
+      "description": "- PatchCurrencyAllocationByEnvironment",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "currencyType",
+          "key": "currencyType",
+          "required": false,
+          "type": "string",
+          "description": "Available currency type which can be allocated to environment."
+        },
+        {
+          "name": "allocated",
+          "key": "allocated",
+          "required": false,
+          "type": "integer",
+          "description": "Specify the currency count."
+        }
+      ],
+      "returns": {
+        "raw": "The response body includes environment ID and allocated currencies.\n- Body\n- AllocationsByEnvironmentResponseModelV1"
+      }
+    },
+    "PerformDRDrill": {
+      "operationId": "PerformDRDrill",
+      "kind": "action",
+      "displayName": "Performs DR Drill for the specified environment (Preview)",
+      "deprecated": false,
+      "description": "- PerformDRDrill",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "Represents the result of an operation execution.\n- Body\n- OperationExecutionResult"
+      }
+    },
+    "PerformForceFailover": {
+      "operationId": "PerformForceFailover",
+      "kind": "action",
+      "displayName": "Force failover for the specified environment (Preview)",
+      "deprecated": false,
+      "description": "- PerformForceFailover",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of Environment."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "lastSyncTime",
+          "key": "lastSyncTime",
+          "required": true,
+          "type": "date-time",
+          "description": "Last sync time used for the force failover operation."
+        }
+      ],
+      "returns": {
+        "raw": "Represents the result of an operation execution.\n- Body\n- OperationExecutionResult"
+      }
+    },
+    "QueryResources": {
+      "operationId": "QueryResources",
+      "kind": "action",
+      "displayName": "Query Power Platform resources",
+      "deprecated": false,
+      "description": "- QueryResources",
+      "parameters": [
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "TableName",
+          "key": "TableName",
+          "required": true,
+          "type": "string",
+          "description": "Target table/resource set (e.g., \"PowerPlatformResources\")"
+        },
+        {
+          "name": "$type",
+          "key": "$type",
+          "required": true,
+          "type": "string",
+          "description": "Discriminator for the clause type."
+        },
+        {
+          "name": "Top",
+          "key": "Top",
+          "required": false,
+          "type": "integer",
+          "description": "Max rows per page"
+        },
+        {
+          "name": "Skip",
+          "key": "Skip",
+          "required": false,
+          "type": "integer",
+          "description": "Offset; typically 0 when using SkipToken"
+        },
+        {
+          "name": "SkipToken",
+          "key": "SkipToken",
+          "required": false,
+          "type": "string",
+          "description": "Continuation token from previous page"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceQueryResponse"
+      }
+    },
+    "ReassignCopilotAgent": {
+      "operationId": "ReassignCopilotAgent",
+      "kind": "action",
+      "displayName": "Reassign the owner of the bot",
+      "deprecated": false,
+      "description": "- ReassignCopilotAgent",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Bot Id",
+          "key": "BotId",
+          "required": true,
+          "type": "string",
+          "description": "The bot ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "NewOwnerAadUserId",
+          "key": "NewOwnerAadUserId",
+          "required": true,
+          "type": "string",
+          "description": "The new owner aad id."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "RecoverEnvironment": {
+      "operationId": "RecoverEnvironment",
+      "kind": "action",
+      "displayName": "Recover the deleted environment (Preview)",
+      "deprecated": false,
+      "description": "- RecoverEnvironment",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment that will be recovered."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "RefreshProvisioningStatus": {
+      "operationId": "RefreshProvisioningStatus",
+      "kind": "action",
+      "displayName": "Refresh the billing policy provisioning status",
+      "deprecated": false,
+      "description": "- RefreshProvisioningStatus",
+      "parameters": [
+        {
+          "name": "Billing Policy Id",
+          "key": "billingPolicyId",
+          "required": true,
+          "type": "string",
+          "description": "The billing policy ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- BillingPolicyResponseModel"
+      }
+    },
+    "RemoveBillingPolicyEnvironment": {
+      "operationId": "RemoveBillingPolicyEnvironment",
+      "kind": "action",
+      "displayName": "Unlink billing policy ID from environments",
+      "deprecated": false,
+      "description": "- RemoveBillingPolicyEnvironment",
+      "parameters": [
+        {
+          "name": "Billing Policy Id",
+          "key": "billingPolicyId",
+          "required": true,
+          "type": "string",
+          "description": "The billing policy ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "environmentIds",
+          "key": "environmentIds",
+          "required": false,
+          "type": "array of string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "RemoveEnvironmentFromGroup": {
+      "operationId": "RemoveEnvironmentFromGroup",
+      "kind": "action",
+      "displayName": "Remove the environment from the environment group",
+      "deprecated": false,
+      "description": "- RemoveEnvironmentFromGroup",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "uuid",
+          "description": "The group ID."
+        },
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "RestartWebsite": {
+      "operationId": "RestartWebsite",
+      "kind": "action",
+      "displayName": "Restart a Power Pages website",
+      "deprecated": false,
+      "description": "- RestartWebsite",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "RestoreEnvironment": {
+      "operationId": "RestoreEnvironment",
+      "kind": "action",
+      "displayName": "Restores the specified environment to a previous backup (Preview)",
+      "deprecated": false,
+      "description": "- RestoreEnvironment",
+      "parameters": [
+        {
+          "name": "Target Environment Id",
+          "key": "targetEnvironmentId",
+          "required": true,
+          "type": "string",
+          "description": "The target environment ID."
+        },
+        {
+          "name": "Validate Only",
+          "key": "ValidateOnly",
+          "required": false,
+          "type": "boolean",
+          "description": "If true, validates the request without executing it."
+        },
+        {
+          "name": "Validate Properties",
+          "key": "ValidateProperties",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated property names to validate with ValidateOnly."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "restorePointDateTime",
+          "key": "restorePointDateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "Restore point date-time with timezone offset per RFC 3339."
+        },
+        {
+          "name": "skipAuditData",
+          "key": "skipAuditData",
+          "required": false,
+          "type": "boolean",
+          "description": "A value indicating whether to skip audit data during the restore process."
+        },
+        {
+          "name": "sourceEnvironmentId",
+          "key": "sourceEnvironmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of the source environment from which the backup will be restored from."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "RetrieveTemporaryCurrencyEntitlementCount": {
+      "operationId": "RetrieveTemporaryCurrencyEntitlementCount",
+      "kind": "action",
+      "displayName": "Get the temporary currency count and limit for the month by type",
+      "deprecated": false,
+      "description": "- RetrieveTemporaryCurrencyEntitlementCount",
+      "parameters": [
+        {
+          "name": "Currency Type",
+          "key": "currencyType",
+          "required": true,
+          "type": "string",
+          "description": "The currency type."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetTemporaryCurrencyEntitlementCountResponseModel"
+      }
+    },
+    "SetBotAsQuarantined": {
+      "operationId": "SetBotAsQuarantined",
+      "kind": "action",
+      "displayName": "Set Bot as Quarantined",
+      "deprecated": false,
+      "description": "- SetBotAsQuarantined",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Bot Id",
+          "key": "BotId",
+          "required": true,
+          "type": "string",
+          "description": "The bot ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- BotQuarantineStatus"
+      }
+    },
+    "SetBotAsUnquarantined": {
+      "operationId": "SetBotAsUnquarantined",
+      "kind": "action",
+      "displayName": "Set Bot as Unquarantined",
+      "deprecated": false,
+      "description": "- SetBotAsUnquarantined",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Bot Id",
+          "key": "BotId",
+          "required": true,
+          "type": "string",
+          "description": "The bot ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- BotQuarantineStatus"
+      }
+    },
+    "SetPortalBootstrapV5Enabled": {
+      "operationId": "SetPortalBootstrapV5Enabled",
+      "kind": "action",
+      "displayName": "Stamp bootstrap version five (5) status as enabled for website",
+      "deprecated": false,
+      "description": "- SetPortalBootstrapV5Enabled",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "SetPortalDataModelVersion": {
+      "operationId": "SetPortalDataModelVersion",
+      "kind": "action",
+      "displayName": "Stamp data model version for website",
+      "deprecated": false,
+      "description": "- SetPortalDataModelVersion",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "dataModelVersionValue",
+          "key": "dataModelVersionValue",
+          "required": true,
+          "type": "boolean",
+          "description": "value of data model version for IsNewDataModel"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "StartDeepScan": {
+      "operationId": "StartDeepScan",
+      "kind": "action",
+      "displayName": "Start deep scan for a Power Pages website",
+      "deprecated": false,
+      "description": "- StartDeepScan",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "StartQuickScan": {
+      "operationId": "StartQuickScan",
+      "kind": "action",
+      "displayName": "Execute quick scan for a Power Pages website",
+      "deprecated": false,
+      "description": "- StartQuickScan",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Lcid",
+          "key": "lcid",
+          "required": false,
+          "type": "string",
+          "description": "Language code identifier (LCID) for the website."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": "- Items\n- PortalScanIssues"
+      }
+    },
+    "StartWebsite": {
+      "operationId": "StartWebsite",
+      "kind": "action",
+      "displayName": "Start a Power Pages website",
+      "deprecated": false,
+      "description": "- StartWebsite",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "StopWebsite": {
+      "operationId": "StopWebsite",
+      "kind": "action",
+      "displayName": "Stop a Power Pages website",
+      "deprecated": false,
+      "description": "- StopWebsite",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "UpdateBillingPolicy": {
+      "operationId": "UpdateBillingPolicy",
+      "kind": "action",
+      "displayName": "Updates the billing policy at tenant level",
+      "deprecated": false,
+      "description": "- UpdateBillingPolicy",
+      "parameters": [
+        {
+          "name": "Billing Policy Id",
+          "key": "billingPolicyId",
+          "required": true,
+          "type": "string",
+          "description": "The billing policy ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "status",
+          "key": "status",
+          "required": false,
+          "type": "string",
+          "description": "The desired ISV contract status."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- BillingPolicyResponseModel"
+      }
+    },
+    "UpdateEnvironmentGroup": {
+      "operationId": "UpdateEnvironmentGroup",
+      "kind": "action",
+      "displayName": "Update the environment group",
+      "deprecated": false,
+      "description": "- UpdateEnvironmentGroup",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "uuid",
+          "description": "The group ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "uuid",
+          "description": ""
+        },
+        {
+          "name": "displayName",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "description",
+          "key": "description",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "parentGroupId",
+          "key": "parentGroupId",
+          "required": false,
+          "type": "uuid",
+          "description": ""
+        },
+        {
+          "name": "childrenGroupIds",
+          "key": "childrenGroupIds",
+          "required": false,
+          "type": "array of uuid",
+          "description": ""
+        },
+        {
+          "name": "createdTime",
+          "key": "createdTime",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "displayName",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "email",
+          "key": "email",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "tenantId",
+          "key": "tenantId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "userPrincipalName",
+          "key": "userPrincipalName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "lastModifiedTime",
+          "key": "lastModifiedTime",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "displayName",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "email",
+          "key": "email",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "tenantId",
+          "key": "tenantId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "userPrincipalName",
+          "key": "userPrincipalName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- EnvironmentGroup"
+      }
+    },
+    "UpdateEnvironmentManagementSettings": {
+      "operationId": "UpdateEnvironmentManagementSettings",
+      "kind": "action",
+      "displayName": "Update fields on the environment management setting",
+      "deprecated": false,
+      "description": "- UpdateEnvironmentManagementSettings",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The ID for the environment management setting being updated."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "",
+          "key": "",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "Represents the response object for APIs in this service.\n- Body\n- OperationResponse"
+      }
+    },
+    "UpdateFinOpsMaintenanceSettings": {
+      "operationId": "UpdateFinOpsMaintenanceSettings",
+      "kind": "action",
+      "displayName": "Update Finance and Operations Maintenance Settings",
+      "deprecated": false,
+      "description": "- UpdateFinOpsMaintenanceSettings",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "uuid",
+          "description": "The unique identifier of the environment."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "updatedMaintenanceWindowDaysOfWeek",
+          "key": "updatedMaintenanceWindowDaysOfWeek",
+          "required": false,
+          "type": "string",
+          "description": "Day of the week (aligned with .NET System.DayOfWeek enum)."
+        },
+        {
+          "name": "updatedMaintenanceWindowCadence",
+          "key": "updatedMaintenanceWindowCadence",
+          "required": false,
+          "type": "string",
+          "description": "Cadence for major version application updates."
+        }
+      ],
+      "returns": {
+        "raw": "Finance and Operations Maintenance response.\n- Body\n- FinOpsAdminSettingsResponse"
+      }
+    },
+    "UpdateISVContract": {
+      "operationId": "UpdateISVContract",
+      "kind": "action",
+      "displayName": "Update an ISV contract",
+      "deprecated": false,
+      "description": "- UpdateISVContract",
+      "parameters": [
+        {
+          "name": "Isv Contract Id",
+          "key": "isvContractId",
+          "required": true,
+          "type": "string",
+          "description": "The ISV contract ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "status",
+          "key": "status",
+          "required": false,
+          "type": "string",
+          "description": "The desired ISV contract status."
+        },
+        {
+          "name": "allowOtherPremiumConnectors",
+          "key": "allowOtherPremiumConnectors",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether metered usage with premium connectors may be attributed."
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "The name of an API connector."
+        },
+        {
+          "name": "cloudFlowRunsPayAsYouGoState",
+          "key": "cloudFlowRunsPayAsYouGoState",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- IsvContractResponseModel"
+      }
+    },
+    "UpdatePortalSecurityGroup": {
+      "operationId": "UpdatePortalSecurityGroup",
+      "kind": "action",
+      "displayName": "Update security group for site visibility for a website",
+      "deprecated": false,
+      "description": "- UpdatePortalSecurityGroup",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Security Group Id",
+          "key": "securityGroupId",
+          "required": false,
+          "type": "string",
+          "description": "Security group ID."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "UpdateRuleBasedPolicyByID": {
+      "operationId": "UpdateRuleBasedPolicyByID",
+      "kind": "action",
+      "displayName": "Update rule based policy by ID",
+      "deprecated": false,
+      "description": "- UpdateRuleBasedPolicyByID",
+      "parameters": [
+        {
+          "name": "Policy Id",
+          "key": "policyId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier of the policy."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "The name of the policy."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The unique identifier of the rule set."
+        },
+        {
+          "name": "version",
+          "key": "version",
+          "required": false,
+          "type": "string",
+          "description": "The version of the rule set."
+        },
+        {
+          "name": "inputs",
+          "key": "inputs",
+          "required": false,
+          "type": "object",
+          "description": "The inputs for the rule set, which may vary based on the rule."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- RuleAssignment"
+      }
+    },
+    "UpdateRuleSet": {
+      "operationId": "UpdateRuleSet",
+      "kind": "action",
+      "displayName": "Update Rule Set",
+      "deprecated": false,
+      "description": "- UpdateRuleSet",
+      "parameters": [
+        {
+          "name": "Rule Set Id",
+          "key": "ruleSetId",
+          "required": true,
+          "type": "uuid",
+          "description": "The unique identifier of the Rule Set."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The ID of the Rule Set."
+        },
+        {
+          "name": "lastModified",
+          "key": "lastModified",
+          "required": false,
+          "type": "date-time",
+          "description": "The last modified timestamp."
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "The type of environment filter."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The ID of the environment."
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "The type of the environment."
+        },
+        {
+          "name": "name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "The name of the environment."
+        },
+        {
+          "name": "type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "The type of the Rule Set."
+        },
+        {
+          "name": "resourceType",
+          "key": "resourceType",
+          "required": true,
+          "type": "string",
+          "description": "The type of resource."
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": "The rule ID."
+        },
+        {
+          "name": "value",
+          "key": "value",
+          "required": false,
+          "type": "string",
+          "description": "The rule value."
+        }
+      ],
+      "returns": {
+        "raw": "Rule Set data transfer object.\n- Body\n- RuleSetDto"
+      }
+    },
+    "UpdateSiteVisibility": {
+      "operationId": "UpdateSiteVisibility",
+      "kind": "action",
+      "displayName": "Update site visibility for a website",
+      "deprecated": false,
+      "description": "- UpdateSiteVisibility",
+      "parameters": [
+        {
+          "name": "Environment Id",
+          "key": "environmentId",
+          "required": true,
+          "type": "string",
+          "description": "The environment ID."
+        },
+        {
+          "name": "Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Website unique identifier (ID)."
+        },
+        {
+          "name": "Site Visibility",
+          "key": "siteVisibility",
+          "required": false,
+          "type": "string",
+          "description": "Site visibility."
+        },
+        {
+          "name": "Api-version",
+          "key": "api-version",
+          "required": true,
+          "type": "string",
+          "description": "The API version."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "mcp_EnvironmentManagement": {
+      "operationId": "mcp_EnvironmentManagement",
+      "kind": "action",
+      "displayName": "Environment Management MCP Server",
+      "deprecated": false,
+      "description": "- mcp_EnvironmentManagement",
+      "parameters": [
+        {
+          "name": "jsonrpc",
+          "key": "jsonrpc",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "method",
+          "key": "method",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "params",
+          "key": "params",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "result",
+          "key": "result",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "error",
+          "key": "error",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "sessionId",
+          "key": "sessionId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- MCPQueryResponse"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

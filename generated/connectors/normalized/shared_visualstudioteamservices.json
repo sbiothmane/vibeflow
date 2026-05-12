@@ -1,0 +1,2481 @@
+{
+  "connectorId": "shared_visualstudioteamservices",
+  "displayName": "Azure DevOps",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/visualstudioteamservices/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-04-28T01:06:00.0000000Z",
+  "sourceGitCommit": "38b2850b21859cf1397a730fa15d49904b4a64ed",
+  "sourcePath": "docs/VisualStudioTeamServices/index.yml",
+  "operations": {
+    "AddWorkItemLinkAsync": {
+      "operationId": "AddWorkItemLinkAsync",
+      "kind": "action",
+      "displayName": "Add work item link (Preview)",
+      "deprecated": false,
+      "description": "- AddWorkItemLinkAsync",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "Project ID or project name"
+        },
+        {
+          "name": "Work Item Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "The work item type of the work item."
+        },
+        {
+          "name": "Work Item Id",
+          "key": "workItemId",
+          "required": true,
+          "type": "integer",
+          "description": "Id of a work item."
+        },
+        {
+          "name": "Link Type",
+          "key": "linkType",
+          "required": true,
+          "type": "string",
+          "description": "Relation type for the link. Defaults to 'System.LinkTypes.Related' when omitted."
+        },
+        {
+          "name": "Target URL",
+          "key": "targetUrl",
+          "required": true,
+          "type": "string",
+          "description": "Absolute URL of the link target. Must be an absolute URI and match the expectations for the selected Link Type."
+        },
+        {
+          "name": "Comment",
+          "key": "comment",
+          "required": false,
+          "type": "string",
+          "description": "Optional comment stored alongside the link."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "CreateRelease": {
+      "operationId": "CreateRelease",
+      "kind": "action",
+      "displayName": "Create a new release",
+      "deprecated": false,
+      "description": "- CreateRelease",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Release Definition Id",
+          "key": "releaseDefId",
+          "required": true,
+          "type": "string",
+          "description": "The identifier of the release definition to use."
+        },
+        {
+          "name": "Description",
+          "key": "Description",
+          "required": false,
+          "type": "string",
+          "description": "The description of the release start metadata."
+        },
+        {
+          "name": "Is Draft",
+          "key": "IsDraft",
+          "required": false,
+          "type": "boolean",
+          "description": "Specifies whether the release is a draft."
+        },
+        {
+          "name": "Reason",
+          "key": "Reason",
+          "required": false,
+          "type": "string",
+          "description": "The reason for the release start metadata."
+        },
+        {
+          "name": "Name",
+          "key": "Name",
+          "required": true,
+          "type": "string",
+          "description": "The name of the configuration variable."
+        },
+        {
+          "name": "Value",
+          "key": "Value",
+          "required": false,
+          "type": "string",
+          "description": "The value of the configuration variable."
+        }
+      ],
+      "returns": {
+        "raw": "Release\n- Body\n- Release"
+      }
+    },
+    "CreateWorkItem": {
+      "operationId": "CreateWorkItem",
+      "kind": "action",
+      "displayName": "Create a work item",
+      "deprecated": false,
+      "description": "- CreateWorkItem",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Work Item Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "Type of this work item"
+        },
+        {
+          "name": "Return all fields",
+          "key": "shouldReturnAllFields",
+          "required": false,
+          "type": "boolean",
+          "description": "When setting the value to 'No', only the work item ID will be returned. If the value is 'Yes', all fields of the created Item along with the ID will be returned. The default value is 'Yes'"
+        },
+        {
+          "name": "Work Item Details",
+          "key": "workItem",
+          "required": true,
+          "type": "dynamic",
+          "description": "Information to include in the new work item"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "CreateWorkItemCommentAsync": {
+      "operationId": "CreateWorkItemCommentAsync",
+      "kind": "action",
+      "displayName": "Create work item comment (Preview)",
+      "deprecated": false,
+      "description": "- CreateWorkItemCommentAsync",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "Project ID or project name"
+        },
+        {
+          "name": "Work Item Type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "The work item type to generate schema for."
+        },
+        {
+          "name": "Work Item Id",
+          "key": "workItemId",
+          "required": true,
+          "type": "integer",
+          "description": "Id of a work item."
+        },
+        {
+          "name": "Comment Format",
+          "key": "format",
+          "required": false,
+          "type": "string",
+          "description": "Format of a work item comment (Markdown or Html)."
+        },
+        {
+          "name": "Comment Text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The text of the comment."
+        }
+      ],
+      "returns": {
+        "raw": "Work Item Comment\n- Body\n- WorkItemComment"
+      }
+    },
+    "DeleteWorkItemCommentAsync": {
+      "operationId": "DeleteWorkItemCommentAsync",
+      "kind": "action",
+      "displayName": "Delete work item comment (Preview)",
+      "deprecated": false,
+      "description": "- DeleteWorkItemCommentAsync",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Work Item Id",
+          "key": "workItemId",
+          "required": true,
+          "type": "integer",
+          "description": "The unique id of the work item."
+        },
+        {
+          "name": "Comment Id",
+          "key": "commentId",
+          "required": true,
+          "type": "integer",
+          "description": "The id of the comment to delete."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "DeleteWorkItemLinkAsync": {
+      "operationId": "DeleteWorkItemLinkAsync",
+      "kind": "action",
+      "displayName": "Delete work item link (Preview)",
+      "deprecated": false,
+      "description": "- DeleteWorkItemLinkAsync",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "Project ID or project name"
+        },
+        {
+          "name": "Work Item Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": "The work item type of the work item."
+        },
+        {
+          "name": "Work Item Id",
+          "key": "workItemId",
+          "required": true,
+          "type": "integer",
+          "description": "Id of a work item."
+        },
+        {
+          "name": "Relation Id",
+          "key": "linkId",
+          "required": false,
+          "type": "integer",
+          "description": "Zero-based relation identifier (attributes.relationId) or array position from the work item response."
+        },
+        {
+          "name": "Work Item Link To Remove",
+          "key": "workItemLinkToRemove",
+          "required": false,
+          "type": "uri",
+          "description": "Absolute URL of the link to delete when a relation identifier is not provided."
+        },
+        {
+          "name": "Link Relation Type",
+          "key": "linkType",
+          "required": false,
+          "type": "string",
+          "description": "Relation type (rel) of the link to delete when matching by URL."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetBuildAsync": {
+      "operationId": "GetBuildAsync",
+      "kind": "action",
+      "displayName": "Get build (Preview)",
+      "deprecated": false,
+      "description": "- GetBuildAsync",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Build Id",
+          "key": "buildId",
+          "required": true,
+          "type": "integer",
+          "description": "The identifier of the build to retrieve."
+        }
+      ],
+      "returns": {
+        "raw": "Build Result\n- Body\n- BuildResult"
+      }
+    },
+    "GetBuildTimelineAsync": {
+      "operationId": "GetBuildTimelineAsync",
+      "kind": "action",
+      "displayName": "Get build timeline (Preview)",
+      "deprecated": false,
+      "description": "- GetBuildTimelineAsync",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Build Id",
+          "key": "buildId",
+          "required": true,
+          "type": "integer",
+          "description": "The identifier of the build to retrieve the timeline for."
+        },
+        {
+          "name": "Timeline Id",
+          "key": "timelineId",
+          "required": false,
+          "type": "string",
+          "description": "Optional timeline identifier when multiple timelines exist."
+        },
+        {
+          "name": "Change Id",
+          "key": "changeId",
+          "required": false,
+          "type": "integer",
+          "description": "Optional change id to retrieve a specific timeline change."
+        },
+        {
+          "name": "Plan Id",
+          "key": "planId",
+          "required": false,
+          "type": "string",
+          "description": "Optional plan identifier for the timeline."
+        }
+      ],
+      "returns": {
+        "raw": "Build timeline\n- Body\n- Timeline"
+      }
+    },
+    "GetProfile": {
+      "operationId": "GetProfile",
+      "kind": "action",
+      "displayName": "Get a User Profile",
+      "deprecated": false,
+      "description": "- GetProfile",
+      "parameters": [
+        {
+          "name": "Profile Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The ID of the profile within the same organization, or 'me' to get the profile of the current authenticated user."
+        }
+      ],
+      "returns": {
+        "raw": "Profile\n- Body\n- Profile"
+      }
+    },
+    "GetQueryResults": {
+      "operationId": "GetQueryResults",
+      "kind": "action",
+      "displayName": "Get query results [DEPRECATED]",
+      "deprecated": true,
+      "description": "- GetQueryResults",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Query Id",
+          "key": "queryId",
+          "required": true,
+          "type": "string",
+          "description": "The Id of the stored query to run."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[JObject]"
+      }
+    },
+    "GetQueryResultsV2": {
+      "operationId": "GetQueryResultsV2",
+      "kind": "action",
+      "displayName": "Get query results",
+      "deprecated": false,
+      "description": "- GetQueryResultsV2",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Query Id",
+          "key": "queryId",
+          "required": true,
+          "type": "string",
+          "description": "The Id of the stored query to run."
+        },
+        {
+          "name": "Number of work items to return",
+          "key": "workItemsCount",
+          "required": false,
+          "type": "integer",
+          "description": "Max work items count to retrieve (1 - 20000)"
+        },
+        {
+          "name": "Fail if query results change",
+          "key": "throwIfQueryChanged",
+          "required": false,
+          "type": "boolean",
+          "description": "If query results change during flow execution then flow run should fail to avoid inconsistencies."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetWorkItemAttachmentAsync": {
+      "operationId": "GetWorkItemAttachmentAsync",
+      "kind": "action",
+      "displayName": "Get work item attachment (Preview)",
+      "deprecated": false,
+      "description": "- GetWorkItemAttachmentAsync",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Attachment Id",
+          "key": "attachmentId",
+          "required": true,
+          "type": "string",
+          "description": "The unique id of the attachment to download."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": false,
+          "type": "string",
+          "description": "Optional project within the specified Organization to scope the request."
+        },
+        {
+          "name": "File Name",
+          "key": "fileName",
+          "required": false,
+          "type": "string",
+          "description": "Optional file name hint passed to Azure DevOps when downloading the attachment."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- WorkItemAttachmentResponse"
+      }
+    },
+    "GetWorkItemChildren": {
+      "operationId": "GetWorkItemChildren",
+      "kind": "action",
+      "displayName": "Get work item children",
+      "deprecated": false,
+      "description": "- GetWorkItemChildren",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Work Item Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique id of the work item to get the children for."
+        },
+        {
+          "name": "Children Work Item Type",
+          "key": "workItemType",
+          "required": false,
+          "type": "string",
+          "description": "The type of the children work item(s)"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetWorkItemCommentsAsync": {
+      "operationId": "GetWorkItemCommentsAsync",
+      "kind": "action",
+      "displayName": "Get work item comments (Preview)",
+      "deprecated": false,
+      "description": "- GetWorkItemCommentsAsync",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Work Item Id",
+          "key": "workItemId",
+          "required": true,
+          "type": "integer",
+          "description": "The unique id of the work item to get comments for."
+        },
+        {
+          "name": "Maximum comments to return",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Maximum number of comments to return."
+        },
+        {
+          "name": "Comment sort order",
+          "key": "order",
+          "required": false,
+          "type": "string",
+          "description": "Sort order for comments. Defaults to 'desc'."
+        },
+        {
+          "name": "Include deleted comments",
+          "key": "includeDeleted",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether to include comments that have been soft-deleted."
+        },
+        {
+          "name": "Expand options",
+          "key": "$expand",
+          "required": false,
+          "type": "string",
+          "description": "Controls which additional comment data should be returned."
+        }
+      ],
+      "returns": {
+        "raw": "Represents the response containing work item comments.\n- Body\n- WorkItemCommentsResponse"
+      }
+    },
+    "GetWorkItemDetails": {
+      "operationId": "GetWorkItemDetails",
+      "kind": "action",
+      "displayName": "Get work item details",
+      "deprecated": false,
+      "description": "- GetWorkItemDetails",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Work Item Type",
+          "key": "typeName",
+          "required": true,
+          "type": "string",
+          "description": "The work item type of the work item."
+        },
+        {
+          "name": "Work Item Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique id of the work item to get details for.The work item must be of the type specified in 'Work Item Type'."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetWorkItemDetailsV2Async": {
+      "operationId": "GetWorkItemDetailsV2Async",
+      "kind": "action",
+      "displayName": "Get work item details (V2) (Preview)",
+      "deprecated": false,
+      "description": "- GetWorkItemDetailsV2Async",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Work Item Type",
+          "key": "typeName",
+          "required": true,
+          "type": "string",
+          "description": "The work item type used to validate the returned work item and drive dynamic outputs."
+        },
+        {
+          "name": "Work Item Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique id of the work item to get details for."
+        },
+        {
+          "name": "As-of Date",
+          "key": "asOf",
+          "required": false,
+          "type": "date-time",
+          "description": "Retrieve the work item as of this date and time."
+        },
+        {
+          "name": "Expand",
+          "key": "expand",
+          "required": false,
+          "type": "string",
+          "description": "Controls which additional data is included in the response."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "HttpRequest": {
+      "operationId": "HttpRequest",
+      "kind": "action",
+      "displayName": "Send an HTTP request to Azure DevOps",
+      "deprecated": false,
+      "description": "- HttpRequest",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Method",
+          "key": "Method",
+          "required": true,
+          "type": "string",
+          "description": "The HTTP method."
+        },
+        {
+          "name": "Relative URI",
+          "key": "Uri",
+          "required": true,
+          "type": "string",
+          "description": "The relative URI. Example: {project}/{team}/_apis/wit/templates?api-version=5.0-preview.1."
+        },
+        {
+          "name": "Headers",
+          "key": "Headers",
+          "required": false,
+          "type": "object",
+          "description": "The request headers."
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "string",
+          "description": "The request content. Can be JSON object or binary data encoded as Base64 string."
+        },
+        {
+          "name": "Body is Base64",
+          "key": "IsBase64",
+          "required": false,
+          "type": "boolean",
+          "description": "Must be true if request content is encoded as Base64 string."
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- ObjectWithoutType"
+      }
+    },
+    "ListAccounts": {
+      "operationId": "ListAccounts",
+      "kind": "action",
+      "displayName": "List Organizations",
+      "deprecated": false,
+      "description": "- ListAccounts",
+      "parameters": [],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[Account]"
+      }
+    },
+    "ListBuildBranchesAsync": {
+      "operationId": "ListBuildBranchesAsync",
+      "kind": "action",
+      "displayName": "List Git branches (Preview)",
+      "deprecated": false,
+      "description": "- ListBuildBranchesAsync",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[GitRef]"
+      }
+    },
+    "ListBuildRequestersAsync": {
+      "operationId": "ListBuildRequestersAsync",
+      "kind": "action",
+      "displayName": "List build requesters (Preview)",
+      "deprecated": false,
+      "description": "- ListBuildRequestersAsync",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[TeamMember]"
+      }
+    },
+    "ListBuilds": {
+      "operationId": "ListBuilds",
+      "kind": "action",
+      "displayName": "List builds (Preview)",
+      "deprecated": false,
+      "description": "- ListBuilds",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Filter By Definition Ids",
+          "key": "definitions",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of definition identifiers to include."
+        },
+        {
+          "name": "Filter By Build Number",
+          "key": "buildNumber",
+          "required": false,
+          "type": "string",
+          "description": "Filter by build number."
+        },
+        {
+          "name": "Filter By Branch",
+          "key": "branchName",
+          "required": false,
+          "type": "string",
+          "description": "Filter by branch name (for example, refs/heads/main)."
+        },
+        {
+          "name": "Filter By Result",
+          "key": "resultFilter",
+          "required": false,
+          "type": "string",
+          "description": "Filter by build result."
+        },
+        {
+          "name": "Filter By Status",
+          "key": "statusFilter",
+          "required": false,
+          "type": "string",
+          "description": "Filter by build status."
+        },
+        {
+          "name": "Filter By Reason",
+          "key": "reasonFilter",
+          "required": false,
+          "type": "string",
+          "description": "Filter by build reason."
+        },
+        {
+          "name": "Filter By Requested For",
+          "key": "requestedFor",
+          "required": false,
+          "type": "string",
+          "description": "Filter by the identity for whom the build was requested."
+        },
+        {
+          "name": "Min Finish Time",
+          "key": "minTime",
+          "required": false,
+          "type": "date-time",
+          "description": "Filter by minimum finish time (inclusive)."
+        },
+        {
+          "name": "Max Finish Time",
+          "key": "maxTime",
+          "required": false,
+          "type": "date-time",
+          "description": "Filter by maximum finish time (inclusive)."
+        },
+        {
+          "name": "Maximum Results",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Maximum number of builds to return."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[BuildResult]"
+      }
+    },
+    "ListGitRepositories": {
+      "operationId": "ListGitRepositories",
+      "kind": "action",
+      "displayName": "List Git repositories",
+      "deprecated": false,
+      "description": "- ListGitRepositories",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[GitRepository]"
+      }
+    },
+    "ListIterations": {
+      "operationId": "ListIterations",
+      "kind": "action",
+      "displayName": "List iterations",
+      "deprecated": false,
+      "description": "- ListIterations",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Team Name",
+          "key": "team",
+          "required": true,
+          "type": "string",
+          "description": "The name of the team within the project."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[TeamSettingsIteration]"
+      }
+    },
+    "ListPipelineRuns": {
+      "operationId": "ListPipelineRuns",
+      "kind": "action",
+      "displayName": "List pipeline runs",
+      "deprecated": false,
+      "description": "- ListPipelineRuns",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "The pipeline ID",
+          "key": "pipelineId",
+          "required": true,
+          "type": "integer",
+          "description": "The pipeline ID"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Run"
+      }
+    },
+    "ListPipelines": {
+      "operationId": "ListPipelines",
+      "kind": "action",
+      "displayName": "List pipelines",
+      "deprecated": false,
+      "description": "- ListPipelines",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Pipeline"
+      }
+    },
+    "ListProjects": {
+      "operationId": "ListProjects",
+      "kind": "action",
+      "displayName": "List projects",
+      "deprecated": false,
+      "description": "- ListProjects",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[Project]"
+      }
+    },
+    "ListQueriesInFolder": {
+      "operationId": "ListQueriesInFolder",
+      "kind": "action",
+      "displayName": "List queries within folder",
+      "deprecated": false,
+      "description": "- ListQueriesInFolder",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Folder Path",
+          "key": "folderPath",
+          "required": true,
+          "type": "string",
+          "description": "The folder path under which to look for queries."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[QueryHierarchyItem]"
+      }
+    },
+    "ListReleaseDefinitions": {
+      "operationId": "ListReleaseDefinitions",
+      "kind": "action",
+      "displayName": "List release definitions",
+      "deprecated": false,
+      "description": "- ListReleaseDefinitions",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[ReleaseDefinition]"
+      }
+    },
+    "ListRootQueryFolders": {
+      "operationId": "ListRootQueryFolders",
+      "kind": "action",
+      "displayName": "List root level queries",
+      "deprecated": false,
+      "description": "- ListRootQueryFolders",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[QueryHierarchyItem]"
+      }
+    },
+    "ListWorkItemFieldsAsync": {
+      "operationId": "ListWorkItemFieldsAsync",
+      "kind": "action",
+      "displayName": "List work item fields (Preview)",
+      "deprecated": false,
+      "description": "- ListWorkItemFieldsAsync",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": false,
+          "type": "string",
+          "description": "Optional project within the Organization to scope the fields list."
+        },
+        {
+          "name": "Expand options",
+          "key": "expand",
+          "required": false,
+          "type": "string",
+          "description": "Controls which additional information is returned for each field."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[WorkItemField]"
+      }
+    },
+    "ListWorkItemTypes": {
+      "operationId": "ListWorkItemTypes",
+      "kind": "action",
+      "displayName": "List work item types",
+      "deprecated": false,
+      "description": "- ListWorkItemTypes",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[WorkItemType]"
+      }
+    },
+    "ListWorkItems": {
+      "operationId": "ListWorkItems",
+      "kind": "action",
+      "displayName": "List work items",
+      "deprecated": false,
+      "description": "- ListWorkItems",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Work Item IDs",
+          "key": "workItemIds",
+          "required": true,
+          "type": "string",
+          "description": "The comma-separated list of requested work item IDs."
+        },
+        {
+          "name": "Work Item Type",
+          "key": "workItemType",
+          "required": false,
+          "type": "string",
+          "description": "The work item type to generate schema for."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "OnBuildCompleted": {
+      "operationId": "OnBuildCompleted",
+      "kind": "trigger",
+      "displayName": "When a build completes",
+      "deprecated": false,
+      "description": "- OnBuildCompleted",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Filter By Result",
+          "key": "resultFilter",
+          "required": false,
+          "type": "string",
+          "description": "An option indicating which build result to trigger on. Valid options include '', 'succeeded', 'partiallySucceeded', 'failed', or 'canceled'."
+        },
+        {
+          "name": "Filter By Definition Id",
+          "key": "definitions",
+          "required": false,
+          "type": "string",
+          "description": "An option indicating which build definition id to trigger on."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[BuildResult]"
+      }
+    },
+    "OnGitPullClosed": {
+      "operationId": "OnGitPullClosed",
+      "kind": "trigger",
+      "displayName": "When a pull request is closed (Git)",
+      "deprecated": false,
+      "description": "- OnGitPullClosed",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Repository Name",
+          "key": "repository",
+          "required": true,
+          "type": "string",
+          "description": "The name of the repository within the specified project."
+        },
+        {
+          "name": "Source Ref Name",
+          "key": "sourceRefName",
+          "required": false,
+          "type": "string",
+          "description": "The name of the Git ref, such as a branch or tag."
+        },
+        {
+          "name": "Target Ref Name",
+          "key": "targetRefName",
+          "required": false,
+          "type": "string",
+          "description": "The name of the Git ref, such as a branch or tag."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[GitPullRequest]"
+      }
+    },
+    "OnGitPullCreated": {
+      "operationId": "OnGitPullCreated",
+      "kind": "trigger",
+      "displayName": "When a pull request is created (Git)",
+      "deprecated": false,
+      "description": "- OnGitPullCreated",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Repository Name",
+          "key": "repository",
+          "required": true,
+          "type": "string",
+          "description": "The name of the repository within the specified project."
+        },
+        {
+          "name": "Source Ref Name",
+          "key": "sourceRefName",
+          "required": false,
+          "type": "string",
+          "description": "The name of the Git ref, such as a branch or tag."
+        },
+        {
+          "name": "Target Ref Name",
+          "key": "targetRefName",
+          "required": false,
+          "type": "string",
+          "description": "The name of the Git ref, such as a branch or tag."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[GitPullRequest]"
+      }
+    },
+    "OnGitPush": {
+      "operationId": "OnGitPush",
+      "kind": "trigger",
+      "displayName": "When code is pushed (Git)",
+      "deprecated": false,
+      "description": "- OnGitPush",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Repository Name",
+          "key": "repository",
+          "required": true,
+          "type": "string",
+          "description": "The name of the repository within the specified project."
+        },
+        {
+          "name": "Ref Name",
+          "key": "refName",
+          "required": false,
+          "type": "string",
+          "description": "The name of the Git ref, such as a branch or tag."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[GitPush]"
+      }
+    },
+    "OnTfvcCheckIn": {
+      "operationId": "OnTfvcCheckIn",
+      "kind": "trigger",
+      "displayName": "When code is checked in (TFVC)",
+      "deprecated": false,
+      "description": "- OnTfvcCheckIn",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Team Name",
+          "key": "team",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team which to select an author."
+        },
+        {
+          "name": "Team Member",
+          "key": "author",
+          "required": false,
+          "type": "string",
+          "description": "The unique name of the team member who authored the check in."
+        }
+      ],
+      "returns": {
+        "raw": "A list of VSTS models.\n- Body\n- VstsList[TfvcChangeset]"
+      }
+    },
+    "OnWorkItemAssigned": {
+      "operationId": "OnWorkItemAssigned",
+      "kind": "trigger",
+      "displayName": "When a work item is assigned [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnWorkItemAssigned",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Assigned To",
+          "key": "wiql__System_AssignedTo",
+          "required": true,
+          "type": "string",
+          "description": "The name of the team member who currently owns the work item."
+        },
+        {
+          "name": "Team Name (to pick Assigned To)",
+          "key": "team",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team from which to select a member."
+        },
+        {
+          "name": "Type",
+          "key": "wiql__System_WorkItemType",
+          "required": false,
+          "type": "string",
+          "description": "The name of the work item type."
+        },
+        {
+          "name": "Area Path",
+          "key": "wiql__System_AreaPath",
+          "required": false,
+          "type": "string",
+          "description": "The product feature or team area the work item is in."
+        },
+        {
+          "name": "Area Path Comparison",
+          "key": "areaPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Area Path field."
+        },
+        {
+          "name": "Iteration Path",
+          "key": "wiql__System_IterationPath",
+          "required": false,
+          "type": "string",
+          "description": "The named sprint or time period the work item is in."
+        },
+        {
+          "name": "Iteration Path Comparison",
+          "key": "iterationPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Iteration Path field."
+        },
+        {
+          "name": "Priority",
+          "key": "wiql__Microsoft_VSTS_Common_Priority",
+          "required": false,
+          "type": "string",
+          "description": "A subjective rating of the bug, issue, task, or test case as it relates to the business."
+        },
+        {
+          "name": "Team Project",
+          "key": "wiql__System_TeamProject",
+          "required": false,
+          "type": "string",
+          "description": "The team project to which this work item belongs."
+        },
+        {
+          "name": "Created By",
+          "key": "wiql__System_CreatedBy",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team member who created the work item."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "OnWorkItemAssignedV2": {
+      "operationId": "OnWorkItemAssignedV2",
+      "kind": "trigger",
+      "displayName": "When a work item is assigned",
+      "deprecated": false,
+      "description": "- OnWorkItemAssignedV2",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Team Name (to pick Assigned To)",
+          "key": "team",
+          "required": true,
+          "type": "string",
+          "description": "The name of the team from which to select a member."
+        },
+        {
+          "name": "Assigned To",
+          "key": "wiql__System_AssignedTo",
+          "required": true,
+          "type": "string",
+          "description": "The name of the team member who currently owns the work item."
+        },
+        {
+          "name": "Type",
+          "key": "wiql__System_WorkItemType",
+          "required": false,
+          "type": "string",
+          "description": "The name of the work item type."
+        },
+        {
+          "name": "Area Path",
+          "key": "wiql__System_AreaPath",
+          "required": false,
+          "type": "string",
+          "description": "The product feature or team area the work item is in."
+        },
+        {
+          "name": "Area Path Comparison",
+          "key": "areaPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Area Path field."
+        },
+        {
+          "name": "Iteration Path",
+          "key": "wiql__System_IterationPath",
+          "required": false,
+          "type": "string",
+          "description": "The named sprint or time period the work item is in."
+        },
+        {
+          "name": "Iteration Path Comparison",
+          "key": "iterationPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Iteration Path field."
+        },
+        {
+          "name": "Priority",
+          "key": "wiql__Microsoft_VSTS_Common_Priority",
+          "required": false,
+          "type": "string",
+          "description": "A subjective rating of the bug, issue, task, or test case as it relates to the business."
+        },
+        {
+          "name": "Created By",
+          "key": "wiql__System_CreatedBy",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team member who created the work item."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "OnWorkItemClosed": {
+      "operationId": "OnWorkItemClosed",
+      "kind": "trigger",
+      "displayName": "When a work item is closed [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnWorkItemClosed",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Team Name (to pick Assigned To)",
+          "key": "team",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team from which to select an assignee."
+        },
+        {
+          "name": "Assigned To",
+          "key": "wiql__System_AssignedTo",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team member who currently owns the work item."
+        },
+        {
+          "name": "Type",
+          "key": "wiql__System_WorkItemType",
+          "required": false,
+          "type": "string",
+          "description": "The name of the work item type."
+        },
+        {
+          "name": "Area Path",
+          "key": "wiql__System_AreaPath",
+          "required": false,
+          "type": "string",
+          "description": "The product feature or team area the work item is in."
+        },
+        {
+          "name": "Area Path Comparison",
+          "key": "areaPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Area Path field."
+        },
+        {
+          "name": "Iteration Path",
+          "key": "wiql__System_IterationPath",
+          "required": false,
+          "type": "string",
+          "description": "The named sprint or time period the work item is in."
+        },
+        {
+          "name": "Iteration Path Comparison",
+          "key": "iterationPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Iteration Path field."
+        },
+        {
+          "name": "Priority",
+          "key": "wiql__Microsoft_VSTS_Common_Priority",
+          "required": false,
+          "type": "string",
+          "description": "A subjective rating of the bug, issue, task, or test case as it relates to the business."
+        },
+        {
+          "name": "Team Project",
+          "key": "wiql__System_TeamProject",
+          "required": false,
+          "type": "string",
+          "description": "The team project to which this work item belongs."
+        },
+        {
+          "name": "Created By",
+          "key": "wiql__System_CreatedBy",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team member who created the work item."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "OnWorkItemClosedV2": {
+      "operationId": "OnWorkItemClosedV2",
+      "kind": "trigger",
+      "displayName": "When a work item is closed",
+      "deprecated": false,
+      "description": "- OnWorkItemClosedV2",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Team Name (to pick Assigned To)",
+          "key": "team",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team from which to select an assignee."
+        },
+        {
+          "name": "Assigned To",
+          "key": "wiql__System_AssignedTo",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team member who currently owns the work item."
+        },
+        {
+          "name": "Type",
+          "key": "wiql__System_WorkItemType",
+          "required": false,
+          "type": "string",
+          "description": "The name of the work item type."
+        },
+        {
+          "name": "Closed State",
+          "key": "closedState",
+          "required": false,
+          "type": "string",
+          "description": "The comma-separated list of values of the State field indicating how the work item was closed (Done, Closed, Completed, Inactive)."
+        },
+        {
+          "name": "Area Path",
+          "key": "wiql__System_AreaPath",
+          "required": false,
+          "type": "string",
+          "description": "The product feature or team area the work item is in."
+        },
+        {
+          "name": "Area Path Comparison",
+          "key": "areaPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Area Path field."
+        },
+        {
+          "name": "Iteration Path",
+          "key": "wiql__System_IterationPath",
+          "required": false,
+          "type": "string",
+          "description": "The named sprint or time period the work item is in."
+        },
+        {
+          "name": "Iteration Path Comparison",
+          "key": "iterationPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Iteration Path field."
+        },
+        {
+          "name": "Priority",
+          "key": "wiql__Microsoft_VSTS_Common_Priority",
+          "required": false,
+          "type": "string",
+          "description": "A subjective rating of the bug, issue, task, or test case as it relates to the business."
+        },
+        {
+          "name": "Created By",
+          "key": "wiql__System_CreatedBy",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team member who created the work item."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "OnWorkItemCreated": {
+      "operationId": "OnWorkItemCreated",
+      "kind": "trigger",
+      "displayName": "When a work item is created [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnWorkItemCreated",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Team Name (to pick Assigned To)",
+          "key": "team",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team from which to select an assignee."
+        },
+        {
+          "name": "Assigned To",
+          "key": "wiql__System_AssignedTo",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team member who currently owns the work item."
+        },
+        {
+          "name": "Type",
+          "key": "wiql__System_WorkItemType",
+          "required": false,
+          "type": "string",
+          "description": "The name of the work item type."
+        },
+        {
+          "name": "Area Path",
+          "key": "wiql__System_AreaPath",
+          "required": false,
+          "type": "string",
+          "description": "The product feature or team area the work item is in."
+        },
+        {
+          "name": "Area Path Comparison",
+          "key": "areaPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Area Path field."
+        },
+        {
+          "name": "Iteration Path",
+          "key": "wiql__System_IterationPath",
+          "required": false,
+          "type": "string",
+          "description": "The named sprint or time period the work item is in."
+        },
+        {
+          "name": "Iteration Path Comparison",
+          "key": "iterationPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Iteration Path field."
+        },
+        {
+          "name": "Priority",
+          "key": "wiql__Microsoft_VSTS_Common_Priority",
+          "required": false,
+          "type": "string",
+          "description": "A subjective rating of the bug, issue, task, or test case as it relates to the business."
+        },
+        {
+          "name": "Team Project",
+          "key": "wiql__System_TeamProject",
+          "required": false,
+          "type": "string",
+          "description": "The team project to which this work item belongs."
+        },
+        {
+          "name": "Created By",
+          "key": "wiql__System_CreatedBy",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team member who created the work item."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "OnWorkItemCreatedV2": {
+      "operationId": "OnWorkItemCreatedV2",
+      "kind": "trigger",
+      "displayName": "When a work item is created",
+      "deprecated": false,
+      "description": "- OnWorkItemCreatedV2",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Team Name (to pick Assigned To)",
+          "key": "team",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team from which to select an assignee."
+        },
+        {
+          "name": "Assigned To",
+          "key": "wiql__System_AssignedTo",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team member who currently owns the work item."
+        },
+        {
+          "name": "Type",
+          "key": "wiql__System_WorkItemType",
+          "required": false,
+          "type": "string",
+          "description": "The name of the work item type."
+        },
+        {
+          "name": "Area Path",
+          "key": "wiql__System_AreaPath",
+          "required": false,
+          "type": "string",
+          "description": "The product feature or team area the work item is in."
+        },
+        {
+          "name": "Area Path Comparison",
+          "key": "areaPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Area Path field."
+        },
+        {
+          "name": "Iteration Path",
+          "key": "wiql__System_IterationPath",
+          "required": false,
+          "type": "string",
+          "description": "The named sprint or time period the work item is in."
+        },
+        {
+          "name": "Iteration Path Comparison",
+          "key": "iterationPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Iteration Path field."
+        },
+        {
+          "name": "Priority",
+          "key": "wiql__Microsoft_VSTS_Common_Priority",
+          "required": false,
+          "type": "string",
+          "description": "A subjective rating of the bug, issue, task, or test case as it relates to the business."
+        },
+        {
+          "name": "Created By",
+          "key": "wiql__System_CreatedBy",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team member who created the work item."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "OnWorkItemUpdated": {
+      "operationId": "OnWorkItemUpdated",
+      "kind": "trigger",
+      "displayName": "When a work item is updated [DEPRECATED]",
+      "deprecated": true,
+      "description": "- OnWorkItemUpdated",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Team Name (to pick Assigned To)",
+          "key": "team",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team from which to select an assignee."
+        },
+        {
+          "name": "Assigned To",
+          "key": "wiql__System_AssignedTo",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team member who currently owns the work item."
+        },
+        {
+          "name": "Type",
+          "key": "wiql__System_WorkItemType",
+          "required": false,
+          "type": "string",
+          "description": "The name of the work item type."
+        },
+        {
+          "name": "Area Path",
+          "key": "wiql__System_AreaPath",
+          "required": false,
+          "type": "string",
+          "description": "The product feature or team area the work item is in."
+        },
+        {
+          "name": "Area Path Comparison",
+          "key": "areaPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Area Path field."
+        },
+        {
+          "name": "Iteration Path",
+          "key": "wiql__System_IterationPath",
+          "required": false,
+          "type": "string",
+          "description": "The named sprint or time period the work item is in."
+        },
+        {
+          "name": "Iteration Path Comparison",
+          "key": "iterationPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Iteration Path field."
+        },
+        {
+          "name": "Priority",
+          "key": "wiql__Microsoft_VSTS_Common_Priority",
+          "required": false,
+          "type": "string",
+          "description": "A subjective rating of the bug, issue, task, or test case as it relates to the business."
+        },
+        {
+          "name": "Team Project",
+          "key": "wiql__System_TeamProject",
+          "required": false,
+          "type": "string",
+          "description": "The team project to which this work item belongs."
+        },
+        {
+          "name": "Created By",
+          "key": "wiql__System_CreatedBy",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team member who created the work item."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "OnWorkItemUpdatedV2": {
+      "operationId": "OnWorkItemUpdatedV2",
+      "kind": "trigger",
+      "displayName": "When a work item is updated",
+      "deprecated": false,
+      "description": "- OnWorkItemUpdatedV2",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Team Name (to pick Assigned To)",
+          "key": "team",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team from which to select an assignee."
+        },
+        {
+          "name": "Assigned To",
+          "key": "wiql__System_AssignedTo",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team member who currently owns the work item."
+        },
+        {
+          "name": "Type",
+          "key": "wiql__System_WorkItemType",
+          "required": false,
+          "type": "string",
+          "description": "The name of the work item type."
+        },
+        {
+          "name": "Area Path",
+          "key": "wiql__System_AreaPath",
+          "required": false,
+          "type": "string",
+          "description": "The product feature or team area the work item is in."
+        },
+        {
+          "name": "Area Path Comparison",
+          "key": "areaPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Area Path field."
+        },
+        {
+          "name": "Iteration Path",
+          "key": "wiql__System_IterationPath",
+          "required": false,
+          "type": "string",
+          "description": "The named sprint or time period the work item is in."
+        },
+        {
+          "name": "Iteration Path Comparison",
+          "key": "iterationPathComparison",
+          "required": false,
+          "type": "string",
+          "description": "The rule to be used while comparing Iteration Path field."
+        },
+        {
+          "name": "Priority",
+          "key": "wiql__Microsoft_VSTS_Common_Priority",
+          "required": false,
+          "type": "string",
+          "description": "A subjective rating of the bug, issue, task, or test case as it relates to the business."
+        },
+        {
+          "name": "Created By",
+          "key": "wiql__System_CreatedBy",
+          "required": false,
+          "type": "string",
+          "description": "The name of the team member who created the work item."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "QueueNewBuild": {
+      "operationId": "QueueNewBuild",
+      "kind": "action",
+      "displayName": "Queue a new build",
+      "deprecated": false,
+      "description": "- QueueNewBuild",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Build Definition Id",
+          "key": "buildDefId",
+          "required": true,
+          "type": "string",
+          "description": "The identifier of the build definition to use."
+        },
+        {
+          "name": "Source Branch",
+          "key": "sourceBranch",
+          "required": false,
+          "type": "string",
+          "description": "The source branch of the build."
+        },
+        {
+          "name": "Parameters",
+          "key": "parameters",
+          "required": false,
+          "type": "string",
+          "description": "A JSON dictionary of optional build parameters."
+        }
+      ],
+      "returns": {
+        "raw": "Build Result\n- Body\n- BuildResult"
+      }
+    },
+    "SearchWorkItemsAsync": {
+      "operationId": "SearchWorkItemsAsync",
+      "kind": "action",
+      "displayName": "Search for work items",
+      "deprecated": false,
+      "description": "- SearchWorkItemsAsync",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Search Text",
+          "key": "searchText",
+          "required": true,
+          "type": "string",
+          "description": "The search text."
+        },
+        {
+          "name": "Skip",
+          "key": "$skip",
+          "required": false,
+          "type": "integer",
+          "description": "Number of results to be skipped. Defaults to 0."
+        },
+        {
+          "name": "Top",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of results to be returned. Defaults to 100."
+        },
+        {
+          "name": "Filters",
+          "key": "filters",
+          "required": false,
+          "type": "object",
+          "description": "Filters to be applied. Set it to null if there are no filters to be applied."
+        },
+        {
+          "name": "Include Facets",
+          "key": "includeFacets",
+          "required": false,
+          "type": "boolean",
+          "description": "Flag to opt for faceting in the result. Default behavior is false."
+        },
+        {
+          "name": "Field",
+          "key": "field",
+          "required": false,
+          "type": "string",
+          "description": "Field name on which sorting should be done."
+        },
+        {
+          "name": "Sort Order",
+          "key": "sortOrder",
+          "required": false,
+          "type": "string",
+          "description": "Order (ASC/DESC) in which the results should be sorted."
+        }
+      ],
+      "returns": {
+        "raw": "Work Item Search Response\n- Body\n- WorkItemSearchResponse"
+      }
+    },
+    "UpdateWorkItem": {
+      "operationId": "UpdateWorkItem",
+      "kind": "action",
+      "displayName": "Update a work item",
+      "deprecated": false,
+      "description": "- UpdateWorkItem",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Work Item Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "The unique id of the work item to update."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": false,
+          "type": "string",
+          "description": "The name of the project within the specified Organization."
+        },
+        {
+          "name": "Work Item Type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": "The work item type to generate schema for."
+        },
+        {
+          "name": "Work Item Details",
+          "key": "workItem",
+          "required": true,
+          "type": "dynamic",
+          "description": "The details of the work item."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "UpdateWorkItemCommentAsync": {
+      "operationId": "UpdateWorkItemCommentAsync",
+      "kind": "action",
+      "displayName": "Update work item comment (Preview)",
+      "deprecated": false,
+      "description": "- UpdateWorkItemCommentAsync",
+      "parameters": [
+        {
+          "name": "Organization Name",
+          "key": "account",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Organization. This can be found in the instance URL i.e. {Organization}.visualstudio.com. The Organization should have \"Third-party application access via OAuth\" enabled to prevent errors in the operation."
+        },
+        {
+          "name": "Project Name",
+          "key": "project",
+          "required": true,
+          "type": "string",
+          "description": "Project ID or project name"
+        },
+        {
+          "name": "Work Item Id",
+          "key": "workItemId",
+          "required": true,
+          "type": "integer",
+          "description": "Id of a work item."
+        },
+        {
+          "name": "Comment Id",
+          "key": "commentId",
+          "required": true,
+          "type": "integer",
+          "description": "Id of the comment to update."
+        },
+        {
+          "name": "Comment Format",
+          "key": "format",
+          "required": false,
+          "type": "string",
+          "description": "Format of a work item comment (Markdown or Html)."
+        },
+        {
+          "name": "Comment Text",
+          "key": "text",
+          "required": true,
+          "type": "string",
+          "description": "The text of the comment."
+        }
+      ],
+      "returns": {
+        "raw": "Work Item Comment\n- Body\n- WorkItemComment"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

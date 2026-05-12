@@ -1,0 +1,336 @@
+{
+  "connectorId": "shared_onenote",
+  "displayName": "OneNote (Business)",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/onenote/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-05-09T01:06:00.0000000Z",
+  "sourceGitCommit": "3bea2815dc4643546385b089e5f26faefe6bb453",
+  "sourcePath": "docs/OneNote/index.yml",
+  "operations": {
+    "CreatePageInQuickNotes": {
+      "operationId": "CreatePageInQuickNotes",
+      "kind": "action",
+      "displayName": "Create a page in Quick Notes",
+      "deprecated": false,
+      "description": "- CreatePageInQuickNotes",
+      "parameters": [
+        {
+          "name": "Page Content",
+          "key": "pageContent",
+          "required": true,
+          "type": "html",
+          "description": "Page content."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Page"
+      }
+    },
+    "CreatePageInSection": {
+      "operationId": "CreatePageInSection",
+      "kind": "action",
+      "displayName": "Create page in a section",
+      "deprecated": false,
+      "description": "- CreatePageInSection",
+      "parameters": [
+        {
+          "name": "Notebook Key",
+          "key": "notebookKey",
+          "required": true,
+          "type": "string",
+          "description": "A key identifying the notebook. Note this is specific to the API and cannot be hand-typed."
+        },
+        {
+          "name": "Notebook section",
+          "key": "sectionId",
+          "required": true,
+          "type": "string",
+          "description": "API URL of the section pages."
+        },
+        {
+          "name": "Page Content",
+          "key": "pageContent",
+          "required": true,
+          "type": "html",
+          "description": "Page content."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Page"
+      }
+    },
+    "CreateSectionInNotebook": {
+      "operationId": "CreateSectionInNotebook",
+      "kind": "action",
+      "displayName": "Create section in a notebook",
+      "deprecated": false,
+      "description": "- CreateSectionInNotebook",
+      "parameters": [
+        {
+          "name": "Notebook Key",
+          "key": "notebookKey",
+          "required": true,
+          "type": "string",
+          "description": "A key identifying the notebook. Note this is specific to the API and cannot be hand-typed."
+        },
+        {
+          "name": "Name of the new section",
+          "key": "name",
+          "required": true,
+          "type": "string",
+          "description": "The name of the new section."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CreateSectionInNotebookResponse"
+      }
+    },
+    "DeletePage": {
+      "operationId": "DeletePage",
+      "kind": "action",
+      "displayName": "Delete a page",
+      "deprecated": false,
+      "description": "- DeletePage",
+      "parameters": [
+        {
+          "name": "Notebook Key",
+          "key": "notebookKey",
+          "required": true,
+          "type": "string",
+          "description": "A key identifying the notebook. Note this is specific to the API and cannot be hand-typed."
+        },
+        {
+          "name": "Notebook section",
+          "key": "sectionId",
+          "required": true,
+          "type": "string",
+          "description": "API URL of the section pages."
+        },
+        {
+          "name": "Page Id",
+          "key": "pageId",
+          "required": true,
+          "type": "string",
+          "description": "Unique id of the page."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetNotebooks": {
+      "operationId": "GetNotebooks",
+      "kind": "action",
+      "displayName": "Get recent notebooks",
+      "deprecated": false,
+      "description": "- GetNotebooks",
+      "parameters": [],
+      "returns": {
+        "raw": "- response\n- array of Notebook"
+      }
+    },
+    "GetPageContent": {
+      "operationId": "GetPageContent",
+      "kind": "action",
+      "displayName": "Get page content",
+      "deprecated": false,
+      "description": "- GetPageContent",
+      "parameters": [
+        {
+          "name": "Notebook Key",
+          "key": "notebookKey",
+          "required": true,
+          "type": "string",
+          "description": "A key identifying the notebook. Note this is specific to the API and cannot be hand-typed."
+        },
+        {
+          "name": "Notebook section",
+          "key": "sectionId",
+          "required": true,
+          "type": "string",
+          "description": "API URL of the section pages."
+        },
+        {
+          "name": "Page Id",
+          "key": "pageId",
+          "required": true,
+          "type": "string",
+          "description": "Unique id of the page."
+        }
+      ],
+      "returns": {
+        "raw": "The page HTML content\n- response\n- string"
+      }
+    },
+    "GetPagesInSection": {
+      "operationId": "GetPagesInSection",
+      "kind": "action",
+      "displayName": "Get pages for a specific section",
+      "deprecated": false,
+      "description": "- GetPagesInSection",
+      "parameters": [
+        {
+          "name": "Notebook Key",
+          "key": "notebookKey",
+          "required": true,
+          "type": "string",
+          "description": "A key identifying the notebook. Note this is specific to the API and cannot be hand-typed."
+        },
+        {
+          "name": "Notebook section",
+          "key": "sectionId",
+          "required": true,
+          "type": "string",
+          "description": "API URL of the section pages."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- GetPagesInSectionResponse"
+      }
+    },
+    "GetSectionsInNotebook": {
+      "operationId": "GetSectionsInNotebook",
+      "kind": "action",
+      "displayName": "Get sections in notebook",
+      "deprecated": false,
+      "description": "- GetSectionsInNotebook",
+      "parameters": [
+        {
+          "name": "Notebook Key",
+          "key": "notebookKey",
+          "required": true,
+          "type": "string",
+          "description": "A key identifying the notebook. Note this is specific to the API and cannot be hand-typed."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of SectionListItem |  |"
+      }
+    },
+    "OnNewPageInSection": {
+      "operationId": "OnNewPageInSection",
+      "kind": "trigger",
+      "displayName": "When a new page is created in a section",
+      "deprecated": false,
+      "description": "- OnNewPageInSection",
+      "parameters": [
+        {
+          "name": "Notebook Key",
+          "key": "notebookKey",
+          "required": true,
+          "type": "string",
+          "description": "A key identifying the notebook. Note this is specific to the API and cannot be hand-typed."
+        },
+        {
+          "name": "Notebook section",
+          "key": "sectionId",
+          "required": true,
+          "type": "string",
+          "description": "API URL of the section pages."
+        }
+      ],
+      "returns": {
+        "raw": "Response for a new page.\n- Body\n- NewPageResponse"
+      }
+    },
+    "OnNewSectionGroupInNotebook": {
+      "operationId": "OnNewSectionGroupInNotebook",
+      "kind": "trigger",
+      "displayName": "When a new section group is created",
+      "deprecated": false,
+      "description": "- OnNewSectionGroupInNotebook",
+      "parameters": [
+        {
+          "name": "Notebook Key",
+          "key": "notebookKey",
+          "required": true,
+          "type": "string",
+          "description": "A key identifying the notebook. Note this is specific to the API and cannot be hand-typed."
+        }
+      ],
+      "returns": {
+        "raw": "Response for a new section group.\n- Body\n- NewSectionGroupResponse"
+      }
+    },
+    "OnNewSectionInNotebook": {
+      "operationId": "OnNewSectionInNotebook",
+      "kind": "trigger",
+      "displayName": "When a new section is created",
+      "deprecated": false,
+      "description": "- OnNewSectionInNotebook",
+      "parameters": [
+        {
+          "name": "Notebook Key",
+          "key": "notebookKey",
+          "required": true,
+          "type": "string",
+          "description": "A key identifying the notebook. Note this is specific to the API and cannot be hand-typed."
+        }
+      ],
+      "returns": {
+        "raw": "Response for a new section.\n- Body\n- NewSectionResponse"
+      }
+    },
+    "UpdatePageContent": {
+      "operationId": "UpdatePageContent",
+      "kind": "action",
+      "displayName": "Update page content",
+      "deprecated": false,
+      "description": "- UpdatePageContent",
+      "parameters": [
+        {
+          "name": "Notebook Key",
+          "key": "notebookKey",
+          "required": true,
+          "type": "string",
+          "description": "A key identifying the notebook. Note this is specific to the API and cannot be hand-typed."
+        },
+        {
+          "name": "Notebook section",
+          "key": "sectionId",
+          "required": true,
+          "type": "string",
+          "description": "API URL of the section pages."
+        },
+        {
+          "name": "Page Id",
+          "key": "pageId",
+          "required": true,
+          "type": "string",
+          "description": "Unique id of the page."
+        },
+        {
+          "name": "Target",
+          "key": "target",
+          "required": false,
+          "type": "string",
+          "description": "The element to update."
+        },
+        {
+          "name": "Action",
+          "key": "action",
+          "required": false,
+          "type": "string",
+          "description": "The action to perform on the target element."
+        },
+        {
+          "name": "Location",
+          "key": "position",
+          "required": false,
+          "type": "string",
+          "description": "The location to add the supplied content."
+        },
+        {
+          "name": "Content",
+          "key": "content",
+          "required": false,
+          "type": "html",
+          "description": "The new content."
+        }
+      ],
+      "returns": {
+        "raw": "The page HTML content\n- response\n- string"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

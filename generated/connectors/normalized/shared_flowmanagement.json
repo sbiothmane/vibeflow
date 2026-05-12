@@ -1,0 +1,1133 @@
+{
+  "connectorId": "shared_flowmanagement",
+  "displayName": "Power Automate Management",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/flowmanagement/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-10-28T01:01:00.0000000Z",
+  "sourceGitCommit": "8206e49762de48d8b819bd5b28fb62edb257ef8d",
+  "sourcePath": "docs/flowmanagement/index.yml",
+  "operations": {
+    "AdminGetFlow": {
+      "operationId": "AdminGetFlow",
+      "kind": "action",
+      "displayName": "Get Flow as Admin",
+      "deprecated": false,
+      "description": "- AdminGetFlow",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        },
+        {
+          "name": "Include Flow Definition",
+          "key": "includeFlowDefinition",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether or not to include flow definition."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- AdminFlowWithConnectionReferences"
+      }
+    },
+    "AdminModifyFlowOwners": {
+      "operationId": "AdminModifyFlowOwners",
+      "kind": "action",
+      "displayName": "Modify Flow Owners as Admin",
+      "deprecated": false,
+      "description": "- AdminModifyFlowOwners",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        },
+        {
+          "name": "Add User Object Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Add User Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Remove User Object Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Remove User Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "AdminRestoreFlow": {
+      "operationId": "AdminRestoreFlow",
+      "kind": "action",
+      "displayName": "Restore Deleted Flow as Admin",
+      "deprecated": false,
+      "description": "- AdminRestoreFlow",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- AdminFlowWithConnectionReferences"
+      }
+    },
+    "CancelFlowRun": {
+      "operationId": "CancelFlowRun",
+      "kind": "action",
+      "displayName": "Cancel Flow Run",
+      "deprecated": false,
+      "description": "- CancelFlowRun",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        },
+        {
+          "name": "Run ID",
+          "key": "runId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of the flow run to resubmit."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CreateConnection": {
+      "operationId": "CreateConnection",
+      "kind": "action",
+      "displayName": "Create Connection",
+      "deprecated": false,
+      "description": "- CreateConnection",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Connector",
+          "key": "apiName",
+          "required": true,
+          "type": "string",
+          "description": "Select connector"
+        },
+        {
+          "name": "connection",
+          "key": "connection",
+          "required": false,
+          "type": "dynamic",
+          "description": "Connection"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "CreateFlow": {
+      "operationId": "CreateFlow",
+      "kind": "action",
+      "displayName": "Create Flow",
+      "deprecated": false,
+      "description": "- CreateFlow",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Flow Display Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Flow State",
+          "key": "state",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connection Name",
+          "key": "connectionName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connection Display Name",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connector Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Either Embedded or Invoker connection",
+          "key": "source",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Logical name of the connection reference",
+          "key": "connectionReferenceLogicalName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connector Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connector Display Name",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connection Created Time",
+          "key": "createdTime",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "Connector Runtime Url",
+          "key": "primaryRuntimeUrl",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connector Icon Url",
+          "key": "iconUri",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connector is Custom Api",
+          "key": "isCustomApi",
+          "required": false,
+          "type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "Connector Tier",
+          "key": "tier",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Flow Created Time",
+          "key": "createdTime",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "Flow Modified Time",
+          "key": "lastModifiedTime",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "Flow Template Name",
+          "key": "templateName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Flow Trigger Uri",
+          "key": "flowTriggerUri",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Flow Installation Status",
+          "key": "installationStatus",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Creator tenant ID",
+          "key": "tenantId",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Creator object ID",
+          "key": "objectId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Creator user ID",
+          "key": "userId",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Creator user type",
+          "key": "userType",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Flow trigger type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Flow trigger kind",
+          "key": "kind",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Action type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Swagger operation Id",
+          "key": "swaggerOperationId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Action Api name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Action Api id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Action Api type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Flow"
+      }
+    },
+    "DeleteFlow": {
+      "operationId": "DeleteFlow",
+      "kind": "action",
+      "displayName": "Delete Flow",
+      "deprecated": false,
+      "description": "- DeleteFlow",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetApi": {
+      "operationId": "GetApi",
+      "kind": "action",
+      "displayName": "Get Connector",
+      "deprecated": false,
+      "description": "- GetApi",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Connector",
+          "key": "apiName",
+          "required": true,
+          "type": "string",
+          "description": "Select connector"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetFlow": {
+      "operationId": "GetFlow",
+      "kind": "action",
+      "displayName": "Get Flow",
+      "deprecated": false,
+      "description": "- GetFlow",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- FlowWithConnectionReferences"
+      }
+    },
+    "ListApis": {
+      "operationId": "ListApis",
+      "kind": "action",
+      "displayName": "List Connectors",
+      "deprecated": false,
+      "description": "- ListApis",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceArray[ApiWithoutConnectionParameters]"
+      }
+    },
+    "ListCallbackUrl": {
+      "operationId": "ListCallbackUrl",
+      "kind": "action",
+      "displayName": "List Callback URL",
+      "deprecated": false,
+      "description": "- ListCallbackUrl",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- FlowListCallbackUrlResponse"
+      }
+    },
+    "ListConnections": {
+      "operationId": "ListConnections",
+      "kind": "action",
+      "displayName": "List My Connections",
+      "deprecated": false,
+      "description": "- ListConnections",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceArray[ConnectionWithoutConnectionParameters]"
+      }
+    },
+    "ListFlowOwners": {
+      "operationId": "ListFlowOwners",
+      "kind": "action",
+      "displayName": "List Flow Owners",
+      "deprecated": false,
+      "description": "- ListFlowOwners",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceArray[FlowPermission]"
+      }
+    },
+    "ListFlowUsers": {
+      "operationId": "ListFlowUsers",
+      "kind": "action",
+      "displayName": "List Flow Run-Only Users",
+      "deprecated": false,
+      "description": "- ListFlowUsers",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceArray[FlowPermission]"
+      }
+    },
+    "ListFlowsInEnvironment_V2": {
+      "operationId": "ListFlowsInEnvironment_V2",
+      "kind": "action",
+      "displayName": "List Flows as Admin (V2)",
+      "deprecated": false,
+      "description": "- ListFlowsInEnvironment_V2",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Top count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Top count"
+        },
+        {
+          "name": "Expand Suspension Info",
+          "key": "expandSuspensionInfo",
+          "required": false,
+          "type": "boolean",
+          "description": "Expands the suspension information"
+        },
+        {
+          "name": "Include Soft-Deleted Flows",
+          "key": "includeSoftDeletedFlows",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether or not to include soft-deleted flows."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceArray[AdminFlowWithoutDefinition]"
+      }
+    },
+    "ListMyFlows": {
+      "operationId": "ListMyFlows",
+      "kind": "action",
+      "displayName": "List My Flows",
+      "deprecated": false,
+      "description": "- ListMyFlows",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ResourceArray[AdminFlow]"
+      }
+    },
+    "ListUserEnvironments": {
+      "operationId": "ListUserEnvironments",
+      "kind": "action",
+      "displayName": "List My Environments",
+      "deprecated": false,
+      "description": "- ListUserEnvironments",
+      "parameters": [],
+      "returns": {
+        "raw": "- Body\n- ResourceArray[Environment]"
+      }
+    },
+    "ModifyFlowOwners": {
+      "operationId": "ModifyFlowOwners",
+      "kind": "action",
+      "displayName": "Modify Flow Owners",
+      "deprecated": false,
+      "description": "- ModifyFlowOwners",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        },
+        {
+          "name": "Add User Object Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Add User Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Remove User Object Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Remove User Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ModifyRunOnlyUsers": {
+      "operationId": "ModifyRunOnlyUsers",
+      "kind": "action",
+      "displayName": "Modify Run-Only Users",
+      "deprecated": false,
+      "description": "- ModifyRunOnlyUsers",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        },
+        {
+          "name": "Add User Object Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Add User Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Remove User Object Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Remove User Type",
+          "key": "type",
+          "required": true,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "ResubmitFlow": {
+      "operationId": "ResubmitFlow",
+      "kind": "action",
+      "displayName": "Resubmit Flow",
+      "deprecated": false,
+      "description": "- ResubmitFlow",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        },
+        {
+          "name": "Trigger Name",
+          "key": "triggerName",
+          "required": true,
+          "type": "string",
+          "description": "Name of the flow trigger to resubmit."
+        },
+        {
+          "name": "Run ID",
+          "key": "runId",
+          "required": true,
+          "type": "string",
+          "description": "The ID of the flow run to resubmit."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "StartFlow": {
+      "operationId": "StartFlow",
+      "kind": "action",
+      "displayName": "Turn On Flow",
+      "deprecated": false,
+      "description": "- StartFlow",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "StopFlow": {
+      "operationId": "StopFlow",
+      "kind": "action",
+      "displayName": "Turn Off Flow",
+      "deprecated": false,
+      "description": "- StopFlow",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "UpdateFlow": {
+      "operationId": "UpdateFlow",
+      "kind": "action",
+      "displayName": "Update Flow",
+      "deprecated": false,
+      "description": "- UpdateFlow",
+      "parameters": [
+        {
+          "name": "Environment",
+          "key": "environmentName",
+          "required": true,
+          "type": "string",
+          "description": "Select environment"
+        },
+        {
+          "name": "Flow",
+          "key": "flowName",
+          "required": true,
+          "type": "string",
+          "description": "Select flow"
+        },
+        {
+          "name": "Flow Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Flow Display Name",
+          "key": "displayName",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Flow State",
+          "key": "state",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connection Name",
+          "key": "connectionName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connection Display Name",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connector Id",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Either Embedded or Invoker connection",
+          "key": "source",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Logical name of the connection reference",
+          "key": "connectionReferenceLogicalName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connector Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connector Display Name",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connection Created Time",
+          "key": "createdTime",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "Connector Runtime Url",
+          "key": "primaryRuntimeUrl",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connector Icon Url",
+          "key": "iconUri",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Connector is Custom Api",
+          "key": "isCustomApi",
+          "required": false,
+          "type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "Connector Tier",
+          "key": "tier",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Flow Created Time",
+          "key": "createdTime",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "Flow Modified Time",
+          "key": "lastModifiedTime",
+          "required": false,
+          "type": "date-time",
+          "description": ""
+        },
+        {
+          "name": "Flow Template Name",
+          "key": "templateName",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Flow Trigger Uri",
+          "key": "flowTriggerUri",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Flow Installation Status",
+          "key": "installationStatus",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Creator tenant ID",
+          "key": "tenantId",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Creator object ID",
+          "key": "objectId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Creator user ID",
+          "key": "userId",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Creator user type",
+          "key": "userType",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Flow trigger type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Flow trigger kind",
+          "key": "kind",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Action type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Swagger operation Id",
+          "key": "swaggerOperationId",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Action Api name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Action Api id",
+          "key": "id",
+          "required": false,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Action Api type",
+          "key": "type",
+          "required": false,
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- Flow"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

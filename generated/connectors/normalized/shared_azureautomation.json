@@ -1,0 +1,145 @@
+{
+  "connectorId": "shared_azureautomation",
+  "displayName": "Azure Automation",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azureautomation/?accept=text/markdown",
+  "sourceUpdatedAt": "2026-02-06T01:07:00.0000000Z",
+  "sourceGitCommit": "300019c266037195c5f7c9642a2988b22ece20b6",
+  "sourcePath": "docs/AzureAutomation/index.yml",
+  "operations": {
+    "CreateJob": {
+      "operationId": "CreateJob",
+      "kind": "action",
+      "displayName": "Create job",
+      "deprecated": false,
+      "description": "- CreateJob",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Azure Resource Group."
+        },
+        {
+          "name": "Automation Account",
+          "key": "automationAccount",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Azure Automation Account."
+        },
+        {
+          "name": "Runbook Name",
+          "key": "runbookName",
+          "required": false,
+          "type": "string",
+          "description": "Name of the runbook to run."
+        },
+        {
+          "name": "body",
+          "key": "body",
+          "required": true,
+          "type": "dynamic",
+          "description": ""
+        },
+        {
+          "name": "Wait for Job",
+          "key": "wait",
+          "required": false,
+          "type": "boolean",
+          "description": "Wait for the job to finish before completing the action."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CreateJobResponse"
+      }
+    },
+    "GetJobOutput": {
+      "operationId": "GetJobOutput",
+      "kind": "action",
+      "displayName": "Get job output",
+      "deprecated": false,
+      "description": "- GetJobOutput",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Azure Resource Group."
+        },
+        {
+          "name": "Automation Account",
+          "key": "automationAccount",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Azure Automation Account."
+        },
+        {
+          "name": "Job ID",
+          "key": "jobId",
+          "required": true,
+          "type": "string",
+          "description": "GUID for the ID of the run."
+        }
+      ],
+      "returns": {
+        "raw": "Runbook content from the job\n- Content\n- binary"
+      }
+    },
+    "GetStatusOfJob": {
+      "operationId": "GetStatusOfJob",
+      "kind": "action",
+      "displayName": "Get status of job",
+      "deprecated": false,
+      "description": "- GetStatusOfJob",
+      "parameters": [
+        {
+          "name": "Subscription",
+          "key": "subscriptionId",
+          "required": true,
+          "type": "string",
+          "description": "The unique identifier for the Microsoft Azure subscription. The subscription ID forms part of the ID for every Azure resource."
+        },
+        {
+          "name": "Resource Group",
+          "key": "resourceGroupName",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Azure Resource Group."
+        },
+        {
+          "name": "Automation Account",
+          "key": "automationAccount",
+          "required": true,
+          "type": "string",
+          "description": "The name of the Azure Automation Account."
+        },
+        {
+          "name": "Job ID",
+          "key": "jobId",
+          "required": true,
+          "type": "string",
+          "description": "GUID for the ID of the run."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CreateJobResponse"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

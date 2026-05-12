@@ -1,0 +1,566 @@
+{
+  "source": "microsoft-learn-connectors-markdown",
+  "rawDir": "generated/connectors/raw",
+  "connectors": {
+    "shared_excelonline": {
+      "displayName": "Excel Online (OneDrive)",
+      "docSlug": "excelonline",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/excelonline/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_excelonline.md",
+      "normalizedPath": "generated/connectors/normalized/shared_excelonline.json",
+      "operationCount": 11,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_excelonlinebusiness": {
+      "displayName": "Excel Online (Business)",
+      "docSlug": "excelonlinebusiness",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/excelonlinebusiness/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_excelonlinebusiness.md",
+      "normalizedPath": "generated/connectors/normalized/shared_excelonlinebusiness.json",
+      "operationCount": 14,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_office365groups": {
+      "displayName": "Office 365 Groups",
+      "docSlug": "office365groups",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/office365groups/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_office365groups.md",
+      "normalizedPath": "generated/connectors/normalized/shared_office365groups.json",
+      "operationCount": 18,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_office365users": {
+      "displayName": "Office 365 Users",
+      "docSlug": "office365users",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/office365users/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_office365users.md",
+      "normalizedPath": "generated/connectors/normalized/shared_office365users.json",
+      "operationCount": 19,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_approvals": {
+      "displayName": "Standard approvals",
+      "docSlug": "approvals",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/approvals/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_approvals.md",
+      "normalizedPath": "generated/connectors/normalized/shared_approvals.json",
+      "operationCount": 6,
+      "usedOperationCount": 1,
+      "missingUsedOperations": {}
+    },
+    "shared_microsoftforms": {
+      "displayName": "Microsoft Forms",
+      "docSlug": "microsoftforms",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/microsoftforms/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_microsoftforms.md",
+      "normalizedPath": "generated/connectors/normalized/shared_microsoftforms.json",
+      "operationCount": 4,
+      "usedOperationCount": 2,
+      "missingUsedOperations": {}
+    },
+    "shared_office365": {
+      "displayName": "Office 365 Outlook",
+      "docSlug": "office365",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/office365/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_office365.md",
+      "normalizedPath": "generated/connectors/normalized/shared_office365.json",
+      "operationCount": 113,
+      "usedOperationCount": 1,
+      "missingUsedOperations": {}
+    },
+    "shared_onedrive": {
+      "displayName": "OneDrive",
+      "docSlug": "onedrive",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/onedrive/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_onedrive.md",
+      "normalizedPath": "generated/connectors/normalized/shared_onedrive.json",
+      "operationCount": 37,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_onedriveforbusiness": {
+      "displayName": "OneDrive for Business",
+      "docSlug": "onedriveforbusiness",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/onedriveforbusiness/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_onedriveforbusiness.md",
+      "normalizedPath": "generated/connectors/normalized/shared_onedriveforbusiness.json",
+      "operationCount": 34,
+      "usedOperationCount": 3,
+      "missingUsedOperations": {}
+    },
+    "shared_onenote": {
+      "displayName": "OneNote (Business)",
+      "docSlug": "onenote",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/onenote/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_onenote.md",
+      "normalizedPath": "generated/connectors/normalized/shared_onenote.json",
+      "operationCount": 12,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_outlook": {
+      "displayName": "Outlook.com",
+      "docSlug": "outlook",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/outlook/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_outlook.md",
+      "normalizedPath": "generated/connectors/normalized/shared_outlook.json",
+      "operationCount": 52,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_planner": {
+      "displayName": "Planner",
+      "docSlug": "planner",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/planner/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_planner.md",
+      "normalizedPath": "generated/connectors/normalized/shared_planner.json",
+      "operationCount": 38,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_sharepointonline": {
+      "displayName": "SharePoint",
+      "docSlug": "sharepointonline",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/sharepointonline/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_sharepointonline.md",
+      "normalizedPath": "generated/connectors/normalized/shared_sharepointonline.json",
+      "operationCount": 69,
+      "usedOperationCount": 3,
+      "missingUsedOperations": {}
+    },
+    "shared_teams": {
+      "displayName": "Microsoft Teams",
+      "docSlug": "teams",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/teams/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_teams.md",
+      "normalizedPath": "generated/connectors/normalized/shared_teams.json",
+      "operationCount": 117,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_todo": {
+      "displayName": "Microsoft To-Do (Business)",
+      "docSlug": "todo",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/todo/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_todo.md",
+      "normalizedPath": "generated/connectors/normalized/shared_todo.json",
+      "operationCount": 27,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_wordonlinebusiness": {
+      "displayName": "Word Online (Business)",
+      "docSlug": "wordonlinebusiness",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/wordonlinebusiness/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_wordonlinebusiness.md",
+      "normalizedPath": "generated/connectors/normalized/shared_wordonlinebusiness.json",
+      "operationCount": 3,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_commondataserviceforapps": {
+      "displayName": "Microsoft Dataverse",
+      "docSlug": "commondataserviceforapps",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/commondataserviceforapps/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_commondataserviceforapps.md",
+      "normalizedPath": "generated/connectors/normalized/shared_commondataserviceforapps.json",
+      "operationCount": 39,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_dataflows": {
+      "displayName": "Power Query Dataflows",
+      "docSlug": "dataflows",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/dataflows/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_dataflows.md",
+      "normalizedPath": "generated/connectors/normalized/shared_dataflows.json",
+      "operationCount": 2,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_flowmanagement": {
+      "displayName": "Power Automate Management",
+      "docSlug": "flowmanagement",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/flowmanagement/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_flowmanagement.md",
+      "normalizedPath": "generated/connectors/normalized/shared_flowmanagement.json",
+      "operationCount": 23,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_m365updatesapp": {
+      "displayName": "Updates App (Microsoft 365)",
+      "docSlug": "m365updatesapp",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/m365updatesapp/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_m365updatesapp.md",
+      "normalizedPath": "generated/connectors/normalized/shared_m365updatesapp.json",
+      "operationCount": 2,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_microsoftflowforadmins": {
+      "displayName": "Power Automate for Admins",
+      "docSlug": "microsoftflowforadmins",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/microsoftflowforadmins/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_microsoftflowforadmins.md",
+      "normalizedPath": "generated/connectors/normalized/shared_microsoftflowforadmins.json",
+      "operationCount": 7,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_powerappsforadmins": {
+      "displayName": "Power Apps for Admins",
+      "docSlug": "powerappsforadmins",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/powerappsforadmins/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_powerappsforadmins.md",
+      "normalizedPath": "generated/connectors/normalized/shared_powerappsforadmins.json",
+      "operationCount": 16,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_powerappsforappmakers": {
+      "displayName": "Power Apps for Makers",
+      "docSlug": "powerappsforappmakers",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/powerappsforappmakers/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_powerappsforappmakers.md",
+      "normalizedPath": "generated/connectors/normalized/shared_powerappsforappmakers.json",
+      "operationCount": 19,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_powerappsnotification": {
+      "displayName": "Power Apps Notification",
+      "docSlug": "powerappsnotification",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/powerappsnotification/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_powerappsnotification.md",
+      "normalizedPath": "generated/connectors/normalized/shared_powerappsnotification.json",
+      "operationCount": 1,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_powerappsnotificationv2": {
+      "displayName": "Power Apps Notification V2",
+      "docSlug": "powerappsnotificationv2",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/powerappsnotificationv2/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_powerappsnotificationv2.md",
+      "normalizedPath": "generated/connectors/normalized/shared_powerappsnotificationv2.json",
+      "operationCount": 1,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_powerbi": {
+      "displayName": "Power BI",
+      "docSlug": "powerbi",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/powerbi/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_powerbi.md",
+      "normalizedPath": "generated/connectors/normalized/shared_powerbi.json",
+      "operationCount": 25,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_powerplatformadminv2": {
+      "displayName": "Power Platform for Admins V2",
+      "docSlug": "powerplatformadminv2",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/powerplatformadminv2/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_powerplatformadminv2.md",
+      "normalizedPath": "generated/connectors/normalized/shared_powerplatformadminv2.json",
+      "operationCount": 156,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_powerplatformforadmins": {
+      "displayName": "Power Platform for Admins",
+      "docSlug": "powerplatformforadmins",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/powerplatformforadmins/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_powerplatformforadmins.md",
+      "normalizedPath": "generated/connectors/normalized/shared_powerplatformforadmins.json",
+      "operationCount": 33,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_processmining": {
+      "displayName": "Process Mining",
+      "docSlug": "processmining",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/processmining/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_processmining.md",
+      "normalizedPath": "generated/connectors/normalized/shared_processmining.json",
+      "operationCount": 2,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_flowpush": {
+      "displayName": "Notifications",
+      "docSlug": "flowpush",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/flowpush/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_flowpush.md",
+      "normalizedPath": "generated/connectors/normalized/shared_flowpush.json",
+      "operationCount": 2,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_rss": {
+      "displayName": "RSS",
+      "docSlug": "rss",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/rss/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_rss.md",
+      "normalizedPath": "generated/connectors/normalized/shared_rss.json",
+      "operationCount": 2,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_webcontents": {
+      "displayName": "HTTP with Microsoft Entra ID (preauthorized)",
+      "docSlug": "webcontents",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/webcontents/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_webcontents.md",
+      "normalizedPath": "generated/connectors/normalized/shared_webcontents.json",
+      "operationCount": 2,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_arm": {
+      "displayName": "Azure Resource Manager",
+      "docSlug": "arm",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/arm/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_arm.md",
+      "normalizedPath": "generated/connectors/normalized/shared_arm.json",
+      "operationCount": 35,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_azureautomation": {
+      "displayName": "Azure Automation",
+      "docSlug": "azureautomation",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azureautomation/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_azureautomation.md",
+      "normalizedPath": "generated/connectors/normalized/shared_azureautomation.json",
+      "operationCount": 3,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_azureblob": {
+      "displayName": "Azure Blob Storage",
+      "docSlug": "azureblob",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azureblob/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_azureblob.md",
+      "normalizedPath": "generated/connectors/normalized/shared_azureblob.json",
+      "operationCount": 32,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_azureeventgrid": {
+      "displayName": "Azure Event Grid",
+      "docSlug": "azureeventgrid",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azureeventgrid/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_azureeventgrid.md",
+      "normalizedPath": "generated/connectors/normalized/shared_azureeventgrid.json",
+      "operationCount": 1,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_azureeventgridpublish": {
+      "displayName": "Azure Event Grid Publish",
+      "docSlug": "azureeventgridpublish",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azureeventgridpublish/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_azureeventgridpublish.md",
+      "normalizedPath": "generated/connectors/normalized/shared_azureeventgridpublish.json",
+      "operationCount": 1,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_azurefile": {
+      "displayName": "Azure File Storage",
+      "docSlug": "azurefile",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azurefile/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_azurefile.md",
+      "normalizedPath": "generated/connectors/normalized/shared_azurefile.json",
+      "operationCount": 10,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_azureloganalyticsdatacollector": {
+      "displayName": "Azure Log Analytics Data Collector",
+      "docSlug": "azureloganalyticsdatacollector",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azureloganalyticsdatacollector/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_azureloganalyticsdatacollector.md",
+      "normalizedPath": "generated/connectors/normalized/shared_azureloganalyticsdatacollector.json",
+      "operationCount": 1,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_azuremonitorlogs": {
+      "displayName": "Azure Monitor Logs",
+      "docSlug": "azuremonitorlogs",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azuremonitorlogs/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_azuremonitorlogs.md",
+      "normalizedPath": "generated/connectors/normalized/shared_azuremonitorlogs.json",
+      "operationCount": 4,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_azureopenai": {
+      "displayName": "Azure OpenAI",
+      "docSlug": "azureopenai",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azureopenai/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_azureopenai.md",
+      "normalizedPath": "generated/connectors/normalized/shared_azureopenai.json",
+      "operationCount": 4,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_azurequeues": {
+      "displayName": "Azure Queues",
+      "docSlug": "azurequeues",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azurequeues/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_azurequeues.md",
+      "normalizedPath": "generated/connectors/normalized/shared_azurequeues.json",
+      "operationCount": 14,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_azuretables": {
+      "displayName": "Azure Table Storage",
+      "docSlug": "azuretables",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azuretables/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_azuretables.md",
+      "normalizedPath": "generated/connectors/normalized/shared_azuretables.json",
+      "operationCount": 24,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_bingmaps": {
+      "displayName": "Bing Maps",
+      "docSlug": "bingmaps",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/bingmaps/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_bingmaps.md",
+      "normalizedPath": "generated/connectors/normalized/shared_bingmaps.json",
+      "operationCount": 7,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_bingsearch": {
+      "displayName": "Bing Search",
+      "docSlug": "bingsearch",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/bingsearch/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_bingsearch.md",
+      "normalizedPath": "generated/connectors/normalized/shared_bingsearch.json",
+      "operationCount": 2,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_cognitiveservicestextanalytics": {
+      "displayName": "Azure Cognitive Service for Language",
+      "docSlug": "cognitiveservicestextanalytics",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/cognitiveservicestextanalytics/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_cognitiveservicestextanalytics.md",
+      "normalizedPath": "generated/connectors/normalized/shared_cognitiveservicestextanalytics.json",
+      "operationCount": 45,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_documentdb": {
+      "displayName": "Azure Cosmos DB",
+      "docSlug": "documentdb",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/documentdb/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_documentdb.md",
+      "normalizedPath": "generated/connectors/normalized/shared_documentdb.json",
+      "operationCount": 27,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_filesystem": {
+      "displayName": "File System",
+      "docSlug": "filesystem",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/filesystem/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_filesystem.md",
+      "normalizedPath": "generated/connectors/normalized/shared_filesystem.json",
+      "operationCount": 15,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_formrecognizer": {
+      "displayName": "Azure AI Document Intelligence (form recognizer)",
+      "docSlug": "formrecognizer",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/formrecognizer/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_formrecognizer.md",
+      "normalizedPath": "generated/connectors/normalized/shared_formrecognizer.json",
+      "operationCount": 10,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_keyvault": {
+      "displayName": "Azure Key Vault",
+      "docSlug": "keyvault",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/keyvault/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_keyvault.md",
+      "normalizedPath": "generated/connectors/normalized/shared_keyvault.json",
+      "operationCount": 14,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_sendgrid": {
+      "displayName": "SendGrid",
+      "docSlug": "sendgrid",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/sendgrid/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_sendgrid.md",
+      "normalizedPath": "generated/connectors/normalized/shared_sendgrid.json",
+      "operationCount": 10,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_servicebus": {
+      "displayName": "Service Bus",
+      "docSlug": "servicebus",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/servicebus/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_servicebus.md",
+      "normalizedPath": "generated/connectors/normalized/shared_servicebus.json",
+      "operationCount": 30,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_sftpwithssh": {
+      "displayName": "SFTP - SSH",
+      "docSlug": "sftpwithssh",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/sftpwithssh/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_sftpwithssh.md",
+      "normalizedPath": "generated/connectors/normalized/shared_sftpwithssh.json",
+      "operationCount": 15,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_smtp": {
+      "displayName": "SMTP",
+      "docSlug": "smtp",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/smtp/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_smtp.md",
+      "normalizedPath": "generated/connectors/normalized/shared_smtp.json",
+      "operationCount": 3,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_sql": {
+      "displayName": "SQL Server",
+      "docSlug": "sql",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/sql/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_sql.md",
+      "normalizedPath": "generated/connectors/normalized/shared_sql.json",
+      "operationCount": 21,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    },
+    "shared_visualstudioteamservices": {
+      "displayName": "Azure DevOps",
+      "docSlug": "visualstudioteamservices",
+      "sourceUrl": "https://learn.microsoft.com/en-us/connectors/visualstudioteamservices/?accept=text/markdown",
+      "rawPath": "generated/connectors/raw/shared_visualstudioteamservices.md",
+      "normalizedPath": "generated/connectors/normalized/shared_visualstudioteamservices.json",
+      "operationCount": 49,
+      "usedOperationCount": 0,
+      "missingUsedOperations": {}
+    }
+  }
+}

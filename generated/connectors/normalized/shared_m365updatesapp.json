@@ -1,0 +1,41 @@
+{
+  "connectorId": "shared_m365updatesapp",
+  "displayName": "Updates App (Microsoft 365)",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/m365updatesapp/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-11-14T01:00:00.0000000Z",
+  "sourceGitCommit": "48a9375046661d90e1473a500afeee4dff58d05f",
+  "sourcePath": "docs/m365updatesapp/index.yml",
+  "operations": {
+    "ListReceivedReports": {
+      "operationId": "ListReceivedReports",
+      "kind": "trigger",
+      "displayName": "When I receive a new update",
+      "deprecated": false,
+      "description": "- ListReceivedReports",
+      "parameters": [],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "ListReceivedReportsByReportDefinition": {
+      "operationId": "ListReceivedReportsByReportDefinition",
+      "kind": "trigger",
+      "displayName": "When I receive a new update tied to a specific request",
+      "deprecated": false,
+      "description": "- ListReceivedReportsByReportDefinition",
+      "parameters": [
+        {
+          "name": "Update Request",
+          "key": "reportDefinitionId",
+          "required": true,
+          "type": "string",
+          "description": "Select an update request"
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

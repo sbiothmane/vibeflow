@@ -1,0 +1,764 @@
+{
+  "connectorId": "shared_office365groups",
+  "displayName": "Office 365 Groups",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/office365groups/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-10-16T01:01:00.0000000Z",
+  "sourceGitCommit": "f398b8f5a0d8b77a6cb967dd994f0f7a11ba5dfc",
+  "sourcePath": "docs/office365groups/index.yml",
+  "operations": {
+    "AddMemberToGroup": {
+      "operationId": "AddMemberToGroup",
+      "kind": "action",
+      "displayName": "Add member to group",
+      "deprecated": false,
+      "description": "- AddMemberToGroup",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "guid",
+          "description": "Pick a group from the drop down or enter group id."
+        },
+        {
+          "name": "User Principal Name",
+          "key": "userUpn",
+          "required": true,
+          "type": "string",
+          "description": "The user principal name (UPN) of the user."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CalendarDeleteItem_V2": {
+      "operationId": "CalendarDeleteItem_V2",
+      "kind": "action",
+      "displayName": "Delete event (V2)",
+      "deprecated": false,
+      "description": "- CalendarDeleteItem_V2",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "guid",
+          "description": "Pick a group from the drop down or enter group id."
+        },
+        {
+          "name": "Id",
+          "key": "event",
+          "required": true,
+          "type": "string",
+          "description": "Select an event"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CreateCalendarEvent": {
+      "operationId": "CreateCalendarEvent",
+      "kind": "action",
+      "displayName": "Create a group event [DEPRECATED]",
+      "deprecated": true,
+      "description": "- CreateCalendarEvent",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "guid",
+          "description": "Pick a group from the drop down or enter group id."
+        },
+        {
+          "name": "Subject",
+          "key": "subject",
+          "required": true,
+          "type": "string",
+          "description": "Title of the event."
+        },
+        {
+          "name": "Start Time",
+          "key": "dateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "Start time of the event (example: '2016-11-01T14:30:00')."
+        },
+        {
+          "name": "End Time",
+          "key": "dateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "End time of the event (example: '2016-11-01T15:30:00')."
+        },
+        {
+          "name": "Body",
+          "key": "content",
+          "required": false,
+          "type": "string",
+          "description": "Body of the message associated with the event."
+        },
+        {
+          "name": "Body Content Type",
+          "key": "contentType",
+          "required": false,
+          "type": "string",
+          "description": "Pick the content type: Text or Html."
+        },
+        {
+          "name": "Location",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": "Location of the event."
+        },
+        {
+          "name": "Importance",
+          "key": "importance",
+          "required": false,
+          "type": "string",
+          "description": "The importance of the event: Low, Normal, or High."
+        },
+        {
+          "name": "Is All Day",
+          "key": "isAllDay",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event lasts all day."
+        },
+        {
+          "name": "Is Reminder On",
+          "key": "isReminderOn",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event has a reminder."
+        },
+        {
+          "name": "Reminder Start Duration",
+          "key": "reminderMinutesBeforeStart",
+          "required": false,
+          "type": "integer",
+          "description": "Time in minutes before event start to remind."
+        },
+        {
+          "name": "Show As",
+          "key": "showAs",
+          "required": false,
+          "type": "string",
+          "description": "Status to show during the event."
+        },
+        {
+          "name": "Response Requested",
+          "key": "responseRequested",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the sender would like a response when the event is accepted or declined."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CreateCalendarEvent_Response"
+      }
+    },
+    "CreateCalendarEventV2": {
+      "operationId": "CreateCalendarEventV2",
+      "kind": "action",
+      "displayName": "Create a group event (V2)",
+      "deprecated": false,
+      "description": "- CreateCalendarEventV2",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "guid",
+          "description": "Pick a group from the drop down or enter group id."
+        },
+        {
+          "name": "Subject",
+          "key": "subject",
+          "required": true,
+          "type": "string",
+          "description": "Title of the event."
+        },
+        {
+          "name": "Start Time",
+          "key": "dateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "Start time of the event (example: '2016-11-01T14:30:00')."
+        },
+        {
+          "name": "End Time",
+          "key": "dateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "End time of the event (example: '2016-11-01T15:30:00')."
+        },
+        {
+          "name": "Body",
+          "key": "content",
+          "required": false,
+          "type": "html",
+          "description": "Body of the message associated with the event."
+        },
+        {
+          "name": "Location",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": "Location of the event."
+        },
+        {
+          "name": "Importance",
+          "key": "importance",
+          "required": false,
+          "type": "string",
+          "description": "The importance of the event: Low, Normal, or High."
+        },
+        {
+          "name": "Is All Day",
+          "key": "isAllDay",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event lasts all day."
+        },
+        {
+          "name": "Is Reminder On",
+          "key": "isReminderOn",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event has a reminder."
+        },
+        {
+          "name": "Reminder Start Duration",
+          "key": "reminderMinutesBeforeStart",
+          "required": false,
+          "type": "integer",
+          "description": "Time in minutes before event start to remind."
+        },
+        {
+          "name": "Show As",
+          "key": "showAs",
+          "required": false,
+          "type": "string",
+          "description": "Status to show during the event."
+        },
+        {
+          "name": "Response Requested",
+          "key": "responseRequested",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the sender would like a response when the event is accepted or declined."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CreateCalendarEvent_Response"
+      }
+    },
+    "HttpRequest": {
+      "operationId": "HttpRequest",
+      "kind": "action",
+      "displayName": "Send an HTTP request [DEPRECATED]",
+      "deprecated": true,
+      "description": "- HttpRequest",
+      "parameters": [
+        {
+          "name": "URI",
+          "key": "Uri",
+          "required": true,
+          "type": "string",
+          "description": "The full or relative URI. Example: `https://graph.microsoft.com/{version}/{resource}`."
+        },
+        {
+          "name": "Method",
+          "key": "Method",
+          "required": true,
+          "type": "string",
+          "description": "The HTTP method (default is GET)."
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "binary",
+          "description": "The request body content."
+        },
+        {
+          "name": "Content-Type",
+          "key": "ContentType",
+          "required": false,
+          "type": "string",
+          "description": "The content-type header for the body (default is application/json)."
+        },
+        {
+          "name": "CustomHeader1",
+          "key": "CustomHeader1",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 1. Specify in format: header-name: header-value"
+        },
+        {
+          "name": "CustomHeader2",
+          "key": "CustomHeader2",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 2. Specify in format: header-name: header-value"
+        },
+        {
+          "name": "CustomHeader3",
+          "key": "CustomHeader3",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 3. Specify in format: header-name: header-value"
+        },
+        {
+          "name": "CustomHeader4",
+          "key": "CustomHeader4",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 4. Specify in format: header-name: header-value"
+        },
+        {
+          "name": "CustomHeader5",
+          "key": "CustomHeader5",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 5. Specify in format: header-name: header-value"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- ObjectWithoutType"
+      }
+    },
+    "HttpRequestV2": {
+      "operationId": "HttpRequestV2",
+      "kind": "action",
+      "displayName": "Send an HTTP request V2",
+      "deprecated": false,
+      "description": "- HttpRequestV2",
+      "parameters": [
+        {
+          "name": "URI",
+          "key": "Uri",
+          "required": true,
+          "type": "string",
+          "description": "The full or relative URI. Example: `https://graph.microsoft.com/{version}/{resource}`."
+        },
+        {
+          "name": "Method",
+          "key": "Method",
+          "required": true,
+          "type": "string",
+          "description": "The HTTP method (default is GET)."
+        },
+        {
+          "name": "Body",
+          "key": "Body",
+          "required": false,
+          "type": "binary",
+          "description": "The request body content."
+        },
+        {
+          "name": "Content-Type",
+          "key": "ContentType",
+          "required": false,
+          "type": "string",
+          "description": "The content-type header for the body (default is application/json)."
+        },
+        {
+          "name": "CustomHeader1",
+          "key": "CustomHeader1",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 1. Specify in format: header-name: header-value"
+        },
+        {
+          "name": "CustomHeader2",
+          "key": "CustomHeader2",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 2. Specify in format: header-name: header-value"
+        },
+        {
+          "name": "CustomHeader3",
+          "key": "CustomHeader3",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 3. Specify in format: header-name: header-value"
+        },
+        {
+          "name": "CustomHeader4",
+          "key": "CustomHeader4",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 4. Specify in format: header-name: header-value"
+        },
+        {
+          "name": "CustomHeader5",
+          "key": "CustomHeader5",
+          "required": false,
+          "type": "string",
+          "description": "Custom header 5. Specify in format: header-name: header-value"
+        }
+      ],
+      "returns": {
+        "raw": "- response\n- ObjectWithoutType"
+      }
+    },
+    "ListDeletedGroups": {
+      "operationId": "ListDeletedGroups",
+      "kind": "action",
+      "displayName": "List deleted groups",
+      "deprecated": false,
+      "description": "- ListDeletedGroups",
+      "parameters": [],
+      "returns": {
+        "raw": "- Body\n- ListGroups_Response"
+      }
+    },
+    "ListDeletedGroupsByOwner": {
+      "operationId": "ListDeletedGroupsByOwner",
+      "kind": "action",
+      "displayName": "List deleted groups by owner",
+      "deprecated": false,
+      "description": "- ListDeletedGroupsByOwner",
+      "parameters": [
+        {
+          "name": "User Id",
+          "key": "userId",
+          "required": true,
+          "type": "guid",
+          "description": "Enter a user id."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListGroups_Response"
+      }
+    },
+    "ListGroupMembers": {
+      "operationId": "ListGroupMembers",
+      "kind": "action",
+      "displayName": "List group members",
+      "deprecated": false,
+      "description": "- ListGroupMembers",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "guid",
+          "description": "Pick a group from the drop down or enter group id."
+        },
+        {
+          "name": "Top",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Number of group members to retrieve (from 1 to 999, default is 100)."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListGroupMembers_Response"
+      }
+    },
+    "ListGroups": {
+      "operationId": "ListGroups",
+      "kind": "action",
+      "displayName": "List groups",
+      "deprecated": false,
+      "description": "- ListGroups",
+      "parameters": [
+        {
+          "name": "Extract Sensitivity Label",
+          "key": "extractSensitivityLabel",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to extract sensitivity label Id for associated artefact."
+        },
+        {
+          "name": "Sensitivity Label Metadata",
+          "key": "fetchSensitivityLabelMetadata",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to fetch sensitivity label Metadata for associated LabelId."
+        },
+        {
+          "name": "Filter rows",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "Enter an OData style filter expression to limit which rows are listed."
+        },
+        {
+          "name": "Page size",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Sets the page size of results."
+        },
+        {
+          "name": "Skip token",
+          "key": "$skiptoken",
+          "required": false,
+          "type": "string",
+          "description": "Token that references the next page of results and is returned in the @odata.nextLink property in the response."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListGroups_Response"
+      }
+    },
+    "ListOwnedGroups": {
+      "operationId": "ListOwnedGroups",
+      "kind": "action",
+      "displayName": "List my owned groups",
+      "deprecated": false,
+      "description": "- ListOwnedGroups",
+      "parameters": [],
+      "returns": {
+        "raw": "- Body\n- ListOwnedGroups_Response"
+      }
+    },
+    "ListOwnedGroups_V2": {
+      "operationId": "ListOwnedGroups_V2",
+      "kind": "action",
+      "displayName": "List my owned groups (V2)",
+      "deprecated": false,
+      "description": "- ListOwnedGroups_V2",
+      "parameters": [
+        {
+          "name": "Extract Sensitivity Label",
+          "key": "extractSensitivityLabel",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to extract sensitivity label Id for associated artefact."
+        },
+        {
+          "name": "Sensitivity Label Metadata",
+          "key": "fetchSensitivityLabelMetadata",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to fetch sensitivity label Metadata for associated LabelId."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListOwnedGroups_V2_Response"
+      }
+    },
+    "ListOwnedGroups_V3": {
+      "operationId": "ListOwnedGroups_V3",
+      "kind": "action",
+      "displayName": "List groups that I own and belong to",
+      "deprecated": false,
+      "description": "- ListOwnedGroups_V3",
+      "parameters": [
+        {
+          "name": "Extract Sensitivity Label",
+          "key": "extractSensitivityLabel",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to extract sensitivity label Id for associated artefact."
+        },
+        {
+          "name": "Sensitivity Label Metadata",
+          "key": "fetchSensitivityLabelMetadata",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to fetch sensitivity label Metadata for associated LabelId."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- ListOwnedGroups_Response"
+      }
+    },
+    "OnGroupMembershipChange": {
+      "operationId": "OnGroupMembershipChange",
+      "kind": "trigger",
+      "displayName": "When a group member is added or removed",
+      "deprecated": false,
+      "description": "- OnGroupMembershipChange",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "guid",
+          "description": "Pick a group from the drop down or enter group id."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| User Id | id | string | Unique id of the user. |\n| Reason | @removed.reason | string | Reason that caused the user to be removed from the group. |"
+      }
+    },
+    "OnNewEvent": {
+      "operationId": "OnNewEvent",
+      "kind": "trigger",
+      "displayName": "When there is a new event",
+      "deprecated": false,
+      "description": "- OnNewEvent",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "guid",
+          "description": "Pick a group from the drop down or enter group id."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| Id | id | string | Unique id of the event. |\n| Reminder Start Duration | reminderMinutesBeforeStart | integer | The number of minutes before the start of the event the reminder will fire. |\n| Is Reminder On | isReminderOn | boolean | Set to true if the event has a reminder. |\n| Subject | subject | string | Title of the event. |\n| Importance | importance | string | The importance of the event: Low, Normal, or High. |\n| Is All Day | isAllDay | boolean | Set to true if the event lasts all day. |\n| Response Requested | responseRequested | boolean | Set to true if the sender would like a response when the event is accepted or declined. |\n| Show As | showAs | string | Status to show during the event. |\n| Content Type | body.contentType | string | Body of the message associated with the event. |\n| Content | body.content | string | Pick the content type: Text or Html. |\n| Date Time | start.dateTime | date-time | Start time of the event (example: '2016-11-01T14:30:00-07:00'). |\n| Time Zone | start.timeZone | string | Time zone of the event, specified as a time zone index value (example: 'Pacific Standard Time'). |\n| Date Time | end.dateTime | date-time | End time of the event (example: '2016-11-01T15:30:00-07:00'). |\n| Time Zone | end.timeZone | string | Time zone of the event, specified as a time zone index value (example: 'Pacific Standard Time'). |\n| Name | location.displayName | string | The display name for the location of the event. |"
+      }
+    },
+    "RemoveMemberFromGroup": {
+      "operationId": "RemoveMemberFromGroup",
+      "kind": "action",
+      "displayName": "Remove member from group",
+      "deprecated": false,
+      "description": "- RemoveMemberFromGroup",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "guid",
+          "description": "Pick a group from the drop down or enter group id."
+        },
+        {
+          "name": "User Principal Name",
+          "key": "userUpn",
+          "required": true,
+          "type": "string",
+          "description": "The user principal name (UPN) of the user"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "RestoreDeletedGroup": {
+      "operationId": "RestoreDeletedGroup",
+      "kind": "action",
+      "displayName": "Restore a deleted group",
+      "deprecated": false,
+      "description": "- RestoreDeletedGroup",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "guid",
+          "description": "Pick a group from the drop down or enter group id."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "UpdateCalendarEvent": {
+      "operationId": "UpdateCalendarEvent",
+      "kind": "action",
+      "displayName": "Update a group event",
+      "deprecated": false,
+      "description": "- UpdateCalendarEvent",
+      "parameters": [
+        {
+          "name": "Group Id",
+          "key": "groupId",
+          "required": true,
+          "type": "guid",
+          "description": "Pick a group from the drop down or enter group id."
+        },
+        {
+          "name": "Id",
+          "key": "event",
+          "required": true,
+          "type": "string",
+          "description": "Select an event"
+        },
+        {
+          "name": "Subject",
+          "key": "subject",
+          "required": true,
+          "type": "string",
+          "description": "Title of the event."
+        },
+        {
+          "name": "Start Time",
+          "key": "dateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "Start time of the event (example: '2016-11-01T14:30:00')."
+        },
+        {
+          "name": "End Time",
+          "key": "dateTime",
+          "required": true,
+          "type": "date-time",
+          "description": "End time of the event (example: '2016-11-01T15:30:00')."
+        },
+        {
+          "name": "Body",
+          "key": "content",
+          "required": false,
+          "type": "html",
+          "description": "Body of the message associated with the event."
+        },
+        {
+          "name": "Location",
+          "key": "displayName",
+          "required": false,
+          "type": "string",
+          "description": "Location of the event."
+        },
+        {
+          "name": "Importance",
+          "key": "importance",
+          "required": false,
+          "type": "string",
+          "description": "The importance of the event: Low, Normal, or High."
+        },
+        {
+          "name": "Is All Day",
+          "key": "isAllDay",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event lasts all day."
+        },
+        {
+          "name": "Is Reminder On",
+          "key": "isReminderOn",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the event has a reminder."
+        },
+        {
+          "name": "Reminder Start Duration",
+          "key": "reminderMinutesBeforeStart",
+          "required": false,
+          "type": "integer",
+          "description": "Time in minutes before event start to remind."
+        },
+        {
+          "name": "Show As",
+          "key": "showAs",
+          "required": false,
+          "type": "string",
+          "description": "Status to show during the event."
+        },
+        {
+          "name": "Response Requested",
+          "key": "responseRequested",
+          "required": false,
+          "type": "boolean",
+          "description": "Set to true if the sender would like a response when the event is accepted or declined."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- CreateCalendarEvent_Response"
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

@@ -1,0 +1,91 @@
+{
+  "source": "vibeflow-observed-power-automate-workflow-types",
+  "description": "Core Power Automate workflow action and trigger types observed in exported flow definitions. These are not connector operations and do not have /connectors/{slug}/ reference pages.",
+  "types": {
+    "AppendToArrayVariable": {
+      "kind": "action",
+      "displayName": "Append to array variable",
+      "description": "Appends a value to an existing array variable."
+    },
+    "AppendToStringVariable": {
+      "kind": "action",
+      "displayName": "Append to string variable",
+      "description": "Appends text to an existing string variable."
+    },
+    "Compose": {
+      "kind": "action",
+      "displayName": "Compose",
+      "description": "Evaluates an expression or value and exposes the result for later actions."
+    },
+    "DecrementVariable": {
+      "kind": "action",
+      "displayName": "Decrement variable",
+      "description": "Decreases a numeric variable by a specified value."
+    },
+    "Foreach": {
+      "kind": "control",
+      "displayName": "Apply to each",
+      "description": "Runs nested actions once for each item in an array."
+    },
+    "If": {
+      "kind": "control",
+      "displayName": "Condition",
+      "description": "Runs one branch when an expression is true and an optional else branch when it is false."
+    },
+    "IncrementVariable": {
+      "kind": "action",
+      "displayName": "Increment variable",
+      "description": "Increases a numeric variable by a specified value."
+    },
+    "InitializeVariable": {
+      "kind": "action",
+      "displayName": "Initialize variable",
+      "description": "Creates a variable and optionally assigns its initial value."
+    },
+    "OpenApiConnection": {
+      "kind": "connector-wrapper",
+      "displayName": "Connector action",
+      "description": "Calls a connector operation identified by inputs.host.apiId and inputs.host.operationId."
+    },
+    "OpenApiConnectionWebhook": {
+      "kind": "connector-wrapper",
+      "displayName": "Connector webhook trigger or action",
+      "description": "Creates or waits on a connector webhook operation identified by inputs.host.apiId and inputs.host.operationId."
+    },
+    "ParseJson": {
+      "kind": "action",
+      "displayName": "Parse JSON",
+      "description": "Parses JSON content against a schema so downstream actions can use typed tokens."
+    },
+    "Scope": {
+      "kind": "control",
+      "displayName": "Scope",
+      "description": "Groups actions so they can be organized and handled as a unit in run-after/error patterns."
+    },
+    "SetVariable": {
+      "kind": "action",
+      "displayName": "Set variable",
+      "description": "Assigns a new value to an existing variable."
+    },
+    "Switch": {
+      "kind": "control",
+      "displayName": "Switch",
+      "description": "Runs one case branch based on the value of an expression, with an optional default branch."
+    },
+    "Terminate": {
+      "kind": "action",
+      "displayName": "Terminate",
+      "description": "Stops a flow run with a configured status such as Succeeded, Failed, or Cancelled."
+    },
+    "Until": {
+      "kind": "control",
+      "displayName": "Do until",
+      "description": "Runs nested actions repeatedly until an expression becomes true or loop limits are reached."
+    },
+    "Wait": {
+      "kind": "action",
+      "displayName": "Delay",
+      "description": "Pauses the flow for a specified duration or until a specified timestamp."
+    }
+  }
+}

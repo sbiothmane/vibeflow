@@ -1,0 +1,44 @@
+{
+  "connectorId": "shared_azureloganalyticsdatacollector",
+  "displayName": "Azure Log Analytics Data Collector",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/azureloganalyticsdatacollector/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-11-14T01:00:00.0000000Z",
+  "sourceGitCommit": "48a9375046661d90e1473a500afeee4dff58d05f",
+  "sourcePath": "docs/azureloganalyticsdatacollector/index.yml",
+  "operations": {
+    "SendData": {
+      "operationId": "SendData",
+      "kind": "action",
+      "displayName": "Send Data",
+      "deprecated": false,
+      "description": "- SendData",
+      "parameters": [
+        {
+          "name": "JSON Request body",
+          "key": "body",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "Custom Log Name",
+          "key": "Log-Type",
+          "required": true,
+          "type": "string",
+          "description": "Name of the custom log."
+        },
+        {
+          "name": "Time-generated-field",
+          "key": "time-generated-field",
+          "required": false,
+          "type": "string",
+          "description": "Represents the original date and time of the record."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

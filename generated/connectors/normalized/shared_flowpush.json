@@ -1,0 +1,70 @@
+{
+  "connectorId": "shared_flowpush",
+  "displayName": "Notifications",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/flowpush/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-10-28T01:01:00.0000000Z",
+  "sourceGitCommit": "8206e49762de48d8b819bd5b28fb62edb257ef8d",
+  "sourcePath": "docs/FlowPush/index.yml",
+  "operations": {
+    "SendEmailNotification": {
+      "operationId": "SendEmailNotification",
+      "kind": "action",
+      "displayName": "Send me an email notification [DEPRECATED] [DEPRECATED]",
+      "deprecated": true,
+      "description": "- SendEmailNotification",
+      "parameters": [
+        {
+          "name": "Subject",
+          "key": "notificationSubject",
+          "required": true,
+          "type": "string",
+          "description": "Notification email subject"
+        },
+        {
+          "name": "Body",
+          "key": "notificationBody",
+          "required": true,
+          "type": "string",
+          "description": "Notification email body"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "SendNotification": {
+      "operationId": "SendNotification",
+      "kind": "action",
+      "displayName": "Send me a mobile notification",
+      "deprecated": false,
+      "description": "- SendNotification",
+      "parameters": [
+        {
+          "name": "Text",
+          "key": "notificationText",
+          "required": true,
+          "type": "string",
+          "description": "Create a notification message"
+        },
+        {
+          "name": "Link",
+          "key": "uri",
+          "required": false,
+          "type": "string",
+          "description": "Include a link in the notification"
+        },
+        {
+          "name": "Link label",
+          "key": "label",
+          "required": false,
+          "type": "string",
+          "description": "The display name for the link"
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}

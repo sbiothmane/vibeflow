@@ -1,0 +1,795 @@
+{
+  "connectorId": "shared_excelonlinebusiness",
+  "displayName": "Excel Online (Business)",
+  "sourceUrl": "https://learn.microsoft.com/en-us/connectors/excelonlinebusiness/?accept=text/markdown",
+  "sourceUpdatedAt": "2025-08-05T18:54:00.0000000Z",
+  "sourceGitCommit": "834cde50281835abecff528fff0a3effa6c67341",
+  "sourcePath": "docs/excelonlinebusiness/index.yml",
+  "operations": {
+    "AddRow": {
+      "operationId": "AddRow",
+      "kind": "action",
+      "displayName": "Add a row into a table [DEPRECATED]",
+      "deprecated": true,
+      "description": "- AddRow",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (colons are required)."
+        },
+        {
+          "name": "Document Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a table from the drop-down."
+        },
+        {
+          "name": "Row",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Row to insert into the specified Excel table."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "AddRowV2": {
+      "operationId": "AddRowV2",
+      "kind": "action",
+      "displayName": "Add a row into a table",
+      "deprecated": false,
+      "description": "- AddRowV2",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (colons are required)."
+        },
+        {
+          "name": "Document Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a table from the drop-down."
+        },
+        {
+          "name": "Row",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Row to add into the specified Excel table."
+        },
+        {
+          "name": "DateTime Format",
+          "key": "dateTimeFormat",
+          "required": false,
+          "type": "string",
+          "description": "DateTime Format."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "CreateIdColumn": {
+      "operationId": "CreateIdColumn",
+      "kind": "action",
+      "displayName": "Add a key column to a table",
+      "deprecated": false,
+      "description": "- CreateIdColumn",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (the colons are required)."
+        },
+        {
+          "name": "Document Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a table from the drop-down."
+        },
+        {
+          "name": "Key Column",
+          "key": "idColumn",
+          "required": false,
+          "type": "string",
+          "description": "Provide the key column name."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "CreateTable": {
+      "operationId": "CreateTable",
+      "kind": "action",
+      "displayName": "Create table",
+      "deprecated": false,
+      "description": "- CreateTable",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (the colons are required)."
+        },
+        {
+          "name": "Document Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table name",
+          "key": "TableName",
+          "required": false,
+          "type": "string",
+          "description": "Enter the Excel table name."
+        },
+        {
+          "name": "Table range",
+          "key": "Range",
+          "required": true,
+          "type": "string",
+          "description": "Enter the table address using A1 notation."
+        },
+        {
+          "name": "Columns names",
+          "key": "ColumnsNames",
+          "required": false,
+          "type": "string",
+          "description": "Enter the columns names separated by ';' or ','."
+        }
+      ],
+      "returns": {
+        "raw": "Table metadata\n- Body\n- TableMetadata"
+      }
+    },
+    "CreateWorksheet": {
+      "operationId": "CreateWorksheet",
+      "kind": "action",
+      "displayName": "Create worksheet",
+      "deprecated": false,
+      "description": "- CreateWorksheet",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (colons are required)."
+        },
+        {
+          "name": "Document Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Name",
+          "key": "name",
+          "required": false,
+          "type": "string",
+          "description": "Worksheet name."
+        }
+      ],
+      "returns": {
+        "raw": "- Body\n- WorksheetMetadata"
+      }
+    },
+    "DeleteItem": {
+      "operationId": "DeleteItem",
+      "kind": "action",
+      "displayName": "Delete a row",
+      "deprecated": false,
+      "description": "- DeleteItem",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (the colons are required)"
+        },
+        {
+          "name": "Document Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a table from the drop-down."
+        },
+        {
+          "name": "Key Column",
+          "key": "idColumn",
+          "required": true,
+          "type": "string",
+          "description": "Select a column from the drop-down."
+        },
+        {
+          "name": "Key Value",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Enter the key value."
+        }
+      ],
+      "returns": {
+        "raw": ""
+      }
+    },
+    "GetAllWorksheets": {
+      "operationId": "GetAllWorksheets",
+      "kind": "action",
+      "displayName": "Get worksheets",
+      "deprecated": false,
+      "description": "- GetAllWorksheets",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (colons are required)."
+        },
+        {
+          "name": "Document Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Extract Sensitivity Label",
+          "key": "extractSensitivityLabel",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to extract sensitivity label Id for associated artefact."
+        },
+        {
+          "name": "Sensitivity Label Metadata",
+          "key": "fetchSensitivityLabelMetadata",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to fetch sensitivity label Metadata for associated LabelId."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of WorksheetMetadata |  |\n| sensitivityLabelInfo | sensitivityLabelInfo | array of SensitivityLabelMetadata |  |"
+      }
+    },
+    "GetItem": {
+      "operationId": "GetItem",
+      "kind": "action",
+      "displayName": "Get a row",
+      "deprecated": false,
+      "description": "- GetItem",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (the colons are required)"
+        },
+        {
+          "name": "Document Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a table from the drop-down."
+        },
+        {
+          "name": "Key Column",
+          "key": "idColumn",
+          "required": true,
+          "type": "string",
+          "description": "Select a column from the drop-down."
+        },
+        {
+          "name": "Key Value",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Enter the key value."
+        },
+        {
+          "name": "DateTime Format",
+          "key": "dateTimeFormat",
+          "required": false,
+          "type": "string",
+          "description": "DateTime Format."
+        },
+        {
+          "name": "Extract Sensitivity Label",
+          "key": "extractSensitivityLabel",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to extract sensitivity label Id for associated artefact."
+        },
+        {
+          "name": "Sensitivity Label Metadata",
+          "key": "fetchSensitivityLabelMetadata",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to fetch sensitivity label Metadata for associated LabelId."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetItems": {
+      "operationId": "GetItems",
+      "kind": "action",
+      "displayName": "List rows present in a table",
+      "deprecated": false,
+      "description": "- GetItems",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (the colons are required)"
+        },
+        {
+          "name": "Document Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a table from the drop-down."
+        },
+        {
+          "name": "Filter Query",
+          "key": "$filter",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA filter query to restrict the entries returned."
+        },
+        {
+          "name": "Order By",
+          "key": "$orderby",
+          "required": false,
+          "type": "string",
+          "description": "An ODATA orderBy query for specifying the order of entries."
+        },
+        {
+          "name": "Top Count",
+          "key": "$top",
+          "required": false,
+          "type": "integer",
+          "description": "Total number of entries to retrieve (default = all)."
+        },
+        {
+          "name": "Skip Count",
+          "key": "$skip",
+          "required": false,
+          "type": "integer",
+          "description": "The number of entries to skip (default = 0)."
+        },
+        {
+          "name": "Select Query",
+          "key": "$select",
+          "required": false,
+          "type": "string",
+          "description": "Comma-separated list of columns to retrieve (first 500 by default)."
+        },
+        {
+          "name": "DateTime Format",
+          "key": "dateTimeFormat",
+          "required": false,
+          "type": "string",
+          "description": "DateTime Format."
+        },
+        {
+          "name": "Extract Sensitivity Label",
+          "key": "extractSensitivityLabel",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to extract sensitivity label Id for associated artefact."
+        },
+        {
+          "name": "Sensitivity Label Metadata",
+          "key": "fetchSensitivityLabelMetadata",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to fetch sensitivity label Metadata for associated LabelId."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "GetTables": {
+      "operationId": "GetTables",
+      "kind": "action",
+      "displayName": "Get tables",
+      "deprecated": false,
+      "description": "- GetTables",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (colons are required)."
+        },
+        {
+          "name": "Document Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Extract Sensitivity Label",
+          "key": "extractSensitivityLabel",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to extract sensitivity label Id for associated artefact."
+        },
+        {
+          "name": "Sensitivity Label Metadata",
+          "key": "fetchSensitivityLabelMetadata",
+          "required": false,
+          "type": "boolean",
+          "description": "A boolean whether to fetch sensitivity label Metadata for associated LabelId."
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| value | value | array of object |  |\n| Id | value.id | string | Table Id. |\n| Name | value.name | string | Table name. |\n| Show banded columns | value.showBandedColumns | boolean | Show banded columns. |\n| Highlight first column | value.highlightFirstColumn | boolean | Highlight first column. |\n| Highlight last column | value.highlightLastColumn | boolean | Highlight last column. |\n| Show banded rows | value.showBandedRows | boolean | Show banded rows. |\n| Show filter button | value.showFilterButton | boolean | Show filter button. |\n| Show headers | value.showHeaders | boolean | Show headers. |\n| Show totals | value.showTotals | boolean | Show totals. |\n| Style | value.style | string | Table style. |\n| sensitivityLabelInfo | sensitivityLabelInfo | array of SensitivityLabelMetadata |  |"
+      }
+    },
+    "OnRowSelected": {
+      "operationId": "OnRowSelected",
+      "kind": "trigger",
+      "displayName": "For a selected row",
+      "deprecated": false,
+      "description": "- OnRowSelected",
+      "parameters": [
+        {
+          "name": "operationId",
+          "key": "operationId",
+          "required": true,
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "host",
+          "key": "host",
+          "required": false,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "parameters",
+          "key": "parameters",
+          "required": true,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "schema",
+          "key": "schema",
+          "required": true,
+          "type": "object",
+          "description": ""
+        },
+        {
+          "name": "headersSchema",
+          "key": "headersSchema",
+          "required": false,
+          "type": "object",
+          "description": ""
+        }
+      ],
+      "returns": {
+        "raw": "| Name | Path | Type | Description |\n| --- | --- | --- | --- |\n| rows | body.rows | array of object |  |\n| items | body.rows | object |  |\n| User id | headers.x-ms-user-id-encoded | guid | The unique identifier of the user who triggered the flow in AAD. |\n| User email | headers.x-ms-user-email-encoded | byte | The email address of the user who triggered the flow. |\n| User name | headers.x-ms-user-name-encoded | byte | The display name of the user who triggered the flow. |\n| Timestamp | headers.x-ms-user-timestamp | string | The time the flow was triggered. |"
+      }
+    },
+    "PatchItem": {
+      "operationId": "PatchItem",
+      "kind": "action",
+      "displayName": "Update a row",
+      "deprecated": false,
+      "description": "- PatchItem",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (the colons are required)"
+        },
+        {
+          "name": "Document Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Table",
+          "key": "table",
+          "required": true,
+          "type": "string",
+          "description": "Select a table from the drop-down."
+        },
+        {
+          "name": "Key Column",
+          "key": "idColumn",
+          "required": true,
+          "type": "string",
+          "description": "Select a column from the drop-down."
+        },
+        {
+          "name": "Key Value",
+          "key": "id",
+          "required": true,
+          "type": "string",
+          "description": "Enter the key value."
+        },
+        {
+          "name": "Provide the item properties",
+          "key": "item",
+          "required": true,
+          "type": "dynamic",
+          "description": "Provide the item properties."
+        },
+        {
+          "name": "DateTime Format",
+          "key": "dateTimeFormat",
+          "required": false,
+          "type": "string",
+          "description": "DateTime Format."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "RunScriptProd": {
+      "operationId": "RunScriptProd",
+      "kind": "action",
+      "displayName": "Run script",
+      "deprecated": false,
+      "description": "- RunScriptProd",
+      "parameters": [
+        {
+          "name": "Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (colons are required)."
+        },
+        {
+          "name": "Document Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "File",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel file through File Browse."
+        },
+        {
+          "name": "Script",
+          "key": "scriptId",
+          "required": true,
+          "type": "string",
+          "description": "Select the Office Script you want to run from the drop-down."
+        },
+        {
+          "name": "ScriptParameters",
+          "key": "ScriptParameters",
+          "required": true,
+          "type": "dynamic",
+          "description": "Provide the Office Script's parameters."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    },
+    "RunScriptProdV2": {
+      "operationId": "RunScriptProdV2",
+      "kind": "action",
+      "displayName": "Run script from SharePoint library",
+      "deprecated": false,
+      "description": "- RunScriptProdV2",
+      "parameters": [
+        {
+          "name": "Workbook Location",
+          "key": "source",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (colons are required)."
+        },
+        {
+          "name": "Workbook Library",
+          "key": "drive",
+          "required": true,
+          "type": "string",
+          "description": "Select a document library from the drop-down."
+        },
+        {
+          "name": "Workbook",
+          "key": "file",
+          "required": true,
+          "type": "string",
+          "description": "Select an Excel workbook through File Browse."
+        },
+        {
+          "name": "Script Location",
+          "key": "scriptSource",
+          "required": true,
+          "type": "string",
+          "description": "Select from the drop-down or specify one of the following: - \"me\" - \"SharePoint Site URL\" - \"users/someone's UPN\" - \"groups/group Id\" - \"sites/SharePoint Site URL:/teams/team name:\" (the colons are required)."
+        },
+        {
+          "name": "Script Library",
+          "key": "scriptDrive",
+          "required": true,
+          "type": "string",
+          "description": "Select the SharePoint library of your Office Script file (.osts) from the drop-down."
+        },
+        {
+          "name": "Script",
+          "key": "scriptId",
+          "required": true,
+          "type": "string",
+          "description": "Select an Office Script file (.osts) in a SharePoint library from the drop-down."
+        },
+        {
+          "name": "ScriptParameters",
+          "key": "ScriptParameters",
+          "required": true,
+          "type": "dynamic",
+          "description": "Provide parameters for the Office Script."
+        }
+      ],
+      "returns": {
+        "raw": "The outputs of this operation are dynamic."
+      }
+    }
+  },
+  "missingUsedOperations": {}
+}
